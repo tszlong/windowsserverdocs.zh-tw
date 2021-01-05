@@ -1,18 +1,18 @@
 ---
 title: Windows Server 2012 Essentials 中的隨處存取問題疑難排解
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何使用 Windows Server Essentials 中的 [修復隨處存取]，來針對阻止網路使用者存取伺服器資源的問題進行疑難排解。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 4de71e30e4dd706a52587dc1c869960c9b83bc5c
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 947b75f6f314fad479f7725d3abc482116755172
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625233"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810214"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Windows Server 2012 Essentials 中的隨處存取問題疑難排解
 
@@ -29,13 +29,13 @@ ms.locfileid: "89625233"
 
 1. 登入伺服器，然後開啟儀表板。
 
-2. 按一下 [設定]****，然後按一下 [隨處存取]**** 索引標籤。
+2. 按一下 [設定]，然後按一下 [隨處存取] 索引標籤。
 
-3. 按一下 [修復]****。 此時會啟動「修復隨處存取」精靈。
+3. 按一下 [修復]。 此時會啟動「修復隨處存取」精靈。
 
-4. 按 [下一步] 。 精靈會分析隨處存取、識別問題，並嘗試修復問題。
+4. 按一下 [下一步] 。 精靈會分析隨處存取、識別問題，並嘗試修復問題。
 
-5. 如果您在精靈完成時收到警示，您可以按一下 [重試]**** 來重新嘗試修復問題。 如果您持續收到警示，請查看警示以了解問題和疑難排解步驟的其他相關資訊。
+5. 如果您在精靈完成時收到警示，您可以按一下 [重試] 來重新嘗試修復問題。 如果您持續收到警示，請查看警示以了解問題和疑難排解步驟的其他相關資訊。
 
 ## <a name="to-get-more-information-about-an-alert"></a>取得有關警示的詳細資訊
 

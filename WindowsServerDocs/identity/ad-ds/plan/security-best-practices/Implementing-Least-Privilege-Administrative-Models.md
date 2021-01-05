@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 02ce80d936caff5ef77a78585a2e0f35e0b12ca5
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: ca8d073eff673697a65fd1266cf7de19ccd90c97
+ms.sourcegitcommit: e2dadc9b0c227a489a945bbc531aca5e101f18cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040716"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97801752"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>實作最低權限管理模型
 
@@ -31,7 +31,7 @@ ms.locfileid: "97040716"
 
 ## <a name="the-privilege-problem"></a>許可權問題
 
-上述摘錄中所述的原則並未變更，但在評估 Active Directory 安裝時，我們會發現有過多的帳戶已獲得超過執行日常工作所需的許可權和許可權。 環境的大小會影響過度特殊許可權帳戶的原始數目，但不是 proportionmidsized 目錄在最高許可權的群組中可能會有數十個帳戶，而大型安裝可能有數百個或甚至數千個。 有幾個例外狀況，無論攻擊者的技能和利器的複雜度為何，攻擊者通常都遵循最不受阻力的路徑。 它們會提高其工具和方法的複雜度，只有在和較簡單的機制失敗或由防禦者阻撓時才會這麼做。
+上述摘錄中所述的原則並未變更，但在評估 Active Directory 安裝時，我們會發現有過多的帳戶已獲得超過執行日常工作所需的許可權和許可權。 環境的大小會影響過高許可權的帳戶未經處理的數目，但不是依中型的目錄，在最高許可權的群組中可能會有數十個帳戶，而大型安裝可能有數百個或甚至數千個。 有幾個例外狀況，無論攻擊者的技能和利器的複雜度為何，攻擊者通常都遵循最不受阻力的路徑。 它們會提高其工具和方法的複雜度，只有在和較簡單的機制失敗或由防禦者阻撓時才會這麼做。
 
 可惜的是，許多環境中最小的阻力路徑已證明是過度使用具有廣泛和深層許可權的帳戶。 廣泛許可權是許可權和許可權，可讓帳戶在大部分的環境中執行特定的活動，例如，技術支援人員可能會被授與許可權，讓他們能夠在許多使用者帳戶上重設密碼。
 
@@ -312,7 +312,7 @@ ms.locfileid: "97040716"
 
 出示憑證來向加入網域的系統進行驗證時，憑證中的主體或主體別名 (SAN) 屬性會用來將憑證對應至 Active Directory 中的使用者物件。 根據憑證的類型和其建立方式而定，憑證中的 Subject 屬性通常會包含使用者的一般名稱 (CN) ，如下列螢幕擷取畫面所示。
 
-![最低版權管理模型](media/Implementing-Least-Privilege-Administrative-Models/SAD_4.gif)
+![顯示憑證中主旨屬性的螢幕擷取畫面，通常包含使用者的一般名稱。](media/Implementing-Least-Privilege-Administrative-Models/SAD_4.gif)
 
 根據預設，Active Directory 會串連帳戶的名字 + "" + last name，以建立使用者的 CN。 不過，Active Directory 中的使用者物件的 CN 元件並非必要或不保證是唯一的，且將使用者帳戶移至目錄中的不同位置，會將帳戶的辨別)  (名稱變更為目錄中的不同位置，也就是目錄中物件的完整路徑，如先前的螢幕擷取畫面底部窗格所示。
 

@@ -1,18 +1,18 @@
 ---
 title: 步驟 3：將電腦加入新的 Windows Server Essentials 伺服器
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何將用戶端電腦連線到執行 Windows Server Essentials 的新伺服器。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: a0e07d1a-8409-429b-87d7-0f4a7e14d668
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 7495831c6f593b65261fda8f50d4ef9d1000d9b4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 137330d084738313dbf666590f78575bba3b04ef
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625483"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810507"
 ---
 # <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>步驟 3：將電腦加入新的 Windows Server Essentials 伺服器
 
@@ -27,12 +27,12 @@ ms.locfileid: "89625483"
 
 ### <a name="to-uninstall-windows-server-connector-on-a-client-computer"></a>解除安裝用戶端電腦上的 Windows Server 連接器
 
-1.  從用戶端電腦開啟 [控制台]，然後開啟 [程式和功能]****。
+1.  從用戶端電腦開啟 [控制台]，然後開啟 [程式和功能]。
 
 2.  在程式清單中，以滑鼠右鍵按一下在電腦上執行的連接器應用程式。
 
     > [!NOTE]
-    >  連接器應用程式可以是 **Windows Small Business Server 2011 Essentials 連接器**或 **Windows server Essentials 連接器**，視用戶端電腦連線到的 windows server essentials 版本而定。
+    >  連接器應用程式可以是 **Windows Small Business Server 2011 Essentials 連接器** 或 **Windows server Essentials 連接器**，視用戶端電腦連線到的 windows server essentials 版本而定。
 
 3.  按一下 [解除安裝]  。
 

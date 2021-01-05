@@ -1,18 +1,18 @@
 ---
-title: Windows Admin Center 中的封包監視延伸模組
+title: Windows Admin Center 中的封包監視擴充功能
 description: 您可以使用此頁面，透過 Windows Admin Center (Pktmon) 來操作和取用封包監視器。
 ms.topic: how-to
 author: khdownie
 ms.author: v-kedow
 ms.date: 11/12/2020
-ms.openlocfilehash: 85d204d1731ebcf21c55364f48ebe0e7b6dc157c
-ms.sourcegitcommit: 8808f871c8cf131f819ef5540286218bd425da96
+ms.openlocfilehash: eabcda1c535086472fda55136b14073ce6181d36
+ms.sourcegitcommit: b0c10eaffaa5de3eeff44c433580b41270c27d32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94632454"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97826188"
 ---
-# <a name="packet-monitoring-extension-in-windows-admin-center"></a>Windows Admin Center 中的封包監視延伸模組
+# <a name="packet-monitoring-extension-in-windows-admin-center"></a>Windows Admin Center 中的封包監視擴充功能
 
 >適用于： Windows Server (半年通道) 、Windows Server 2019、Windows 10、Azure Stack HCI、Azure Stack Hub、Azure
 
@@ -47,7 +47,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
    如果您想要捕捉只通過特定元件 (s) 的流量，[篩選] 窗格的第一個步驟會顯示網路堆疊版面配置，讓您可以選取要篩選的元件 () 。 這也是分析和瞭解電腦網路堆疊版面配置的絕佳位置。
 
-   :::image type="content" source="media/filtering-by-networking-stack-components.png" alt-text="依網路堆疊元件篩選的範例" border="true":::
+   :::image type="content" source="media/filtering-by-networking-stack-components.png" alt-text="依網路堆疊元件篩選的範例" border="true" lightbox="media/filtering-by-networking-stack-components.png":::
 
 2. 依封包參數篩選
 
@@ -57,17 +57,17 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
    - 若要進一步篩選 TCP 封包，可以提供選擇性的 TCP 旗標清單來進行比對。 支援的旗標為 FIN、SYN、RST、PSH、ACK、URG、ECE 和 CWR。
    - 如果已核取 [ **封裝** ] 方塊，除了外部封包之外，此工具也會將篩選套用至封裝的內部封包。 支援的封裝方法有 VXLAN、GRE、NVGRE 和 IP IP。 自訂 VXLAN 埠是選擇性的，預設值為4789。
 
-   :::image type="content" source="media/filtering-by-packet-parameters.png" alt-text="依封包參數篩選的範例" border="true":::
+   :::image type="content" source="media/filtering-by-packet-parameters.png" alt-text="依封包參數篩選的範例" border="true" lightbox="media/filtering-by-packet-parameters.png":::
 
 3. 依封包流程狀態篩選
 
-   依預設，封包監視器會捕獲流動和捨棄的封包。 若只要捕捉捨棄的封包，請選取 [捨棄的封 **包** ]。
+   依預設，封包監視器會捕獲流動和捨棄的封包。 若只要捕捉捨棄的封包，請選取 [捨棄的封 **包**]。
 
-   :::image type="content" source="media/filtering-by-packet-flow-status.png" alt-text="依封包流程狀態篩選的範例" border="true":::
+   :::image type="content" source="media/filtering-by-packet-flow-status.png" alt-text="依封包流程狀態篩選的範例" border="true" lightbox="media/filtering-by-packet-flow-status.png":::
 
    之後會顯示所有選取之篩選準則的摘要，以供審查。 透過 [ **捕捉條件** ] 按鈕啟動 capture 之後，您就可以取出該視圖。
 
-   :::image type="content" source="media/filters-review.png" alt-text="如何只捕獲捨棄的封包" border="true":::
+   :::image type="content" source="media/filters-review.png" alt-text="如何只捕獲捨棄的封包" border="true" lightbox="media/filters-review.png":::
 
 ## <a name="capture-log"></a>Capture 記錄檔
 
@@ -79,7 +79,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
    - 您可以使用搜尋列，在記錄檔中的任何資料行中搜尋值。
    - 您可以使用 [ **重新開機** ] 按鈕，以相同選擇的篩選器重新開機 capture。
 
-   :::image type="content" source="media/capture-log-result.png" alt-text="Capture 記錄結果資料表的範例" border="true":::
+   :::image type="content" source="media/capture-log-result.png" alt-text="Capture 記錄結果資料表的範例" border="true" lightbox="media/capture-log-result.png":::
 
 ## <a name="details-page"></a>詳細資料頁面
 
@@ -89,7 +89,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
    - 選取快照集時，會顯示此特定快照集的詳細資料，包括原始的封包標頭。
    - 所有捨棄的封包在已卸載的索引標籤中都有 "True" 值、卸載原因，並以紅色文字顯示，以使其更容易 **找出。**
 
-   :::image type="content" source="media/details-page.png" alt-text="顯示封包快照的詳細資料頁面範例" border="true":::
+   :::image type="content" source="media/details-page.png" alt-text="顯示封包快照的詳細資料頁面範例" border="true" lightbox="media/details-page.png":::
 
 ## <a name="display-filters"></a>顯示篩選
 
@@ -99,7 +99,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
    - 您可以在套用顯示篩選之後，加以刪除和編輯，以變更記錄檔的視圖。
    - 顯示篩選會在儲存的記錄中反轉。
 
-   :::image type="content" source="media/display-filters.png" alt-text="顯示篩選畫面" border="true":::
+   :::image type="content" source="media/display-filters.png" alt-text="顯示篩選畫面" border="true" lightbox="media/display-filters.png":::
 
 ## <a name="save-feature"></a>儲存功能
 
@@ -111,10 +111,10 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
       - 您可以使用 Wireshark 之類的工具來分析 Pcapng fomat。
          - 在此轉換期間，大部分的封包監視器中繼資料將會遺失。 如需詳細資訊，[請參閱此頁面](pktmon-pcapng-support.md)。
 
-   :::image type="content" source="media/packet-monitoring-save-feature.png" alt-text="儲存 capture 的本機複本" border="true":::
+   :::image type="content" source="media/packet-monitoring-save-feature.png" alt-text="儲存 capture 的本機複本" border="true" lightbox="media/packet-monitoring-save-feature.png":::
 
 ## <a name="open-feature"></a>開啟功能
 
 開啟的功能可讓您重新開啟五個最後儲存的記錄檔，以透過工具進行分析。
 
-   :::image type="content" source="media/open.png" alt-text="開啟最近的記錄" border="true":::
+   :::image type="content" source="media/open.png" alt-text="開啟最近的記錄" border="true" lightbox="media/open.png":::

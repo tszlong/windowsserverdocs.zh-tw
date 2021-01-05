@@ -1,20 +1,20 @@
 ---
-title: 快速入門手冊使用 Microsoft 365 搭配 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+title: 利用 Windows Server Essentials 使用 Microsoft 365 快速入門指南
+description: 瞭解如何使用 Windows Server Essentials 啟動控制板和 My Server 2012 R2 等熟悉的工具，在 Microsoft 365 中開啟應用程式。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 51a7f1f1-088b-4487-b2c6-4f97aad3004d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: bdabd2f6e8f8fbc8199789ba91401ed6505c389e
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b541a0ca1742d63df5b091b0787ed5fac01d1298
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624938"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810035"
 ---
-# <a name="quick-start-guide-to-using-microsoft-365-with-windows-server-essentials"></a>快速入門手冊使用 Microsoft 365 搭配 Windows Server Essentials
+# <a name="quick-start-guide-to-using-microsoft-365-with-windows-server-essentials"></a>利用 Windows Server Essentials 使用 Microsoft 365 快速入門指南
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
@@ -64,7 +64,7 @@ ms.locfileid: "89624938"
 
 1.  開啟 My Server 2012 R2 應用程式。
 
-2.  按一下 [SharePoint Online]****。
+2.  按一下 [SharePoint Online]。
 
     > [!NOTE]
     >  如果您沒有看到 **SharePoint Online**，請詢問您的系統管理員是否已將 Microsoft 365 與伺服器整合。

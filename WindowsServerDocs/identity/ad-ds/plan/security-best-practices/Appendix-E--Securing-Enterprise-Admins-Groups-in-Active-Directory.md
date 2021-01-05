@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3816b41c446c3f7693f36a0525fada3b82e9946a
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 0abcc31dcf61ca66c79c9f6802ddd299ad92e47c
+ms.sourcegitcommit: e2dadc9b0c227a489a945bbc531aca5e101f18cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041706"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97801802"
 ---
 # <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>附錄 E︰保護 Active Directory 中的 Enterprise Admins 群組
 
@@ -46,17 +46,17 @@ ms.locfileid: "97041706"
 
 2.  如果您不是管理樹系的根域，請在主控台樹中，以滑鼠右鍵按一下 <Domain> ，然後按一下 [ **變更網域** ] (其中 <Domain> 是您目前所管理之網域的名稱) 。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)
+    ![醒目顯示 [變更網域] 功能表選項的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)
 
 3.  在 [ **變更網域** ] 對話方塊中，按一下 [ **流覽]**，選取樹系的根域，然後按一下 **[確定]**。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_44.gif)
+    ![顯示 [變更網域] 對話方塊中 [確定] 按鈕的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_44.gif)
 
 4.  若要從 EA 群組移除所有成員：
 
     1.  按兩下 **Enterprise Admins** 群組，然後按一下 [ **成員** ] 索引標籤。
 
-        ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_45.gif)
+        ![顯示 Enterprise Admins 群組內 [成員] 索引標籤的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_45.gif)
 
     2.  選取群組的成員，按一下 [ **移除**]，按一下 [ **是**]，然後按一下 **[確定]**。
 
@@ -73,17 +73,17 @@ ms.locfileid: "97041706"
 
 3.  在主控台樹中，以滑鼠右鍵按一下 **群組原則物件**]，然後按一下 [ **新增**]。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)
+    ![顯示 [群組原則物件] 功能表中 [新增] 功能表選項的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)
 
 4.  在 [ **新增 GPO** ] 對話方塊中，輸入 <GPO Name> ，然後按一下 **[確定]** (其中 <GPO Name> 是此 GPO) 的名稱。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)
+    ![顯示要在哪裡輸入 GPO 名稱並選取來源入門 GPO 的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)
 
 5.  在詳細資料窗格中，以滑鼠右鍵按一下 <GPO Name> ，然後按一下 [ **編輯**]。
 
 6.  流覽至 [ **電腦設定 \windows 設定] \ 使用者設置 \ 本機原則**，然後按一下 [ **使用者權限指派**]。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_48.gif)
+    ![顯示如何選取使用者權限指派的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_48.gif)
 
 7.  設定使用者權限，以防止 Enterprise Admins 群組的成員透過網路存取成員伺服器和工作站，方法是執行下列動作：
 
@@ -93,7 +93,7 @@ ms.locfileid: "97041706"
 
     3.  輸入 **Enterprise Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_49.gif)
+        ![示範如何確認您已設定使用者權限，以防止 Enterprise Admins 群組的成員透過網路存取成員伺服器和工作站的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_49.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -108,7 +108,7 @@ ms.locfileid: "97041706"
 
     3.  輸入 **Enterprise Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_50.gif)
+        ![顯示如何確認您已設定使用者權限以防止 Enterprise Admins 群組的成員以批次工作登入的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_50.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -123,7 +123,7 @@ ms.locfileid: "97041706"
 
     3.  輸入 **Enterprise Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_51.gif)
+        ![顯示如何確認您已設定使用者權限以防止 EA 群組成員以服務方式登入的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_51.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -138,7 +138,7 @@ ms.locfileid: "97041706"
 
     3.  輸入 **Enterprise Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_52.gif)
+        ![顯示如何確認您已設定使用者權限，以防止 Enterprise Admins 群組成員在本機登入成員伺服器和工作站的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_52.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -153,7 +153,7 @@ ms.locfileid: "97041706"
 
     3.  輸入 **Enterprise Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_53.gif)
+        ![示範如何確認您已設定使用者權限，以防止 Enterprise Admins 群組的成員透過遠端桌面服務存取成員伺服器和工作站的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_53.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -165,11 +165,11 @@ ms.locfileid: "97041706"
 
     2.  以滑鼠右鍵按一下 GPO 將套用的 OU，然後按一下 [ **連結現有的 gpo**]。
 
-        ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_54.gif)
+        ![醒目顯示 [連結現有的 GPO] 功能表選項的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_54.gif)
 
     3.  選取您剛才建立的 GPO，然後按一下 **[確定]**。
 
-        ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_55.gif)
+        ![顯示您剛才建立之 GPO 的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_55.gif)
 
     4.  建立包含工作站之所有其他 Ou 的連結。
 
@@ -193,13 +193,13 @@ ms.locfileid: "97041706"
 
 4.  當系統提示您核准提高許可權時，請按一下 **[是]**。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)
+    ![顯示您核准提升許可權之對話方塊的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)
 
 5.  在 [**命令提示** 字元] 視窗中，輸入 **net use \\ \\ \<Server Name\> \c $**，其中 \<Server Name\> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。
 
 6.  下列螢幕擷取畫面顯示應出現的錯誤訊息。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_57.gif)
+    ![顯示應該顯示之錯誤訊息的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_57.gif)
 
 #### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>確認「拒絕以批次工作登入」 GPO 設定
 
@@ -254,7 +254,7 @@ ms.locfileid: "97041706"
 
 16. 應該會出現類似下列的對話方塊。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_58.gif)
+    ![顯示 [工作排程器] 對話方塊的螢幕擷取畫面。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_58.gif)
 
 #### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>確認「拒絕以服務方式登入」 GPO 設定
 
@@ -280,7 +280,7 @@ ms.locfileid: "97041706"
 
 11. 當服務重新開機時，應該會出現類似下列的對話方塊。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_59.gif)
+    ![顯示訊息的螢幕擷取畫面，指出 Windows 無法啟動列印多工緩衝處理器伺服器。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_59.gif)
 
 #### <a name="revert-changes-to-the-printer-spooler-service"></a>還原印表機多工緩衝處理器服務的變更
 
@@ -300,7 +300,7 @@ ms.locfileid: "97041706"
 
 1.  從受 GPO 變更影響的任何成員伺服器或工作站，嘗試使用屬於 EA 群組成員的帳戶在本機登入。 應該會出現類似下列的對話方塊。
 
-    ![安全的企業系統管理員群組](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_60.gif)
+    ![顯示訊息的螢幕擷取畫面，指出您所使用的登入方法不允許。](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_60.gif)
 
 #### <a name="verify-deny-log-on-through-remote-desktop-services-gpo-settings"></a>確認「拒絕登入遠端桌面服務」 GPO 設定
 

@@ -1,18 +1,18 @@
 ---
 title: 移轉伺服器資料到 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解所有可用來學習如何將伺服器資料移轉到 Windows Server Essentials 的文章。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: dff2bf27-5d97-409b-81e8-286f7d933d90
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: dbcffdfb89edc56503521937909542d136854e1a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b291c1ed48af55c1e6779397a6c5b162d118c802
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625931"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810915"
 ---
 # <a name="migrate-server-data-to-windows-server-essentials"></a>移轉伺服器資料到 Windows Server Essentials
 
@@ -21,17 +21,12 @@ ms.locfileid: "89625931"
 下列指南提供有關如何從現有的 Windows Small Business Server 或 Windows Server Essentials 安裝移轉到 Windows Server Essentials 的資訊，並且包含有關如何為特定的 Windows Server Essentials 移轉案例做準備和規劃的資訊。
 
 ## <a name="migrate-to-windows-server-essentials"></a>遷移至 Windows Server Essentials
- 若要避免將現有伺服器遷移到 Windows Server Essentials 時發生問題，請在開始進行遷移之前，先閱讀遷移指南。
 
+若要避免將現有伺服器遷移到 Windows Server Essentials 時發生問題，請閱讀適用于您的商務案例的遷移指南，再開始進行遷移。
 
 -   [遷移至 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)
 
 -   [轉換到 Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)
-
-
-## <a name="migrate-to-windows-server-essentials"></a>遷移至 Windows Server Essentials
- 若要避免將現有伺服器遷移到 Windows Server Essentials 時發生問題，請閱讀適用于您的商務案例的遷移指南，再開始進行遷移。
-
 
 -   [轉換到 Windows Server 2012 Standard](Transition-from-Windows-Server-2012-Essentials-to-Windows-Server-2012-Standard.md)
 
@@ -45,7 +40,7 @@ ms.locfileid: "89625931"
 
 -   [從 Windows SBS 2003 移轉](Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)
 
--   [移轉到新硬體](Migrate-Windows-Server-Essentials-to-New-Hardware.md)
+-   [遷移至新的硬體](Migrate-Windows-Server-Essentials-to-New-Hardware.md)
 
 -   [Windows Server Essentials 最佳做法分析器 (BPA) 工具所使用的規則](Rules-used-by-the-Windows-Server-Essentials-Best-Practices-Analyzer--BPA--Tool.md)
 
@@ -58,7 +53,7 @@ ms.locfileid: "89625931"
 
 -    若要了解如何安全地與合作夥伴和廠商共同作業，請參閱[提升小型和中型企業中的共同作業](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11))。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [安裝 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)
 

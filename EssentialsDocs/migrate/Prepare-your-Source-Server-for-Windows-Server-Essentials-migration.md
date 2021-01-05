@@ -1,18 +1,18 @@
 ---
 title: 準備您的來源伺服器以進行 Windows Server Essentials migration1
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解完成的初步步驟，以確保來源伺服器上的設定和資料順利遷移至目的地伺服器。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: fa465e96d66e88e0561a5a6151d07d9950d226f1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: dc2866525785506d4e6f3238d22ad8444ed0448f
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625608"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810635"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>準備您的來源伺服器以進行 Windows Server Essentials migration1
 
@@ -54,11 +54,11 @@ ms.locfileid: "89625608"
 
 ###### <a name="to-check-for-the-latest-updates"></a>檢查最新的更新
 
-1.  從來源伺服器上，按一下 [開始]****、[所有程式]****，然後按一下 [Windows Update]****。
+1.  從來源伺服器上，按一下 [開始]、[所有程式]，然後按一下 [Windows Update]。
 
-2.  按一下 [檢查更新]****。
+2.  按一下 [檢查更新]。
 
-3.  如果找到更新，按一下 [安裝更新]****。
+3.  如果找到更新，按一下 [安裝更新]。
 
 #### <a name="check-the-alert-viewer-for-critical-errors"></a>檢查警示檢視器的嚴重錯誤
  您可以在 [儀表板] 上檢查警示檢視器是否有任何重大錯誤。
@@ -76,16 +76,16 @@ ms.locfileid: "89625608"
 
 1. 於 Microsoft 下載中心下載並安裝 [Windows Server 解決方案最佳做法分析程式](https://www.microsoft.com/download/details.aspx?id=15556)。
 
-2. 下載完成後，按一下 [開始]****，指向 [所有程式]****，然後按一下 [SBS 最佳做法分析程式工具]****。
+2. 下載完成後，按一下 [開始]，指向 [所有程式]，然後按一下 [SBS 最佳做法分析程式工具]。
 
    > [!NOTE]
    >  掃描伺服器前先檢查更新。
 
-3. 在瀏覽窗格中按一下 [開始掃描]****。
+3. 在瀏覽窗格中按一下 [開始掃描]。
 
-4. 在詳細資料窗格中，輸入掃描標籤，然後按一下 [開始掃描]****。 掃描標籤是掃描報告的名稱，例如 **SBS BPA Scan 1Jul2012**。
+4. 在詳細資料窗格中，輸入掃描標籤，然後按一下 [開始掃描]。 掃描標籤是掃描報告的名稱，例如 **SBS BPA Scan 1Jul2012**。
 
-5. 掃描結束後，按一下 [檢視此最佳做法掃描的報告]****。
+5. 掃描結束後，按一下 [檢視此最佳做法掃描的報告]。
 
    收集有關伺服器設定的資訊之後，Windows Server 解決方案 BPA 會確認資訊正確，然後提供系統管理員一份依重要性排序的資訊與問題清單。 清單中會描述每個問題，並提供建議或可能的解決方案。 有三種可用的報告類型：
 
@@ -104,7 +104,7 @@ ms.locfileid: "89625608"
 
 1.  使用網域系統管理員帳戶和密碼登入來源伺服器。
 
-2.  按一下 [開始]****、[執行]****，在文字方塊中輸入 **cmd**，然後按 ENTER。
+2.  按一下 [開始]、[執行]，在文字方塊中輸入 **cmd**，然後按 ENTER。
 
 3.  在命令提示字元中輸入 w32tm /config /syncfromflags:domhier /reliable:no /update，然後按 ENTER。
 
@@ -127,7 +127,7 @@ ms.locfileid: "89625608"
 
 1. 在來源伺服器上，依序按一下 **[開始]** 及 **[系統管理工具]**，然後按一下 **[Active Directory 使用者和電腦]**。
 
-2. 在主控台樹狀目錄中，按一下以展開您的網域，然後按一下 [使用者]****。
+2. 在主控台樹狀目錄中，按一下以展開您的網域，然後按一下 [使用者]。
 
 3. 在您要用來進行移轉的系統管理員帳戶上按一下滑鼠右鍵，然後按一下 **[內容]**。
 
@@ -158,12 +158,12 @@ ms.locfileid: "89625608"
 2. 開啟 [Windows 檔案總管]，瀏覽至 DVD 的 **\support\tools** 資料夾，然後按兩下 **sourcetool.msi** 檔案。
 
    > [!NOTE]
-   > - 如果「移轉準備工具」已安裝在伺服器上，請從 [開始]**** 功能表執行該工具。
+   > - 如果「移轉準備工具」已安裝在伺服器上，請從 [開始] 功能表執行該工具。
    >   -   若要確保備妥最佳的可能移轉體驗，建議您永遠選擇安裝最新的更新。
 
     精靈將在來源伺服器上安裝「移轉準備工具」。 安裝完成後，「移轉準備工具」會自動執行並安裝最新的更新。
 
-3. 在 [移轉準備工具] 中，選取 [我擁有一個備份，而且已準備好繼續進行]****，然後按一下 [下一步]****。
+3. 在 [移轉準備工具] 中，選取 [我擁有一個備份，而且已準備好繼續進行]，然後按一下 [下一步]。
 
    > [!WARNING]
    >  如果您收到與修正程式安裝相關的錯誤訊息，請參閱 Microsoft 知識庫 [文章 822798](https://go.microsoft.com/FWLink/p/?LinkID=118672) 中的方法2：重新命名 Catroot2 資料夾。

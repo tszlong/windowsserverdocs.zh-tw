@@ -1,18 +1,18 @@
 ---
 title: Windows Server Essentials 中的啟動列概觀
-description: 說明如何使用 Windows Server Essentials
+description: 深入瞭解 Windows Server Essentials 啟動控制板，它提供已驗證的使用者存取 Windows Server Essentials 的主要功能。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c20fd35a1a90e6d635891cd2257913c669273735
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0f1bf8eba82173323e60f9b612ca829f6b167bf2
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623018"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811105"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Windows Server Essentials 中的啟動列概觀
 
@@ -43,7 +43,7 @@ ms.locfileid: "89623018"
  [Windows Server Essentials 啟動列] 上提供下列連結和資訊。
 
 ### <a name="backup"></a>Backup
- 按一下 [備份]**** 以開啟電腦的 [備份內容]****。 在 [備份內容]**** 頁面上，您可以：
+ 按一下 [備份] 以開啟電腦的 [備份內容]。 在 [備份內容] 頁面上，您可以：
 
 - 開始或停止備份。
 
@@ -54,13 +54,13 @@ ms.locfileid: "89623018"
   如需如何使用啟動控制板來備份電腦的相關資訊，請參閱 [管理用戶端備份](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)。
 
 ### <a name="remote-web-access"></a>遠端 Web 存取
- 按一下 [遠端 Web 存取]**** 以將網頁瀏覽器開啟至「遠端 Web 存取」網站。 「遠端 Web 存取」網站可讓您從辦公室內或從具有已啟用網際網路之電腦的遠端位置，連線到其他電腦並存取部分網路資源。 如需遠端 Web 存取的詳細資訊，請參閱 [管理遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)。
+ 按一下 [遠端 Web 存取] 以將網頁瀏覽器開啟至「遠端 Web 存取」網站。 「遠端 Web 存取」網站可讓您從辦公室內或從具有已啟用網際網路之電腦的遠端位置，連線到其他電腦並存取部分網路資源。 如需遠端 Web 存取的詳細資訊，請參閱 [管理遠端 Web 存取](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)。
 
 ### <a name="shared-folders"></a>共用資料夾
- 按一下 [共用資料夾]**** 以將 [Windows 檔案總管] 開啟至伺服器上共用資料夾的位置。 如需有關共用檔案和資料夾的詳細資訊，請參閱 [管理伺服器資料夾](Manage-Server-Folders-in-Windows-Server-Essentials.md)主題。
+ 按一下 [共用資料夾] 以將 [Windows 檔案總管] 開啟至伺服器上共用資料夾的位置。 如需有關共用檔案和資料夾的詳細資訊，請參閱 [管理伺服器資料夾](Manage-Server-Folders-in-Windows-Server-Essentials.md)主題。
 
 ### <a name="dashboard"></a>儀表板
- 按一下 [儀表板]  **** 以開啟 [登入] **** 頁面來存取 Windows Server Essentials 儀表板。 在您登入之後，就會開啟連到伺服器 [儀表板] 的「遠端桌面」連線。 如需儀表板的詳細資訊，請參閱 [儀表板總覽](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)。
+ 按一下 [儀表板]   以開啟 [登入]  頁面來存取 Windows Server Essentials 儀表板。 在您登入之後，就會開啟連到伺服器 [儀表板] 的「遠端桌面」連線。 如需儀表板的詳細資訊，請參閱 [儀表板總覽](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)。
 
 > [!NOTE]
 >  若要使用這個功能，您必須具有適當的存取權或權限來登入伺服器。
@@ -80,13 +80,13 @@ ms.locfileid: "89623018"
 >  伺服器系統管理員無法使用 Mac 電腦上的 [啟動列] 或 [遠端 Web 存取] 來開啟伺服器 [儀表板] 並管理伺服器。
 
 ### <a name="backup"></a>Backup
- 按一下 [備份]**** 以設定 Time Machine 來備份您的電腦，以及變更 Time Machine 設定。 如需有關 Time Machine 的詳細資訊，請參閱您電腦製造商的文件。
+ 按一下 [備份] 以設定 Time Machine 來備份您的電腦，以及變更 Time Machine 設定。 如需有關 Time Machine 的詳細資訊，請參閱您電腦製造商的文件。
 
 ### <a name="remote-web-access"></a>遠端 Web 存取
  按一下 [ **遠端 Web 存取** ]，將網頁瀏覽器開啟至遠端 Web 存取網站。 遠端 Web 存取可讓您從具有已啟用網際網路之電腦的任何遠端位置存取伺服器上的共用檔案和資料夾。 您可以上傳檔案、在 Web 型的「媒體播放」播放音樂和視訊，以及檢視圖片和播放投影片。 如需詳細資訊，請參閱 [使用遠端 Web 存取](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)。
 
 ### <a name="shared-folders"></a>共用資料夾
- 按一下 [共用資料夾]**** 以將 Finder 開啟至伺服器上共用資料夾的位置。 如需共用檔案與資料夾的相關資訊，請參閱 [使用共用資料夾](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)。
+ 按一下 [共用資料夾] 以將 Finder 開啟至伺服器上共用資料夾的位置。 如需共用檔案與資料夾的相關資訊，請參閱 [使用共用資料夾](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)。
 
 ### <a name="computer-health-alerts"></a>電腦健康狀態警示
  顯示在 [啟動列] 上的警示可提供有關電腦立即健康情況的快速狀態。 若要檢視有關健康狀態警示的資訊，請按一下警示指示來開啟警示檢視器。 健康狀態警示會根據嚴重性層級顯示在檢視器中。 最嚴重的警示會顯示在清單中的最前面。 較不嚴重的警示會顯示在清單中較後面的地方。

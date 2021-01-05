@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 04debd028e1f881fae4caa62f2f51c3f02f48904
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 93ddd6cf87b3736895b15ff185e43dc0e98da78c
+ms.sourcegitcommit: 3247e193d9fe1b57543fff215460a6d9db52f58b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049166"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97815027"
 ---
 # <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>附錄 G︰保護 Active Directory 中的 Administrators 群組
 
@@ -54,7 +54,7 @@ ms.locfileid: "97049166"
 
     1.  按兩下 [系統 **管理員** ] 群組，然後按一下 [ **成員** ] 索引標籤。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_79.gif)
+        ![顯示 [成員] 索引標籤的螢幕擷取畫面，用來移除 Administrators 群組中的所有成員。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_79.gif)
 
     2.  選取群組的成員，按一下 [ **移除**]，按一下 [ **是**]，然後按一下 **[確定]**。
 
@@ -68,17 +68,17 @@ ms.locfileid: "97049166"
 
 3.  在主控台樹中，以滑鼠右鍵按一下 **群組原則物件**]，然後按一下 [ **新增**]。
 
-    ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)
+    ![螢幕擷取畫面：顯示要在哪裡選取 [新增]，以便您可以在 Active Directory 中保護系統管理員群組。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)
 
 4.  在 [ **新增 GPO** ] 對話方塊中，輸入 <GPO Name> ，然後按一下 **[確定]** (其中 *gpo 名稱* 是此 gpo) 的名稱。
 
-    ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)
+    ![螢幕擷取畫面，顯示在 [新增 GPO] 對話方塊中，將 G P O 命名的位置，讓您可以保護系統管理員群組。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)
 
 5.  在詳細資料窗格中，以滑鼠右鍵按一下 **<GPO Name>** ，然後按一下 [ **編輯**]。
 
 6.  流覽至 [ **電腦設定 \windows 設定] \ 使用者設置 \ 本機原則**，然後按一下 [ **使用者權限指派**]。
 
-    ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_82.gif)
+    ![顯示流覽位置的螢幕擷取畫面，讓您可以選取使用者權限管理選項來保護系統管理員群組。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_82.gif)
 
 7.  設定使用者權限，以防止系統管理員群組的成員透過網路存取成員伺服器和工作站，方法是執行下列動作：
 
@@ -88,7 +88,7 @@ ms.locfileid: "97049166"
 
     3.  輸入 [系統 **管理員**]，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_83.gif)
+        ![螢幕擷取畫面，顯示如何確認您已設定使用者權限，以防止 Administrators 群組的成員透過網路存取成員伺服器和工作站。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_83.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -100,7 +100,7 @@ ms.locfileid: "97049166"
 
     3.  輸入 [系統 **管理員**]，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_84.gif)
+        ![顯示如何確認您已設定使用者權限以防止系統管理員群組的成員以批次工作登入的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_84.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -112,7 +112,7 @@ ms.locfileid: "97049166"
 
     3.  輸入 [系統 **管理員**]，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_85.gif)
+        ![螢幕擷取畫面，顯示如何確認您已設定使用者權限，以防止系統管理員群組的成員以服務的身分登入。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_85.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -124,11 +124,11 @@ ms.locfileid: "97049166"
 
     2.  以滑鼠右鍵按一下 GPO 將套用的 OU，然後按一下 [ **連結現有的 gpo**]。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_86.gif)
+        ![當您在 OU 上按一下滑鼠右鍵時，顯示 [連結到現有的 G P O] 功能表選項的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_86.gif)
 
     3.  選取您剛才建立的 GPO，然後按一下 **[確定]**。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_87.gif)
+        ![顯示您剛才建立之 GPO 的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_87.gif)
 
     4.  建立包含工作站之所有其他 Ou 的連結。
 
@@ -142,7 +142,7 @@ ms.locfileid: "97049166"
         >
         > 下列螢幕擷取畫面顯示的設定會封鎖內建本機和網域系統管理員帳戶的誤用，以及誤用內建的本機或網域系統管理員群組。 請注意，[ **拒絕登入遠端桌面服務** ] 使用者權限不包含 [系統管理員] 群組，因為在這項設定中包含此群組，也會針對屬於本機電腦的 Administrators 群組成員的帳戶封鎖這些登入。 如果電腦上的服務設定為在本節所述的任何特殊許可權群組內容中執行，則執行這些設定可能會導致服務和應用程式失敗。 因此，與本節中的所有建議相同，您應該在您的環境中徹底測試適用性的設定。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_88.gif)
+        ![顯示設定的螢幕擷取畫面，會封鎖內建本機和網域系統管理員帳戶的誤用。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_88.gif)
 
 #### <a name="step-by-step-instructions-to-grant-user-rights-to-the-administrators-group"></a>將使用者權限授與系統管理員群組的逐步指示
 
@@ -152,17 +152,17 @@ ms.locfileid: "97049166"
 
 3.  在主控台樹中，以滑鼠右鍵按一下 **群組原則物件**]，然後按一下 [ **新增**]。
 
-    ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)
+    ![顯示當您在群組原則物件上按一下滑鼠右鍵時所顯示功能表的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)
 
 4.  在 [ **新增 GPO** ] 對話方塊中，輸入 <GPO Name> ，然後按一下 **[確定]** (其中 <GPO Name> 是此 GPO) 的名稱。
 
-    ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)
+    ![顯示要在哪裡命名 G P O 的螢幕擷取畫面，讓您可以保護系統管理員群組。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)
 
 5.  在詳細資料窗格中，以滑鼠右鍵按一下 **<GPO Name>** ，然後按一下 [ **編輯**]。
 
 6.  流覽至 [ **電腦設定 \windows 設定] \ 使用者設置 \ 本機原則**，然後按一下 [ **使用者權限指派**]。
 
-    ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_91.gif)
+    ![顯示流覽位置的螢幕擷取畫面，讓您可以選取使用者權限管理員來保護系統管理員群組。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_91.gif)
 
 7.  藉由執行下列動作來設定使用者權限，讓 Administrators 群組的成員可以透過網路存取網域控制站：
 
@@ -172,7 +172,7 @@ ms.locfileid: "97049166"
 
     3.  按一下 [ **新增使用者或群組** ]，然後按一下 **[流覽]**。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_92.gif)
+        ![示範如何確認您已將使用者權限設定為允許 Administrators 群組成員透過網路存取網域控制站的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_92.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -184,7 +184,7 @@ ms.locfileid: "97049166"
 
     3.  輸入 [系統 **管理員**]，按一下 [檢查 **名稱**]，然後按一下 **[確定]**。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_93.gif)
+        ![顯示如何確認您已設定使用者權限以允許 Administrators 群組成員在本機登入的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_93.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -196,7 +196,7 @@ ms.locfileid: "97049166"
 
     3.  輸入 [系統 **管理員**]，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_94.gif)
+        ![螢幕擷取畫面，顯示如何確認您已設定使用者權限，讓系統管理員群組的成員可以透過遠端桌面服務登入。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_94.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -208,11 +208,11 @@ ms.locfileid: "97049166"
 
     2.  在 [網域控制站] OU 上按一下滑鼠右鍵，然後按一下 [ **連結到現有的 GPO**]。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_95.gif)
+        ![當您嘗試將 G P O 連結至網域控制站 OU 時，顯示 [連結現有的 GPO] 功能表選項的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_95.gif)
 
     3.  選取您剛才建立的 GPO，然後按一下 **[確定]**。
 
-        ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_96.gif)
+        ![顯示在將 G P O 連結至成員工作站和伺服器的時候，顯示您剛才建立之 GPO 的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_96.gif)
 
 #### <a name="verification-steps"></a>驗證步驟
 
@@ -227,13 +227,13 @@ ms.locfileid: "97049166"
 
 4.  當系統提示您核准提高許可權時，請按一下 **[是]**。
 
-    ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)
+    ![醒目顯示 [使用者帳戶控制] 對話方塊的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)
 
 5.  在 [**命令提示** 字元] 視窗中，輸入 **net use \\ \\ \<Server Name\> \c $**，其中 \<Server Name\> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。
 
 6.  下列螢幕擷取畫面顯示應出現的錯誤訊息。
 
-    ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_98.gif)
+    ![反白顯示登入失敗錯誤訊息的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_98.gif)
 
 ##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>確認「拒絕以批次工作登入」 GPO 設定
 從受 GPO 變更影響的任何成員伺服器或工作站，在本機登入。
@@ -277,7 +277,7 @@ ms.locfileid: "97049166"
 
 11. 輸入屬於系統管理員群組成員的帳戶名稱，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-12. 選取 **[執行]，不論使用者是否已記錄 onor** ，而且不 **儲存密碼**。 此工作將只能存取本機電腦資源。
+12. 選取 **[執行]，不論使用者是否登入** ，並 **不要儲存密碼**。 此工作將只能存取本機電腦資源。
 
 13. 按一下 [確定]。
 
@@ -287,7 +287,7 @@ ms.locfileid: "97049166"
 
 16. 應該會出現類似下列的對話方塊。
 
-    ![保護系統管理群組](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_99.gif)
+    ![醒目顯示 [工作排程器] 對話方塊的螢幕擷取畫面。](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_99.gif)
 
 ##### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>確認「拒絕以服務方式登入」 GPO 設定
 

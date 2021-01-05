@@ -1,18 +1,18 @@
 ---
 title: 管理 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows Server Essentials 隨附的伺服器和網路管理功能。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 4f1902f1-a0e0-49a6-afa7-3c4b61a11b48
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: ef68fc89a3a043df10eaade7916b4124542f0477
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 95d1d731162546873b86fd90786163c64f21b37f
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625960"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811145"
 ---
 # <a name="manage-windows-server-essentials"></a>管理 Windows Server Essentials
 

@@ -7,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: dd666023e7b53af72f63edf1750321317e08f527
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 68222bf7dc0b0882fd2c063e38f0fc9f2faf9588
+ms.sourcegitcommit: 3247e193d9fe1b57543fff215460a6d9db52f58b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049236"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97815017"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>使用 SQL Server 複寫設定地理位置冗余
 
@@ -32,13 +32,13 @@ ms.locfileid: "97049236"
 2. 確認 SQL Server Agent 服務正在執行，並設定為自動啟動
 
 3. 在主要 AD FS 節點上執行 [ **匯出 \- AdfsDeploymentSQLScript** ]，以建立 CreateDB .sql 和 SetPermissions .sql 檔案。  例如： `PS:\>Export-AdfsDeploymentSQLScript -DestinationFolder . –ServiceAccountName CONTOSO\gmsa1$` 。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql2.png)
+   ![顯示如何在主要 AD FS 節點上執行 Export-AdfsDeploymentSQLScript 的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql2.png)
 
 4. 將腳本複製到次要伺服器。  在 **sql Management Studio** 中開啟 CreateDB .sql 腳本，然後按一下 [ **執行**]。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql4.png)
+   ![顯示在 SQL Management Studio 中開啟 CreateDB .sql 腳本的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql4.png)
 
 5. 在 **sql Management Studio** 中開啟 SetPermissions .sql 腳本，然後按一下 [ **執行**]。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql6.png)
+   ![顯示在 SQL Management Studio 中開啟 SetPermissions .sql 腳本的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql6.png)
 
 
 
@@ -52,92 +52,92 @@ ms.locfileid: "97049236"
 > ## <a name="create-publisher-settings-on-the-initial-sql-server"></a>在初始 SQL Server 上建立發行者設定
 
 1. 從 SQL Server Management studio 的 [複寫] 下 **，以滑鼠** 按右鍵 [本機發行集 **]** ，然後選擇 [**新增發行** 
-    ![ 集 ...]。設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql7.png) </br>
+    ![ 集 ...]。顯示 [新增發行集] 功能表選項的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql7.png) </br>
 
 2. 在 [新增發行集] 頁面上，按 **[下一步**]。</br>
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql8.png) </br>
+   ![顯示 [新增發行集] 畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql8.png) </br>
 
 3. 在 **[** 散發者] 頁面上，選擇 [本機伺服器為散發者 **]**，然後按一下
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql9.png) </br>
+   ![顯示選擇本機伺服器作為散發者之位置的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql9.png) </br>
 
 4. 在 [ **快照** 集資料夾] 頁面上，輸入 \\ \SQL1\repldata 取代預設資料夾。 \(注意：您可能必須自行建立此共用 \) 。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql10.png) </br>
+   ![螢幕擷取畫面，顯示要在哪裡輸入預設快照集資料夾的路徑。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql10.png) </br>
 
 5. 選擇 **AdfsConfigurationV3** 做為發行集資料庫，然後按 **[下一步]**。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql11.png) </br>
+   ![顯示選擇 AdfsConfigurationV3 做為發行集資料庫之位置的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql11.png) </br>
 
 6. 在 [**發行集類型**] 中，選擇 [合併式 **發行** 集]，然後按 **[**
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql12.png) </br>
+   ![顯示位置的螢幕擷取畫面 ](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql12.png) </br>
 
 7. 在 **訂閱者類型** 上，選擇 **SQL Server 2008 或更新版本** ，然後按 **[下一步]**。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql13.png) </br>
+   ![顯示 SQL Server 2008 或更新版本之選擇位置的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql13.png) </br>
 
 8. **在 [發行** 項] 頁面上，選取 [**資料表]** 節點來選取所有資料表，然後取消核取 [不應複寫 **\- SyncProperties** 資料表] \(\)</br>
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql14.png) </br>
+   ![顯示清除 SyncProperties (IdentityServerPolicy) 核取方塊的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql14.png) </br>
 
 9. **在 [發行** 項] 頁面上，選取 [**使用者定義函數**] 節點以選取所有使用者定義函數，然後按一下 **[下一步]**。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql15.png) </br>
+   ![顯示要在哪裡選取 [使用者定義函數] 核取方塊的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql15.png) </br>
 
 10. 在 [ **發行項問題** ] 頁面上按 **[下一步]**。
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql16.png) </br>
+    ![顯示文章問題畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql16.png) </br>
 
 11. 在 [篩選資料表的資料列] 頁面上，按一下 [下一步]。
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql17.png) </br>
+    ![顯示 [篩選資料表的資料列] 畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql17.png) </br>
 12. 在 [**快照集代理程式**] 頁面上，選擇 [立即] 和 [14 天] 的預設值，按 **[下一步**
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql18.png) </br>
+    ![顯示快照集代理程式畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql18.png) </br>
     您可能需要為 SQL 代理程式建立網域帳戶。 使用為 [網域帳戶設定 sql 登入 CONTOSO \\ sqlagent](Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md#sqlagent) 中的步驟，為這個新的 AD 使用者建立 sql 登入，並指派特定的許可權。
 
 13. 在 [ **代理程式安全性** ] 頁面上，按一下 [ **安全性設定** ]，並輸入 \/ \( 非 GMSA 為 SQL 代理程式建立之網域帳戶的使用者名稱密碼 \) ，然後按一下 **[確定]**。  按一下 [下一步] 。
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql19.png) </br>
+    ![顯示要在哪裡輸入網域帳戶的使用者名稱和密碼的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql19.png) </br>
 
 14. 在 [ **嚮導動作]** 頁面上，按 **[下一步]**。
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql20.png) </br>
+    ![顯示嚮導動作畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql20.png) </br>
 
 15. 在 [ **完成嚮導]** 頁面上，輸入您的發行集名稱，然後按一下 **[完成]**。
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql21.png) </br>
+    ![顯示您輸入發行集名稱的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql21.png) </br>
 
 16. 建立發行集之後，您應該會看到成功的狀態。  按一下 [關閉]  。
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql22.png) </br>
+    ![顯示成功完成發行集的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql22.png) </br>
 
 17. 回到 SQL Server Management Studio 中，以滑鼠右鍵按一下新的發行集，然後按一下 [ **啟動複寫監視器**]。
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql23.png) </br>
+    ![顯示 [啟動複寫監視器] 功能表選項的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql23.png) </br>
 
 ## <a name="create-subscription-settings-on-the-replica-sql-server"></a>在複本 SQL Server 上建立訂用帳戶設定
 請確定您已在初始 SQL Server 上建立發行者設定，如上所述，然後完成下列程式：
 
-1. 在 [複本 SQL Server，從 SQL Server Management studio] 的 [複寫] 下，以滑鼠右鍵按一下 [**本機訂閱** **]，然後** 選擇 [**新增訂閱**]。![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql24.png) </br>
+1. 在 [複本 SQL Server，從 SQL Server Management studio] 的 [複寫] 下，以滑鼠右鍵按一下 [**本機訂閱** **]，然後** 選擇 [**新增訂閱**]。![顯示要在哪裡選取新訂用帳戶的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql24.png) </br>
 
 2. 在 [ **新增訂閱嚮導]** 頁面上，按 **[下一步**]。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql25.png) </br>
+   ![顯示 [新增訂用帳戶] 畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql25.png) </br>
 
 3. 在 [ **發行** 集] 頁面上，從下拉式清單中選取 [發行者]。  展開 [ **AdfsConfigurationV3** ]，並選取上面建立的發行集名稱，然後按 **[下一步]**。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql26.png) </br>
+   ![顯示在哪裡展開 AdfsConfigurationV3，並選取您所建立之發行集名稱的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql26.png) </br>
 
 4. 在 [**合併代理程式位置**] 頁面上，選取 [**在訂閱者 \( 提取訂閱 \) 上執行每個代理程式** \( ] 預設值 \) ，然後按 **[下一步**
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql27.png) </br> 這和下面的訂用帳戶類型會決定衝突解決邏輯。 \(如需詳細資訊，請參閱偵測 [和解決合併](/sql/relational-databases/replication/merge/advanced-merge-replication-conflict-detection-and-resolution)式複寫衝突。 </br>
+   ![顯示在訂閱者上執行每個代理程式的螢幕擷取畫面 (提取訂閱) 選項。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql27.png) </br> 這和下面的訂用帳戶類型會決定衝突解決邏輯。 \(如需詳細資訊，請參閱偵測 [和解決合併](/sql/relational-databases/replication/merge/advanced-merge-replication-conflict-detection-and-resolution)式複寫衝突。 </br>
 
 5. 在 [ **訂閱者** ] 頁面上，選取 **AdfsConfigurationV3** 作為訂閱者資料庫，然後按 **[下一步]**。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql28.png) </br>
+   ![顯示 [訂閱者] 畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql28.png) </br>
 
 6. 在 [ **合併代理程式安全性** ] 頁面上，按一下 [ **...** ]，然後使用省略號方塊輸入網域帳戶的使用者名稱和密碼，而 \( 不是 \) 針對 SQL 代理程式所建立的 GMSA，然後按 [ **下一步]**。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql30.png) </br>
+   ![顯示 [合併代理程式安全性] 畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql30.png) </br>
 
 7. 在 **[同步處理排程**] 上，選擇 [**連續執行**]，然後按 **[下一**
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql31.png) </br>
+   ![顯示要在哪裡選取 [連續執行] 的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql31.png) </br>
 
 8. 在 [ **初始化訂閱**] 上，按 **[下一步]**。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql32.png) </br>
+   ![顯示 [初始化訂閱] 畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql32.png) </br>
 
 9. 在 **訂** 用帳戶類型上，選擇 [ **用戶端** **]**，然後按
 
    這種情況的含意記載于[](/sql/relational-databases/replication/subscribe-to-publications)[此處](/sql/relational-databases/replication/merge/advanced-merge-replication-conflict-detection-and-resolution)。  基本上，我們會採用簡單的「第一次到發行者獲勝」衝突解決方式，而不需要重新發佈給其他訂閱者。
-   ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql33.png) </br>
+   ![顯示訂用帳戶類型畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql33.png) </br>
 
 10. 在 [ **嚮導動作]** 頁面上，確定已核取 **[建立訂閱** ]，然後按一下 **[下一步]**。
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql34.png) </br>
+    ![螢幕擷取畫面，顯示確認已選取 [建立訂用帳戶] 選項的位置。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql34.png) </br>
 
 11. 在 [ **完成嚮導]** 頁面上，按一下 **[完成**]。
-    ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql35.png) </br>
+    ![顯示完成嚮導畫面的螢幕擷取畫面。](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql35.png) </br>
 
 12. 訂用帳戶完成建立程式之後，您應該會看到成功。 按一下 [關閉]  。
     ![設定地理位置冗余](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql36.png) </br>

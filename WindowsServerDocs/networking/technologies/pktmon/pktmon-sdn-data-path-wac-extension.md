@@ -1,18 +1,18 @@
 ---
-title: Windows Admin Center 中的 SDN 資料路徑診斷延伸模組
+title: Windows Admin Center 中的 SDN 資料路徑診斷擴充功能
 description: 您可以使用本主題，利用 Windows Admin Center 中的 SDN 資料路徑診斷延伸模組，將以封包監視器為基礎的封包捕獲自動化
 ms.topic: how-to
 author: khdownie
 ms.author: v-kedow
 ms.date: 11/12/2020
-ms.openlocfilehash: 9b1a247e0d07a4e44ba7640aa2e95180956ccee8
-ms.sourcegitcommit: 8808f871c8cf131f819ef5540286218bd425da96
+ms.openlocfilehash: 54a65147847a28a9820589521f7c94ea1c4b08cd
+ms.sourcegitcommit: b0c10eaffaa5de3eeff44c433580b41270c27d32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94632451"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97826175"
 ---
-# <a name="sdn-data-path-diagnostics-extension-in-windows-admin-center"></a>Windows Admin Center 中的 SDN 資料路徑診斷延伸模組
+# <a name="sdn-data-path-diagnostics-extension-in-windows-admin-center"></a>Windows Admin Center 中的 SDN 資料路徑診斷擴充功能
 
 >適用于： Windows Server (半年通道) 、Windows Server 2019、Windows 10、Azure Stack HCI、Azure Stack Hub、Azure
 
@@ -32,14 +32,14 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
   2. 選擇新增 Hyper-Converged 叢集連接。
   3. 輸入叢集的名稱，並在出現提示時，輸入要使用的認證。
   4. 核取 **[設定網路控制** 站繼續]。
-  5. 輸入網路控制站 URI，然後按一下 [ **驗證** ]。
+  5. 輸入網路控制站 URI，然後按一下 [ **驗證**]。
   6. 按一下 [ **新增** ] 以完成。
 
 叢集將會新增至連接清單。 按一下以啟動儀表板。
 
 <center>
 
-:::image type="content" source="media/add-sdn-enabled-hci-connection.png" alt-text="使用 Windows Admin Center 新增 SDN 啟用的 HCI 連接" border="true":::
+:::image type="content" source="media/add-sdn-enabled-hci-connection.png" alt-text="使用 Windows Admin Center 新增 SDN 啟用的 HCI 連接" border="true" lightbox="media/add-sdn-enabled-hci-connection.png":::
 
 </center>
 
@@ -53,7 +53,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-main-page.png" alt-text="SDN 監視-診斷案例頁面" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-main-page.png" alt-text="SDN 監視-診斷案例頁面" border="true" lightbox="media/sdn-data-path-diagnostics-main-page.png":::
 
 </center>
 
@@ -63,7 +63,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-scenario-parameters.png" alt-text="SDN 監視-捕捉條件頁面" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-scenario-parameters.png" alt-text="SDN 監視-捕捉條件頁面" border="true" lightbox="media/sdn-data-path-diagnostics-scenario-parameters.png":::
 
 </center>
 
@@ -73,7 +73,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-loading-wheel2.png" alt-text="啟動封包捕獲" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-loading-wheel2.png" alt-text="啟動封包捕獲" border="true" lightbox="media/sdn-data-path-diagnostics-loading-wheel2.png":::
 
 </center>
 
@@ -81,7 +81,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-log.png" alt-text="停止捕獲後的資料路徑診斷記錄" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-log.png" alt-text="停止捕獲後的資料路徑診斷記錄" border="true" lightbox="media/sdn-data-path-diagnostics-log.png":::
 
 </center>
 
@@ -102,7 +102,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-details-page.png" alt-text="資料路徑診斷詳細資料頁面" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-details-page.png" alt-text="資料路徑診斷詳細資料頁面" border="true" lightbox="media/sdn-data-path-diagnostics-details-page.png":::
 
 </center>
 
@@ -110,7 +110,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-details-page-with-pane1.png" alt-text="查看特定躍點的詳細資料" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-details-page-with-pane1.png" alt-text="查看特定躍點的詳細資料" border="true" lightbox="media/sdn-data-path-diagnostics-details-page-with-pane1.png":::
 
 </center>
 
@@ -118,7 +118,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-details-page-with-pane-raw-packet1.png" alt-text="查看特定躍點的原始封包詳細資料" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-details-page-with-pane-raw-packet1.png" alt-text="查看特定躍點的原始封包詳細資料" border="true" lightbox="media/sdn-data-path-diagnostics-details-page-with-pane-raw-packet1.png":::
 
 </center>
 
@@ -132,7 +132,7 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-display-filters.png" alt-text="使用顯示篩選篩選記錄" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-display-filters.png" alt-text="使用顯示篩選篩選記錄" border="true" lightbox="media/sdn-data-path-diagnostics-display-filters.png":::
 
 </center>
 
@@ -147,6 +147,6 @@ Windows Admin Center 是在本機部署、以瀏覽器為基礎的管理工具�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-save.png" alt-text="在本機儲存記錄" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-save.png" alt-text="在本機儲存記錄" border="true" lightbox="media/sdn-data-path-diagnostics-save.png":::
 
 </center>

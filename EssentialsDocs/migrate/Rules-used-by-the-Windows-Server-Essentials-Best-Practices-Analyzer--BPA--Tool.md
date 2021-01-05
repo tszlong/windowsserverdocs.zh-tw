@@ -1,18 +1,18 @@
 ---
 title: Windows Server Essentials 最佳做法分析器 (BPA) 工具所使用的規則
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows Server Essentials 最佳做法分析程式 (BPA) 工具所使用的規則。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 37e1dae7-586c-4dd7-bf83-7e14a9567c8f
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 231fad84ecb5ac5831d4d638af7bd8fbe0281b04
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8689a04c693f463d99889e6d7bdc3f5f21ea5c2e
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625548"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810625"
 ---
 # <a name="rules-used-by-the-windows-server-essentials-best-practices-analyzer-bpa-tool"></a>Windows Server Essentials 最佳做法分析器 (BPA) 工具所使用的規則
 
@@ -27,9 +27,9 @@ ms.locfileid: "89625548"
 
 1.  以系統管理員身分登入伺服器，然後開啟 [儀表板]。
 
-2.  在儀表板上，按一下 [裝置]**** 索引標籤。
+2.  在儀表板上，按一下 [裝置] 索引標籤。
 
-3.  在 **[伺服器工作]** 窗格中，按一下 [最佳做法分析程式]****。
+3.  在 **[伺服器工作]** 窗格中，按一下 [最佳做法分析程式]。
 
 4.  如有必要，請檢閱每個 BPA 訊息，並遵循指示來解決問題。
 
@@ -48,9 +48,9 @@ ms.locfileid: "89625548"
 
 2.  巡覽至 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters。
 
-3.  以滑鼠右鍵按一下 [EnableSecurityFilters]****，然後按一下 [修改]****。
+3.  以滑鼠右鍵按一下 [EnableSecurityFilters]，然後按一下 [修改]。
 
-4.  在 **[編輯 DWORD (32 位元) 值]** 視窗中，將 **[數值資料]** 欄位變更為零，然後按一下 [確定]****。
+4.  在 **[編輯 DWORD (32 位元) 值]** 視窗中，將 **[數值資料]** 欄位變更為零，然後按一下 [確定]。
 
 5.  重新啟動伺服器以套用變更。
 
@@ -67,7 +67,7 @@ ms.locfileid: "89625548"
 
 2.  以滑鼠右鍵按一下 [**分散式交易協調器**] 服務，然後按一下 [**內容**]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動 (延遲開始)]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動 (延遲開始)]，然後按一下 [確定]。
 
 ### <a name="the-netlogon-service-should-be-configured-to-start-automatically-by-default"></a>Netlogon 服務應該設定為依預設自動啟動
  **問題：** Netlogon 服務未設定為自動啟動。
@@ -80,9 +80,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Netlogon]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [Netlogon] 服務，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
 ### <a name="the-dns-client-service-should-be-configured-to-start-automatically-by-default"></a>DNS 用戶端服務應該設定為依預設自動啟動
  **問題：**  DNS 用戶端服務未設定為自動啟動。
@@ -95,9 +95,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [DNS 用戶端]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [DNS 用戶端] 服務，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
 ### <a name="the-dns-server-service-should-be-configured-to-start-automatically-by-default"></a>DNS 伺服器服務應該設定為依預設自動啟動
  **問題：**  DNS 伺服器服務未設定為自動啟動。
@@ -110,9 +110,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [DNS 伺服器]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [DNS 伺服器] 服務，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
 ### <a name="active-directory-web-services-is-not-set-to-the-default-start-mode"></a>Active Directory Web 服務未設定為預設的啟動模式
  **問題：**  Active Directory Web 服務未設定為預設的自動啟動模式。
@@ -125,9 +125,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Active Directory Web 服務]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [Active Directory Web 服務] 服務，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
 ### <a name="the-dhcp-client-service-should-be-configured-to-start-automatically-by-default"></a>DHCP 用戶端服務應該設定為依預設自動啟動
  **問題：**  DHCP 用戶端服務未設定為自動啟動。
@@ -140,9 +140,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [DHCP 用戶端]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [DHCP 用戶端] 服務，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
 ### <a name="the-iis-admin-service-should-be-configured-to-start-automatically-by-default"></a>IIS Admin Service 應該設定為依預設自動啟動
  **問題：** 未將 IIS 管理服務設定為自動啟動。
@@ -155,9 +155,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [IIS Admin Service]****，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [IIS Admin Service]，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
 ### <a name="the-world-wide-web-publishing-service-should-be-configured-to-start-automatically-by-default"></a>World Wide Web Publishing 服務應該設定為依預設自動啟動
  **問題：**  World Wide Web 發行服務未設定為自動啟動。
@@ -170,9 +170,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [World Wide Web Publishing 服務]****，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [World Wide Web Publishing 服務]，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
 ### <a name="the-remote-registry-service-should-be-configured-to-start-automatically-by-default"></a>遠端登錄服務應該設定為依預設自動啟動
  **問題：**  遠端登入服務未設定為自動啟動。
@@ -187,9 +187,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [遠端登錄]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [遠端登錄] 服務，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
 ### <a name="the-remote-desktop-gateway-service-should-be-configured-to-start-automatically-by-default"></a>遠端桌面閘道服務應該設定為依預設自動啟動
  **問題：**  遠端桌面閘道服務未設定為自動啟動。
@@ -202,9 +202,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [遠端桌面閘道]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [遠端桌面閘道] 服務，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動 (延遲開始)]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動 (延遲開始)]，然後按一下 [確定]。
 
 ### <a name="the-windows-time-service-should-be-configured-to-start-automatically-by-default"></a>Windows 時間服務應該設定為依預設自動啟動
  **問題：**  Windows 時間服務未設定為自動啟動。
@@ -217,9 +217,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Windows 時間]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [Windows 時間] 服務，然後按一下 [屬性]。
 
-3.  在 [一般]**** 索引標籤上，將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  在 [一般] 索引標籤上，將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
 ### <a name="the-distributed-transaction-coordinator-msdtc-service-should-be-started"></a>分散式交易協調器 (MSDTC) 服務應該要啟動
  **問題：**  MSDTC 服務未在伺服器上執行。
@@ -232,7 +232,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [分散式交易協調器]**** 服務，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [分散式交易協調器] 服務，然後按一下 [啟動]。
 
 ### <a name="the-netlogon-service-should-be-started"></a>Netlogon 服務應該要啟動
  **問題：**  Netlogon 服務未在伺服器上執行。
@@ -245,7 +245,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Netlogon]**** 服務，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [Netlogon] 服務，然後按一下 [啟動]。
 
 ### <a name="the-dns-client-service-should-be-started"></a>DNS 用戶端服務應該要啟動
  **問題：**  DNS 用戶端服務未在伺服器上執行。
@@ -258,7 +258,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [DNS 用戶端]**** 服務，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [DNS 用戶端] 服務，然後按一下 [啟動]。
 
 ### <a name="the-dns-server-service-should-be-started"></a>DNS 伺服器服務應該要啟動
  **問題：**  DNS 伺服器服務未在伺服器上執行。
@@ -271,7 +271,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [DNS 伺服器]**** 服務，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [DNS 伺服器] 服務，然後按一下 [啟動]。
 
 ### <a name="active-directory-web-services-is-not-started"></a>Active Directory Web 服務未啟動
  **問題：**  未啟動 Active Directory Web 服務。
@@ -284,7 +284,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Active Directory Web 服務]****，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [Active Directory Web 服務]，然後按一下 [啟動]。
 
 ### <a name="the-dhcp-client-service-should-be-started"></a>DHCP 用戶端服務應該要啟動
  **問題：**  DHCP 用戶端服務未在伺服器上執行。
@@ -297,7 +297,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [DHCP 用戶端]**** 服務，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [DHCP 用戶端] 服務，然後按一下 [啟動]。
 
 ### <a name="the-iis-admin-service-should-be-started"></a>IIS Admin Service 應該要啟動
  **問題：**  IIS 管理服務未在伺服器上執行。
@@ -310,7 +310,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [IIS Admin Service]****，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [IIS Admin Service]，然後按一下 [啟動]。
 
 ### <a name="the-world-wide-web-publishing-service-should-be-started"></a>World Wide Web Publishing 服務應該要啟動。
  **問題：**  World Wide Web 發行服務未在伺服器上執行。
@@ -323,7 +323,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [World Wide Web Publishing 服務]****，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [World Wide Web Publishing 服務]，然後按一下 [啟動]。
 
 ### <a name="the-remote-desktop-gateway-service-should-be-started"></a>遠端桌面閘道服務應該要啟動
  **問題：**  伺服器上未執行遠端桌面閘道服務。
@@ -336,7 +336,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [遠端桌面閘道]**** 服務，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [遠端桌面閘道] 服務，然後按一下 [啟動]。
 
 ### <a name="the-windows-time-service-should-be-started"></a>Windows 時間服務應該要啟動
  **問題：**  Windows Time 服務未在伺服器上執行。
@@ -349,7 +349,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Windows 時間]**** 服務，然後按一下 [啟動]****。
+2.  以滑鼠右鍵按一下 [Windows 時間] 服務，然後按一下 [啟動]。
 
 ### <a name="the-distributed-transaction-coordinator-msdtc-service-logon-account-should-be-nt-authoritynetwork-service"></a>分散式交易協調器 (MSDTC) 服務登入帳戶應該是 NT AUTHORITY\Network Service
  **問題：**  分散式交易協調器 (MSDTC) 服務的預設登入帳戶已變更。
@@ -364,7 +364,7 @@ ms.locfileid: "89625548"
 
 2.  以滑鼠右鍵按一下 [**分散式交易協調器**] 服務，然後按一下 [**內容**]。
 
-3.  在 [登入]**** 索引標籤中，選取 [此帳戶]****，輸入 **NT AUTHORITY\Network Service**，然後按一下 [確定]****。
+3.  在 [登入] 索引標籤中，選取 [此帳戶]，輸入 **NT AUTHORITY\Network Service**，然後按一下 [確定]。
 
 ### <a name="the-netlogon-service-should-use-the-local-system-account-as-its-logon-account"></a>Netlogon 服務應使用本機系統帳戶做為其登入帳戶
  **問題：**  Netlogon 服務的預設登入帳戶已變更。
@@ -377,9 +377,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Netlogon]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [Netlogon] 服務，然後按一下 [屬性]。
 
-3.  在 [登入]**** 索引標籤中選取 [本機系統帳戶]****。
+3.  在 [登入] 索引標籤中選取 [本機系統帳戶]。
 
 ### <a name="the-dns-client-service-should-use-the-nt-authoritynetwork-service-account-as-its-logon-account"></a>DNS 用戶端服務應該使用 NT AUTHORITY\Network Service 帳戶做為其登入帳戶
  **問題：**  DNS 用戶端服務的預設登入帳戶已變更。
@@ -392,9 +392,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [DNS 用戶端]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [DNS 用戶端] 服務，然後按一下 [屬性]。
 
-3.  在 [登入]**** 索引標籤中，選取 [此帳戶]****，然後輸入 **NT AUTHORITY\Network Service**。
+3.  在 [登入] 索引標籤中，選取 [此帳戶]，然後輸入 **NT AUTHORITY\Network Service**。
 
 ### <a name="the-dns-server-service-should-use-the-local-system-account-as-its-logon-account"></a>DNS 伺服器服務應使用本機系統帳戶做為其登入帳戶
  **問題：**  DNS 伺服器服務的預設登入帳戶已變更。
@@ -407,12 +407,12 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc
 
-2.  以滑鼠右鍵按一下 [DNS 伺服器]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [DNS 伺服器] 服務，然後按一下 [屬性]。
 
-3.  在 [登入]**** 索引標籤中選取 [本機系統帳戶]****。
+3.  在 [登入] 索引標籤中選取 [本機系統帳戶]。
 
 ### <a name="active-directory-web-services-is-not-the-default-logon-account"></a>Active Directory Web 服務不是預設登入帳戶
- **問題：**  Active Directory Web 服務並不是預設的登入帳戶。 根據預設，登入帳戶設定為**本機系統帳戶**。
+ **問題：**  Active Directory Web 服務並不是預設的登入帳戶。 根據預設，登入帳戶設定為 **本機系統帳戶**。
 
  **影響：**  未啟動 Active Directory Web 服務 (ADWS) 。 如果伺服器上的 ADWS 已停止或停用，則 Windows PowerShell 的 Active Directory 模組或 Active Directory 管理中心這類的用戶端應用程式，就無法存取或管理在此伺服器上執行的目錄服務執行個體。 如需詳細資訊，請參閱 Windows Server 技術文件庫中 [AD DS： Active Directory Web 服務 (的新功能](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) https://technet.microsoft.com/library/dd391908(WS.10).aspx) 。
 
@@ -422,13 +422,13 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Active Directory Web 服務]****，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [Active Directory Web 服務]，然後按一下 [屬性]。
 
-3.  將 [啟動類型]**** 變更為 [自動]****，然後按一下 [確定]****。
+3.  將 [啟動類型] 變更為 [自動]，然後按一下 [確定]。
 
-4.  在 Active Directory Web 服務的 [屬性]**** 中，按一下 [登入]**** 索引標籤。
+4.  在 Active Directory Web 服務的 [屬性] 中，按一下 [登入] 索引標籤。
 
-5.  選取 [本機系統帳戶]**** 選項，然後按一下 [確定]****。
+5.  選取 [本機系統帳戶] 選項，然後按一下 [確定]。
 
 ### <a name="the-windows-update-service-should-use-the-local-system-account-as-its-logon-account"></a>Windows Update 服務應使用本機系統帳戶做為其登入帳戶
  **問題：**  自動更新服務的預設登入帳戶已變更。
@@ -441,9 +441,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Windows Update]**** 服務，然後按一下 [屬性]。
+2.  以滑鼠右鍵按一下 [Windows Update] 服務，然後按一下 [屬性]。
 
-3.  在 [登入]**** 索引標籤中選取 [本機系統帳戶]****。
+3.  在 [登入] 索引標籤中選取 [本機系統帳戶]。
 
 ### <a name="the-dhcp-client-service-should-use-the-nt-authoritylocalservice-account-as-its-logon-account"></a>DHCP 用戶端服務應該使用 NT AUTHORITY\LocalService 帳戶做為其登入帳戶
  **問題：**  DHCP 用戶端服務的預設登入帳戶已變更。
@@ -456,9 +456,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [DHCP 用戶端]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [DHCP 用戶端] 服務，然後按一下 [屬性]。
 
-3.  在 [登入]**** 索引標籤中，選取 [此帳戶]****，然後輸入** NT AUTHORITY\Local Service**。
+3.  在 [登入] 索引標籤中，選取 [此帳戶]，然後輸入 **NT AUTHORITY\Local Service**。
 
 ### <a name="the-iis-admin-service-should-use-the-local-system-account-as-its-logon-account"></a>IIS Admin Service 應該使用本機系統帳戶做為其登入帳戶
  **問題：**  IIS Admin 服務的預設登入帳戶已變更。
@@ -471,9 +471,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 IIS Admin Service]****，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 IIS Admin Service]，然後按一下 [屬性]。
 
-3.  在 [登入]**** 索引標籤中選取 [本機系統帳戶]****。
+3.  在 [登入] 索引標籤中選取 [本機系統帳戶]。
 
 ### <a name="the-world-wide-web-publishing-service-should-use-the-local-system-account-as-its-logon-account"></a>World Wide Web Publishing 服務應該使用本機系統帳戶做為其登入帳戶
  **問題：**  World Wide Web 發行服務的預設登入帳戶已變更。
@@ -486,9 +486,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [World Wide Web Publishing 服務]****，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [World Wide Web Publishing 服務]，然後按一下 [屬性]。
 
-3.  在 [登入]**** 索引標籤中選取 [本機系統帳戶]****。
+3.  在 [登入] 索引標籤中選取 [本機系統帳戶]。
 
 ### <a name="the-remote-desktop-gateway-service-should-use-the-nt-authoritynetwork-service-account-as-its-logon-account"></a>遠端桌面閘道服務應該使用 NT AUTHORITY\Network Service 帳戶做為其登入帳戶
  **問題：**  遠端桌面閘道服務的預設登入帳戶已變更。
@@ -501,9 +501,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [遠端桌面閘道]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [遠端桌面閘道] 服務，然後按一下 [屬性]。
 
-3.  在 [登入]**** 索引標籤中，選取 [此帳戶]****，然後輸入 **NT AUTHORITY\Network Service**。
+3.  在 [登入] 索引標籤中，選取 [此帳戶]，然後輸入 **NT AUTHORITY\Network Service**。
 
 ### <a name="the-windows-time-service-should-use-the-nt-authoritynetwork-service-account-as-its-logon-account"></a>Windows 時間服務應該使用 NT AUTHORITY\Network Service 帳戶做為其登入帳戶
  **問題：**  Windows 時間服務的預設登入帳戶已變更。
@@ -516,9 +516,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 services.msc。
 
-2.  以滑鼠右鍵按一下 [Windows 時間]**** 服務，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 [Windows 時間] 服務，然後按一下 [屬性]。
 
-3.  在 [登入]**** 索引標籤中，選取 [此帳戶]****，然後輸入** NT AUTHORITY\Local Service**。
+3.  在 [登入] 索引標籤中，選取 [此帳戶]，然後輸入 **NT AUTHORITY\Local Service**。
 
 ### <a name="the-built-in-administrators-group-does-not-have-the-right-to-log-on-as-batch-job"></a>內建的系統管理員群組沒有權限以批次工作登入
  **問題：**  內建的 Administrators 群組沒有以批次工作登入的許可權。
@@ -538,9 +538,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟控制台。
 
-2.  在 [控制台] 中按一下 [系統及安全性]****，然後按一下 [Windows 防火牆]****。
+2.  在 [控制台] 中按一下 [系統及安全性]，然後按一下 [Windows 防火牆]。
 
-3.  在 [Windows 防火牆] 按一下 [開啟或關閉 Windows 防火牆]****，選取 [開啟 Windows 防火牆]**** 選項，然後按一下 [確定]****。
+3.  在 [Windows 防火牆] 按一下 [開啟或關閉 Windows 防火牆]，選取 [開啟 Windows 防火牆] 選項，然後按一下 [確定]。
 
 ### <a name="the-internal-network-adapter-is-not-configured-to-register-ip-address-in-dns"></a>內部網路介面卡未設定為在 DNS 中登錄 IP 位址
  **問題：**  內部網路介面卡未設定為在 DNS 中登錄其 IP 位址。
@@ -554,7 +554,7 @@ ms.locfileid: "89625548"
 
  **影響：**  您可能無法依名稱存取網際網路資源。
 
- **解決方式：**  將 RecursionTimeout 登錄機碼的值設定為大於 ForwardingTimeout 機碼的值，位於登錄中的 HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DNS\Parameters。
+ **解決方式：**  將 RecursionTimeout 登錄機碼的值設定為大於 ForwardingTimeout 機碼的值，位於 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters 的登錄中。
 
 ### <a name="the-forward-dns-zone-for-your-active-directory-domain-does-not-allow-secure-updates"></a>Active Directory 網域的正向 DNS 區域不允許安全更新
  **問題：**  您應該將正向對應區域設定成隻允許安全的動態更新。
@@ -567,9 +567,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 dnsmgmt.msc。
 
-2.  以滑鼠右鍵按一下您 Active Directory 網域的正向對應區域，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下您 Active Directory 網域的正向對應區域，然後按一下 [屬性]。
 
-3.  在 [動態更新]**** 下拉式清單中選取 [只有安全的]****，然後按一下 [確定]****。
+3.  在 [動態更新] 下拉式清單中選取 [只有安全的]，然後按一下 [確定]。
 
 ### <a name="the-forward-dns-zone-does-not-allow-secure-updates"></a>正向 DNS 區域不允許安全更新
  **問題：**  您應該為 _msdcs. * 區域設定正向對應區域，以只允許安全的動態更新。
@@ -582,9 +582,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 dnsmgmt.msc。
 
-2.  以滑鼠右鍵按一下 _msdcs 區域的正向對應區域，然後按一下 [屬性]****。
+2.  以滑鼠右鍵按一下 _msdcs 區域的正向對應區域，然後按一下 [屬性]。
 
-3.  在 [動態更新]**** 下拉式清單中選取 [只有安全的]****，然後按一下 [確定]****。
+3.  在 [動態更新] 下拉式清單中選取 [只有安全的]，然後按一下 [確定]。
 
 ### <a name="internet-explorer-enhanced-security-configuration-is-not-enabled"></a>Internet Explorer 增強式安全性設定未啟用。
  **問題：**  Internet Explorer 的增強式安全性設定 (IE ESC) 目前未啟用系統管理員群組。
@@ -595,9 +595,9 @@ ms.locfileid: "89625548"
 
 ##### <a name="to-enable-internet-explorer-enhanced-security-configuration"></a>啟用 Internet Explorer 增強式安全性設定
 
-1.  開啟伺服器上的 [伺服器管理員]**** ，然後按一下 [本機伺服器]****。
+1.  開啟伺服器上的 [伺服器管理員] ，然後按一下 [本機伺服器]。
 
-2.  在 [屬性]**** 窗格中，將 [IE 增強式安全性設定]**** 的設定變更為 [啟用]****，然後按一下 [確定]****。
+2.  在 [屬性] 窗格中，將 [IE 增強式安全性設定] 的設定變更為 [啟用]，然後按一下 [確定]。
 
 ### <a name="internet-explorer-enhanced-security-configuration-is-not-enabled"></a>Internet Explorer 增強式安全性設定未啟用。
  **問題：**  Internet Explorer 增強式安全性設定 (IE ESC) 目前未針對使用者群組啟用。
@@ -608,9 +608,9 @@ ms.locfileid: "89625548"
 
 ##### <a name="to-enable-internet-explorer-enhanced-security-configuration"></a>啟用 Internet Explorer 增強式安全性設定
 
-1.  開啟 [伺服器管理員]****，然後按一下 [本機伺服器]****。
+1.  開啟 [伺服器管理員]，然後按一下 [本機伺服器]。
 
-2.  在 [屬性]**** 窗格中，將 [IE 增強式安全性設定]**** 的設定變更為 [啟用]****，然後按一下 [確定]****。
+2.  在 [屬性] 窗格中，將 [IE 增強式安全性設定] 的設定變更為 [啟用]，然後按一下 [確定]。
 
 ### <a name="the-source-server-remains-in-active-directory-sites-and-services"></a>來源伺服器仍留在 Active Directory 網站及服務中
  **問題：**  執行 Windows Small Business Server 的來源伺服器仍存在於預設的網站名稱中 Active Directory 網站和服務中。
@@ -637,7 +637,7 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 open gpmc.msc。
 
-2.  在 [群組原則管理員] 中，展開網域樹系，並從主控台樹狀目錄搜尋 [預設網域原則]**** 群組原則物件。
+2.  在 [群組原則管理員] 中，展開網域樹系，並從主控台樹狀目錄搜尋 [預設網域原則] 群組原則物件。
 
 3.  如果原則沒有出現在樹狀目錄中，請從系統狀態備份中還原。
 
@@ -652,11 +652,11 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 dnsmgmt.msc。
 
-2.  在 [DNS 管理員] 中，以滑鼠右鍵按一下 Active Directory 網域的正向對應區域，然後按一下 [屬性]****。
+2.  在 [DNS 管理員] 中，以滑鼠右鍵按一下 Active Directory 網域的正向對應區域，然後按一下 [屬性]。
 
-3.  在 [名稱伺服器]**** 索引標籤上，確認設定是否正確。
+3.  在 [名稱伺服器] 索引標籤上，確認設定是否正確。
 
-4.  進行任何必要的變更，然後按一下 [確定]**** 以儲存設定。
+4.  進行任何必要的變更，然後按一下 [確定] 以儲存設定。
 
 ### <a name="no-dns-name-server-records"></a>沒有 DNS 名稱伺服器記錄
  **問題：**  您伺服器的 _msdcs 區域中沒有 DNS 名稱伺服器 (NS) 資源記錄 (例如： _msdcs. 本機) 。
@@ -669,11 +669,11 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 dnsmgmt.msc。
 
-2.  在 [DNS 管理員] 中，以滑鼠右鍵按一下 _msdcs 區域的正向對應區域，然後按一下 [屬性]****。
+2.  在 [DNS 管理員] 中，以滑鼠右鍵按一下 _msdcs 區域的正向對應區域，然後按一下 [屬性]。
 
-3.  在 [名稱伺服器]**** 索引標籤上，確認設定是否正確。
+3.  在 [名稱伺服器] 索引標籤上，確認設定是否正確。
 
-4.  進行任何必要的變更，然後按一下 [確定]**** 以儲存設定。
+4.  進行任何必要的變更，然後按一下 [確定] 以儲存設定。
 
 ### <a name="no-dns-name-server-records"></a>沒有 DNS 名稱伺服器記錄
  **問題：**  委派 _msdcs 正向對應區域沒有 DNS 名稱伺服器 (NS) 資源記錄。
@@ -686,15 +686,15 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 dnsmgmt.msc。
 
-2.  在 [DNS 管理員] 中，依序展開您的伺服器名稱及 [正向對應區域]****。
+2.  在 [DNS 管理員] 中，依序展開您的伺服器名稱及 [正向對應區域]。
 
 3.  按一下您 Active Directory 網域的正向對應區域 (例如：contoso.local)。
 
-4.  委派的 _msdcs 區域顯示為灰色的資料夾。 以滑鼠右鍵按一下 _msdcs 區域，然後按一下 [屬性]****。
+4.  委派的 _msdcs 區域顯示為灰色的資料夾。 以滑鼠右鍵按一下 _msdcs 區域，然後按一下 [屬性]。
 
-5.  在 [名稱伺服器]**** 索引標籤上，確認設定是否正確。
+5.  在 [名稱伺服器] 索引標籤上，確認設定是否正確。
 
-6.  進行任何必要的變更，然後按一下 [確定]**** 以儲存設定。
+6.  進行任何必要的變更，然後按一下 [確定] 以儲存設定。
 
 ### <a name="authenticated-users-not-a-member-of-the-pre-windows-2000-compatible-access-group"></a>已驗證的使用者不是 Pre-Windows 2000 Compatible Access 群組的成員
  **問題：**  [已驗證的使用者] 群組不是 Windows 2000 相容存取群組的成員。
@@ -707,9 +707,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 dsa.msc。
 
-2.  在 [Builtin]**** 資料夾中，以滑鼠右鍵按一下 [Pre-Windows 2000 Compatible Access]****，然後按一下 [屬性]****。
+2.  在 [Builtin] 資料夾中，以滑鼠右鍵按一下 [Pre-Windows 2000 Compatible Access]，然後按一下 [屬性]。
 
-3.  按一下 [新增]****，輸入**已驗證的使用者**，然後按 [確定]**** 兩次。
+3.  按一下 [新增]，輸入 **已驗證的使用者**，然後按 [確定] 兩次。
 
 ### <a name="dns-client-not-configured"></a>DNS 用戶端未設定
  **問題：**  DNS 用戶端未設定成僅指向伺服器的內部 IP 位址。
@@ -720,7 +720,7 @@ ms.locfileid: "89625548"
 
 ##### <a name="to-configure-dns-to-point-only-to-the-server-s-internal-ip-address"></a>設定 DNS 以指向伺服器的內部 IP 位址
 
-1.  從用戶端電腦開啟網路連線的 [屬性]**** 頁面。
+1.  從用戶端電腦開啟網路連線的 [屬性] 頁面。
 
 2.  請確定 DNS 設定成僅指向伺服器的內部 IP 位址。
 
@@ -735,13 +735,13 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [應用程式集區]****。
+2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [應用程式集區]。
 
-3.  在 [應用程式集區]**** 中，以滑鼠右鍵按一下 [DefaultAppPool]****，然後按一下 [進階設定]****。
+3.  在 [應用程式集區] 中，以滑鼠右鍵按一下 [DefaultAppPool]，然後按一下 [進階設定]。
 
-4.  在 [進階設定]**** 中，將 [工作者處理序數上限]**** 變更為 1，然後按一下 [確定]****。
+4.  在 [進階設定] 中，將 [工作者處理序數上限] 變更為 1，然後按一下 [確定]。
 
-5.  關閉 [進階設定]****，以滑鼠右鍵按一下 [DefaultAppPool]****，然後停止並重新啟動應用程式集區。
+5.  關閉 [進階設定]，以滑鼠右鍵按一下 [DefaultAppPool]，然後停止並重新啟動應用程式集區。
 
 ### <a name="application-pool-for-remote-web-access-does-not-use-the-default-account"></a>遠端 Web 存取的應用程式集區沒有使用預設帳戶
  **問題：**  RemoteAppPool 應用程式集區未以預設帳戶執行。
@@ -754,13 +754,13 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [應用程式集區]****。
+2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [應用程式集區]。
 
-3.  在 [應用程式集區]**** 中，以滑鼠右鍵按一下 [RemoteAppPool]****，然後按一下 [進階設定]****。
+3.  在 [應用程式集區] 中，以滑鼠右鍵按一下 [RemoteAppPool]，然後按一下 [進階設定]。
 
-4.  在 [進階設定]**** 中，將 [身分識別]**** 變更為 [NetworkService]****，然後按一下 [確定]****。
+4.  在 [進階設定] 中，將 [身分識別] 變更為 [NetworkService]，然後按一下 [確定]。
 
-5.  關閉 [進階設定]****，以滑鼠右鍵按一下 [RemoteAppPool]****，然後停止並重新啟動應用程式集區。
+5.  關閉 [進階設定]，以滑鼠右鍵按一下 [RemoteAppPool]，然後停止並重新啟動應用程式集區。
 
 ### <a name="application-pool-for-remote-web-access-does-not-use-the-default-net-framework-version"></a>遠端 Web 存取的應用程式集區沒有使用預設 .NET Framework 版本
  **問題：**  RemoteAppPool 應用程式集區未以預設版本的 Microsoft .NET Framework 執行。
@@ -773,13 +773,13 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [應用程式集區]****。
+2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [應用程式集區]。
 
-3.  在 [應用程式集區]**** 中，以滑鼠右鍵按一下 [RemoteAppPool]****，然後按一下 [進階設定]****。
+3.  在 [應用程式集區] 中，以滑鼠右鍵按一下 [RemoteAppPool]，然後按一下 [進階設定]。
 
-4.  在 [進階設定]**** 中，將 [.NET Framework 版本]**** 變更為 v4.0，然後按一下 [確定]****。
+4.  在 [進階設定] 中，將 [.NET Framework 版本] 變更為 v4.0，然後按一下 [確定]。
 
-5.  關閉 [進階設定]****，以滑鼠右鍵按一下 [RemoteAppPool]****，然後停止並重新啟動應用程式集區。
+5.  關閉 [進階設定]，以滑鼠右鍵按一下 [RemoteAppPool]，然後停止並重新啟動應用程式集區。
 
 ### <a name="the-remoteaccesslog-file-is-larger-than-1-gb-in-size"></a>RemoteAccess.log 檔案的大小大於 1 GB
  **問題：**  如果 Remoteaccess 記錄檔的大小超過 1 GB，您可能會遇到系統磁片磁碟機的磁碟空間不足錯誤。
@@ -806,17 +806,17 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 的 [連線]**** 窗格中，依序展開您的伺服器、[網站]****，以滑鼠右鍵按一下 [預設的網站]****，然後按一下 [編輯繫結]****。
+2.  在 [IIS 管理員] 的 [連線] 窗格中，依序展開您的伺服器、[網站]，以滑鼠右鍵按一下 [預設的網站]，然後按一下 [編輯繫結]。
 
-3.  在 [網站繫結]**** 中，按一下 [新增]****，然後選取下列設定：
+3.  在 [網站繫結] 中，按一下 [新增]，然後選取下列設定：
 
     -   **類型**  = **HTTPs**
 
     -   **IP 位址**  = **全部未指派**
 
-    -   [連接埠]**** = [443]
+    -   [連接埠] = [443]
 
-4.  選取 SSL 憑證，然後按一下 [確定]**** 儲存變更。
+4.  選取 SSL 憑證，然後按一下 [確定] 儲存變更。
 
 ### <a name="no-binding-for-ssl-on-the-default-web-site"></a>預設網站上沒有 SSL 的繫結
  **問題：**  預設網站上沒有 SSL 的系結。
@@ -829,20 +829,20 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 的 [連線]**** 窗格中，依序展開您的伺服器、[網站]****，以滑鼠右鍵按一下 [預設的網站]****，然後按一下 [編輯繫結]****。
+2.  在 [IIS 管理員] 的 [連線] 窗格中，依序展開您的伺服器、[網站]，以滑鼠右鍵按一下 [預設的網站]，然後按一下 [編輯繫結]。
 
-3.  在 [網站繫結]**** 中按一下 [新增]****，然後選取下列選項：
+3.  在 [網站繫結] 中按一下 [新增]，然後選取下列選項：
 
     -   **類型**  = **HTTPs**
 
     -   **IP 位址**  = **全部未指派**
 
-    -   [連接埠]**** = [443]
+    -   [連接埠] = [443]
 
     > [!NOTE]
-    >  如果連接埠 443 的 HTTPS 繫結有特定的 IP 位址，將該繫結的 [IP 位址]**** 屬性變更為 [全部解除指派]****。 IP 位址 127.0.0.1 則是例外狀況。 請不要變更 127.0.0.1 的繫結。
+    >  如果連接埠 443 的 HTTPS 繫結有特定的 IP 位址，將該繫結的 [IP 位址] 屬性變更為 [全部解除指派]。 IP 位址 127.0.0.1 則是例外狀況。 請不要變更 127.0.0.1 的繫結。
 
-4.  選取 SSL 憑證，然後按一下 [確定]**** 儲存變更。
+4.  選取 SSL 憑證，然後按一下 [確定] 儲存變更。
 
 ### <a name="a-certificate-expires-within-30-days"></a>憑證在 30 天內過期
  **問題：**  您的伺服器憑證將于30天內到期。
@@ -890,9 +890,9 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]****。
+2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]。
 
-3.  以滑鼠右鍵按一下 [預設的網站]****，指向 [管理網站]****，然後按一下 [啟動]****。
+3.  以滑鼠右鍵按一下 [預設的網站]，指向 [管理網站]，然後按一下 [啟動]。
 
 ### <a name="read-and-script-permissions-for-the-remote-virtual-directory-are-incorrect"></a>/Remote 虛擬目錄的讀取和指令碼權限不正確
  **問題：**  未將讀取和腳本許可權指派給/Remote 虛擬目錄。
@@ -905,15 +905,15 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]****。
+2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]。
 
-3.  展開 [預設的網站]****，然後展開 [遠端]****。
+3.  展開 [預設的網站]，然後展開 [遠端]。
 
-4.  在 [功能檢視]**** 中，按兩下 [處理常式對應]****。
+4.  在 [功能檢視] 中，按兩下 [處理常式對應]。
 
-5.  在 [動作]**** 窗格中按一下 [編輯功能權限]****。
+5.  在 [動作] 窗格中按一下 [編輯功能權限]。
 
-6.  選取 [讀取]**** 和 [指令碼]**** 核取方塊，然後按一下 [確定]****。
+6.  選取 [讀取] 和 [指令碼] 核取方塊，然後按一下 [確定]。
 
 ### <a name="http-redirect-is-either-set-or-inherited-on-the-remote-virtual-directory"></a>/Remote 虛擬目錄上設定或繼承了 HTTP 重新導向
  **問題：**  /Remote 虛擬目錄上未預期地設定或繼承 HTTP 重新導向屬性。
@@ -926,13 +926,13 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]****。
+2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]。
 
-3.  展開 [預設的網站]****，然後展開 [遠端]****。
+3.  展開 [預設的網站]，然後展開 [遠端]。
 
-4.  在 [功能檢視]**** 中，按兩下 [HTTP 重新導向]****。
+4.  在 [功能檢視] 中，按兩下 [HTTP 重新導向]。
 
-5.  清除 [將要求重新導向至此目的地]**** 核取方塊，然後按一下 [動作]**** 窗格上的 [套用]****。
+5.  清除 [將要求重新導向至此目的地] 核取方塊，然後按一下 [動作] 窗格上的 [套用]。
 
 ### <a name="a-host-name-exists-for-port-80-on-the-default-website"></a>預設網站上的連接埠 80 有一個主機名稱。
  **問題：**  預設網站上會為埠80指派主機名稱。
@@ -945,13 +945,13 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]****。
+2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]。
 
-3.  在 [功能檢視]**** 中，以滑鼠右鍵按一下 [預設的網站]****，然後按一下 [繫結]****。
+3.  在 [功能檢視] 中，以滑鼠右鍵按一下 [預設的網站]，然後按一下 [繫結]。
 
-4.  在 [網站繫結]**** 中選取 [通訊埠 80 的 http]**** 設定，然後按一下 [編輯]****。
+4.  在 [網站繫結] 中選取 [通訊埠 80 的 http] 設定，然後按一下 [編輯]。
 
-5.  在 [編輯網站繫結]**** 中、清除 [主機名稱]**** 項目，然後按一下 [確定]****。
+5.  在 [編輯網站繫結] 中、清除 [主機名稱] 項目，然後按一下 [確定]。
 
 ### <a name="backup-does-not-succeed-because-of-a-hidden-partition"></a>備份因為隱藏式磁碟分割而沒有成功
  **問題：**  Windows Server Backup 會排定非 NTFS 磁碟分割的備份。
@@ -978,9 +978,9 @@ ms.locfileid: "89625548"
 
 1.  開啟 [服務] 主控台。
 
-2.  在服務清單中按兩下 [檔案複寫]****。
+2.  在服務清單中按兩下 [檔案複寫]。
 
-3.  針對 [啟動類型]**** 選取 [自動]****，然後按一下 [套用]****。
+3.  針對 [啟動類型] 選取 [自動]，然後按一下 [套用]。
 
 ### <a name="the-file-replication-service-is-not-running"></a>檔案複寫服務未執行
  **問題：**  檔案複寫服務未執行。
@@ -993,7 +993,7 @@ ms.locfileid: "89625548"
 
 1.  開啟 [服務] 主控台。
 
-2.  在服務清單中按兩下 [檔案複寫服務]****。
+2.  在服務清單中按兩下 [檔案複寫服務]。
 
 3.  按一下 [啟動]。
 
@@ -1008,11 +1008,11 @@ ms.locfileid: "89625548"
 
 1.  開啟 [服務] 主控台。
 
-2.  在服務清單中按兩下 [檔案複寫]****。
+2.  在服務清單中按兩下 [檔案複寫]。
 
-3.  在 **[服務內容]** 頁面上，按一下 [登入]**** 索引標籤。
+3.  在 **[服務內容]** 頁面上，按一下 [登入] 索引標籤。
 
-4.  選取 [本機系統帳戶]**** 選項，然後按一下 [套用]****。
+4.  選取 [本機系統帳戶] 選項，然後按一下 [套用]。
 
 5.  重新啟動服務。
 
@@ -1027,9 +1027,9 @@ ms.locfileid: "89625548"
 
 1.  開啟 [服務] 主控台。
 
-2.  在服務清單中按兩下 [DFS 複寫]****。
+2.  在服務清單中按兩下 [DFS 複寫]。
 
-3.  針對 [啟動類型]**** 選取 [自動]****，然後按一下 [套用]****。
+3.  針對 [啟動類型] 選取 [自動]，然後按一下 [套用]。
 
 ### <a name="the-dfs-replication-service-is-not-running"></a>DFS 複寫服務未執行
  **問題：**  DFS 複寫服務目前未執行。
@@ -1042,7 +1042,7 @@ ms.locfileid: "89625548"
 
 1.  開啟 [服務] 主控台。
 
-2.  在服務清單中按兩下 [DFS 複寫]****。
+2.  在服務清單中按兩下 [DFS 複寫]。
 
 3.  按一下 [啟動]。
 
@@ -1057,11 +1057,11 @@ ms.locfileid: "89625548"
 
 1.  開啟 [服務] 主控台。
 
-2.  在服務清單中按兩下 [DFS 複寫]****。
+2.  在服務清單中按兩下 [DFS 複寫]。
 
-3.  在 **[服務內容]** 頁面上，按一下 [登入]**** 索引標籤。
+3.  在 **[服務內容]** 頁面上，按一下 [登入] 索引標籤。
 
-4.  選取 [本機系統帳戶]**** 選項，然後按一下 [套用]****。
+4.  選取 [本機系統帳戶] 選項，然後按一下 [套用]。
 
 5.  重新啟動服務。
 
@@ -1078,9 +1078,9 @@ ms.locfileid: "89625548"
 
 2.  在服務清單中，按兩下 [ **Windows Server Microsoft 365 整合服務**]。
 
-3.  在 **[服務內容]** 頁面上，按一下 [登入]**** 索引標籤。
+3.  在 **[服務內容]** 頁面上，按一下 [登入] 索引標籤。
 
-4.  選取 [本機系統帳戶]**** 選項，然後按一下 [套用]****。
+4.  選取 [本機系統帳戶] 選項，然後按一下 [套用]。
 
 5.  重新啟動服務。
 
@@ -1112,7 +1112,7 @@ ms.locfileid: "89625548"
 
 2.  在服務清單中，按兩下 [ **Windows Server Microsoft 365 整合服務**]。
 
-3.  針對 [啟動類型]**** 選取 [自動]****，然後按一下 [套用]****。
+3.  針對 [啟動類型] 選取 [自動]，然後按一下 [套用]。
 
 ### <a name="a-registry-value-is-missing-or-set-incorrectly"></a>登錄值遺失或設定不正確
  **問題：**  HKEY_LOCAL_MACHINE \Software\Microsoft\Rpc\RpcProxy 下的登錄機碼包含不正確的值，或不存在。
@@ -1146,9 +1146,9 @@ ms.locfileid: "89625548"
 
 1.  開啟 [服務] 主控台。
 
-2.  在服務清單中按兩下 [區塊層級備份引擎服務]****。
+2.  在服務清單中按兩下 [區塊層級備份引擎服務]。
 
-3.  針對 [啟動類型]**** 選取 [手動]****，然後按一下 [套用]****。
+3.  針對 [啟動類型] 選取 [手動]，然後按一下 [套用]。
 
 ### <a name="the-logon-account-for-the-block-level-backup-engine-service-is-not-set-to-use-the-local-system-account"></a>區塊層級備份引擎服務的登入帳戶未設定為使用本機系統帳戶
  **問題：**  區塊層級備份引擎服務未設定為使用本機系統帳戶做為預設登入帳戶。
@@ -1161,11 +1161,11 @@ ms.locfileid: "89625548"
 
 1.  開啟 [服務] 主控台。
 
-2.  在服務清單中按兩下 [區塊層級備份引擎服務]****。
+2.  在服務清單中按兩下 [區塊層級備份引擎服務]。
 
-3.  在 **[服務內容]** 頁面上，按一下 [登入]**** 索引標籤。
+3.  在 **[服務內容]** 頁面上，按一下 [登入] 索引標籤。
 
-4.  選取 [本機系統帳戶]**** 選項，然後按一下 [套用]****。
+4.  選取 [本機系統帳戶] 選項，然後按一下 [套用]。
 
 5.  重新啟動服務。
 
@@ -1180,15 +1180,15 @@ ms.locfileid: "89625548"
 
 1.  在伺服器上開啟 Internet Information Services (IIS) 管理員。
 
-2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]****。
+2.  在 [IIS 管理員] 中，展開您的伺服器名稱，然後按一下 [網站]。
 
-3.  以滑鼠右鍵按一下 [WSS 憑證 Web 服務]****，然後按一下 [編輯繫結]****。
+3.  以滑鼠右鍵按一下 [WSS 憑證 Web 服務]，然後按一下 [編輯繫結]。
 
-4.  在 **[網站繫結]** 中，按一下 [HTTPS]****，然後按一下 [編輯]****。
+4.  在 **[網站繫結]** 中，按一下 [HTTPS]，然後按一下 [編輯]。
 
 5.  在 **[編輯網站繫結]** 的 **[SSL 憑證]** 中，選取與您伺服器名稱相同的憑證。
 
-6.  如果有一個以上的憑證項目與您伺服器的名稱相同，按一下 [檢視]**** 判斷哪一個憑證有效，然後選取適當的憑證。
+6.  如果有一個以上的憑證項目與您伺服器的名稱相同，按一下 [檢視] 判斷哪一個憑證有效，然後選取適當的憑證。
 
 ### <a name="there-appears-to-be-a-problem-with-the-certificate-binding-for-the-remote-desktop-gateway-service"></a>遠端桌面閘道服務的憑證繫結似乎有問題
  **問題：**  遠端桌面閘道服務的憑證似乎系結不正確。

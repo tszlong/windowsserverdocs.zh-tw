@@ -1,18 +1,18 @@
 ---
 title: 疑難排解 Windows Server Essentials 記錄檔收集器錯誤
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何針對執行記錄檔收集器時遇到的問題進行疑難排解。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: fa2e1685-31c0-4d4f-a10a-6c8885dfc493
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 6f8318b6a6b711c6041a9227cd2d207470233dab
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0da27272f3daf5159e5f6ac868788382b1bf11a7
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625132"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810223"
 ---
 # <a name="troubleshoot-windows-server-essentials-log-collector-errors"></a>疑難排解 Windows Server Essentials 記錄檔收集器錯誤
 
@@ -40,12 +40,12 @@ ms.locfileid: "89625132"
 
  如果仍然無法將電腦連線到伺服器，您可以手動將記錄檔複製到 USB 快閃磁碟機，如下所示：
 
--   對於執行 Windows 7、Windows 8 或 Windows Multipoint Server 的用戶端電腦，您可以複製位於 **%sysdir%\programdata\Microsoft\Windows Server** 的 [記錄檔] **** 資料夾。
+-   對於執行 Windows 7、Windows 8 或 Windows Multipoint Server 的用戶端電腦，您可以複製位於 **%sysdir%\programdata\Microsoft\Windows Server** 的 [記錄檔] 資料夾。
 
 ###  <a name="you-do-not-have-permission-to-save-the-log-files-to-the-selected-folder"></a><a name="BKMK_YouDoNotHavePermission"></a> 您沒有將記錄檔儲存到所選資料夾的許可權
  **原因：** 您可能沒有權限寫入您選取用來儲存記錄檔的資料夾。
 
- **解決方案：** 如果您使用預設路徑來儲存記錄檔，請確定您擁有共用資料夾** \\ \\<ServerName \> \Logs**的寫入權限。 如果您要將記錄檔儲存到網路電腦上，請確定您有權寫入您選取用於儲存記錄檔的資料夾。
+ **解決方案：** 如果您使用預設路徑來儲存記錄檔，請確定您擁有共用資料夾 **\\ \\<ServerName \> \Logs** 的寫入權限。 如果您要將記錄檔儲存到網路電腦上，請確定您有權寫入您選取用於儲存記錄檔的資料夾。
 
 ###  <a name="the-computer-is-not-configured-properly-to-collect-the-log-files"></a><a name="BKMK_TheComputerIsNotConfiguredProperly"></a> 電腦未正確設定，無法收集記錄檔
  **原因：** 電腦未正確設定記錄檔收集器設定

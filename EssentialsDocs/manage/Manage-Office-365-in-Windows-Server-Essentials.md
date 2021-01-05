@@ -1,20 +1,20 @@
 ---
-title: 在 Windows Server Essentials 中管理 Microsoft 365
-description: 說明如何使用 Windows Server Essentials
+title: 管理 Windows Server Essentials 中的 Microsoft 365
+description: 瞭解如何從 Windows Server Essentials 儀表板管理您的 Microsoft 365 服務和線上帳戶，以及您的內部部署資源。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 71e8204c8b11f423871f890badffdfb96206feb8
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1df50d94d8ec118742d089c11afbc5fff17f9800
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623065"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811355"
 ---
-# <a name="manage-microsoft-365-in-windows-server-essentials"></a>在 Windows Server Essentials 中管理 Microsoft 365
+# <a name="manage-microsoft-365-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 Microsoft 365
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
@@ -118,13 +118,13 @@ ms.locfileid: "89623065"
 
     [與 Microsoft 365 Wizard 整合] 隨即出現。
 
-3. 在 [開始使用]**** 頁面上，執行下列動作之一：
+3. 在 [開始使用] 頁面上，執行下列動作之一：
 
    -   如果您沒有 Microsoft 365 的訂用帳戶，請按 [ **下一步]**，然後依照指示訂閱 Microsoft 365 或註冊試用版訂用帳戶。
 
         您將需要先登入 Microsoft 365，然後再返回嚮導。 但是您不需要在 Microsoft 365 入口網站的 [ **從此處開始** ] 區段中執行任何工作。
 
-   -   如果您已經有要與伺服器整合的 Microsoft 365 訂用帳戶，請選取 [ **我已經有 Microsoft 365 的訂用**帳戶]，然後按 **[下一步]**。
+   -   如果您已經有要與伺服器整合的 Microsoft 365 訂用帳戶，請選取 [ **我已經有 Microsoft 365 的訂用** 帳戶]，然後按 **[下一步]**。
 
 4. 遵循指示以完成精靈。
 
@@ -141,7 +141,7 @@ ms.locfileid: "89623065"
 
  在您為使用者建立線上帳戶之前，最簡單的作法是建立線上帳戶，讓您可以在大量建立線上帳戶時使用網域。
 
- 當您註冊 Microsoft 365 *時，會取得功能變數名稱，例如*onmicrosoft.com。 如果您想要使用不同的功能變數名稱，也就是 contoso.com？您可以。 如果您還沒有功能變數名稱，您必須購買功能變數名稱，並變更部分 DNS 記錄。
+ 當您註冊 Microsoft 365 *時，會取得功能變數名稱，例如* onmicrosoft.com。 如果您想要使用不同的功能變數名稱，也就是 contoso.com？您可以。 如果您還沒有功能變數名稱，您必須購買功能變數名稱，並變更部分 DNS 記錄。
 
  設定自訂網域以搭配 Microsoft 365 使用包含四項工作：
 
@@ -179,7 +179,7 @@ ms.locfileid: "89623065"
      在 wizard 完成之後，網域註冊機構會驗證 DNS 記錄。 這會自動發生;您不必採取任何動作。 但它通常需要一小時的時間，有時會花上一點時間。 當網域驗證完成時， **Microsoft 365** 頁面會列出您組織的網域。
 
 ####  <a name="how-to-manually-configure-dns-records-for-microsoft-365-integration"></a><a name="BKMK_ManuallyConfigureDNS"></a> 如何手動設定 Microsoft 365 整合的 DNS 記錄
- 如果您的網域要 Microsoft 365 Wizard 的連結偵測到您的功能變數名稱不是由伺服器管理，若要完成設定，您必須以手動方式將所需的功能變數名稱伺服器設定 (DNS) 記錄。 在這種情況下，您會在 **% username% \ NewDNSRecords_ (n) .txt**找到必須設定的 DNS 記錄清單，其中 * (n) * 是亂數字。
+ 如果您的網域要 Microsoft 365 Wizard 的連結偵測到您的功能變數名稱不是由伺服器管理，若要完成設定，您必須以手動方式將所需的功能變數名稱伺服器設定 (DNS) 記錄。 在這種情況下，您會在 **% username% \ NewDNSRecords_ (n) .txt** 找到必須設定的 DNS 記錄清單，其中 *(n)* 是亂數字。
 
  下表描述您必須加入的 DNS 記錄。 輸入法因不同的網域名稱註冊機構而有所不同。 如果您有任何問題，請向您的網域名稱註冊機構尋求協助。
 
@@ -189,7 +189,7 @@ ms.locfileid: "89623065"
 |-------------|--------------------------|-------------|
 |(多個服務)|MX| Microsoft 365 使用此記錄來確認您擁有特定的功能變數名稱。 這個 MX 記錄不會干擾電子郵件訊息路由。|
 |Exchange Online|MX|提供電子郵件訊息路由。 **重要事項：**  如果您要遷移電子郵件，請勿將零 (**0**) 的喜好設定指派給新的 MX 記錄。 請確定記錄值大於指派給目前 MX 記錄的值。 當電子郵件遷移完成，而且您已準備好將電子郵件伺服器變更為 Microsoft 365 時，請讓您的網域註冊機構重設新 MX 記錄的喜好設定值。|
-|Exchange Online|別名 (CNAME)|用來幫助使用者輕易設定 Exchange Online 與 Outlook 桌面用戶端或行動式電子郵件用戶端之間連線的自動探索記錄。 **注意：**  如果您想要使用組織本身的功能變數名稱來存取 Outlook Web 存取 (例如 http://mail.contoso.com) (， https://outlook.com/owa/office365.com) 您可以將別名設定 (cname) 記錄，如下所示： **輸入 = CName、TTL = 01：00：00、HostName = mail、Address = office365 .com**|
+|Exchange Online|別名 (CNAME)|用來幫助使用者輕易設定 Exchange Online 與 Outlook 桌面用戶端或行動式電子郵件用戶端之間連線的自動探索記錄。 **注意：**  如果您想要使用組織本身的功能變數名稱來存取 Outlook Web 存取 (例如 http://mail.contoso.com) (， https://outlook.com/owa/office365.com) 您可以將別名設定 (cname) 記錄，如下所示： **輸入 = CNAME、TTL = 01：00：00、HostName = mail、Address = office365 .com**|
 |Exchange Online|TXT|指定 outlook.com （Microsoft 365 電子郵件伺服器所使用的網域）有權代表您的網域傳送電子郵件。 建立此記錄可協助防止您寄出的電子郵件被標示為垃圾郵件。|
 |Lync Online|SRV|協助啟用與其他 Windows Live 或 Yahoo! 等立即訊息服務聯盟。|
 |Lync Online|SRV|用來幫助使用者輕易設定 Lync 桌面用戶端與 Microsoft Lync Online 之間連線的自動探索記錄。|
@@ -236,7 +236,7 @@ ms.locfileid: "89623065"
 
 3.  輸入您要用來連線到 Microsoft 365 訂用帳戶之帳戶的認證，然後按 **[下一步]**。
 
-4.  按一下 [關閉] 。 儀表板會重新啟動。
+4.  按一下 [關閉]  。 儀表板會重新啟動。
 
 ###  <a name="disable-microsoft-365-integration"></a><a name="BKMK_Disable"></a> 停用 Microsoft 365 整合
  如果您決定不想從儀表板管理您的 Microsoft 365 服務和線上帳戶，您可以停用 Microsoft 365 整合。 您的 Microsoft 365 訂用帳戶會保持作用中狀態，而您從儀表板所做的任何設定變更都會保持有效。 例如，您會收到一封電子郵件，寄給您連結至 Microsoft 365 訂用帳戶的功能變數名稱。 您不會遺失任何電子郵件，而且您為行動裝置設定的控制項仍會使用 Exchange Online。
@@ -254,17 +254,17 @@ ms.locfileid: "89623065"
 3.  遵循指示以完成精靈。
 
 > [!NOTE]
->  若要再次啟用 Microsoft 365 整合，請使用儀表板**首頁**的 [**服務**] 索引標籤上的 [**與 Microsoft 365 整合**] 工作。 如需相關指示，請參閱本主題稍早的 [步驟2：將您的 Windows Server Essentials 伺服器與 Microsoft 365 整合](#BKMK_StepTwo)。
+>  若要再次啟用 Microsoft 365 整合，請使用儀表板 **首頁** 的 [**服務**] 索引標籤上的 [**與 Microsoft 365 整合**] 工作。 如需相關指示，請參閱本主題稍早的 [步驟2：將您的 Windows Server Essentials 伺服器與 Microsoft 365 整合](#BKMK_StepTwo)。
 
 ##  <a name="troubleshoot-microsoft-365-integration"></a><a name="BKMK_Troubleshoot"></a> 針對 Microsoft 365 整合進行疑難排解
  本節提供的資訊可協助您針對使用 Windows Server Essentials 中的 Microsoft 365 整合功能時可能遇到的常見問題進行疑難排解。
 
 ###  <a name="some-microsoft-online-services-accounts-were-not-created"></a><a name="BKMK_AcctsNotCreated"></a> 未建立某些 Microsoft Online Services 帳戶
- **說明**
+ **描述**
 
  嘗試從儀表板建立一或多個 Microsoft Online Services 帳戶失敗。
 
- **方案**
+ **解決方案**
 
 1.  按一下精靈完成頁面上的連結開啟結果檔案，其中會包含未順利完成之每個帳戶建立要求的詳細資訊。 例如，結果可能會通知您所要求的帳戶名稱已經存在於 Microsoft Online Services 帳戶中。
 
@@ -273,11 +273,11 @@ ms.locfileid: "89623065"
 3.  如果這個問題持續發生，請重新啟動伺服器，然後重新嘗試建立線上帳戶。
 
 ###  <a name="there-was-a-problem-uninstalling-microsoft-365-integration"></a><a name="BKMK_ProblemUninstalling"></a> 卸載 Microsoft 365 整合時發生問題
- **說明**
+ **描述**
 
  當您嘗試停用 Microsoft 365 整合時發生未知的錯誤。
 
- **方案**
+ **解決方案**
 
 1.  確定您的電腦已連線到網際網路，然後再試一次。
 

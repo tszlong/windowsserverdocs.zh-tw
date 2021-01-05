@@ -1,18 +1,18 @@
 ---
 title: 步驟 8：執行 Windows Server Essentials 最佳做法分析程式
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何執行 Windows Server Essentials 最佳做法分析程式。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e6ba701d-7183-4c26-960e-44cc280bf3e6
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 25a991668f56bcb24606738a9a510d92b3d8f9eb
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c767be324e960badbbb976f292e24b9d39502d7f
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625333"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810395"
 ---
 # <a name="step-8-run-the-windows-server-essentials-best-practices-analyzer"></a>步驟 8：執行 Windows Server Essentials 最佳做法分析程式
 
@@ -24,11 +24,11 @@ ms.locfileid: "89625333"
 
 1.  以系統管理員身分登入目的地伺服器，然後開啟伺服器管理員。
 
-2.  在 [伺服器管理員] 中，按一下 [Windows Server Essentials 體驗]**** 索引標籤。
+2.  在 [伺服器管理員] 中，按一下 [Windows Server Essentials 體驗] 索引標籤。
 
-3.  在詳細資料窗格中，選取 [最佳做法分析程式]****。
+3.  在詳細資料窗格中，選取 [最佳做法分析程式]。
 
-4.  按一下 [工作]****，然後按一下 [開始 BPA 掃描]****。
+4.  按一下 [工作]，然後按一下 [開始 BPA 掃描]。
 
 5.  檢閱每個 BPA 訊息，並依照指示來解決問題 (如有必要)。
 

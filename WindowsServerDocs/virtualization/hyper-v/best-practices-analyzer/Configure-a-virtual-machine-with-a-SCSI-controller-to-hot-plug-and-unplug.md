@@ -1,17 +1,17 @@
 ---
 title: 設定具有 SCSI 控制器的虛擬機器，以存取熱插即用的插即用存放區
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當發現未使用 SCSI 控制器設定的虛擬機器時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 511e1172-aeef-463d-b5dd-2bffae411ff1
 ms.date: 8/16/2016
-ms.openlocfilehash: 9f0cdb47206c89c4da66786e8dfd118e6a05be81
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: b56f0e7beae706471c829810bea023dbcab2317c
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746973"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833543"
 ---
 # <a name="configure-a-virtual-machine-with-a-scsi-controller-to-be-able-to-hot-plug-and-hot-unplug-storage"></a>設定具有 SCSI 控制器的虛擬機器，以存取熱插即用的插即用存放區
 
@@ -26,7 +26,7 @@ ms.locfileid: "90746973"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

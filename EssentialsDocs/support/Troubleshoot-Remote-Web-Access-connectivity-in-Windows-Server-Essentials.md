@@ -1,18 +1,18 @@
 ---
 title: Windows Server Essentials 的遠端 Web 存取連線問題疑難排解
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何針對 Windows Server Essentials 中的遠端 Web 存取連線問題進行疑難排解。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: fc51555f680126cbd1b6e9fe2c672cbcbc5da7e9
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c73283d60d2286ef9e04b4ad2d1bd747cc2d6e98
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625143"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810235"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials 的遠端 Web 存取連線問題疑難排解
 
@@ -52,7 +52,7 @@ ms.locfileid: "89625143"
 
   - 請針對下列連接埠，在路由器上設定連接埠轉送：
 
-    |服務或通訊協定|Port|
+    |服務或通訊協定|連接埠|
     |-------------------------|----------|
     |HTTP|TCP 80|
     |HTTPS|TCP 443|
@@ -69,14 +69,14 @@ ms.locfileid: "89625143"
   |192.168.0.100|TCP 80|一律|全部允許|
   |192.168.0.100|TCP 443|一律|全部允許|
 
-   手動設定路由器之後，請執行 [開啟遠端 Web 存取 Wizard]，確定您在 **[開始使用] 頁面上**選取 [**略過路由器設定**] 選項。
+   手動設定路由器之後，請執行 [開啟遠端 Web 存取 Wizard]，確定您在 **[開始使用] 頁面上** 選取 [**略過路由器設定**] 選項。
 
 - 如果路由器不完全支援 UPnP 標準，請購買新的路由器。
 
 > [!TIP]
 >  確定路由器已安裝最新的 BIOS 韌體。 您通常可以從路由器的設定網頁，更新路由器的 BIOS 韌體。 如需詳細資訊，請參閱路由器的文件。 更新路由器之後，請執行 [設定隨處存取精靈]。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [使用遠端 Web 存取](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)
 

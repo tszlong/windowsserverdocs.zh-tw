@@ -1,18 +1,18 @@
 ---
 title: 將 Windows Server Essentials 移轉到新的硬體
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在新硬體上將現有的 Windows Server 2012 Essentials 網域遷移到 Windows Server Essentials，然後遷移設定和資料。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f695ae90-3160-407b-bebf-9e460f22c86d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 704fc7fa97c949080104846011cf07e8e28da73a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d95100cdfa08fa1aa672be8c9978ac230573a46c
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625859"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810895"
 ---
 # <a name="migrate-windows-server-essentials-to-new-hardware"></a>將 Windows Server Essentials 移轉到新的硬體
 
@@ -60,6 +60,6 @@ ms.locfileid: "89625859"
 
 #### <a name="to-open-a-command-prompt-window-as-an-administrator"></a>以系統管理員身分開啟命令提示字元視窗
 
-1.  在 [開始]**** 畫面的搜尋方塊中，輸入 **cmd**。
+1.  在 [開始] 畫面的搜尋方塊中，輸入 **cmd**。
 
-2.  在結果清單中，以滑鼠右鍵按一下 cmd****，然後按一下 [以系統管理員身分執行]****。
+2.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。

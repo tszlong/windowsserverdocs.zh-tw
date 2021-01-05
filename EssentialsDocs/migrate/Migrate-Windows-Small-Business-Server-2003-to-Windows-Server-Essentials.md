@@ -1,18 +1,18 @@
 ---
 title: 將 Windows Small Business Server 2003 移轉到 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在新硬體上將現有的 Windows SBS 2003 網域遷移到 Windows Server 2012 Essentials，然後遷移設定和資料。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 119a7fbc-2c76-4aa3-8a7f-c7073d461b5b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: b871fae4a34aebaf87107c534a65035626d653fa
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 97e9eff51422b5e3a69ebe643456a3c869874f6e
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625852"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810875"
 ---
 # <a name="migrate-windows-small-business-server-2003-to-windows-server-essentials"></a>將 Windows Small Business Server 2003 移轉到 Windows Server Essentials
 
@@ -72,6 +72,6 @@ ms.locfileid: "89625852"
 
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>以系統管理員身分在目的地伺服器上開啟命令提示字元視窗
 
-1.  在 [開始]**** 畫面的搜尋方塊中，輸入 **cmd**。
+1.  在 [開始] 畫面的搜尋方塊中，輸入 **cmd**。
 
-2.  在結果清單中，以滑鼠右鍵按一下 cmd****，然後按一下 [以系統管理員身分執行]****。
+2.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。

@@ -1,17 +1,17 @@
 ---
 title: Windows Vista 至少應設定最少的記憶體數量
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows Vista 的虛擬機器設定為小於最小 RAM 數量（512 MB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 49f6f9b6-c290-4b1b-b6f3-cc9a0acd8fb2
 ms.date: 8/16/2016
-ms.openlocfilehash: dc69592d8b71c761c710fc55f7d3117164cb430f
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 1ba95d8c0dc014c970d928a2195d490374ecfdcc
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865807"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833493"
 ---
 # <a name="windows-vista-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Vista 至少應設定最少的記憶體數量
 
@@ -38,7 +38,7 @@ ms.locfileid: "96865807"
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解決方案
 
 *使用 Hyper-v 管理員將配置給此虛擬機器的記憶體增加到至少 512 MB。*
 

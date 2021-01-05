@@ -1,18 +1,18 @@
 ---
 title: 從新的 Windows Server Essentials 的伺服器降級和移除來源伺服器
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何從新的 Windows Server Essentials 網路降級和移除來源伺服器。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 3e0902f99be96e3197b90b4892f78849a5c84125
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 792aa83ed86c620921f243eba856f76258ab638f
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622888"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811035"
 ---
 # <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>從新的 Windows Server Essentials 的伺服器降級和移除來源伺服器
 
@@ -43,20 +43,20 @@ ms.locfileid: "89622888"
 
 1. 以系統管理員身分登入來源伺服器。
 
-2. 按一下 [開始]****、[控制台]****，然後按一下 [新增或移除程式]****。
+2. 按一下 [開始]、[控制台]，然後按一下 [新增或移除程式]。
 
-3. 在程式清單中，選取 [Windows Small Business Server 2003]****，然後按一下 [變更/移除]****。
+3. 在程式清單中，選取 [Windows Small Business Server 2003]，然後按一下 [變更/移除]。
 
-4. 在 [安裝精靈] 中持續按 [下一步]****，直到 [選擇元件]**** 頁面顯示為止。
+4. 在 [安裝精靈] 中持續按 [下一步]，直到 [選擇元件] 頁面顯示為止。
 
-5. 在 [選擇元件] 頁面中，展開 [Exchange Server]****，然後選擇 [移除]****。
+5. 在 [選擇元件] 頁面中，展開 [Exchange Server]，然後選擇 [移除]。
 
    > [!NOTE]
    >
-   >  Exchange Server 會檢查伺服器上是否已沒有信箱或公用資料夾。 如果有遺留的資料，當您按一下 [移除]**** 時會出現錯誤訊息。 若要避免這個問題，請確定您已完成將 [SBS 2003 設定和資料移至目的地伺服器](./move-windows-sbs-2003-to-the-destination-server-for-migration.md)主題中的所有程式。
+   >  Exchange Server 會檢查伺服器上是否已沒有信箱或公用資料夾。 如果有遺留的資料，當您按一下 [移除] 時會出現錯誤訊息。 若要避免這個問題，請確定您已完成將 [SBS 2003 設定和資料移至目的地伺服器](./move-windows-sbs-2003-to-the-destination-server-for-migration.md)主題中的所有程式。
 
 
-6. 按 [下一步] 。
+6. 按一下 [下一步] 。
 
 7. 出現提示時，插入 Windows Small Business Server 2003 CD#3，並依照畫面上的指示進行。
 
@@ -81,16 +81,16 @@ ms.locfileid: "89622888"
 
 ##### <a name="to-demote-the-source-server"></a>將來源伺服器降級
 
-1. 在來源伺服器上，按一下 [開始]****、[執行]****，輸入 **dcpromo**，然後按一下 [確定]****。
+1. 在來源伺服器上，按一下 [開始]、[執行]，輸入 **dcpromo**，然後按一下 [確定]。
 
-2. 按兩次 [下一步]****。
+2. 按兩次 [下一步]。
 
    > [!NOTE]
-   >  請勿選取 [這台伺服器是網域中的最後一個網域控制站]****。
+   >  請勿選取 [這台伺服器是網域中的最後一個網域控制站]。
 
-3. 在伺服器上，輸入新的系統管理員帳戶的密碼，然後按一下 [下一步]****。
+3. 在伺服器上，輸入新的系統管理員帳戶的密碼，然後按一下 [下一步]。
 
-4. 在 [摘要]**** 對話方塊中，會通知您將從電腦中移除 AD DS，且伺服器會成為網域成員。 按 [下一步] 。
+4. 在 [摘要] 對話方塊中，會通知您將從電腦中移除 AD DS，且伺服器會成為網域成員。 按 [下一步]  。
 
 5. 按一下 [完成] 。 來源伺服器會重新啟動。
 
@@ -100,13 +100,13 @@ ms.locfileid: "89622888"
 
 ##### <a name="to-remove-the-source-server-from-active-directory"></a>從 Active Directory 中移除來源伺服器
 
-1.  在目的地伺服器上，開啟 [Active Directory 使用者和電腦]****。
+1.  在目的地伺服器上，開啟 [Active Directory 使用者和電腦]。
 
-2.  在 [Active Directory 使用者和電腦]**** 瀏覽窗格中，展開網域名稱，然後再展開 [電腦]****。
+2.  在 [Active Directory 使用者和電腦] 瀏覽窗格中，展開網域名稱，然後再展開 [電腦]。
 
-3.  如果來源伺服器名稱存在於伺服器清單中，請以滑鼠右鍵按一下，按一下 [刪除]****，然後按一下 [是]****。
+3.  如果來源伺服器名稱存在於伺服器清單中，請以滑鼠右鍵按一下，按一下 [刪除]，然後按一下 [是]。
 
-4.  請確認沒有列出來源伺服器，並關閉 [Active Directory 使用者和電腦]****。
+4.  請確認沒有列出來源伺服器，並關閉 [Active Directory 使用者和電腦]。
 
 ###  <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a><a name="BKMK_MoveTheDHCPRole"></a> 將 DHCP 伺服器角色從來源伺服器移至路由器
 
@@ -121,11 +121,11 @@ ms.locfileid: "89622888"
 
 1.  如下所示關閉來源伺服器上的 DHCP 服務：
 
-    1.  在來源伺服器上，依序按一下 [開始]****、[系統管理工具]****，然後按一下 [服務]****。
+    1.  在來源伺服器上，依序按一下 [開始]、[系統管理工具]，然後按一下 [服務]。
 
-    2.  在目前執行的服務清單中，以滑鼠右鍵按一下 [Windows Server]****，然後按一下 [內容]****。
+    2.  在目前執行的服務清單中，以滑鼠右鍵按一下 [Windows Server]，然後按一下 [內容]。
 
-    3.  於 [啟動類型]**** 選取 [停用]****。
+    3.  於 [啟動類型] 選取 [停用]。
 
     4.  停止服務。
 

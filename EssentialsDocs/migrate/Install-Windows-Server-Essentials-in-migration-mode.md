@@ -1,6 +1,6 @@
 ---
 title: 以移轉模式安裝 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在移轉模式中安裝 Windows Server Essentials。
 ms.date: 04/29/2020
 ms.topic: article
 ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
@@ -10,12 +10,12 @@ manager: mtillman
 ms.custom:
 - CI ID 117135
 - CSSTroubleshoot
-ms.openlocfilehash: ada3b5fa3b95fa6de45177513b26589c4180696d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 288a3a3c6680da8f595cb55d77637b6d64678667
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622835"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810945"
 ---
 # <a name="install-windows-server-essentials-in-migration-mode"></a>以移轉模式安裝 Windows Server Essentials
 
@@ -51,17 +51,17 @@ ms.locfileid: "89622835"
    >  如果目的地伺服器支援從 USB 快閃磁片磁碟機開機，您可以使用 **windows 7 USB/DVD 下載工具** ，從 Windows SERVER Essentials ISO 檔案建立可開機的 Usb 快閃磁片磁碟機。 使用 USB 快閃磁碟機可以明顯加速安裝程序，因為快閃磁碟機讀取資料比 DVD-ROM 光碟機更快。 建立可開機的 USB 快閃磁碟機之後，您可以將回應檔案新增到快閃磁碟機。 您可以從 Microsoft Store 網站免費 [下載 Windows 7 USB/DVD 下載工具](https://go.microsoft.com/fwlink/p/?LinkId=248282) 。
 
    > [!NOTE]
-   >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]****。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。
+   >  如果目的地伺服器不會從 DVD 開機，請重新啟動電腦並檢查 BIOS 設定，以確保開機順序中會先列出 [DVD-ROM]。 如需如何變更 BIOS 設定開機順序的相關詳細資訊，請參閱硬體製造商的說明文件。
 
-2. 按一下 [新的安裝]****。
+2. 按一下 [新的安裝]。
 
-3. 如果您有未顯示在清單中的內部硬碟，請按一下 [載入驅動程式]****，並在繼續前先安裝必要的驅動程式。
+3. 如果您有未顯示在清單中的內部硬碟，請按一下 [載入驅動程式]，並在繼續前先安裝必要的驅動程式。
 
-4. 選取核取方塊，確認主要硬碟上所有的檔案與資料夾都會被刪除，然後按一下 [安裝]****。
+4. 選取核取方塊，確認主要硬碟上所有的檔案與資料夾都會被刪除，然後按一下 [安裝]。
 
-5. 在 [選擇伺服器的安裝模式]**** 頁面上，按一下 [伺服器移轉]****，然後提供必要的移轉資訊。
+5. 在 [選擇伺服器的安裝模式] 頁面上，按一下 [伺服器移轉]，然後提供必要的移轉資訊。
 
-6. 當 [已成功移轉您的伺服器]**** 訊息出現，請按一下 [關閉]****。
+6. 當 [已成功移轉您的伺服器] 訊息出現，請按一下 [關閉]。
 
    安裝完成後，會自動以您在移轉回應檔案中提供的系統管理員使用者帳戶與密碼登入。
 

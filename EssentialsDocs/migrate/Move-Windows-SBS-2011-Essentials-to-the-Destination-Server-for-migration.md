@@ -1,18 +1,18 @@
 ---
 title: 將 Windows SBS 2011 Essentials 的設定和資料移至目的地伺服器以進行 Windows Server Essentials 移轉
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何將 Windows SBS 2011 Essentials 設定和資料移至目的地伺服器，以進行 Windows Server Essentials 遷移。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47548994-9fa0-42e0-afa4-c2ccbd063acb
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 5ab8e54fe94fa2f733e28dd461b7d35988589864
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 25a155db15f0ea76695c1bbbda100d18e1c56b9a
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625694"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810706"
 ---
 # <a name="move-windows-sbs-2011-essentials-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>將 Windows SBS 2011 Essentials 的設定和資料移至目的地伺服器以進行 Windows Server Essentials 移轉
 
@@ -73,7 +73,7 @@ ms.locfileid: "89625694"
 
 1. 在目的地伺服器上，開啟儀表板。
 
-2. 在 [儀表板] 的 [首頁]**** 頁面上，按一下 [設定]****，按一下 [設定隨處存取]****，然後選擇 [按一下以設定隨處存取]**** 選項。
+2. 在 [儀表板] 的 [首頁] 頁面上，按一下 [設定]，按一下 [設定隨處存取]，然後選擇 [按一下以設定隨處存取] 選項。
 
 3. 完成精靈中的指示，來設定您的路由器及網域名稱。
 
@@ -90,15 +90,15 @@ ms.locfileid: "89625694"
 
 1.  開啟 [Windows Server Essentials 儀表板]。
 
-2.  在瀏覽列中，按一下 [使用者]****。
+2.  在瀏覽列中，按一下 [使用者]。
 
-3.  在使用者帳戶清單中，以滑鼠右鍵按一下使用者帳戶，然後按一下 [檢視帳戶內容]****。
+3.  在使用者帳戶清單中，以滑鼠右鍵按一下使用者帳戶，然後按一下 [檢視帳戶內容]。
 
-4.  按一下 [隨處存取]**** 索引標籤，然後按一下 [允許遠端 Web 存取，以及存取 Web 服務應用程式]****。
+4.  按一下 [隨處存取] 索引標籤，然後按一下 [允許遠端 Web 存取，以及存取 Web 服務應用程式]。
 
-5.  選取 [共用資料夾]****，選取 [電腦]****、[首頁連結]****，然後按一下 [套用]****。
+5.  選取 [共用資料夾]，選取 [電腦]、[首頁連結]，然後按一下 [套用]。
 
-6.  按一下 [電腦存取]**** 索引標籤，然後再按一下您想要允許存取的電腦名稱。
+6.  按一下 [電腦存取] 索引標籤，然後再按一下您想要允許存取的電腦名稱。
 
 7.  對每個使用者帳戶重複步驟 3、4、5 和 6。
 

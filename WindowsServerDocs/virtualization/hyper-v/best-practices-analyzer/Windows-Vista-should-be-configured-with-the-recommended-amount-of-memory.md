@@ -1,17 +1,17 @@
 ---
 title: Windows Vista 應設定為建議的記憶體數量
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解當執行 Windows Vista 的虛擬機器設定為小於建議的 RAM 數量（1 GB）時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 64f4e53b-4adb-4e1d-bc48-c24f5f9d222f
 ms.date: 8/16/2016
-ms.openlocfilehash: ca492081383b962f85e8c28bc9e240a9ed62acfe
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 43255cbb62bc35b6eee0dc73c0d52d192dbd66cd
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866377"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833463"
 ---
 # <a name="windows-vista-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Vista 應設定為建議的記憶體數量
 
@@ -38,7 +38,7 @@ ms.locfileid: "96866377"
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解決方案
 
 *使用 Hyper-v 管理員將配置給此虛擬機器的記憶體增加到至少 1 GB。*
 

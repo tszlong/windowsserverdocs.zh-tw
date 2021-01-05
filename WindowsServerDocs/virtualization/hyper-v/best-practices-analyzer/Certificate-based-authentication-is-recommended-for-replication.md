@@ -1,17 +1,17 @@
 ---
 title: 建議針對複寫使用以憑證為基礎的驗證
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當選取要進行複寫的一或多部虛擬機器設定為 Kerberos 驗證時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d931cc57-414f-4bdf-9ebd-08fd5e22b19d
 ms.date: 8/16/2016
-ms.openlocfilehash: 3ef11472c042e19de9f7ee52ea5958ca0bf6e44b
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 83d4b90670678660da0610d800eaf1fbe87a863e
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745853"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833553"
 ---
 # <a name="certificate-based-authentication-is-recommended-for-replication"></a>建議針對複寫使用以憑證為基礎的驗證
 
@@ -24,7 +24,7 @@ ms.locfileid: "90745853"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

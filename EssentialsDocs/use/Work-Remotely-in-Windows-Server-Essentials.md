@@ -1,18 +1,18 @@
 ---
 title: 在 Windows Server Essentials 中遠端工作
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解當您離開網路時，存取位於伺服器上之資源的多種方式。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 955b7e028b774699bc5170bda1fac29b88a35483
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 12e36c7d77a018dded93fd2b8d374a37423fc242
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624845"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809985"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>在 Windows Server Essentials 中遠端工作
 
@@ -48,7 +48,7 @@ ms.locfileid: "89624845"
 
 1.  在用戶端電腦上按 Ctrl + Alt + Delete。
 
-2.  在登入畫面按一下 [切換使用者]****。
+2.  在登入畫面按一下 [切換使用者]。
 
 3.  按一下畫面右下角的網路登入圖示。
 
@@ -81,7 +81,7 @@ ms.locfileid: "89624845"
  Microsoft 365 是一組容易使用的 web 工具，可讓您從幾乎任何地方和任何裝置存取您的電子郵件、重要檔、連絡人和行事曆。 如需詳細資訊，請參閱 [使用 Microsoft 365 的快速入門手冊](Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)。
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [管理隨處存取](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)
 

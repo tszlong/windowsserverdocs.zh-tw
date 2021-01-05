@@ -1,18 +1,18 @@
 ---
 title: 使用 Windows Server Essentials 記錄檔收集器
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何使用 Windows Server Essentials 記錄檔收集器，從伺服器、網路上的電腦或兩者收集記錄。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 07e849fa8db3cdc4204de402c6fc0cb823881480
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4a540c52ee4cb84455f125c0d9f5c2f4ad0f3bf1
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624996"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810125"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 記錄檔收集器
 
@@ -46,9 +46,9 @@ ms.locfileid: "89624996"
 
 -   繫結至 TCP/IP 的網路介面卡
 
--   Locale
+-   地區設定
 
--   處理序
+-   處理程序
 
 -   儲存體組態
 
@@ -123,11 +123,11 @@ ms.locfileid: "89624996"
 
 -   登錄機碼，來自於：
 
-    -   \\\ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows 伺服器 \
+    -   \\\ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\
 
-    -   \\\ HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DevicesProviderSvc
+    -   \\\ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DevicesProviderSvc
 
-    -   \\\ HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DomainManagerProviderSvc
+    -   \\\ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DomainManagerProviderSvc
 
 ### <a name="network-computer-logs-and-registry-information"></a>網路電腦記錄檔和登錄資訊
 
@@ -154,7 +154,7 @@ ms.locfileid: "89624996"
 
 -   Library/Logs/DiagnosticReports/啟動控制板-<nnn \> (複製所有啟動控制板-<nnn \> . 損毀檔案) 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [疑難排解記錄檔收集器錯誤](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

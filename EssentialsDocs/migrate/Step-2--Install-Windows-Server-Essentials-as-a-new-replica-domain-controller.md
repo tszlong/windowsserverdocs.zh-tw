@@ -1,18 +1,18 @@
 ---
 title: 步驟 2：安裝 Windows Server Essentials 為新的複本網域控制站
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何安裝 windows server Essentials 和 Windows Server 2012 R2 Standard (，並啟用 Windows Server Essentials 體驗角色) 作為網域控制站。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c7ccfc34-63fd-436b-a1cd-e05810f60bfe
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 9d70a4d5aae1269f10958f808692fffde9c83de8
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 64e6cbbf3eefd34e9373dcb1e49b3626e6014368
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625497"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810545"
 ---
 # <a name="step-2-install-windows-server-essentials-as-a-new-replica-domain-controller"></a>步驟 2：安裝 Windows Server Essentials 為新的複本網域控制站
 
@@ -53,7 +53,7 @@ ms.locfileid: "89625497"
 
     1.  開啟 [儀表板]。
 
-    2.  按一下 [使用者]**** 索引標籤，然後確認已列出您 Active Directory 中的使用者帳戶。
+    2.  按一下 [使用者] 索引標籤，然後確認已列出您 Active Directory 中的使用者帳戶。
 
 ### <a name="transfer-the-operations-master-roles"></a>轉移操作主機角色
  操作主機 (也稱為彈性單一主機操作或 FSMO) 角色，必須在目的地伺服器上安裝 Windows Server Essentials 的21天內，從來源伺服器轉移到目的地伺服器。
@@ -74,19 +74,19 @@ ms.locfileid: "89625497"
 
     3.  輸入 **連線**，然後按 ENTER。
 
-    4.  輸入 **[連接到伺服器** *<\> ServerName* ] (其中 *<ServerName \> *是目的地伺服器) 的名稱，然後按 enter。
+    4.  輸入 **[連接到伺服器** *<\> ServerName* ] (其中 *<ServerName \>* 是目的地伺服器) 的名稱，然後按 enter。
 
     5.  在命令提示字元中輸入 **q**，然後按 ENTER。
 
-        1.  輸入 **transfer PDC**，按 ENTER 鍵，然後在 [角色轉移確認]**** 對話方塊中按一下 [是]****。
+        1.  輸入 **transfer PDC**，按 ENTER 鍵，然後在 [角色轉移確認] 對話方塊中按一下 [是]。
 
-        2.  輸入 **傳輸基礎結構主機**，按 ENTER，然後在 [角色轉移確認]**** 對話方塊中按一下 [是]****。
+        2.  輸入 **傳輸基礎結構主機**，按 ENTER，然後在 [角色轉移確認] 對話方塊中按一下 [是]。
 
-        3.  輸入 **傳輸命名主機**，按 ENTER，然後在 [角色轉移確認]**** 對話方塊中按一下 [是]****。
+        3.  輸入 **傳輸命名主機**，按 ENTER，然後在 [角色轉移確認] 對話方塊中按一下 [是]。
 
-        4.  輸入 **傳輸 RID 主機**，按 ENTER，然後在 [角色轉移確認]**** 對話方塊中按一下 [是]****。
+        4.  輸入 **傳輸 RID 主機**，按 ENTER，然後在 [角色轉移確認] 對話方塊中按一下 [是]。
 
-        5.  輸入 **傳輸架構主機**，按 ENTER，然後在 [角色轉移確認]**** 對話方塊中按一下 [是]****。
+        5.  輸入 **傳輸架構主機**，按 ENTER，然後在 [角色轉移確認] 對話方塊中按一下 [是]。
 
     6.  輸入 **q**，然後按 ENTER 鍵，直到您返回命令提示字元。
 

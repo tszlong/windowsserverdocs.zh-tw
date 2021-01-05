@@ -1,18 +1,18 @@
 ---
 title: 支援 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows Server Essentials 的支援和疑難排解選項。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 45a81150168e0b1f21a39b8d773872a1d5daef6b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 59bba0cdaadd977bd70b7155b47d8dffcb6f3073
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625269"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810265"
 ---
 # <a name="support-windows-server-essentials"></a>支援 Windows Server Essentials
 

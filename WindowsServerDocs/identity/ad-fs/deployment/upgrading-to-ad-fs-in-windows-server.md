@@ -7,12 +7,12 @@ manager: femila
 ms.date: 04/09/2018
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: f1d6f9a65c6a41efd58cca82eb0597ec4cf9b451
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 6be8d01bc7e729ee15a1488f5721e7db5f3d364d
+ms.sourcegitcommit: 3247e193d9fe1b57543fff215460a6d9db52f58b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046156"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814937"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>升級至使用 WID 資料庫的 Windows Server 2016 AD FS
 
@@ -64,11 +64,11 @@ ms.locfileid: "97046156"
 
 2. 使用 AD FS 設定向導，將新的 Windows Server 2019 伺服器加入現有的 AD FS 伺服器陣列中。
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)
+![顯示如何將新的 Windows Server 2019 伺服器加入現有 AD FS 伺服器陣列的螢幕擷取畫面。](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)
 
 3. 在 Windows Server 2019 同盟伺服器上，開啟 AD FS 管理]。 請注意，因為此同盟伺服器不是主伺服器，所以無法使用管理功能。
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_3.png)
+![顯示 A D F S 視窗的螢幕擷取畫面。](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_3.png)
 
 4. 在 Windows Server 2019 伺服器上，開啟已提升許可權的 PowerShell 命令視窗，然後執行下列 Cmdlet：
 
@@ -76,7 +76,7 @@ ms.locfileid: "97046156"
 Set-AdfsSyncProperties -Role PrimaryComputer
 ```
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)
+![終端機視窗的螢幕擷取畫面，顯示如何使用 Set-AdfsSyncProperties 角色 PrimaryComputer Cmdlet。](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)
 
 5. 在先前設定為主要的 AD FS 伺服器上，開啟已提升許可權的 PowerShell 命令視窗，然後執行下列 Cmdlet：
 
@@ -84,22 +84,22 @@ Set-AdfsSyncProperties -Role PrimaryComputer
 Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 ```
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)
+![顯示如何使用 Set-AdfsSyncProperties 角色 SecondaryComputer-PrimaryComputerName {FQDN} Cmdlet 的終端機視窗螢幕擷取畫面。](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)
 
 6. 現在，在 Windows Server 2016 同盟伺服器上，開啟 AD FS 管理。 請注意，現在所有的系統管理員功能都會出現，是因為主要角色已轉移至此伺服器。
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
+![顯示 Windows Server 2016 同盟伺服器開啟 AD FS 管理] 視窗的螢幕擷取畫面。](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
 
 7. 如果您要將 AD FS 2012 R2 伺服器陣列升級至2016或2019，伺服器陣列升級需要 AD 架構至少為層級85。  若要使用 Windows Server 2016 安裝媒體升級架構，請開啟命令提示字元並流覽至 support\adprep 目錄。 執行下列動作：  `adprep /forestprep`
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
+![顯示如何流覽至 support\adprep 目錄的螢幕擷取畫面。](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
 
 完成執行之後 `adprep /domainprep`
 
 > [!NOTE]
 > 執行下一個步驟之前，請從 [設定] 執行 Windows Update，以確定 Windows Server 為最新狀態。 繼續此程序，直到不需要進一步更新。
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)
+![顯示如何執行 adprep/domainprep。的螢幕擷取畫面](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)
 
 8. 現在，在 Windows Server 2016 伺服器上，開啟 PowerShell 並執行下列 Cmdlet：
 
@@ -111,15 +111,15 @@ Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 Invoke-AdfsFarmBehaviorLevelRaise
 ```
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)
+![顯示如何執行 Invoke-AdfsFarmBehaviorLevelRaise Cmdlet 的終端機視窗螢幕擷取畫面。](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)
 
 9. 出現提示時，輸入 Y。這會開始引發層級。 一旦完成，您就已成功產生 FBL\。
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)
+![顯示何時輸入 Y 的終端機視窗螢幕擷取畫面。](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)
 
 10. 現在，如果您移至 AD FS 管理，您會看到稍後的 AD FS 版本已新增新功能
 
-![升級](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
+![顯示已新增功能的螢幕擷取畫面。](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
 11. 同樣地，您可以使用 PowerShell Cmdlet：  `Get-AdfsFarmInformation` 顯示目前的 fbl\。
 

@@ -1,18 +1,18 @@
 ---
 title: 疑難排解 Windows Server Essentials 中的電腦備份與還原錯誤
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何針對電腦備份進行疑難排解，包括備份設定問題、不完整或失敗的備份、備份健康情況警示，以及其他問題。
 ms.date: 06/25/2013
 ms.topic: article
 ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: ce2d6d51f230d4a06f2e1b9acfd378d61bfaf863
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 48adcdf82d6b8963e754c154b726e93d13e278ca
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625106"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810145"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>疑難排解 Windows Server Essentials 中的電腦備份與還原錯誤
 
@@ -47,23 +47,23 @@ ms.locfileid: "89625106"
 
 #### <a name="to-start-computer-backup-services-on-the-server"></a>在伺服器上啟動電腦備份服務
 
-1. 在伺服器上，依序按一下 [開始]****、[系統管理工具]****，然後按一下 [服務]****。
+1. 在伺服器上，依序按一下 [開始]、[系統管理工具]，然後按一下 [服務]。
 
-2. 向下捲動找到 [Windows Server Client Computer Backup Provider Service]**** 並且按一下。 如果服務的狀態不是 [已啟動]****，則以滑鼠右鍵按一下服務，然後按一下 [啟動]****。
+2. 向下捲動找到 [Windows Server Client Computer Backup Provider Service] 並且按一下。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。
 
-3. 按一下 [Windows Server Client Computer Backup Service]****。 如果服務的狀態不是 [已啟動]****，則以滑鼠右鍵按一下服務，然後按一下 [啟動]****。
+3. 按一下 [Windows Server Client Computer Backup Service]。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。
 
-4. 關閉 [服務]****。
+4. 關閉 [服務]。
 
 5. 確定 Windows Server Client Computer Backup Provider Service 正在用戶端電腦上執行。
 
 #### <a name="to-start-the-computer-backup-service-on-the-client-computer"></a>在用戶端電腦上啟動電腦備份服務
 
-1. 在用戶端電腦上，按一下 [開始]****，在 [搜尋程式及檔案]**** 文字方塊中輸入**服務**，然後按 Enter 鍵。
+1. 在用戶端電腦上，按一下 [開始]，在 [搜尋程式及檔案] 文字方塊中輸入 **服務**，然後按 Enter 鍵。
 
-2. 向下捲動找到 [Windows Server Client Computer Backup Provider Service]**** 並且按一下。 如果服務的狀態不是 [已啟動]****，則以滑鼠右鍵按一下服務，然後按一下 [啟動]****。
+2. 向下捲動找到 [Windows Server Client Computer Backup Provider Service] 並且按一下。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。
 
-3. 關閉 [服務]****。
+3. 關閉 [服務]。
 
 4. 檢查警示以判斷備份資料庫中是否有錯誤。 如果有錯誤，請依照警示中的指示修復備份資料庫。
 
@@ -83,19 +83,19 @@ ms.locfileid: "89625106"
 
 #### <a name="to-identify-volumes-that-were-not-backed-up-successfully"></a>找出未成功備份的磁碟區
 
-1. 開啟 Windows Server Essentials 儀表板，然後按一下 [電腦和備份]****。
+1. 開啟 Windows Server Essentials 儀表板，然後按一下 [電腦和備份]。
 
-2. 按一下備份未成功完成的電腦名稱，然後按一下 [工作]**** 窗格中的 [檢視電腦內容]****。
+2. 按一下備份未成功完成的電腦名稱，然後按一下 [工作] 窗格中的 [檢視電腦內容]。
 
-3. 按一下未成功完成的備份，然後按一下 [檢視詳細資料]****。
+3. 按一下未成功完成的備份，然後按一下 [檢視詳細資料]。
 
-4. 在 [備份詳細資料]**** 對話方塊中，每個成功備份的磁碟區，其狀態會顯示綠色核取記號。
+4. 在 [備份詳細資料] 對話方塊中，每個成功備份的磁碟區，其狀態會顯示綠色核取記號。
 
 #### <a name="to-troubleshoot-an-unsuccessful-backup-of-a-volume"></a>疑難排解失敗的磁碟區備份
 
 1. 確定硬碟已連接到電腦、電源已開啟，而且正常運作。
 
-2. 執行 **chkdsk /f /r** 修正硬碟上的任何錯誤 (**/f**)，以及從任何損壞的磁區復原可讀取的資訊 (**/r**)。 如需執行 **chkdsk**的詳細資訊，請參閱 [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562)。
+2. 執行 **chkdsk /f /r** 修正硬碟上的任何錯誤 (**/f**)，以及從任何損壞的磁區復原可讀取的資訊 (**/r**)。 如需執行 **chkdsk** 的詳細資訊，請參閱 [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562)。
 
 3. 確定備份執行時電腦未關機或中斷網路連線。
 
@@ -107,11 +107,11 @@ ms.locfileid: "89625106"
 
         **延伸磁碟區**
 
-        1. 在 [控制台] 中，按一下 [系統及安全性]****。
+        1. 在 [控制台] 中，按一下 [系統及安全性]。
 
-        2. 在 [系統管理工具]**** 下，按一下 [建立及格式化硬碟磁碟分割]****。
+        2. 在 [系統管理工具] 下，按一下 [建立及格式化硬碟磁碟分割]。
 
-        3. 以滑鼠右鍵按一下您想要延伸的磁碟區。 如果 [延伸磁碟區]**** 已啟用，請選取該選項。 如果選項未啟用，您就無法延伸磁碟區。
+        3. 以滑鼠右鍵按一下您想要延伸的磁碟區。 如果 [延伸磁碟區] 已啟用，請選取該選項。 如果選項未啟用，您就無法延伸磁碟區。
 
         4. 依照「延伸磁碟區精靈」中的步驟延伸磁碟區。
 
@@ -127,7 +127,7 @@ ms.locfileid: "89625106"
 
 5. 檢查伺服器上指出伺服器沒有足夠磁碟空間的其他警示，以便讓備份順利完成。 依照警示中的指示修正問題。
 
-6. 在命令提示字元中執行 **vssadmin** 可疑難排解磁碟區陰影複製服務 (VSS) 問題。 如需 **vssadmin**的相關資訊，請參閱 [VSSADMIN](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754968(v=ws.10))。
+6. 在命令提示字元中執行 **vssadmin** 可疑難排解磁碟區陰影複製服務 (VSS) 問題。 如需 **vssadmin** 的相關資訊，請參閱 [VSSADMIN](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754968(v=ws.10))。
 
 ## <a name="troubleshoot-backup-health-alert-issues"></a>疑難排解備份健康情況警示問題
 
@@ -147,24 +147,24 @@ ms.locfileid: "89625106"
 
 #### <a name="to-start-backup-services-on-the-server"></a>若要在伺服器上啟動備份服務 * *
 
-1. 在伺服器上，依序按一下 [開始]****、[系統管理工具]****，然後按一下 [服務]****。
+1. 在伺服器上，依序按一下 [開始]、[系統管理工具]，然後按一下 [服務]。
 
     > [!NOTE]
     >  如果您從遠端管理伺服器，您必須使用「遠端桌面連線」存取伺服器桌面。 如需使用「遠端桌面連線」的相關資訊，請參閱 [使用「遠端桌面連線」連線到另一部電腦](https://support.microsoft.com/help/4028379/windows-10-how-to-use-remote-desktop)。
 
-2. 向下捲動找到 [Windows Server Client Computer Backup Provider Service]**** 並且按一下。 如果服務的狀態不是 [已啟動]****，則以滑鼠右鍵按一下服務，然後按一下 [啟動]****。
+2. 向下捲動找到 [Windows Server Client Computer Backup Provider Service] 並且按一下。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。
 
-3. 按一下 [Windows Server Client Computer Backup Service]****。 如果服務的狀態不是 [已啟動]****，則以滑鼠右鍵按一下服務，然後按一下 [啟動]****。
+3. 按一下 [Windows Server Client Computer Backup Service]。 如果服務的狀態不是 [已啟動]，則以滑鼠右鍵按一下服務，然後按一下 [啟動]。
 
-4. 關閉 [服務]****。
+4. 關閉 [服務]。
 
 ##### <a name="to-start-backup-services-on-a-client-computer"></a>在用戶端電腦上啟動備份服務
 
-1. 在用戶端電腦上，按一下 [開始]****，在 [搜尋程式及檔案]**** 文字方塊中輸入**服務**，然後按 Enter 鍵。
+1. 在用戶端電腦上，按一下 [開始]，在 [搜尋程式及檔案] 文字方塊中輸入 **服務**，然後按 Enter 鍵。
 
-2. 以滑鼠右鍵按一下 [Windows Server Client Computer Backup Provider Service]****，然後按一下 [啟動]****。
+2. 以滑鼠右鍵按一下 [Windows Server Client Computer Backup Provider Service]，然後按一下 [啟動]。
 
-3. 關閉 [服務]****。
+3. 關閉 [服務]。
 
 4. 查看用戶端電腦或伺服器上的事件記錄檔，了解與備份服務或驅動程式相關的問題。
 
@@ -190,13 +190,13 @@ ms.locfileid: "89625106"
 
 4. 嘗試從另一個備份還原檔案或資料夾。
 
-5. 確定「Windows Server 解決方案電腦還原驅動程式」**** 已安裝且正常運作。
+5. 確定「Windows Server 解決方案電腦還原驅動程式」已安裝且正常運作。
 
     **檢查 Windows Server 解決方案電腦還原驅動程式的狀態**
 
-    1. 按一下 [開始]****，在 [搜尋程式及檔案]**** 文字方塊中輸入 **Device Manager**，然後按 Enter 鍵。
+    1. 按一下 [開始]，在 [搜尋程式及檔案] 文字方塊中輸入 **Device Manager**，然後按 Enter 鍵。
 
-    2. 在裝置管理員中，按一下 [系統裝置]****，捲動到 [Windows Server 解決方案電腦還原驅動程式]****。
+    2. 在裝置管理員中，按一下 [系統裝置]，捲動到 [Windows Server 解決方案電腦還原驅動程式]。
 
     3. 如果沒有顯示驅動程式：
 
@@ -210,11 +210,11 @@ ms.locfileid: "89625106"
 
     5. 如果顯示的圖示不是電腦監視器
 
-        1. 以滑鼠右鍵按一下 [Windows Server 解決方案電腦還原驅動程式]****，然後按一下 [內容]****。
+        1. 以滑鼠右鍵按一下 [Windows Server 解決方案電腦還原驅動程式]，然後按一下 [內容]。
 
-        2. 按一下 [驅動程式]**** 索引標籤，然後按一下 [更新驅動程式]****。
+        2. 按一下 [驅動程式] 索引標籤，然後按一下 [更新驅動程式]。
 
-        3. 按一下 [自動搜尋更新的驅動程式軟體]****，然後依照指示更新驅動程式。
+        3. 按一下 [自動搜尋更新的驅動程式軟體]，然後依照指示更新驅動程式。
 
     6. 關閉裝置管理員。
 

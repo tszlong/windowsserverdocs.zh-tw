@@ -1,18 +1,18 @@
 ---
 title: 管理 Windows Server Essentials 中的 SharePoint Online
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何從儀表板管理您的 SharePoint Online 文件庫和小組網站，而不需登入 Microsoft 365。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 282f3634-6de6-4691-803c-df6c3c16660d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 66e5a2c8781e5c9602ba667e15ac789732767be3
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5d7e7e033cbaa625bf9865822cc12f290136e791
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626095"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811245"
 ---
 # <a name="manage-sharepoint-online-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 SharePoint Online
 
@@ -32,14 +32,14 @@ ms.locfileid: "89626095"
 
 ### <a name="manage-your-online-libraries"></a>管理您的線上文件庫
 
-- **新增程式庫。** 在 [SharePoint 文件庫]**** 索引標籤中，使用 [新增文件庫]****。 您可以執行所有的一般選項：
+- **新增程式庫。** 在 [SharePoint 文件庫] 索引標籤中，使用 [新增文件庫]。 您可以執行所有的一般選項：
   - 選擇小組網站和文件庫類別。
   - 決定是否要使用版本控制。
   - 指派存取權限。
      **秘訣：** 若要找出您的文件庫將會繼承哪些小組網站許可權，如果您未指派許可權，請使用 **[流覽網站] 許可權**。
-- **開啟文件庫。** 若要使用文件庫的內容，您必須在 Microsoft 365 中開啟。 只要選取文件庫，並按一下 [開啟文件庫]****。 您可以使用內容執行的動作將取決於您用來登入 SharePoint Online 的認證。
-- **變更版本控制或存取權限。** 您可以使用 [檢視文件庫內容]**** 以檢視或變更文件庫的版本控制或存取權限。
-- **刪除程式庫。** 在您檢查確定文件庫上沒有儲存任何後續還需要的資料後，請選取該文件庫並按一下 [刪除文件庫]****。 **警告：** 在您刪除 SharePoint Online 文件庫之前，請務必將任何想要保留的檔案儲存到另一個位置。 當您從 SharePoint 刪除文件庫時，所有專案都會永久刪除。 沒有任何可以復原的方法。
+- **開啟文件庫。** 若要使用文件庫的內容，您必須在 Microsoft 365 中開啟。 只要選取文件庫，並按一下 [開啟文件庫]。 您可以使用內容執行的動作將取決於您用來登入 SharePoint Online 的認證。
+- **變更版本控制或存取權限。** 您可以使用 [檢視文件庫內容] 以檢視或變更文件庫的版本控制或存取權限。
+- **刪除程式庫。** 在您檢查確定文件庫上沒有儲存任何後續還需要的資料後，請選取該文件庫並按一下 [刪除文件庫]。 **警告：** 在您刪除 SharePoint Online 文件庫之前，請務必將任何想要保留的檔案儲存到另一個位置。 當您從 SharePoint 刪除文件庫時，所有專案都會永久刪除。 沒有任何可以復原的方法。
 
 ### <a name="manage-your-team-sites"></a>管理您的小組網站
 
@@ -48,7 +48,7 @@ ms.locfileid: "89626095"
 
 ## <a name="tips"></a>提示
 
--   **按一下 [重新整理] 以顯示在 Microsoft 365 入口網站中所做的最新變更。** 開啟 Microsoft 365 以管理 SharePoint Online 之後，您必須重新整理顯示。 如果您維持長時間開啟儀表板，請按一下 [重新整理]**** 以確定您看到的是最新的變更。
+-   **按一下 [重新整理] 以顯示在 Microsoft 365 入口網站中所做的最新變更。** 開啟 Microsoft 365 以管理 SharePoint Online 之後，您必須重新整理顯示。 如果您維持長時間開啟儀表板，請按一下 [重新整理] 以確定您看到的是最新的變更。
 
 -   **您可以在 SharePoint Online 中執行的動作，取決於您是在儀表板或 Microsoft 365 中工作。** 在儀表板上，SharePoint Online 的變更是使用系統管理員帳戶進行 Microsoft 365 整合。 但是當您從儀表板登入 Microsoft 365 時，您所使用的線上帳戶存取權限會決定您可以執行的動作。
 

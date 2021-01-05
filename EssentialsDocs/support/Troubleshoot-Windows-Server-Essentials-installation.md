@@ -1,18 +1,18 @@
 ---
 title: Windows Server Essentials 安裝問題疑難排解
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何針對安裝 Windows Server Essentials 時可能發生的一般問題進行疑難排解。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: d46e760fd168d44cb8f036d6b1b28180db2ffce2
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1aed2c5df875b59adfbd31fe2cf57ee1d129ec92
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625115"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810165"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Windows Server Essentials 安裝問題疑難排解
 
@@ -37,7 +37,7 @@ ms.locfileid: "89625115"
  如果安裝 Windows Server Essentials 失敗，請採取下列步驟來協助找出導致失敗的問題。
 
 > [!IMPORTANT]
->  請務必不要在安裝 Windows Server Essentials 時手動重新開機伺服器。 在安裝和初始設定期間，伺服器會自動重新啟動幾次。 如果您在看到 [伺服器安裝成功]**** 訊息之前手動重新啟動伺服器，可能會中斷安裝並導致安裝失敗。
+>  請務必不要在安裝 Windows Server Essentials 時手動重新開機伺服器。 在安裝和初始設定期間，伺服器會自動重新啟動幾次。 如果您在看到 [伺服器安裝成功] 訊息之前手動重新啟動伺服器，可能會中斷安裝並導致安裝失敗。
 
 #### <a name="to-identify-issues-in-a-failed-installation-of-windows-server-essentials"></a>若要找出 Windows Server Essentials 安裝失敗的問題
 
@@ -86,19 +86,19 @@ ms.locfileid: "89625115"
 
 5. 在 [Windows Server Essentials 安裝程式錯誤] 對話方塊中，按一下 [ **是]** 以載入其他存儲裝置驅動程式。
 
-6. 在出現 [請選取您的驅動程式的 inf 檔]**** 提示時，巡覽至磁碟片或 USB 快閃磁碟機上 DRIVERS 資料夾中的 .inf 檔，選取檔案，然後以滑鼠右鍵按一下檔案名稱，再按一下 [開啟]****。 這會載入驅動程式。
+6. 在出現 [請選取您的驅動程式的 inf 檔] 提示時，巡覽至磁碟片或 USB 快閃磁碟機上 DRIVERS 資料夾中的 .inf 檔，選取檔案，然後以滑鼠右鍵按一下檔案名稱，再按一下 [開啟]。 這會載入驅動程式。
 
    > [!NOTE]
    >  在您嘗試載入檔案之前，請先確認副檔名 (.inf) 為小寫字母。 這項作業區分大小寫，如果副檔名有大寫字母，則不會載入驅動程式檔案。
 
-7. 出現提示時，按一下 [是]****，以在安裝程式的文字模式階段期間提供存放裝置驅動程式。
+7. 出現提示時，按一下 [是]，以在安裝程式的文字模式階段期間提供存放裝置驅動程式。
 
    安裝程式現在應該會繼續正常運作。
 
 ###  <a name="adding-drivers-for-network-adapters"></a><a name="BKMK_AddingNICdrivers"></a> 新增網路介面卡的驅動程式
  如果 Windows Server Essentials 不支援電腦上的網路介面卡，則在安裝程式完成後，您的伺服器將不會有網路連線，而且您將無法將電腦連線到伺服器。
 
- 在 Windows Server Essentials 安裝結束時，如果未自動安裝網路介面卡驅動程式，系統就會通知您。 您也可以使用 [控制台] 中的 [網路連線]****，檢查是否有任何網路介面卡驅動程式遺失。 如果看不到與您伺服器上的網路介面卡關聯的網路連線，您需要安裝驅動程式。
+ 在 Windows Server Essentials 安裝結束時，如果未自動安裝網路介面卡驅動程式，系統就會通知您。 您也可以使用 [控制台] 中的 [網路連線]，檢查是否有任何網路介面卡驅動程式遺失。 如果看不到與您伺服器上的網路介面卡關聯的網路連線，您需要安裝驅動程式。
 
  如果電腦遺失任何網路介面卡支援的驅動程式，您需要手動安裝正確的網路介面卡驅動程式，再重新啟動伺服器。 請使用下列程序。
 
@@ -108,7 +108,7 @@ ms.locfileid: "89625115"
 
 2.  遵循製造商的安裝指示來安裝驅動程式。
 
-3.  將電腦重新開機。
+3.  重新啟動電腦。
 
     > [!IMPORTANT]
     >  如果您未在安裝遺失的網路介面卡驅動程式之後重新開機伺服器，則用戶端電腦上的 Windows Server Essentials 連接器軟體安裝可能會失敗。

@@ -1,17 +1,17 @@
 ---
 title: Hyper-v 應該是唯一啟用的角色
-description: 提供指示以解決這個最佳做法分析程式規則所報告的問題。
+description: 瞭解在您的伺服器上啟用 Hyper-v 以外的角色時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 5a0ed176-048f-40b1-b56c-8391b805fd37
 ms.date: 8/16/2016
-ms.openlocfilehash: a59f4ebd1bf3ce7ce93d2eb098302b5bd2c42cce
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f575f981975253faea30dad610120f3e314a1edf
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746833"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833613"
 ---
 # <a name="hyper-v-should-be-the-only-enabled-role"></a>Hyper-v 應該是唯一啟用的角色
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746833"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

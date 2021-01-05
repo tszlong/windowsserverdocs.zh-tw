@@ -1,18 +1,18 @@
 ---
 title: 將電腦加入新的 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何將電腦加入新的 Windows Server Essentials 網路。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 9a1133623af3a05f8aa0e867b1d3d66cbadd717f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: e8caa931637219aec10477540c79a299bba25e80
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622811"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810935"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>將電腦加入新的 Windows Server Essentials
 
@@ -44,7 +44,7 @@ ms.locfileid: "89622811"
 
 2.  在命令提示字元中輸入 **GPRESULT /R**，然後按 Enter。
 
-3.  檢查從套用群組原則區段的輸出結果：並確定它列出目的地伺服器，例如**列示 destinationsrv.domain.local。** 例如：
+3.  檢查從套用群組原則區段的輸出結果：並確定它列出目的地伺服器，例如 **列示 destinationsrv.domain.local。** 例如：
 
     ```
     USER SETTINGS
@@ -62,8 +62,8 @@ ms.locfileid: "89622811"
 
 5.  如果目的地伺服器仍未出現，可能是群組原則設定中發生錯誤，或將群組原則設定套用至此特定用戶端電腦時發生錯誤。 如果目的地伺服器沒有出現，請執行下列步驟：
 
-    1.  按一下 [開始]****、[執行]****，輸入 **rsop.msc** (原則的結果集)，然後按 ENTER。
+    1.  按一下 [開始]、[執行]，輸入 **rsop.msc** (原則的結果集)，然後按 ENTER。
 
     2.  展開樹狀結構上的 X，直到到達節點為止。
 
-    3.  以滑鼠右鍵按一下節點，並按一下 [檢視錯誤]****，了解群組原則設定為何在列示的電腦上失敗。
+    3.  以滑鼠右鍵按一下節點，並按一下 [檢視錯誤]，了解群組原則設定為何在列示的電腦上失敗。

@@ -1,18 +1,18 @@
 ---
 title: 將 Windows Server 2008 Foundation 移轉到 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在新硬體上將現有的 Windows Server 2008 Foundation 網域遷移到 Windows Server 2012 Essentials，然後遷移設定和資料。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f22fc0a4-cb82-4e60-afe6-2d03145745e7
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 7ccb0e79094c5d3393b9548fc733224fd8fa9cbf
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4ba2418376e5217f7f4e9fd87ced1779f434ad52
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625878"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810885"
 ---
 # <a name="migrate-windows-server-2008-foundation-to-windows-server-essentials"></a>將 Windows Server 2008 Foundation 移轉到 Windows Server Essentials
 
@@ -58,10 +58,10 @@ ms.locfileid: "89625878"
 
 2.  在搜尋方塊中，輸入 **cmd**。
 
-3.  在結果清單中，以滑鼠右鍵按一下 cmd****，然後按一下 [以系統管理員身分執行]****。
+3.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。
 
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>以系統管理員身分在目的地伺服器上開啟命令提示字元視窗
 
-1.  在 [開始]**** 畫面的搜尋方塊中，輸入 **cmd**。
+1.  在 [開始] 畫面的搜尋方塊中，輸入 **cmd**。
 
-2.  在結果清單中，以滑鼠右鍵按一下 cmd****，然後按一下 [以系統管理員身分執行]****。
+2.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。

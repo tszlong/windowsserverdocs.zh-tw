@@ -1,18 +1,18 @@
 ---
 title: 管理 Windows Server Essentials 中的 VPN
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何使用 VPN 連線來存取伺服器資源。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: cc2b264a-b9a8-4114-9f7b-8604f77096e5
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a4e2d87787c3c7e9ebcb8dc216de725f7cb13a1f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b4518d43b2b3a24f9df15e122c328c1874817092
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626007"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811205"
 ---
 # <a name="manage-vpn-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 VPN
 
@@ -35,11 +35,11 @@ ms.locfileid: "89626007"
 
 1.  開啟 [儀表板]。
 
-2.  按一下 [設定]****，然後按一下 [隨處存取]**** 索引標籤。
+2.  按一下 [設定]，然後按一下 [隨處存取] 索引標籤。
 
-3.  按一下 [設定]****。 此時會出現 [設定隨處存取精靈]。
+3.  按一下 [設定]  。 此時會出現 [設定隨處存取精靈]。
 
-4.  在 [選擇要啟用的隨處存取功能]**** 頁面，選取 [虛擬私人網路]**** 核取方塊。
+4.  在 [選擇要啟用的隨處存取功能] 頁面，選取 [虛擬私人網路] 核取方塊。
 
 5.  遵循指示以完成精靈。
 
@@ -50,17 +50,17 @@ ms.locfileid: "89626007"
 
 1.  開啟 [儀表板]。
 
-2.  在瀏覽列上，按一下 [使用者]****。
+2.  在瀏覽列上，按一下 [使用者]。
 
 3.  在使用者帳戶清單中，選取您想要授與桌面遠端存取權限的使用者帳戶。
 
-4.  在 [ **<使用者帳戶 \> ** 工作] 窗格中 **，按一下 [** 內容]。
+4.  在 [ **<使用者帳戶 \>** 工作] 窗格中 **，按一下 [** 內容]。
 
-5.  在 [ **<使用者帳戶 \> **內容] 中，按一下 [ **隨處存取** ] 索引標籤。
+5.  在 [ **<使用者帳戶 \>** 內容] 中，按一下 [ **隨處存取** ] 索引標籤。
 
-6.  若要允許使用者使用 VPN 連線到伺服器，請在 [ **隨處存取** ] 索引標籤上，選取 [ **允許虛擬私人網路 (vpn) **  ] 核取方塊。
+6.  若要允許使用者使用 VPN 連線到伺服器，請在 [ **隨處存取** ] 索引標籤上，選取 [ **允許虛擬私人網路 (vpn)**  ] 核取方塊。
 
-7.  按一下 [套用]****，然後按一下 [確定]****。
+7.  按一下 [套用]，然後按一下 [確定]。
 
 ##  <a name="connect-client-computers-to-the-server"></a><a name="BKMK_Connect"></a> 將用戶端電腦連線到伺服器
  在執行 Windows Server Essentials 的伺服器上啟用 VPN 用於遠端存取後，您就可以使用 VPN 連線連線到伺服器，並使用伺服器上儲存的所有資源。 不過，您必須先將電腦連線到伺服器。 當您使用 [將我的電腦連線到伺服器精靈] 將電腦連線到伺服器時，會自動在用戶端電腦上產生 VPN 網路連線，您可以在家中或旅途中工作時使用這個連線存取伺服器資源。 如需將電腦連線到伺服器的逐步指示，請參閱 [Connect computers to the server](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
@@ -72,7 +72,7 @@ ms.locfileid: "89626007"
 
 1.  在用戶端電腦上按 Ctrl + Alt + Delete。
 
-2.  在登入畫面按一下 [切換使用者]****。
+2.  在登入畫面按一下 [切換使用者]。
 
 3.  按一下畫面右下角的網路登入圖示。
 

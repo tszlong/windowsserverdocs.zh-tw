@@ -1,18 +1,18 @@
 ---
 title: Windows Server Essentials 中的電腦監視問題疑難排解
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何針對在 [警示檢視器] 中監視電腦的健全狀況狀態時，以及透過 Windows Server Essentials 中的電子郵件通知，進行問題的疑難排解。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 55daffa3c1db284d3772fa39eb64e0411ad1c7a6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d3483482d3540bf632e2d2bb8fbd8828fa764b28
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625092"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810155"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials 中的電腦監視問題疑難排解
 
@@ -56,15 +56,15 @@ ms.locfileid: "89625092"
 
 1. 在儀表板上，按一下右上角的任何警示圖示以開啟警示檢視器。
 
-2. 在警示檢視器底部，按一下 [設定警示的電子郵件通知]****。
+2. 在警示檢視器底部，按一下 [設定警示的電子郵件通知]。
 
-3. 在 [設定警示的電子郵件通知]**** 對話方塊中，按一下 [啟用]****。
+3. 在 [設定警示的電子郵件通知] 對話方塊中，按一下 [啟用]。
 
-4. 在 [SMTP 設定]**** 對話方塊中，更新 SMTP 設定，然後按一下 [確定]****。
+4. 在 [SMTP 設定] 對話方塊中，更新 SMTP 設定，然後按一下 [確定]。
 
-5. 若要測試更新的設定，請按一下 [套用及傳送電子郵件]****。
+5. 若要測試更新的設定，請按一下 [套用及傳送電子郵件]。
 
-6. 確認測試電子郵件已成功後，按一下 [確定]**** 以儲存更新的設定。
+6. 確認測試電子郵件已成功後，按一下 [確定] 以儲存更新的設定。
 
 ### <a name="test-email-notification-does-not-list-any-alerts"></a>測試電子郵件通知沒有列出任何警示
 
@@ -72,7 +72,7 @@ ms.locfileid: "89625092"
 
 **解決方式** 警示檢視器中並非所有警示都會產生電子郵件通知。 只有在其健康定義檔內設定為以電子郵件通知呈報的警示，才會以電子郵件傳送給指定的電子郵件收件者。
 
-當您按一下 [套用及傳送電子郵件]**** 時，通常您會收到沒有列出任何健康情況警示的範例電子郵件通知。 不過，如果此測試程序期間已確認有設定為傳送電子郵件通知的健康警示，測試電子郵件中就會包含該警示。
+當您按一下 [套用及傳送電子郵件] 時，通常您會收到沒有列出任何健康情況警示的範例電子郵件通知。 不過，如果此測試程序期間已確認有設定為傳送電子郵件通知的健康警示，測試電子郵件中就會包含該警示。
 
 ### <a name="active-alerts-are-displayed-for-an-uninstalled-application"></a>已解除安裝的應用程式顯示作用中警示
 
@@ -86,4 +86,4 @@ ms.locfileid: "89625092"
 
 2. 在瀏覽窗格中，按一下任何顯示的警示圖示 (嚴重、警告或資訊)。 這會啟動警示檢視器。
 
-3. 在 [警示檢視器] 中，以滑鼠右鍵按一下您想要刪除的警示，然後按一下 [刪除此警示]****。
+3. 在 [警示檢視器] 中，以滑鼠右鍵按一下您想要刪除的警示，然後按一下 [刪除此警示]。

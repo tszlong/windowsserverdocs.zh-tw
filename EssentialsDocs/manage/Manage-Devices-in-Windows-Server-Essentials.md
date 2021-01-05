@@ -1,18 +1,18 @@
 ---
 title: 管理 Windows Server Essentials 中的裝置
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解伺服器的裝置管理功能，並瞭解如何在網路上設定和使用裝置。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 96d99bb41a528a3a2f86be2d876df6e777e4b790
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0e275db0844ac431b80284a6c2d69540432a2be5
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623143"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811395"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的裝置
 
@@ -33,13 +33,13 @@ ms.locfileid: "89623143"
 -   [檢視電腦內容](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)
 
 ##  <a name="manage-devices-by-using-the-dashboard"></a><a name="BKMK_1"></a> 使用儀表板來管理裝置
- Windows Server Essentials 可讓您使用 [Windows Server Essentials 儀表板] 來執行一般系統管理工作。 [儀表板] 的 [裝置]**** 頁面提供下列各項：
+ Windows Server Essentials 可讓您使用 [Windows Server Essentials 儀表板] 來執行一般系統管理工作。 [儀表板] 的 [裝置] 頁面提供下列各項：
 
 -   一份網路電腦清單，當中顯示：
 
     -   電腦的名稱
 
-    -   電腦的狀態 ([線上]**** 或 [離線]****)
+    -   電腦的狀態 ([線上] 或 [離線])
 
     -   電腦描述
 
@@ -61,7 +61,7 @@ ms.locfileid: "89623143"
 
 1. 開啟 [Windows Server Essentials 儀表板]。
 
-2. 在瀏覽列上，按一下 [裝置]****。
+2. 在瀏覽列上，按一下 [裝置]。
 
 3. 在清單窗格中檢視網路中所有電腦的狀態。
 
@@ -91,13 +91,13 @@ ms.locfileid: "89623143"
 
 1.  開啟 [Windows Server Essentials 儀表板]。
 
-2.  在瀏覽列上，按一下 [使用者]****。
+2.  在瀏覽列上，按一下 [使用者]。
 
 3.  在使用者帳戶清單中，選取您想要變更的使用者帳戶。
 
-4.  在 [ **<使用者帳戶 \> ** 工作] 窗格中，按一下 [ **查看帳戶屬性**]。 使用者帳戶的 [內容]**** 頁面隨即出現。
+4.  在 [ **<使用者帳戶 \>** 工作] 窗格中，按一下 [ **查看帳戶屬性**]。 使用者帳戶的 [內容] 頁面隨即出現。
 
-5.  在 [電腦存取]**** 索引標籤上，選取這個使用者可以從遠端存取的電腦，然後按一下 [確定]****。
+5.  在 [電腦存取] 索引標籤上，選取這個使用者可以從遠端存取的電腦，然後按一下 [確定]。
 
 ##  <a name="remove-a-computer-from-the-server"></a><a name="BKMK_3"></a> 從伺服器移除電腦
  當您使用 [儀表板] 將電腦從執行 Windows Server Essentials 的伺服器中移除時，它就不再受伺服器管理。 如此一來，在將它從網路中移除之後，伺服器就會停止建立電腦備份或監視它的健康情況。
@@ -109,9 +109,9 @@ ms.locfileid: "89623143"
 
 1.  開啟 [Windows Server Essentials 儀表板]。
 
-2.  在瀏覽列中，按一下 [裝置]**** 索引標籤。
+2.  在瀏覽列中，按一下 [裝置] 索引標籤。
 
-3.  在電腦清單中，於您想要從網路中移除的電腦上按一下滑鼠右鍵，然後按一下 [移除電腦]****。
+3.  在電腦清單中，於您想要從網路中移除的電腦上按一下滑鼠右鍵，然後按一下 [移除電腦]。
 
 ##  <a name="configure-group-policy-settings-for-folder-redirection-and-security"></a><a name="BKMK_5"></a> 設定資料夾重新導向和安全性的群組原則設定
  您可以使用 [Windows Server Essentials 儀表板] 來設定「群組原則」並將它部署到 Windows Server Essentials 網路中的電腦。 Windows Server Essentials 中的「群組原則」包括會影響 Windows Update、Windows Defender 及網路防火牆的資料夾重新導向和安全性設定。
@@ -120,7 +120,7 @@ ms.locfileid: "89623143"
 
 1.  開啟 [Windows Server Essentials 儀表板]。
 
-2.  在瀏覽列上，按一下 [裝置]****。
+2.  在瀏覽列上，按一下 [裝置]。
 
 3.  若為 Windows Server Essentials：在 [全域 **使用者** 工作] 窗格中，按一下 [ **執行群組原則**]。
 
@@ -128,16 +128,16 @@ ms.locfileid: "89623143"
 
 4.  [實作群組原則精靈] 隨即開啟。
 
-5.  在精靈的 [啟用資料夾重新導向群組原則]**** 頁面上，您可以選擇您想要重新導向的使用者資料夾。
+5.  在精靈的 [啟用資料夾重新導向群組原則] 頁面上，您可以選擇您想要重新導向的使用者資料夾。
 
-6.  在精靈的 [啟用安全性原則設定]**** 頁面上，您可以選擇啟用 [Windows Update]****、[Windows Defender]**** 及 [網路防火牆]**** 的「群組原則」設定。
+6.  在精靈的 [啟用安全性原則設定] 頁面上，您可以選擇啟用 [Windows Update]、[Windows Defender] 及 [網路防火牆] 的「群組原則」設定。
 
-7.  按一下 [完成]**** 來實作「群組原則」設定。
+7.  按一下 [完成] 來實作「群組原則」設定。
 
 ##  <a name="connect-to-a-network-computer-by-using-a-remote-desktop-session"></a><a name="BKMK_7"></a> 使用遠端桌面會話連接到網路電腦
  當您離開辦公室時，若要從遠端存取您的 Windows Server Essentials 網路電腦，請使用網頁瀏覽器登入您組織的遠端 Web 存取網站，然後在 [ **電腦** ] 索引標籤上，按一下電腦的名稱。
 
- [狀態]**** 欄會顯示您是否可以連線到網路上的某部電腦，並且可包含下列值：
+ [狀態] 欄會顯示您是否可以連線到網路上的某部電腦，並且可包含下列值：
 
 -   **可用**
 
@@ -156,13 +156,13 @@ ms.locfileid: "89623143"
      電腦連線被防火牆封鎖，或遠端桌面在電腦上被停用或被「群組原則」停用。 如果這個狀態有變更，可能需要多達 6 小時的時間才會在伺服器上更新。
 
 ##  <a name="view-computer-properties"></a><a name="BKMK_8"></a> 查看電腦屬性
- [Windows Server Essentials 儀表板] 的 [裝置]**** 區段會顯示網路電腦的清單。 這份清單也會提供每部電腦的其他相關資訊。
+ [Windows Server Essentials 儀表板] 的 [裝置] 區段會顯示網路電腦的清單。 這份清單也會提供每部電腦的其他相關資訊。
 
 #### <a name="to-view-a-list-of-computers"></a>檢視電腦清單
 
 1.  開啟 [Windows Server Essentials 儀表板]。
 
-2.  在主瀏覽列上，按一下 [裝置]****。
+2.  在主瀏覽列上，按一下 [裝置]。
 
 3.  [儀表板] 會顯示目前的電腦清單。
 
@@ -170,11 +170,11 @@ ms.locfileid: "89623143"
 
 1.  在電腦清單中，選取您想要檢視或變更內容的帳戶。
 
-2.  在 [ **<Computername \> ** 工作] 窗格中，按一下 **[流覽電腦**內容]。 電腦的 [內容]**** 頁面隨即出現。
+2.  在 [ **<Computername \>** 工作] 窗格中，按一下 **[流覽電腦** 內容]。 電腦的 [內容] 頁面隨即出現。
 
 3.  按一下索引標籤以顯示該電腦的內容。
 
-4.  若要儲存您對電腦內容所做的任何變更，請按一下 [套用]****。
+4.  若要儲存您對電腦內容所做的任何變更，請按一下 [套用]。
 
 ## <a name="additional-references"></a>其他參考資料
 

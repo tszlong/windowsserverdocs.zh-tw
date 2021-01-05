@@ -1,18 +1,18 @@
 ---
 title: 步驟 6：從新的 Windows Server Essentials 網路降級和移除來源伺服器
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何從新的 Windows Server Essentials 網路降級和移除來源伺服器。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 6c4410cb94f79be291984a92a2b788e3ae984a4f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d842f7cf0b7378254e43fec7b6ed2b7e80b5b9c1
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625423"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810415"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>步驟 6：從新的 Windows Server Essentials 網路降級和移除來源伺服器
 
@@ -37,23 +37,23 @@ ms.locfileid: "89625423"
 
 1.  以網域系統管理員身分登入來源伺服器。
 
-2.  依序按一下 [開始]****、[系統管理工具]****，然後按一下 [伺服器管理員]****。
+2.  依序按一下 [開始]、[系統管理工具]，然後按一下 [伺服器管理員]。
 
 3.  按一下 **[使用者帳戶控制]** 對話方塊的 **[繼續]**。
 
-4.  在 [角色摘要]**** 區段中，按一下 [移除角色]****。
+4.  在 [角色摘要] 區段中，按一下 [移除角色]。
 
-5.  在 [移除角色精靈] 中，按一下 [下一步]****。
+5.  在 [移除角色精靈] 中，按一下 [下一步]。
 
-6.  清除 [Active Directory 憑證服務]**** 核取方塊，然後按一下 [下一步]****。
+6.  清除 [Active Directory 憑證服務] 核取方塊，然後按一下 [下一步]。
 
-7.  檢視 [確認移除選項]**** 頁面上的資訊，然後按一下 [移除]****。
-
-    > [!NOTE]
-    >  如果網際網路資訊服務 (IIS) 正在執行，會提示您停止服務才能繼續。 按一下 [確定]  。
+7.  檢視 [確認移除選項] 頁面上的資訊，然後按一下 [移除]。
 
     > [!NOTE]
-    >  首先，您可能需要移除 [憑證授權單位網頁註冊]**** (如果已安裝)。
+    >  如果網際網路資訊服務 (IIS) 正在執行，會提示您停止服務才能繼續。 按一下 [確定]。
+
+    > [!NOTE]
+    >  首先，您可能需要移除 [憑證授權單位網頁註冊] (如果已安裝)。
 
 8.  當 [移除角色精靈] 完成時，重新啟動伺服器以完成解除安裝程序。
 
@@ -85,13 +85,13 @@ ms.locfileid: "89625423"
 
 #### <a name="to-remove-the-source-server-from-active-directory"></a>從 Active Directory 中移除來源伺服器
 
-1.  在目的地伺服器上，開啟 [Active Directory 使用者和電腦]****。
+1.  在目的地伺服器上，開啟 [Active Directory 使用者和電腦]。
 
-2.  在 [Active Directory 使用者和電腦]**** 瀏覽窗格中，展開網域名稱，然後再展開 [電腦]****。
+2.  在 [Active Directory 使用者和電腦] 瀏覽窗格中，展開網域名稱，然後再展開 [電腦]。
 
-3.  如果來源伺服器仍然在伺服器清單中，以滑鼠右鍵按一下來源伺服器名稱，按一下 [刪除]****，然後按一下 [是]****。
+3.  如果來源伺服器仍然在伺服器清單中，以滑鼠右鍵按一下來源伺服器名稱，按一下 [刪除]，然後按一下 [是]。
 
-4.  請確認沒有列出來源伺服器，並關閉 [Active Directory 使用者和電腦]****。
+4.  請確認沒有列出來源伺服器，並關閉 [Active Directory 使用者和電腦]。
 
 ##  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a> 移除和重新規劃來源伺服器
  關閉來源伺服器，並中斷其網路連線。 建議您至少一週不要重新格式化來源伺服器，以確保所有必要的資料都移轉到目的地伺服器。 確認已移轉所有資料後，如有必要，您可以在網路上重新安裝這部伺服器，作為其他工作的次要伺服器。

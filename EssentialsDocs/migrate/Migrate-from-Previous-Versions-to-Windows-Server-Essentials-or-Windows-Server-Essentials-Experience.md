@@ -1,18 +1,18 @@
 ---
 title: 從舊版移轉到 Windows Server Essentials 或 Windows Server Essentials 體驗
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何從舊版的 Windows Small Business Server 和 Windows Server Essentials 遷移。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: ac59e41aab7c5085f9a9acdb781582c9cdecea54
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: e25e8407e960264387ba946d11b721b3b22014bf
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625734"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810755"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>從舊版移轉到 Windows Server Essentials 或 Windows Server Essentials 體驗
 
@@ -59,13 +59,13 @@ ms.locfileid: "89625734"
 
 2.  在搜尋方塊中，輸入 **cmd**。
 
-3.  在結果清單中，以滑鼠右鍵按一下 cmd****，然後按一下 [以系統管理員身分執行]****。
+3.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。
 
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>以系統管理員身分在目的地伺服器上開啟命令提示字元視窗
 
-1.  在 [開始]**** 畫面的搜尋方塊中，輸入 **cmd**。
+1.  在 [開始] 畫面的搜尋方塊中，輸入 **cmd**。
 
-2.  在結果清單中，以滑鼠右鍵按一下 cmd****，然後按一下 [以系統管理員身分執行]****。
+2.  在結果清單中，以滑鼠右鍵按一下 cmd，然後按一下 [以系統管理員身分執行]。
 
 ## <a name="additional-references"></a>其他參考資料
 
