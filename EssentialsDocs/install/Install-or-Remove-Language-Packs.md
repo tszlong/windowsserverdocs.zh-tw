@@ -1,18 +1,18 @@
 ---
 title: 安裝或移除語言套件
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在 Windows Server Essentials 上安裝或移除語言套件。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 50fd17a057e15661ed6c3440bdea8f22bea1bada
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 7dcbc6cb67c79d59dd589ae9b8747e4319967731
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626200"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755394"
 ---
 # <a name="install-or-remove-language-packs"></a>安裝或移除語言套件
 

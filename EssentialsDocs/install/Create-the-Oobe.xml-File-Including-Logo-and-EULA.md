@@ -1,18 +1,18 @@
 ---
 title: 建立包含標誌和 EULA 的 Oobe.xml 檔案
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何使用 Oobe.xml 檔案，將您自己的使用者授權合約 (EULA) 新增至初始設定。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8a7b3cc1-21bb-4344-8110-f5d5959b370d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: d6c1a721107d96f8a2a5de89f95c97ab87bf740a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: a809aa273c6cae3a713ee2c39f16b610a7a0ab36
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623762"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711313"
 ---
 # <a name="create-the-oobexml-file-including-logo-and-eula"></a>建立包含標誌和 EULA 的 Oobe.xml 檔案
 

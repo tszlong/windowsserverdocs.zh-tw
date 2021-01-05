@@ -7,12 +7,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 00bda15c409f5323a96dcbf48bc2dd130ec6368b
-ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
+ms.openlocfilehash: 3bd855e172b8c9999fa258d0d5e6f5fa57664467
+ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793595"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577370"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>支援的遠端桌面 RDP 檔案設定
 
@@ -35,7 +35,7 @@ ms.locfileid: "92793595"
 | promptcredentialonce:i:value | 決定是否儲存使用者的認證以同時用於 RD 閘道和遠端電腦。 | - 0：遠端工作階段不會使用相同的認證</br>- 1：遠端工作階段會使用相同的認證 | 1 | 否 |
 | authentication level:i:value | 定義伺服器驗證等級設定。 | - 0：如果伺服器驗證失敗，則連線到電腦而不顯示警告 (連線且不要警告我)</br>- 1：如果伺服器驗證失敗，不要建立連線 (不要連線)</br>- 2：如果伺服器驗證失敗，則顯示警告並允許我連線或拒絕連線 (警告我)</br>- 3：未指定驗證需求。 | 3 | 否 |
 | enablecredsspsupport:i:value | 決定用戶端是否會使用認證安全性支援提供者 (CredSSP) 進行驗證 (如果有的話)。 | - 0：RDP 不會使用 CredSSP，即使作業系統支援 CredSSP 也一樣</br>- 1：如果作業系統支援 CredSSP，則 RDP 會使用 CredSSP | 1 | 是 |
-| disableconnectionsharing:i:value | 決定在有新連線啟動時，用戶端是要重新連線到任何現有的已中斷連線工作階段，還是要起始新的連線。 | - 0：重新連線到任何現有的工作階段</br>- 1：起始新的連線 | 0 | 是 |
+| disableconnectionsharing:i:value | 決定在有新連線啟動時，用戶端是要重新連線到任何現有的已中斷連線工作階段，還是要起始新的連線。 | - 0：重新連線到任何現有的工作階段</br>- 1：起始新的連線 | 0 | 否 |
 | alternate shell:s:value | 指定要在遠端工作階段中以命令介面而非總管形式自動啟動的程式。 | 有效的可執行檔路徑，例如 "C:\ProgramFiles\Office\word.exe" | | 是 |
 
 ## <a name="session-behavior"></a>工作階段行為

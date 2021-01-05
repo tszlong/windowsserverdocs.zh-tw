@@ -1,18 +1,18 @@
 ---
 title: 定義顯示設定
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何定義 Windows Server Essentials 的顯示設定。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 505bfc3f-53d2-4835-ab1a-418e7557bfb6
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a6425c364826b3ff197b7049f744d34e2af3f40d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ba588332f5e5e4140e0102f065d01bc192e8584b
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623560"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755014"
 ---
 # <a name="define-display-settings"></a>定義顯示設定
 

@@ -1,18 +1,18 @@
 ---
 title: 安裝和設定 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何安裝和設定 Windows Server Essentials。
 ms.date: 06/17/2013
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c6fe658db8756856a65bb5284731b949d8edbd31
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c20f06922a29f723e927035689831c04bd13df49
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626233"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754944"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>安裝和設定 Windows Server Essentials
 
@@ -53,7 +53,7 @@ ms.locfileid: "89626233"
    > [!NOTE]
    >  如果您的電腦並未從 DVD 啟動，請確認 CD-ROM 光碟機在 BIOS 的開機順序中排在第一位。 如需更多有關 BIOS 開機順序的資訊，請參閱電腦製造商的文件。
 
-4. 選取您要安裝的 **語言**、**時間及貨幣格式**，以及**鍵盤或輸入法**，然後按一下 **下一步**。
+4. 選取您要安裝的 **語言**、**時間及貨幣格式**，以及 **鍵盤或輸入法**，然後按一下 **下一步**。
 
 5. 按一下 **立即安裝**。
 
@@ -81,7 +81,7 @@ ms.locfileid: "89626233"
         > [!NOTE]
         >  在您按下 **磁碟機選項 (進階)** 之後，該選項就不會再出現。 在此情形下，請略過與磁碟機選項有關的步驟。
 
-    2.  若要在尚未分割的空間建立分割區，按一下您要分割的硬碟，按下 **磁碟機選項 (進階)**，按下 **新增**然後在 **大小** 文字方塊中，鍵入您想要建立的分割區大小。 例如，如果您使用建立的分割區大小 120 gigabytes (GB)，請鍵入 **122880**，然後按一下 **套用**。 建立分割區之後，按一下 **下一步**。 分割區在繼續安裝之前已經格式化。
+    2.  若要在尚未分割的空間建立分割區，按一下您要分割的硬碟，按下 **磁碟機選項 (進階)**，按下 **新增** 然後在 **大小** 文字方塊中，鍵入您想要建立的分割區大小。 例如，如果您使用建立的分割區大小 120 gigabytes (GB)，請鍵入 **122880**，然後按一下 **套用**。 建立分割區之後，按一下 **下一步**。 分割區在繼續安裝之前已經格式化。
 
     3.  若要用所有尚未分割的空間建立分割區，按一下您要分割的硬碟，按下 **磁碟機選項 (進階)**，按下 **新增**，然後按下 **套用** 即可接受預設分割區大小。 建立分割區之後，按一下 **下一步**。 分割區在繼續安裝之前已經格式化。
 
@@ -123,7 +123,7 @@ ms.locfileid: "89626233"
     > [!IMPORTANT]
     >  伺服器名稱必須是在您的網路中未被使用的名稱。 在您完成此步驟後就無法變更伺服器名稱或者內部網域名稱。
 
-4.  按 [下一步] 。
+4.  按一下 [下一步] 。
 
 5.  在 **提供您的系統管理員帳戶資訊** 頁面，鍵入新系統管理員帳戶的資訊。
 
@@ -136,7 +136,7 @@ ms.locfileid: "89626233"
 
 8.  **正在更新及準備您的伺服器** 頁面顯示最後安裝程序的進度。 這需要花費一些時間完成，您的電腦將會重新啟動數次。
 
-9. 在伺服器最後一次重新啟動後會出現 **您的伺服器已可以使用** 頁面。 按一下 [關閉] 。
+9. 在伺服器最後一次重新啟動後會出現 **您的伺服器已可以使用** 頁面。 按一下 [關閉]  。
 
 10. Click the Dashboard tile on the按一下 **開始** 畫面的儀表板圖標，然後在儀表板上，完成 **首頁** 頁面上的 **設定我的伺服器** 工作。 您應該在 Windows Server Essentials 安裝完成之後，立即完成這些工作。
 
@@ -148,7 +148,7 @@ ms.locfileid: "89626233"
 ### <a name="customize-windows-server-essentials"></a>自訂 Windows Server Essentials
  [Windows Server Essentials 儀表板] 的 **首頁** 會連結到您在安裝伺服器之後應立即完成的 **設定** 工作。 藉由執行這些工作，您可以協助保護儲存在伺服器上的資訊，並啟用 Windows Server Essentials 中的可用功能。
 
- 如果您選擇不執行這些工作，使用者可能無法存取某些網路功能。 若要稍後再返回這些工作，請返回 [Windows Server Essentials**儀表板] 首頁。**
+ 如果您選擇不執行這些工作，使用者可能無法存取某些網路功能。 若要稍後再返回這些工作，請返回 [Windows Server Essentials **儀表板] 首頁。**
 
  以下表格為會出現在設定工作清單中的項目。
 
@@ -160,7 +160,7 @@ ms.locfileid: "89626233"
 |設定伺服器備份|按一下此工作以檢視有關使用伺服器資料夾保護資料的簡短資訊。 提供用來執行 **[設定伺服器備份精靈]** 的連結。 如需詳細資訊，請參閱[設定或自訂伺服器備份](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1)。
 |設定隨處存取|按一下此工作以查看 Windows Server Essentials 中「隨處存取」功能的簡短資訊。 提供前往 **[隨處存取設定]** 頁面的連結。 如需詳細資訊，請參閱 [管理隨處存取](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。
 |設定電子郵件警示通知|按一下此工作以檢視有關電子郵件警示通知的簡短資訊。 提供用來執行 **[設定警示的電子郵件通知]** 工具的連結。 如需詳細資訊，請參閱[設定警示的電子郵件通知](../manage/Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email)。
-|設定媒體伺服器|按一下此工作以檢視有關使用媒體伺服器分享音樂、影片與影像檔案的簡短資訊。 提供前往 [媒體設定]  **** 頁面的連結。 也提供前往關於媒體伺服器詳細資訊的線上說明主題連結。 如需詳細資訊，請參閱 [管理數位媒體](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)。
+|設定媒體伺服器|按一下此工作以檢視有關使用媒體伺服器分享音樂、影片與影像檔案的簡短資訊。 提供前往 [媒體設定]   頁面的連結。 也提供前往關於媒體伺服器詳細資訊的線上說明主題連結。 如需詳細資訊，請參閱 [管理數位媒體](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)。
 |連線電腦|按一下此工作以檢視有關將網路電腦連線到伺服器的簡短資訊。 如需詳細資訊，請參閱[將電腦連線到伺服器](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
 
 ## <a name="additional-references"></a>其他參考資料

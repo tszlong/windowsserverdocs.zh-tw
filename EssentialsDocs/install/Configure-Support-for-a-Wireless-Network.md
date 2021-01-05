@@ -1,18 +1,18 @@
 ---
 title: 設定無線網路支援
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何設定作業系統，以支援 Windows Server Essentials 的無線網路。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 4d7020d4-fd46-4858-a406-de5c0f21ea06
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 07bc83c7757111483305822ea5323f045ffe0252
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5474d3c0fee3dc390f85fdab498eca492f1b8937
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621818"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711403"
 ---
 # <a name="configure-support-for-a-wireless-network"></a>設定無線網路支援
 

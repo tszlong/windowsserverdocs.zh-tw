@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 40701cbea94da12aea169a4d53b51024c8d31bfe
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 60c8f9b11efc18ffa7eab726126baad1139bf0c0
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049686"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711773"
 ---
 # <a name="forest-design-models"></a>樹系設計模型
 
@@ -33,14 +33,14 @@ ms.locfileid: "97049686"
 
 如果組織樹系中的使用者需要存取其他樹系中的資源 (或反向) ，則可以在一個組織樹系與其他樹系之間建立信任關係。 如此一來，系統管理員就可以將存取權授與其他樹系中的資源。 下圖顯示組織樹系模型。
 
-![樹系設計模型](media/Forest-Design-Models/b1ddb47e-78a5-49c7-bb21-d7421b7b84b8.gif)
+![顯示組織樹系模型的圖例。](media/Forest-Design-Models/b1ddb47e-78a5-49c7-bb21-d7421b7b84b8.gif)
 
 每個 Active Directory 設計都包含至少一個組織樹系。
 
 ## <a name="resource-forest-model"></a>資源樹系模型
 在資源樹系模型中，會使用不同的樹系來管理資源。 如果組織樹系中的使用者帳戶變得無法使用，則資源樹系不會包含服務管理所需的使用者帳戶，以及為該樹系中的資源提供替代存取權所需的使用者帳戶。 建立樹系信任，讓其他樹系的使用者可以存取資源樹系中包含的資源。 下圖顯示資源樹系模型。
 
-![樹系設計模型](media/Forest-Design-Models/c0b348a6-958c-4fc5-9035-e2d2a54d5573.gif)
+![顯示資源樹系模型的圖例。](media/Forest-Design-Models/c0b348a6-958c-4fc5-9035-e2d2a54d5573.gif)
 
 資源樹系提供服務隔離，用來保護必須維持高可用性狀態的網路區域。 例如，如果您的公司所包含的製造設備需要在網路的其餘部分發生問題時繼續運作，您可以為製造群組建立個別的資源樹系。
 

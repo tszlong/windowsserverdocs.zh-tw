@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1acf51705b112d2a1d3409b08532f0f5355c5403
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 1362cf8080e1188746887df1bdc45824aed8ea80
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049516"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711733"
 ---
 # <a name="managing-rid-issuance"></a>管理 RID 發行
 
@@ -53,7 +53,7 @@ Windows Server 2012 新增了全域 RID 空間事件追蹤，可在越過主要�
 > [!IMPORTANT]
 > 此事件並非預期事件；請立即調查網域中的使用者、電腦和群組建立程序。 建立上億個 AD DS 物件並不正常。
 
-![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_EventWaypoints2.png)
+![事件導航點的圖表。](media/Managing-RID-Issuance/ADDS_RID_TR_EventWaypoints2.png)
 
 ### <a name="rid-pool-invalidation-events"></a>RID 集區失效事件
 有新的事件會警示本機 DC RID 集區已被捨棄。 這些是參考事件，並且可以預期，尤其是因為新的 VDC 功能時。 如需事件的詳細資訊，請參閱下列事件清單。
@@ -85,7 +85,7 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
 
 如果您增加全域 RID 集區，可用的集區將變為 2,147,483,647，而非預設的 1,073,741,823。 例如：
 
-![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)
+![顯示預設值增加的終端機視窗的螢幕擷取畫面。](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)
 
 > [!WARNING]
 > 解除這項限制 *僅* 是為了防止 RID 用完，而且 *僅* 能與「RID 上限強制」方法 (請參閱下一節) 一起使用。 請勿在還有數百萬個剩餘的 RID 且消耗速度慢的環境中先行設定此最大值，因為從解除大小限制的 RID 集區中產生的 SID 可能存在著應用程式相容性問題。
@@ -126,7 +126,7 @@ Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域
 
 3. 選取 [同步] 和 [延伸] 選項，然後按一下 [執行]。
 
-    ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)
+    ![顯示要在哪裡選取 [執行] 的螢幕擷取畫面。](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)
 
 4. 如果成功，LDP 輸出視窗會顯示：
 
@@ -137,7 +137,7 @@ Windows Server 2003 與 Windows Server 2008 網域控制站無法在解除全域
 
     ```
 
-    ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModifySuccess.png)
+    ![顯示 LDP 輸出的螢幕擷取畫面。](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModifySuccess.png)
 
 5. 檢查該網域控制站上系統事件記錄檔的 Directory-Services-SAM 資訊事件 16655，確認全域 RID 集區已增加。
 
@@ -187,7 +187,7 @@ CN = RID 管理員 $，CN = System，DC =*<domain>*
 
 9. 啟用 [同步] 和 [延伸] 選項，然後按一下 [執行]：
 
-    ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)
+    ![顯示如何執行操作的螢幕擷取畫面。](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)
 
 10. 如果成功，LDP 輸出視窗會顯示：
 
@@ -198,7 +198,7 @@ CN = RID 管理員 $，CN = System，DC =*<domain>*
 
     ```
 
-    ![RID 發行](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeilingSuccess.png)
+    ![顯示成功作業輸出的螢幕擷取畫面。](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeilingSuccess.png)
 
 ### <a name="other-rid-fixes"></a>其他 RID 修正
 舊版的 Windows Server 作業系統在遺失 rIDSetReferences 屬性時會發生 RID 集區流失。 若要在執行 Windows Server 2008 R2 的網域控制站上解決此問題，請從 [KB 2618669](https://support.microsoft.com/kb/2618669)安裝此修正程式。

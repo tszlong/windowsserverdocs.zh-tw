@@ -1,18 +1,18 @@
 ---
 title: 準備用於部署的映像
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何使用 sysprep.exe 檔案來準備要部署的映射。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 681c6cad-7fde-494f-86a5-f4c7c15d23f9
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a08b8f284701cf486f23a22604ea0c90740146d4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: abe50e40cf8de99b94c6ba956745c8df43f02ed7
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623408"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755384"
 ---
 # <a name="preparing-the-image-for-deployment"></a>準備用於部署的映像
 

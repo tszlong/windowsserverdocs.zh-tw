@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1e4aff28a2212b678770cb9f78400e1db48cf8ec
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: b8dd22072326398f20477dbb65ebf3e1adf1164a
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049616"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711803"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>如何設定受保護帳戶的指引
 
@@ -89,7 +89,7 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 #### <a name="troubleshoot-tgt-expiration"></a>疑難排解 TGT 到期
 一般而言，網域控制站會根據下列 [群組原則管理編輯器] 視窗中顯示的網域原則設定 TGT 存留期和更新。
 
-![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
+![顯示群組原則管理編輯器視窗的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
 
 對於 [Protected Users]，下列設定是硬式編碼：
 
@@ -100,7 +100,7 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 #### <a name="troubleshoot-delegation-issues"></a>疑難排解委派問題
 過去，如果使用 Kerberos 委派的技術失敗，系統會檢查是否已設定用戶端帳戶的 [這是機密帳戶，無法委派]。 不過，如果帳戶是 **Protected Users** 的成員，在 Active Directory 管理中心 (ADAC) 中就不會有此設定。 因此，當您疑難排解委派問題時，請檢查設定與群組成員資格。
 
-![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
+![醒目顯示 [此帳戶是機密的，無法委派] 核取方塊的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
 ### <a name="audit-authentication-attempts"></a><a name="BKMK_AuditAuthNattempts"></a>稽核驗證嘗試
 若要對 **Protected Users** 群組的成員明確稽核驗證嘗試，您可以繼續收集安全性記錄檔稽核事件或在新的操作系統管理記錄檔中收集資料。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))
@@ -121,7 +121,7 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 
 -   使用非限制或限制委派拒絕委派：若要限制帳戶，請開啟 [Active Directory 管理中心 (ADAC)]，然後選取 [這是機密帳戶，無法委派]  核取方塊。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
+    ![顯示如何限制帳戶的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
 ## <a name="authentication-policies"></a><a name="BKMK_CreateAuthNPolicies"></a>驗證原則
 「驗證原則」是 AD DS 中包含驗證原則物件的新容器。 驗證原則可以指定設定，協助降低認證竊取的機會，例如限制帳戶的 TGT 存留期或新增其他與宣告相關條件。
@@ -137,7 +137,7 @@ Protected Users 群組的成員必須能夠使用具備進階加密標準 (AES) 
 ### <a name="quick-kerberos-refresher"></a>快速複習 Kerberos
 Kerberos 驗證通訊協定由三種類型的交換 (也稱為子通訊協定) 組成：
 
-![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbRefresher.gif)
+![此圖顯示 Kerberos 驗證通訊協定中的三種交換類型。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbRefresher.gif)
 
 -   驗證服務 (AS) 交換 (KRB_AS_*)
 
@@ -162,7 +162,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
 -   限制使用者登入，產生 AS 交換的裝置必須符合的存取控制條件
 
-![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictAS.gif)
+![顯示如何限制初始驗證或 AS exchange 的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictAS.gif)
 
 您可以透過設定下列項目，透過票證授權服務 (TGS) 交換來限制服務票證要求：
 
@@ -170,7 +170,7 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
 ### <a name="requirements-for-using-authentication-policies"></a><a name="BKMK_ReqForAuthnPolicies"></a>使用驗證原則的需求
 
-|原則|需求|
+|原則|規格需求|
 |----------|----------------|
 |提供自訂 TGT 存留期| Windows Server 2012 R2 網域功能等級帳戶網域|
 |限制使用者登入|-具備動態存取控制支援的 Windows Server 2012 R2 網域功能等級帳戶網域<br />-具備動態存取控制支援的 Windows 8、Windows 8.1、Windows Server 2012 或 Windows Server 2012 R2 裝置|
@@ -188,14 +188,14 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
 1.  在 [預設網域控制站原則] 中，按一下 [啟用] 以啟用 [電腦設定 | 系統管理範本 | 系統 | KDC] 中的 [宣告、複合驗證與 Kerberos 防護的金鑰發佈中心 (KDC) 用戶端支援]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)
+    ![醒目顯示 [已啟用] 選項的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)
 
 2.  在 [選項] 下的下拉式清單方塊中，選取 [永遠提供宣告]。
 
     > [!NOTE]
     > 也可以設定 **支援**，但因為網域是在 Windows Server 2012 R2 DFL，所以 dc 一律會提供宣告，讓使用者以宣告為基礎的存取檢查在使用非宣告感知裝置和主機連接到宣告感知服務時進行。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)
+    ![醒目顯示 [永遠提供宣告] 功能表選項的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)
 
     > [!WARNING]
     > 設定 **Fail 未受防護 authentication 要求** 會導致來自不支援 Kerberos 防護之任何作業系統（例如 Windows 7 和舊版作業系統，或從 Windows 8 （尚未明確設定為支援的作業系統）的驗證失敗。
@@ -204,20 +204,20 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
 1.  開啟 [Active Directory 管理中心 (ADAC)]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_OpenADAC.gif)
+    ![顯示 [驗證] 頁面的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_OpenADAC.gif)
 
     > [!NOTE]
     > 針對位於 Windows Server 2012 R2 DFL 的網域，可以看到選取的 **驗證** 節點。 如果節點沒有出現，請使用 Windows Server 2012 R2 DFL 網域的網域系統管理員帳戶再試一次。
 
 2.  按一下 [驗證原則]，然後按一下 [新增] 以建立新的原則。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)
+    ![顯示如何建立新原則的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)
 
     驗證原則都必須要有顯示名稱，而且預設為一定要有。
 
 3.  若要建立僅稽核的原則，請按一下 [僅稽核原則限制]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicyAuditOnly.gif)
+    ![醒目顯示 [只有稽核原則限制] 選項的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicyAuditOnly.gif)
 
     驗證原則會根據 Active Directory 帳戶類型套用。 為每個類型進行設定，單一原則可套用至所有三種帳戶類型。 帳戶類型有：
 
@@ -231,107 +231,107 @@ AP 交換通常會發生在應用程式通訊協定內的資料，且不會受�
 
 4.  若要設定使用者帳戶的 TGT 存留期，請選取 [指定使用者帳戶的票證授權票證存留期] 核取方塊並輸入時間 (單位為分鐘)。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTLifetime.gif)
+    ![醒目顯示 [指定使用者帳戶的 Ticket-Granting 票證存留期] 核取方塊的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTLifetime.gif)
 
     例如，如果您想要以 10 小時做為最大的 TGT 存留期，請如所示輸入 **600**。 若未設定 TGT 存留期，且帳戶是 **Protected Users** 群組的成員，則 TGT 存留期和更新為 4 小時。 否則，TGT 存留期和更新會根據網域的下列 [群組原則管理編輯器] 視窗中所顯示的網域原則採取預設設定。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
+    ![顯示預設原則設定的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
 
 5.  若要將使用者帳戶限制到特定裝置，請按一下 [編輯] 定義裝置所需的條件。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EditAuthNPolicy.gif)
+    ![顯示如何限制使用者帳戶以選取裝置的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EditAuthNPolicy.gif)
 
 6.  在 [編輯存取控制條件] 視窗中，按一下 [新增條件]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCondition.png)
+    ![醒目顯示 [新增條件] 的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCondition.png)
 
 ##### <a name="add-computer-account-or-group-conditions"></a>新增電腦帳戶或群組條件
 
 1.  若要設定電腦帳戶或群組，請在下拉式清單中選取下拉式清單方塊 [成員隸屬每個] 並變更為 [成員隸屬任何]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompMember.png)
+    ![醒目顯示每個清單方塊成員的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompMember.png)
 
     > [!NOTE]
     > 此存取控制定義使用者從其登入的裝置或主機條件。 在存取控制術語中，裝置或主機的電腦帳戶是使用者，這也是為什麼 [使用者] 是唯一的選項。
 
 2.  按一下 [新增項目]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddItems.png)
+    ![反白顯示 [新增專案] 按鈕的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddItems.png)
 
 3.  若要變更物件類型，請按一下 [物件類型]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjects.gif)
+    ![醒目顯示 [物件類型] 按鈕的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjects.gif)
 
 4.  若要選取 Active Directory 中的電腦物件，請按一下 [電腦]，然後按一下 [確定]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsComputers.gif)
+    ![醒目顯示 [電腦] 核取方塊的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsComputers.gif)
 
 5.  輸入要限制使用者的電腦名稱，然後按一下 [檢查名稱]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsCompName.gif)
+    ![醒目顯示檢查名稱的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsCompName.gif)
 
 6.  按一下 [確定] 並為該電腦帳戶建立任何其他條件。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddConditions.png)
+    ![顯示如何編輯存取控制條件的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddConditions.png)
 
 7.  完成之後，按一下 [確定]，就會顯示為電腦帳戶定義的條件。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompDone.png)
+    ![顯示完成時要選取 [確定] 的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompDone.png)
 
 ##### <a name="add-computer-claim-conditions"></a>新增電腦宣告條件
 
 1.  若要設定電腦宣告，請在 [群組] 下拉式清單中選取宣告。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaim.gif)
+    ![顯示要在哪裡選取群組的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaim.gif)
 
     宣告只有在樹系中佈建好之後才可使用。
 
 2.  輸入 OU 的名稱，限制使用者帳戶只能登入。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimOUName.gif)
+    ![顯示要在哪裡輸入名稱的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimOUName.gif)
 
 3.  完成之後，按一下 [確定]，方塊會顯示定義的條件。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimComplete.gif)
+    ![顯示所定義條件的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimComplete.gif)
 
 ##### <a name="troubleshoot-missing-computer-claims"></a>疑難排解遺失的電腦宣告
 如果宣告已佈建但無法使用，它可能只適用於 [電腦] 類別。
 
 假設您想要根據電腦的組織單位 (OU) 來限制驗證，該電腦已設定，但僅適用于 **電腦** 類別。
 
-![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictComputers.gif)
+![醒目顯示 [電腦] 核取方塊的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictComputers.gif)
 
 對於要用來限制使用者登入裝置的宣告，請選取 [使用者] 核取方塊。
 
-![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictUsersComputers.gif)
+![醒目顯示 [使用者] 核取方塊的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictUsersComputers.gif)
 
 #### <a name="provision-a-user-account-with-an-authentication-policy-with-adac"></a>使用 ADAC 佈建具驗證原則的使用者帳戶
 
 1.  從 [使用者] 帳戶，按一下 [原則]。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicy.gif)
+    ![顯示要在哪裡選取原則的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicy.gif)
 
 2.  選取 [指派驗證原則至此帳戶] 核取方塊。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicyAssign.gif)
+    ![醒目顯示 [將驗證原則指派給此帳戶] 核取方塊的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicyAssign.gif)
 
 3.  接著，選取要套用到使用者的驗證原則。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicySelect.png)
+    ![螢幕擷取畫面，顯示要在哪裡選取要套用的驗證原則。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicySelect.png)
 
 #### <a name="configure-dynamic-access-control-support-on-devices-and-hosts"></a>在裝置與主機上設定動態存取控制支援
 您可以設定 TGT 存留期，而不需設定動態存取控制 (DAC)。 只有在檢查 AllowedToAuthenticateFrom 與 AllowedToAuthenticateTo 時才需要 DAC。
 
 使用群組原則或本機群組原則編輯器，啟用 [電腦設定 | 系統管理範本 | 系統 | Kerberos] 中的 [宣告、複合驗證與 Kerberos 防護的 Kerberos 用戶端支援]：
 
-![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)
+![顯示要在哪裡選取 [已啟用] 選項的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)
 
 ### <a name="troubleshoot-authentication-policies"></a><a name="BKMK_TroubleshootAuthnPolicies"></a>疑難排解驗證原則
 
 #### <a name="determine-the-accounts-that-are-directly-assigned-an-authentication-policy"></a>判斷已直接指派驗證原則的帳戶
 [驗證原則] 中的 [帳戶] 區段會顯示已直接套用原則的帳戶。
 
-![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
+![顯示如何判斷直接指派驗證原則之帳戶的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
 
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>使用驗證原則失敗-網域控制站系統管理記錄
 新的 **驗證原則失敗-** **應用程式和服務記錄** 下的網域控制站系統管理記錄檔已  >  建立 **Microsoft**  >  **Windows**  >  **驗證**，讓您更輕鬆地探索由於驗證原則所造成的失敗。 該記錄檔預設為停用。 若要啟用它，請在記錄檔名稱上按一下滑鼠右鍵，然後按一下 [啟用記錄]。 新的事件在內容上非常類似現有的 Kerberos TGT 與服務票證稽核事件。 如需這些事件的詳細資訊，請參閱 [驗證原則和驗證原則定址接收器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))。
@@ -424,7 +424,7 @@ PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthe
 
 2.  在 [顯示名稱] 中，輸入定址接收器的名稱。 在 [允許的帳戶] 中，按一下 [新增]，輸入帳戶的名稱，然後按一下 [確定]。 您可以指定使用者、電腦或服務帳戶。 接著，指定要對所有主體使用單一原則，或對每個類型的主體使用不同的原則，以及原則的名稱。
 
-    ![受保護的帳戶](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)
+    ![顯示如何新增允許帳戶的螢幕擷取畫面。](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)
 
 ### <a name="manage-authentication-policy-silos-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnSilosUsingPSH"></a>使用 Windows PowerShell 管理驗證原則定址接收器
 此命令會建立驗證原則定址接收器物件，並強制使用。

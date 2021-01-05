@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 91f5d6cd5d7c3646bed8d37e944979eb9448a87c
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: d108ca02919cde08b93f217712d3be2e8c622fb1
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050156"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711743"
 ---
 # <a name="ad-ds-deployment-requirements"></a>AD DS 部署需求
 
@@ -25,7 +25,7 @@ ms.locfileid: "97050156"
 ## <a name="deploying-a-windows-server-2008-forest-root-domain"></a>部署 Windows Server 2008 樹系根域
 樹系根網域是 AD DS 樹系基礎結構的基石。 若要部署 AD DS，您必須先部署樹系根域。 若要這樣做，您必須檢查 AD DS 設計;設定樹系根域的 DNS 服務;建立樹系根域，其中包含部署樹系根網域控制站、設定樹系根域的網站拓撲，以及設定操作主機角色 (也稱為彈性單一主機操作或 FSMO) ;並提高樹系和網域功能等級。 下圖顯示部署樹系根域的整體流程。
 
-![AD DS 需求](media/AD-DS-Deployment-Requirements/033aad0b-25ff-4793-8825-88a6daa01a55.gif)
+![此圖顯示部署樹系根域的整體流程。](media/AD-DS-Deployment-Requirements/033aad0b-25ff-4793-8825-88a6daa01a55.gif)
 
 如需詳細資訊，請參閱 [部署 Windows Server 2008 樹系根域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。
 

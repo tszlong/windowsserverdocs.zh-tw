@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 591cab5cdba949b7f1828a6719904a2beae071e5
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 613d99bc3f97834897fd11923aaa619bb7558101
+ms.sourcegitcommit: e2dadc9b0c227a489a945bbc531aca5e101f18cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041636"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97801782"
 ---
 # <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>附錄 F︰保護 Active Directory 中的 Domain Admins 群組
 
@@ -50,7 +50,7 @@ ms.locfileid: "97041636"
 
     1.  按兩下 **Domain Admins** 群組，然後按一下 [ **成員** ] 索引標籤。
 
-        ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_62.gif)
+        ![顯示 [成員] 索引標籤的螢幕擷取畫面，可移除 Domain Admins 群組中的所有成員。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_62.gif)
 
     2.  選取群組的成員，按一下 [ **移除**]，按一下 [ **是**]，然後按一下 **[確定]**。
 
@@ -64,17 +64,17 @@ ms.locfileid: "97041636"
 
 3.  在主控台樹中，以滑鼠右鍵按一下 **群組原則物件**]，然後按一下 [ **新增**]。
 
-    ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_63.gif)
+    ![螢幕擷取畫面：顯示要在哪裡選取 [新增]，以便您可以保護 Active Directory 中的 Domain Admins。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_63.gif)
 
 4.  在 [ **新增 GPO** ] 對話方塊中，輸入 \<GPO Name\> ，然後按一下 **[確定]** (其中 \<GPO Name\> 是此 GPO) 的名稱。
 
-    ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_64.gif)
+    ![顯示 GPO 名稱的螢幕擷取畫面，讓您可以保護 Active Directory 中的 Domain Admins。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_64.gif)
 
 5.  在詳細資料窗格中，以滑鼠右鍵按一下 \<GPO Name\> ，然後按一下 [ **編輯**]。
 
 6.  流覽至 [ **電腦設定 \windows 設定] \ 使用者設置 \ 本機原則**，然後按一下 [ **使用者權限指派**]。
 
-    ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_65.gif)
+    ![顯示流覽位置的螢幕擷取畫面，讓您可以選取使用者權限管理員來保護 Active Directory 中的 Domain Admins。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_65.gif)
 
 7.  設定使用者權限，以防止 Domain Admins 群組的成員透過網路存取成員伺服器和工作站，方法是執行下列動作：
 
@@ -84,7 +84,7 @@ ms.locfileid: "97041636"
 
     3.  輸入 **Domain Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_66.gif)
+        ![示範如何確認您已設定使用者權限，以防止 Domain Admins 群組的成員透過網路存取成員伺服器和工作站的螢幕擷取畫面。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_66.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -96,7 +96,7 @@ ms.locfileid: "97041636"
 
     3.  輸入 **Domain Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_67.gif)
+        ![顯示如何確認您已設定使用者權限以防止 DA 群組的成員以批次工作登入的螢幕擷取畫面。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_67.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -108,7 +108,7 @@ ms.locfileid: "97041636"
 
     3.  輸入 **Domain Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_68.gif)
+        ![顯示如何確認您已設定使用者權限以防止 DA 群組的成員以服務的形式登入的螢幕擷取畫面。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_68.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -120,7 +120,7 @@ ms.locfileid: "97041636"
 
     3.  輸入 **Domain Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_69.gif)
+        ![顯示如何確認您已設定使用者權限，以防止 Domain Admins 群組的成員在本機登入成員伺服器和工作站的螢幕擷取畫面。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_69.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -132,7 +132,7 @@ ms.locfileid: "97041636"
 
     3.  輸入 **Domain Admins**，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。
 
-        ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_70.gif)
+        ![示範如何確認您已設定使用者權限，以防止 Domain Admins 群組的成員透過遠端桌面服務存取成員伺服器和工作站的螢幕擷取畫面](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_70.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -144,11 +144,11 @@ ms.locfileid: "97041636"
 
     2.  以滑鼠右鍵按一下 GPO 將套用的 OU，然後按一下 [ **連結現有的 gpo**]。
 
-        ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_71.gif)
+        ![當您以滑鼠右鍵按一下 GPO 將套用的 OU 時，顯示 [連結現有的 GPO] 功能表選項的螢幕擷取畫面。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_71.gif)
 
     3.  選取您剛才建立的 GPO，然後按一下 **[確定]**。
 
-        ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_72.gif)
+        ![顯示在將 GPO 連結到成員伺服器時，選取您剛才建立之 GPO 的螢幕擷取畫面。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_72.gif)
 
     4.  建立包含工作站之所有其他 Ou 的連結。
 
@@ -170,13 +170,13 @@ ms.locfileid: "97041636"
 
 4.  當系統提示您核准提高許可權時，請按一下 **[是]**。
 
-    ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_73.gif)
+    ![螢幕擷取畫面，顯示在確認拒絕存取此電腦網路 GPO 設定時，核准提升許可權的位置。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_73.gif)
 
 5.  在 [**命令提示** 字元] 視窗中，輸入 **net use \\ \\ \<Server Name\> \c $**，其中 \<Server Name\> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。
 
 6.  下列螢幕擷取畫面顯示應出現的錯誤訊息。
 
-    ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_74.gif)
+    ![顯示當您嘗試 accsss 成員伺服器時應該顯示之錯誤訊息的螢幕擷取畫面。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_74.gif)
 
 ##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>確認「拒絕以批次工作登入」 GPO 設定
 
@@ -231,7 +231,7 @@ ms.locfileid: "97041636"
 
 16. 應該會出現類似下列的對話方塊。
 
-    ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_75.gif)
+    ![顯示輸入認證之後應發生之錯誤的螢幕擷取畫面。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_75.gif)
 
 ##### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>確認「拒絕以服務方式登入」 GPO 設定
 
@@ -257,7 +257,7 @@ ms.locfileid: "97041636"
 
 11. 當服務重新開機時，應該會出現類似下列的對話方塊。
 
-    ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_76.gif)
+    ![顯示在服務重新開機後出現之對話方塊的螢幕擷取畫面。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_76.gif)
 
 ##### <a name="revert-changes-to-the-printer-spooler-service"></a>還原印表機多工緩衝處理器服務的變更
 
@@ -290,4 +290,4 @@ ms.locfileid: "97041636"
 
 5.  應該會出現類似下列的對話方塊。
 
-    ![安全網域系統管理員群組](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_78.gif)
+    ![顯示訊息的螢幕擷取畫面，指出您所使用的登入方法不允許。](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_78.gif)

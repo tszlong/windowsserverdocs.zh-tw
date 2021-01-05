@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ecd4db8b4fdbda926cd6a65101c241c6282ebf98
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 4c233be8905c61e66d6b1b3226d149acab96ef23
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046556"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711823"
 ---
 # <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>Advanced Active Directory Replication and Topology Management Using Windows PowerShell (Level 200)
 
@@ -113,7 +113,7 @@ Get-ADReplicationAttributeMetadata -object "cn=domain admins,cn=users,dc=corp,dc
 
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMd.png)
+![顯示 Domain Admins 物件的中繼資料輸出的螢幕擷取畫面，其排序為可讀取的清單。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMd.png)
 
 或者，您也可以將資料排列成表格，類似 repadmin：
 
@@ -122,7 +122,7 @@ Get-ADReplicationAttributeMetadata -object "cn=domain admins,cn=users,dc=corp,dc
 
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdTable.png)
+![顯示資料表中的資料相片順序的螢幕擷取畫面，類似于 repadmin。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdTable.png)
 
 或者，您可以搭配篩選條件 (例如所有群組，然後與特定日期結合) 以管線方式輸出 **Get-Adobject** Cmdlet，以取得整個物件類別的中繼資料。 管線是用來在多個 Cmdlet 之間傳送資料的通道。 若要查看在 2012 年 1 月 13 日因為某些原因修改過的所有群組：
 
@@ -130,7 +130,7 @@ Get-ADReplicationAttributeMetadata -object "cn=domain admins,cn=users,dc=corp,dc
 get-adobject -filter 'objectclass -eq "group"' | Get-ADReplicationAttributeMetadata -server dc1.corp.contoso.com | where-object {$_.lastoriginatingchangetime -like "*1/13/2012*" -and $_.attributename -eq "name"} | format-table object
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdClass.png)
+![顯示如何在2012年1月13日查看以某種方式修改的所有群組的螢幕擷取畫面。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdClass.png)
 
 如需更多 Windows PowerShell 作業搭配管線的詳細資訊，請參閱 [Windows PowerShell 中的管線處理與管線](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176927(v=technet.10))。
 
@@ -141,7 +141,7 @@ get-adobject -filter 'objectclass -eq "group"' | Get-ADReplicationAttributeMetad
 
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdFilter.png)
+![顯示如何找出每個具有 Tony Wang 做為成員的群組，以及上次修改群組的方式的螢幕擷取畫面。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdFilter.png)
 
 或者，若要根據人工方式的高版本，找出網域中使用系統狀態備份進行系統授權還原的所有物件：
 
@@ -149,7 +149,7 @@ get-adobject -filter 'objectclass -eq "group"' | Get-ADReplicationAttributeMetad
 get-adobject -filter 'objectclass -like "*"' | Get-ADReplicationAttributeMetadata -server dc1.corp.contoso.com | where-object {$_.version -gt "100000" -and $_.attributename -eq "name"} | format-table object,LastOriginatingChangeTime
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdFilter2.png)
+![螢幕擷取畫面，顯示如何使用網域中的系統狀態備份（根據其人工高版本），尋找以授權方式還原的所有物件。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdFilter2.png)
 
 或者，將所有使用者中繼資料都傳送到 CSV 檔案，以供稍後在 Microsoft Excel 中檢查：
 
@@ -166,7 +166,7 @@ get-adobject -filter 'objectclass -eq "user"' | Get-ADReplicationAttributeMetada
 Get-ADReplicationPartnerMetadata -target dc1.corp.contoso.com
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMd.png)
+![顯示如何取得單一網域控制站之可讀取複寫狀態的螢幕擷取畫面。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMd.png)
 
 或者，以表格格式查看上一次網域控制站內送複寫及其複寫協力電腦的資料：
 
@@ -174,7 +174,7 @@ Get-ADReplicationPartnerMetadata -target dc1.corp.contoso.com
 Get-ADReplicationPartnerMetadata -target dc1.corp.contoso.com | format-table lastreplicationattempt,lastreplicationresult,partner -auto
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMdTable.png)
+![顯示網域控制站上次以表格格式複寫輸入和其夥伴之時間的螢幕擷取畫面。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMdTable.png)
 
 或者，連絡樹系中的所有網域控制站並顯示最後一次嘗試複寫卻因任何原因而失敗的網域控制站：
 
@@ -183,7 +183,7 @@ Get-ADReplicationPartnerMetadata -target * -scope server | where {$_.lastreplica
 
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMdFail.png)
+![顯示如何聯繫樹系中所有網域控制站的螢幕擷取畫面，並顯示任何因任何原因而上次嘗試複寫失敗的原因。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMdFail.png)
 
 ### <a name="get-adreplicationfailure"></a><a name="BKMK_ReplFail"></a>Get-ADReplicationFailure
 此 Cmdlet 可用來傳回複寫時發生最近錯誤的相關資訊。 它類似 **Repadmin.exe /showreplsum**，不過同樣地，因為使用 Windows PowerShell 而能採取更多控制方式。
@@ -194,7 +194,7 @@ Get-ADReplicationPartnerMetadata -target * -scope server | where {$_.lastreplica
 Get-ADReplicationFailure dc1.corp.contoso.com
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplFail.png)
+![螢幕擷取畫面，顯示如何傳回網域控制站的最新失敗，以及失敗聯繫的夥伴。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplFail.png)
 
 或者，傳回特定 AD 邏輯站台中所有伺服器的表格檢視，因為經過排序，所以更容易檢視，而且只包含最重要的資料：
 
@@ -203,7 +203,7 @@ Get-ADReplicationFailure -scope site -target default-first-site-name | format-ta
 
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplFailScoped.png)
+![顯示如何針對特定 AD 邏輯網站中的所有伺服器傳回資料表視圖的螢幕擷取畫面，並以更輕鬆的方式進行排序，並且只包含最重要的資料。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplFailScoped.png)
 
 ### <a name="get-adreplicationqueueoperation-and-get-adreplicationuptodatenessvectortable"></a><a name="BKMK_ReplQueue"></a>Get-ADReplicationQueueOperation 和 Get-ADReplicationUpToDatenessVectorTable
 這兩個 Cmdlet 都會傳回網域控制站「最即時」的其他層面，包括暫止中的複寫和版本向量資訊。
@@ -218,7 +218,7 @@ Get-ADDomainController -filter * | foreach {Sync-ADObject -object "cn=tony wang,
 
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSSyncAD.png)
+![顯示如何將已刪除的帳戶從 Active Directory 資源回收筒複寫到所有網域控制站，而不會強制複寫所有其他物件變更的螢幕擷取畫面。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSSyncAD.png)
 
 ### <a name="topology"></a><a name="BKMK_Topo"></a>拓撲
 雖然 Repadmin.exe 擅長傳回如站台、站台連結、站台連結橋接器與連線等複寫拓撲的相關資訊，但是它並沒有一組完整的引數可進行變更。 事實上，也從來沒有任何專門設計可編寫指令碼、附隨的 Windows 公用程式，讓系統管理員建立及修改 AD DS 拓撲。 由於 Active Directory 在眾多客戶環境中已經非常成熟，因此大量修改 Active Directory 邏輯資訊的需求就變得很重要。
@@ -233,9 +233,9 @@ Get-ADDomainController -filter * | foreach {Sync-ADObject -object "cn=tony wang,
 import-csv -path C:\newsites.csv | new-adreplicationsite
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewSitesCSV.png)
+![顯示記事本介面的螢幕擷取畫面。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewSitesCSV.png)
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSImportCSV.png)
+![顯示如何使用 CSV 檔案建立新網站的螢幕擷取畫面。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSImportCSV.png)
 
 或者，在兩具有自訂複寫間隔和站台成本的個現有站台之間建立新的站台連結：
 
@@ -243,7 +243,7 @@ import-csv -path C:\newsites.csv | new-adreplicationsite
 new-adreplicationsitelink -name "chicago<-->waukegan" -sitesincluded chicago,waukegan -cost 50 -replicationfrequencyinminutes 15
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSite.png)
+![顯示在兩個現有網站之間建立新站台連結與自訂複寫間隔和網站成本的螢幕擷取畫面。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSite.png)
 
 或者，尋找樹系中的每個站台並以旗標取代其 **Options** 屬性來啟用站台間的變更通知，以便使用最大的壓縮速度複寫：
 
@@ -262,7 +262,7 @@ get-adreplicationsitelink -filter * | set-adobject -replace @{options=$($_.optio
 get-adreplicationsite -filter * -property subnets | where-object {!$_.subnets -eq "*"} | format-table name
 ```
 
-![使用 powershell 進行先進管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSiteFiltrer.png)
+![顯示如何尋找遺失子網指派的所有網站的螢幕擷取畫面，以便將清單與這些位置的實際子網進行協調。](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSiteFiltrer.png)
 
 ## <a name="see-also"></a>另請參閱
 [使用 Windows PowerShell &#40;級 100&#41;進行 Active Directory 複寫和拓撲管理的簡介 ](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)

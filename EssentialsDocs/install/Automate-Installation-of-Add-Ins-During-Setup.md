@@ -1,18 +1,18 @@
 ---
 title: 安裝期間自動安裝增益集
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何使用 Postic.cmd 方法，在 Windows Server Essentials 安裝期間自動安裝增益集。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: ebfd0950c585e2383f736818789e8a2dce67ad4d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0982cfc5064167044466a82ee44a575717596e2a
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623964"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711483"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>安裝期間自動安裝增益集
 

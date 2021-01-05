@@ -1,18 +1,18 @@
 ---
 title: 關於使用 Windows Server Essentials ADK 的重要資訊
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows 8 ADK 與 Windows Server Essentials ADK 之間的重要差異。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 26cb2992-1250-4672-98ee-8b870baa45d5
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a7fc10eb7c04163ca3202e481df130fc86f3c49c
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 36cdbc03f6b241026f24c811cb69d5331f71bae7
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623505"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755054"
 ---
 # <a name="important-information-for-using-the-windows-server-essentials-adk"></a>關於使用 Windows Server Essentials ADK 的重要資訊
 
@@ -22,7 +22,7 @@ ms.locfileid: "89623505"
 
  您應該注意下列重要差異：
 
--   **%windir%\setup\script\SetupComplete.cmd** 中的某些設定已變更。 如果要使用此命令，您可以新增其他命令行，但請勿移除現有的行。
+-   **%windir%\setup\script\SetupComplete.cmd** 中的某些設定已變更。 如果您想要使用此命令，您可以新增其他 `cmdlines` ，但不要移除現有的行。
 
 ## <a name="working-with-passwords"></a>使用密碼
 

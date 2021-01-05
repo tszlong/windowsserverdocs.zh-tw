@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: aa7b3947c668634565ddbb0fd8df081a3f4b6347
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: a968ddd70aa74d571e939c3d2c21cbc24e572f5e
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041676"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711763"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附錄 C︰Active Directory 中受保護的帳戶和群組
 
@@ -34,7 +34,7 @@ ms.locfileid: "97041676"
 | --- | --- | --- | --- |
 |Account Operators|Account Operators|Account Operators|Account Operators|
 |系統管理員|系統管理員|系統管理員|系統管理員|
-|Administrators|Administrators|Administrators|Administrators|
+|系統管理員|系統管理員|系統管理員|系統管理員|
 |Backup Operators|Backup Operators|Backup Operators|Backup Operators|
 |Cert Publishers|||
 |Domain Admins|Domain Admins|Domain Admins|Domain Admins|
@@ -78,27 +78,27 @@ SDProp 是一種處理常式，預設會在保存網域 PDC 模擬器 (PDCE) 的
 1. 啟動 **Ldp.exe**。
 2. 按一下 [Ldp] 對話方塊上的 [ **連接** ]，然後按一下 **[連接]**。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_9.gif)
+   ![顯示 [連線] 功能表選項的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_9.gif)
 
 3. 在 [ **連線] 對話方塊** 中，輸入保存 PDC 模擬器 (PDCE) 角色之網域的網域控制站名稱，然後按一下 **[確定]**。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)
+   ![螢幕擷取畫面，顯示要在哪裡輸入網域控制站的名稱，以保存 PDC 模擬器 (PDCE) 角色。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)
 
 4. 確認您已成功連接，如下列螢幕擷取畫面中的 **Dn： (RootDSE)** 所示 **，按一下 [** 連線] **，然後按一下**[系結]。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)
+   ![螢幕擷取畫面：顯示要在哪裡選取連接，然後選取 [系結] 以確認您已成功連線。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)
 
 5. **在 [系** 結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。  (如果您以該使用者的身分登入，您可以選取 [系結 **為** 目前登入的使用者]。 ) 按一下 **[確定]**。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)
+   ![顯示 [系結] 對話方塊的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)
 
 6. 完成系結作業之後，請按一下 **[流覽]**，然後按一下 [ **修改**]。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_13.png)
+   ![在 [流覽] 功能表中顯示 [修改] 功能表選項的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_13.png)
 
 7. 在 [ **修改** ] 對話方塊中，將 [ **DN** ] 欄位保留空白。 在 [ **編輯專案屬性** ] 欄位中，輸入 **FixUpInheritance**，然後在 [ **值** ] 欄位中輸入 **Yes**。 按一下 [ **輸入** ] 以填入 **專案清單** ，如下列螢幕擷取畫面所示。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_14.gif)
+   ![顯示 [修改] 對話方塊的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_14.gif)
 
 8. 在 [已填入的修改] 對話方塊中，按一下 [執行]，並確認您對 AdminSDHolder 物件所做的變更已出現在該物件上。
 
@@ -107,7 +107,7 @@ SDProp 是一種處理常式，預設會在保存網域 PDC 模擬器 (PDCE) 的
 
 如果您想要透過 LDIFDE 或腳本手動執行 SDProp，您可以建立如下所示的修改專案：
 
-![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_15.gif)
+![顯示如何建立修改專案的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_15.gif)
 
 ###### <a name="running-sdprop-manually-in-windows-server-2012-or-windows-server-2008-r2"></a>在 Windows Server 2012 或 Windows Server 2008 R2 中手動執行 SDProp
 
@@ -117,19 +117,19 @@ SDProp 是一種處理常式，預設會在保存網域 PDC 模擬器 (PDCE) 的
 
 2. 在 [ **Ldp** ] 對話方塊中，按一下 [ **連接**]，然後按一下 **[連接]**。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_16.gif)
+   ![顯示 [Ldp] 對話方塊的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_16.gif)
 
 3. 在 [ **連線] 對話方塊** 中，輸入保存 PDC 模擬器 (PDCE) 角色之網域的網域控制站名稱，然後按一下 **[確定]**。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)
+   ![顯示 [連線] 對話方塊的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)
 
 4. 確認您已成功連接，如下列螢幕擷取畫面中的 **Dn： (RootDSE)** 所示 **，按一下 [** 連線] **，然後按一下**[系結]。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)
+   ![顯示 [連接] 功能表上 [系結] 功能表選項的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)
 
 5. **在 [系** 結] 對話方塊中，輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。  (如果您以該使用者的身分登入，您可以選取 [系結 **為目前登入的使用者**]。 ) 按一下 **[確定]**。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)
+   ![螢幕擷取畫面，顯示在哪裡輸入具有修改 rootDSE 物件使用權限之使用者帳戶的認證。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)
 
 6. 完成系結作業之後，請按一下 **[流覽]**，然後按一下 [ **修改**]。
 
@@ -137,10 +137,10 @@ SDProp 是一種處理常式，預設會在保存網域 PDC 模擬器 (PDCE) 的
 
 7. 在 [ **修改** ] 對話方塊中，將 [ **DN** ] 欄位保留空白。 在 [ **編輯專案屬性** ] 欄位中，輸入 **RunProtectAdminGroupsTask**，然後在 [ **值** ] 欄位中輸入 **1**。 按一下 [ **輸入** ] 以填入專案清單，如下所示。
 
-   ![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_21.gif)
+   ![顯示 [編輯專案屬性] 欄位的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_21.gif)
 
 8. 在 [已填入的 **修改** ] 對話方塊中，按一下 [ **執行**]，並確認您對 AdminSDHolder 物件所做的變更已出現在該物件上。
 
 如果您想要透過 LDIFDE 或腳本手動執行 SDProp，您可以建立如下所示的修改專案：
 
-![受保護的帳戶和群組](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_22.gif)
+![如果您想要透過 LDIFDE 或腳本手動執行 SDProp，顯示該怎麼辦的螢幕擷取畫面。](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_22.gif)

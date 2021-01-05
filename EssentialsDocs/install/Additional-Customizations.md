@@ -1,18 +1,18 @@
 ---
 title: 其他自訂項目
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解您可以對您的 Windows Server Essentials 映射進行的其他自訂。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 65a195d5-0098-4c3c-b4ba-07f7319c8f1e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: fef23f94e9a2a591b14e6e1c8457f07f0ecbdfc7
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5890bf1caeec75573130df2fca6482147b28b57f
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621862"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711593"
 ---
 # <a name="additional-customizations"></a>其他自訂項目
 
@@ -46,7 +46,7 @@ ms.locfileid: "89621862"
 
 -   [新增 Microsoft Online Service 合作夥伴合約列名的合作夥伴資訊](../install/Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)
 
--   [取代 Microsoft 365 整合模組購買-Try 端點 URL 支援 Microsoft Online Service 轉售商合約](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
+-   [在 Microsoft Online Service 經銷商合約的支援下，取代 Microsoft 365 整合模組並購買-嘗試端點 URL](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
 
 -   [針對遠端管理的伺服器建立伺服器復原 DVD](../install/Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)
 

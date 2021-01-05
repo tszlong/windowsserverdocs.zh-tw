@@ -1,18 +1,18 @@
 ---
 title: 測試客戶經驗
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在目的電腦的初始設定中執行，以確認客戶的體驗，並檢查您的夥伴自訂。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 1b1a2040-4cfd-48bf-8d04-3ffde9c26b9b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c109fbd7ef2e4852e296f893ae8981ba8feeaed8
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: afe9ec09266eb57c25b0dea158a434da200573b5
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623334"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755344"
 ---
 # <a name="testing-the-customer-experience"></a>測試客戶經驗
 

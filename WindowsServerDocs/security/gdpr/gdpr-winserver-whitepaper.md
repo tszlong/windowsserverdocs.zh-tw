@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 1ddfbbda9ab0bdf4d04213069e192e471e4d1b98
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3f12a1eae7349d3f9c5b447a65a5455f9d41b51a
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991687"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696986"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>開始一般資料保護規定 (Windows Server 的 GDPR) 旅程
 
@@ -241,7 +241,7 @@ Windows Server 2016 也包含針對某些記憶體損毀攻擊類別的內建保
 
 當程式呼叫這個函式時，它就可以跳到攻擊者指定的非預期位置。 這些攻擊也稱為跳躍式程式設計 (JOP) 的攻擊。 控制流程防護藉由對可執行檔應用程式程式碼嚴格限制（尤其是間接呼叫指示）來防止 JOP 攻擊。 它會新增輕量安全性檢查，以識別應用程式中的函式集合，這些函數是間接呼叫的有效目標。 當應用程式執行時，它會驗證這些間接呼叫目標是否有效。
 
-如果控制流程防護檢查在執行時間失敗，Windows Server 2016 會立即終止程式，並中斷任何嘗試間接呼叫無效位址的惡意探索。 控制流程防護為裝置防護提供重要的額外保護層。 如果有白名單的應用程式已遭入侵，則裝置防護將可執行未核取，因為 Device Guard 篩選會看到應用程式已簽署，並被視為受信任。
+如果控制流程防護檢查在執行時間失敗，Windows Server 2016 會立即終止程式，並中斷任何嘗試間接呼叫無效位址的惡意探索。 控制流程防護為裝置防護提供重要的額外保護層。 如果 allowlisted 應用程式已遭入侵，則裝置防護將可執行未核取，因為 Device Guard 篩選會看到應用程式已簽署，並被視為受信任。
 
 但由於控制流程防護可以識別應用程式是否以非預先決定的非可行循序執行，因此攻擊將會失敗，而導致遭入侵的應用程式無法執行。 這些保護會結合在一起，讓攻擊者難以將惡意程式碼插入 Windows Server 2016 上執行的軟體。
 
@@ -252,9 +252,9 @@ Windows Server 2016 包含領先業界的主動式偵測功能，Windows Defende
 
 Windows Defender AV 是內建的反惡意程式碼解決方案，可為桌上型電腦、可攜式電腦及伺服器提供安全性和反惡意程式碼管理。 Windows Defender AV 已大幅改善，因為它是在 Windows 8 引進。 Windows Server 中的 Windows Defender 防毒軟體使用多種方法來改善反惡意程式碼：
 
-- **雲端傳遞的保護**有助於在數秒內偵測及封鎖新的惡意程式碼，即使該惡意程式碼從未出現過。
+- **雲端傳遞的保護** 有助於在數秒內偵測及封鎖新的惡意程式碼，即使該惡意程式碼從未出現過。
 
-- **豐富的本機內容**可改進辨識惡意程式碼的方式。 Windows Server 不僅會通知 Windows Defender 的 AV 內容（例如檔案和程式），也會通知內容來源、儲存位置等內容。
+- **豐富的本機內容** 可改進辨識惡意程式碼的方式。 Windows Server 不僅會通知 Windows Defender 的 AV 內容（例如檔案和程式），也會通知內容來源、儲存位置等內容。
 
 - **廣泛的全球感應器** 可協助 WINDOWS DEFENDER 的 AV 保持最新，並察覺最近的惡意程式碼。 這是透過兩種方式完成：從端點收集豐富的本機內容資料並集中分析該資料。
 
@@ -305,7 +305,7 @@ GDPR 包括明確的缺口通知需求，其中的個人資料缺口表示：「
 
 如 Windows 安全性中心的白皮書所述， [文章缺口：處理 Advanced 威脅](https://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
 
-> 「不_像缺口一樣，入侵後會假設已發生缺口–作為航班記錄器和犯罪場景調查員 (CSI) 。入侵後會提供資訊和工具組所需的資訊和工具集，以找出、調查及回應其他將保持未偵測到的攻擊。_」
+> 「不 _像缺口一樣，入侵後會假設已發生缺口–作為航班記錄器和犯罪場景調查員 (CSI) 。入侵後會提供資訊和工具組所需的資訊和工具集，以找出、調查及回應其他將保持未偵測到的攻擊。_」
 
 在本節中，我們將探討 Windows Server 如何協助您符合 GDPR 缺口通知義務。 這一開始會先瞭解 Microsoft 提供的基礎威脅資料，收集並分析您的權益，透過 Windows Defender 的 Advanced 威脅防護 (ATP) ，該資料對您而言可能很重要。
 

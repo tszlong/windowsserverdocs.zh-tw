@@ -6,12 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 05/23/2019
 ms.topic: article
-ms.openlocfilehash: f1b3e687b9fd49052dd3087fdf21084278e43804
-ms.sourcegitcommit: 3c6c257526b243e876aed59e3f2dec42697f232d
+ms.openlocfilehash: 2622271abcd283471513cb7ae909499ba9d858a4
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418139"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697037"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>為 Windows Server 中的 AD FS 建立自訂驗證方法
 
@@ -22,7 +22,7 @@ ms.locfileid: "92418139"
 
 ## <a name="setting-up-the-development-box"></a>設定開發箱
 
-本逐步解說使用 Visual Studio 2012。 您可以使用任何可建立適用于 Windows 的 .NET 類別的開發環境，建立專案。 專案必須以 .NET 4.5 為目標，因為 BeginAuthentication 和**TryEndAuthentication**方法會使用**BeginAuthentication**和方法，這是 .NET Framework 版本4.5 的**一部分。專案**需要一個參考：
+本逐步解說使用 Visual Studio 2012。 您可以使用任何可建立適用于 Windows 的 .NET 類別的開發環境，建立專案。 專案必須以 .NET 4.5 為目標，因為 BeginAuthentication 和 **TryEndAuthentication** 方法會使用和方法，這是 .NET Framework 版本4.5 的 **一部分。專案** 需要一個參考：
 
 | 參考 dll | 所在位置 | 必須用於 |
 |--|--|--|
@@ -38,7 +38,7 @@ ms.locfileid: "92418139"
 
 3. 從已安裝 AD FS 的 Windows Server 2012 R2 伺服器上的% windir% ADFS 複製 **Microsoft.IdentityServer.Web.dll** ，並將其貼入開發電腦上的專案資料夾。
 
-4. 在 **方案總管**中，以滑鼠右鍵按一下 [ **參考** ]，然後 **新增參考 ...**
+4. 在 **方案總管** 中，以滑鼠右鍵按一下 [ **參考** ]，然後 **新增參考 ...**
 
 5. 流覽至您 **Microsoft.IdentityServer.Web.dll** 的本機複本，然後 **新增 ...**
 
@@ -372,7 +372,7 @@ ms.locfileid: "92418139"
     }
     ```
 
-14.  請注意上述 **FormPageHtml** 元素的 ' todo '。 您可以在一分鐘內修正此問題，但首先讓我們根據新實作為的型別，將最後的必要 return 語句新增至您的初始 MyAdapter 類別。 若要這樣做，請將下列內容新增至您現有的 IAuthenticationAdapter 執行：
+14. 請注意上述 **FormPageHtml** 元素的 ' todo '。 您可以在一分鐘內修正此問題，但首先讓我們根據新實作為的型別，將最後的必要 return 語句新增至您的初始 MyAdapter 類別。 若要這樣做，請將下列內容新增至您現有的 IAuthenticationAdapter 執行：
 
     ```csharp
     class MyAdapter : IAuthenticationAdapter
@@ -450,11 +450,11 @@ ms.locfileid: "92418139"
 
 16. 然後，選取 [ **專案- \> 新增元件]。資源** 檔並命名檔案 **資源**，然後按一下 [ **新增]：**
 
-   ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "建立提供者")
+    ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "建立提供者")
 
-17. 然後，在 **Resources .resx** 檔中，選擇 [ **加入資源]。加入現有**的檔案。 流覽至包含您在上面儲存的 html 片段)  (文字檔。
+17. 然後，在 **Resources .resx** 檔中，選擇 [ **加入資源]。加入現有** 的檔案。 流覽至包含您在上面儲存的 html 片段)  (文字檔。
 
-   確定您的 GetFormHtml 程式碼會正確地解析資源檔 ( .resx 檔中的新資源名稱，) 名稱前置詞後面接著資源本身的名稱：
+    確定您的 GetFormHtml 程式碼會正確地解析資源檔 ( .resx 檔中的新資源名稱，) 名稱前置詞後面接著資源本身的名稱：
 
     ```csharp
     public string GetFormHtml(int lcid)
@@ -472,7 +472,7 @@ ms.locfileid: "92418139"
 
 1. 在方案總管中，以滑鼠右鍵按一下您的專案名稱，然後按一下 [ **屬性**]。
 
-2. 在 [**簽署**] 索引標籤上，核取 [**簽署元件**]，然後選擇 **[選擇強式名稱金鑰**檔] 下的 [ **<新增 ... >** ：輸入金鑰檔名稱和密碼，然後按一下 **[確定]**。 然後，請確定已核取 **[簽署元件** ]，並取消核取 [ **延遲簽署** ]。 [屬性 **簽署** ] 頁面看起來應該像這樣：
+2. 在 [**簽署**] 索引標籤上，核取 [**簽署元件**]，然後選擇 **[選擇強式名稱金鑰** 檔] 下的 [ **<新增 ... >** ：輸入金鑰檔名稱和密碼，然後按一下 **[確定]**。 然後，請確定已核取 **[簽署元件** ]，並取消核取 [ **延遲簽署** ]。 [屬性 **簽署** ] 頁面看起來應該像這樣：
 
     ![建置您的提供者](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "建置您的提供者")
 
@@ -494,7 +494,7 @@ ms.locfileid: "92418139"
 
 3. 將 Gacutil.exe 工具複製到伺服器。
 
-    Gacutil.exe 可以在 Windows 8 電腦上的 **% homedrive% Program Files (x86) Microsoft sdkswindowsv 8.0 abinnetfx 4.0 工具** 中找到。 您將需要 **gacutil.exe** 檔案本身，以及 **1033**、 **en-us**和其他當地語系化資源資料夾（位於 **NETFX 4.0 Tools** 位置底下）。
+    Gacutil.exe 可以在 Windows 8 電腦上的 **% homedrive% Program Files (x86) Microsoft sdkswindowsv 8.0 abinnetfx 4.0 工具** 中找到。 您將需要 **gacutil.exe** 檔案本身，以及 **1033**、 **en-us** 和其他當地語系化資源資料夾（位於 **NETFX 4.0 Tools** 位置底下）。
 
 4. 將您的提供者檔案複製 (s)  (一或多個強式名稱簽署的 .dll 檔案) 到與 **gacutil.exe** 相同的資料夾位置， (位置只是為了方便起見) 
 
@@ -546,9 +546,9 @@ ms.locfileid: "92418139"
 
 3. 在中央窗格的 [ **Multi-Factor Authentication**] 下，按一下 [**全域設定**] 右邊的 [**編輯**] 連結。
 
-4. 在頁面底部的 [ **選取其他驗證方法** ] 下，核取提供者 AdminName 的方塊。 按一下 [套用]  。
+4. 在頁面底部的 [ **選取其他驗證方法** ] 下，核取提供者 AdminName 的方塊。 按一下 [套用]。
 
-5. 例如，若要提供「觸發程式」以使用您的介面卡叫用 MFA，請在 [ **位置** ] 底下檢查 **外部** 網路和 **內部**網路。 按一下 [確定]。  (若要設定每個信賴憑證者的觸發程式，請參閱下面的「使用 Windows PowerShell 建立驗證原則」。 ) 
+5. 例如，若要提供「觸發程式」以使用您的介面卡叫用 MFA，請在 [ **位置** ] 底下檢查 **外部** 網路和 **內部** 網路。 按一下 [確定]。  (若要設定每個信賴憑證者的觸發程式，請參閱下面的「使用 Windows PowerShell 建立驗證原則」。 ) 
 
 6. 使用下列命令來檢查結果：
 
@@ -593,7 +593,7 @@ ms.locfileid: "92418139"
 
     1. 在 AD FS 的嵌入式管理單元中，于 [**驗證原則**] 下的 [**主要驗證**] 區域中，按一下 [**全域設定**] 旁的 [**編輯**]。
 
-        1. 或直接按一下**多重要素原則**UI 中的 [**主要**] 索引標籤。
+        1. 或直接按一下 **多重要素原則** UI 中的 [**主要**] 索引標籤。
 
 2. 確定 **表單驗** 證是針對外部網路和內部網路驗證方法檢查的唯一選項。 按一下 [確定]。
 
@@ -619,35 +619,35 @@ ms.locfileid: "92418139"
 
 回想一下您的 TryEndAuthentication 實行：
 
-    ```csharp
-    public IAdapterPresentation TryEndAuthentication(IAuthenticationContext authContext, IProofData proofData, HttpListenerRequest request, out Claim[] outgoingClaims)
-    {
-        //return new instance of IAdapterPresentationForm derived class
-        outgoingClaims = new Claim[0];
-        return new MyPresentationForm();
-    }
-    ```
+```csharp
+public IAdapterPresentation TryEndAuthentication(IAuthenticationContext authContext, IProofData proofData, HttpListenerRequest request, out Claim[] outgoingClaims)
+{
+    //return new instance of IAdapterPresentationForm derived class
+    outgoingClaims = new Claim[0];
+    return new MyPresentationForm();
+}
+```
 
 讓我們更新它，使它不一定會傳回 MyPresentationForm ( # A1。 為此，您可以在您的類別內建立一個簡單的公用程式方法：
 
-    ```csharp
-    static bool ValidateProofData(IProofData proofData, IAuthenticationContext authContext)
+```csharp
+static bool ValidateProofData(IProofData proofData, IAuthenticationContext authContext)
+{
+    if (proofData == null || proofData.Properties == null || !proofData.Properties.ContainsKey("ChallengeQuestionAnswer"))
     {
-        if (proofData == null || proofData.Properties == null || !proofData.Properties.ContainsKey("ChallengeQuestionAnswer"))
-        {
-            throw new ExternalAuthenticationException("Error - no answer found", authContext);
-        }
-
-        if ((string)proofData.Properties["ChallengeQuestionAnswer"] == "adfabric")
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        throw new ExternalAuthenticationException("Error - no answer found", authContext);
     }
-    ```
+
+    if ((string)proofData.Properties["ChallengeQuestionAnswer"] == "adfabric")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+```
 
 然後，更新 TryEndAuthentication，如下所示：
 
@@ -729,9 +729,9 @@ public IAdapterPresentation TryEndAuthentication(IAuthenticationContext authCont
 
 3. 在 [ **Multi-Factor Authentication**] 下，按一下 [**全域設定**] 右邊的 [**編輯**] 連結。
 
-4. 在 [ **選取其他驗證方法**] 下，核取提供者 AdminName 的方塊。 按一下 [套用]  。
+4. 在 [ **選取其他驗證方法**] 下，核取提供者 AdminName 的方塊。 按一下 [套用]。
 
-5. 例如，若要提供「觸發程式」以使用您的介面卡叫用 MFA，請在 [位置] 底下檢查 **外部** 網路和 **內部**網路。 按一下 [確定]。
+5. 例如，若要提供「觸發程式」以使用您的介面卡叫用 MFA，請在 [位置] 底下檢查 **外部** 網路和 **內部** 網路。 按一下 [確定]。
 
 ### <a name="authenticate-with-mfa-using-your-adapter"></a>使用您的介面卡驗證 MFA
 

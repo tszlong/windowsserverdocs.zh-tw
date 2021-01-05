@@ -1,18 +1,18 @@
 ---
 title: 管理 Windows Server Essentials 中的 BranchCache
-description: 說明如何使用 Windows Server Essentials
+description: 深入瞭解 BranchCache，以及它如何協助您將網際網路使用優化、改善網路應用程式的效能，以及減少 WAN 上的流量。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f6e05aec-d07c-4e0b-94ab-f20279e9ffd1
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 52493dae886eb8f74a6276854c7b7cce2f77470f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: efa4abc7da2c0949444ffa87514500561c9840ba
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623204"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755274"
 ---
 # <a name="manage-branchcache-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 BranchCache
 
@@ -36,12 +36,12 @@ BranchCache 可協助您優化網際網路使用方式、改善網路應用程�
 -   您的 Windows Server Essentials 伺服器位於不同實體位置的另一個辦公室。
 
 ## <a name="distributed-cache-mode"></a>分散式快取模式
- 在 Windows Server Essentials 中，BranchCache 會以 *分散式*快取模式（branchcache 中可用的兩個快取模式之一）來執行。 在分散式快取模式中，分公司的內容快取會分散在用戶端電腦之間。 由於不需要額外的硬體或拓撲變更，因此這種模式非常適合使用遠端伺服器或本機伺服器來存取 SharePoint Online 等雲端架構服務的小型辦公室。 當您在 Windows Server Essentials 中開啟 BranchCache 時，會實作為分散式快取模式。
+ 在 Windows Server Essentials 中，BranchCache 會以 *分散式* 快取模式（branchcache 中可用的兩個快取模式之一）來執行。 在分散式快取模式中，分公司的內容快取會分散在用戶端電腦之間。 由於不需要額外的硬體或拓撲變更，因此這種模式非常適合使用遠端伺服器或本機伺服器來存取 SharePoint Online 等雲端架構服務的小型辦公室。 當您在 Windows Server Essentials 中開啟 BranchCache 時，會實作為分散式快取模式。
 
 > [!NOTE]
->  在有幾個或許多員工使用網路應用程式的較大型分公司中，以「託管快取模式」**(hosted cache mode) 實作 BranchCache 會很有幫助。 在託管快取模式中，內容快取會儲存在分公司的一或多部託管快取伺服器上。
+>  在有幾個或許多員工使用網路應用程式的較大型分公司中，以「託管快取模式」(hosted cache mode) 實作 BranchCache 會很有幫助。 在託管快取模式中，內容快取會儲存在分公司的一或多部託管快取伺服器上。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
  若要在 Windows Server Essentials 中使用 BranchCache，您的伺服器和用戶端電腦必須符合下列需求：
 
 -   伺服器必須執行 Windows server Essentials 作業系統或 windows server 2012 R2 Standard 或 windows server 2012 R2 Datacenter 作業系統與 Windows Server Essentials 體驗角色。
@@ -67,16 +67,16 @@ BranchCache 可協助您優化網際網路使用方式、改善網路應用程�
 
      [設定精靈] 隨即開啟。
 
-3.  按一下 [BranchCache]****。
+3.  按一下 [BranchCache]。
 
-4.  在 [BranchCache 設定] **** 頁面上，按一下 [開啟] ****。
+4.  在 [BranchCache 設定]  頁面上，按一下 [開啟] 。
 
 ## <a name="use-windows-powershell-to-turn-branchcache-on-or-off"></a>使用 Windows PowerShell 開啟或關閉 BranchCache
  您可以使用 Windows PowerShell 來檢查 BranchCache 的狀態 ([啟用] 或 [停用])，以及開啟或關閉 BranchCache。
 
 #### <a name="to-turn-branchcache-on-or-off-using-windows-powershell"></a>使用 Windows PowerShell 開啟或關閉 BranchCache
 
-1.  在伺服器上，以系統管理員身分開啟 Windows PowerShell。 在 [開始]**** 頁面上，以滑鼠右鍵按一下 [Windows PowerShell]****，然後按一下 [以系統管理員身分執行]****，再按一下 [是]****。
+1.  在伺服器上，以系統管理員身分開啟 Windows PowerShell。 在 [開始] 頁面上，以滑鼠右鍵按一下 [Windows PowerShell]，然後按一下 [以系統管理員身分執行]，再按一下 [是]。
 
 2.  在命令提示字元下，輸入下列任何一個 Cmdlet。
 

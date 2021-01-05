@@ -1,18 +1,18 @@
 ---
 title: 安裝增益集
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在建立映射之前先安裝所有伺服器或用戶端電腦上的增益集。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e62e4f07-c2ba-4c5e-b30c-bdc287cd654e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 32bb6be1ff24823d628e23945849b5030d6e0723
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0160795a117c43d4fddd3dee7df8d45434ac7553
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626321"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755044"
 ---
 # <a name="install-add-ins"></a>安裝增益集
 

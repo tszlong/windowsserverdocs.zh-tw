@@ -1,18 +1,18 @@
 ---
 title: 建立 Cfg.ini 檔案
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何建立用來自動安裝作業系統的 cfg.ini 檔案。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 93a73556-22ef-402d-b8d4-582b74c22bcf
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 597f6349d96d29f06f06034504d5800e7e207eae
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ffc9ecaf6059ab21aae474d211ab397858f1b7d2
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623784"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711223"
 ---
 # <a name="create-the-cfgini-file"></a>建立 Cfg.ini 檔案
 
@@ -104,11 +104,11 @@ ms.locfileid: "89623784"
     |*ServerName*|伺服器名稱可唯一識別網路上的伺服器。 您的伺服器名稱必須符合下列準則：<br /><br /> -長度最多可以有15個字元。<br /><br /> -可以包含字母、數位和連字號 (-) 。<br /><br /> -不得以連字號開頭。<br /><br /> -不得包含任何空格。<br /><br /> -不得只包含數位。<br /><br /> 例如：ContosoServer。|
     |*DNSName*|內部網域會將伺服器和用戶端電腦群組在一起，以共用使用者名稱、密碼和其他通用資訊的通用資料庫。 使用者在登入電腦時會看見此名稱，但此名稱僅供內部使用，而且與網際網路的網域名稱不同。 內部網域名稱必須符合針對 *ServerName* 指定的相同準則。<br /><br /> 例如：contoso.local。|
     |*NetbiosName*|NetBIOS 名稱可用來識別伺服器上所執行的資源。 其長度最多可達 15 個字元。 範例： Contoso。|
-    |*語言*| (選擇性) 指定顯示語言。 它只能是其中一個已安裝的語言。 範例：美國地區使用的英文版。|
+    |*Language*| (選擇性) 指定顯示語言。 它只能是其中一個已安裝的語言。 範例：美國地區使用的英文版。|
     |*地區設定*|(選擇性) 使用 *LocaleID* 格式指定時間與貨幣格式。 範例： en-us （以英文顯示的貨幣和時間為單位），並根據美國所使用的標準進行格式化。|
     |*鍵盤*|鍵盤可以採用下列兩種格式：<br /><br /> - **輸入語言：鍵盤配置。** 例如 0409:00000409，其中 **:** 之前的 0409 是輸入語言，而 **00000409** 是鍵盤配置。 您可以在 **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layouts** 登錄機碼下找到鍵盤配置清單。<br /><br /> - **輸入語言： IME 識別碼。** 以下是 IME 識別碼的完整清單。<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {8F96574E-C86C-4bd6-9666-3F7327D4CBE8} 的阿姆哈拉輸入方法<br /><br /> -{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e} {FA550B04-5AD7-411F-A5AC-CA038EC515D7} Microsoft 拼音-簡單快速 (簡體中文) <br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {B2F9C502-1742-11D4-9790-0080C882687E} 中文 (傳統) -新注音<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {4BDF9F03-C7D3-11D4-B2AB-0080C882687E} 中文 (傳統) -倉頡<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {6024B45F-5C54-11D4-B921-0080C882687E} 中文 (傳統) -快速<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {D38EFF65-AA46-4FD5-91A7-67845FB02F5B} 中文繁體陣列<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {037B2C25-480C-4D7F-B027-D6CA6B69788A} 中文傳統 DaYi<br /><br /> -{03B5835F-F03C-411B-9CE2-AA23E1171E36} {A76C93D9-5523-4E90-AAFA-4DB112F9AC76} Microsoft IME (日文) <br /><br /> -{A028AE76-01B1-46C2-99C4-ACD9858AE02F} {B5FE1F02-D5F2-4445-9C03-C568F23C99A1} Microsoft IME (韓文) <br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F} {B60AF051-257A-46BC-B9D3-84DAD819BAFB} 舊的韓文 IME (韓文) <br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {409C8376-007B-4357-AE8E-26316EE3FB0D} Yi 輸入方法<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {3CAB88B7-CC3E-46A6-9765-B772AD7761FF} 提提的輸入方法|
     |*設定*|設定使用者選取專案以進行更新。 請使用下列其中一個值：<br /><br /> **-All** 等於使用建議的設定。<br /><br /> **-更新** 等於安裝重要更新。 向<br /><br /> **-無** equals：不檢查更新。|
-    |*UserName*|-安裝期間所建立之新系統管理員帳戶的名稱。 系統管理員和標準使用者帳戶名稱必須符合下列準則：<br /><br /> -長度最多可達19個字元。<br /><br /> -不可包含/\ []  &#124; < > + =;, ? *<br /><br /> -不得以句號開頭或結尾。<br /><br /> -不得包含兩個連續的句點。<br /><br /> -不得與伺服器名稱或內部功能變數名稱相同。<br /><br /> -不得與預先定義的使用者名稱相同，例如 Administrator 或 Guest。|
+    |*使用者名稱*|-安裝期間所建立之新系統管理員帳戶的名稱。 系統管理員和標準使用者帳戶名稱必須符合下列準則：<br /><br /> -長度最多可達19個字元。<br /><br /> -不可包含/\ []  &#124; < > + =;, ? *<br /><br /> -不得以句號開頭或結尾。<br /><br /> -不得包含兩個連續的句點。<br /><br /> -不得與伺服器名稱或內部功能變數名稱相同。<br /><br /> -不得與預先定義的使用者名稱相同，例如 Administrator 或 Guest。|
     |*PlainTextPassword*|這是在安裝期間所建立之新系統管理員帳戶的密碼。<br /><br /> ：長度必須至少為8個字元。<br /><br /> -至少必須包含下列四個類別中的三個：<br /><br /> -大寫字元。<br /><br /> -小寫字元。<br /><br /> 型號.<br /><br /> 字元.|
     |*StdUserName*|在安裝期間建立的新標準使用者帳戶的名稱。 如需相關需求，請參閱 *UserName* 參數。|
     |*StdUserPlainTextPassword*|在安裝期間建立之標準使用者帳戶的密碼。|

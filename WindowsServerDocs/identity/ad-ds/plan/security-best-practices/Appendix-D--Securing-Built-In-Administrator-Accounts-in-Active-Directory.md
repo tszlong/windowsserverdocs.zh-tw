@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2d6a8a626c5fbf2a8d34a1527b3eb9976c21ebd0
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 2f7588b852c9061f8183d4db02be65ac2e0f79f6
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041716"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711783"
 ---
 # <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>附錄 D︰保護 Active Directory 中的內建的 Administrator 帳戶
 
@@ -53,7 +53,7 @@ ms.locfileid: "97041716"
 > 建議您以網域系統管理員帳戶的相同方式，限制成員伺服器和工作站上的本機系統管理員帳戶。 因此，您通常應該將樹系中每個網域的系統管理員帳戶，以及本機電腦的系統管理員帳戶新增至這些使用者權限設定。 下列螢幕擷取畫面顯示設定這些使用者權限以封鎖本機系統管理員帳戶的範例，以及網域的系統管理員帳戶，使其無法執行這些帳戶不需要的登入。
 
 
-![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)
+![醒目顯示使用者權限指派的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)
 
 -   設定 Gpo 以限制網域控制站上的系統管理員帳戶
     -   在樹系中的每個網域中，您應該修改預設的網域控制站 GPO 或連結至網域控制站 OU 的原則，以將每個網域的系統管理員帳戶新增至電腦設定 \windows 設定設定 \ 使用者設定 \ 使用者權限 \ 使用者 **權力指派** 中的下列使用者權限：
@@ -84,7 +84,7 @@ ms.locfileid: "97041716"
 
     3.  在 [ **帳戶選項**] 下，選取 [ **帳戶是機密的，無法委派** 旗標]，然後按一下 **[確定]**。
 
-        ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_24.gif)
+        ![顯示 [此帳戶是機密帳戶，無法委派] 核取方塊的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_24.gif)
 
 3.  若要啟用帳戶上 **互動式登入旗標所需的智慧卡** ，請執行下列步驟：
 
@@ -94,7 +94,7 @@ ms.locfileid: "97041716"
 
     3.  在 [ **帳戶** 選項] 下，選取 [ **互動式登入旗標需要智慧卡** ] 旗標，如下列螢幕擷取畫面所示，然後按一下 **[確定]**。
 
-        ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_25.gif)
+        ![顯示 [互動式登入需要智慧卡] 核取方塊的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_25.gif)
 
 ##### <a name="configuring-gpos-to-restrict-administrator-accounts-at-the-domain-level"></a>設定 Gpo 以限制 Domain-Level 的系統管理員帳戶
 
@@ -107,17 +107,17 @@ ms.locfileid: "97041716"
 
 3.  在主控台樹中，以滑鼠右鍵按一下 **群組原則物件**]，然後按一下 [ **新增**]。
 
-    ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_27.gif)
+    ![顯示主控台樹中群組原則物件的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_27.gif)
 
 4.  在 [ **新增 GPO** ] 對話方塊中，輸入 <GPO Name> ，然後按一下 **[確定]** (其中 <GPO Name> 是此 GPO 的名稱) 如下列螢幕擷取畫面所示。
 
-    ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)
+    ![顯示 [新增 GPO] 對話方塊的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)
 
 5.  在詳細資料窗格中，以滑鼠右鍵按一下 <GPO Name> ，然後按一下 [ **編輯**]。
 
 6.  流覽至 [ **電腦設定 \windows 設定] \ 使用者設置 \ 本機原則**，然後按一下 [ **使用者權限指派**]。
 
-    ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_29.gif)
+    ![顯示群組原則管理編輯器的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_29.gif)
 
 7.  設定使用者權限，以防止系統管理員帳戶透過網路存取成員伺服器和工作站，請執行下列動作：
 
@@ -127,7 +127,7 @@ ms.locfileid: "97041716"
 
     3.  輸入 [ **系統管理員**]，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。 確認帳戶以 \Username 格式顯示， <DomainName> 如下列螢幕擷取畫面所示。
 
-        ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)
+        ![顯示 DomainName/使用者名稱格式的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -139,7 +139,7 @@ ms.locfileid: "97041716"
 
     3.  輸入 [ **系統管理員**]，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。 確認帳戶以 \Username 格式顯示， <DomainName> 如下列螢幕擷取畫面所示。
 
-        ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)
+        ![顯示如何確認您已設定使用者權限以防止系統管理員帳戶以批次工作登入的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -151,7 +151,7 @@ ms.locfileid: "97041716"
 
     3.  輸入 [ **系統管理員**]，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。 確認帳戶以 \Username 格式顯示， <DomainName> 如下列螢幕擷取畫面所示。
 
-        ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)
+        ![顯示如何確認您已設定使用者權限以防止系統管理員帳戶以服務身分登入的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -163,7 +163,7 @@ ms.locfileid: "97041716"
 
     3.  輸入 [ **系統管理員**]，按一下 [ **檢查名稱**]，然後按一下 **[確定]**。 確認帳戶以 \Username 格式顯示， <DomainName> 如下列螢幕擷取畫面所示。
 
-        ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)
+        ![示範如何確認您已設定使用者權限，以防止 BA 帳戶透過遠端桌面服務存取成員伺服器和工作站的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)
 
     4.  按一下 **[確定]**，然後再按一下 **[確定]** 。
 
@@ -175,11 +175,11 @@ ms.locfileid: "97041716"
 
     2.  以滑鼠右鍵按一下 GPO 將套用的 OU，然後按一下 [ **連結現有的 gpo**]。
 
-        ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_34.gif)
+        ![顯示 [連結現有的 GPO] 功能表選項的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_34.gif)
 
     3.  選取您所建立的 GPO，然後按一下 **[確定]**。
 
-        ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_35.gif)
+        ![顯示要在哪裡選取您所建立之 GPO 的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_35.gif)
 
     4.  建立包含工作站之所有其他 Ou 的連結。
 
@@ -195,13 +195,13 @@ ms.locfileid: "97041716"
 
 1.  從受 GPO 變更影響的任何成員伺服器或工作站，嘗試使用網域的內建系統管理員帳戶，以互動方式登入網域。 嘗試登入之後，應該會出現類似下列的對話方塊。
 
-![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_36.gif)
+![指出您必須使用智慧卡來登入的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_36.gif)
 
 ##### <a name="verify-account-is-disabled-account-option"></a>確認「帳戶已停用」帳戶選項
 
 1.  從受 GPO 變更影響的任何成員伺服器或工作站，嘗試使用網域的內建系統管理員帳戶，以互動方式登入網域。 嘗試登入之後，應該會出現類似下列的對話方塊。
 
-![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_37.gif)
+![指出您的帳戶已停用的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_37.gif)
 
 ##### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>確認「拒絕從網路存取這部電腦」 GPO 設定
 從任何不受 GPO 影響的成員伺服器或工作站 (例如跳躍伺服器) ，嘗試透過受 GPO 變更影響的網路來存取成員伺服器或工作站。 若要確認 GPO 設定，請執行下列步驟來嘗試使用 **NET USE** 命令對應系統磁片磁碟機：
@@ -214,13 +214,13 @@ ms.locfileid: "97041716"
 
 4.  當系統提示您核准提高許可權時，請按一下 **[是]**。
 
-    ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)
+    ![顯示 [使用者存取控制] 對話方塊的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)
 
 5.  在 [**命令提示** 字元] 視窗中，輸入 **net use \\ \\ \<Server Name\> \c $**，其中 \<Server Name\> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。
 
 6.  下列螢幕擷取畫面顯示應出現的錯誤訊息。
 
-    ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_39.gif)
+    ![顯示存取失敗錯誤的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_39.gif)
 
 ##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>確認「拒絕以批次工作登入」 GPO 設定
 
@@ -275,7 +275,7 @@ ms.locfileid: "97041716"
 
 16. 應該會出現類似下列的對話方塊。
 
-    ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_40.gif)
+    ![顯示工作排程器對話方塊的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_40.gif)
 
 ##### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>確認「拒絕以服務方式登入」 GPO 設定
 
@@ -301,7 +301,7 @@ ms.locfileid: "97041716"
 
 11. 當服務重新開機時，應該會出現類似下列的對話方塊。
 
-    ![保護內建的系統管理員帳戶](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_41.gif)
+    ![顯示 [服務] 對話方塊的螢幕擷取畫面。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_41.gif)
 
 ##### <a name="revert-changes-to-the-printer-spooler-service"></a>還原印表機多工緩衝處理器服務的變更
 

@@ -1,18 +1,18 @@
 ---
 title: 在您安裝 Windows Server Essentials 之前
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解開始安裝 Windows Server Essentials 之前需要執行的工作。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8d0893bd-e2b7-4494-9537-02b1cbbcd57a
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: ceb5d81490b46513b540901413d8923d61d87e40
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 14f57d184eb2902a3db54fd8b2c0c8067eed326f
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623940"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711433"
 ---
 # <a name="before-you-install-windows-server-essentials"></a>在您安裝 Windows Server Essentials 之前
 

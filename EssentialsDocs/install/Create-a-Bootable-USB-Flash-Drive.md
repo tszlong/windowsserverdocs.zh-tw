@@ -1,18 +1,18 @@
 ---
 title: 建立可開機的 USB 快閃磁碟機
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何建立可開機的 USB 快閃磁片磁碟機，以用來部署 Windows Server Essentials。
 ms.date: 05/04/2018
 ms.topic: article
 ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a5adc33cf0177ef6134d293a448cdf9a3999fcdb
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: e4b1388913106273397a5ade45e3f8f1aa9b38d4
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621801"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711443"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>建立可開機的 USB 快閃磁碟機
 

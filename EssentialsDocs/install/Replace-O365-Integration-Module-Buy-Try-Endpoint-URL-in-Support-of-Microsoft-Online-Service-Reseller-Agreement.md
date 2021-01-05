@@ -1,20 +1,20 @@
 ---
-title: 取代 Microsoft 365 整合模組購買-Try 端點 URL 支援 Microsoft Online Service 轉售商合約
-description: 說明如何使用 Windows Server Essentials
+title: 在 Microsoft Online Service 經銷商合約的支援下，取代 Microsoft 365 整合模組並購買-嘗試端點 URL
+description: 瞭解如何將 Windows Server Essentials Microsoft 365 整合模組所使用的端點 Url 取代。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9860a6b9-baea-4bf0-9a9f-6f1a288f996e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a8a5cf91c6de2971bc8270cc3c7ea92327b71224
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4d01b7dbea4566bae962c73220c389c3a4e2c19a
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623377"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755364"
 ---
-# <a name="replace-microsoft-365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>取代 Microsoft 365 整合模組購買-Try 端點 URL 支援 Microsoft Online Service 轉售商合約
+# <a name="replace-microsoft-365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>在 Microsoft Online Service 經銷商合約的支援下，取代 Microsoft 365 整合模組並購買-嘗試端點 URL
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
@@ -65,11 +65,11 @@ ms.locfileid: "89623377"
 
 #### <a name="to-add-an-endpoint-url-key-to-the-registry"></a>將端點 URL 機碼新增到登錄
 
-1.  在參照電腦上，按一下 [開始]****，輸入 **regedit**，然後按 ENTER。
+1.  在參照電腦上，按一下 [開始]，輸入 **regedit**，然後按 ENTER。
 
 2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**、**Windows Server** 及 **MSO**。
 
-3.  如果 MSO 不存在，請在 [Windows Server]**** 上按一下滑鼠右鍵，指向 [新增]****，按一下 [機碼]****，然後輸入 **MSO** 作為機碼的名稱。
+3.  如果 MSO 不存在，請在 [Windows Server] 上按一下滑鼠右鍵，指向 [新增]，按一下 [機碼]，然後輸入 **MSO** 作為機碼的名稱。
 
 4.  以滑鼠右鍵按一下 MSO，然後按一下 **[字串值]**。 輸入下列其中一個端點字串名稱，當做字串的名稱：
 

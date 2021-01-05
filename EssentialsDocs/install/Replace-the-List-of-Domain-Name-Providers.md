@@ -1,18 +1,18 @@
 ---
 title: 取代網域名稱提供者清單
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何取代 [設定網功能變數名稱稱] Wizard 中顯示的功能變數名稱提供者清單。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 74509a7d64e718fe1d2b62f806306235e7d827e4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 654334feaee0a0fb571a5394b15c41dc61eb2982
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623367"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755374"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>取代網域名稱提供者清單
 
@@ -62,7 +62,7 @@ ms.locfileid: "89623367"
 
 ##### <a name="to-add-a-key-to-the-registry"></a>若要新增登錄機碼
 
-1.  在參照電腦上，按一下 [開始]****，輸入 **regedit**，然後按 **ENTER**。
+1.  在參照電腦上，按一下 [開始]，輸入 **regedit**，然後按 **ENTER**。
 
 2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**、**Windows Server**、**Domain Managers** 和 **Providers**。
 
@@ -73,9 +73,9 @@ ms.locfileid: "89623367"
 5.  在右窗格中，以滑鼠右鍵按一下新的 **ReferralServerHttpsUri**，然後按一下 **[修改]**。
 
 
-6.  輸入用於存取您在[建立轉介服務檔案](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)中建立之轉介檔案的 HTTPS URL，然後按一下 **[確定]**。
+6.  輸入用於存取您在 [建立轉介服務檔案](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)中建立之轉介檔案的 HTTPS URL，然後按一下 **[確定]**。
 
-6.  輸入用於存取您在[建立轉介服務檔案](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)中建立之轉介檔案的 HTTPS URL，然後按一下 **[確定]**。
+6.  輸入用於存取您在 [建立轉介服務檔案](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)中建立之轉介檔案的 HTTPS URL，然後按一下 **[確定]**。
 
 
 ~~~

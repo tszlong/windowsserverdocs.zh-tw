@@ -1,17 +1,17 @@
 ---
 title: 開始使用 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows Server Essentials edition，這是專為小型企業（最多25位使用者和50裝置）所設計的雲端連線伺服器。
 ms.topic: article
 ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: ef30f70be32f0e8e277375118c539bc8283f9fb9
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 467468c4636beb3ecf2fe6e0258f172f1f112ca6
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622415"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696974"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>開始使用 Windows Server Essentials
 
@@ -42,7 +42,7 @@ ms.locfileid: "89622415"
 -   [Windows Server Essentials 管理封包](https://www.microsoft.com/download/details.aspx?id=35560)
 
 
--   **更新：** 請參閱[支援 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
+-   **更新：** 請參閱 [支援 Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 
 ## <a name="end-to-end-solution-guides"></a>端對端解決方案指南
 

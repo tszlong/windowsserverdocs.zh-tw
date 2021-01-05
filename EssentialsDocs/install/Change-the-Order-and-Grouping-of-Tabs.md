@@ -1,18 +1,18 @@
 ---
 title: 變更索引標籤的順序和群組
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何變更儀表板中的索引標籤順序，讓您的索引標籤是在索引標籤資料列左邊) 的第一個 (。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 79a417fd-1b3e-47ab-ae33-bb1faf95c86d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 5a52f4b14423d1ef337cba9c2d18dbf4c196ca93
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d9b657c31c13fa8ad3d08e9663bd65671e54ab57
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623869"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711453"
 ---
 # <a name="change-the-order-and-grouping-of-tabs"></a>變更索引標籤的順序和群組
 
@@ -25,7 +25,7 @@ ms.locfileid: "89623869"
 
 #### <a name="to-display-your-tab-first-in-the-list-of-tabs"></a>若要在索引標籤清單中將您的索引標籤顯示為第一個
 
-1.  在參照電腦上，按一下 [開始]****，輸入 **regedit**，然後按 **ENTER**。
+1.  在參照電腦上，按一下 [開始]，輸入 **regedit**，然後按 **ENTER**。
 
 2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**，然後展開 **Windows Server**。 如果 **OEM** 機碼不存在，您必須完成下列步驟來建立機碼：
 
@@ -45,14 +45,14 @@ ms.locfileid: "89623869"
 
 7.  將變更儲存至登錄。
 
-8.  您也必須將您主要頂層索引標籤的 GUID 加到識別項清單中，以將索引標籤群組在一起。 若要執行此動作，請執行**變更儀表板中索引標籤的群組**中所列出的步驟。
+8.  您也必須將您主要頂層索引標籤的 GUID 加到識別項清單中，以將索引標籤群組在一起。 若要執行此動作，請執行 **變更儀表板中索引標籤的群組** 中所列出的步驟。
 
 ## <a name="change-the-grouping-of-tabs-in-the-dashboard"></a>變更儀表板中索引標籤的群組
  您可以新增登錄項目，以確保您的索引標籤會群組在一起，而且會包含在內建 Microsoft 索引標籤的清單中。
 
 #### <a name="to-change-the-grouping-of-tabs"></a>若要變更索引標籤的群組
 
-1.  如果 regedit 尚未開啟，請按一下 [開始]****，輸入 **regedit**，然後按 **ENTER**。
+1.  如果 regedit 尚未開啟，請按一下 [開始]，輸入 **regedit**，然後按 **ENTER**。
 
 2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**，然後展開 **Windows Server**。
 

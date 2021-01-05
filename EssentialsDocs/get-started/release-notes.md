@@ -1,18 +1,18 @@
 ---
 title: Windows Server Essentials 的發行檔
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows Server 2016 Essentials 版本中的內容。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: db402a2b-7a46-448a-841c-750557cd12cc
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 9ef0e6bda6e66ab46824189219219dc1843cbe21
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 55de648f4112bbb8fbba5f90a9e6a884e128659f
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622400"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696949"
 ---
 # <a name="release-documentation-for-windows-server-essentials"></a>Windows Server Essentials 的發行檔
 

@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 304533d7f6b810a8db338b09a5959e987a922baa
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 2cc9fa031ea41bddf76285cdeabb3ed33a10688a
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049346"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711753"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN 和 UPN 的唯一性
 
@@ -49,7 +49,7 @@ ms.locfileid: "97049346"
 
 **表 SEQ 資料表 \\ \* 阿拉伯文2： UPN 和 SPN 唯一性錯誤代碼**
 
-|Decimal|Hex|符號|字串|
+|Decimal|Hex|符號|String|
 |-----------|-------|------------|----------|
 |8467|21C7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供用於新增/修改的 SPN 值不是整個樹系的唯一值。|
 |8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|作業失敗，因為提供來新增/修改的 UPN 值不是全樹系唯一的。|
@@ -59,29 +59,29 @@ ms.locfileid: "97049346"
 ### <a name="dsamsc"></a>DSA.MSC
 您所選擇的使用者登入名稱已在此企業中使用。 請選擇另一個登入名稱，然後再試一次。
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig01_DupUPN.gif)
+![顯示訊息的螢幕擷取畫面，其中指出您所選擇的登入名稱已在使用中。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig01_DupUPN.gif)
 
 修改現有的帳戶：
 
 指定的使用者登入名稱已存在於企業中。 您可以藉由變更首碼，或從清單中選取不同的尾碼，以指定新的尾碼。
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig02_DupUPNMod.gif)
+![顯示訊息的螢幕擷取畫面，其中指出您使用的登入名稱已存在於企業中。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig02_DupUPNMod.gif)
 
 ### <a name="active-directory-administrative-center-dsacexe"></a>Active Directory 管理中心 ( # A0) 
 嘗試以已存在的 UPN 在 Active Directory 管理中心中建立新的使用者，將會產生下列錯誤。
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig03_DupUPNADAC.gif)
+![顯示訊息的螢幕擷取畫面，指出未建立新的使用者。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig03_DupUPNADAC.gif)
 
 **圖 SEQ 圖 \\ \* 阿拉伯文1當新使用者建立因為 UPN 重複而失敗時，AD 管理中心顯示的錯誤**
 
 ### <a name="event-2974-source-activedirectory_domainservice"></a>事件2974來源： ActiveDirectory_DomainService
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig04_Event2974.gif)
+![顯示的螢幕擷取畫面 ](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig04_Event2974.gif)
 
 **圖 SEQ 圖 \\ \* 阿拉伯文2事件識別碼2974，錯誤8648**
 
 事件2974會列出已封鎖的值，以及一個或多個物件的清單， (最多10個) 已經包含該值。  在下圖中，您可以看到 UPN 屬性值 **<em>dhunt@blue.contoso.com</em>** 已存在於其他四個物件上。  由於這是 Windows Server 2012 R2 中的新功能，因此當下層 Dc 處理寫入嘗試時，仍會發生在混合式環境中意外建立重複的 UPN 和 Spn。
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)
+![顯示阿拉伯文2事件識別碼2974的螢幕擷取畫面，錯誤8648。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)
 
 **圖 SEQ 圖 \\ \* 阿拉伯文3事件2974顯示包含重複 UPN 的所有物件**
 
@@ -104,33 +104,33 @@ The operation failed because UPN value provided for addition/modification is not
 000021C8: AtrErr: DSID-03200BBA, #1: 0: 000021C8: DSID-03200BBA, problem 1005 (CONSTRAINT_ATT_TYPE), data 0, Att 90290 (userPrincipalName)
 ```
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig06_ADSI21c8.gif)
+![顯示作業失敗且錯誤碼為0x21c8 的螢幕擷取畫面。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig06_ADSI21c8.gif)
 
 **圖 SEQ 圖 \\ \* 阿拉伯文4已封鎖新增 UPN 時，ADSIEdit 中顯示的錯誤訊息**
 
 ### <a name="windows-powershell"></a>Windows PowerShell
 Windows Server 2012 R2：
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig07_SetADUser2012.gif)
+![顯示訊息的螢幕擷取畫面，指出作業失敗。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig07_SetADUser2012.gif)
 
 從伺服器2012（以 Windows Server 2012 R2 DC 為目標）執行的 PS：
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig08_SetADUser2012R2.gif)
+![顯示不明錯誤的螢幕擷取畫面。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig08_SetADUser2012R2.gif)
 
 以 Windows server 2012 R2 DC 為目標的 Windows Server 2012 上執行的 DSAC.exe：
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig09_UserCreateError.gif)
+![在以 Windows Server 2012 R2 DC 為目標時，顯示非 Windows Server 2012 R2 上的使用者建立錯誤的螢幕擷取畫面。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig09_UserCreateError.gif)
 
 **圖 SEQ 圖 \\ \* 阿拉伯文 5 dsac.exe 在以 windows Server 2012 r2 DC 為目標時，非 Windows Server 2012 R2 上的使用者建立錯誤**
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig10_UserModError.gif)
+![在以 Windows Server 2012 R2 DC 為目標時，顯示非 Windows Server 2012 R2 上使用者修改錯誤的螢幕擷取畫面。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig10_UserModError.gif)
 
 **圖 SEQ 圖 \\ \* 阿拉伯文 6 Dsac.exe 以 windows Server 2012 r2 DC 為目標時，非 Windows Server 2012 R2 上的使用者修改錯誤**
 
 ### <a name="restore-of-an-object-that-would-result-in-a-duplicate-upn-fails"></a>還原可能導致重複 UPN 的物件失敗：
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig11_RestoreDupUPN.gif)
+![顯示如何還原物件的螢幕擷取畫面。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig11_RestoreDupUPN.gif)
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig12_RestoreDupUPNError.gif)
+![螢幕擷取畫面，顯示作業失敗，因為提供用於新增/修改的 UPN 值不是整個樹系的唯一值。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig12_RestoreDupUPNError.gif)
 
 當物件因為 UPN/SPN 重複而無法還原時，不會記錄任何事件。
 
@@ -186,7 +186,7 @@ DN: CN=Dianne Hunt2\0ADEL:dd3ab8a4-3005-4f2f-814f-d6fc54a1a1c0,CN=Deleted Object
 
 -   Select _ *Apply**
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig13_GlobalSearch.gif)
+![顯示全域搜尋頁面的螢幕擷取畫面。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig13_GlobalSearch.gif)
 
 ### <a name="using-windows-powershell"></a>使用 Windows PowerShell
 
@@ -200,13 +200,13 @@ Get-ADObject -LdapFilter "(userPrincipalName=dhunt@blue.contoso.com)" -IncludeDe
 
 若要使用 Windows PowerShell 以 null 輸出 UserPrincipalName 屬性：
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig15_NullUPN.gif)
+![顯示操作失敗的螢幕擷取畫面，錯誤碼為0x21c7。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig15_NullUPN.gif)
 
 > [!NOTE]
 > UserPrincipalName 屬性是單一值屬性，因此此程式只會移除重複的 UPN。
 
 ### <a name="duplicate-spn"></a>重複的 SPN
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig16_DupSPN.gif)
+![當封鎖新增重複的 SPN 時，顯示 ADSIEdit 中顯示之錯誤訊息的螢幕擷取畫面。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig16_DupSPN.gif)
 
 **圖 SEQ 圖 \\ \* 阿拉伯文8當新增重複的 SPN 遭到封鎖時，ADSIEdit 中顯示的錯誤訊息**
 
@@ -220,7 +220,7 @@ servicePrincipalName Value=<SPN>
 <Object DN> Winerror: 8467
 ```
 
-![SPN 和 UPN 的唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig17_DupSPN2974.gif)
+![顯示建立重複的 SPN 時所記錄之錯誤的螢幕擷取畫面已被封鎖。](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig17_DupSPN2974.gif)
 
 **圖 SEQ 圖 \\ \* 阿拉伯文9建立重複的 SPN 時所記錄的錯誤已遭封鎖**
 

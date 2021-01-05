@@ -1,18 +1,18 @@
 ---
 title: Windows Server Essentials 系統需求
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows Server Essentials 的系統需求。
 ms.date: 10/31/2013
 ms.topic: article
 ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 39b74722b9f3036bab5face5d48c9a5a5af3da90
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 9a35006330452850dd10def998a7fdf2d8c8e853
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622397"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711693"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Windows Server Essentials 系統需求
 

@@ -1,18 +1,18 @@
 ---
 title: Windows Server Essentials ADK 快速入門
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows Server Essentials 伺服器軟體 (ADK) 的評定及部署套件。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 343e600f-5131-4692-b8aa-69d275a8295b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 8c8b1334c7b3fb98f485c6da2836b7f2e6dd8516
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 47aba8dbab2bf67aaf0d85a254e449bdfe6d650a
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623520"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755034"
 ---
 # <a name="getting-started-with-the-windows-server-essentials-adk"></a>Windows Server Essentials ADK 快速入門
 

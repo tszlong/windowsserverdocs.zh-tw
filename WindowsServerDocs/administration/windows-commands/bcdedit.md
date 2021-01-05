@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 03/27/2018
-ms.openlocfilehash: b3cd41f3ba1980718a5e2c0a37df470a94f67657
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5278e05e04dc4960c4a298aeaeaf0616bbaa0d0b
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89632978"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696915"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -39,7 +39,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 ### <a name="parameters"></a>參數
 
-### <a name="general-bcdedit-command-line-options"></a>一般 BCDEdit 命令列選項
+### <a name="general-bcdedit-command-line-options"></a>一般 BCDEdit Command-Line 選項
 
 | 選項 | 描述 |
 | ------ | ----------- |
@@ -59,7 +59,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 | 參數 | 描述 |
 | ------ | ----------- |
 | /copy | 在相同的系統存放區中，製作指定之開機項目的複本。 |
-| /create | 在開機設定資料存放區中建立新項目。 如果指定了知名的識別碼，則無法指定 **/application**、 **/inherit**和 **/device** 參數。 如果未指定或不知道識別碼，則必須指定 **/application**、 **/inherit**或 **/device** 選項。 |
+| /create | 在開機設定資料存放區中建立新項目。 如果指定了知名的識別碼，則無法指定 **/application**、 **/inherit** 和 **/device** 參數。 如果未指定或不知道識別碼，則必須指定 **/application**、 **/inherit** 或 **/device** 選項。 |
 | /delete | 從指定的項目刪除元素。 |
 
 #### <a name="parameters-that-operate-on-entry-options"></a>在輸入選項上操作的參數
@@ -73,7 +73,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 | 參數 | 描述 |
 | ------ | ----------- |
-| /enum | 列出存放區中的項目。 **/Enum**選項是 BCEdit 的預設值，因此執行不含參數的**bcdedit**命令，相當於執行**bcdedit/enum active**命令。 |
+| /enum | 列出存放區中的項目。 **/Enum** 選項是 BCEdit 的預設值，因此執行不含參數的 **bcdedit** 命令，相當於執行 **bcdedit/enum active** 命令。 |
 | /v | 詳細資訊模式。 通常任何通用的項目識別元都會以好記的簡短形式呈現。 將 **/v** 指定為命令列選項，會將所有識別碼全部顯示為 full。 執行 **bcdedit/v** 命令本身相當於執行 **bcdedit/enum active/v** 命令。 |
 
 #### <a name="parameters-that-control-the-boot-manager"></a>控制開機管理程式的參數
@@ -106,6 +106,4 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 如需如何使用 BCDEdit 的範例，請參閱 [Bcdedit Options 參考](/windows-hardware/drivers/devtest/bcd-boot-options-reference) 文章。
 
-## <a name="additional-references"></a>其他參考資料
-
-- [命令列語法關鍵](command-line-syntax-key.md)
+若要查看用來表示命令列語法的標記法，請參閱  [命令列語法索引鍵](command-line-syntax-key.md)。

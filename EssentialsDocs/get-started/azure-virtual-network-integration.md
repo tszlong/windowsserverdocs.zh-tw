@@ -1,18 +1,18 @@
 ---
 title: Azure 虛擬網路整合
-description: 說明如何使用 Windows Server Essentials
+description: 深入瞭解 Azure 虛擬網路整合，可讓您建立點對點 (P2P) 或站對站 (S2S) 虛擬私人網路。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d7d38505-cff5-4f15-9fd5-ae6dba15ce88
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 15a4c28c192ed93c18ad9ac515bdccda24293c6e
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 98805bb9e5b14b82b64eb7188432b0284aa8c905
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622552"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696793"
 ---
 # <a name="azure-virtual-network-integration"></a>Azure 虛擬網路整合
 
@@ -60,12 +60,12 @@ ms.locfileid: "89622552"
 
 -   **設定 AZURE VNET** 這項工作可讓您將 Azure VNET 的設定選項重新導向至 Azure VNET 的 Azure 入口網站設定頁面，以變更其 advanced configuration 選項。
 
--   重新整理**狀態**重新整理狀態頁面，並更新 Azure VNET 的線上狀態，包括資料 in/out。
+-   重新整理 **狀態** 重新整理狀態頁面，並更新 Azure VNET 的線上狀態，包括資料 in/out。
 
 -   **停用 Azure VNET 整合** 中斷 Azure VNET 的連線，並從 Windows Server Essentials 儀表板移除整合。 請注意，如果您想要稍後重新整合 Azure VNET 與儀表板，則不會刪除 Azure VNET，設定仍會保留在 Azure 中。
 
 -   **深入瞭解 AZURE VNET** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/) 。
 
-<a name="see-also"></a>另請參閱
+<a name="see-also"></a>請參閱
 --------
 [開始使用 Windows Server Essentials](get-started.md)

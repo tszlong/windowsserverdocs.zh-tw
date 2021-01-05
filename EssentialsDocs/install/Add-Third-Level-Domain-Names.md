@@ -1,18 +1,18 @@
 ---
 title: 新增第三層網域名稱
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在「設定功能變數名稱嚮導」中新增使用者要求第三層功能變數名稱的功能。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: dd68308646eba5fba2f79593cba82de467c1888b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d5658ade3fbffe3d1b9517a83ea1c10a03616753
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626366"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711633"
 ---
 # <a name="add-third-level-domain-names"></a>新增第三層網域名稱
 
@@ -38,7 +38,7 @@ ms.locfileid: "89626366"
 
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>若要將 IDomainSignupProvider 程式碼新增至組件
 
-1.  用滑鼠右鍵按一下 [開始]**** 功能表中的程式，然後選取 [以系統管理員身分執行]****，以系統管理員身分開啟 Visual Studio 2008。
+1.  用滑鼠右鍵按一下 [開始] 功能表中的程式，然後選取 [以系統管理員身分執行]，以系統管理員身分開啟 Visual Studio 2008。
 
 2.  依序按一下 **[檔案]**、**[新增]**，然後按一下 **[專案]**。
 
@@ -523,7 +523,7 @@ ms.locfileid: "89626366"
 
 ##### <a name="to-add-a-key-to-the-registry"></a>若要新增登錄機碼
 
-1.  在參照電腦上，按一下 [開始]****，輸入 **regedit**，然後按 **ENTER**。
+1.  在參照電腦上，按一下 [開始]，輸入 **regedit**，然後按 **ENTER**。
 
 2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**、**Windows Server**、**Domain Managers** 和 **Providers**。
 
@@ -560,7 +560,7 @@ ms.locfileid: "89626366"
 
 ##### <a name="restart-the-service"></a>重新啟動服務
 
-1.  按一下 [開始]****，輸入 **mmc**，然後按 **ENTER**。
+1.  按一下 [開始]，輸入 **mmc**，然後按 **ENTER**。
 
 2.  如果主控台中沒有列出 [服務] 嵌入式管理單元，請完成下列步驟加以新增：
 

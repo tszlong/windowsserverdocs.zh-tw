@@ -1,24 +1,24 @@
 ---
 title: 變更媒體串流設定
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何變更媒體串流設定，以隱藏遠端媒體串流增益集、設定媒體櫃名稱、設定影片串流品質，以及啟用或停用串流。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: dec690d2-f80c-4b09-99d6-3bba41331972
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 041a7f53b02d9b6b6368bd2b2f4ac991a14a61fa
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 327cfff5a35ad302888146b2ee8db1cec3cf2828
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623887"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711463"
 ---
 # <a name="change-media-streaming-settings"></a>變更媒體串流設定
 
 >適用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-有多個選項可供您變更媒體串流設定。 有下列選項可供使用：
+有多個選項可供您變更媒體串流設定。 可用選項如下：
 
 -   [隱藏遠端媒體串流增益集](Change-Media-Streaming-Settings.md#BKMK_DisableRemote)
 
@@ -35,7 +35,7 @@ ms.locfileid: "89623887"
 
 1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。
 
-2.  在 [搜尋]**** 方塊中，輸入 **regedit**，然後按一下 [Regedit]**** 應用程式。
+2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit] 應用程式。
 
 3.  在左窗格中，往下展開至下列登錄項目：
 

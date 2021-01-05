@@ -6,19 +6,19 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 1d25127b974c6b379e4fd52433ea74252801c166
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: c1afb664162609aa270dfa25137b9ccbad43373b
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97047276"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696982"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>在現有的防禦樹系中安裝 HGS
 
 >適用于： Windows Server 2019、Windows Server (半年通道) 、Windows Server 2016
 
 
-## <a name="join-the-hgs-server-to-the-existing-domain"></a>將 HGS 伺服器加入現有的網域
+## <a name="join-the-hgs-server-to-the-root-domain"></a>將 HGS 伺服器加入根域
 
 在現有的防禦樹系中，必須將 HGS 新增至根域。 使用伺服器管理員或 [新增電腦](https://go.microsoft.com/fwlink/?LinkId=821564) ，將 HGS 伺服器加入根域。
 
@@ -31,7 +31,7 @@ ms.locfileid: "97047276"
 如果您的資料中心具有安全的防禦樹系，而您想要在其中加入 HGS 節點，請遵循下列步驟。
 您也可以使用這些步驟來設定2個或更多個加入相同網域的獨立 HGS 叢集。
 
-## <a name="join-the-hgs-server-to-the-existing-domain"></a>將 HGS 伺服器加入現有的網域
+## <a name="join-the-hgs-server-to-the-desired-domain"></a>將 HGS 伺服器加入所需的網域
 
 使用伺服器管理員或 [新增電腦](https://go.microsoft.com/fwlink/?LinkId=821564) ，將 HGS 伺服器加入至所需的網域。
 

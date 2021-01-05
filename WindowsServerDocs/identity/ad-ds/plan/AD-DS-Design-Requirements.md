@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 244f11e30e5c17f86dab6e8eee8ff8313e9d065f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 1be3943fa2dcc5f0d84e96ac6270be3b7ee3c0e5
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050146"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711713"
 ---
 # <a name="ad-ds-design-requirements"></a>AD DS 設計需求
 
@@ -24,14 +24,14 @@ ms.locfileid: "97050146"
 
 若要設計 AD DS 邏輯結構，請判斷您的組織所需的樹係數目，然後建立網域、網域名稱系統 (DNS) 基礎結構和組織單位 (Ou) 的設計。 下圖顯示設計邏輯結構的程式。
 
-![AD DS 設計需求](media/AD-DS-Design-Requirements/d5cebae6-a752-4063-a98f-473799c251bd.gif)
+![圖例顯示設計邏輯結構的程式。](media/AD-DS-Design-Requirements/d5cebae6-a752-4063-a98f-473799c251bd.gif)
 
 如需詳細資訊，請參閱 [設計 Windows Server 2008 的邏輯結構 AD DS](Designing-the-Logical-Structure.md)。
 
 ## <a name="designing-the-site-topology"></a>設計網站拓撲
 在您設計 AD DS 基礎結構的邏輯結構之後，您必須為您的網路設計網站拓撲。 網站拓撲是實體網路的邏輯標記法。 其中包含 AD DS 網站位置的相關資訊、每個網站中的 AD DS 網域控制站，以及支援網站間 AD DS 複寫的站台連結和站台連結橋接器。 下圖顯示網站拓撲設計流程。
 
-![AD DS 設計需求](media/AD-DS-Design-Requirements/d34d43c0-437f-47cb-9b64-09c0f9ce6479.gif)
+![顯示網站拓撲設計流程的圖例。](media/AD-DS-Design-Requirements/d34d43c0-437f-47cb-9b64-09c0f9ce6479.gif)
 
 如需詳細資訊，請參閱 [設計適用于 Windows Server 2008 的網站拓撲 AD DS](Designing-the-Site-Topology.md)。
 

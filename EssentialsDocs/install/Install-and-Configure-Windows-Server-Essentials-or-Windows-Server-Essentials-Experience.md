@@ -1,18 +1,18 @@
 ---
 title: 安裝和設定 Windows Server Essentials 或 Windows Server Essentials 體驗
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在 Windows Server 2016 上安裝和設定 Windows Server Essentials 或 Essentials 體驗角色。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: dfd0611d47c159e629efff11073bec084e175a43
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: e0f903d3f515d749836222686ee6a6b4020b61d4
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626274"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755064"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>安裝和設定 Windows Server Essentials 或 Windows Server Essentials 體驗
 
@@ -68,26 +68,26 @@ Windows server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 
 ##### <a name="to-configure-windows-server-essentials-on-a-physical-server"></a>在實體伺服器上設定 Windows Server Essentials
 
-1. 在 Windows [歡迎]**** 頁面之後，您在桌面上會看到 [設定 Windows Server Essentials 精靈]****。
+1. 在 Windows [歡迎] 頁面之後，您在桌面上會看到 [設定 Windows Server Essentials 精靈]。
 
 2. 請遵循下列指示完成精靈：
 
-   1.  在 [設定 Windows Server Essentials]**** 頁面上，按 [下一步]****。
+   1.  在 [設定 Windows Server Essentials] 頁面上，按 [下一步]。
 
-   2.  在 [時間設定]**** 中，確認您的日期、時間和時區是正確的，然後按 [下一步]****。
+   2.  在 [時間設定] 中，確認您的日期、時間和時區是正確的，然後按 [下一步]。
 
-   3.  在 [公司資訊]**** 中，輸入您的公司名稱，如**Contoso,Ltd.**，然後按 [下一步]****。 (選擇性) 您可以變更內部網域名稱和伺服器名稱。
+   3.  在 [公司資訊] 中，輸入您的公司名稱，如 **Contoso,Ltd.**，然後按 [下一步]。 (選擇性) 您可以變更內部網域名稱和伺服器名稱。
 
-   4.  在 [建立網路系統管理員]**** 中，輸入新的系統管理員帳戶名稱和密碼。
+   4.  在 [建立網路系統管理員] 中，輸入新的系統管理員帳戶名稱和密碼。
 
        > [!NOTE]
-       >  不要使用預設的 [系統管理員]**** 帳戶名稱和密碼。
+       >  不要使用預設的 [系統管理員] 帳戶名稱和密碼。
 
-   5.  按一下 [設定]****。
+   5.  按一下 [設定]  。
 
 3. 伺服器會在設定過程中重新啟動多次，設定完成後，就會自動將您登入。 此過程大概會花費 20 分鐘的時間。
 
-4. 在桌面上，按一下儀表板圖示以啟動伺服器儀表板。 在 [首頁]**** 頁面上，完成 [設定]**** 索引標籤上所列的 [快速入門]**** 工作。
+4. 在桌面上，按一下儀表板圖示以啟動伺服器儀表板。 在 [首頁] 頁面上，完成 [設定] 索引標籤上所列的 [快速入門] 工作。
 
    完成伺服器設定之後，執行 Windows Server Essentials 的伺服器會設定為網域控制站。
 
@@ -98,19 +98,19 @@ Windows server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 
 1.  以本機系統管理員身分登入您的伺服器。
 
-2.  開啟 [伺服器管理員]****，然後按一下 [新增角色及功能]****。
+2.  開啟 [伺服器管理員]，然後按一下 [新增角色及功能]。
 
-3.  在 [選取伺服器角色]**** 中，選取 [Windows Server Essentials 體驗]**** 角色。 在對話方塊中，按一下 [新增功能]****，然後按 [下一步]****。
+3.  在 [選取伺服器角色] 中，選取 [Windows Server Essentials 體驗] 角色。 在對話方塊中，按一下 [新增功能]，然後按 [下一步]。
 
-4.  在 [功能]**** 中，按 [下一步]****。
+4.  在 [功能] 中，按 [下一步]。
 
-5.  檢閱 [Windows Server Essentials 體驗]**** 角色描述，然後按 [下一步]****。
+5.  檢閱 [Windows Server Essentials 體驗] 角色描述，然後按 [下一步]。
 
-6.  在接下來的頁面中，按 [下一步]****，然後在確認頁面中按一下 [安裝]****。
+6.  在接下來的頁面中，按 [下一步]，然後在確認頁面中按一下 [安裝]。
 
 7.  安裝完成之後，Windows Server Essentials 體驗應該在伺服器管理員中列為伺服器角色。
 
-8.  在伺服器管理員中的旗標通知區域按一下旗標，然後按一下 [設定 Windows Server Essentials]****。
+8.  在伺服器管理員中的旗標通知區域按一下旗標，然後按一下 [設定 Windows Server Essentials]。
 
 9. (選擇性) 如果需要，變更伺服器名稱。
 
@@ -144,23 +144,23 @@ Windows server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 
 3.  重新啟動您的伺服器，並以網域系統管理員身分登入伺服器。
 
-4.  開啟 [伺服器管理員]，然後按一下 [新增角色及功能]****。
+4.  開啟 [伺服器管理員]，然後按一下 [新增角色及功能]。
 
-5.  在接下來的頁面中，按 [下一步]****。
+5.  在接下來的頁面中，按 [下一步]。
 
-6.  在 [選取伺服器角色]**** 中，選取 [Windows Server Essentials 體驗]**** 角色。 在對話方塊中，按一下 [新增功能]****，然後按 [下一步]****。
+6.  在 [選取伺服器角色] 中，選取 [Windows Server Essentials 體驗] 角色。 在對話方塊中，按一下 [新增功能]，然後按 [下一步]。
 
-7.  在 [功能]**** 中，按 [下一步]****。
+7.  在 [功能] 中，按 [下一步]。
 
-8.  檢閱 [Windows Server Essentials 體驗]**** 描述，然後按 [下一步]****。
+8.  檢閱 [Windows Server Essentials 體驗] 描述，然後按 [下一步]。
 
-9. 在接下來的頁面中，按 [下一步]****，然後在確認頁面中按一下 [安裝]****。
+9. 在接下來的頁面中，按 [下一步]，然後在確認頁面中按一下 [安裝]。
 
 10. 安裝完成之後，Windows Server Essentials 體驗將會在伺服器管理員中列為伺服器角色。
 
-11. 在 [伺服器管理員]**** 的旗標通知區域中，按一下旗標，然後按一下 [設定 Windows Server Essentials]****。
+11. 在 [伺服器管理員] 的旗標通知區域中，按一下旗標，然後按一下 [設定 Windows Server Essentials]。
 
-12. 依照精靈設定 Windows Server Essentials。 根據您的 Active Directory 組態，您會在網域控制站上設定 Windows Server Essentials 或做為網域成員。 按一下 [設定]**** 開始設定。 設定過程需要花費大約 10 分鐘的時間。
+12. 依照精靈設定 Windows Server Essentials。 根據您的 Active Directory 組態，您會在網域控制站上設定 Windows Server Essentials 或做為網域成員。 按一下 [設定] 開始設定。 設定過程需要花費大約 10 分鐘的時間。
 
 ##  <a name="virtualize-your-environment"></a><a name="BKMK_VirtualWSE"></a> 虛擬化您的環境
   Windows Server Essentials、Windows Server 2012 R2 Standard 和 Windows Server 2012 R2 Datacenter 可作為虛擬機器執行。 您可以在執行 HYPER-V 的伺服器上，使用 HYPER-V 管理工具來執行虛擬機器。 從授權的觀點來看，Windows Server Essentials 可讓您設定 Hyper-v 角色和虛擬化您的環境。 授權可讓您設定另一個執行 Windows Server Essentials 的客體作業系統。 Windows Server Essentials 可讓您順暢地設定虛擬化環境，這取決於您的系統提供者「設定」。
@@ -208,7 +208,7 @@ Windows server Essentials 體驗是 Windows Server 2016 中的一項角色，可
 
     -   若要直接了解即時進度而不要進度列，請執行 `Get-WssConfigurationStatus`。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 -   [Windows Server Essentials 中的新功能](../get-started/what-s-new.md)
 

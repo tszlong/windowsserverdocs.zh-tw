@@ -1,18 +1,18 @@
 ---
 title: 自訂伺服器備份
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何自訂 Windows Server Essentials 的伺服器備份設定。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 19b2559c-6090-45af-9a08-2eefc28473c8
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 9cf27c09e2b6946b5daa584ff27b1da95788a4ea
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5558364d21374649cc57e28f9df1331a59428b7b
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623683"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711083"
 ---
 # <a name="customize-server-backup"></a>自訂伺服器備份
 
@@ -33,7 +33,7 @@ ms.locfileid: "89623683"
 
 4.  輸入 **ProviderDisabled** 的名稱。
 
-5.  以滑鼠右鍵按一下名稱，選取 [修改]****，值資料輸入 **1**，然後按一下 [確定]****。
+5.  以滑鼠右鍵按一下名稱，選取 [修改]，值資料輸入 **1**，然後按一下 [確定]。
 
 ## <a name="turn-on-server-backup"></a>開啟 Server Backup
  您可以將建立 **ProviderDisabled** 登錄機碼時關閉的伺服器備份開啟 (如本文件之前所述)。
@@ -44,7 +44,7 @@ ms.locfileid: "89623683"
 
 1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。
 
-2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit]**** 應用程式。
+2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit] 應用程式。
 
 3.  在瀏覽窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**、**Windows Server** 及 **ServerBackup**。
 

@@ -1,18 +1,18 @@
 ---
 title: 建立和自訂映像
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows Server Essentials 專屬映射建立和自訂程式的各個層面。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 79ed973d-61e3-46d9-a626-3edfbc4e4d65
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 3543e0c9443ef4f9e5f3426dad0c8fef329d2500
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ac2514914afbba62b1a82bfb15ac8d472eddf75d
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623725"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711253"
 ---
 # <a name="creating-and-customizing-the-image"></a>建立和自訂映像
 

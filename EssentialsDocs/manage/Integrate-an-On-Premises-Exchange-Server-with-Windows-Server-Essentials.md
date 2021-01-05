@@ -1,18 +1,18 @@
 ---
 title: 整合內部部署 Exchange Server 與 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何設定和整合執行 Exchange Server 的內部部署伺服器與執行 Windows Server Essentials 的伺服器。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a0dd4b7469aa44773d978da7d5afd68eac57bff3
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: aef1d55d3743dcee483b4e6e9e1cca5ae33682e9
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623317"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755324"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>整合內部部署 Exchange Server 與 Windows Server Essentials
 
@@ -86,17 +86,17 @@ ms.locfileid: "89623317"
 
 2.  開啟網際網路瀏覽器，然後巡覽至 [Exchange Server 部署助理](https://go.microsoft.com/fwlink/p/?LinkID=249163) 網站。
 
-3.  按一下 [On-Premises Only]****。
+3.  按一下 [On-Premises Only]。
 
 4.  按一下您將安裝的 Exchange Server 版本的新安裝選項。
 
     > [!NOTE]
     >  如果您是從 Windows Small Business Server 安裝進行移轉，應該選取涵蓋移轉步驟的適當升級選項。
 
-5.  在下一頁中，接受預設值，然後按 [下一頁]****。
+5.  在下一頁中，接受預設值，然後按 [下一頁]。
 
     > [!NOTE]
-    >  如果您計畫要全新安裝的 Exchange Server 中使用公用資料夾，請將該設定變更為 [是]****。
+    >  如果您計畫要全新安裝的 Exchange Server 中使用公用資料夾，請將該設定變更為 [是]。
 
 6.  依照檢查清單中的逐步指示部署 Exchange Server。
 
@@ -110,7 +110,7 @@ ms.locfileid: "89623317"
 
 > [!NOTE]
 > - 您必須選擇將管理工具安裝在執行 Exchange Server 的伺服器上。 Windows Server Essentials 的 Exchange Server 整合功能需要管理工具。
->   -   如果您需要設定虛擬目錄，建議您將每個虛擬目錄的 [InternalUrl]**** 屬性與 [ExternalUrl]**** 屬性設定成相同的 URL。 如需詳細資訊，請參閱 Exchange Server 2010 線上說明網站的 [管理用戶端存取伺服器虛擬目錄](https://go.microsoft.com/fwlink/p/?LinkId=251058) 。
+>   -   如果您需要設定虛擬目錄，建議您將每個虛擬目錄的 [InternalUrl] 屬性與 [ExternalUrl] 屬性設定成相同的 URL。 如需詳細資訊，請參閱 Exchange Server 2010 線上說明網站的 [管理用戶端存取伺服器虛擬目錄](https://go.microsoft.com/fwlink/p/?LinkId=251058) 。
 >   -   如果您要從 Windows Server Essentials 的遠端 Web 存取網站內存取 Outlook Web Access (OWA)，必須為 OWA 設定外部 URL 屬性。
 
  如果您以初始狀態安裝的方式安裝 Exchange Server 2010，也可以使用下列指令碼安裝 Exchange Server。
@@ -257,9 +257,9 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
 1.  遵循 Exchange Server 文章 [建立公認的網域](https://go.microsoft.com/fwlink/p/?LinkId=249174) 中的指示，加入接受的網域。
 
-2.  以系統管理員身分登入第二部伺服器，開啟 Exchange 管理主控台，然後瀏覽至 [組織組態]**** 的 [集線傳輸]**** 索引標籤。
+2.  以系統管理員身分登入第二部伺服器，開啟 Exchange 管理主控台，然後瀏覽至 [組織組態] 的 [集線傳輸] 索引標籤。
 
-3.  在 Exchange 管理主控台工作窗格中，在新的公認的網域上按一下滑鼠右鍵，然後按一下 [設為預設值]****。
+3.  在 Exchange 管理主控台工作窗格中，在新的公認的網域上按一下滑鼠右鍵，然後按一下 [設為預設值]。
 
 4.  遵循 Exchange Server 文章 [建立電子郵件地址原則](https://go.microsoft.com/fwlink/p/?LinkId=249179) 中的指示，建立新的電子郵件地址原則。 您可以接受除了電子郵件地址之外的所有預設值。 電子郵件地址則指定您的公用電子郵件網域。
 
@@ -309,9 +309,9 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
 1.  以系統管理員身分登入執行 Windows Server Essentials 的伺服器，然後開啟儀表板。
 
-2.  在 [首頁]**** 頁面上，按一下 [連線到我的電子郵件服務]****，然後按一下 [整合您的 Exchange Server]****。
+2.  在 [首頁] 頁面上，按一下 [連線到我的電子郵件服務]，然後按一下 [整合您的 Exchange Server]。
 
-3.  在資訊窗格中，按一下 [設定 Exchange Server 整合]****。
+3.  在資訊窗格中，按一下 [設定 Exchange Server 整合]。
 
 4.  遵循精靈的指示進行。
 
@@ -330,17 +330,17 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
 2. 開啟網際網路瀏覽器，巡覽至 [應用程式要求路由網站](https://go.microsoft.com/fwlink/p/?LinkId=249181)。
 
-3. 在 ARR 網站上，按一下 [安裝]****，然後依照指示安裝 ARR。
+3. 在 ARR 網站上，按一下 [安裝]，然後依照指示安裝 ARR。
 
    > [!NOTE]
    >  您必須在 ARR 安裝時選取 URL Rewrite Module。
    >
    >  您可能會在 ARR 安裝最後收到錯誤，ARR 2.5 的 KB 2589179 未成功安裝。 您可以放心地忽略此錯誤。
 
-4. ARR 安裝完成時，如果 [遠端桌面閘道]**** 服務未執行，請將它重新啟動。
+4. ARR 安裝完成時，如果 [遠端桌面閘道] 服務未執行，請將它重新啟動。
 
    > [!NOTE]
-   >  安裝 ARR 之後，[遠端桌面閘道]**** 服務可能會停止。 若要手動重新啟動服務，請開啟 [服務]**** 系統管理工具，然後重新啟動 [遠端桌面閘道]**** 服務。
+   >  安裝 ARR 之後，[遠端桌面閘道] 服務可能會停止。 若要手動重新啟動服務，請開啟 [服務] 系統管理工具，然後重新啟動 [遠端桌面閘道] 服務。
 
 5. [下載 ARR 2.5 的 KB2732764](https://go.microsoft.com/fwlink/?LinkID=258302)，然後在執行 Windows Server Essentials 的伺服器上安裝更新。
 
@@ -359,18 +359,18 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
    - 如果您執行初始狀態安裝，請執行下列命令：
 
-      **ARRConfig config-** _憑證檔案的憑證路徑_ **-** _Exchange Server 的主機名稱主機名稱_
+      `ARRConfig config  -cert`憑證檔案的 _路徑_ `-hostnames`_Exchange Server 的主機名稱_
 
      > [!NOTE]
-     >  例如： **ARRConfig config-cert** _c:\temp\certificate.pfx_ **-主機名稱** _mail.contoso.com_
+     >  例如，`ARRConfig config  -cert` _c:\temp\certificate.pfx_ `-hostnames` _mail.contoso.com_
      >
      >  用受憑證保護的網域名稱取代 *mail.contoso.com*。
 
    - 如果您是從 Windows Small Business Server 進行移轉，執行下列命令：
 
-      **ARRConfig config-** _憑證檔案的憑證路徑_ **-** _exchange server 的主機名稱主機名稱_ **-** exchange server 的 targetserver _伺服器名稱_
+      `ARRConfig config  -cert`憑證檔案的 _路徑_ `-hostnames`_Exchange Server_ `-targetserver` 的主機名稱 _Exchange server 的伺服器名稱_
 
-      例如： **ARRConfig config-cert** _c:\temp\certificate.pfx_ **-主機名稱** _mail.contoso.com_ **-targetserver** _ExchangeSvr_
+      例如： `ARRConfig config  -cert` _c:\temp\certificate.pfx_ `-hostnames` _mail.contoso.com_ `-targetserver` _ExchangeSvr_
 
       用您的網域名稱取代 *mail.contoso.com*。 用執行 Exchange Server 的伺服器名稱取代 *ExchangeSvr*。
 
@@ -395,26 +395,26 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
 1.  以系統管理員身分登入 Windows Server Essentials，然後開啟 DNS 管理員。
 
-2.  在 DNS 管理員主控台樹狀目錄中，以滑鼠右鍵按一下您的伺服器，然後按一下 [新增區域]****。 [新增區域精靈]**** 隨即顯示。
+2.  在 DNS 管理員主控台樹狀目錄中，以滑鼠右鍵按一下您的伺服器，然後按一下 [新增區域]。 [新增區域精靈] 隨即顯示。
 
-3.  在精靈的 [區域類型]**** 頁面上，接受預設選項，然後按 [下一步]****。
+3.  在精靈的 [區域類型] 頁面上，接受預設選項，然後按 [下一步]。
 
-4.  在 [Active Directory 區域複寫領域]**** 頁面上，接受預設選項，然後按 [下一步]****。
+4.  在 [Active Directory 區域複寫領域] 頁面上，接受預設選項，然後按 [下一步]。
 
-5.  在 [正向或反向對應區域]**** 頁面上，接受或選取 [正向對應區域]****，然後按 [下一步]****。
+5.  在 [正向或反向對應區域] 頁面上，接受或選取 [正向對應區域]，然後按 [下一步]。
 
-6.  在 [區域名稱]**** 頁面上，輸入執行 Exchange Server 之伺服器的 FQDN (例如，*mail.contoso.com*)，然後按 [下一步]****。
+6.  在 [區域名稱] 頁面上，輸入執行 Exchange Server 之伺服器的 FQDN (例如，*mail.contoso.com*)，然後按 [下一步]。
 
-7.  在 [動態更新]**** 頁面上，接受預設選項，按 [下一步]****，然後按一下 [完成]****。
+7.  在 [動態更新] 頁面上，接受預設選項，按 [下一步]，然後按一下 [完成]。
 
-8.  在 DNS 管理員主控台樹狀目錄中，以滑鼠右鍵按一下新的正向對應區域，然後按一下 [新增主機 (A 或 AAAA)]****。
+8.  在 DNS 管理員主控台樹狀目錄中，以滑鼠右鍵按一下新的正向對應區域，然後按一下 [新增主機 (A 或 AAAA)]。
 
-9. 在 [新增主機]**** 頁面上，將 [名稱]**** 欄位保留空白，輸入執行 Exchange Server 之伺服器的內部網路 IP 位址，然後按一下 [新增主機]****。
+9. 在 [新增主機] 頁面上，將 [名稱] 欄位保留空白，輸入執行 Exchange Server 之伺服器的內部網路 IP 位址，然後按一下 [新增主機]。
 
     > [!NOTE]
-    >  將 [名稱]**** 欄位保留空白時，伺服器預設會使用父系網域名稱。
+    >  將 [名稱] 欄位保留空白時，伺服器預設會使用父系網域名稱。
 
-10. 在 [新增主機]**** 頁面上，按一下 [完成]****。
+10. 在 [新增主機] 頁面上，按一下 [完成]。
 
 > [!NOTE]
 >  如果您使用 ActiveSync 但無法同步處理部分信箱帳戶的電子郵件，請判斷這些帳戶是否為一或多個受保護群組 (例如 Domain Administrators 群組) 的成員。 如需可協助您解決此問題的相關資訊，請參閱 [Exchange ActiveSync 傳回 HTTP 500 錯誤](https://technet.microsoft.com/library/dd439375\(EXCHG.80\).aspx)。
@@ -439,7 +439,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 ### <a name="what-is-a-mailbox-quota"></a>什麼是信箱配額？
  針對網路使用者的 Exchange 信箱資料配置的儲存空間量稱為信箱配額。
 
- 當您執行儀表板上的 [設定 Exchange Server 整合]**** 工作時，精靈會將頁面新增至「新增使用者帳戶精靈」，讓您選擇是否強制執行信箱配額，並指定配額大小。 根據預設，[強制信箱配額]**** 選項為已選取 (開啟)，使用者信箱會被指派 2 GB 的儲存空間。 Exchange 系統管理員可以自訂信箱配額設定，以符合其商務需求。
+ 當您執行儀表板上的 [設定 Exchange Server 整合] 工作時，精靈會將頁面新增至「新增使用者帳戶精靈」，讓您選擇是否強制執行信箱配額，並指定配額大小。 根據預設，[強制信箱配額] 選項為已選取 (開啟)，使用者信箱會被指派 2 GB 的儲存空間。 Exchange 系統管理員可以自訂信箱配額設定，以符合其商務需求。
 
 ## <a name="additional-references"></a>其他參考資料
 

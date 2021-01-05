@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e6c7a8e99f14e0c93b77cd7440d9d83029ef4eca
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5f208291301159f305e6d497f01b273c71478089
+ms.sourcegitcommit: e2dadc9b0c227a489a945bbc531aca5e101f18cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049676"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97801772"
 ---
 # <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>附錄 H︰保護本機 Administrators 帳戶和群組
 
@@ -50,17 +50,17 @@ ms.locfileid: "97049676"
 
 3. 在主控台樹中，以滑鼠右鍵按一下 **群組原則物件**]，然後按一下 [ **新增**]。
 
-    ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_101.png)
+    ![顯示 [成員] 索引標籤的螢幕擷取畫面，可將 Gpo 設定為在已加入網域的系統上限制系統管理員帳戶。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_101.png)
 
 4. 在 [ **新增 GPO** ] 對話方塊中，輸入 **\<GPO Name\>** ，然後按一下 **[確定]** (其中 \<GPO Name\> 是此 GPO) 的名稱。
 
-    ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_102.png)
+    ![顯示 GPO 名稱的螢幕擷取畫面，讓您可以設定 Gpo 來限制已加入網域之系統的系統管理員帳戶。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_102.png)
 
 5. 在詳細資料窗格中，以滑鼠右鍵按一下 **\<GPO Name\>** ，然後按一下 [ **編輯**]。
 
 6. 流覽至 [ **電腦設定 \windows 設定] \ 使用者設置 \ 本機原則**，然後按一下 [ **使用者權限指派**]。
 
-    ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_103.png)
+    ![顯示流覽位置的螢幕擷取畫面，讓您可以在已加入網域的系統上設定 Gpo 來限制系統管理員帳戶。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_103.png)
 
 7. 設定使用者權限，以防止本機系統管理員帳戶透過網路存取成員伺服器和工作站，請執行下列動作：
 
@@ -68,7 +68,7 @@ ms.locfileid: "97049676"
 
     2. 按一下 [ **新增使用者或群組**]，輸入本機系統管理員帳戶的使用者名稱，然後按一下 **[確定]**。 此使用者名稱將會是 [ **系統管理員**]，也就是 Windows 安裝時的預設值。
 
-        ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_104.png)
+        ![螢幕擷取畫面，顯示如何確認您已設定使用者權限，以防止本機系統管理員帳戶透過網路存取成員伺服器和工作站。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_104.png)
 
     3. 按一下 [確定]。
 
@@ -81,7 +81,7 @@ ms.locfileid: "97049676"
 
     2. 按一下 [ **新增使用者或群組**]，輸入本機系統管理員帳戶的使用者名稱，然後按一下 **[確定]**。 此使用者名稱將會是 [ **系統管理員**]，也就是 Windows 安裝時的預設值。
 
-        ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)
+        ![顯示如何確認您已設定使用者權限以防止本機系統管理員帳戶以批次工作登入的螢幕擷取畫面。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)
 
     3. 按一下 [確定]。
 
@@ -94,7 +94,7 @@ ms.locfileid: "97049676"
 
     2. 按一下 [ **新增使用者或群組**]，輸入本機系統管理員帳戶的使用者名稱，然後按一下 **[確定]**。 此使用者名稱將會是 [ **系統管理員**]，也就是 Windows 安裝時的預設值。
 
-        ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)
+        ![顯示如何確認您已設定使用者權限以防止本機系統管理員帳戶以服務方式登入的螢幕擷取畫面。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)
 
     3. 按一下 [確定]。
 
@@ -107,7 +107,7 @@ ms.locfileid: "97049676"
 
     2. 按一下 [ **新增使用者或群組**]，輸入本機系統管理員帳戶的使用者名稱，然後按一下 **[確定]**。 此使用者名稱將會是 [ **系統管理員**]，也就是 Windows 安裝時的預設值。
 
-        ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)
+        ![示範如何確認您已設定使用者權限，以防止本機系統管理員帳戶透過遠端桌面服務存取成員伺服器和工作站的螢幕擷取畫面。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)
 
     3. 按一下 [確定]。
 
@@ -122,11 +122,11 @@ ms.locfileid: "97049676"
 
     2. 以滑鼠右鍵按一下 GPO 將套用的 OU，然後按一下 [ **連結現有的 gpo**]。
 
-        ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_108.png)
+        ![當您嘗試將 GPO 連結到成員伺服器和工作站 Ou 時，顯示 [連結到現有的 GPO] 功能表選項的螢幕擷取畫面。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_108.png)
 
     3. 選取您所建立的 GPO，然後按一下 **[確定]**。
 
-        ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_109.png)
+        ![顯示在將 GPO 連結到成員伺服器和工作站 Ou 時，您剛才建立之 GPO 的螢幕擷取畫面。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_109.png)
 
     4. 建立包含工作站之所有其他 Ou 的連結。
 
@@ -146,7 +146,7 @@ ms.locfileid: "97049676"
 
 4. 當系統提示您核准提高許可權時，請按一下 **[是]**。
 
-    ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_110.png)
+    ![反白顯示 [使用者帳戶控制] 對話方塊的螢幕擷取畫面，您會在確認 GPO 設定時看到此對話方塊。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_110.png)
 
 5. 在 [ **命令提示** 字元] 視窗中，輸入 `net use \\<Server Name>\c$ /user:<Server Name>\Administrator` ，其中 \<Server Name\> 是您嘗試透過網路存取的成員伺服器或工作站的名稱。
 
@@ -155,7 +155,7 @@ ms.locfileid: "97049676"
 
 6. 下列螢幕擷取畫面顯示應出現的錯誤訊息。
 
-    ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_111.png)
+    ![在確認 GPO 設定時，反白顯示登入失敗錯誤訊息的螢幕擷取畫面。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_111.png)
 
 ##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>確認「拒絕以批次工作登入」 GPO 設定
 
@@ -210,7 +210,7 @@ ms.locfileid: "97049676"
 
 16. 應該會出現類似下列的對話方塊。
 
-    ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_112.png)
+    ![醒目顯示排程工作時所顯示之工作排程器對話方塊的螢幕擷取畫面。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_112.png)
 
 ###### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>確認「拒絕以服務方式登入」 GPO 設定
 
@@ -236,7 +236,7 @@ ms.locfileid: "97049676"
 
 11. 當服務重新開機時，應該會出現類似下列的對話方塊。
 
-    ![保護本機系統管理員帳戶和群組](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_113.png)
+    ![顯示訊息的螢幕擷取畫面，指出 Windows 無法啟動本機電腦上的列印多工緩衝處理器。](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_113.png)
 
 ###### <a name="revert-changes-to-the-printer-spooler-service"></a>還原印表機多工緩衝處理器服務的變更
 
@@ -250,7 +250,7 @@ ms.locfileid: "97049676"
 
 5. 单击 **“登录”** 选项卡。
 
-6. 在 [ **登入為**：] 欄位中，選取 [ **本機 Systemaccount**]，然後按一下 **[確定]**。
+6. 在 [ **登入為**：] 欄位中，選取 [ **本機系統帳戶**]，然後按一下 **[確定]**。
 
 ###### <a name="verify-deny-log-on-through-remote-desktop-services-gpo-settings"></a>確認「拒絕登入遠端桌面服務」 GPO 設定
 

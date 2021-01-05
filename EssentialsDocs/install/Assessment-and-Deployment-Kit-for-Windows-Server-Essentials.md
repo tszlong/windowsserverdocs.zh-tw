@@ -1,18 +1,18 @@
 ---
 title: Windows Server Essentials 的評定及部署套件
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解 Windows Server Essentials 的評定及部署套件，這是一組工具、二進位檔與作業系統語言套件的集合。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 6198e8d8e06a76b9768f5c1166b438639d2ffca2
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 991ffd45a2e4af4bdfabc569a40b6f26467d7dc1
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623970"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711573"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Windows Server Essentials 的評定及部署套件
 
@@ -71,7 +71,7 @@ Windows Server &reg; 2012 Essentials 評定及部署套件 (ADK) 是一組工具
 
     -   [新增 Microsoft Online Service 合作夥伴合約列名的合作夥伴資訊](Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)
 
-    -   [取代 Microsoft 365 整合模組購買-Try 端點 URL 支援 Microsoft Online Service 轉售商合約](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
+    -   [在 Microsoft Online Service 經銷商合約的支援下，取代 Microsoft 365 整合模組並購買-嘗試端點 URL](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
 
     -   [針對遠端管理的伺服器建立伺服器復原 DVD](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)
 

@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 30aa1010d1222b61ed21d2a3921d0166f24f7a79
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 54dc9de562352f3b1106a6b0725ab368b449cac5
+ms.sourcegitcommit: e2dadc9b0c227a489a945bbc531aca5e101f18cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97042476"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97801742"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>監視 Active Directory 遭到危害的徵兆
 
@@ -109,7 +109,7 @@ Windows (有數十種使用者權利和許可權，例如，以批次工作登�
 
 下列螢幕擷取畫面顯示 auditpol.exe 列出目前稽核原則的範例。
 
-![監視 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)
+![顯示 auditpol.exe 列出目前稽核原則之範例的螢幕擷取畫面。](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)
 
 > [!NOTE]
 > 群組原則不一定會正確地報告所有啟用之稽核原則的狀態，而是 auditpol.exe。 如需詳細資訊，請參閱 [取得 Windows 7 和 2008 R2 中的有效稽核原則](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) 。
@@ -328,7 +328,7 @@ IPsec 驅動程式
 
 您可以使用 Active Directory 或本機群組原則來設定 Advanced Audit Policy。 若要設定 [Advanced Audit Policy]，請設定位於 [ **電腦設定 \windows 設定 \ \Windows 進階審核 (策略** ] 底下的適當子類別。如需本機群組原則編輯器 (gpedit.msc) # A3 的範例，請參閱下列螢幕擷取畫面。 每個稽核原則子類別都可以啟用 **成功**、 **失敗** 或 **成功** 和 **失敗** 事件。
 
-![監視 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)
+![顯示本機群組原則編輯器 (gpedit.msc) 範例的螢幕擷取畫面。](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)
 
 ### <a name="setting-windows-audit-policy-using-auditpolexe"></a>使用 Auditpol.exe 設定 Windows 稽核原則
 
@@ -378,7 +378,7 @@ Auditpol.exe 可以用來儲存和還原本機稽核原則，以及查看其他�
 
 ## <a name="enforcing-traditional-auditing-or-advanced-auditing"></a>強制傳統的審核或 Advanced 審核
 
-在 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows 8、Windows 7 和 Windows Vista 中，系統管理員可以選擇啟用九種傳統類別或使用子類別。 它是必須在每個 Windows 系統中進行的二進位選擇。 您可以啟用主要類別或 subcategoriesit 不能同時為兩者。
+在 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows 8、Windows 7 和 Windows Vista 中，系統管理員可以選擇啟用九種傳統類別或使用子類別。 它是必須在每個 Windows 系統中進行的二進位選擇。 您可以啟用主要類別或子類別，不能同時為兩者。
 
 若要防止舊版傳統類別目錄原則覆寫稽核原則子類別，您必須啟用 [ **強制稽核原則子類別設定] (Windows Vista 或更新版本，) 覆寫** 位於 [ **電腦設定 \** 使用者設定 \ 使用者設定 \ 使用者設定 \ 使用者設定 \ 系統設定 \ 使用者原則 \ 使用者
 

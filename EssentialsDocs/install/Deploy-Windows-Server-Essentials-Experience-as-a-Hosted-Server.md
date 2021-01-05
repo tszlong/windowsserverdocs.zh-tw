@@ -1,18 +1,18 @@
 ---
 title: 部署 Windows Server Essentials 體驗做為託管伺服器
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何部署 Microsoft Windows Server 16，並以服務的形式提供 Windows Server Essentials 體驗給客戶。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 5c0e186cb51eadd2671a4a7d21ccc1ce90dd7221
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0698bb4d7def33194ccbdc6280e3336bbc3f2ee2
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623532"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755134"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>部署 Windows Server Essentials 體驗做為託管伺服器
 
@@ -172,12 +172,12 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 > [!NOTE]
 >  確定主機虛擬機器與 Windows Server Essentials 體驗的時區設定相同。 否則，您可能會遇到幾個錯誤。 這些包括：伺服器的初始設定可能不會在憑證相關工作上成功，在安裝 Windows Server Essentials 體驗角色之後，憑證可能會有幾個小時無法運作，且裝置資訊將不會正確更新。
 
- 部署之後，請使用 Windows PowerShell Cmdlet **Get-WssConfigurationStatus** 確認初始設定是否成功。 傳回的狀態應為下列其中一項： **Notstarted**、 **FinishedWithWarning**、 **Running**、 **Finished**、 **Failed**或 **PendingReboot**。
+ 部署之後，請使用 Windows PowerShell Cmdlet **Get-WssConfigurationStatus** 確認初始設定是否成功。 傳回的狀態應為下列其中一項： `Notstarted` 、 `FinishedWithWarning` 、 `Running` 、 `Finished` 、 `Failed` 或 `PendingReboot` 。
 
  在初始設定期間，伺服器會重新啟動。 如果您需要避免自動重新啟動，在開始初始設定之前，您可以使用下列命令新增登錄機碼：
 
 ```
-New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name "WaitForReboot" -Value 1 -PropertyType "DWord" -Force -Confirm:$false
+New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name "WaitForReboot" -Value 1 -PropertyType "DWord" -Force -Confirm:$false
 
 ```
 
@@ -204,29 +204,29 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
  **範例**：
 
- $Enable-Enable-wssremotewebaccess œDenyAccessByDefault œApplyToExistingUsers
+ `$Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers`
 
  該命令會使用自動設定的路由器啟用遠端 Web 存取，並變更所有現有使用者的預設存取權限。
 
 ### <a name="add-user"></a>新增使用者
  **語法**：
 
- Add-wssuser [-Name] <string \> [-Password] <securestring \> [-AccessLevel <string \> {User &#124; Administrator}] [-FirstName <string \> ] [-LastName <string \> ] [-AllowRemoteAccess] [-AllowVpnAccess] [<CommonParameters \> ]
+ Add-WssUser [-Name] <string \> [-Password] <securestring \> [-AccessLevel <string \> {User &#124; Administrator}] [-FirstName <string \> ] [-LastName <string \> ] [-AllowRemoteAccess] [-AllowVpnAccess] [<CommonParameters \> ]
 
  **範例**：
 
- $password = ConvertTo-SecureString "Passw0rd！" -asplaiNtext œforce $ Add-wssuser-Name User2Test-Password $password-Accesslevel Administrator-FirstName：）-LastName Test
+ `$password = ConvertTo-SecureString "Passw0rd!" -asplaintext  œforce$Add-WssUser -Name User2Test -Password $password -Accesslevel Administrator -FirstName User2 -LastName Test`
 
  此命令會將名為 User2Test 的系統管理員新增為密碼 Passw0rd！。
 
 ### <a name="add-server-folder"></a>新增伺服器資料夾
  **語法**：
 
- Add-wssfolder [-Name] <string \> [-Path] <string \> [[-Description] <string \> ] [-KeepPermissions] [<CommonParameters \> ]
+ Add-WssFolder [-Name] <string \> [-Path] <string \> [[-Description] <string \> ] [-KeepPermissions] [<CommonParameters \> ]
 
  **範例**：
 
- $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
+ `$Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"`
 
  此命令會在指定的位置加入名為 MyTestFolder 的伺服器資料夾。
 
@@ -299,7 +299,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
 -   [伺服器部署](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerDeploy)
 
--   [伺服器設定](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerConfig2)
+-   [伺服器組態](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerConfig2)
 
 -   [伺服器管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerManage)
 

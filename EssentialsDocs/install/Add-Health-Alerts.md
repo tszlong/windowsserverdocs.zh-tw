@@ -1,18 +1,18 @@
 ---
 title: 新增健康狀態警示
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何安裝健康情況增益集，以提供警示、健康情況檢查和修復網路問題的定義。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 3a3c04a48e06ef0040943b866eaf1ddb0be8fa89
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 9c57e364e4596427b8a2f07c7e67e2573a21ba78
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624078"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711653"
 ---
 # <a name="add-health-alerts"></a>新增健康狀態警示
 
@@ -27,7 +27,7 @@ ms.locfileid: "89624078"
 
 #### <a name="to-install-the-xml-files-on-the-server"></a>若要在伺服器上安裝 XML 檔案
 
-1. 在 **%ProgramFiles%\Windows Server\Bin\Feature Definitions** 資料夾中，建立名為 **MyHealthAddIn**的新資料夾。 您可以為此資料夾指定任何名稱。 建議讓此資料夾的名稱與功能名稱相同。
+1. 在 **%ProgramFiles%\Windows Server\Bin\Feature Definitions** 資料夾中，建立名為 **MyHealthAddIn** 的新資料夾。 您可以為此資料夾指定任何名稱。 建議讓此資料夾的名稱與功能名稱相同。
 
 2. 將 Definition.xml 和 Definition.xml.config 檔案複製到新資料夾。
 

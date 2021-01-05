@@ -1,18 +1,18 @@
 ---
 title: 目標電腦的硬體需求
-description: 說明如何使用 Windows Server Essentials
+description: 深入瞭解安裝 Windows Server Essentials 時必須具備的硬體需求。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 1672c8168dd206c166ca44392ca290ebb311dcc6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5c1cfb86c4519ab4f98280f5e21569fb7829c081
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623509"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755234"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>目標電腦的硬體需求
 

@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3d434b1619c476d2a80003fd6c8d379d6177462e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 432f68a113055f9e68ca4c18ed8aa54b02cad8b0
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050116"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711703"
 ---
 # <a name="delegating-administration-of-account-ous-and-resource-ous"></a>委派帳戶 OU 與資源 OU 的管理
 
@@ -25,7 +25,7 @@ ms.locfileid: "97050116"
 
 下圖顯示帳戶 OU 結構的其中一個範例。
 
-![委派管理](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/66d38fbe-e8eb-42d7-abab-9526243bf6d9.gif)
+![此圖顯示一個帳戶 OU 結構範例。](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/66d38fbe-e8eb-42d7-abab-9526243bf6d9.gif)
 
 下表列出並描述您可以在帳戶 OU 結構中建立的可能子 Ou。
 
@@ -39,7 +39,7 @@ ms.locfileid: "97050116"
 
 下圖顯示一個帳戶 OU 結構的系統管理群組設計範例。
 
-![委派管理](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/be2cd2d2-6956-429c-a53a-369e6fe40b2b.gif)
+![此圖顯示一個帳戶 OU 結構的系統管理群組設計範例。](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/be2cd2d2-6956-429c-a53a-369e6fe40b2b.gif)
 
 管理子 Ou 的群組會被授與負責管理的特定物件類別的完全控制。
 
@@ -50,7 +50,7 @@ ms.locfileid: "97050116"
 
 下圖顯示資源 OU 的兩個可能位置。
 
-![委派管理](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/6667a5ce-34d6-48a9-9974-b823ba70e2af.gif)
+![圖例顯示資源 OU 的兩個可能位置。](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/6667a5ce-34d6-48a9-9974-b823ba70e2af.gif)
 
 資源 OU 可以位於網域根目錄下，或是 OU 系統管理階層中對應之帳戶 OU 的子 OU。 資源 Ou 沒有任何標準子 Ou。 電腦和群組會直接放在資源 OU 中。
 

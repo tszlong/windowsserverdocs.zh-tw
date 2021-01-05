@@ -1,18 +1,18 @@
 ---
 title: 變更儀表板及啟動列的色彩配置
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何藉由定義要在 XML 格式的檔案中使用的色彩，來變更儀表板和啟動列的色彩配置。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: b2913e51-7979-4d48-a431-d2ec5f1042be
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 8450d96caede5a08d123f9bf5844953735d4c2b4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b85e06b0fd357ee025854bd8c0d83a7587fd21c3
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621911"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711503"
 ---
 # <a name="change-the-color-scheme-of-the-dashboard-and-launchpad"></a>變更儀表板及啟動列的色彩配置
 
@@ -26,83 +26,83 @@ ms.locfileid: "89621911"
 ```xml
 <DashboardTheme xmlns="https://www.microsoft.com/HSBS/Dashboard/Branding/2010">
 
-  <!-- Hex color values overwriting default SKU theme colors -->
+  <!-- Hex color values overwriting default SKU theme colors -->
 
-    <SplashScreenBackgroundColor HexValue="FFFFFFFF"/>
-    <SplashScreenBorderColor HexValue="FF000000"/>
-    <MainHeaderBackgroundColor HexValue="FF414141"/>
-    <MainTabBackgroundColor HexValue="FFFFFFFF"/>
-    <MainTabFontColor HexValue="FF999999"/>
-    <MainTabHoverFontColor HexValue="FF0072BC"/>
-    <MainTabSelectedFontColor HexValue="FF0072BC"/>
-    <MainButtonPressedBackgroundColor HexValue="FF0072BC"/>
-    <MainButtonFontColor HexValue="FFFFFFFF"/>
-    <MainButtonBorderColor HexValue="FF6E6E6E"/>
-    <ScrollButtonBackgroundColor HexValue="FFF0F0F0"/>
-    <ScrollButtonArrowColor HexValue="FF999999"/>
-    <ScrollButtonHoverBackgroundColor HexValue="FF999999"/>
-    <ScrollButtonHoverArrowColor HexValue="FF6E6E6E"/>
-    <ScrollButtonSelectedBackgroundColor HexValue="FF6E6E6E"/>
-    <ScrollButtonSelectedArrowColor HexValue="FFFFFFFF"/>
-    <ScrollButtonDisabledBackgroundColor HexValue="FFF8F8F8"/>
-    <ScrollButtonDisabledArrowColor HexValue="FFCCCCCC"/>
-    <AlertTextBlockBackground HexValue="FFFFFFFF"/>
-    <AlertTextBlockFont HexValue="FF000000"/>
-    <FontColor HexValue="FF000000"/>
-    <SubTabBarBackgroundColor HexValue="FFFFFFFF"/>
-    <SubTabBackgroundColor HexValue="FFFFFFFF"/>
-    <SubTabSelectedBackgroundColor HexValue="FF414141"/>
-    <SubTabBorderColor HexValue="FF787878"/>
-    <SubTabFontColor HexValue="FF787878"/>
-    <SubTabHoverFontColor HexValue="FF0072BC"/>
-    <SubTabPressedFontColor HexValue="FFFFFFFF"/>
-    <ListViewColor HexValue="FFFFFFFF"/>
-    <PageBorderColor HexValue="FF999999"/>   
-    <LaunchpadButtonHoverBorderColor HexValue="FF6BA0B4"/>
-    <LaunchpadButtonHoverBackgroundColor HexValue="FF41788F"/>
-    <ClientArrowColor HexValue="FFFFFFFF"/>
-    <ClientGlyphColor HexValue="FFFFFFFF"/>
-    <SplitterColor HexValue="FF83C6E2"/>
-    <HomePageBackColor     HexValue="FFFFFFFF"/>
-    <CategoryNotExpandedBackColor HexValue="FFFFB343"/>
-    <CategoryExpandedBackColor HexValue="FFF26522"/>
-    <CategoryNotExpandedForeColor HexValue="FF2A2A2A"/>
-    <CategoryExpandedForeColor HexValue="FFFFFFFF"/>
-    <HomePageTaskListForeColor    HexValue="FF2A2A2A"/>
-    <HomePageTaskListBackColor HexValue="FFEAEAEA"/>
-    <HomePageTaskListHoverForeColor      HexValue="FF2A2A2A"/>
-    <HomePageTaskListItemBorderColor     HexValue="FF999999"/>
-    <HomePageTaskListSelectedForeColor   HexValue="FFFFFFFF"/>
-    <HomePageTaskListSelectedBackColor   HexValue="FFF26522"/>
-    <HomePageTaskDetailStatusForeColor   HexValue="FFF26522"/>
-    <HomePageTaskDetailDescriptionForeColor     HexValue="FF2A2A2A"/>
-    <HomePageLinkForeColor HexValue="FF0072BC"/>
-    <HomePageLinkSelectedForeColor HexValue="FF0054A6"/>
-    <HomePageLinkHoverForeColor   HexValue="FF0072BC"/>
-    <PropertyFormForeColor HexValue="FF2A2A2A"/>
-    <PropertyFormTabHoverColor HexValue="FF0072BC"/>
-    <PropertyFormTabSelectedColor HexValue="FFFFFFFF"/>
-    <PropertyFormTabSelectedBackColor HexValue="FF414141"/>
-    <TaskPanelBackColor HexValue="FFFFFFFF"/>
-    <TaskPanelItemForeColor HexValue="FF2A2A2A"/>
-    <TaskPanelGroupTitleForeColor HexValue="FF2A2A2A"/>
-    <TaskPanelGroupTitleBackColor HexValue="FFCCCCCC"/>
-    <DashboardClientBackColor HexValue="FF004050"/>
-    <DashboardClientTitleColor HexValue="FFFFFFFF"/>
-    <DashboardClientOptionsForeColor HexValue="FFFFFFFF"/>
-    <DashboardClientOptionsItemForeColor HexValue="FF2A2A2A"/>
-    <DashboardClientHelpForeColor HexValue="FF0054A6"/>
-    <ClientSignInForeColor HexValue="FFFFFFFF"/>
-    <ClientSignInWaterMarkForeColor HexValue="FF999999"/>
-    <ClientSignInUserNameForeColor HexValue="FF2A2A2A"/>
-    <ClientSignInPassWordSpecificBackColor HexValue="FFCCCCCC"/>
-    <ClientSignInButtonBackColor HexValue="FF004050"/>
-    <ClientSignInPassWordForeColor HexValue="FF2A2A2A"/>
-    <LaunchPadBackColor HexValue="FF004050"/>
-    <LaunchPadPageTitleColor HexValue="FFFFFFFF"/>
-    <LaunchPadItemForeColor HexValue="FFFFFFFF"/>
-  <LaunchPadItemHoverColor HexValue="33FFFFFF"/>
-  <LaunchPadItemIconBackgroundColor HexValue="F2004050"/>
+    <SplashScreenBackgroundColor HexValue="FFFFFFFF"/>
+    <SplashScreenBorderColor HexValue="FF000000"/>
+    <MainHeaderBackgroundColor HexValue="FF414141"/>
+    <MainTabBackgroundColor HexValue="FFFFFFFF"/>
+    <MainTabFontColor HexValue="FF999999"/>
+    <MainTabHoverFontColor HexValue="FF0072BC"/>
+    <MainTabSelectedFontColor HexValue="FF0072BC"/>
+    <MainButtonPressedBackgroundColor HexValue="FF0072BC"/>
+    <MainButtonFontColor HexValue="FFFFFFFF"/>
+    <MainButtonBorderColor HexValue="FF6E6E6E"/>
+    <ScrollButtonBackgroundColor HexValue="FFF0F0F0"/>
+    <ScrollButtonArrowColor HexValue="FF999999"/>
+    <ScrollButtonHoverBackgroundColor HexValue="FF999999"/>
+    <ScrollButtonHoverArrowColor HexValue="FF6E6E6E"/>
+    <ScrollButtonSelectedBackgroundColor HexValue="FF6E6E6E"/>
+    <ScrollButtonSelectedArrowColor HexValue="FFFFFFFF"/>
+    <ScrollButtonDisabledBackgroundColor HexValue="FFF8F8F8"/>
+    <ScrollButtonDisabledArrowColor HexValue="FFCCCCCC"/>
+    <AlertTextBlockBackground HexValue="FFFFFFFF"/>
+    <AlertTextBlockFont HexValue="FF000000"/>
+    <FontColor HexValue="FF000000"/>
+    <SubTabBarBackgroundColor HexValue="FFFFFFFF"/>
+    <SubTabBackgroundColor HexValue="FFFFFFFF"/>
+    <SubTabSelectedBackgroundColor HexValue="FF414141"/>
+    <SubTabBorderColor HexValue="FF787878"/>
+    <SubTabFontColor HexValue="FF787878"/>
+    <SubTabHoverFontColor HexValue="FF0072BC"/>
+    <SubTabPressedFontColor HexValue="FFFFFFFF"/>
+    <ListViewColor HexValue="FFFFFFFF"/>
+    <PageBorderColor HexValue="FF999999"/>   
+    <LaunchpadButtonHoverBorderColor HexValue="FF6BA0B4"/>
+    <LaunchpadButtonHoverBackgroundColor HexValue="FF41788F"/>
+    <ClientArrowColor HexValue="FFFFFFFF"/>
+    <ClientGlyphColor HexValue="FFFFFFFF"/>
+    <SplitterColor HexValue="FF83C6E2"/>
+    <HomePageBackColor     HexValue="FFFFFFFF"/>
+    <CategoryNotExpandedBackColor HexValue="FFFFB343"/>
+    <CategoryExpandedBackColor HexValue="FFF26522"/>
+    <CategoryNotExpandedForeColor HexValue="FF2A2A2A"/>
+    <CategoryExpandedForeColor HexValue="FFFFFFFF"/>
+    <HomePageTaskListForeColor    HexValue="FF2A2A2A"/>
+    <HomePageTaskListBackColor HexValue="FFEAEAEA"/>
+    <HomePageTaskListHoverForeColor      HexValue="FF2A2A2A"/>
+    <HomePageTaskListItemBorderColor     HexValue="FF999999"/>
+    <HomePageTaskListSelectedForeColor   HexValue="FFFFFFFF"/>
+    <HomePageTaskListSelectedBackColor   HexValue="FFF26522"/>
+    <HomePageTaskDetailStatusForeColor   HexValue="FFF26522"/>
+    <HomePageTaskDetailDescriptionForeColor     HexValue="FF2A2A2A"/>
+    <HomePageLinkForeColor HexValue="FF0072BC"/>
+    <HomePageLinkSelectedForeColor HexValue="FF0054A6"/>
+    <HomePageLinkHoverForeColor   HexValue="FF0072BC"/>
+    <PropertyFormForeColor HexValue="FF2A2A2A"/>
+    <PropertyFormTabHoverColor HexValue="FF0072BC"/>
+    <PropertyFormTabSelectedColor HexValue="FFFFFFFF"/>
+    <PropertyFormTabSelectedBackColor HexValue="FF414141"/>
+    <TaskPanelBackColor HexValue="FFFFFFFF"/>
+    <TaskPanelItemForeColor HexValue="FF2A2A2A"/>
+    <TaskPanelGroupTitleForeColor HexValue="FF2A2A2A"/>
+    <TaskPanelGroupTitleBackColor HexValue="FFCCCCCC"/>
+    <DashboardClientBackColor HexValue="FF004050"/>
+    <DashboardClientTitleColor HexValue="FFFFFFFF"/>
+    <DashboardClientOptionsForeColor HexValue="FFFFFFFF"/>
+    <DashboardClientOptionsItemForeColor HexValue="FF2A2A2A"/>
+    <DashboardClientHelpForeColor HexValue="FF0054A6"/>
+    <ClientSignInForeColor HexValue="FFFFFFFF"/>
+    <ClientSignInWaterMarkForeColor HexValue="FF999999"/>
+    <ClientSignInUserNameForeColor HexValue="FF2A2A2A"/>
+    <ClientSignInPassWordSpecificBackColor HexValue="FFCCCCCC"/>
+    <ClientSignInButtonBackColor HexValue="FF004050"/>
+    <ClientSignInPassWordForeColor HexValue="FF2A2A2A"/>
+    <LaunchPadBackColor HexValue="FF004050"/>
+    <LaunchPadPageTitleColor HexValue="FFFFFFFF"/>
+    <LaunchPadItemForeColor HexValue="FFFFFFFF"/>
+  <LaunchPadItemHoverColor HexValue="33FFFFFF"/>
+  <LaunchPadItemIconBackgroundColor HexValue="F2004050"/>
 </DashboardTheme >
 
 ```
@@ -119,7 +119,7 @@ ms.locfileid: "89621911"
 
 1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。
 
-2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit]**** 應用程式。
+2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit] 應用程式。
 
 3.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft** 及 **Windows Server**。 如果 **OEM** 機碼不存在，您必須完成下列步驟來建立機碼：
 
@@ -131,7 +131,7 @@ ms.locfileid: "89621911"
 
 5.  輸入 **CustomColorScheme** 作為字串的名稱，然後按 **ENTER**。
 
-6.  在右窗格的 [CustomColorScheme]**** 上按一下滑鼠右鍵，然後按一下 [修改]****。
+6.  在右窗格的 [CustomColorScheme] 上按一下滑鼠右鍵，然後按一下 [修改]。
 
 7.  輸入檔案名稱，然後按一下 **[確定]**。
 

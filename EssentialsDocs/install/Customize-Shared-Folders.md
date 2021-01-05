@@ -1,18 +1,18 @@
 ---
 title: 自訂共用資料夾
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何自訂伺服器資料夾的位置，以及指定其他伺服器資料夾。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c1a6276199964ac7fd2eb3953cb3fac828063dfc
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 40ee2a7069e39c9d6b85dcc5eb69c9f800b2c68e
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623674"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755224"
 ---
 # <a name="customize-shared-folders"></a>自訂共用資料夾
 
@@ -26,7 +26,7 @@ ms.locfileid: "89623674"
 
    1.  在伺服器上，將滑鼠移至畫面的右上角，然後按一下 **[搜尋]**。
 
-   2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit]**** 應用程式。
+   2.  在 [搜尋] 方塊中，輸入 **regedit**，然後按一下 [Regedit] 應用程式。
 
    3.  在瀏覽窗格中，依序展開 **[HKEY_LOCAL_MACHINE]**、**[SOFTWARE]** 與 **[Microsoft]**。
 

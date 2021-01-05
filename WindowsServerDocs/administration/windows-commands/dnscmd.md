@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ec39f97be1998f45373ee12cdbb6e1814c7bdd1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: a804965efaa135d366b62fe2379ad7d9c3d17e5c
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89636264"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696916"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -54,7 +54,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 ##### <a name="remarks"></a>備註
 
-- **Ageallrecords**命令適用于目前的 dns 版本與舊版的 dns 之間的回溯相容性，在此版本中不支援過時和清除。 它會將目前時間的時間戳記新增至沒有時間戳記的資源記錄，並在具有時間戳記的資源記錄上設定目前時間。
+- **Ageallrecords** 命令適用于目前的 dns 版本與舊版的 dns 之間的回溯相容性，在此版本中不支援過時和清除。 它會將目前時間的時間戳記新增至沒有時間戳記的資源記錄，並在具有時間戳記的資源記錄上設定目前時間。
 
 - 除非記錄有時間戳記，否則不會進行記錄清除。 名稱伺服器 (NS) 資源記錄、授權單位啟動 (SOA) 資源記錄，以及 Windows 網際網路名稱服務 (WINS) 資源記錄不包含在清除程式中，而且即使在 **ageallrecords** 命令執行時也不會加上時間戳記。
 
@@ -105,6 +105,9 @@ dnscmd [<servername>] /config <parameter>
 
 #### <a name="parameters"></a>參數
 
+> [!NOTE]
+> 本文包含「從屬」一詞的參考，Microsoft 已不再使用該字詞。 從軟體中移除該字詞時，我們也會將其從本文中移除。
+
 | 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定您打算管理的 DNS 伺服器，以本機電腦語法、IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
@@ -113,8 +116,8 @@ dnscmd [<servername>] /config <parameter>
 | /bindsecondaries`[0|1]` | 變更區域傳輸的格式，讓它可以達到最大的壓縮和效率。 接受下列值：<ul><li>**0** -使用最大壓縮，且僅與系結版本4.9.4 和更新版本相容</li><li>**1** -每個訊息只會傳送一筆資源記錄至非 Microsoft DNS 伺服器，而且與4.9.4 之前的系結版本相容。 這是預設值。</li></ul> |
 | /bootmethod`[0|1|2|3]` | 決定 DNS 伺服器取得其設定資訊的來源。 接受下列值：<ul><li>**0** -清除設定資訊的來源。</li><li>**1** -從位於 DNS 目錄的系結檔案（預設為）載入 `%systemroot%\System32\DNS` 。</li><li>**2** -從登錄載入。</li><li>**3** -從 AD DS 和登錄載入。 這是預設值。</li></ul> |
 | /defaultagingstate`[0|1]` | 判斷新建立的區域是否預設啟用 DNS 清除功能。 接受下列值：<ul><li>**0** -停用清除。 這是預設值。</li><li>**1** -啟用清除。</li></ul> |
-| /defaultnorefreshinterval`[0x1-0xFFFFFFFF|0xA8]` | 設定動態更新的記錄不會接受任何重新整理的一段時間。 伺服器上的區域會自動繼承此值。<p>若要變更預設值，請輸入 **0x1-0xffffffff**範圍內的值。 伺服器的預設值為 **0xA8**。 |
-| /defaultrefreshinterval `[0x1-0xFFFFFFFF|0xA8]` | 設定允許對 DNS 記錄進行動態更新的時段。 伺服器上的區域會自動繼承此值。<p>若要變更預設值，請輸入 **0x1-0xffffffff**範圍內的值。 伺服器的預設值為 **0xA8**。 |
+| /defaultnorefreshinterval`[0x1-0xFFFFFFFF|0xA8]` | 設定動態更新的記錄不會接受任何重新整理的一段時間。 伺服器上的區域會自動繼承此值。<p>若要變更預設值，請輸入 **0x1-0xffffffff** 範圍內的值。 伺服器的預設值為 **0xA8**。 |
+| /defaultrefreshinterval `[0x1-0xFFFFFFFF|0xA8]` | 設定允許對 DNS 記錄進行動態更新的時段。 伺服器上的區域會自動繼承此值。<p>若要變更預設值，請輸入 **0x1-0xffffffff** 範圍內的值。 伺服器的預設值為 **0xA8**。 |
 | /disableautoreversezones `[0|1]` | 啟用或停用反向對應區域的自動建立。 反向對應區域提供網際網路通訊協定的解析， (IP) 位址到 DNS 功能變數名稱。 接受下列值：<ul><li>**0** -啟用反向對應區域的自動建立。 這是預設值。</li><li>**1** -停用自動建立反向對應區域。</li></ul> |
 | /disablensrecordsautocreation `[0|1]` | 指定 DNS 伺服器是否會自動為它所裝載的區域建立名稱伺服器 (NS) 資源記錄。 接受下列值：<ul><li>**0** -自動為 DNS 伺服器所裝載的區域建立名稱伺服器 (NS) 資源記錄。</li><li>**1** -不會自動為 DNS 伺服器所裝載的區域建立名稱伺服器 (NS) 資源記錄。</li></ul> |
 | /dspollinginterval `[0-30]` | 指定 DNS 伺服器輪詢 active directory 整合區域變更 AD DS 的頻率。 |
@@ -316,7 +319,7 @@ dnscmd /enumrecords test.contoso.com test /additional
 
 ## <a name="dnscmd-enumzones-command"></a>dnscmd/enumzones 命令
 
-列出存在於指定之 DNS 伺服器上的區域。 **Enumzones**參數可作為區域清單上的篩選準則。 如果未指定任何篩選準則，則會傳回完整的區域清單。 指定篩選準則時，只有符合該篩選準則的區域才會包含在傳回的區域清單中。
+列出存在於指定之 DNS 伺服器上的區域。 **Enumzones** 參數可作為區域清單上的篩選準則。 如果未指定任何篩選準則，則會傳回完整的區域清單。 指定篩選準則時，只有符合該篩選準則的區域才會包含在傳回的區域清單中。
 
 ### <a name="syntax"></a>語法
 
@@ -382,7 +385,7 @@ dnscmd [<servername>] /info [<settings>]
 | 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
-| `<settings>` | **Info**命令傳回的任何設定都可以個別指定。 如果未指定設定，則會傳回一般設定的報表。 |
+| `<settings>` | **Info** 命令傳回的任何設定都可以個別指定。 如果未指定設定，則會傳回一般設定的報表。 |
 
 #### <a name="example"></a>範例
 
@@ -405,7 +408,7 @@ dnscmd [<servername>] /ipvalidate <context> [<zonename>] [[<IPaddress>]]
 | 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
-| `<context>` | 指定要執行的測試類型。 您可以指定下列任何一項測試：<ul><li>**/dnsservers** -測試具有您指定之位址的電腦是否為正常運作的 DNS 伺服器。</li><li>**/forwarders** -測試您指定的位址識別可作為轉寄站的 DNS 伺服器。</li><li>**/roothints** -測試您指定的位址識別可作為根提示名稱伺服器的 DNS 伺服器。</li><li>**/zonemasters** -測試您指定的位址，識別作為 *zonename*的主伺服器的 DNS 伺服器。 |
+| `<context>` | 指定要執行的測試類型。 您可以指定下列任何一項測試：<ul><li>**/dnsservers** -測試具有您指定之位址的電腦是否為正常運作的 DNS 伺服器。</li><li>**/forwarders** -測試您指定的位址識別可作為轉寄站的 DNS 伺服器。</li><li>**/roothints** -測試您指定的位址識別可作為根提示名稱伺服器的 DNS 伺服器。</li><li>**/zonemasters** -測試您指定的位址，識別屬於 *zonename* 的主伺服器的 DNS 伺服器。 |
 | `<zonename>` | 識別區域。 使用此參數搭配 **/zonemasters** 參數。 |
 | `<IPaddress>` | 指定命令所測試的 IP 位址。 |
 
@@ -586,9 +589,9 @@ dnscmd [<servername>] /startscavenging
 
     - 資源記錄具有時間戳記。
 
-- 如需有關如何啟用伺服器清除的詳細資訊，請參閱 **/config**區段中**伺服器層級語法**下的**scavenginginterval**參數。
+- 如需有關如何啟用伺服器清除的詳細資訊，請參閱 **/config** 區段中 **伺服器層級語法** 下的 **scavenginginterval** 參數。
 
-- 如需有關如何啟用區域清除的詳細資訊，請參閱 **/config**區段中**區域層級語法**下的**過時**參數。
+- 如需有關如何啟用區域清除的詳細資訊，請參閱 **/config** 區段中 **區域層級語法** 下的 **過時** 參數。
 
 - 如需有關如何重新開機已暫停區域的詳細資訊，請參閱本文中的 **zoneresume** 參數。
 
@@ -615,7 +618,7 @@ dnscmd [<servername>] /statistics [<statid>] [/clear]
 | 參數 | 描述 |
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
-| `<statid>` | 指定要顯示的統計資料或統計資料組合。 **Statistics**命令會顯示啟動或繼續時，在 DNS 伺服器上啟動的計數器。 識別碼是用來識別統計資料。 如果未指定統計資料識別碼，則會顯示所有統計資料。 可以指定的數位，以及顯示的對應統計資料，可能包括：<ul><li>**00000001** 時間</li><li>**00000002** -查詢</li><li>**00000004** ->query2</li><li>**00000008** -遞迴</li><li>**00000010** -Master</li><li>**00000020** -次要</li><li>**00000040** -WINS</li><li>**00000100** -更新</li><li>**00000200** -SkwanSec</li><li>**00000400** -Ds</li><li>**00010000** -記憶體</li><li>**00100000** -PacketMem</li><li>**00040000** -Dbase</li><li>**00080000** -記錄</li><li>**00200000** -NbstatMem</li><li>**/clear** -將指定的統計資料計數器重設為零。</li></ul> |
+| `<statid>` | 指定要顯示的統計資料或統計資料組合。 **Statistics** 命令會顯示啟動或繼續時，在 DNS 伺服器上啟動的計數器。 識別碼是用來識別統計資料。 如果未指定統計資料識別碼，則會顯示所有統計資料。 可以指定的數位，以及顯示的對應統計資料，可能包括：<ul><li>**00000001** 時間</li><li>**00000002** -查詢</li><li>**00000004** ->query2</li><li>**00000008** -遞迴</li><li>**00000010** -Master</li><li>**00000020** -次要</li><li>**00000040** -WINS</li><li>**00000100** -更新</li><li>**00000200** -SkwanSec</li><li>**00000400** -Ds</li><li>**00010000** -記憶體</li><li>**00100000** -PacketMem</li><li>**00040000** -Dbase</li><li>**00080000** -記錄</li><li>**00200000** -NbstatMem</li><li>**/clear** -將指定的統計資料計數器重設為零。</li></ul> |
 
 #### <a name="examples"></a>範例
 
@@ -642,7 +645,7 @@ dnscmd [<servername>] /unenlistdirectorypartition <partitionFQDN>
 
 ## <a name="dnscmd-writebackfiles-command"></a>dnscmd/writebackfiles 命令
 
-檢查 DNS 伺服器記憶體的變更，並將其寫入至持續性儲存體。 **Writebackfiles**命令會更新所有的中途區域或指定的區域。 當記憶體中有變更尚未寫入持續性儲存體時，區域就會變更。 這是會檢查所有區域的伺服器層級作業。 您可以在這項作業中指定一個區域，也可以使用 **zonewriteback** 操作。
+檢查 DNS 伺服器記憶體的變更，並將其寫入至持續性儲存體。 **Writebackfiles** 命令會更新所有的中途區域或指定的區域。 當記憶體中有變更尚未寫入持續性儲存體時，區域就會變更。 這是會檢查所有區域的伺服器層級作業。 您可以在這項作業中指定一個區域，也可以使用 **zonewriteback** 操作。
 
 ### <a name="syntax"></a>語法
 
@@ -679,7 +682,7 @@ dnscmd [<servername>] /zoneadd <zonename> <zonetype> [/dp <FQDN> | {/domain | en
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 指定區域的名稱。 |
-| `<zonetype>` | 指定要建立的區欄位型別。 指定 **/forwarder** 或 **/dsforwarder** 的區欄位型別會建立執行條件式轉送的區域。 每個區欄位型別都有不同的必要參數：<ul><li>**/dsprimary** -建立 active directory 整合式區域。</li><li>**/primary/file `<filename>` **-建立標準主要區域，並指定將用來儲存區域資訊的檔案名。</li><li>**/secondary `<masterIPaddress> [<masterIPaddress>...]` **-建立標準次要區域。</li><li>**/stub `<masterIPaddress> [<masterIPaddress>...]` /File `<filename>` ** -建立檔案支援的存根區域。</li><li>**/dsstub `<masterIPaddress> [<masterIPaddress>...]` **-建立 active directory 整合式存根區域。</li><li>**/forwarder `<masterIPaddress> [<masterIPaddress>]` .../File `<filename>` ** -指定建立的區域將無法解析的查詢轉送到另一部 DNS 伺服器。</li><li>**/dsforwarder** -指定建立的 active directory 整合式區域將無法解析的查詢轉送到另一部 DNS 伺服器。</li></ul> |
+| `<zonetype>` | 指定要建立的區欄位型別。 指定 **/forwarder** 或 **/dsforwarder** 的區欄位型別會建立執行條件式轉送的區域。 每個區欄位型別都有不同的必要參數：<ul><li>**/dsprimary** -建立 active directory 整合式區域。</li><li>**/primary/file `<filename>`**-建立標準主要區域，並指定將用來儲存區域資訊的檔案名。</li><li>**/secondary `<masterIPaddress> [<masterIPaddress>...]`**-建立標準次要區域。</li><li>**/stub `<masterIPaddress> [<masterIPaddress>...]` /File `<filename>`** -建立檔案支援的存根區域。</li><li>**/dsstub `<masterIPaddress> [<masterIPaddress>...]`**-建立 active directory 整合式存根區域。</li><li>**/forwarder `<masterIPaddress> [<masterIPaddress>]` .../File `<filename>`** -指定建立的區域將無法解析的查詢轉送到另一部 DNS 伺服器。</li><li>**/dsforwarder** -指定建立的 active directory 整合式區域將無法解析的查詢轉送到另一部 DNS 伺服器。</li></ul> |
 | `<FQDN>` | 指定目錄分割的 FQDN。 |
 | /domain | 將區域儲存在網域目錄磁碟分割上。 |
 | /enterprise | 將區域儲存在企業目錄磁碟分割上。 |
@@ -739,7 +742,7 @@ dnscmd [<servername>] /zonedelete <zonename> [/dsdel] [/f]
 
 ## <a name="dnscmd-zoneexport-command"></a>dnscmd/zoneexport 命令
 
-建立文字檔，其中列出指定區域的資源記錄。 **Zoneexport**作業會為 active directory 整合區域建立資源記錄的檔案，以供疑難排解之用。 根據預設，這個命令所建立的檔案會放在 DNS 目錄中，也就是 `%systemroot%/System32/Dns` 目錄。
+建立文字檔，其中列出指定區域的資源記錄。 **Zoneexport** 作業會為 active directory 整合區域建立資源記錄的檔案，以供疑難排解之用。 根據預設，這個命令所建立的檔案會放在 DNS 目錄中，也就是 `%systemroot%/System32/Dns` 目錄。
 
 ### <a name="syntax"></a>語法
 
@@ -858,7 +861,7 @@ dnscmd [<servername>] /zonerefresh <zonename>
 
 ##### <a name="remarks"></a>備註
 
-- **Zonerefresh**命令會強制檢查主伺服器 s (SOA) 資源記錄的主伺服器版本號碼。 如果主伺服器上的版本號碼高於次要伺服器的版本號碼，則會起始會更新次要伺服器的區域轉移。 如果版本號碼相同，則不會進行任何區域傳輸。
+- **Zonerefresh** 命令會強制檢查主伺服器 s (SOA) 資源記錄中主伺服器的版本號碼。 如果主伺服器上的版本號碼高於次要伺服器的版本號碼，則會起始會更新次要伺服器的區域傳輸。 如果版本號碼相同，則不會進行任何區域傳輸。
 
 - 強制檢查預設會每隔15分鐘進行一次。 若要變更預設值，請使用 `dnscmd config refreshinterval` 命令。
 
@@ -962,7 +965,7 @@ dnscmd dnssvr1.contoso.com /zoneresetscavengeservers test.contoso.com 10.0.0.1 1
 
 ## <a name="dnscmd-zoneresetsecondaries-command"></a>dnscmd/zoneresetsecondaries 命令
 
-指定當要求進列區域轉送時，主伺服器會回應的次要伺服器 IP 位址清單。
+指定當要求進列區域轉送時，主伺服器會回應之次要伺服器的 IP 位址清單。
 
 ### <a name="syntax"></a>語法
 
@@ -1014,7 +1017,7 @@ dnscmd [<servername>] /zoneresettype <zonename> <zonetype> [/overwrite_mem | /ov
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 伺服器，以 IP 位址、FQDN 或主機名稱表示。 如果省略此參數，則會使用本機伺服器。 |
 | `<zonename>` | 識別將變更類型的區域。 |
-| `<zonetype>` | 指定要建立的區欄位型別。 每個類型都有不同的必要參數，包括：<ul><li>**/dsprimary** -建立 active directory 整合式區域。</li><li>**/primary/file `<filename>` **-建立標準的主要區域。</li><li>**/secondary `<masterIPaddress> [,<masterIPaddress>...]` **-建立標準次要區域。</li><li>**/stub `<masterIPaddress>[,<masterIPaddress>...]` /File `<filename>` ** -建立檔案支援的存根區域。</li><li>**/dsstub `<masterIPaddress>[,<masterIPaddress>...]` **-建立 active directory 整合式存根區域。</li><li>**/forwarder `<masterIPaddress[,<masterIPaddress>]` .../File `<filename>` ** -指定建立的區域將無法解析的查詢轉送到另一部 DNS 伺服器。</li><li>**/dsforwarder** -指定建立的 active directory 整合式區域將無法解析的查詢轉送到另一部 DNS 伺服器。</li></ul> |
+| `<zonetype>` | 指定要建立的區欄位型別。 每個類型都有不同的必要參數，包括：<ul><li>**/dsprimary** -建立 active directory 整合式區域。</li><li>**/primary/file `<filename>`**-建立標準的主要區域。</li><li>**/secondary `<masterIPaddress> [,<masterIPaddress>...]`**-建立標準次要區域。</li><li>**/stub `<masterIPaddress>[,<masterIPaddress>...]` /File `<filename>`** -建立檔案支援的存根區域。</li><li>**/dsstub `<masterIPaddress>[,<masterIPaddress>...]`**-建立 active directory 整合式存根區域。</li><li>**/forwarder `<masterIPaddress[,<masterIPaddress>]` .../File `<filename>`** -指定建立的區域將無法解析的查詢轉送到另一部 DNS 伺服器。</li><li>**/dsforwarder** -指定建立的 active directory 整合式區域將無法解析的查詢轉送到另一部 DNS 伺服器。</li></ul> |
 | /overwrite_mem | 覆寫 AD DS 中資料的 DNS 資料。 |
 | /overwrite_ds | 覆寫 AD DS 中的現有資料。 |
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 31fdb8921bcb896cb009dcd4d67d57c6c503efa6
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: a2d38b9f9aaac11f5e4e218e24e4428f97ae2c8f
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865607"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696741"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Windows Server 中 DNS 伺服器的新功能
 
@@ -65,11 +65,11 @@ ms.locfileid: "96865607"
 
 -   **最大回應**。 這是伺服器在回應暫停時，將發出給用戶端的回應數目上限。
 
--   **白名單網域**。 這是要從 RRL 設定排除的網域清單。
+-   **允許清單網域**。 這是要從 RRL 設定排除的網域清單。
 
--   **白名單子網**。 這是要從 RRL 設定排除的子網清單。
+-   **允許清單子網**。 這是要從 RRL 設定排除的子網清單。
 
--   **白名單伺服器介面**。 這是要從 RRL 設定排除的 DNS 伺服器介面清單。
+-   **允許清單伺服器介面**。 這是要從 RRL 設定排除的 DNS 伺服器介面清單。
 
 ## <a name="dane-support"></a>來支援
 

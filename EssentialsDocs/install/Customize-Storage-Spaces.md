@@ -1,18 +1,18 @@
 ---
 title: 自訂儲存空間
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何從 Postic.cmd 執行儲存空間設定腳本，以預先設定儲存空間以獲得較佳的使用者體驗。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 3c96d66b-be4a-4572-9b9f-29555c00ae9a
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c8ff952cc087ea68e1460ba92d36fa684b1c3572
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b9db67f3b53eead3862a46f276794517cb93d22d
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623615"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755154"
 ---
 # <a name="customize-storage-spaces"></a>自訂儲存空間
 

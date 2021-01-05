@@ -1,18 +1,18 @@
 ---
 title: 新增 Microsoft Online Service 合作夥伴合約列名的合作夥伴資訊
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何建立登錄機碼，其中包含您的 Microsoft Online Service 合作夥伴合約夥伴記錄識別碼)  (POR 識別碼。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9bd191d6-ecc5-4230-a88e-f3fc281cb956
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 0f8a1b769b207bd40add46f3e7e9273c67409ac1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 458bcfd3642cf2fceb485d57927708635e494c17
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624039"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711643"
 ---
 # <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>新增 Microsoft Online Service 合作夥伴合約列名的合作夥伴資訊
 
@@ -31,7 +31,7 @@ ms.locfileid: "89624039"
 
 #### <a name="to-add-the-por-id-key-to-the-registry"></a>若要將 POR ID 機碼新增至登錄
 
-1.  在參照電腦上，按一下 [開始]****，輸入 **regedit**，然後按 ENTER。
+1.  在參照電腦上，按一下 [開始]，輸入 **regedit**，然後按 ENTER。
 
 2.  在左窗格中，依序展開 **HKEY_LOCAL_MACHINE**、**SOFTWARE**、**Microsoft**，然後展開 **Windows Server**。
 

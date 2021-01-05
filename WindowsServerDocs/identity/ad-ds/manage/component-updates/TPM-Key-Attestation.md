@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7b8e311d395b31361b0ee705bf7bddf272011087
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: a297473e338e88e575db07ddbeffc568e557b6cf
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048746"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711723"
 ---
 # <a name="tpm-key-attestation"></a>TPM 金鑰證明
 
@@ -112,23 +112,23 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 
     -   確定已選取 [**憑證收件** 者] **Windows 8.1/Windows Server 2012 R2** 。
 
-    ![TPM 金鑰證明](media/TPM-Key-Attestation/GTR_ADDS_CompatibilityTab.gif)
+    ![醒目顯示 [憑證收件者] 清單的螢幕擷取畫面。](media/TPM-Key-Attestation/GTR_ADDS_CompatibilityTab.gif)
 
 2.  [密碼編譯] 索引標籤
 
     確定已選取 [**提供者] 類別** 的 [**金鑰儲存提供者**]，並針對 [**演算法名稱]** 選取 [ **RSA** ]。 確認 **要求必須使用下列其中一個提供者**，並在 [**提供者**] 下選取 [ **Microsoft 平臺密碼編譯提供者**] 選項。
 
-    ![TPM 金鑰證明](media/TPM-Key-Attestation/GTR_ADDS_CryptoTab.gif)
+    ![醒目顯示 [提供者類別] 和 [演算法名稱] 清單的螢幕擷取畫面。](media/TPM-Key-Attestation/GTR_ADDS_CryptoTab.gif)
 
 3.  [**金鑰證明**] 索引標籤
 
     這是 Windows Server 2012 R2 的新索引標籤：
 
-    ![TPM 金鑰證明](media/TPM-Key-Attestation/GTR_ADDS_ConfigCertTemplate.gif)
+    ![顯示 [金鑰證明] 索引標籤的螢幕擷取畫面。](media/TPM-Key-Attestation/GTR_ADDS_ConfigCertTemplate.gif)
 
     從三個可能的選項中選擇證明模式。
 
-    ![TPM 金鑰證明](media/TPM-Key-Attestation/GTR_ADDS_KeyModes.gif)
+    ![顯示證明模式的螢幕擷取畫面。](media/TPM-Key-Attestation/GTR_ADDS_KeyModes.gif)
 
     -   **無：** 表示不得使用金鑰證明
 
@@ -138,7 +138,7 @@ TPM 金鑰證明是要求憑證的實體以密碼編譯方式向 CA 證明憑證
 
     然後選擇 TPM 信任模型。 另外還有三個選項：
 
-    ![TPM 金鑰證明](media/TPM-Key-Attestation/GTR_ADDS_KeyTypeToEnforce.gif)
+    ![顯示 TPM 信任模型的螢幕擷取畫面。](media/TPM-Key-Attestation/GTR_ADDS_KeyTypeToEnforce.gif)
 
     -   **使用者認證：** 允許驗證使用者透過指定其網域認證來擔保有效的 TPM。
 

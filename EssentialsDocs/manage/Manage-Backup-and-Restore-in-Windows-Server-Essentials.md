@@ -1,18 +1,18 @@
 ---
 title: 管理 Windows Server Essentials 中的備份與還原
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何對您的網路電腦執行定期備份，並從 Windows Server Essentials 中的備份還原資料。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 41000915-f6ff-4dbb-b7be-629ef36386d4
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 996eb1293eebbd424c6063654322617a92043eae
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 89e67327786186a4fdd94a760d29afb47c5a2b66
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623221"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755284"
 ---
 # <a name="manage-backup-and-restore-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的備份與還原
 

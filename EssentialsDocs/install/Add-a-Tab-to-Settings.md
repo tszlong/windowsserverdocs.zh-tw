@@ -1,18 +1,18 @@
 ---
 title: 將索引標籤加入 [設定]
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何藉由建立和安裝程式碼元件，將索引標籤新增至儀表板上的設定。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: aac6b7f3-9020-46c3-a83f-b81542300385
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 17f2d7c8a409ed49ea0f9bfa50952467e4694243
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 45ae9fd3561430006d99cf99849f6e1696de0859
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623997"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711583"
 ---
 # <a name="add-a-tab-to-settings"></a>將索引標籤加入 [設定]
 
@@ -38,7 +38,7 @@ ms.locfileid: "89623997"
 
 2.  依序按一下 **[檔案]**、**[新增]**，然後按一下 **[專案]**。
 
-3.  在 [新增專案]**** 對話方塊中，按一下 [Visual C#]****，按一下 [類別庫]****，輸入 **DashboardSettingsPage** 作為解決方案的名稱，然後按一下 [確定]****。
+3.  在 [新增專案] 對話方塊中，按一下 [Visual C#]，按一下 [類別庫]，輸入 **DashboardSettingsPage** 作為解決方案的名稱，然後按一下 [確定]。
 
     > [!IMPORTANT]
     >  安裝在伺服器上的組件，名稱必須為 DashboardSettingsPage.dll，然後將 dll 複製到 %ProgramFiles%\Windows Server\Bin\OEM。

@@ -1,18 +1,18 @@
 ---
 title: 在伺服器上設定 WinSAT 分數
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何為執行 Windows Server Essentials 作業系統的伺服器設定 WinSAT CPU 分數，以優化影片串流解析度。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 911dc494-0f8f-4723-93d6-2106f914b906
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 56769966cbfb6778c06abc4ba07d21f258e900a4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5b9850dbc525e4d07ee665258bbda5ce944340b1
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623347"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755354"
 ---
 # <a name="set-the-winsat-score-on-the-server"></a>在伺服器上設定 WinSAT 分數
 

@@ -1,18 +1,18 @@
 ---
 title: Azure Site Recovery Services 整合
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何使用 Azure Site Recovery 服務來建立虛擬機器的即時複寫 (VM) 儲存在 Azure 的備份保存庫中。
 ms.date: 10/01/2016
 ms.topic: article
 ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: aa84ae8f3d11631b76d2e85e6a50f309eb83dd74
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1f6d0f69bdec22c264bfdea6a232892accafe414
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622588"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696869"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery Services 整合
 
@@ -32,7 +32,7 @@ ms.locfileid: "89622588"
 
 ![螢幕擷取畫面，其中顯示 [啟用複寫到 Azure] wizard 的 [登入 Microsoft Azure] 頁面。 因為使用者已登入 Microsoft Azure，此頁面會提供選取訂用帳戶、儲存體帳戶和區域的選項。](media/azure-site-recovery-3.PNG)
 
-選取訂用帳戶和區域之後，新的索引標籤會出現在 [ **Windows Server Essentials 儀表板** ] 中，稱為「 **Azure**復原」。 網路掃描是為了識別和列舉支援的主機伺服器 (執行 Windows Server Hyper-v 2012 R2 和更新版本的) ，以及在個別主機下 (來賓) 的虛擬機器：
+選取訂用帳戶和區域之後，新的索引標籤會出現在 [ **Windows Server Essentials 儀表板** ] 中，稱為「 **Azure** 復原」。 網路掃描是為了識別和列舉支援的主機伺服器 (執行 Windows Server Hyper-v 2012 R2 和更新版本的) ，以及在個別主機下 (來賓) 的虛擬機器：
 
 ![顯示 [Windows Server Essentials 儀表板] 之 [Azure 復原] 頁面的螢幕擷取畫面。 這會顯示兩部 Hyper-v 主機，以及在這些主機上執行的虛擬機器。 主機 RAM-H1-7 上名為 ramh157v01 的虛擬機器已選取，且此虛擬機器目前已停用複寫至 Azure。](media/azure-site-recovery-4.PNG)
 
@@ -54,14 +54,14 @@ ms.locfileid: "89622588"
 
 -   **測試容錯移轉** ƒA 良好的嚴重損壞修復計畫併入了模擬嚴重損壞的功能，以確保在發生嚴重損毀時的停機時間降到最短。 測試容錯移轉會將已複寫到復原保存庫的 VM 映射，布建為 Azure 中的執行中虛擬機器，並可讓您連接到伺服器，以測試適用于企業的案例。 在測試容錯移轉期間，本機虛擬機器會繼續執行，而不會中斷，因為不會在損毀修復測試期間中斷企業。 測試容錯移轉完成後，您會透過 Azure 入口網站停止測試，這會取消布建虛擬機器並刪除 VHD。 在整個測試容錯移轉期間，復原保存庫中的 VM 映射會繼續從站上 VM 進行複寫，就好像沒有發生任何事一樣。
 
--   未**計畫的容錯移轉**ƒAn 發生未規劃的容錯移轉時，會在主機伺服器上執行的受保護主機伺服器或 VM 發生實際錯誤時進行。 您可以從 Windows Server Essentials 儀表板手動觸發容錯移轉，或者如果失敗的伺服器本身是 Windows Server Essentials 執行所在的伺服器，則可以直接從 Azure 入口網站觸發。 在此情況下，未規劃的容錯移轉會採用已複寫至復原保存庫的 VM 映射、將它布建為 Azure 中的執行中虛擬機器，並可讓您連線到伺服器，以測試適用于企業的案例。 當您的伺服器在內部部署環境中還原時，可以從 Azure 入口網站觸發手動容錯回復，然後將 VM 映射複製回本機伺服器。
+-   未 **計畫的容錯移轉** ƒAn 發生未規劃的容錯移轉時，會在主機伺服器上執行的受保護主機伺服器或 VM 發生實際錯誤時進行。 您可以從 Windows Server Essentials 儀表板手動觸發容錯移轉，或者如果失敗的伺服器本身是 Windows Server Essentials 執行所在的伺服器，則可以直接從 Azure 入口網站觸發。 在此情況下，未規劃的容錯移轉會採用已複寫至復原保存庫的 VM 映射、將它布建為 Azure 中的執行中虛擬機器，並可讓您連線到伺服器，以測試適用于企業的案例。 當您的伺服器在內部部署環境中還原時，可以從 Azure 入口網站觸發手動容錯回復，然後將 VM 映射複製回本機伺服器。
 
 -   **規劃的故障** 轉移ƒA 計畫的容錯移轉是一項動作，可在規劃的活動（例如，硬體維護）必須進行時，讓伺服器停機。 在規劃的容錯移轉時，會在 Azure 中布建已複寫 VM 映射的過程中進行相同的程式。 不過，在這麼做之前，本機伺服器會以有條理的方式關閉，以確保在關機之前將所有變更複寫至 Azure。 完成規劃的維護之後，您可以從 Windows Server Essentials 儀表板或 Azure 入口網站（會啟動本機伺服器，然後在 Azure 中取消布建 VM）中手動觸發容錯回復，並刪除。VHD 檔案。 從內部部署 VM 至 Azure 的複寫會繼續正常執行。
 
 在上述三種案例中的任一種情況下，當 VM 容錯移轉至 Azure 時，Windows Server Essentials 儀表板會顯示 Azure 中執行的新 VM，如下圖所示。
 
-![顯示 [Windows Server Essentials 儀表板] 之 [Azure 復原] 頁面的螢幕擷取畫面。 已針對名為 Essentials 的主機啟用複寫至 Azure，而在 Azure 中執行名為 Essentials-Test 的虛擬機器指出主機已容錯移轉至 Azure。](media/azure-site-recovery-8.PNG)
+![顯示 [Windows Server Essentials 儀表板] 之 [Azure 復原] 頁面的螢幕擷取畫面。 已針對名為 Essentials 的主機啟用複寫至 Azure，而名為 Essentials-Test 的虛擬機器在 Azure 中執行時，表示該主機已容錯移轉至 Azure。](media/azure-site-recovery-8.PNG)
 
-<a name="see-also"></a>另請參閱
+<a name="see-also"></a>請參閱
 --------
 [開始使用 Windows Server Essentials](get-started.md)

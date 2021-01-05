@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 331d62ab65e8030057824b82b23ced3ede7e035f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: c0f1850af11734b0f43a530e8119cb21a4a8393d
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97042596"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711813"
 ---
 # <a name="reviewing-dns-concepts"></a>檢閱 DNS 概念
 
@@ -53,7 +53,7 @@ DNS 根伺服器會裝載以點 ( 表示的根區域。 ). 根區域包含階層
 
 根提示可讓任何 DNS 伺服器找出 DNS 根功能變數名稱伺服器。 DNS 伺服器找到 DNS 根功能變數名稱伺服器之後，就可以解析該命名空間的任何查詢。 下圖說明 DNS 如何使用根提示來解析名稱。
 
-![DNS 概念](../../media/Reviewing-DNS-Concepts/1c044845-b104-4262-a7af-474ba3558a85.gif)
+![顯示 DNS 如何使用根提示解析名稱的圖例。](../../media/Reviewing-DNS-Concepts/1c044845-b104-4262-a7af-474ba3558a85.gif)
 
 在此範例中，會發生下列事件：
 
@@ -68,7 +68,7 @@ DNS 根伺服器會裝載以點 ( 表示的根區域。 ). 根區域包含階層
 
 轉送可讓您透過特定伺服器來路由名稱解析，而不是使用根提示。 下圖說明 DNS 如何使用轉送來解析名稱。
 
-![DNS 概念](../../media/Reviewing-DNS-Concepts/05bc2eb0-1033-4e53-ae30-244fa247d000.gif)
+![圖例顯示 DNS 如何使用轉送來解析名稱。](../../media/Reviewing-DNS-Concepts/05bc2eb0-1033-4e53-ae30-244fa247d000.gif)
 
 在此範例中，會發生下列事件：
 

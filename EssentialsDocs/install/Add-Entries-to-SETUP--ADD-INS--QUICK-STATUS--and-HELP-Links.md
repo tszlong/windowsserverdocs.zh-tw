@@ -1,18 +1,18 @@
 ---
 title: 將項目新增至「設定」、「增益集」、「快速狀態」和「說明連結」
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在 Windows Server Essentials 中將工作新增至安裝程式、增益集和快速狀態工作清單。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: b8abf96a5d07d3bcda3cfc43c4e0e960a38e465b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c065eaf8c70ec24e0eddab35cdc672891bc7407b
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624085"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711683"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>將項目新增至「設定」、「增益集」、「快速狀態」和「說明連結」
 
@@ -38,7 +38,7 @@ ms.locfileid: "89624085"
 
 5. 在新專案上按一下滑鼠右鍵，按一下 **[新增]**，然後按一下 **[新增項目]**。
 
-6. 在 [範本]**** 窗格中，按一下 [XML 檔案]****，在 [名稱]**** 方塊中輸入 **OEMHomePageContent.home**，然後按一下 [新增]****。
+6. 在 [範本] 窗格中，按一下 [XML 檔案]，在 [名稱] 方塊中輸入 **OEMHomePageContent.home**，然後按一下 [新增]。
 
    > [!NOTE]
    >  如果安裝沒有資源檔的 XML 檔案，其名稱必須為 OEMHomePageContent.home。 如果它包含在組件中，則可以是任何名稱，只要具有 .home 副檔名即可。
@@ -98,10 +98,10 @@ ms.locfileid: "89624085"
    |---------------|-----------------|
    |Name (Task)|針對清單中的工作所顯示的名稱。 如果您建立內嵌資源檔，則此屬性的值便是字串資源。|
    |description (Task)|工作的描述。 如果您建立內嵌資源檔，則此屬性的值便是字串資源。|
-   |id (Task)|工作的識別碼。 此識別碼必須是 GUID。 您可以為 **exe** 工作建立新的 guid，但針對 **全域** 工作，您可以使用您為子索引標籤的工作窗格定義工作時所建立的 guid。如需建立 GUID 的詳細資訊，請參閱 [建立 guid ( # A0) ](https://go.microsoft.com/fwlink/?LinkId=116098)。|
+   |id (Task)|工作的識別碼。 此識別碼必須是 GUID。 您可以為 **exe** 工作建立新的 guid，但針對 **全域** 工作，您可以使用您為子索引標籤的工作窗格定義工作時所建立的 guid。如需建立 GUID 的詳細資訊，請參閱 [建立 guid ( # A0)](https://go.microsoft.com/fwlink/?LinkId=116098)。|
    |image|此欄位將被忽略。|
    |Name (Action)|顯示工作名稱。|
-   |Type (Action)|描述工作類型。 工作可以是下列工作之一：**global** 工作、**exe** 或 url 工作。 **全域**工作是您在子索引標籤中為工作窗格定義工作時所建立的相同全域工作。如需建立可同時用於子索引標籤之 [工作] 窗格和首頁的 [消費者入門工作] 或 [一般工作] 清單的全域工作的詳細資訊，請參閱œCreating 支援類別？在 [How-to] 中：建立子索引標籤？的[Windows Server 解決方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。 **exe** 工作可用於從「快速入門工作」或「一般工作」清單執行應用程式。|
+   |Type (Action)|描述工作類型。 工作可以是下列工作之一：**global** 工作、**exe** 或 url 工作。 **全域** 工作是您在子索引標籤中為工作窗格定義工作時所建立的相同全域工作。如需建立可同時用於子索引標籤之 [工作] 窗格和首頁的 [消費者入門工作] 或 [一般工作] 清單的全域工作的詳細資訊，請參閱œCreating 支援類別？在 [How-to] 中：建立子索引標籤？的 [Windows Server 解決方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。 **exe** 工作可用於從「快速入門工作」或「一般工作」清單執行應用程式。|
    |exelocation|與工作關聯的應用程式路徑。 這個屬性只適用於 **exe** 工作。|
    |replaceid|此工作所取代之工作的識別碼。|
    |組件 (assembly)|提供類別來實作快速狀態查詢的組件的 AssemblyName。 元件必須位於 Program files \ windows server\bin 中 \\ 。|

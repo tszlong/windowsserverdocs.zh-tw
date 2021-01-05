@@ -1,18 +1,18 @@
 ---
 title: 主控的 Windows Server Essentials
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何部署 Microsoft Windows Server，並以服務的形式提供 Windows Server Essentials 體驗給客戶。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: b1c5a0824dfa8cba03ff778dfad6ef4505eae1eb
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 50b4a0cf76028d80cea0331427761901ddea1e7e
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623498"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755074"
 ---
 # <a name="hosted-windows-server-essentials"></a>主控的 Windows Server Essentials
 
@@ -53,7 +53,7 @@ ms.locfileid: "89623498"
    如果您使用 Virtual Machine Manager，可使用執行中的執行個體來建立範本。 建立範本將會在執行個體上執行 Sysprep 並關閉伺服器。 在儲存至程式庫之後，您就可以依個別情況將執行個體叫出。
 
 ##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a> 如何? 自動化部署？
- 在您取得自訂映像之後，就可以使用您自己的映像來執行部署。 若要執行半自動安裝，您必須提供部署 unattend.xml 以進行 WinPE 設定。 若要進行完全自動安裝，您也必須提供 Windows Server Essentials 初始設定的 cfg.ini 檔案。
+ 在您取得自訂映像之後，就可以使用您自己的映像來執行部署。 為了進行半自動安裝，您需要為 WinPE 安裝程式提供/部署 unattend.xml。 若要進行完全自動安裝，您也必須提供 Windows Server Essentials 初始設定的 cfg.ini 檔案。
 
 1. 僅執行自動 WinPE 設定。 這只會自動化 WinPE 設定，並讓安裝在初始設定之前停止，讓使用者可在 RDP 進入伺服器工作階段之後自行提供 Corp、網域和系統管理員資訊。 若要這樣做：
 
@@ -209,7 +209,7 @@ $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers
  **加入使用者**
 
 ```
-Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]
+Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]
 ```
 
  範例：
@@ -301,11 +301,11 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 #### <a name="back-up-the-server"></a>備份伺服器
  Windows Server Essentials 支援兩種備份伺服器的方式：內部部署備份和外部部署備份。
 
- **內部部署備份**可讓您在個別磁碟上定期執行區塊層級的增量備份。 作為主機服務提供者，您可以將虛擬磁片連接至 Windows Server Essentials VM，並設定此虛擬磁片的伺服器備份。 虛擬磁片應該位於與 Windows Server Essentials VM 不同的實體磁片上。
+ **內部部署備份** 可讓您在個別磁碟上定期執行區塊層級的增量備份。 作為主機服務提供者，您可以將虛擬磁片連接至 Windows Server Essentials VM，並設定此虛擬磁片的伺服器備份。 虛擬磁片應該位於與 Windows Server Essentials VM 不同的實體磁片上。
 
 - 如果您有另一種機制來備份 Windows Server Essentials VM，而您不想讓使用者看到 Windows Server Essentials native Server 備份功能，您可以將其關閉，並從 Windows Server Essentials 儀表板移除所有相關的使用者介面。 如需詳細資訊，請參閱 [ADK 檔](https://go.microsoft.com/fwlink/p/?LinkID=249124)的「自訂伺服器備份」一節。
 
-  **外部部署備份**可讓您定期將伺服器資料備份至雲端服務。 您可以下載並安裝適用于 Windows Server Essentials 的 Microsoft Azure 備份整合模組，以利用 Microsoft 提供的 Azure 備份。
+  **外部部署備份** 可讓您定期將伺服器資料備份至雲端服務。 您可以下載並安裝適用于 Windows Server Essentials 的 Microsoft Azure 備份整合模組，以利用 Microsoft 提供的 Azure 備份。
 
   如果您或您的使用者偏好其他的雲端服務，則可執行以下步驟：
 

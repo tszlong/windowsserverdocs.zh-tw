@@ -1,18 +1,18 @@
 ---
 title: 管理 Windows Server Essentials 中的應用程式
-description: 說明如何使用 Windows Server Essentials
+description: 瞭解如何在 Windows Server Essentials 中管理應用程式，以及安裝和移除增益集。
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 30b8dfa2087e76cc80011eb359715c95564ec1b6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: f978405236a83c89f07e65589e5d9af899ea1045
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623274"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755294"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的應用程式
 
@@ -25,7 +25,7 @@ ms.locfileid: "89623274"
 -   [使用儀表板來安裝或移除增益集](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_2)
 
 ##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a> 儀表板中的應用程式管理工作
- [儀表板] 的 [應用程式]**** 管理頁面提供：
+ [儀表板] 的 [應用程式] 管理頁面提供：
 
 - 一份已安裝的增益集清單，當中顯示：
 
@@ -68,7 +68,7 @@ ms.locfileid: "89623274"
 
 4.  依照精靈中的指示來安裝增益集。
 
-5.  安裝完成時，請重新啟動 [儀表板]，開啟伺服器 [儀表板] 的 [應用程式]**** 頁面，並確認增益集出現在清單檢視中。
+5.  安裝完成時，請重新啟動 [儀表板]，開啟伺服器 [儀表板] 的 [應用程式] 頁面，並確認增益集出現在清單檢視中。
 
 #### <a name="to-install-an-add-in-from-another-provider"></a>安裝來自其他提供者的增益集
 
@@ -78,17 +78,17 @@ ms.locfileid: "89623274"
 
 3.  依照精靈中的指示來安裝增益集。
 
-4.  安裝完成時，請重新啟動 [儀表板]，開啟 [應用程式]**** 頁面，並確認增益集出現在清單檢視中。
+4.  安裝完成時，請重新啟動 [儀表板]，開啟 [應用程式] 頁面，並確認增益集出現在清單檢視中。
 
 #### <a name="to-remove-an-add-in"></a>移除增益集
 
 1.  開啟伺服器 [儀表板]。
 
-2.  按一下 [應用程式]**** 索引標籤。
+2.  按一下 [應用程式] 索引標籤。
 
-3.  在 [增益集]**** 索引標籤上，選取您想要移除的增益集，然後按一下 [移除增益集]****。
+3.  在 [增益集] 索引標籤上，選取您想要移除的增益集，然後按一下 [移除增益集]。
 
-4.  在 [增益集移除]**** 視窗中，按一下 [移除]****。
+4.  在 [增益集移除] 視窗中，按一下 [移除]。
 
     > [!NOTE]
     >  您可能需要重新啟動 [儀表板]，才能將增益集完全移除。
