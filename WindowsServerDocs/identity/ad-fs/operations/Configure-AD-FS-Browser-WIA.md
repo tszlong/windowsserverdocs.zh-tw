@@ -4,14 +4,14 @@ description: 本檔說明如何設定瀏覽器以搭配使用 WIA 與 AD FS
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 03/20/2020
+ms.date: 01/04/2021
 ms.topic: article
-ms.openlocfilehash: 61369f2dde82264190bcbd4d81eaae317e159a0d
-ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
+ms.openlocfilehash: e272fba0ec41b559129f097d4a447eb99635f5f1
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97390266"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879540"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>將瀏覽器設定為使用 Windows 整合式驗證 (WIA) 搭配 AD FS
 
@@ -37,7 +37,8 @@ AD FS 2016 現在具有改良的預設設定，可讓 Edge 瀏覽器執行 WIA�
 Get-AdfsProperties | select -ExpandProperty WiaSupportedUserAgents
 ```
 
-![WIA 支援](../operations/media/Configure-AD-FS-Browser-WIA/wiasupport.png)
+![WIA 支援](media/Configure-AD-FS-Browser-WIA/wiasupport.png)
+
 
 ### <a name="change-wiasupporteduseragent-settings"></a>變更 WIASupportedUserAgent 設定
 根據預設，新的 AD FS 安裝會建立一組使用者代理程式字串相符專案。 不過，這些可能會根據瀏覽器和裝置的變更而過期。 尤其是，Windows 裝置的使用者代理程式字串類似權杖中的細微變化。 下列 Windows PowerShell 範例會針對目前市場上支援無縫 WIA 的目前裝置集合，提供最佳的指導方針：

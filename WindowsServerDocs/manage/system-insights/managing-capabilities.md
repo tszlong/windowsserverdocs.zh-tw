@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 3f4e80136b3c70b7a121663a6defa048d2b0e852
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: b8c0d80a1f6e62cd936191dd73c8321669a3d5ce
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766221"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879937"
 ---
 # <a name="managing-capabilities"></a>管理功能
 
@@ -57,7 +57,7 @@ Invoke-InsightsCapability -Name "CPU capacity forecasting"
 >若要確定叫用功能不會與您電腦上的重要作業發生衝突，請考慮在上班時間排程預測。
 
 ## <a name="retrieving-capability-results"></a>正在抓取功能結果
-一旦叫用某項功能，就可以使用 **InsightsCapability** 或 **InsightsCapabilityResult**來顯示最新的結果。 這些 Cmdlet 會輸出每個功能的最新 **狀態** 和 **狀態原因** ，其中描述每個預測的結果。 [[瞭解功能] 檔](understanding-capabilities.md)中會進一步說明 [**狀態**] 和 [**狀態原因**] 欄位。
+一旦叫用某項功能，就可以使用 **InsightsCapability** 或 **InsightsCapabilityResult** 來顯示最新的結果。 這些 Cmdlet 會輸出每個功能的最新 **狀態** 和 **狀態原因** ，其中描述每個預測的結果。 [[瞭解功能] 檔](understanding-capabilities.md)中會進一步說明 [**狀態**] 和 [**狀態原因**] 欄位。
 
 此外，您可以使用 **InsightsCapabilityResult** Cmdlet 來查看最近的30個預測結果，並取出與預測相關聯的資料：
 
@@ -81,12 +81,12 @@ $Output.ForecastingResults
 | --------------- | --------------- |
 | 確定 | 151 |
 | 警告 | 148 |
-| Critical | 150 |
+| 重大 | 150 |
 | 錯誤 | 149 |
 | 無 | 132 |
 
 >[!TIP]
->使用 [Azure 監視器](https://azure.microsoft.com/services/monitor/) 或 [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) 來匯總這些事件，並查看一組機器上的預測結果。
+>使用 [Azure 監視器](https://azure.microsoft.com/services/monitor/) 或 [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807&preserve-view=true) 來匯總這些事件，並查看一組機器上的預測結果。
 
 
 ## <a name="setting-a-capability-schedule"></a>設定功能排程

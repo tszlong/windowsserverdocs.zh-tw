@@ -8,12 +8,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ef50ce2c788ac5028de1ab39a5f6b6bf388978
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: e2a60a3fdb27753784773659711f486421ed31b3
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865717"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879847"
 ---
 # <a name="deploy-nano-server"></a>部署 Nano Server
 
@@ -72,7 +72,7 @@ Nano Server Image Builder 會建立 VHD、VHDX 或 ISO 格式的自訂 Nano Serv
 | PowerShell Desired State Configuration (DSC) | -Package Microsoft-NanoServer-DSC-Package<p>**注意：** 如需完整詳細資訊，請參閱 [在 Nano Server 上使用 DSC](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)。 |
 | Internet Information Server (IIS) | -Package Microsoft-NanoServer-IIS-Package<p>**注意：** 如需使用 IIS 的詳細資訊，請參閱 [Nano Server 上的 IIS](IIS-on-Nano-Server.md)。 |
 | Windows 容器的主機支援 | -Containers |
-| System Center Virtual Machine Manager 代理程式 | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**注意：** 只有在監視 Hyper-V 時才能使用 SCVMM 計算套件。 針對 VMM 中的超融合部署，您應該同時指定 -Storage 參數。 如需詳細資訊，請參閱 [VMM 文件](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016)。 |
+| System Center Virtual Machine Manager 代理程式 | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**注意：** 只有在監視 Hyper-V 時才能使用 SCVMM 計算套件。 針對 VMM 中的超融合部署，您應該同時指定 -Storage 參數。 如需詳細資訊，請參閱 [VMM 文件](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016&preserve-view=true)。 |
 | System Center Operations Manager 代理程式 | 個別安裝。 如需詳細資訊，請參閱 https://technet.microsoft.com/system-center-docs/om/manage/install-agent-on-nano-server 的 System Center Operations Manager 文件。 |
 | 資料中心橋接 (包括 DCBQoS) | -Package Microsoft-NanoServer-DCB-Package |
 | 在虛擬機器上部署 | -Package Microsoft-NanoServer-Guest-Package |

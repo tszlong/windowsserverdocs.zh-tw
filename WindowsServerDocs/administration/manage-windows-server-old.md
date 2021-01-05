@@ -6,12 +6,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 55b33c7ab74ac9295d42ef884540d551b1ad6ec4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5fe4750b1ca960df0ec74000344ca9d72bb0a785
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992431"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879727"
 ---
 # <a name="manage-windows-server"></a>管理 Windows Server
 
@@ -72,7 +72,7 @@ ms.locfileid: "87992431"
 > [!IMPORTANT]
 > RSAT 在 Windows 10 上執行。 您無法在 Windows Server Core 安裝 RSAT。
 
-您也可以從命令列管理 Server Core 安裝。 請參閱[Server Core 中的基本管理](server-core/server-core-administer.md)工作。
+您也可以從命令列管理 Server Core 安裝。 請參閱 [Server Core 中的基本管理](server-core/server-core-administer.md)工作。
 
 ### <a name="manage-updates-to-windows-server-systems"></a>管理 Windows Server 系統更新
 您可以使用 [Windows Server Update Services (WSUS)](windows-server-update-services/get-started/windows-server-update-services-wsus.md) 來管理和部署 Windows Server 環境中的系統更新。
@@ -108,7 +108,7 @@ Windows Server 中的軟體清查記錄功能有一組簡單的 PowerShell Cmdle
 
 Windows Server 包含一組命令和 Windows PowerShell 模組，可用來自動化管理工作。
 
-### <a name="windows-powershell"></a>[Windows PowerShell](/powershell/scripting/powershell-scripting?view=powershell-5.1)
+### <a name="windows-powershell"></a>[Windows PowerShell](/powershell/scripting/powershell-scripting?view=powershell-5.1&preserve-view=true)
 Windows PowerShell 是命令列殼層和指令碼語言，專為快速自動化管理工作所設計。
 
 ### <a name="windows-commands"></a>[Windows 命令](windows-commands/windows-commands.md)

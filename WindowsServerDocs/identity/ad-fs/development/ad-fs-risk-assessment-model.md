@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 05/05/2020
 ms.topic: article
-ms.openlocfilehash: 2c1d05450869d558d1991da2f95b72bcaeca7462
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 7df064f4afe5fa8536bd35003a397ab85ea1bf67
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97047816"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879647"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>使用 AD FS 2019 風險評估模型建置外掛程式
 
@@ -23,7 +23,7 @@ ms.locfileid: "97047816"
 
 模型可讓您在 AD FS authentication 管線的三個階段中的任一個外掛程式程式碼，如下所示
 
-![模型](media/ad-fs-risk-assessment-model/risk1.png)
+![model](media/ad-fs-risk-assessment-model/risk1.png)
 
 1.    **要求收到的階段** ：當 AD FS 收到驗證要求（亦即使用者輸入認證之前）時，可讓建立外掛程式允許或封鎖要求。 您可以在這個階段使用要求內容 (例如用戶端 IP、Http 方法、proxy 伺服器 DNS 等等 ) 來執行風險評估。 例如，您可以建立外掛程式以從要求內容讀取 IP，並在 IP 位於具風險 Ip 的預先定義清單中時封鎖驗證要求。
 
@@ -78,7 +78,7 @@ ms.locfileid: "97047816"
    >[!NOTE]
    >在我的案例中，我會在 AD FS 伺服器本身上建立外掛程式。 如果您的開發環境位於不同的伺服器上，請 `Microsoft.IdentityServer.dll` 從 AD FS server 上的 AD FS 安裝資料夾，複製到您的開發箱。</br>
 
-   ![模型](media/ad-fs-risk-assessment-model/risk4.png)
+   ![model](media/ad-fs-risk-assessment-model/risk4.png)
 
    c.    確定已選取核取方塊之後，請按一下 [**參考管理員**] 視窗上的 **[確定**] `Microsoft.IdentityServer.dll`</br>
    ![model](media/ad-fs-risk-assessment-model/risk5.png)
@@ -216,8 +216,8 @@ public abstract class ThreatDetectionModule
 |[OnAuthenticationPipelineUnload](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload) |Void|從管線卸載外掛程式時由 AD FS 呼叫|
 |[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate)| Void|在設定更新時由 AD FS 呼叫 |
 |**屬性** |**型別** |**[定義]**|
-|[VendorName](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname)|字串 |取得擁有外掛程式之廠商的名稱|
-|[ModuleIdentifier](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier)|字串 |取得外掛程式的識別碼|
+|[VendorName](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname)|String |取得擁有外掛程式之廠商的名稱|
+|[ModuleIdentifier](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier)|String |取得外掛程式的識別碼|
 
 在我們的範例外掛程式中，我們會使用 [OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) 和 [OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate) 方法來讀取 AD FS DB 中預先定義的 ip。 當外掛程式註冊 AD FS 時，會呼叫[OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) ，而當使用 Cmdlet 匯入 .csv 時，會呼叫[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate) 。 `Import-AdfsThreatDetectionModuleConfiguration`
 
@@ -261,7 +261,7 @@ IList<Claim> additionalClams
 );
 }
 ```
-此介面包含 [EvaluatePreAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication) 方法，可讓您使用 [RequestCoNtext RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)、 [ProtocolCoNtext ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)和 [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) 輸入參數中傳遞的資訊，來撰寫預先驗證風險評定邏輯。
+此介面包含 [EvaluatePreAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication) 方法，可讓您使用 [RequestCoNtext RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)、 [ProtocolCoNtext ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)和 [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2&preserve-view=true) 輸入參數中傳遞的資訊，來撰寫預先驗證風險評定邏輯。
 
 >[!NOTE]
 >如需每個內容類型傳遞的屬性清單，請造訪 [RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)和 [ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext) 類別定義。
@@ -288,7 +288,7 @@ IList<Claim> additionalClams
 }
 ```
 
-此介面包含 [EvaluatePostAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication) 方法，可讓您使用 [RequestCoNtext RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)、 [ProtocolCoNtext ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)和 [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) 輸入參數中傳遞的資訊，來撰寫驗證後風險評定邏輯。
+此介面包含 [EvaluatePostAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication) 方法，可讓您使用 [RequestCoNtext RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)、 [ProtocolCoNtext ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)和 [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2&preserve-view=true) 輸入參數中傳遞的資訊，來撰寫驗證後風險評定邏輯。
 
 >[!NOTE]
 > 如需每個內容類型傳遞之屬性的完整清單，請參閱 [RequestCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext)、 [SecurityCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)和 [ProtocolCoNtext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext) 類別定義。

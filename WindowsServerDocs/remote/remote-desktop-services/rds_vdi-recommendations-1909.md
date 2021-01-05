@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 94deca783d770fb5322f9fc489d692f925cfa1a9
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 0eaea9ced163f63c37f2ef932e568872ec84bdcc
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866257"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879757"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色將 Windows 10 版本 1909 最佳化
 
@@ -663,7 +663,7 @@ VDI 環境中的許多 Windows 10 最佳化都可使用 Windows 原則來進行�
 
 ### <a name="apply-windows-and-other-updates"></a>套用 Windows (和其他) 更新
 
-無論是從 Microsoft Update，還是從您的內部資源，都可套用可用的更新，包括 Windows Defender 特徵碼。 這是套用其他可用更新的好時機，包括 Microsoft Office 的更新 (如有安裝)，以及其他軟體更新。 如果 PowerShell 會保留在影像中，您可以執行命令 [Update-Help](/powershell/module/microsoft.powershell.core/update-help?view=powershell-7) 下載 PowerShell 的最新可用說明。
+無論是從 Microsoft Update，還是從您的內部資源，都可套用可用的更新，包括 Windows Defender 特徵碼。 這是套用其他可用更新的好時機，包括 Microsoft Office 的更新 (如有安裝)，以及其他軟體更新。 如果 PowerShell 會保留在影像中，您可以執行命令 [Update-Help](/powershell/module/microsoft.powershell.core/update-help?view=powershell-7&preserve-view=true) 下載 PowerShell 的最新可用說明。
 
 #### <a name="servicing-the-operating-system-and-apps"></a>維護作業系統和應用程式
 

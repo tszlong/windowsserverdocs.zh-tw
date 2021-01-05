@@ -1,17 +1,17 @@
 ---
 title: 將虛擬機器設定為僅在客體作業系統支援時使用 SR-IOV
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器設定為使用單一根目錄 i/o 虛擬化 (SR-IOV) 時該怎麼辦，但客體作業系統不支援 SR-IOV。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 33cf5b68-e43e-47ef-adbc-6b266c1d4dce
 ms.date: 8/16/2016
-ms.openlocfilehash: 3a167b72f9c5c9a011980c07afe5a9a262aaa1be
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 2f919f3ed2708b9d388a5215d73e629dc93f9922
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745683"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846389"
 ---
 # <a name="configure-virtual-machines-to-use-sr-iov-only-when-supported-by-the-guest-operating-system"></a>將虛擬機器設定為僅在客體作業系統支援時使用 SR-IOV
 
@@ -24,7 +24,7 @@ ms.locfileid: "90745683"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

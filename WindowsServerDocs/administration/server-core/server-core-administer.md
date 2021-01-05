@@ -7,12 +7,12 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: 2cdddf706d03aa5b1aa1239b58fd4d8a9f4beed2
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 2e4e7902a52378f29c4a0a48339618c279b7cc95
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864317"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879707"
 ---
 # <a name="administer-a-server-core-server"></a>管理 Server Core 伺服器
 
@@ -101,7 +101,7 @@ ms.locfileid: "96864317"
 
 您可以啟用 Windows PowerShell 遠端執行功能，這個功能可讓在一部電腦上輸入的 Windows PowerShell 命令在另一部電腦上執行。 使用 **>enable-psremoting** 啟用 Windows PowerShell 遠端處理。
 
-如需詳細資訊，請參閱 [關於遠端常見問題](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1)。
+如需詳細資訊，請參閱 [關於遠端常見問題](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1&preserve-view=true)。
 
 ## <a name="administrative-tasks-from-the-command-line"></a>從命令列管理工作
 您可以使用下列參考資訊，從命令列執行系統管理工作。

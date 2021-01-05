@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.date: 12/20/2016
 ms.topic: article
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: f82ccc4e6dc2dbd7a34d829c0bc753fc6533f8dd
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 8b1519bb8b17393a29a04413eebcae0126799480
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866107"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879877"
 ---
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
 
@@ -125,7 +125,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     Running  vmicvss            Hyper-V Volume Shadow Copy Requestor
     ```
 
-1. 執行 [啟動服務](/powershell/module/microsoft.powershell.management/start-service?view=powershell-7) 或 [停止服務](/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7)。 例如，若要關閉 Windows PowerShell Direct，請執行：
+1. 執行 [啟動服務](/powershell/module/microsoft.powershell.management/start-service?view=powershell-7&preserve-view=true) 或 [停止服務](/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7&preserve-view=true)。 例如，若要關閉 Windows PowerShell Direct，請執行：
 
     ```
     Stop-Service -Name vmicvmsession
@@ -227,7 +227,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 > [!NOTE]
 > Windows 10/Windows Server 2016/2019 上的 Hyper-v 未隨附影像檔案 vmguest.iso，因為不再需要該檔案。
 
-| 來賓  | 更新機制 | 注意 |
+| 來賓  | 更新機制 | 附註 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
@@ -250,7 +250,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 **針對 Windows 8.1/Windows Server 2012R2 主機上執行的虛擬機器：**
 
-| 來賓  | 更新機制 | 注意 |
+| 來賓  | 更新機制 | 附註 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
@@ -275,7 +275,7 @@ Linux 整合服務通常是透過 Linux 核心提供。 Linux integration servic
 
 **針對 Windows 8/Windows Server 2012 主機上執行的虛擬機器：**
 
-| 來賓  | 更新機制 | 注意 |
+| 來賓  | 更新機制 | 附註 |
 |:---------|:---------|:---------|
 | Windows 8.1 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |
 | Windows 8 | 整合服務光碟 | 請參閱下方的 [指示](#install-or-update-integration-services)。 |

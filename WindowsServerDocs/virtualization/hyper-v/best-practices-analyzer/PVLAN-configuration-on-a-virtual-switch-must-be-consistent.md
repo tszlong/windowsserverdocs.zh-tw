@@ -1,17 +1,17 @@
 ---
 title: 虛擬交換器上的 PVLAN 設定必須一致
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解在一或多個虛擬網路介面卡上未正確設定私人虛擬區域網路絡 (PVLAN) 時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 4db63bcc-7a54-4f19-98a6-c274c3956d51
 ms.date: 8/16/2016
-ms.openlocfilehash: 205917e793bfb0cc398f7309981109083189d439
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: d09f1d06c691563ecac9d4ed29fee977588443de
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745583"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846342"
 ---
 # <a name="pvlan-configuration-on-a-virtual-switch-must-be-consistent"></a>虛擬交換器上的 PVLAN 設定必須一致
 
@@ -24,7 +24,7 @@ ms.locfileid: "90745583"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|錯誤|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

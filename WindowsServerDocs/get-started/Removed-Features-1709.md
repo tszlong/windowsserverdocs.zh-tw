@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: ad9c64083ec07bd8fc5d1db56978f2b469da9953
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2dfd52bc9f2524ff40820478dde69c5b8d9fe8be
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959436"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879747"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>從 Windows Server 1709 版開始移除或計劃取代的功能
 
@@ -62,4 +62,4 @@ iSNS 即將列入取代考量中。 伺服器訊息區 (SMB) 功能提供基本�
 正在考慮取代這個加密方法，因為已經有更好的「密碼編譯 API：新一代 (CNG)」方法可以使用。 若要深入了解 CNG 加密，請參閱[關於 CNG](/windows/win32/seccng/about-cng) \(英文\)。
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0
-這個早期 Windows PowerShell 版本已被數個較新的版本取代。 為獲得最佳功能及效能，請遷移至 Windows PowerShell 5.0 或更新版本。 如需詳細資訊，請參閱 [PowerShell 文件](/powershell/index?view=powershell-5.1)。
+這個早期 Windows PowerShell 版本已被數個較新的版本取代。 為獲得最佳功能及效能，請遷移至 Windows PowerShell 5.0 或更新版本。 如需詳細資訊，請參閱 [PowerShell 文件](/powershell/index?view=powershell-5.1&preserve-view=true)。

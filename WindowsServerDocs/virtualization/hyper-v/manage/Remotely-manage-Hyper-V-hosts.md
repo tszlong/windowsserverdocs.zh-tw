@@ -6,12 +6,12 @@ ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 12/06/2016
-ms.openlocfilehash: 1d599555750d2a2e005a3e68b0c70fddd1a54f73
-ms.sourcegitcommit: 6931830a70c5849d8f884cdc7bd4f5afc1a00cce
+ms.openlocfilehash: f6065fa4f817b6029b2636abb9960c335344432d
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955803"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879897"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>使用 Hyper-V 管理員管理遠端 Hyper-V 主機
 
@@ -27,7 +27,7 @@ Hyper-v 管理員可讓您管理少數 Hyper-v 主機（遠端和本機）。 �
 
 在某些情況下，您可以使用不同于主機上 hyper-v 版本的 Hyper-v 管理員版本，如下表所示。 當您這樣做時，Hyper-v 管理員會在您所管理的主機上提供適用于 Hyper-v 版本的功能。 例如，如果您使用 Windows Server 2012 R2 中的 Hyper-v 管理員版本從遠端系統管理在 Windows Server 2012 中執行 Hyper-v 的主機，您將無法在該 Hyper-v 主機上使用 Windows Server 2012 R2 中的可用功能。
 
-下表顯示您可以從特定的 Hyper-v 管理員版本管理的 Hyper-v 主機版本。 只會列出支援的作業系統版本。 如需特定作業系統版本之支援狀態的詳細資訊，請使用[Microsoft 生命週期原則](https://support.microsoft.com/lifecycle)頁面上的 [**搜尋產品生命週期**] 按鈕。 一般而言，較舊版本的 Hyper-v 管理員只能管理執行相同版本或類似 Windows Server 版本的 Hyper-v 主機。
+下表顯示您可以從特定的 Hyper-v 管理員版本管理的 Hyper-v 主機版本。 只會列出支援的作業系統版本。 如需特定作業系統版本之支援狀態的詳細資訊，請使用 [Microsoft 生命週期原則](https://support.microsoft.com/lifecycle)頁面上的 [**搜尋產品生命週期**] 按鈕。 一般而言，較舊版本的 Hyper-v 管理員只能管理執行相同版本或類似 Windows Server 版本的 Hyper-v 主機。
 
 |Hyper-v 管理員版本 | Hyper-v 主機版本|
 |---|---|
@@ -74,7 +74,7 @@ Enable-PSRemoting
 
 針對 Windows 8.1 及更早版本，只有當主機位於相同網域，且您的本機使用者帳戶也在遠端主機上時，遠端系統管理才能運作。
 
-若要將遠端 Hyper-v 主機新增至 Hyper-v 管理員，請在 [**選取電腦**] 對話方塊中選取**另一部電腦**，然後輸入遠端主機的主機名稱、NetBIOS 名稱或完整功能變數名稱稱 \( FQDN \) 。
+若要將遠端 Hyper-v 主機新增至 Hyper-v 管理員，請在 [**選取電腦**] 對話方塊中選取 **另一部電腦**，然後輸入遠端主機的主機名稱、NetBIOS 名稱或完整功能變數名稱稱 \( FQDN \) 。
 
 Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多的遠端連線類型，如下列各節所述。
 
@@ -119,7 +119,7 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多
    Enable-WSManCredSSP -Role server
    ```
 
-    如需詳細資訊，請參閱 [啟用->enable-psremoting](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7) 和 [啟用-WSManCredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7)。
+    如需詳細資訊，請參閱 [啟用->enable-psremoting](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7&preserve-view=true) 和 [啟用-WSManCredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7&preserve-view=true)。
 
 接下來，設定您要用來管理 Hyper-v 主機的電腦。
 
@@ -144,13 +144,13 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多
 > [!NOTE]
 > 這僅適用于 Windows Server 2016 或 Windows 10 **遠端** 主機。
 
-如需 Cmdlet 的詳細資訊，請參閱 [Set-Item](/powershell/module/microsoft.powershell.management/set-item?view=powershell-7) 和 [Enable-WSManCredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7)。
+如需 Cmdlet 的詳細資訊，請參閱 [Set-Item](/powershell/module/microsoft.powershell.management/set-item?view=powershell-7&preserve-view=true) 和 [Enable-WSManCredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7&preserve-view=true)。
 
 ## <a name="install-hyper-v-manager"></a>安裝 Hyper-v 管理員
 
 若要使用 UI 工具，請在您要執行 Hyper-v 管理員的電腦上，選擇適用于作業系統的工具：
 
-在 Windows Server 上，開啟伺服器管理員 \> **管理** \> **新增角色及功能**]。 移至 [ **功能** ] 頁面，然後展開 [ **遠端伺服器管理工具** \> **角色管理工具**] \> **hyper-v 管理**工具。
+在 Windows Server 上，開啟伺服器管理員 \> **管理** \> **新增角色及功能**]。 移至 [ **功能** ] 頁面，然後展開 [ **遠端伺服器管理工具** \> **角色管理工具**] \> **hyper-v 管理** 工具。
 
 在 Windows 中，Hyper-v 管理員可在 [任何包含 hyper-v 的 windows 作業系統](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)上使用。
 
@@ -166,6 +166,6 @@ Windows Server 2016 和 Windows 10 中的 hyper-v 管理員提供比舊版更多
 add-windowsfeature rsat-hyper-v-tools
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 [安裝 Hyper-V](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)

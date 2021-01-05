@@ -1,17 +1,17 @@
 ---
 title: 啟用為虛擬機器設定的所有虛擬網路介面卡
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當虛擬機器中有一或多個網路介面卡可停用時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: fcd350b7-4240-4359-aadd-93e7ac4d314e
 ms.date: 8/16/2016
-ms.openlocfilehash: 81e0bbb8fce32b8343a13dea953498efb627d496
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 300aad537c5e111003db60b1ba947dbea447ada9
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746283"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846372"
 ---
 # <a name="enable-all-virtual-network-adapters-configured-for-a-virtual-machine"></a>啟用為虛擬機器設定的所有虛擬網路介面卡
 
@@ -24,7 +24,7 @@ ms.locfileid: "90746283"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

@@ -1,17 +1,17 @@
 ---
 title: 應將一或多個網路介面卡設定為埠鏡像的目的地
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當一或多部虛擬機器的網路介面卡設定為埠鏡像的來源時，該怎麼辦，但虛擬交換器上沒有對應的目的地。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b83c166d-f010-47c4-a4bb-02167f2e3361
 ms.date: 8/16/2016
-ms.openlocfilehash: cf1713bb6897f68c7bee839b4a3e4838aaa8a2fb
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f69bd6da7d2451deaee97c3f3d23b5c861223388
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745603"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846363"
 ---
 # <a name="one-or-more-network-adapters-should-be-configured-as-the-destination-for-port-mirroring"></a>應將一或多個網路介面卡設定為埠鏡像的目的地
 
@@ -24,7 +24,7 @@ ms.locfileid: "90745603"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

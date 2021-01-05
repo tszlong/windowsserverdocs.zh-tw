@@ -6,12 +6,12 @@ ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: fcf9863a90b9d42d1495c0da0267feba18d119a1
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: c6879f6c7762b7a4e811db8aaa001444be0b6688
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90744733"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879857"
 ---
 # <a name="manage-windows-virtual-machines-with-powershell-direct"></a>使用 PowerShell Direct 管理 Windows 虛擬機器
 
@@ -23,7 +23,7 @@ ms.locfileid: "90744733"
 
 - 使用 PSSession Cmdlet 建立及結束 PowerShell Direct 會話
 
-- 使用 Invoke 命令 Cmdlet 執行腳本或命令
+- 使用 Invoke-Command Cmdlet 執行腳本或命令
 
 如果您管理的是較舊的虛擬機器，請使用虛擬機器連線 (VMConnect)，或是[設定虛擬機器的虛擬網路](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816585(v=ws.10))。
 
@@ -31,7 +31,7 @@ ms.locfileid: "90744733"
 
 1. 在 Hyper-V 主機上，以系統管理員身分開啟 Windows PowerShell。
 
-2. 使用 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7) Cmdlet 連接到虛擬機器。 使用虛擬機器名稱或 GUID，執行下列其中一個命令來建立會話：
+2. 使用 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7&preserve-view=true) Cmdlet 連接到虛擬機器。 使用虛擬機器名稱或 GUID，執行下列其中一個命令來建立會話：
 
     ```
     Enter-PSSession -VMName <VMName>
@@ -44,13 +44,13 @@ ms.locfileid: "90744733"
 3. 輸入虛擬機器的認證。
 4. 執行您需要執行的命令。 這些命令會在您用來建立工作階段的虛擬機器上執行。
 
-5.  當您完成時，請使用 [Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7) 來關閉會話。
+5.  當您完成時，請使用 [Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7&preserve-view=true) 來關閉會話。
 
     ```
     Exit-PSSession
     ```
 
-## <a name="run-script-or-command-with-invoke-command-cmdlet"></a>使用 Invoke 命令 Cmdlet 執行腳本或命令
+## <a name="run-script-or-command-with-invoke-command-cmdlet"></a>使用 Invoke-Command Cmdlet 執行腳本或命令
 您可以使用 [Invoke-Command](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command) Cmdlet，在虛擬機器上執行一組預先決定的命令。 以下是如何使用 Invoke-Command Cmdlet 的範例，其中 PSTest 是虛擬機器名稱，要執行的指令碼 (foo.ps1) 位在 C:/ 磁碟機的指令碼資料夾：
 
 ```

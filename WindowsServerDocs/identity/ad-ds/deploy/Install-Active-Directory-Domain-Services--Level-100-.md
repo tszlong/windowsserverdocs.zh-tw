@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: fffad9fa95b3b3ff6ca7933ec70a4a334667ce95
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: e66a03ec89a2cd77fbeafd59972a24a020ed66f7
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049296"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879837"
 ---
 # <a name="install-active-directory-domain-services-level-100"></a>安裝 Active Directory 網域服務 (層級 100)
 
@@ -81,7 +81,7 @@ Get-Help Add-ADDSReadOnlyDomainControllerAccount
 
 選用的引數顯示在方括弧內。
 
-您也可以下載 Windows PowerShell Cmdlet 的最新說明範例及概念。 如需詳細資訊，請參閱 [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_updatable_help?view=powershell-5.1)。
+您也可以下載 Windows PowerShell Cmdlet 的最新說明範例及概念。 如需詳細資訊，請參閱 [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_updatable_help?view=powershell-5.1&preserve-view=true)。
 
 您可以針對遠端伺服器執行 Windows PowerShell Cmdlet：
 

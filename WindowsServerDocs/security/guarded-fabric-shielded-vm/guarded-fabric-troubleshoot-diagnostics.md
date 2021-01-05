@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: a7921ba40f4fcc760aad1c281a0c29ba0abb6954
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 2fe1a6a0e3b2d9e3c64e3e7553221a027212636d
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97039326"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879817"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受防護網狀架構診斷工具進行疑難排解
 
@@ -106,7 +106,7 @@ Get-HgsTrace -RunDiagnostics -Target $server
 ```
 此範例會產生收集遠端使用者認證的提示，然後使用中的遠端主機來執行診斷， `hgs-01.secure.contoso.com` 以完成追蹤收集。  產生的追蹤會下載到 localhost，然後診斷。  診斷結果的呈現方式與執行 [本機診斷](#local-diagnosis)時相同。  同樣地，您不需要指定角色，因為它可以根據遠端系統上安裝的 Windows PowerShell 模組加以推斷。
 
-遠端診斷利用遠端主機的所有存取 Windows PowerShell 遠端處理。  因此，追蹤目標必須啟用 Windows PowerShell 遠端功能 (請參閱 [啟用 >enable-psremoting](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7)) ，以及是否已正確設定 localhost 來啟動目標的連接。
+遠端診斷利用遠端主機的所有存取 Windows PowerShell 遠端處理。  因此，追蹤目標必須啟用 Windows PowerShell 遠端功能 (請參閱 [啟用 >enable-psremoting](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7&preserve-view=true)) ，以及是否已正確設定 localhost 來啟動目標的連接。
 
 > [!NOTE]
 > 在大部分的情況下，只有 localhost 必須是相同 Active Directory 樹系的一部分，而且使用的是有效的 DNS 主機名稱。  如果您的環境使用更複雜的同盟模型，或您想要使用直接 IP 位址來進行連線，您可能需要執行其他設定，例如設定 WinRM [受信任的主機](/previous-versions/technet-magazine/ff700227(v=msdn.10))。
@@ -123,7 +123,7 @@ $server | Test-HgsTraceTarget
 從具有足夠許可權的使用者執行遠端診斷以從遠端連線到追蹤目標時，不需要提供認證給 `New-HgsTraceTarget` 。  開啟連線時，此 `Get-HgsTrace` Cmdlet 會自動重複使用叫用 Cmdlet 的使用者認證。
 
 > [!WARNING]
-> 某些限制適用于重複使用認證，特別是在執行所謂的「第二個躍點」。  當您嘗試在遠端會話內部重複使用認證至另一部電腦時，就會發生這種情況。  您必須 [設定 CredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7) 來支援此案例，但這不在受防護網狀架構管理與疑難排解的範圍之外。
+> 某些限制適用于重複使用認證，特別是在執行所謂的「第二個躍點」。  當您嘗試在遠端會話內部重複使用認證至另一部電腦時，就會發生這種情況。  您必須 [設定 CredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7&preserve-view=true) 來支援此案例，但這不在受防護網狀架構管理與疑難排解的範圍之外。
 
 #### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>使用 Windows PowerShell 足夠的系統管理 (JEA) 和診斷
 

@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizross
 ms.date: 03/27/2018
-ms.openlocfilehash: e1e4cd3cc7258b1670de58a7df5e5930274ae3b6
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 7929fc90f42c2033952e527a3edf180dedef24c2
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041696"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879927"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>叢集作業系統輪流升級
 
@@ -43,9 +43,9 @@ ms.locfileid: "97041696"
 Windows Server 2016 不支援下列案例：
 -  使用虛擬硬碟 ( .vhdx 檔案將來賓叢集的叢集 OS 輪流升級為共用存放裝置) 
 
-System Center Virtual Machine Manager (SCVMM) 2016 完全支援叢集 OS 輪流升級。 如果您使用的是 SCVMM 2016，請參閱在 [VMM 中執行 hyper-v 主機叢集到 Windows Server 2016 的輪流升級](/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807) ，以取得升級叢集的指引，並將本檔中所述的步驟自動化。
+System Center Virtual Machine Manager (SCVMM) 2016 完全支援叢集 OS 輪流升級。 如果您使用的是 SCVMM 2016，請參閱在 [VMM 中執行 hyper-v 主機叢集到 Windows Server 2016 的輪流升級](/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807&preserve-view=true) ，以取得升級叢集的指引，並將本檔中所述的步驟自動化。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 開始進行叢集 OS 輪流升級程式之前，請先完成下列需求：
 
 - 從執行 Windows Server (半年通道) 、Windows Server 2016 或 Windows Server 2012 R2 的容錯移轉叢集開始著手。
@@ -244,7 +244,7 @@ System Center Virtual Machine Manager (SCVMM) 2016 完全支援叢集 OS 輪流�
 是，在開始叢集 OS 輪流升級程式之前，請先確認所有的叢集節點都已更新為最新的軟體更新。
 
 **[`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel)當節點關閉或暫停時，我可以執行此 Cmdlet 嗎？**
-否。 所有叢集節點都必須在作用中，且必須在作用中的成員資格中， [`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel) Cmdlet 才能運作。
+不會。 所有叢集節點都必須在作用中，且必須在作用中的成員資格中， [`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel) Cmdlet 才能運作。
 
 **叢集 OS 輪流升級是否適用于任何叢集工作負載？它是否適用于 SQL Server？**
 是，叢集 OS 輪流升級適用于任何叢集工作負載。 不過，Hyper-v 和向外延展檔案伺服器叢集只有零停機時間。 大部分的其他工作負載會產生一些停機時間 (通常會在容錯移轉時) 幾分鐘，而在叢集作業系統輪流升級程式期間，至少需要進行一次容錯移轉。

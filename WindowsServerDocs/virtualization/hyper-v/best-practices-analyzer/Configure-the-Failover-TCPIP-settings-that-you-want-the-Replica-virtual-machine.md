@@ -1,16 +1,16 @@
 ---
 title: 設定您希望複本虛擬機器在發生容錯移轉時使用的容錯移轉 TCP/IP 設定
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當使用靜態 IP 位址設定的複本虛擬機器應設定為在容錯移轉時，使用其主要虛擬機器對應的不同 IP 位址時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.date: 8/16/2016
-ms.openlocfilehash: a84d7e6c4e5366642ac559e397af4a267bf19be5
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 2a52cdd937589476abe254ea923b376d0d3472ed
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745833"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846436"
 ---
 # <a name="configure-the-failover-tcpip-settings-that-you-want-the-replica-virtual-machine-to-use-in-the-event-of-a-failover"></a>設定您希望複本虛擬機器在發生容錯移轉時使用的容錯移轉 TCP/IP 設定
 
@@ -23,7 +23,7 @@ ms.locfileid: "90745833"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 

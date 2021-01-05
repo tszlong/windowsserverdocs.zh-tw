@@ -6,12 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 01/20/2020
 ms.topic: article
-ms.openlocfilehash: 3d1ad6745eb7051857bc27b4fc60400f40b01731
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 44131a445fcad6f3ddc5a1123ede7d492ed68bc9
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97039416"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879657"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>使用 AlwaysOn 可用性群組設定 AD FS 部署
 高可用性異地分散拓撲提供：
@@ -95,7 +95,7 @@ Always On 可用性群組 (AG) 是一或多個一起進行容錯移轉的使用�
 
 ## <a name="configuring-ad-fs-to-use-an-alwayson-availability-group"></a>設定 AD FS 使用 AlwaysOn 可用性群組
 
-設定具有 AlwaysOn 可用性群組的 AD FS 伺服器陣列時，必須稍微修改 AD FS 的部署程式。 確定每個伺服器實例都執行相同版本的 SQL。 若要查看 Always On 可用性群組的必要條件、限制和建議的完整清單，請參閱 [這裡](/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-2017#PrerequisitesForDbs)。
+設定具有 AlwaysOn 可用性群組的 AD FS 伺服器陣列時，必須稍微修改 AD FS 的部署程式。 確定每個伺服器實例都執行相同版本的 SQL。 若要查看 Always On 可用性群組的必要條件、限制和建議的完整清單，請參閱 [這裡](/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-2017&preserve-view=true#PrerequisitesForDbs)。
 
 1.  您必須先建立您要備份的資料庫，才能設定 AlwaysOn 可用性群組。  AD FS 在新 AD FS SQL Server 服務器陣列的第一個 federation service 節點的設定和初始設定過程中建立其資料庫。  使用 SQL server 指定現有伺服器陣列的資料庫主機名稱。 在 AD FS 設定的過程中，您必須指定 SQL 連接字串，因此您必須將第一個 AD FS 陣列設定為直接連線到 SQL 實例 (這只是暫時的) 。 如需設定 AD FS 伺服器陣列的特定指引，包括使用 SQL server 連接字串設定 AD FS 伺服器陣列節點，請參閱 [設定同盟伺服器](../deployment/configure-a-federation-server.md)。
 

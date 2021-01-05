@@ -1,17 +1,17 @@
 ---
 title: 應該啟用協力廠商擴充功能所需的 WFP 虛擬交換器擴充功能
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當 Windows 篩選平台 (WFP) 虛擬交換器擴充功能停用時該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
 ms.date: 8/16/2016
-ms.openlocfilehash: 00312413c8da02ce5221767667ecd941f0095776
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 1f9543b90610bb361e379e545ecd40d6db1f9efc
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865157"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846336"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>應該啟用協力廠商擴充功能所需的 WFP 虛擬交換器擴充功能
 

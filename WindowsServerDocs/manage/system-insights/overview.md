@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: 0fe40bd568a043f4eec9bfc86f9e1a537c07f038
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 32d6bdc9cf91f04c70584ce515f60f26ceb6290a
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766851"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879917"
 ---
 # <a name="system-insights-overview"></a>系統深入解析概觀
 
@@ -21,7 +21,7 @@ System Insights 是 Windows Server 2019 中的新預測性分析功能。 系統
 
 在 Windows Server 2019 中，系統深入解析提供四個預設功能，著重于容量預測、根據您先前的使用模式來預測未來的計算、網路和儲存體資源。 System Insights 也隨附可延伸的 [基礎結構](adding-and-developing-capabilities.md)，因此 Microsoft 和協力廠商可以在不更新作業系統的情況下，將新的預測功能新增至系統深入解析。
 
-您可以透過直覺的 [Windows Admin Center](../windows-admin-center/overview.md) 延伸模組或 [直接透過 PowerShell](/powershell/module/systeminsights/)來管理系統深入解析，而系統深入解析可讓您根據部署的需求，分別設定每個預測功能。 所有預測結果都會發佈至事件記錄檔，可讓您使用 [Azure 監視器](https://azure.microsoft.com/services/monitor/) 或 [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) ，輕鬆地匯總和查看一組電腦的預測。
+您可以透過直覺的 [Windows Admin Center](../windows-admin-center/overview.md) 延伸模組或 [直接透過 PowerShell](/powershell/module/systeminsights/)來管理系統深入解析，而系統深入解析可讓您根據部署的需求，分別設定每個預測功能。 所有預測結果都會發佈至事件記錄檔，可讓您使用 [Azure 監視器](https://azure.microsoft.com/services/monitor/) 或 [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807&preserve-view=true) ，輕鬆地匯總和查看一組電腦的預測。
 
 ![Windows Admin Center 中的系統深入解析延伸模組，顯示 CPU 容量預測功能與繪製預測的圖表](media/cpu-forecast-2.png)
 
@@ -42,7 +42,7 @@ System Insights 是 Windows Server 2019 中的新預測性分析功能。 系統
 
 ### <a name="install-system-insights"></a>安裝系統深入解析
 >[!IMPORTANT]
->系統深入解析會在本機收集並儲存最多一年的資料。 如果您想要在升級作業系統時保留資料， **請務必使用就地升級**。
+>系統深入解析會在本機收集並儲存最多一年的資料。 如果您想要在升級作業系統時保留資料， **請務必使用 In-Place 升級**。
 
 #### <a name="install-the-feature"></a>安裝功能
 您可以使用 Windows Admin Center 中的擴充功能安裝系統深入解析：

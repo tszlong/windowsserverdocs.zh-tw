@@ -1,17 +1,17 @@
 ---
 title: 應在虛擬機器中啟用顯示介面卡，以提供影片功能
-description: 此最佳做法分析程式規則之文字的線上版本。
+description: 瞭解當虛擬機器中的 Microsoft 虛擬機器匯流排影片裝置可能已停用時，該怎麼辦。
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: ac5992e6-3c0b-46c2-a48e-6ef37b679228
 ms.date: 8/16/2016
-ms.openlocfilehash: 0c51100a55ab6780c83dc95404e92275a1898da6
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 415d8c59b789ebdd77bfd16840926c55007749b9
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90744023"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846381"
 ---
 # <a name="display-adapters-should-be-enabled-in-virtual-machines-to-provide-video-capabilities"></a>應在虛擬機器中啟用顯示介面卡，以提供影片功能
 
@@ -26,7 +26,7 @@ ms.locfileid: "90744023"
 |**作業系統**|Windows Server 2016|
 |**產品/功能**|Hyper-V|
 |**嚴重性**|警告|
-|**類別**|設定|
+|**類別**|組態|
 
 在下列各節中，斜體指出出現在此問題的最佳做法分析程式工具中的 UI 文字。
 
