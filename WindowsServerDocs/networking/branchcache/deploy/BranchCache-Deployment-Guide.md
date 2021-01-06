@@ -2,16 +2,17 @@
 title: BranchCache 部署指南
 description: 瞭解如何在 Windows Server 2016 中部署 BranchCache。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 3830b356-36d3-44f9-a1d7-990ff3e57403
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 63262b483b4a57b4095a7c99b29b63b2da145247
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: d17df96f0fbe2d1ba4f50da985b03e0ac5d7d74a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904763"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949564"
 ---
 # <a name="branchcache-deployment-guide"></a>BranchCache 部署指南
 

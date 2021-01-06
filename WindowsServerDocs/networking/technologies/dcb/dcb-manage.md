@@ -6,12 +6,13 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2ca7e336b0949e6dbc0bf1359e463f01605e38bf
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.date: 12/08/2020
+ms.openlocfilehash: 51f4b70dfc81010bfb2989f925a9f6508b6eb1c1
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865578"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949924"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>管理資料中心橋接 (DCB) 
 

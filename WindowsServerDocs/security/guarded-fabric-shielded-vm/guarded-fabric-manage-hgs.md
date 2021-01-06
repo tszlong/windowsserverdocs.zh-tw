@@ -6,12 +6,13 @@ ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: 415e4980a718bac04925d349aa9bca0773f04a8b
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.date: 12/10/2020
+ms.openlocfilehash: 54f39b309c8853c5fd7a30178dffe0e11d7f8411
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044036"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949174"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主機守護者服務
 

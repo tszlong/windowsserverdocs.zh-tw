@@ -2,16 +2,17 @@
 title: 將新的檔案伺服器作為內容伺服器安裝
 description: 瞭解如何在執行 Windows Server 2016 的電腦上安裝 [檔案服務] 伺服器角色和 [網路檔案的 BranchCache] 角色服務。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 1f49fc3c-28a6-4d3d-b787-1be9e61e792f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 43ff032d90b8ebc99b6f79675ef755d29e038773
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: 29687cd09795b2b2a3b65b6d659fc9d047c80cf0
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904783"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949704"
 ---
 # <a name="install-a-new-file-server-as-a-content-server"></a>將新的檔案伺服器作為內容伺服器安裝
 

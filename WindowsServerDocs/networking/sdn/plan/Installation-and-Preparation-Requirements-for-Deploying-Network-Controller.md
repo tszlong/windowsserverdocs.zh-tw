@@ -2,17 +2,17 @@
 title: 部署網路控制站的需求
 description: 準備您的資料中心以進行網路控制站部署，這需要一或多部電腦或 vm，以及一部電腦或 VM。 部署網路控制站之前，您必須先設定安全性群組、記錄檔位置 (（如有需要）) 和動態 DNS 註冊。
 manager: grcusanz
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 8339987e1862272d7254d94e403fc10e4827596b
-ms.sourcegitcommit: 28b5ab74cb0b40539ccc1a83998d6391e87fe51f
+ms.openlocfilehash: 74e449b51cb5513e353067e64d41aeedf6652672
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96614890"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948374"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署網路控制站的需求
 

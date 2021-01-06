@@ -4,12 +4,13 @@ description: 針對最上層 IPAM & 子網物件產生的 Go 程式碼範例。
 ms.author: daschott
 author: daschott
 ms.date: 11/05/2018
-ms.openlocfilehash: 75874edaae006bf75d734f2b5adf3cd95784564a
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.topic: article
+ms.openlocfilehash: bee79b7d03b4128b65679fdc9e50cde20db6255b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083699"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948764"
 ---
 # <a name="example-of-go-generated-code"></a>Go 產生的程式碼範例
 

@@ -1,17 +1,18 @@
 ---
 title: " (NPS) 管理網路原則伺服器"
-description: 本主題提供 Windows Server 2016 中網路原則伺服器的管理程式連結，並包含 NPS 其他指引的連結。
+description: 本主題提供 Windows Server 2016 中網路原則伺服器的管理程式連結，並包含 NPS 的其他指引連結。
 manager: brianlic
 ms.topic: article
 ms.assetid: a275b02c-62b3-4b8a-8417-a710f24bebfe
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9395c33600d879efb7450678ad4e856dccd4f683
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 979753762cb7cc2938d24d1b7f8bbac9ae104537
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952165"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948634"
 ---
 # <a name="manage-network-policy-server-nps"></a> (NPS) 管理網路原則伺服器
 

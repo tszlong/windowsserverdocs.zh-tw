@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ed871b8fb0f904fee246714a852ab5934c4a6e1c
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: b98d22b18c52ce9f6fd11dd9e7932806dd3726ec
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046526"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948514"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>同盟伺服器 Proxy 的名稱解析需求
 
@@ -31,7 +31,7 @@ ms.locfileid: "97046526"
 
 下圖和相對應的步驟顯示如何針對指定的範例達成每一個條件。 在此圖中，Microsoft 網路負載平衡 \( NLB \) 技術為現有的同盟伺服器陣列提供單一叢集 FQDN 和單一叢集 IP 位址。
 
-![名稱需求](media/adfs2_deploy_single_fs.gif)
+![此圖顯示 Microsoft 網路負載平衡技術，為現有的同盟伺服器陣列提供單一、叢集的 F Q D N 和單一的叢集 I P 位址。](media/adfs2_deploy_single_fs.gif)
 
 如需使用 NLB 設定叢集 IP 位址或叢集 FQDN 的詳細資訊，請參閱 [指定叢集參數](https://go.microsoft.com/fwlink/?LinkId=75282)。
 

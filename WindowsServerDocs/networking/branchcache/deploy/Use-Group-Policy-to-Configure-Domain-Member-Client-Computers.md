@@ -2,17 +2,17 @@
 title: 使用群組原則設定網域成員用戶端電腦
 description: 瞭解如何使用群組原則設定網域成員用戶端電腦。
 manager: dougkim
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 911c1538-f79d-42e9-ba38-f4618f87b008
 ms.author: lizross
 author: eross-msft
 ms.date: 06/02/2018
-ms.openlocfilehash: 281e67777ce54f1e03741f9d2120e0d4cafbb91f
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.openlocfilehash: cc212a899c1fe0cce24ab8a1a6aea9aa232c6e82
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904647"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948894"
 ---
 # <a name="use-group-policy-to-configure-domain-member-client-computers"></a>使用群組原則設定網域成員用戶端電腦
 

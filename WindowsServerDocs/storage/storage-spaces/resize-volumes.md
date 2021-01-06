@@ -1,41 +1,42 @@
 ---
 title: 延伸儲存空間直接存取中的磁碟區
-description: 如何使用 Windows 管理中心和 PowerShell 調整儲存空間直接存取中的磁片區大小。
+description: 如何使用 Windows Admin Center 和 PowerShell 調整儲存空間直接存取中的磁片區大小。
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.date: 03/10/2020
-ms.openlocfilehash: dccc8d25505fb1ac94af81b23334b7f8639dcc01
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.topic: article
+ms.openlocfilehash: 38ef41ac6cdb35efc72087ad73f08b04c1414c1a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971075"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948574"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>延伸儲存空間直接存取中的磁碟區
 > 適用於：Windows Server 2019、Windows Server 2016
 
-本主題提供使用 Windows 系統管理中心調整[儲存空間直接存取](storage-spaces-direct-overview.md)叢集上磁片區大小的指示。
+本主題提供如何使用 Windows Admin Center 來調整 [儲存空間直接存取](storage-spaces-direct-overview.md) 叢集上的磁片區大小的指示。
 
 > [!WARNING]
-> **不支援：調整儲存空間直接存取所使用的基礎儲存體大小。** 如果您執行的是虛擬化儲存環境中的儲存空間直接存取（包含在 Azure 中），則不支援調整或變更虛擬機器所使用之存放裝置的特性，而且將導致資料變成無法存取。 相反地，請遵循[新增伺服器或磁片磁碟機](add-nodes.md)一節中的指示，在擴充磁片區之前新增額外的容量。
+> **不支援：調整儲存空間直接存取所使用的基礎儲存體大小。** 如果您在虛擬化儲存體環境（包括 Azure）中執行儲存空間直接存取，則不支援調整或變更虛擬機器所使用之存放裝置的特性，而且會導致資料變成無法存取。 相反地，請依照 [ [新增伺服器或磁片磁碟機](add-nodes.md) ] 區段中的指示，在擴充磁片區之前新增額外容量。
 
-觀賞如何調整音量的快速影片。
+觀賞如何調整磁片區大小的快速影片。
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hqyBzipBoTI]
 
-## <a name="extending-volumes-using-windows-admin-center"></a>使用 Windows 管理中心擴充磁片區
+## <a name="extending-volumes-using-windows-admin-center"></a>使用 Windows Admin Center 擴充磁片區
 
-1. 在 Windows 系統管理中心，連接到儲存空間直接存取叢集，然後從 [**工具**] 窗格中選取 [**磁片**區]。
-2. 在 [磁片區] 頁面上，選取 [**清查**] 索引標籤，然後選取您想要調整大小的磁片區。
+1. 在 Windows Admin Center 中，連線到儲存空間直接存取叢集，然後從 [**工具**] 窗格中選取 [**磁片** 區]。
+2. 在 [磁片區] 頁面上，選取 [ **清查** ] 索引標籤，然後選取要調整大小的磁片區。
 
-    在 [大量詳細資料] 頁面上，會指出磁片區的儲存容量。 您也可以直接從儀表板開啟 [磁片區詳細資料] 頁面。 在 [儀表板] 的 [警示] 窗格中，選取警示，這會在磁片區的儲存容量不足時通知您，然後選取 [**移至磁片**區]。
+    在 [磁片區詳細資料] 頁面上，會指出磁片區的儲存容量。 您也可以直接從儀表板開啟 [磁片區詳細資料] 頁面。 在 [儀表板] 的 [警示] 窗格中，選取警示，此警示會在磁片區的儲存容量不足時通知您，然後選取 [ **移至磁片** 區]。
 
-4. 在 [磁片區詳細資料] 頁面的頂端，選取 [重**設大小**]。
-5. 輸入新的較大大小，然後選取 [重**設大小**]。
+4. 在 [磁片區詳細資料] 頁面的頂端，選取 [重 **設大小**]。
+5. 輸入新的較大的大小，然後選取 [重 **設** 大小]。
 
-    在 [磁片區] 詳細資料頁面上，會指出磁片區的較大儲存體容量，並清除儀表板上的警示。
+    在 [磁片區詳細資料] 頁面上，會指出磁片區的較大儲存容量，並清除儀表板上的警示。
 
 ## <a name="extending-volumes-using-powershell"></a>使用 PowerShell 擴充磁片區
 
@@ -49,7 +50,7 @@ ms.locfileid: "87971075"
 
 ![volumes-in-smapi](media/resize-volumes/volumes-in-smapi.png)
 
-若要熟悉它們，請嘗試執行**Get-** 搭配 PowerShell 的對應名詞使用。
+若要熟悉它們，請嘗試執行 **Get-** 搭配 PowerShell 的對應名詞使用。
 
 例如：
 
@@ -116,7 +117,7 @@ Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
 
 ### <a name="step-2--resize-the-partition"></a>步驟 2 – 調整磁碟分割大小
 
-接下來，使用 **Resize-Partition**cmdlet 調整磁碟分割大小。 虛擬磁碟預期有兩個磁碟分割：第一個已保留，不應修改。第二個需要調整大小，有下列值 **PartitionNumber = 2** 和 **Type = Basic**。
+接下來，使用 **Resize-Partition** cmdlet 調整磁碟分割大小。 虛擬磁碟預期有兩個磁碟分割：第一個已保留，不應修改。第二個需要調整大小，有下列值 **PartitionNumber = 2** 和 **Type = Basic**。
 
 以 **-Size** 參數提供新的大小。 我們建議使用支援的大小上限，如下所示。
 
@@ -135,7 +136,7 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 
 ![Resize-Partition](media/resize-volumes/Resize-Partition.gif)
 
-就這麼簡單！
+這樣就完成了！
 
 > [!TIP]
 > 您可以執行 **Get-Volume** 檢查磁碟區是否有新的大小。
@@ -145,4 +146,4 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 - [Windows Server 2016 中的儲存空間直接存取](storage-spaces-direct-overview.md)
 - [規劃儲存空間直接存取中的磁碟區](plan-volumes.md)
 - [建立儲存空間直接存取中的磁碟區](create-volumes.md)
-- [刪除儲存空間直接存取中的磁片區](delete-volumes.md)
+- [在儲存空間直接存取中刪除磁片區](delete-volumes.md)

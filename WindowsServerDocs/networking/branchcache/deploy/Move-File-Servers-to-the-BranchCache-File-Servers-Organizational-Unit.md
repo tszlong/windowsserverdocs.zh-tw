@@ -2,16 +2,17 @@
 title: 將檔案伺服器移至 BranchCache 檔案伺服器組織單位
 description: 瞭解如何將 BranchCache 檔案伺服器新增至 Active Directory Domain Services (AD DS) 中 (OU) 的組織單位。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 56c915ec-edb1-43b0-8ad2-c93841bb566f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 82a9d9b1d4c65e7058a19b6496ccea348a1117b1
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: b96f417078d46ccdcc75621b24d4853a6695c69f
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904543"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949694"
 ---
 # <a name="move-file-servers-to-the-branchcache-file-servers-organizational-unit"></a>將檔案伺服器移至 BranchCache 檔案伺服器組織單位
 

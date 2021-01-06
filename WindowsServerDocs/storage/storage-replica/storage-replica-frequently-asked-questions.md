@@ -3,16 +3,16 @@ description: 深入瞭解：儲存體複本的常見問題
 title: 儲存體複本的常見問題集
 manager: siroy
 ms.author: nedpyle
-ms.topic: get-started-article
+ms.topic: how-to
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: c47f233502383342ffbc57dd5471a64d17cafa86
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 6cb59e94549aed049a4555ad2d9d7fd0448da4f8
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049566"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948614"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>儲存體複本的常見問題集
 
@@ -114,7 +114,7 @@ Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -S
 如果設定叢集對叢集複寫，在兩個叢集之間進行複寫時，「儲存體複本」可完全支援「向外延展檔案伺服器」，包括使用「儲存空間直接存取」。
 
 ## <a name="is-csv-required-to-replicate-in-a-stretch-cluster-or-between-clusters"></a><a name="FAQ7.5"></a> 需要 CSV 才能在延展叢集中複寫還是在叢集之間進行複寫？
-否。 您可以使用 CSV 或持續性磁片保留來複寫 (寮國) 由叢集資源所擁有，例如檔案伺服器角色。
+不會。 您可以使用 CSV 或持續性磁片保留來複寫 (寮國) 由叢集資源所擁有，例如檔案伺服器角色。
 
 如果設定叢集對叢集複寫，在兩個叢集之間進行複寫時，「儲存體複本」可完全支援「向外延展檔案伺服器」，包括使用「儲存空間直接存取」。
 
@@ -262,7 +262,7 @@ Remove-SmbBandwidthLimit -Category StorageReplication
 - Server1 來源磁片磁碟機 M：使用來源記錄磁片磁碟機 L：複寫至 Server2 目的地磁片磁碟機 M：目的地記錄磁片磁碟機 L：
 - Server2 來源磁片磁碟機 O：使用來源記錄磁片磁碟機 N：複寫至 Server1 目的地磁片磁碟機 O：目的地記錄磁片磁碟機 N：
 
-## <a name="related-topics"></a>相關主題
+## <a name="related-topics"></a>[相關主題]
 - [儲存體複本總覽](storage-replica-overview.md)
 - [使用共用儲存體延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)
 - [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)

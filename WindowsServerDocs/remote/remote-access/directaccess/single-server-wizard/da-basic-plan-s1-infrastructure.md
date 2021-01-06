@@ -1,16 +1,17 @@
 ---
 title: 步驟1規劃基本 DirectAccess 基礎結構
-description: 本主題是使用適用于 Windows Server 2016 的消費者入門 Wizard 部署單一 DirectAccess 伺服器指南的一部分
+description: 瞭解如何為基本 DirectAccess 部署所需的基礎結構進行規劃。
 manager: brianlic
 ms.topic: article
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f1878944b0f72e22a94b9153b735571ef5b5f5f0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 65b514fd61e812abfc52d42b88fbd39e125c2003
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990009"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948254"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步驟1規劃基本 DirectAccess 基礎結構
 在單一伺服器上進行基本 DirectAccess 部署的第一個步驟，是針對部署所需的基礎結構進行規劃。 本主題描述基礎結構規劃步驟：
@@ -32,9 +33,9 @@ ms.locfileid: "87990009"
 
 1.  識別您想要使用的網路介面卡拓撲。 可以使用下列任一方式來設定 DirectAccess：
 
-    -   使用兩張網路介面卡-在邊緣上，有一張網路介面卡連線到網際網路，另一個連接到內部網路，或位於 NAT、防火牆或路由器裝置後面，其中一張網路介面卡連線到周邊網路，另一個連接到內部網路。
+    -   有兩張網路介面卡：在邊緣，其中有一個網路介面卡連線到網際網路，另一個網路介面卡連線到內部網路，或是連線到周邊網路，另一個網路介面卡連線到內部網路。
 
-    -   在具有一張網路介面卡的 NAT 裝置後方-DirectAccess 伺服器會安裝在 NAT 裝置後方，而單一網路介面卡會連線到內部網路。
+    -   在具有一個網路介面卡的 NAT 裝置後方，DirectAccess 伺服器會安裝在 NAT 裝置後方，而且單一網路介面卡會連接到內部網路。
 
 2.  識別您的 IP 位址指定需求：
 
@@ -44,12 +45,12 @@ ms.locfileid: "87990009"
 
     -   [IP-HTTPS 通道通訊協定規格](/previous-versions/bb726951(v=technet.10))
 
-3.  根據下表設定所需的介面卡和位址指定。 針對使用單一網路介面卡的 NAT 裝置後方部署，請只使用 [**內部網路介面卡**] 資料行來設定您的 IP 位址。
+3.  根據下表設定所需的介面卡和位址指定。 針對使用單一網路介面卡的 NAT 裝置後方部署，請只使用 [ **內部網路介面卡** ] 資料行設定您的 IP 位址。
 
     |描述|外部網路介面卡|內部網路介面卡<sup>1</sup>|路由需求|
     |-|--------------|--------------------|------------|
-    |IPv4 內部網路與 IPv4 網際網路|設定下列各項：<p>-一個靜態公用 IPv4 位址，具有適當的子網路遮罩。<br />-網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的預設閘道 IPv4 位址。|設定下列各項：<p>-具有適當子網路遮罩的 IPv4 內部網路位址。<br />-內部網路命名空間的連線特定 DNS 尾碼。 此外，也必須在內部介面上設定 DNS 伺服器。<br />-請勿在任何內部網路介面上設定預設閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<p>1. 列出內部網路上所有位置的 IPv4 位址空間。<br />2. 使用**route add-p**或**netsh interface ipv4 add route**命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|
-    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<p>-使用您 ISP 所提供的自動設定位址設定。<br />-使用 [**路由列印**] 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br />-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用高於您近端內部網路路由器的預設喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<p>由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增到周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器之網際網路對向介面的 IPv6 位址。|設定下列各項：<p>-如果您不是使用預設的喜好設定層級，請使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled 命令設定**內部網路介面。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<p>1. 列出內部網路上所有位置的 IPv6 位址空間。<br />2. 使用**netsh interface ipv6 add route**命令來新增 ipv6 位址空間，做為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。|
+    |IPv4 內部網路與 IPv4 網際網路|設定下列各項：<p>-一個具有適當子網路遮罩的靜態公用 IPv4 位址。<br />-網際網路防火牆或本機網際網路服務提供者的預設閘道 IPv4 位址 (ISP) 路由器。|設定下列各項：<p>-具有適當子網路遮罩的 IPv4 內部網路位址。<br />-內部網路命名空間的連線特定 DNS 尾碼。 此外，也必須在內部介面上設定 DNS 伺服器。<br />-請勿在任何內部網路介面上設定預設閘道。|若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<p>1. 列出內部網路上所有位置的 IPv4 位址空間。<br />2. 使用 **route add-p** 或 **netsh interface ipv4 add route** 命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。|
+    |IPv6 網際網路與 IPv6 內部網路|設定下列各項：<p>-使用 ISP 提供的自動設定位址設定。<br />-使用 **route print** 命令，以確保指向 ISP 路由器的預設 ipv6 路由存在於 IPv6 路由表中。<br />-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用比您近端內部網路路由器更高的預設喜好設定。 如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<p>由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增到周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器之網際網路對向介面的 IPv6 位址。|設定下列各項：<p>-如果您未使用預設的喜好設定等級，請使用 **netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled** 命令設定內部網路介面。 此命令可確保指向內部網路路由器的其他預設路由不會新增至 IPv6 路由表。 您可以從 netsh interface show interface 命令的顯示畫面，取得內部網路介面的 InterfaceIndex。|當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<p>1. 列出內部網路上所有位置的 IPv6 位址空間。<br />2. 使用 **netsh interface ipv6 add route** 命令來新增 ipv6 位址空間，做為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。|
     |IPv4 網際網路和 IPv6 內部網路|DirectAccess 伺服器會使用 Microsoft 6to4 介面卡介面，將預設的 IPv6 路由流量轉送到 IPv4 網際網路上的 6to4 轉送。 您可以使用下列命令，針對 IPv4 網際網路上的 Microsoft 6to4 轉送 IPv4 位址設定 DirectAccess 伺服器 (當公司網路中沒有部署原生 IPv6 時使用)：netsh interface ipv6 6to4 set relay name=192.88.99.1 state=enabled 命令。|||
 
     > [!NOTE]
@@ -63,7 +64,7 @@ ms.locfileid: "87990009"
 
 -   6to4 流量-IP 通訊協定41輸入和輸出。
 
--   IP-HTTPS-傳輸控制通訊協定 (TCP) 目的地埠443，以及 TCP 來源埠443輸出。
+-   IP-HTTPS-傳輸控制通訊協定 (TCP) 目的地埠443和 TCP 來源埠443輸出。
 
 -   如果您是以單一網路介面卡部署 DirectAccess，並且將網路位置伺服器安裝在 DirectAccess 伺服器上，則也應該豁免 TCP 連接埠 62000。
 
@@ -83,19 +84,19 @@ ms.locfileid: "87990009"
 -   適用於所有 IPv4/IPv6 流量的 TCP/UDP
 
 ### <a name="plan-certificate-requirements"></a><a name="bkmk_1_2_CAs_and_certs"></a>規劃憑證需求
-IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAccess 伺服器之間建立 IPsec 連線時所使用的電腦憑證，以及 DirectAccess 伺服器用來與 DirectAccess 用戶端建立 IPsec 連線的電腦憑證。 針對 Windows Server 2012 R2 和 Windows Server 2012 中的 DirectAccess，不一定要使用這些 IPsec 憑證。 「快速入門精靈」會設定 DirectAccess 伺服器做為 Kerberos Proxy 來執行 IPsec 驗證，而不需要憑證。
+IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAccess 伺服器之間建立 IPsec 連線時所使用的電腦憑證，以及 DirectAccess 伺服器用來與 DirectAccess 用戶端建立 IPsec 連線的電腦憑證。 若為 Windows Server 2012 R2 和 Windows Server 2012 中的 DirectAccess，則不一定要使用這些 IPsec 憑證。 「快速入門精靈」會設定 DirectAccess 伺服器做為 Kerberos Proxy 來執行 IPsec 驗證，而不需要憑證。
 
 1.  **IP-HTTPS 伺服器**。 當您設定 DirectAccess 時，DirectAccess 伺服器會自動設定做為 IP-HTTPS 網頁接聽程式。 IP-HTTPS 站台需要有網站憑證，而用戶端電腦必須要能夠連線到憑證撤銷清單 (CRL) 站台來查看該憑證是否在清單中。 「啟用 DirectAccess」精靈會嘗試使用 SSTP VPN 憑證。 如果沒有設定 SSTP，它會檢查電腦個人存放區中是否有 IP-HTTPS 的憑證。 如果沒有，則會自動建立自我簽署的憑證。
 
-2.  **網路位置伺服器**。 網路位置伺服器是用來偵測用戶端電腦是否位於公司網路中的網站。 網路位置伺服器需要網站憑證。 DirectAccess 用戶端必須要能夠連線到 CRL 站台來查看該憑證是否在清單中。 [啟用遠端存取] 嚮導會檢查電腦個人存放區中是否有網路位置伺服器的憑證。 如果不存在，則會自動建立自我簽署憑證。
+2.  **網路位置伺服器**。 網路位置伺服器是用來偵測用戶端電腦是否位於公司網路的網站。 網路位置伺服器需要網站憑證。 DirectAccess 用戶端必須要能夠連線到 CRL 站台來查看該憑證是否在清單中。 [啟用遠端存取嚮導] 會檢查電腦個人存放區中是否有網路位置伺服器的憑證。 如果不存在，則會自動建立自我簽署憑證。
 
 下表摘要說明這當中每一個的憑證需求：
 
 |IPsec 驗證|IP-HTTPS 伺服器|網路位置伺服器|
 |------------|----------|--------------|
-|當您不使用 Kerberos proxy 進行驗證時，需要內部 CA 將電腦憑證發行至 DirectAccess 伺服器和用戶端進行 IPsec 驗證|公用 CA-建議使用公用 CA 來簽發 IP-HTTPS 憑證，這可確保 CRL 發佈點可在外部使用。|內部 CA-您可以使用內部 CA 來發行網路位置伺服器網站憑證。 請確定 CRL 發佈點在內部網路具有高可用性。|
-||內部 CA-您可以使用內部 CA 來發行 IP-HTTPS 憑證;不過，您必須確定 CRL 發佈點可供外部使用。|自我簽署憑證-您可以使用網路位置伺服器網站的自我簽署憑證;不過，您無法在多網站部署中使用自我簽署憑證。|
-||自我簽署憑證-您可以使用 IP-HTTPS 伺服器的自我簽署憑證;不過，您必須確定 CRL 發佈點可供外部使用。 自我簽署憑證無法在多站台部署中使用。||
+|當您未使用 Kerberos proxy 進行驗證時，必須有內部 CA 才能將電腦憑證發行至 DirectAccess 伺服器和用戶端進行 IPsec 驗證|公用 CA-建議您使用公用 CA 來發出 IP-HTTPS 憑證，如此可確保可在外部使用 CRL 發佈點。|內部 CA-您可以使用內部 CA 來發出網路位置伺服器網站憑證。 請確定 CRL 發佈點在內部網路具有高可用性。|
+||內部 CA-您可以使用內部 CA 來簽發 ip-HTTPs 憑證;不過，您必須確認 CRL 發佈點可供外部使用。|自我簽署憑證-您可以使用網路位置伺服器網站的自我簽署憑證;不過，您無法在多網站部署中使用自我簽署憑證。|
+||自我簽署憑證-您可以對 ip-HTTPs 伺服器使用自我簽署憑證;不過，您必須確認 CRL 發佈點可供外部使用。 自我簽署憑證無法在多站台部署中使用。||
 
 #### <a name="plan-certificates-for-ip-https-and-network-location-server"></a><a name="bkmk_website_cert_IPHTTPS"></a>規劃 IP-HTTPS 和網路位置伺服器的憑證
 如果您想要佈建憑證來用於這些用途，請參閱[使用進階設定部署單一 DirectAccess 伺服器](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。 如果沒有憑證可用，「快速入門精靈」就會自動建立自我簽署憑證來用於這些用途。
@@ -106,9 +107,9 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAc
 #### <a name="plan-dns-requirements"></a>規劃 DNS 需求
 在 DirectAccess 部署中，下列各項會需要 DNS：
 
--   **DirectAccess 用戶端要求**。 DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端電腦的要求。 DirectAccess 用戶端會嘗試連線到 DirectAccess 網路位置伺服器，以判斷它們是位於網際網路或公司網路上：如果連線成功，用戶端就會被判斷為內部網路且不會使用 DirectAccess，而且用戶端要求會使用在用戶端電腦的網路介面卡上設定的 DNS 伺服器來解決。 如果連線不成功，用戶端會被認為位於網際網路上。 DirectAccess 用戶端會使用名稱解析原則表格 (NRPT) 來決定解析名稱要求時要使用的 DNS 伺服器。 您可以指定用戶端應使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱，例如 http://internal 。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS4 或內部網路 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。
+-   **DirectAccess 用戶端要求**。 DNS 會被用來解析來自不位於內部網路上的 DirectAccess 用戶端電腦的要求。 DirectAccess 用戶端會嘗試連線到 DirectAccess 網路位置伺服器，以判斷它們是否位於網際網路或公司網路上：如果連線成功，則會判斷用戶端是在內部網路上，而且不會使用 DirectAccess，而用戶端要求則是使用用戶端電腦的網路介面卡上設定的 DNS 伺服器來解決。 如果連線不成功，用戶端會被認為位於網際網路上。 DirectAccess 用戶端會使用名稱解析原則表格 (NRPT) 來決定解析名稱要求時要使用的 DNS 伺服器。 您可以指定用戶端應使用 DirectAccess DNS64 或替代的內部 DNS 伺服器來解析名稱。 執行名稱解析時，DirectAccess 用戶端會使用 NRPT 來識別如何處理要求。 用戶端會要求 FQDN 或單一標籤名稱，例如 http://internal 。 如果要求的是單一標籤名稱，系統就會附加 DNS 尾碼來建立 FQDN。 如果 DNS 查詢與 NRPT 中的項目相符，而且已為該項目指定 DNS4 或內部網路 DNS 伺服器，系統就會將查詢傳送給指定的伺服器進行名稱解析。 如果有相符的項目存在，但是未指定任何 DNS 伺服器，這即表示有豁免規則，而將會套用一般名稱解析。
 
-    在 DirectAccess 管理主控台中將新尾碼新增到 NRPT 中時，只要按一下 [偵測]**** 按鈕，即可自動探索到該尾碼的預設 DNS 伺服器。 自動偵測的運作方式如下：
+    在 DirectAccess 管理主控台中將新尾碼新增到 NRPT 中時，只要按一下 [偵測] 按鈕，即可自動探索到該尾碼的預設 DNS 伺服器。 自動偵測的運作方式如下：
 
     1.  如果公司網路是 IPv4 型，或是 IPv4 與 IPv6，預設位址就是 DirectAccess 伺服器上內部介面卡的 DNS64 位址。
 
@@ -120,7 +121,7 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAc
 
         1.  DNS 尾碼規則 - 用於根網域或 DirectAccess 伺服器的網域名稱，以及與 DirectAccess 伺服器上設定的內部網路 DNS 伺服器對應的 IPv6 位址。 例如，如果 DirectAccess 伺服器是 corp.contoso.com 網域的成員，就會為 corp.contoso.com DNS 尾碼建立規則。
 
-        2.  網路位置伺服器之 FQDN 的豁免規則。 例如，如果網路位置伺服器 URL 是 https://nls.corp.contoso.com ，就會為 FQDN nls.corp.contoso.com 建立豁免規則。
+        2.  網路位置伺服器之 FQDN 的豁免規則。 例如，如果網路位置伺服器 URL 是，則 https://nls.corp.contoso.com 會為 FQDN nls.corp.contoso.com 建立豁免規則。
 
         **IP-HTTPS 伺服器**。 DirectAccess 伺服器會做為 IP-HTTPS 接聽程式，並使用其伺服器憑證向 IP-HTTPS 用戶端進行驗證。 IP-HTTPS 名稱必須能夠被使用公用 DNS 伺服器的 DirectAccess 用戶端解析。
 
@@ -147,7 +148,7 @@ IPsec 的憑證需求包括 DirectAccess 用戶端電腦在用戶端與 DirectAc
 如果您想要部署「網路位置伺服器」而不使用自我簽署憑證，請參閱[使用進階設定部署單一 DirectAccess 伺服器](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。
 
 ### <a name="plan-active-directory"></a><a name="bkmk_1_6_AD"></a>規劃 Active Directory
-DirectAccess 會使用 Active Directory 並 Active Directory 群組原則物件，如下所示：
+DirectAccess 會使用 Active Directory 和 Active Directory 群組原則物件，如下所示：
 
 -   **驗證**。 使用 Active Directory 進行驗證。 DirectAccess 通道會使用 Kerberos 驗證來讓使用者存取內部資源。
 
@@ -159,7 +160,7 @@ DirectAccess 會使用 Active Directory 並 Active Directory 群組原則物件�
 
 為 DirectAccess 部署規劃 Active Directory 時，必須具備下列條件：
 
--   至少有一個網域控制站安裝在 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 上。
+-   至少有一個網域控制站安裝在 Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008。
 
     如果網域控制站位於周邊網路 (因而可從 DirectAccess 伺服器的網際網路對向網路介面卡連線到它)，請在網域控制站上新增封包篩選器來防止對網際網路介面卡 IP 位址的連線，以防止 DirectAccess 伺服器連線到它。
 
@@ -178,7 +179,7 @@ DirectAccess 會使用 Active Directory 並 Active Directory 群組原則物件�
 > - 用於 DirectAccess 的 Active Directory 網域控制站不可以是能從 DirectAccess 伺服器的外部網際網路介面卡連到的網域控制站 (介面卡不得在 Windows 防火牆的網域設定檔中)。
 
 ### <a name="plan-group-policy-objects"></a><a name="bkmk_1_7_GPOs"></a>規劃群組原則物件
-當您設定 DirectAccess 時所設定的 DirectAccess 設定會收集到 (GPO) 的群組原則物件中。 兩個不同的 GPO 會被填入 DirectAccess 設定，並依下列方式分配：
+當您設定 DirectAccess 時所設定的 DirectAccess 設定會收集到群組原則物件 (GPO) 。 兩個不同的 GPO 會被填入 DirectAccess 設定，並依下列方式分配：
 
 -   **DirectAccess 用戶端 GPO**。 這個 GPO 包含用戶端設定，包括 IPv6 轉換技術設定、NRPT 項目，以及「具有進階安全性的 Windows 防火牆」連線安全性規則。 這個 GPO 會套用到為用戶端電腦指定的安全性群組。
 
@@ -193,7 +194,7 @@ DirectAccess 會使用 Active Directory 並 Active Directory 群組原則物件�
 請注意，在設定 DirectAccess 使用特定的 GPO 之後，就無法再設定它使用不同的 GPO。
 
 > [!IMPORTANT]
-> 不論您使用自動還是手動設定的 GPO，只要您的用戶端會使用 3G，您就需要新增低速連結偵測原則。 原則的群組原則路徑 **： Configure 群組原則低速連結偵測**是：**電腦設定/原則/系統管理範本/系統/群組原則**。
+> 不論您使用自動還是手動設定的 GPO，只要您的用戶端會使用 3G，您就需要新增低速連結偵測原則。 原則的群組原則路徑 **：設定群組原則低速連結偵測** 為： **Computer configuration/policy/系統管理範本/System/群組原則**。
 
 > [!CAUTION]
 > 執行 DirectAccess Cmdlet 之前，請使用下列程式來備份所有 DirectAccess 群組原則物件：[備份和還原 directaccess](https://go.microsoft.com/fwlink/?LinkID=257928)設定
@@ -235,13 +236,13 @@ DirectAccess 會使用 Active Directory 並 Active Directory 群組原則物件�
 #### <a name="recovering-from-a-deleted-gpo"></a>從已刪除的 GPO 復原
 如果不小心刪除了某個 DirectAccess 伺服器、用戶端或應用程式伺服器 GPO，而且沒有備份可用，您就必須移除組態設定，然後重新設定。 如果有備份可用，您便可以從備份還原 GPO。
 
-**DirectAccess 管理**會顯示下列錯誤訊息： ** <GPO name> 找不到 GPO**。 若要移除組態設定，請執行下列步驟：
+**DirectAccess 管理** 將會顯示下列錯誤訊息： **<GPO name> 找不到 GPO**。 若要移除組態設定，請執行下列步驟：
 
 1.  執行 PowerShell Cmdlet **Uninstall-remoteaccess**。
 
-2.  重新開啟 [DirectAccess 管理]****。
+2.  重新開啟 [DirectAccess 管理]。
 
-3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]****。 完成之後，伺服器將會還原到未設定的狀態。
+3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]。 完成之後，伺服器將會還原到未設定的狀態。
 
 ### <a name="next-step"></a><a name="BKMK_Links"></a>後續步驟
 

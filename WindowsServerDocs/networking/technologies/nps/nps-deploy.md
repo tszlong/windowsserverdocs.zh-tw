@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 6cfb50e0-7088-4295-97c5-14ff8776cbf8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e83e71e87ae9cb442299861125ffb524ef3c1c81
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 379ad808223a94abda2367a3e2184a5ff6d93f74
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996843"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949884"
 ---
 # <a name="deploy-network-policy-server"></a>部署網路原則伺服器
 
@@ -33,7 +34,7 @@ ms.locfileid: "87996843"
 
 ## <a name="deploy-nps-for-8021x-wireless-access"></a>部署 802.1 X 無線存取的 NPS
 
-若要部署 NPS 以進行無線存取，您可以使用本指南 [部署密碼型 802.1 x 驗證無線存取](../../core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access.md)。
+若要部署 NPS 以進行無線存取，您可以使用《 [部署 Password-Based 802.1 x 驗證無線存取](../../core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access.md)》指南。
 
 ## <a name="deploy-nps-for-windows-10-vpn-access"></a>部署 Windows 10 VPN 存取的 NPS
 

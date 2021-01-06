@@ -2,16 +2,17 @@
 title: DHCP 的新功能
 description: 本主題概要說明 Windows Server 2016 中的動態主機設定通訊協定 (DHCP) 的新功能。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5dee105eaf14c92145e1fe70fe4627d37b2baa82
-ms.sourcegitcommit: b0c73df80d7b4ff0c332d77e0cc07f7e6e061600
+ms.date: 12/09/2020
+ms.openlocfilehash: 19d36c075ca6059e9fb39556d89322f222139359
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96925560"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949904"
 ---
 # <a name="whats-new-in-dhcp"></a>DHCP 的新功能
 

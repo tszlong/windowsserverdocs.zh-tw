@@ -1,27 +1,28 @@
 ---
 title: Windows Server 核心網路指導方針
-description: 本主題概述核心網路指南，可讓您規劃及部署功能完整的網路所需的核心元件，以及使用 Windows Server 2016 的新樹系中的新 Active Directory 網域
+description: 本主題概要說明《核心網路指南》，可讓您在 Windows Server 2016 的新樹系中規劃和部署全功能網路所需的核心元件，以及新的 Active Directory 網域。
 manager: brianlic
 ms.topic: article
 ms.assetid: 9b3ef3eb-4246-4e0e-8bf1-53224ca5f2f9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bfe5b64d2c14d769bc654ba1d7e820eaab4edd28
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 6bffc303d7d04c95e40d62bf87c9e74ee87812da
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942589"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949144"
 ---
 # <a name="core-network-guidance-for-windows-server"></a>Windows Server 核心網路指導方針
 
 >適用于： Windows Server、Windows Server 2016
 
-本主題提供 Windows Server 2016 核心網路指引的總覽 &reg; ，並包含下列各節。
+本主題概要說明 Windows Server 2016 的核心網路指引 &reg; ，並包含下列各節。
 
 -   [Windows Server 核心網路簡介](#bkmk_intro)
 
--   [Windows Server 的核心網路指南](#bkmk_core)
+-   [Windows Server 核心網路指南](#bkmk_core)
 
 ## <a name="introduction-to-the-windows-server-core-network"></a><a name="bkmk_intro"></a>Windows Server 核心網路簡介
 
@@ -29,7 +30,7 @@ ms.locfileid: "87942589"
 
 Windows Server 核心網路提供許多好處，包括下列各項。
 
-- 電腦與其他傳輸控制通訊協定/網際網路通訊協定 (TCP/IP) 相容裝置之間網路連線能力的核心通訊協定。 TCP/IP 是一組標準的通訊協定，用於連線電腦與建置網路。 TCP/IP 是 Microsoft &reg; Windows 作業系統所提供的網路通訊協定軟體 &reg; ，可執行並支援 tcp/ip 通訊協定套件。
+- 電腦與其他傳輸控制通訊協定/網際網路通訊協定 (TCP/IP) 相容裝置之間網路連線能力的核心通訊協定。 TCP/IP 是一組標準的通訊協定，用於連線電腦與建置網路。 TCP/IP 是 Microsoft Windows 作業系統所提供的網路通訊協定 &reg; 軟體 &reg; ，可實行並支援 tcp/ip 通訊協定套件。
 
 - 動態主機設定通訊協定 (DHCP) 伺服器自動 IP 定址。 手動設定網路上所有電腦的 IP 位址，比從 DHCP 伺服器動態提供電腦及其他裝置使用的 IP 位址租用，更為耗時且缺乏彈性。
 
@@ -41,11 +42,11 @@ Windows Server 核心網路提供許多好處，包括下列各項。
 
 - 使用者與電腦帳戶資料庫。 目錄服務提供集中的使用者帳戶資料庫，可讓您為有權連線到您網路及存取網路資源 (例如應用程式、資料庫、共用檔案與資料夾及印表機) 的人及電腦建立使用者與電腦帳戶。
 
-核心網路也可以讓您隨著組織擴充及 IT 需求變更來調整網路大小。 例如，您可以使用核心網路來新增網域、IP 子網、遠端存取服務、無線服務，以及 Windows Server 2016 所提供的其他功能和伺服器角色。
+核心網路也可以讓您隨著組織擴充及 IT 需求變更來調整網路大小。 例如，透過核心網路，您可以新增網域、IP 子網、遠端存取服務、無線服務，以及 Windows Server 2016 所提供的其他功能和伺服器角色。
 
-## <a name="core-network-guide-for-windows-server"></a><a name="bkmk_core"></a>Windows Server 的核心網路指南
+## <a name="core-network-guide-for-windows-server"></a><a name="bkmk_core"></a>Windows Server 核心網路指南
 
-《 Windows Server 2016 核心網路指南》提供如何在新樹系中規劃和部署全功能網路和新 Active Directory 網域所需之核心元件的指示 &reg; 。 使用本指南，您可以部署以下列 Windows 伺服器元件設定的電腦：
+《 Windows Server 2016 核心網路指南》提供的指示，說明如何在新樹系中規劃和部署全功能網路所需的核心元件，以及新的 Active Directory &reg; 網域。 使用本指南，您可以部署以下列 Windows 伺服器元件設定的電腦：
 
 - Active Directory 網域服務 (AD DS) 伺服器角色
 
@@ -59,9 +60,9 @@ Windows Server 核心網路提供許多好處，包括下列各項。
 
 - 個別伺服器上的傳輸控制通訊協定/網際網路通訊協定第 4 版 (TCP/IP) 連線
 
-本指南可在下列位置取得。
+您可以在下列位置取得本指南。
 
-- Windows Server 2016 技術文件庫中的[核心網路指南](../core-network-guide/Core-Network-Guide.md)。
+- Windows Server 2016 技術文件庫中的 [核心網路指南](../core-network-guide/Core-Network-Guide.md) 。
 
 
 

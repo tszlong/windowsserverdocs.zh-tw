@@ -5,15 +5,15 @@ services: active-directory
 author: anandyadavmsft
 manager: mtillman
 ms.assetid: a14bc870-9fad-45ed-acd5-a90ccd432e54
-ms.topic: get-started-article
+ms.topic: how-to
 ms.date: 09/01/2016
 ms.author: billmath
-ms.openlocfilehash: 9ce16db4a50fbb31c8454b085a6d0471ebbdf32c
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: fafeffdc44af7dd59501355f6d40d46264bbf1af
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078655"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949584"
 ---
 # <a name="high-availability-cross-geographic-ad-fs-deployment-in-azure-with-azure-traffic-manager"></a>使用 Azure 流量管理員在 Azure 中部署高可用性跨地區 AD FS
 [Azure 中的 AD FS 部署](how-to-connect-fed-azure-adfs.md) 提供有關如何在 Azure 中為您的組織部署簡單 AD FS 基礎結構的逐步指導方針。 本文會提供後續的步驟，以使用 [Azure 流量管理員](/azure/traffic-manager/)在 Azure 中建立跨地區的 AD FS 部署。 Azure 流量管理員會使用各種可用的路由方法來順應基礎結構的不同需求，而有助於為您的組織建立分散各地的高可用性和高效能 AD FS 基礎結構。

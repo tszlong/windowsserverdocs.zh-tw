@@ -3,16 +3,16 @@ description: 深入瞭解：儲存體複本總覽
 title: 儲存體複本概觀
 manager: siroy
 ms.author: nedpyle
-ms.topic: get-started-article
+ms.topic: how-to
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 9761117c4fe12450d658297edd411094546d883e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: cd516e6d762df920c7f43843240ea2045a67753b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043266"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948594"
 ---
 # <a name="storage-replica-overview"></a>儲存體複本概觀
 
@@ -70,7 +70,7 @@ ms.locfileid: "97043266"
 
 * **以 SMB3 為基礎**： 儲存體複本會使用經過實證且成熟的 SMB 3 技術，此技術首次是在 Windows Server 2012 中發佈。 這表示所有 SMB 的進階特性 (例如 RoCE、iWARP 及 InfiniBand RDMA 網路卡上的多重通道和 SMB 直接傳輸支援) 都可用於儲存體複本。
 
-* **安全性**： 與許多廠商的產品不同，儲存體複本具備領先業界的安全性技術。 這包括封包簽署、AES-128-GCM 完整資料加密、Intel AES NI 加密加速的支援，以及預先驗證完整性攔截式攻擊預防。 儲存體複本在節點之間利用 Kerberos AES256 進行所有驗證。
+* **安全性**。 與許多廠商的產品不同，儲存體複本具備領先業界的安全性技術。 這包括封包簽署、AES-128-GCM 完整資料加密、Intel AES NI 加密加速的支援，以及預先驗證完整性攔截式攻擊預防。 儲存體複本在節點之間利用 Kerberos AES256 進行所有驗證。
 
 * **高效能的初始同步**。儲存體複本支援已植入的初始同步，其中資料的子集已經存在於舊版複本、備份，或隨附磁碟機的目標上。 初始複寫只會複製不同的區塊，可能會縮短初始同步處理時間，並防止資料使用有限的頻寬。 儲存體複本會封鎖總和檢查碼計算和彙總，也就是說，初始同步效能只會受到儲存體和網路速度的限制。
 

@@ -6,12 +6,13 @@ ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: e9c4bc76e737c70d3d973e6fa77c57adefc7d5b1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: df57714980a6dce5187cd01d1da74e703d6cefca
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953924"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949024"
 ---
 # <a name="network-related-performance-counters"></a>網路相關的效能計數器
 
@@ -21,27 +22,27 @@ ms.locfileid: "87953924"
 
 -   [資源使用率](#bkmk_ru)
 
--   [可能的網路問題](#bkmk_np)
+-   [潛在的網路問題](#bkmk_np)
 
--   [ (RSC) 效能的接收側合併](#bkmk_rsc)
+-   [ (RSC) 效能的接收端聯合](#bkmk_rsc)
 
-##  <a name="resource-utilization"></a><a name="bkmk_ru"></a>資源使用率
+##  <a name="resource-utilization"></a><a name="bkmk_ru"></a> 資源使用率
 
-下列效能計數器與網路資源使用率相關。
+以下是與網路資源使用率相關的效能計數器。
 
 - IPv4、IPv6
 
   -   接收的資料包/秒
 
-  -   傳送的資料包/秒
+  -   傳送的資料包/sec
 
-- Tcpv4 已、TCPv6
+- TCPv4, TCPv6
 
-  -   接收的區段/秒
+  -   接收的區段數/秒
 
   -   Segments Sent/sec
 
-  -   重新傳輸的區段/秒
+  -   重新傳輸的區段數/秒
 
 - 網路介面 ( * ) ，網路介面卡 (\*) 
 
@@ -55,7 +56,7 @@ ms.locfileid: "87953924"
 
   - 輸出佇列長度
 
-    此計數器是封包中輸出封包佇列的長度 \( \) 。 如果這個時間大於2，就會發生延遲。 如果可以的話，您應該找出瓶頸並予以排除。 由於 NDIS 會將要求排入佇列，因此此長度應該一律為0。
+    此計數器是封包中輸出封包佇列的長度 \( \) 。 如果超過2，就會發生延遲。 如果有的話，您應該會發現瓶頸並消除瓶頸。 因為 NDIS 會將要求排在佇列中，所以此長度應該一律為0。
 
 - 處理器資訊
 
@@ -63,11 +64,11 @@ ms.locfileid: "87953924"
 
   - 中斷數/秒
 
-  - 已佇列的 Dpc/秒
+  - Dpc 已排入佇列/秒
 
-    此計數器是 Dpc 新增至邏輯處理器之 DPC 佇列的平均速率。 每個邏輯處理器都有自己的 DPC 佇列。 此計數器會測量 Dpc 新增至佇列的速率，而不是佇列中的 Dpc 數目。 它會顯示在最後兩個樣本中觀察到的值之間的差異，並除以取樣間隔的持續時間。
+    此計數器是將 Dpc 新增至邏輯處理器 DPC 佇列的平均速率。 每個邏輯處理器都有自己的 DPC 佇列。 此計數器會測量將 Dpc 新增至佇列的速率，而不是佇列中的 Dpc 數目。 它會顯示最後兩個樣本中觀察到的值之間的差異，並除以樣本間隔的持續時間。
 
-##  <a name="potential-network-problems"></a><a name="bkmk_np"></a>可能的網路問題
+##  <a name="potential-network-problems"></a><a name="bkmk_np"></a> 潛在的網路問題
 
 下列效能計數器與潛在的網路問題有關。
 
@@ -87,9 +88,9 @@ ms.locfileid: "87953924"
 
 -   UDPv4, UDPv6
 
-    -   接收的資料包錯誤
+    -   收到的資料包錯誤
 
--   Tcpv4 已、TCPv6
+-   TCPv4, TCPv6
 
     -   連接失敗
 
@@ -103,7 +104,7 @@ ms.locfileid: "87953924"
 
 -   每個處理器網路介面卡活動
 
-    -   低資源接收指示/秒
+    -   資源接收指示下限/秒
 
     -   資源接收的低封包數/秒
 
@@ -111,24 +112,24 @@ ms.locfileid: "87953924"
 
     -   丟棄的資料包
 
-    -   丟棄的資料包/秒
+    -   丟棄的資料包/sec
 
     -   拒絕的連線
 
     -   拒絕的連線數/秒
 
-##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a> (RSC) 效能的接收側合併
+##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a> (RSC) 效能的接收端聯合
 
 下列效能計數器與 RSC 效能相關。
 
 -   網路介面卡 ( * ) 
 
-    -   TCP Active RSC 連線數
+    -   TCP Active RSC 連接
 
     -   TCP RSC 平均封包大小
 
-    -   TCP RSC 合併封包數/秒
+    -   TCP RSC 合併的封包數/秒
 
     -   TCP RSC 例外狀況/秒
 
-如需本指南中所有主題的連結，請參閱[網路子系統效能調整](net-sub-performance-top.md)。
+如需本指南中所有主題的連結，請參閱 [網路子系統效能微調](net-sub-performance-top.md)。

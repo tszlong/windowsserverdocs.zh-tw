@@ -2,17 +2,17 @@
 title: 使用腳本部署軟體定義的網路基礎結構
 description: 本主題說明如何使用 Windows Server 2016 中的腳本，將 Microsoft 軟體定義的網路部署 (SDN) 基礎結構。
 manager: grcusanz
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 244f18baefa0be9b9b392682e48931e7d4e195b8
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: ed8327dd53fa75ccb864207d430c8c863940f090
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865617"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950104"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用指令碼部署軟體定義網路的基礎結構
 

@@ -2,16 +2,17 @@
 title: 設定 BranchCache 雜湊發行群組原則物件
 description: 瞭解如何設定 BranchCache 雜湊發行群組原則物件 (GPO) 如此，您新增至 OU 的所有檔案伺服器都會套用相同的雜湊發行原則設定。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: da74fea7-52b2-4d6d-9d21-19184eedbe3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c9648165836660ab5d132e95147f6e0233e9c983
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: e14dbede78532b9217ab1434516f9f6ce9fde2db
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904683"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948484"
 ---
 # <a name="configure-the-branchcache-hash-publication-group-policy-object"></a>設定 BranchCache 雜湊發行群組原則物件
 

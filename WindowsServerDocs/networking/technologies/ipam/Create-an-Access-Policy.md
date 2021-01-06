@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 854bd064-2f86-4678-a940-a04b3e48ae10
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d454bef1a6bc15b5f8a6f2e6f78773785ad5af69
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: be09d4a056482f7506d7f6d8f79443e8589877c5
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966565"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949054"
 ---
 # <a name="create-an-access-policy"></a>建立存取原則
 
@@ -22,47 +23,47 @@ ms.locfileid: "87966565"
 若要執行此程序，至少需要 **Administrators** 的成員資格或同等權限。
 
 > [!NOTE]
-> 您可以為特定使用者或 Active Directory 中的使用者群組建立存取原則。 當您建立存取原則時，必須選取內建 IPAM 角色或您已建立的自訂角色。 如需自訂角色的詳細資訊，請參閱[建立存取控制的使用者角色](../../technologies/ipam/Create-a-User-Role-for-Access-Control.md)。
+> 您可以為特定使用者或 Active Directory 中的使用者群組建立存取原則。 當您建立存取原則時，您必須選取內建的 IPAM 角色或您所建立的自訂角色。 如需自訂角色的詳細資訊，請參閱 [建立存取控制的使用者角色](../../technologies/ipam/Create-a-User-Role-for-Access-Control.md)。
 
 ### <a name="to-create-an-access-policy"></a>建立存取原則
 
-1.  在伺服器管理員中，按一下 [ **IPAM**]。 IPAM 用戶端主控台隨即出現。
+1.  在伺服器管理員中，按一下 [  **IPAM**]。 IPAM 用戶端主控台隨即出現。
 
-2.  在流覽窗格中，按一下 [**存取控制**]。 在下方的流覽窗格中，以滑鼠右鍵按一下 [**存取原則**]，然後按一下 [**新增存取原則**]。
+2.  在流覽窗格中，按一下 [ **存取控制**]。 在下方流覽窗格中，以滑鼠右鍵按一下 [ **存取原則**]，然後按一下 [ **新增存取原則**]。
 
     ![新增存取原則](../../media/Create-an-Access-Policy/ipam_CreateAP_01.jpg)
 
-3.  [**新增存取原則**] 對話方塊隨即開啟。 在 [**使用者設定**] 中，按一下 [**新增**]。
+3.  [ **新增存取原則** ] 對話方塊隨即開啟。 在 [ **使用者設定**] 中，按一下 [ **新增**]。
 
     ![新增存取原則](../../media/Create-an-Access-Policy/ipam_CreateAP_02.jpg)
 
-4.  [**選取使用者或群組**] 對話方塊隨即開啟。 按一下 [位置]。
+4.  [ **選取使用者或群組** ] 對話方塊隨即開啟。 按一下 [位置]。
 
     ![使用者或群組位置](../../media/Create-an-Access-Policy/ipam_CreateAP_03.jpg)
 
-5.  [**位置**] 對話方塊隨即開啟。 流覽至包含使用者帳戶的位置，選取 [位置]，然後按一下 **[確定]**。 [**位置**] 對話方塊隨即關閉。
+5.  [ **位置** ] 對話方塊隨即開啟。 流覽至包含使用者帳戶的位置，選取位置，然後按一下 **[確定]**。 [ **位置** ] 對話方塊隨即關閉。
 
     ![選取位置](../../media/Create-an-Access-Policy/ipam_CreateAP_04.jpg)
 
-6.  在 [**選取使用者或群組**] 對話方塊的 [**輸入要選取的物件名稱**] 中，輸入您要為其建立存取原則的使用者帳戶名稱。 按一下 [確定]  。
+6.  在 [ **選取使用者或群組** ] 對話方塊的 [ **輸入物件名稱來選取**] 中，輸入您要建立存取原則的使用者帳戶名稱。 按一下 [確定]。
 
-7.  在 [**新增存取原則**] 的 [**使用者設定**] 中，[**使用者別名**] 現在包含套用原則的使用者帳戶。 在 [**存取設定**] 中，按一下 [**新增**]。
+7.  在 [ **新增存取原則**] 的 [ **使用者設定**] 中，[ **使用者別名** ] 現在包含套用原則的使用者帳戶。 在 [ **存取設定**] 中，按一下 [ **新增**]。
 
     ![新的存取設定](../../media/Create-an-Access-Policy/ipam_CreateAP_05.jpg)
 
-8.  在 [新增**存取原則**] 中，[**存取設定**] 變更為 [**新設定**]。
+8.  在 [新增 **存取原則**] 中， **存取設定** 會變更為 [ **新增] 設定**。
 
-    ![對話方塊名稱變更為新增設定](../../media/Create-an-Access-Policy/ipam_CreateAP_06.jpg)
+    ![對話方塊名稱變更為新設定](../../media/Create-an-Access-Policy/ipam_CreateAP_06.jpg)
 
-9. 按一下 [**選取角色**] 以展開角色清單。 選取其中一個內建角色，或如果您已建立新的角色，請選取您所建立的其中一個角色。 例如，如果您已建立要套用至使用者的 IPAMSrv 角色，請按一下 [ **IPAMSrv**]。
+9. 按一下 [ **選取角色** ] 展開角色清單。 選取其中一個內建角色，或者，如果您已建立新的角色，請選取您所建立的其中一個角色。 例如，如果您已建立要套用至使用者的 IPAMSrv 角色，請按一下 [ **IPAMSrv**]。
 
     ![選取職責](../../media/Create-an-Access-Policy/ipam_CreateAP_07.jpg)
 
-10. 按一下 [新增設定]****。
+10. 按一下 [新增設定]。
 
-    ![加入新的設定](../../media/Create-an-Access-Policy/ipam_CreateAP_08.jpg)
+    ![新增設定](../../media/Create-an-Access-Policy/ipam_CreateAP_08.jpg)
 
-11. 角色會新增至存取原則。 若要建立其他存取**原則，請按一下 [** 套用]，然後針對您想要建立的每個原則重複這些步驟。 如果您不想要建立其他原則，請按一下 **[確定]**。
+11. 角色會新增至存取原則。 若要建立其他存取 **原則，請按一下 [** 套用]，然後針對您想要建立的每個原則重複這些步驟。 如果您不想要建立其他原則，請按一下 **[確定]**。
 
     ![按一下 [套用] 或 [確定]](../../media/Create-an-Access-Policy/ipam_CreateAP_09.jpg)
 

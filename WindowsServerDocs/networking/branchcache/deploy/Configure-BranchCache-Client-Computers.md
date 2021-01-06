@@ -2,16 +2,17 @@
 title: 設定 BranchCache 用戶端電腦
 description: 瞭解如何將網域成員和非網域成員用戶端電腦設定為 BranchCache 分散式快取或託管快取模式用戶端。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: e16dbea9-0f0a-41db-b460-14a1a7ad7540
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 969ec77dfc098a589cf4905f18d8e054f871b455
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: 326e8b61dbb930588f0ebe8461a6d374c4d418bf
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904743"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948494"
 ---
 # <a name="configure-branchcache-client-computers"></a>設定 BranchCache 用戶端電腦
 

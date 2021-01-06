@@ -1,17 +1,18 @@
 ---
 title: 步驟13從 NAT 裝置後方測試 DirectAccess 連線能力
-description: 本主題屬於測試實驗室指南-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
+description: 本主題是測試實驗室指南的一部分-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
 manager: brianlic
 ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2dde684d81d898f1c6327c60c3f10112641991ee
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 3ad38999df70c7ed8e6088687723090911dccbff
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955225"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950034"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>步驟13從 NAT 裝置後方測試 DirectAccess 連線能力
 
@@ -25,62 +26,62 @@ ms.locfileid: "87955225"
 
 2. 測試 IP-HTTPS 連線能力。 當 DirectAccess 用戶端設定為使用 IP-HTTPS 時，會執行第二組測試。 為了示範 IP-HTTPS 連線，會在用戶端電腦上停用 Teredo。 先在 CLIENT1 上執行測試，然後在 CLIENT2 上執行測試。
 
-## <a name="prerequisites"></a>必要條件
-啟動 EDGE1 和 2-EDGE1 （如果尚未執行），並確定它們已連線到網際網路子網。
+## <a name="prerequisites"></a>先決條件
+啟動 EDGE1 和 2 EDGE1 （如果尚未執行），並確定它們已連線到網際網路子網。
 
-執行這些測試之前，請先從網際網路交換器拔下 CLIENT1 和 CLIENT2，然後將它們連接到 Homenet 交換器。 如果系統詢問您想要定義目前網路的網路類型，請選取 [**家用網路**]。
+執行這些測試之前，請從網際網路交換器中拔下 CLIENT1 和 CLIENT2，並將它們連線到 Homenet 交換器。 如果系統詢問您想要定義目前網路的網路類型，請選取 [ **家用網路**]。
 
 ## <a name="test-teredo-connectivity"></a><a name="TeredoCLIENT1"></a>測試 Teredo 連線
 
-1. 在 CLIENT1 上，開啟提升許可權的 Windows PowerShell 視窗。
+1. 在 CLIENT1 上，開啟提高許可權的 Windows PowerShell 視窗。
 
-2. 啟用 Teredo 介面卡，輸入**netsh interface Teredo set state enterpriseclient**，然後按 enter。
+2. 啟用 Teredo 介面卡，輸入 **netsh interface Teredo set state enterpriseclient**，然後按 enter。
 
-3. 在 Windows PowerShell 視窗中，輸入**ipconfig/all** ，然後按 enter。
+3. 在 [Windows PowerShell] 視窗中，輸入 **ipconfig/all** ，然後按 enter 鍵。
 
 4. 檢查 ipconfig 命令的輸出。
 
-   這部電腦現在已從 NAT 裝置後方連線到網際網路，並且已被指派一個私人 IPv4 位址。 當 DirectAccess 用戶端位於 NAT 裝置後方並且被指派私人 IPv4 位址時，慣用的 IPv6 轉換技術是 Teredo。 如果您查看 ipconfig 命令的輸出，應該會看到「通道介面卡 Teredo 通道虛擬介面」的區段，然後是描述「Microsoft Teredo 通道介面卡」，其 IP 位址開頭為2001:0，且其為 Teredo 位址。 您應該會看到為 Teredo 通道介面卡列出的預設閘道為 '：： '。
+   這部電腦現在已從 NAT 裝置後方連線到網際網路，並且已被指派一個私人 IPv4 位址。 當 DirectAccess 用戶端位於 NAT 裝置後方並且被指派私人 IPv4 位址時，慣用的 IPv6 轉換技術是 Teredo。 如果您查看 ipconfig 命令的輸出，您應該會看到「通道介面卡 Teredo 通道 Pseudo-Interface」的區段，然後是描述「Microsoft Teredo 通道介面卡」，其中 IP 位址的開頭為2001:0 且與 Teredo 位址一致。 您應該會看到針對 Teredo 通道介面卡列為 '：： ' 的預設閘道。
 
-5. 在 Windows PowerShell 視窗中，輸入**ipconfig/flushdns** ，然後按 enter。
+5. 在 [Windows PowerShell] 視窗中，輸入 **ipconfig/flushdns** ，然後按 enter。
 
    這會將自用戶端電腦連線到網際網路後，可能仍存在於用戶端 DNS 快取中的名稱解析項目排清。
 
-6. 在 Windows PowerShell 視窗中，輸入**ping app1** ，然後按 enter。 您應該會看到來自 APP1 IPv6 位址 2001:db8:1::3 的回覆。
+6. 在 [Windows PowerShell] 視窗中，輸入 **ping app1** ，然後按 enter。 您應該會看到來自 APP1 IPv6 位址 2001:db8:1::3 的回覆。
 
-7. 在 Windows PowerShell 視窗中，輸入**ping app2** ，然後按 enter。 您應該會看到從 EDGE1 指派給 APP2 的 NAT64 位址回復，在此案例中為 fd**c9：9f4e： eb1b**：7777：： a00：4。 請注意，粗體值會因產生位址的方式而有所不同。
+7. 在 [Windows PowerShell] 視窗中，輸入 **ping app2** ，然後按 enter。 您應該會看到從 EDGE1 指派給 APP2 的 NAT64 位址的回復，在此案例中為 fd **c9：9f4e： eb1b**：7777：： a00：4。 請注意，粗體值會因產生位址的方式而有所不同。
 
-8. 在 Windows PowerShell 視窗中，輸入**ping 2-app1** ，然後按 enter。 您應該會看到來自 IPv6 位址 2-APP1，2001： db8：2：：3的回復。
+8. 在 [Windows PowerShell] 視窗中，輸入 **ping 2-app1** ，然後按 enter。 您應該會看到來自 IPv6 位址 2-APP1，2001： db8：2：：3的回復。
 
-9. 開啟 Internet Explorer，在 Internet Explorer 網址列中輸入， **https://2-app1/** 然後按 enter 鍵。 您會在 2-APP1 上看到預設的 IIS 網站。
+9. 開啟 Internet Explorer，在 Internet Explorer 網址列中輸入， **https://2-app1/** 然後按 enter 鍵。 您將會在 2 APP1 上看到預設的 IIS 網站。
 
-10. 在 Internet Explorer 網址列中輸入， **https://app2/** 然後按 enter 鍵。 您將會看到 APP2 上的預設網站。
+10. 在 Internet Explorer 網址列中，輸入， **https://app2/** 然後按 enter 鍵。 您將會看到 APP2 上的預設網站。
 
-11. 在 [**開始**] 畫面上，輸入<strong> \\ \APP2\FILES</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。 這示範了您能夠使用 SMB 連線到僅支援 IPv4 的伺服器，來取得僅支援 IPv4 之主機上的資源。
+11. 在 [**開始**] 畫面上，輸入 <strong> \\ \APP2\FILES</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。 這示範了您能夠使用 SMB 連線到僅支援 IPv4 的伺服器，來取得僅支援 IPv4 之主機上的資源。
 
 12. 在 CLIENT2 上重複此程式。
 
 ## <a name="test-ip-https-connectivity"></a><a name="IPHTTPS_CLIENT1"></a>測試 IP-HTTPS 連線
 
-1. 在 CLIENT1 上，開啟提升許可權的 Windows PowerShell 視窗，並輸入**netsh interface teredo set state disabled** ，然後按 enter。 這會在用戶端電腦上停用 Teredo，並讓用戶端電腦設定它自己使用 IP-HTTPS。 當命令完成時，會出現 [確定]**** 回應。
+1. 在 CLIENT1 上，開啟提高許可權的 Windows PowerShell 視窗，然後輸入 **netsh interface teredo set state disabled** ，然後按 enter。 這會在用戶端電腦上停用 Teredo，並讓用戶端電腦設定它自己使用 IP-HTTPS。 當命令完成時，會出現 [確定] 回應。
 
-2. 在 Windows PowerShell 視窗中，輸入**ipconfig/all** ，然後按 enter。
+2. 在 [Windows PowerShell] 視窗中，輸入 **ipconfig/all** ，然後按 enter 鍵。
 
-3. 檢查 ipconfig 命令的輸出。 這部電腦現在已從 NAT 裝置後方連線到網際網路，並且已被指派一個私人 IPv4 位址。 Teredo 已被停用，而 DirectAccess 用戶端則回復成 IP-HTTPS。 當您查看 ipconfig 命令的輸出時，您會看到通道介面卡 ipHTTPsinterface 的區段，其 IP 位址開頭為2001： db8：1：1000或2001： db8：2：2000，這是以設定 DirectAccess 時所設定的首碼為基礎的 ip-HTTPs 位址。 您不會看到針對 IPHTTPSInterface 通道介面卡列出的預設閘道。
+3. 檢查 ipconfig 命令的輸出。 這部電腦現在已從 NAT 裝置後方連線到網際網路，並且已被指派一個私人 IPv4 位址。 Teredo 已被停用，而 DirectAccess 用戶端則回復成 IP-HTTPS。 當您查看 ipconfig 命令的輸出時，您會看到 [通道介面卡] ipHTTPsinterface」的區段，其中 IP 位址的開頭為2001： db8：1：1000或2001： db8：2：2000與設定 DirectAccess 時所設定的前置詞一致，這是 ip-HTTPs 位址。 您將不會看到針對 IpHTTPsinterface」通道介面卡列出的預設閘道。
 
-4. 在 Windows PowerShell 視窗中，輸入**ipconfig/flushdns** ，然後按 enter。 這會將自用戶端電腦連線到公司網路後，可能仍存在於用戶端 DNS 快取中的名稱解析項目排清。
+4. 在 [Windows PowerShell] 視窗中，輸入 **ipconfig/flushdns** ，然後按 enter。 這會將自用戶端電腦連線到公司網路後，可能仍存在於用戶端 DNS 快取中的名稱解析項目排清。
 
-5. 在 Windows PowerShell 視窗中，輸入**ping app1** ，然後按 enter。 您應該會看到來自 APP1 IPv6 位址 2001:db8:1::3 的回覆。
+5. 在 [Windows PowerShell] 視窗中，輸入 **ping app1** ，然後按 enter。 您應該會看到來自 APP1 IPv6 位址 2001:db8:1::3 的回覆。
 
-6. 在 Windows PowerShell 視窗中，輸入**ping app2** ，然後按 enter。 您應該會看到從 EDGE1 指派給 APP2 的 NAT64 位址回復，在此案例中為 fd**c9：9f4e： eb1b**：7777：： a00：4。 請注意，粗體值會因產生位址的方式而有所不同。
+6. 在 [Windows PowerShell] 視窗中，輸入 **ping app2** ，然後按 enter。 您應該會看到從 EDGE1 指派給 APP2 的 NAT64 位址的回復，在此案例中為 fd **c9：9f4e： eb1b**：7777：： a00：4。 請注意，粗體值會因產生位址的方式而有所不同。
 
-7. 在 Windows PowerShell 視窗中，輸入**ping 2-app1** ，然後按 enter。 您應該會看到來自 IPv6 位址 2-APP1，2001： db8：2：：3的回復。
+7. 在 [Windows PowerShell] 視窗中，輸入 **ping 2-app1** ，然後按 enter。 您應該會看到來自 IPv6 位址 2-APP1，2001： db8：2：：3的回復。
 
-8. 開啟 Internet Explorer，在 Internet Explorer 網址列中輸入， **https://2-app1/** 然後按 enter 鍵。 您會在 2-APP1 上看到預設的 IIS 網站。
+8. 開啟 Internet Explorer，在 Internet Explorer 網址列中輸入， **https://2-app1/** 然後按 enter 鍵。 您將會在 2 APP1 上看到預設的 IIS 網站。
 
-9. 在 Internet Explorer 網址列中輸入， **https://app2/** 然後按 enter 鍵。 您將會看到 APP2 上的預設網站。
+9. 在 Internet Explorer 網址列中，輸入， **https://app2/** 然後按 enter 鍵。 您將會看到 APP2 上的預設網站。
 
-10. 在 [**開始**] 畫面上，輸入<strong> \\ \APP2\FILES</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。 這示範了您能夠使用 SMB 連線到僅支援 IPv4 的伺服器，來取得僅支援 IPv4 之主機上的資源。
+10. 在 [**開始**] 畫面上，輸入 <strong> \\ \APP2\FILES</strong>，然後按 enter。 按兩下 [新文字文件] 檔案。 這示範了您能夠使用 SMB 連線到僅支援 IPv4 的伺服器，來取得僅支援 IPv4 之主機上的資源。
 
 11. 在 CLIENT2 上重複此程式。
 

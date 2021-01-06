@@ -1,41 +1,41 @@
 ---
 title: 設定虛擬網路的加密
-description: 虛擬網路加密可讓虛擬機器之間的虛擬網路流量進行加密，這兩者會在子網內彼此通訊，並標示為「啟用加密」。
+description: 虛擬網路加密允許加密虛擬機器之間的虛擬網路流量，這些虛擬機器會在標示為「啟用加密」的子網內彼此通訊。
 manager: grcusanz
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 41bf68a18a05f97de4cff14651bf98bfa28bc33c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 17ad35c4cb0bdcb89b095334a282e113028937b1
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990135"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948824"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>設定虛擬子網的加密
 
 >適用于： Windows Server
 
-虛擬網路加密可加密 Vm 之間的虛擬網路流量，這些 Vm 會在標示為「加密已啟用」的子網內彼此通訊。 這項功能也利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。 DTLS 提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
+虛擬網路加密可加密 Vm 之間的虛擬網路流量，這些 Vm 會在標示為「啟用加密」的子網內彼此通訊。 這項功能也利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。 DTLS 提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
 
 虛擬網路加密需要：
-- 已安裝在每個 SDN 的 Hyper-v 主機上的加密憑證。
+- 在每個啟用 SDN 的 Hyper-v 主機上安裝的加密憑證。
 - 網路控制卡中的認證物件，其參考該憑證的指紋。
 - 每個虛擬網路上的設定都包含需要加密的子網。
 
-一旦您在子網上啟用加密，該子網內的所有網路流量都會自動加密，以及任何可能也會發生的應用層級加密。  跨越子網的流量即使標示為已加密，也會自動以未加密的方式傳送。 任何跨越虛擬網路界限的流量也會以未加密的形式傳送。
+一旦在子網上啟用加密，該子網內的所有網路流量都會自動加密，除了可能也會發生的任何應用層級加密之外。  子網之間的流量如果標示為已加密，則會自動以未加密的方式傳送。 任何跨越虛擬網路界限的流量也會以未加密的形式傳送。
 
 >[!NOTE]
->與相同子網上的另一個 VM 通訊時，不論其目前是否已連線或已連線，流量都會自動加密。
+>當與相同子網上的其他 VM 通訊時（不論其目前是否已連線或已連線），流量會自動加密。
 
 >[!TIP]
->如果您必須將應用程式限制為只能在加密的子網上進行通訊，您可以使用存取控制清單 (Acl) 只允許目前子網內的通訊。 如需詳細資訊，請參閱[使用存取控制清單 (acl) 來管理資料中心網路流量](../manage/use-acls-for-traffic-flow.md)。
+>如果您必須將應用程式限制為只在加密子網上進行通訊，您可以使用 (Acl) 的存取控制清單，以允許目前子網內的通訊。 如需詳細資訊，請參閱 [使用 (acl 的存取控制清單) 管理資料中心網路流量流程](../manage/use-acls-for-traffic-flow.md)。
 
 
 ## <a name="step-1-create-the-encryption-certificate"></a>步驟 1： 建立加密憑證
-每部主機都必須安裝加密憑證。 您可以對所有租使用者使用相同的憑證，或為每個租使用者產生唯一一個。
+每部主機必須安裝加密憑證。 您可以針對所有租使用者使用相同的憑證，或為每個租使用者各產生一個唯一的憑證。
 
 1.  產生憑證
 
@@ -93,7 +93,7 @@ ms.locfileid: "87990135"
     $enrollment.InstallResponse(2, $certdata, 0, "")
     ```
 
-    執行腳本之後，[我的存放區] 中會出現新的憑證：
+    執行腳本後，[我的存放區] 中會出現新的憑證：
 
     ```
     PS D:\> dir cert:\\localmachine\my
@@ -105,7 +105,7 @@ ms.locfileid: "87990135"
     5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
     ```
 
-1. 將憑證匯出至檔案。<p>您需要憑證的兩個複本，一個包含私密金鑰，另一個沒有。
+1. 將憑證匯出至檔案。<p>您需要憑證的兩個複本，一個具有私密金鑰，另一個則沒有。
 
     ```
    $subjectName = "EncryptedVirtualNetworks"
@@ -114,7 +114,7 @@ ms.locfileid: "87990135"
    Export-Certificate -Type CERT -FilePath "c:\$subjectName.cer" -cert $cert
     ```
 
-3. 在您的每個 hyper-v 主機上安裝憑證
+3. 在每部 hyper-v 主機上安裝憑證
 
     ```
     PS C:\> dir c:\$subjectname.*
@@ -167,9 +167,9 @@ ms.locfileid: "87990135"
     }
     ```
 
-5. 針對環境中的每部伺服器重複執行。<p>針對每部伺服器重複之後，您應該將憑證安裝在每部 Hyper-v 主機的根目錄和我的存放區中。
+5. 針對您環境中的每部伺服器重複執行。<p>針對每部伺服器重複之後，您應該在每個 Hyper-v 主機的根目錄和我的存放區中安裝憑證。
 
-6. 驗證憑證的安裝。<p>檢查「我的根憑證存放區」的內容，以確認憑證：
+6. 確認憑證的安裝。<p>藉由檢查 My 和根憑證存放區的內容來確認憑證：
 
     ```
     PS C:\> enter-pssession Server1
@@ -189,11 +189,11 @@ ms.locfileid: "87990135"
     5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
     ```
 
-7. 記下指紋。<p>您必須記下指紋，因為您需要它才能在網路控制卡中建立憑證認證物件。
+7. 記下憑證指紋。<p>您必須記下憑證指紋，因為您需要它才能在網路控制站中建立憑證認證物件。
 
 ## <a name="step-2-create-the-certificate-credential"></a>步驟 2： 建立憑證認證
 
-在連線到網路控制站的每一部 Hyper-v 主機上安裝憑證之後，您現在必須設定網路控制卡使用它。  若要這樣做，您必須從已安裝網路控制站 PowerShell 模組的電腦建立包含憑證指紋的認證物件。
+在連線到網路控制站的每個 Hyper-v 主機上安裝憑證之後，您現在必須設定網路控制站來使用它。  若要這樣做，您必須從已安裝網路控制卡 PowerShell 模組的電腦建立包含憑證指紋的認證物件。
 
 ```
 ///Replace with the thumbprint from your certificate
@@ -211,16 +211,16 @@ New-networkcontrollercredential -connectionuri $uri -resourceid "EncryptedNetwor
 ```
 
 > [!TIP]
-> 您可以針對每個加密的虛擬網路重複使用此認證，也可以為每個租使用者部署及使用唯一的憑證。
+> 您可以針對每個加密的虛擬網路重複使用此認證，也可以為每個租使用者部署和使用唯一的憑證。
 
-## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>步驟 3： 設定加密的虛擬網路
+## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>步驟 3： 設定虛擬網路以進行加密
 
-此步驟假設您已建立虛擬網路名稱「我的網路」，且其中至少包含一個虛擬子網。  如需建立虛擬網路的詳細資訊，請參閱[建立、刪除或更新租使用者虛擬網路](../Manage/Create,-Delete,-or-Update-Tenant-Virtual-Networks.md)。
+此步驟假設您已建立虛擬網路名稱「我的網路」，且其中至少包含一個虛擬子網。  如需建立虛擬網路的相關資訊，請參閱 [建立、刪除或更新租使用者虛擬網路](../Manage/Create,-Delete,-or-Update-Tenant-Virtual-Networks.md)。
 
 >[!NOTE]
->與相同子網上的另一個 VM 通訊時，不論其目前是否已連線或已連線，流量都會自動加密。
+>當與相同子網上的其他 VM 通訊時（不論其目前是否已連線或已連線），流量會自動加密。
 
-1.  從網路控制卡取出虛擬網路和認證物件：
+1.  從網路控制站取出虛擬網路和認證物件：
 
     ```
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "MyNetwork"
@@ -237,7 +237,7 @@ New-networkcontrollercredential -connectionuri $uri -resourceid "EncryptedNetwor
     $vnet.properties.Subnets[0].properties.EncryptionEnabled = $true
     ```
 
-3.  將更新的虛擬網路物件放入網路控制卡：
+3.  將更新的虛擬網路物件放入網路控制站：
 
     ```
     New-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId $vnet.ResourceId -Properties $vnet.Properties -force

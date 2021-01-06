@@ -1,23 +1,24 @@
 ---
 title: 使用延伸連接埠存取控制清單建立安全性原則
-description: 本主題提供 Windows Server 2016 中 (Acl) 擴充通訊埠存取控制清單的相關資訊。
+description: 本主題提供 Windows Server 2016 中 (Acl) 的擴充通訊埠存取控制清單的相關資訊。
 manager: brianlic
 ms.topic: article
 ms.assetid: a92e61c3-f7d4-4e42-8575-79d75d05a218
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2c79c0bb73e7e460f59d9131cbd7ba4cff737d89
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 52d0214732d5317d4885415d9764ff77d924a272
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946151"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948164"
 ---
 # <a name="create-security-policies-with-extended-port-access-control-lists"></a>使用延伸連接埠存取控制清單建立安全性原則
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題提供 Windows Server 2016 中 (Acl) 擴充通訊埠存取控制清單的相關資訊。 您可以在 Hyper-V 虛擬交換器上設定延伸 ACL，以允許和封鎖往來的虛擬機器 (VM) 網路流量，而這些虛擬機器是透過虛擬網路介面卡連線到交換器。
+本主題提供 Windows Server 2016 中 (Acl) 的擴充通訊埠存取控制清單的相關資訊。 您可以在 Hyper-V 虛擬交換器上設定延伸 ACL，以允許和封鎖往來的虛擬機器 (VM) 網路流量，而這些虛擬機器是透過虛擬網路介面卡連線到交換器。
 
 本主題包含下列各節。
 
@@ -26,9 +27,9 @@ ms.locfileid: "87946151"
 -   [可設定狀態的 ACL 規則](#bkmk_stateful)
 
 ## <a name="detailed-acl-rules"></a><a name="bkmk_detailed"></a>詳細的 ACL 規則
-Hyper-v 虛擬交換器延伸 Acl 可讓您建立詳細的規則，以套用至連線至 Hyper-v 虛擬交換器的個別 VM 網路介面卡。 建立詳細規則的能力可讓 (Csp) 的企業和雲端服務提供者解決多租使用者共用伺服器環境中的網路安全性威脅。
+Hyper-v 虛擬交換器延伸 Acl 可讓您建立詳細的規則，您可以將這些規則套用至連線至 Hyper-v 虛擬交換器的個別 VM 網路介面卡。 建立詳細規則的能力可讓 (Csp 的企業和雲端服務提供者) ，以解決多租使用者共用伺服器環境中的網路安全性威脅。
 
-使用延伸 ACL，就不再需要建立更廣泛的規則來封鎖或允許往來 VM 之所有通訊協定的所有流量，您現在可以封鎖或允許在 VM 上執行之個別通訊協定的網路流量。 您可以在 Windows Server 2016 中建立擴充的 ACL 規則，其中包含下列5組參數：來源 IP 位址、目的地 IP 位址、通訊協定、來源埠及目的地埠。 此外，每個規則還可指定網路流量方向 (進或出)，以及規則支援的動作 (封鎖或允許流量)。
+使用延伸 ACL，就不再需要建立更廣泛的規則來封鎖或允許往來 VM 之所有通訊協定的所有流量，您現在可以封鎖或允許在 VM 上執行之個別通訊協定的網路流量。 您可以在 Windows Server 2016 中建立延伸的 ACL 規則，其中包含下列5元組的參數組：來源 IP 位址、目的地 IP 位址、通訊協定、來源埠及目的地埠。 此外，每個規則還可指定網路流量方向 (進或出)，以及規則支援的動作 (封鎖或允許流量)。
 
 舉例來說，您可以設定 VM 的連接埠 ACL 以允許連接埠 80 上的所有連入及連出 HTTP 和 HTTPS 流量，同時封鎖所有連接埠上所有其他通訊協定的網路流量。
 
@@ -37,10 +38,10 @@ Hyper-v 虛擬交換器延伸 Acl 可讓您建立詳細的規則，以套用至�
 ### <a name="configuring-acl-rules-with-windows-powershell"></a>使用 Windows PowerShell 設定 ACL 規則
 若要設定延伸 ACL，您必須使用 Windows PowerShell 命令 **Add-VMNetworkAdapterExtendedAcl**。 這個命令有四種不同的語法，每個語法都有截然不同的用法：
 
-1.  將延伸 ACL 新增至名為 VM 的所有網路介面卡，這是由第一個參數 VMName 所指定。 語法：
+1.  將延伸的 ACL 新增至名為 VM 的所有網路介面卡（由第一個參數（-VMName）指定）。 語法：
 
     > [!NOTE]
-    > 如果您想要將延伸 ACL 新增到一個網路介面卡，而不是全部，您可以使用參數-VMNetworkAdapterName 指定網路介面卡。
+    > 如果您想要將擴充的 ACL 新增至一個網路介面卡，而不是全部，則可以使用參數-VMNetworkAdapterName 來指定網路介面卡。
 
     ```
     Add-VMNetworkAdapterExtendedAcl [-VMName] <string[]> [-Action] <VMNetworkAdapterExtendedAclAction> {Allow | Deny}
@@ -63,7 +64,7 @@ Hyper-v 虛擬交換器延伸 Acl 可讓您建立詳細的規則，以套用至�
 3.  將延伸 ACL 新增到保留給 Hyper-V 主機管理作業系統使用的所有虛擬網路介面卡。
 
     > [!NOTE]
-    > 如果您想要將延伸 ACL 新增到一個網路介面卡，而不是全部，您可以使用參數-VMNetworkAdapterName 指定網路介面卡。
+    > 如果您想要將擴充的 ACL 新增至一個網路介面卡，而不是全部，則可以使用參數-VMNetworkAdapterName 來指定網路介面卡。
 
     ```
     Add-VMNetworkAdapterExtendedAcl [-Action] <VMNetworkAdapterExtendedAclAction> {Allow | Deny} [-Direction]
@@ -73,7 +74,7 @@ Hyper-v 虛擬交換器延伸 Acl 可讓您建立詳細的規則，以套用至�
         [-ComputerName <string[]>] [-WhatIf] [-Confirm]  [<CommonParameters>]
     ```
 
-4.  將延伸 ACL 新增至您在 Windows PowerShell 中建立的 VM 物件，例如 **$vm = 取得 vm "my_vm"**。 您可以在下一行程式碼中執行此命令來建立延伸 ACL，語法如下：
+4.  將延伸的 ACL 新增至您在 Windows PowerShell 中建立的 VM 物件，例如 **$vm = 取得 vm "my_vm"**。 您可以在下一行程式碼中執行此命令來建立延伸 ACL，語法如下：
 
     ```
     Add-VMNetworkAdapterExtendedAcl [-VM] <VirtualMachine[]> [-Action] <VMNetworkAdapterExtendedAclAction> {Allow |
@@ -104,10 +105,10 @@ Hyper-v 虛擬交換器延伸 Acl 可讓您建立詳細的規則，以套用至�
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|
 |*|*|TCP|*|3389|位於|允許|
 
-下列兩個範例說明如何使用 Windows PowerShell 命令建立規則。 第一個範例規則會封鎖對名為 "ApplicationServer" 之 VM 的所有流量。 第二個範例規則會套用至名為 "ApplicationServer" 之 VM 的網路介面卡，只允許對 VM 的輸入 RDP 流量。
+下列兩個範例說明如何使用 Windows PowerShell 命令建立規則。 第一個範例規則會封鎖對名為 "ApplicationServer" 之 VM 的所有流量。 第二個範例規則會套用至名為 "ApplicationServer" 之 VM 的網路介面卡，只允許進入 VM 的輸入 RDP 流量。
 
 > [!NOTE]
-> 當您建立規則時，可以使用 **-權數**參數來判斷 Hyper-v 虛擬交換器處理規則的順序。 **-權數**的值會以整數表示;具有較高整數的規則會在具有較低整數的規則之前處理。 例如，如果您在 VM 網路介面卡套用兩個規則，一個的權數是 1，而另一個的權數是 10，則會優先套用權數是 10 的規則。
+> 當您建立規則時，您可以使用 **-權數** 參數來決定 Hyper-v 虛擬交換器處理規則的順序。 **權數** 的值會以整數表示;具有較高整數的規則會在具有較低整數的規則之前進行處理。 例如，如果您在 VM 網路介面卡套用兩個規則，一個的權數是 1，而另一個的權數是 10，則會優先套用權數是 10 的規則。
 
 ```
 Add-VMNetworkAdapterExtendedAcl -VMName "ApplicationServer" -Action "Deny" -Direction "Inbound" -Weight 1
@@ -187,7 +188,7 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction 
 |方向|位於|外|外|
 |動作|拒絕|拒絕|允許|
 |具狀態|否|否|是|
-|逾時 (秒)|N/A|N/A|3600|
+|逾時 (秒)|不適用|不適用|3600|
 
 可設定狀態的規則允許 VM 應用程式伺服器連線到遠端網頁伺服器。 第一個封包傳出之後，Hyper-V 虛擬交換器會動態建立兩個流量狀態，以允許所有從遠端網頁伺服器傳出及傳回的封包。 如果伺服器間的封包流量停止，流量狀態會在指定的逾時值 3600 秒或一個小時逾時。
 
