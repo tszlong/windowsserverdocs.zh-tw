@@ -7,12 +7,13 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: b810eb78055eeeeda62ef9e0f7d6fb82efa99d14
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.topic: conceptual
+ms.openlocfilehash: 388fef573d6c557889caa3b872b79f42cd1cf8a5
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077765"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943884"
 ---
 # <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>不在 Windows Server 中的角色、角色服務和功能-Server Core
 
@@ -28,7 +29,7 @@ Windows Server 的 Server Core 安裝選項已移除下列角色、角色服務�
 - 傳真伺服器 (**傳真**) 
 - MultiPoint 服務 (**MultiPointServerRole**) 
 - 網路原則與存取服務 (**NPAS**) 
-- *Windows Server 1803 版之前*的 Windows 部署服務 (**WDS**)  () 
+- *Windows Server 1803 版之前* 的 Windows 部署服務 (**WDS**)  () 
 
 ## <a name="role-services-not-in-server-core"></a>不在 Server Core 中的角色服務
 請注意，某些遠端桌面角色服務包含在 Server Core (連接代理人、授權、虛擬化主機) ，但其他則不 (閘道、RD 工作階段主機 Web 存取) 。

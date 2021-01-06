@@ -6,40 +6,41 @@ ms.topic: article
 ms.assetid: 366e6fd5-d563-4de3-9551-5614cbb8f2cb
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 76a2847113536020bec6ea9724026c6e297cead2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 70039e266e2696f69c5eee8077bab81ccee72d35
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952299"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97945454"
 ---
 # <a name="delete-dns-resource-records"></a>刪除 DNS 資源記錄
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-您可以使用本主題，使用 IPAM 用戶端主控台刪除一或多個 DNS 資源記錄。
+您可以使用此主題來刪除一或多個 DNS 資源記錄，方法是使用 IPAM 用戶端主控台。
 
 若要執行此程序，至少需要 **Administrators** 的成員資格或同等權限。
 
 ### <a name="to-delete-dns-resource-records"></a>刪除 DNS 資源記錄
 
-1.  在伺服器管理員中，按一下 [ **IPAM**]。 IPAM 用戶端主控台隨即出現。
+1.  在伺服器管理員中，按一下 [  **IPAM**]。 IPAM 用戶端主控台隨即出現。
 
-2.  在流覽窗格的 [**監視及管理**] 中，按一下 [ **DNS 區域**]。  流覽窗格會分割成上方流覽窗格和較低的流覽窗格。
+2.  在流覽窗格的 [ **監視和管理**] 中，按一下 [ **DNS 區域**]。  流覽窗格會分成上方流覽窗格和下方流覽窗格。
 
-3.  按一下以展開 [**正**向對應]，以及您要刪除的區域和資源記錄所在的網域。 按一下該區域，然後在 [顯示] 窗格中，按一下 [**目前的視圖**]。 按一下 [**資源記錄**]。
+3.  按一下以展開 [ **正** 向對應]，以及您想要刪除之區域和資源記錄所在的網域。 按一下該區域，然後按一下 [顯示] 窗格中的 [ **目前的視圖**]。 按一下 [ **資源記錄**]。
 
 4.  在 [顯示] 窗格中，找出並選取您想要刪除的資源記錄。
 
     ![選取要刪除的資源記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_01.jpg)
 
-5.  以滑鼠右鍵按一下選取的記錄，然後按一下 [**刪除 DNS 資源記錄**]。
+5.  以滑鼠右鍵按一下選取的記錄，然後按一下 [ **刪除 DNS 資源記錄**]。
 
     ![刪除記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_02.jpg)
 
-6.  [**刪除 DNS 資源記錄**] 對話方塊隨即開啟。 確認已選取正確的 DNS 伺服器。 如果不是，請按一下 [ **DNS 伺服器**]，然後選取您要從中刪除資源記錄的伺服器。 按一下 [確定]  。 IPAM 會從 DNS 伺服器刪除資源記錄。
+6.  [ **刪除 DNS 資源記錄** ] 對話方塊隨即開啟。 確認已選取正確的 DNS 伺服器。 如果不是，請按一下 [ **DNS 伺服器** ]，然後選取您想要從中刪除資源記錄的伺服器。 按一下 [確定]。 IPAM 會刪除 DNS 伺服器的資源記錄。
 
-    ![確認已選取正確的 DNS 伺服器，並刪除記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_03.jpg)
+    ![確認已選取正確的 DNS 伺服器並刪除記錄](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_03.jpg)
 
 ## <a name="see-also"></a>另請參閱
 [DNS 資源記錄管理](DNS-Resource-Record-Management.md) 

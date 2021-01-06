@@ -1,17 +1,18 @@
 ---
 title: 步驟2規劃 Advanced DirectAccess 部署
-description: 本主題是使用 Windows Server 2016 部署單一 DirectAccess 伺服器與 Advanced Settings 指南的一部分
+description: 瞭解如何規劃遠端存取設定向導的設定。
 manager: brianlic
 ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5d8182a9777469b8ce3cf37e9b7b4f3cc005d16f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: c7215b1916816aa02f6767e45973fff6dd05c973
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970385"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97944714"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>步驟2規劃 Advanced DirectAccess 部署
 
@@ -36,7 +37,7 @@ ms.locfileid: "87970385"
 
 2.  哪些安全性群組將包含 DirectAccess 用戶端電腦？
 
-    DirectAccess 用戶端設定包含在 DirectAccess 用戶端 GPO 中。 這個 GPO 會套用到屬於您在「DirectAccess 用戶端安裝精靈」中指定之安全性群組的電腦。 您可以指定將安全性群組包含在任何支援的網域中。 如需詳細資訊，請參閱第[1.7 節計畫 Active Directory Domain Services](da-adv-plan-s1-infrastructure.md#17-plan-active-directory-domain-services)。
+    DirectAccess 用戶端設定包含在 DirectAccess 用戶端 GPO 中。 這個 GPO 會套用到屬於您在「DirectAccess 用戶端安裝精靈」中指定之安全性群組的電腦。 您可以指定將安全性群組包含在任何支援的網域中。 如需詳細資訊，請參閱 [1.7 計畫 Active Directory Domain Services](da-adv-plan-s1-infrastructure.md#17-plan-active-directory-domain-services)一節。
 
     設定 DirectAccess 之前，您應該先建立安全性群組。 您可以在完成 DirectAccess 部署之後將電腦新增到安全性群組，但是如果您新增的用戶端電腦位於與安全性群組不同的網域，用戶端 GPO 將不會套用到這些用戶端。 例如，如果您在網域 A 中為 DirectAccess 用戶端建立 SG1，並稍後從網域 B 將用戶端新增到這個群組，則用戶端 GPO 將不會套用到來自網域 B 的用戶端。為了避免這個問題，請為每個包含 DirectAccess 用戶端電腦的網域建立一個新的用戶端安全性群組。 或者，如果您不想要建立新的安全性群組，請使用新網域的新 GPO 名稱來執行 Windows PowerShell Cmdlet **Add-DAClient**。
 
@@ -75,7 +76,7 @@ ms.locfileid: "87970385"
 
     -   **一張網路介面卡**。 在此設定中，DirectAccess 伺服器會安裝在邊緣裝置 (例如防火牆或路由器) 後面。 網路介面卡會連線到內部網路。
 
-    如需為您的部署選取拓撲的詳細資訊，請參閱[1.1 規劃網路拓朴和設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)。
+    如需有關為您的部署選取拓撲的詳細資訊，請參閱 [1.1 規劃網路拓撲和設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)。
 
 -   **ConnectTo 位址**
 
@@ -91,20 +92,20 @@ ms.locfileid: "87970385"
 
 -   **IPv6 首碼**
 
-    如果「遠端存取伺服器安裝精靈」偵測到網路介面卡上已部署 IPv6，它就會自動填入內部網路的 IPv6 首碼、要指派給 DirectAccess 用戶端電腦的 IPv6 首碼，以及要指派給 VPN 用戶端電腦的 IPv6 首碼。 如果自動產生的首碼對您的原生 IPv6 基礎結構來說不正確，您就必須手動變更它們。 如需詳細資訊，請參閱[1.1 規劃網路拓朴和設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)。
+    如果「遠端存取伺服器安裝精靈」偵測到網路介面卡上已部署 IPv6，它就會自動填入內部網路的 IPv6 首碼、要指派給 DirectAccess 用戶端電腦的 IPv6 首碼，以及要指派給 VPN 用戶端電腦的 IPv6 首碼。 如果自動產生的首碼對您的原生 IPv6 基礎結構來說不正確，您就必須手動變更它們。 如需詳細資訊，請參閱 [1.1 規劃網路拓朴和設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)。
 
 -   **驗證**
 
     決定 DirectAccess 用戶端將如何向 DirectAccess 伺服器進行驗證：
 
-    -   **使用者驗證**。 您可以讓使用者使用 Active Directory 認證或雙因素驗證來進行驗證。 如需使用雙因素驗證進行驗證的詳細資訊，請參閱[使用 OTP 驗證部署遠端存取](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))。
+    -   **使用者驗證**。 您可以讓使用者使用 Active Directory 認證或雙因素驗證來進行驗證。 如需使用雙因素驗證進行驗證的詳細資訊，請參閱 [使用 OTP 驗證部署遠端存取](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))。
 
-    -   **電腦驗證**。 您可以設定讓電腦驗證使用憑證，或使用 DirectAccess 伺服器做為  Kerberos Proxy 來代表用戶端。 如需詳細資訊，請參閱[1.3 規劃憑證需求](da-adv-plan-s1-infrastructure.md#13-plan-certificate-requirements)。
+    -   **電腦驗證**。 您可以設定讓電腦驗證使用憑證，或使用 DirectAccess 伺服器做為  Kerberos Proxy 來代表用戶端。 如需詳細資訊，請參閱 [1.3 規劃憑證需求](da-adv-plan-s1-infrastructure.md#13-plan-certificate-requirements)。
 
-    -   **Windows 7 用戶端**。 根據預設，執行 Windows 7 的用戶端電腦無法連線到 Windows Server 2012 R2 或 Windows Server 2012 DirectAccess 部署。 如果您的組織中有執行 Windows 7 的用戶端，而它們需要遠端存取內部資源，您可以允許它們連接。 任何您想要允許存取內部資源的用戶端電腦都必須是您在「DirectAccess 用戶端安裝精靈」中指定之安全性群組的成員。
+    -   **Windows 7 用戶端**。 根據預設，執行 Windows 7 的用戶端電腦無法連接到 Windows Server 2012 R2 或 Windows Server 2012 DirectAccess 部署。 如果您的組織中有執行 Windows 7 的用戶端，而它們需要遠端存取內部資源，您可以允許它們連線。 任何您想要允許存取內部資源的用戶端電腦都必須是您在「DirectAccess 用戶端安裝精靈」中指定之安全性群組的成員。
 
         > [!NOTE]
-        > 允許執行 Windows 7 的用戶端使用 DirectAccess 進行連線，需要您使用電腦憑證驗證。
+        > 若要讓執行 Windows 7 的用戶端使用 DirectAccess 進行連線，您必須使用電腦憑證驗證。
 
 -   **VPN 設定**
 
@@ -127,7 +128,7 @@ DirectAccess 需要三種類型的基礎結構伺服器：
 
 您可以視需要要求在 DirectAccess 用戶端與所選應用程式內部伺服器之間進行端對端驗證和加密。 如果您設定端對端驗證，DirectAccess 用戶端就會使用 IPsec 傳輸原則。 這個原則會要求在指定的應用程式伺服器終止 IPsec 工作階段的驗證和流量保護。 在此情況下，「遠端存取」伺服器會將已驗證且受保護的 IPsec 工作階段轉送到應用程式伺服器。
 
-根據預設，當您將驗證延伸到應用程式伺服器時，DirectAccess 用戶端與應用程式伺服器之間的資料裝載會受到加密。 您可以選擇不將流量加密，而只使用驗證。 不過，這與使用驗證和加密相比較不安全，而且只有執行 Windows Server 2008 R2 或 Windows Server 2012 作業系統的應用程式伺服器才支援。
+根據預設，當您將驗證延伸到應用程式伺服器時，DirectAccess 用戶端與應用程式伺服器之間的資料裝載會受到加密。 您可以選擇不將流量加密，而只使用驗證。 不過，這比使用驗證和加密更不安全，而且僅支援執行 Windows Server 2008 R2 或 Windows Server 2012 作業系統的應用程式伺服器。
 
 ## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 規劃 DirectAccess 和協力廠商 VPN 用戶端
 有些協力廠商 VPN 用戶端不會在 [網路連線] 資料夾中建立連線。 這可能導致在已建立 VPN 連線且有內部網路連線能力時，DirectAccess 將它判斷為沒有內部網路連線能力。 當協力廠商 VPN 用戶端藉由將其介面定義為「網路裝置介面規格」(NDIS) 端點類型來登錄這些介面時，就會發生這種情況。 您可以藉由在 DirectAccess 用戶端上將下列登錄值設定為 1，讓這些類型的 VPN 用戶端並存：

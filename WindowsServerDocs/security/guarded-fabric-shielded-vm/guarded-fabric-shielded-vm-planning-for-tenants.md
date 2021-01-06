@@ -6,12 +6,13 @@ ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
 ms.author: nirb
-ms.openlocfilehash: dc6ffa148da0f9c5ea7d7e2e2aea561260aa01d1
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.date: 12/10/2020
+ms.openlocfilehash: bd56d41b4e940691de30cfb69f119041ef5cc5d7
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043836"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97944464"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>租使用者的受防護網狀架構與受防護 VM 規劃指南
 
