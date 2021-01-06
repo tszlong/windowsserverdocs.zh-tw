@@ -1,23 +1,24 @@
 ---
 title: 安裝和設定進階 DirectAccess
-description: 本主題是使用 Windows Server 2016 部署單一 DirectAccess 伺服器與 Advanced Settings 指南的一部分
+description: 深入瞭解使用 IPv4 和 IPv6 部署執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的單一 DirectAccess 伺服器所需的設定步驟。
 manager: brianlic
 ms.topic: article
 ms.assetid: f45e5b6f-fc66-4deb-bed4-a1baa3cc6dae
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 130d63122080b08df5ea77ee9f7749cda88f4aee
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 2bfa3a274b20d728ad321ded1a7040f1cef2cb9d
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953704"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946594"
 ---
 # <a name="install-and-configure-advanced-directaccess"></a>安裝和設定進階 DirectAccess
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-此總覽列出部署執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 和 IPv4 和 IPv6 的單一 DirectAccess 伺服器所需的設定步驟。
+本總覽列出使用 IPv4 和 IPv6 部署執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的單一 DirectAccess 伺服器所需的設定步驟。
 
 -   [步驟1：設定 Advanced DirectAccess 基礎結構](da-adv-configure-s1-infrastructure.md)。
 

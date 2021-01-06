@@ -6,12 +6,13 @@ author: JasonGerend
 ms.author: jgerend
 manager: daveba
 ms.date: 06/20/2019
-ms.openlocfilehash: dd8a015ff27809d0ef960241ce9221b4215c20aa
-ms.sourcegitcommit: 7499749ce7baaf58a523cae2dd46737d635475ce
+ms.topic: reference
+ms.openlocfilehash: ab98e0dd28ccc3529aa6ad8416c14d0960d56125
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043879"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946354"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -66,7 +67,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 ## <a name="examples"></a>範例
 
-若要執行 [磁片清理] 應用程式，讓您可以使用其對話方塊來指定稍後使用的選項，將設定儲存至集合 **1** ，請輸入下列內容：
+若要執行 [磁片清理] 應用程式，讓您可以使用其對話方塊來指定稍後使用的選項，將設定儲存至集合 **1**，請輸入下列內容：
 
 ```
 cleanmgr /sageset:1

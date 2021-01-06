@@ -3,15 +3,15 @@ title: 針對 DHCP 用戶端上的問題進行疑難排解
 description: 本 artilce 介紹如何針對 DHCP 用戶端上的問題進行疑難排解，並收集資料。
 manager: dcscontentpm
 ms.date: 5/26/2020
-ms.topic: article
+ms.topic: troubleshooting
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: d7cfe92272ad65ca4b413eb91039a9ab21de6c17
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 62ac48a59dcbcc31316dc0a5fc4dbc99509ec140
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078625"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947194"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-client"></a>針對 DHCP 用戶端上的問題進行疑難排解
 
@@ -36,11 +36,11 @@ ms.locfileid: "90078625"
 ## <a name="event-logs"></a>事件記錄檔
 
 檢查 Microsoft Windows-DHCP 用戶端事件/操作和 Microsoft Windows DHCP 用戶端事件/系統管理事件記錄檔。 與 DHCP 用戶端服務相關的所有事件都會傳送至這些事件記錄檔。
-Microsoft Windows DHCP 用戶端事件位於 [ **應用程式及服務記錄**檔] 下的 [事件檢視器]。
+Microsoft Windows DHCP 用戶端事件位於 [ **應用程式及服務記錄** 檔] 下的 [事件檢視器]。
 
 "Get-netadapter-IncludeHidden" PowerShell 命令提供必要的資訊，以解讀記錄檔中所列的事件。 例如，介面識別碼、MAC 位址等等。
 
-## <a name="data-collection"></a>資料收集
+## <a name="data-collection"></a>資料集合
 
 當問題發生時，建議您同時在 DHCP 用戶端和伺服器端同時收集資料。 不過，根據實際的問題，您也可以在 DHCP 用戶端或 DHCP 伺服器上使用單一資料集來開始進行調查。
 

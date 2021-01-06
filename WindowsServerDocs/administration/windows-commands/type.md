@@ -6,12 +6,13 @@ ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 ms.author: lizross
 author: eross-msft
 manager: mtillman
-ms.openlocfilehash: 879cd68b4995c65d623d56e97c0680587eda15b4
-ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
+ms.date: 10/16/2020
+ms.openlocfilehash: 911a7bc36f3aa4cc1be9dbbcba58432abed9bb14
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92156360"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947294"
 ---
 # <a name="type"></a>類型
 
@@ -38,7 +39,7 @@ type [<drive>:][<path>]<filename>
 
 ## <a name="examples"></a>範例
 
-若要顯示名為 *假日*的檔案內容，請輸入：
+若要顯示名為 *假日* 的檔案內容，請輸入：
 
 ```
 type holiday.mar
@@ -50,6 +51,6 @@ type holiday.mar
 type holiday.mar | more
 ```
 
-## <a name="additional-references"></a>其他參考
+## <a name="additional-references"></a>其他參考資料
 
 - [命令列語法關鍵](command-line-syntax-key.md)

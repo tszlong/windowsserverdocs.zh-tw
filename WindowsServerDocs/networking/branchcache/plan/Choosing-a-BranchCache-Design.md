@@ -1,16 +1,17 @@
 ---
 title: 選擇 BranchCache 設計
 description: 瞭解如何瞭解 BranchCache 模式，以及為您的部署選取最佳模式。
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 86c1ccad-2aa4-40fe-84c1-f77c49eb1216
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: cfc4632d9e4c8b7904134a9222f9b2d87ea6cdd0
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: 972f2941afa2544307933ec422eb40578e084672
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904393"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946704"
 ---
 # <a name="choosing-a-branchcache-design"></a>選擇 BranchCache 設計
 

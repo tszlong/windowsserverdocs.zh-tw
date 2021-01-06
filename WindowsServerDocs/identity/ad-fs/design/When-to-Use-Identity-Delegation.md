@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a2d3987e4051ad4248381e9a425b2d728755eb55
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: ac7fe201aa3065403abc04cb2e8df501bc46a0d4
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044966"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947904"
 ---
 # <a name="when-to-use-identity-delegation"></a>使用身分識別委派的時機
 
@@ -30,7 +30,7 @@ ms.locfileid: "97044966"
 ## <a name="how-does-identity-delegation-work"></a>身分識別委派如何運作？
 多層式應用程式架構中的 Web 應用程式通常會呼叫 Web 服務來存取通用資料或功能。 這些 Web 服務必須知道原始使用者的身分識別，服務才能做出授權決策並進行稽核。 在此情況下，前端 \- web 應用程式會將使用者表示為 Web 服務的委派。 AD FS 允許 Active Directory 帳戶做為其他信賴憑證者的使用者，藉此協助此案例。 下圖顯示身分識別委派案例。
 
-![身分識別委派](media/adfs2_identitydelegationsteps.gif)
+![顯示身分識別委派案例的圖例。](media/adfs2_identitydelegationsteps.gif)
 
 1.  Frank 嘗試 \- 從另一個組織的 Web 應用程式存取部分訂購歷程記錄。 他的用戶端電腦會要求並接收來自 AD FS 的權杖，以供前端 \- 部分 \- 訂購 Web 應用程式。
 

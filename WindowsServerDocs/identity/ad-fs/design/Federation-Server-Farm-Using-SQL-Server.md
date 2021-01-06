@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 781c3d99fdd063d094b85032e1ccaca0860cba9a
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 985ef6fe09433b843b3e67445045b68449036e24
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046986"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947124"
 ---
 # <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>使用 SQL Server 的舊版 AD FS 同盟伺服器陣列
 
@@ -61,7 +61,7 @@ Microsoft 資訊技術 \( IT \) 部門使用高安全性同步模式的 SQL Serv
 
 下圖顯示虛構的 Contoso 製藥公司如何部署其同盟伺服器陣列與公司網路中 SQL Server 拓撲。 此外，它也會顯示該公司如何設定具有 DNS 伺服器存取權的周邊網路、額外的 NLB 主機（使用在公司網路 NLB 叢集上使用的相同叢集 DNS 名稱 \( fs.contoso.com \) ），以及兩個 web 應用程式 proxy \( wap1 和 wap2 \) 。
 
-![使用 SQL 的伺服器陣列](media/SQLFarmADFSBlue.gif)
+![說明虛構 Contoso 製藥公司如何部署其同盟伺服器陣列與公司網路中 SQL Server 拓撲的說明。](media/SQLFarmADFSBlue.gif)
 
 如需有關如何設定網路環境以用於同盟伺服器或 web 應用程式 Proxy 的詳細資訊，請參閱 [AD FS 需求](AD-FS-Requirements.md) 和 [規劃 Web 應用程式 Proxy 基礎結構 (WAP) ](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))的「名稱解析需求」一節。
 
@@ -100,7 +100,7 @@ AlwaysOn 可用性群組是在 SQL Server 2012 中引進，並提供新的方式
 
 下圖顯示具有 AlwaysOn 可用性群組的 AD FS SQL Server 服務器陣列。
 
-![使用 SQL 的伺服器陣列](media/alwaysonavailabilitygroups.jpg)
+![顯示具有 AlwaysOn 可用性群組 AD FS SQL Server 服務器陣列的圖表。](media/alwaysonavailabilitygroups.jpg)
 
 > [!NOTE]
 > AlwaysOn 可用性群組要求 SQL Server 實例必須位於 Windows Server 容錯移轉叢集 \( WSFC \) 節點上。

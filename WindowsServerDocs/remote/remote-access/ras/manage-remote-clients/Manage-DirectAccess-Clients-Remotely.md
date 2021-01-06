@@ -1,17 +1,18 @@
 ---
 title: 遠端管理 DirectAccess 用戶端
-description: 本主題是在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端指南的一部分。
+description: 本主題是《在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端》指南的一部分。
 manager: brianlic
 ms.topic: article
 ms.assetid: 36255d80-a13e-4af7-a5c0-ab4c8f302622
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 43ea4d7d3add453425cba8b9794bf6b8c34c5df8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 86824aaba3e249aa5cc4f0743d28ce0371481c21
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963814"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947734"
 ---
 # <a name="manage-directaccess-clients-remotely"></a>遠端管理 DirectAccess 用戶端
 
@@ -41,17 +42,17 @@ ms.locfileid: "87963814"
 ### <a name="understand-monitoring-and-accounting"></a>了解監視和計量
 開始進行遠端用戶端的監視和計量工作之前，您需要了解兩者之間的差異。
 
--   **監視**會顯示在指定的時間點主動連線的使用者。
+-   **監視** 會顯示在指定的時間點主動連線的使用者。
 
--   **計量**會保存已連線到公司網路之使用者的歷程記錄及其使用狀況詳細資料 (用於規範和稽核)。
+-   **計量** 會保存已連線到公司網路之使用者的歷程記錄及其使用狀況詳細資料 (用於規範和稽核)。
 
 遠端用戶端監視是根據連線。 DirectAccess 用戶端所建立的通道連線有兩種：
 
--   **電腦通道流量**連線：此通道是由電腦在系統內容中建立，用來存取名稱解析、驗證、補救更新等所需的伺服器。
+-   **電腦通道流量** 連線：此通道是由電腦在系統內容中建立，以存取名稱解析、驗證、補救更新等所需的伺服器。
 
--   **使用者通道流量**連線：當使用者嘗試存取公司網路上的資源時，此通道是由電腦上的使用者帳戶（在使用者內容中）所建立。 根據部署需求，使用者可能必須提供強式認證 (例如使用智慧卡或提供單次密碼) 來存取公司網路資源。
+-   **使用者通道流量連接**：當使用者嘗試存取公司網路上的資源時，此通道是由電腦上的使用者帳戶（在使用者內容中）所建立。 根據部署需求，使用者可能必須提供強式認證 (例如使用智慧卡或提供單次密碼) 來存取公司網路資源。
 
-以 DirectAccess 來說，會以遠端用戶端的 IP 位址來唯一識別連線。 例如，如果電腦通道已針對用戶端電腦開啟，而且使用者是從該電腦連線，則會使用相同的連接。 在電腦通道仍然處於作用中的情況下，如果使用者中斷連線後又再次連線，則會視為單一連線。
+以 DirectAccess 來說，會以遠端用戶端的 IP 位址來唯一識別連線。 例如，如果為用戶端電腦開啟電腦通道，而且使用者是從該電腦連接，則會使用相同的連接。 在電腦通道仍然處於作用中的情況下，如果使用者中斷連線後又再次連線，則會視為單一連線。
 
 
 

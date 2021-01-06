@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 05/05/2020
 ms.topic: article
-ms.openlocfilehash: f57a47dc936bd1f5ab7e96e13eb7f5cf3cf91d97
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.openlocfilehash: a13938e19ffe7eef8e5c9f23fd6525b815d3387f
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904443"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947924"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>使用 AD FS 2019 風險評估模型建置外掛程式
 
@@ -23,7 +23,7 @@ ms.locfileid: "97904443"
 
 模型可讓您在 AD FS authentication 管線的三個階段中的任一個外掛程式程式碼，如下所示：
 
-![model](media/ad-fs-risk-assessment-model/risk1.png)
+![此圖顯示 D F S 驗證的三個階段。](media/ad-fs-risk-assessment-model/risk1.png)
 
 1. **要求收到的階段** ：當 AD FS 收到驗證要求（亦即使用者輸入認證之前）時，可讓建立外掛程式允許或封鎖要求。 您可以使用要求內容 (例如：用戶端 IP、Http 方法、proxy 伺服器 DNS 等 ) 可在此階段取得，以執行風險評估。 例如，您可以建立外掛程式以從要求內容讀取 IP，並在 IP 位於具風險 Ip 的預先定義清單中時封鎖驗證要求。
 
@@ -69,51 +69,50 @@ ms.locfileid: "97904443"
 3. `ThreatDetectionModule.sln`使用 Visual Studio 來開啟專案。
 
 4. `Microsoft.IdentityServer.dll`從 [方案瀏覽器] 中移除，如下所示：</br>
-
-   ![model](media/ad-fs-risk-assessment-model/risk2.png)
+   ![醒目顯示 [移除] 功能表選項的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk2.png)
 
 5. 將參考新增至 `Microsoft.IdentityServer.dll` 您的 AD FS，如下所示：
 
    a. 以滑鼠右鍵按一下 [**方案瀏覽器**] 中的 [**參考**]，然後選取 [**加入參考 ...**]。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk3.png)
+   ![醒目顯示 [加入參考] 功能表選項的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk3.png)
 
    b. 在 [ **參考管理員** ] 視窗中，選取 **[流覽]**。 在 [**選取要參考的檔案 ...** ] 對話方塊中， `Microsoft.IdentityServer.dll` 從 [我的案例 **C:\Windows\ADFS** ] 中 AD FS 的安裝資料夾 (選取) 然後按一下 [ **新增**]。
 
    > [!NOTE]
    > 在我的案例中，我會在 AD FS 伺服器本身上建立外掛程式。 如果您的開發環境位於不同的伺服器上，請 `Microsoft.IdentityServer.dll` 從 AD FS server 上的 AD FS 安裝資料夾，複製到您的開發箱。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk4.png)
+   ![顯示您應該複製之檔案的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk4.png)
 
    c. 確定已選取核取方塊之後，請按一下 [**參考管理員**] 視窗上的 **[確定**] `Microsoft.IdentityServer.dll` 。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk5.png)
+   ![顯示 Microsoft 點識別伺服器點 d l l 核取方塊的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk5.png)
 
 6. 所有類別和參考現在都已就緒，可進行組建。 不過，由於此專案的輸出是 dll，因此必須將它安裝到 AD FS 伺服器的 **全域組件快取**（GAC）中，而且必須先簽署 dll。 以下步驟可以達到此目的：
 
    a. 以 **滑鼠右鍵按一下** 專案的名稱 ThreatDetectionModule。 從功能表按一下 [ **屬性**]。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk6.png)
+   ![醒目顯示 [屬性] 功能表選項的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk6.png)
 
    b. 在 [ **屬性** ] 頁面上，按一下左側的 [簽署]，然後 **核** 取標示為 **[簽署元件**] 的核取方塊。 從 [ **選擇強式名稱金鑰檔：** ] 下拉式功能表中，選取 [ **<新增] >**。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk7.png)
+   ![顯示 [簽署元件] 核取方塊的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk7.png)
 
    c. 在 [ **建立強式名稱金鑰] 對話方塊** 中，輸入名稱 (您可以為金鑰) 選擇任何名稱，並取消核取 [ **以密碼保護我的金鑰** 檔] 核取方塊。 然後按一下 **[確定]**。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk8.png)
+   ![顯示 [以密碼保護我的金鑰檔案] 核取方塊的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk8.png)
 
    d. 儲存專案，如下所示：</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk9.png)
+   ![顯示儲存專案之位置的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk9.png)
 
 7. 依序按一下 [ **建立** ] 和 [ **重建方案** ] 來建立專案，如下所示：</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk10.png)
+   ![顯示 [重建方案] 功能表選項的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk10.png)
 
    檢查畫面底部的 [ **輸出] 視窗** ，查看是否發生任何錯誤。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk11.png)
+   ![顯示重建解決方案輸出的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk11.png)
 
 
 外掛程式 (dll) 現在已可供使用，而且位於專案資料夾的 [ **\bin\Debug** ] 資料夾中， (在我的案例中， **C:\extensions\ThreatDetectionModule\bin\Debug\ThreatDetectionModule.dll**) 。
@@ -128,11 +127,11 @@ ms.locfileid: "97904443"
 
 2. 開始 Visual Studio 的 **開發人員命令提示字元** ，並移至在我的案例中包含 **sn.exe** (的目錄，目錄是 **C:\Program Files (X86) \microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**) 。
 
-   ![model](media/ad-fs-risk-assessment-model/risk12.png)
+   ![顯示 Visual Studio 之開發人員命令提示字元的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk12.png)
 
 3. 使用 **-T** 參數和檔案在我的案例中的位置 (執行 **SN** 命令 `SN -T "C:\extensions\ThreatDetectionModule.dll"`) 。
 
-   ![model](media/ad-fs-risk-assessment-model/risk13.png)</br>
+   ![顯示如何執行 S N 命令的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk13.png)</br>
 
    此命令會為您提供公開金鑰 token (， **公開金鑰 token 為 714697626ef96b35**) 
 
@@ -142,7 +141,7 @@ ms.locfileid: "97904443"
 
    b. 在我的案例中執行 **Gacutil** 命令 (`Gacutil /IF C:\extensions\ThreatDetectionModule.dll`) ：
 
-   ![model](media/ad-fs-risk-assessment-model/risk14.png)
+   ![顯示如何執行 Gacutil 命令的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk14.png)
 
    > [!NOTE]
    > 如果您有 AD FS 伺服器陣列，則必須在伺服器陣列中的每個 AD FS 伺服器上執行上述程式。
@@ -183,7 +182,7 @@ ms.locfileid: "97904443"
 
 1. 開啟我們稍早在位置 **C:\extensions** 的案例中所建立的 **authconfig.csv** 檔案 () 然後新增您想要封鎖的 **外部網路 ip** 。 每個 IP 都應該在不同的行上，而且結尾不應有空格。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk18.png)
+   ![顯示如何新增外部網路 I P 線的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk18.png)
 
 2. 儲存並關閉檔案。
 
@@ -204,11 +203,11 @@ ms.locfileid: "97904443"
 
    輸入同盟伺服器實例和點擊 **測試驗證** 按鈕。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk15.png)
+   ![顯示 [測試驗證] 按鈕的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk15.png)
 
 5. 驗證會遭到封鎖，如下所示。</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk16.png)
+   ![顯示已封鎖驗證的螢幕擷取畫面。](media/ad-fs-risk-assessment-model/risk16.png)
 
 現在我們已知道如何建立和註冊外掛程式，接下來讓我們逐步解說外掛程式程式碼，以瞭解如何使用模型引進的新介面和類別來瞭解執行。
 
@@ -340,7 +339,7 @@ public interface IPostAuthenticationThreatDetectionModule
 **答：** 您可以使用 WriteAdminLogErrorMessage 方法將錯誤記錄檔寫入「AD FS/系統管理員」事件記錄檔，並使用 WriteAuditMessage 方法將記錄檔審核記錄至「AD FS 審核」安全性記錄，並使用 WriteDebugMessage 方法將記錄檔偵測至「AD FS 追蹤」的調試記錄。
 
 **新增這些外掛程式會增加 AD FS authentication 進程延遲？**</br>
-**答：** 延遲影響將取決於執行您所實行的風險評估邏輯所花的時間。 在生產環境中部署外掛程式之前，建議您先評估延遲的影響。
+**答：** 延遲影響將取決於執行您所實行的風險評估邏輯所花的時間。 建議您在實際執行環境中部署外掛程式之前，先評估延遲的影響。
 
 **為什麼無法 AD FS 建議具風險的 Ip、使用者等清單？**</br>
 **答：** 雖然目前無法使用，但我們正致力於在插入風險評估模型中建立智慧，以建議具風險的 Ip、使用者等等。 我們很快就會分享啟動日期。

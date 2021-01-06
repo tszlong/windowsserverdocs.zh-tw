@@ -5,12 +5,13 @@ ms.topic: reference
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 3bdb980754fedefebddfb33b998b37b621c3505a
-ms.sourcegitcommit: 4165d4a9198228d4ec809ccd7d791f8de2aeb159
+ms.date: 12/10/2020
+ms.openlocfilehash: 99b69b12c2be1be52ef2b71d5649cf3e258dc389
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091282"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946304"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -42,7 +43,7 @@ Diskpart 命令直譯器可協助您管理電腦的磁片磁碟機 (磁片、磁
 
 您只能將焦點提供給所選磁片上的磁碟分割。 在分割區具有焦點之後，如果有任何) 也有焦點，則相關的磁片區 (。 當磁片區具有焦點之後，如果磁片區對應到單一特定磁碟分割，則相關的磁片和磁碟分割也會有焦點。 如果不是這種情況，則會將焦點放在磁片上，而磁碟分割會遺失。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>語法
 
 若要啟動 diskpart 命令直譯器，請在命令提示字元中輸入：
 
@@ -57,7 +58,7 @@ diskpart <parameter>
 
 您可以從 Diskpart 命令直譯器執行下列命令：
 
-| 命令 | 描述 |
+| Command | 描述 |
 | ------- | ----------- |
 | [active](active.md) | 將具有焦點的磁碟分割標示為作用中。 |
 | [add](add.md) | 將具有焦點的簡單磁碟區鏡像到指定的磁碟。 |

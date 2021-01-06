@@ -3,15 +3,15 @@ title: 針對 DHCP 進行疑難排解的一般指導方針
 description: 本 artilce 介紹疑難排解 DHCP 的一般指引。
 manager: dcscontentpm
 ms.date: 5/26/2020
-ms.topic: article
+ms.topic: troubleshooting
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: e5550654beb0f303be946358c171f3a1b197ea40
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 3fb1536e3993ed92820b80c9460a1bdbcc3502c4
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078645"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947654"
 ---
 # <a name="general-guidance-to-troubleshoot-dhcp"></a>針對 DHCP 進行疑難排解的一般指導方針
 
@@ -19,7 +19,7 @@ ms.locfileid: "90078645"
 
 ## <a name="checklist"></a>檢查清單
 
-  - 問題何時開始發生？
+  - 問題何時開始發生?
 
   - 是否有任何錯誤訊息？
 

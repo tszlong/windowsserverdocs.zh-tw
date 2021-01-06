@@ -1,23 +1,24 @@
 ---
 title: Deploy a Single DirectAccess Server with Advanced Settings
-description: 本主題是使用 Windows Server 2016 部署單一 DirectAccess 伺服器與 Advanced Settings 指南的一部分
+description: 瞭解使用單一 DirectAccess 伺服器的 DirectAccess 案例，並可讓您使用 advanced settings 部署 DirectAccess。
 manager: brianlic
 ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4f2b2939bff08cc5c8f1fbd1eac6b421a35f589f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 3587977247b59ce2379d1a04e624099969a7c71b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996778"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946604"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-本主題提供使用單一 DirectAccess 伺服器的 DirectAccess 案例簡介，並可讓您使用 advanced 設定部署 DirectAccess。
+本主題提供使用單一 DirectAccess 伺服器之 DirectAccess 案例的簡介，並可讓您使用 advanced settings 部署 DirectAccess。
 
 ## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>在開始部署之前，請參閱不支援的設定清單、已知問題和先決條件
 部署 DirectAccess 之前，您可以使用下列主題來檢查必要條件和其他資訊。
@@ -27,7 +28,7 @@ ms.locfileid: "87996778"
 -   [部署 DirectAccess 的必要條件](../../../remote-access/directaccess/Prerequisites-for-Deploying-DirectAccess.md)
 
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>案例描述
-在此案例中，執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的單一電腦會設定為具有 advanced 設定的 DirectAccess 伺服器。
+在此案例中，執行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的單一電腦會設定為具有 advanced settings 的 DirectAccess 伺服器。
 
 > [!NOTE]
 > 如果您要設定只具有簡單設定的基本部署，請參閱＜ [Deploy a Single DirectAccess Server Using the Getting Started Wizard](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)＞。 在簡單案例中，會使用精靈以預設設定來設定 DirectAccess，而不需要設定基礎結構設定，例如憑證授權單位 (CA) 或 Active Directory 安全性群組。
@@ -35,7 +36,7 @@ ms.locfileid: "87996778"
 ## <a name="in-this-scenario"></a>在這個案例中
 若要使用進階設定來設定單一 DirectAccess 伺服器，您必須完成數個規劃和部署步驟。
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 在開始之前，您可以先檢閱下列需求。
 
 -   必須在所有設定檔啟用 Windows 防火牆。
@@ -70,7 +71,7 @@ ms.locfileid: "87996778"
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用
 部署單一 DirectAccess 伺服器可提供下列好處：
 
--   **容易存取**。 執行 Windows 10、Windows 8.1、Windows 8 和 Windows 7 的受管理用戶端電腦，可以設定為 DirectAccess 用戶端電腦。 這些用戶端可以隨時透過 DirectAccess 連接位於網際網路上的內部網路資源，無須登入 VPN 網路。 未執行上述作業系統的用戶端電腦可以透過 VPN 連接內部網路。
+-   **容易存取**。 執行 Windows 10、Windows 8.1、Windows 8 和 Windows 7 的受管理用戶端電腦可以設定為 DirectAccess 用戶端電腦。 這些用戶端可以隨時透過 DirectAccess 連接位於網際網路上的內部網路資源，無須登入 VPN 網路。 未執行上述作業系統的用戶端電腦可以透過 VPN 連接內部網路。
 
 -   **容易管理**。 「遠端存取」系統管理員可以透過 DirectAccess，從遠端管理網際網路上的 DirectAccess 用戶端電腦，即使用戶端電腦不位於公司內部網路上也可以。 管理伺服器可以自動修復不符合公司規定的用戶端電腦。 DirectAccess 和 VPN 都是在同一個主控台以及使用相同的一組精靈進行管理。 此外，只要單一的「遠端存取管理主控台」就可以管理一或多部 DirectAccess 伺服器。
 
@@ -79,15 +80,15 @@ ms.locfileid: "87996778"
 
 |角色/功能|如何支援本案例|
 |---------|-----------------|
-|遠端存取角色|這個角色是利用伺服器管理員主控台或 Windows PowerShell 安裝和解除安裝。 這個角色同時包含 DirectAccess 和「路由及遠端存取服務」(RRAS)。 遠端存取角色包含兩個元件：<br/><br/>1. DirectAccess 和 RRAS VPN。 在 [遠端存取管理] 主控台中，會同時管理 DirectAccess 和 VPN。<br/>2. RRAS 路由。 RRAS 路由功能是在舊版路由及遠端存取主控台中管理。<p>「遠端存取」伺服器角色取決於下列伺服器角色/功能：<br/><br/> -Internet Information Services (IIS) Web 服務器-設定 DirectAccess 伺服器上的網路位置伺服器和預設 Web 探查時，需要這項功能。<br/> -Windows 內部資料庫。 用於 DirectAccess 伺服器上的本機帳戶處理。|
-|遠端存取管理工具功能|這個功能的安裝方式如下：<p>-安裝遠端存取角色時，預設會將它安裝在 DirectAccess 伺服器上，並支援遠端管理主控台使用者介面和 Windows PowerShell Cmdlet。<br />-您可以選擇性地將它安裝在未執行 DirectAccess 伺服器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<p>遠端存取管理工具功能包含以下各項：<p>-遠端存取圖形化使用者介面 (GUI) <br />-適用于 Windows PowerShell 的遠端存取模組<p>依存項目包括：<p>-群組原則管理主控台<br />-RAS 連線管理員系統管理元件 (CMAK) <br />-Windows PowerShell 3。0<br />-圖形化管理工具與基礎結構|
+|遠端存取角色|這個角色是利用伺服器管理員主控台或 Windows PowerShell 安裝和解除安裝。 這個角色同時包含 DirectAccess 和「路由及遠端存取服務」(RRAS)。 遠端存取角色包含兩個元件：<br/><br/>1. DirectAccess 和 RRAS VPN。 DirectAccess 和 VPN 會在遠端存取管理主控台中一起管理。<br/>2. RRAS 路由。 RRAS 路由功能是在舊版路由和遠端存取主控台中管理。<p>「遠端存取」伺服器角色取決於下列伺服器角色/功能：<br/><br/> -Internet Information Services (IIS) Web 服務器-在 DirectAccess 伺服器上設定網路位置伺服器和預設 Web 探查時，需要此功能。<br/> -Windows 內部資料庫。 用於 DirectAccess 伺服器上的本機帳戶處理。|
+|遠端存取管理工具功能|這個功能的安裝方式如下：<p>-安裝遠端存取角色時，預設會安裝在 DirectAccess 伺服器上，並支援遠端管理主控台使用者介面和 Windows PowerShell Cmdlet。<br />-您可以選擇性地將它安裝在未執行 DirectAccess 伺服器角色的伺服器上。 在這種情況下，它是用於從遠端管理那些執行 DirectAccess 和 VPN 的遠端存取電腦。<p>遠端存取管理工具功能包含以下各項：<p>-遠端存取圖形化使用者介面 (GUI) <br />-Windows PowerShell 的遠端存取模組<p>依存項目包括：<p>-群組原則管理主控台<br />-RAS 連線管理員系統管理組件 (CMAK) <br />-Windows PowerShell 3。0<br />-圖形化管理工具和基礎結構|
 
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬體需求
 本案例需要的硬體如下所示：
 
 -   伺服器需求：
 
-    -   一部符合 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 硬體需求的電腦。
+    -   符合 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 之硬體需求的電腦。
 
     -   伺服器必須至少安裝並啟用一張網路介面卡，並連接到內部網路。 使用兩張介面卡時，應該有一張介面卡連接到內部公司網路，另一張連接到外部網路 (網際網路或私人網路)。
 
@@ -104,7 +105,7 @@ ms.locfileid: "87996778"
     -   用戶端電腦必須執行 Windows 10、Windows 8 或 Windows 7。
 
         > [!NOTE]
-        > 下列作業系統可以用來做為 DirectAccess 用戶端： Windows 10、Windows Server 2012 R2、Windows Server 2012、Windows 8 Enterprise、Windows 7 Enterprise 或 Windows 7 旗艦版。
+        > 下列作業系統可以用來做為 DirectAccess 用戶端： Windows 10、Windows Server 2012 R2、Windows Server 2012、Windows 8 企業版、Windows 7 企業版或 Windows 7 旗艦版。
 
 -   基礎結構和管理伺服器需求：
 
@@ -135,9 +136,9 @@ ms.locfileid: "87996778"
         > 建議您為每個包含 DirectAccess 用戶端電腦的網域都建立一個安全性群組。
 
         > [!IMPORTANT]
-        > 如果您已在 DirectAccess 部署中啟用 Teredo，而且想要提供對 Windows 7 用戶端的存取權，請確定用戶端已升級至 Windows 7 （含 SP1）。 使用 Windows 7 RTM 的用戶端將無法透過 Teredo 進行連線。 不過，這些用戶端仍然可以透過 IP-HTTPS 連線到公司網路。
+        > 如果您已在 DirectAccess 部署中啟用 Teredo，而您想要提供存取權給 Windows 7 用戶端，請確定用戶端已升級為 Windows 7 SP1。 使用 Windows 7 RTM 的用戶端將無法透過 Teredo 連接。 不過，這些用戶端仍然可以透過 IP-HTTPS 連線到公司網路。
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>另請參閱
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>請參閱
 下表提供其他資源的連結。
 
 |內容類型|參考|

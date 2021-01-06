@@ -7,12 +7,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.openlocfilehash: 24c6918cc4f0a438bd45317364207b71a5e9b192
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: f0156ef18ba56aade897b86669f428db7239e63b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041576"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946184"
 ---
 # <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>使用 AD FS 2016 和更新版本的 OpenID Connect 建立 web 應用程式
 
@@ -34,17 +34,17 @@ ms.locfileid: "97041576"
 
 2.  在 [應用程式群組] 嚮導中，針對 [名稱] 輸入 **ADFSSSO** ，在 [ **用戶端-伺服器應用程式** ] 下，選取 **存取 Web 應用程式範本的網頁瀏覽器** 。  按一下 [下一步] 。
 
-    ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_1.PNG)
+    ![顯示存取 web 應用程式範本的網頁瀏覽器的螢幕擷取畫面。](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_1.PNG)
 
 3.  複製 **用戶端識別碼** 值。  稍後將用來作為應用程式 web.config 檔中 ida： ClientId 的值。
 
 4.  針對 [重新導向 URI] 輸入下列 **內容：**  -  **https://localhost:44320/** 。  按一下 [新增] 。 按一下 [下一步] 。
 
-    ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)
+    ![顯示要在哪裡輸入「重新導向 U R I」值的螢幕擷取畫面。](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)
 
 5.  在 [ **摘要** ] 畫面上，按 **[下一步]**。
 
-    ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_3.PNG)
+    ![顯示摘要畫面的螢幕擷取畫面。](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_3.PNG)
 
 6.  在 [ **完成** ] 畫面上，按一下 [ **關閉**]。
 
@@ -57,7 +57,7 @@ ms.locfileid: "97041576"
 git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect
 ```
 
-![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_8.PNG)
+![顯示如何下載範例專案的終端機視窗螢幕擷取畫面。](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_8.PNG)
 
 #### <a name="to-modify-the-app"></a>若要修改應用程式
 
@@ -75,7 +75,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
     <add key="ida:PostLogoutRedirectUri" value="[Replace this with Redirect URI from #4 in the above section]" />
     ```
 
-    ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_9.PNG)
+    ![醒目顯示對 web 點設定檔所做之變更的螢幕擷取畫面。](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_9.PNG)
 
 4.  開啟 Startup.Auth.cs 檔案，並進行下列變更：
 
@@ -95,7 +95,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
         private static string postLogoutRedirectUri = ConfigurationManager.AppSettings["ida:PostLogoutRedirectUri"];
         ```
 
-        ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_10.PNG)
+        ![顯示如何變更 Open I D Connect 中介軟體初始化邏輯的螢幕擷取畫面。](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_10.PNG)
 
     -   從下面的步驟中，修改 OpenId Connect 中介軟體選項，如下所示：
 
@@ -110,7 +110,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
                 RedirectUri = postLogoutRedirectUri
         ```
 
-        ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_11.PNG)
+        ![顯示如何修改 Open I D Connect 中介軟體選項的螢幕擷取畫面。](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_11.PNG)
 
         藉由變更上述步驟，我們會執行下列動作：
 
@@ -121,7 +121,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 ## <a name="verify-the-app-is-working"></a>確認應用程式正常運作
 完成上述變更之後，按 F5。  這會顯示範例頁面。  按一下 [登入]。
 
-![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_12.PNG)
+![顯示 A S P 點 N E T 範例頁面的螢幕擷取畫面。](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_12.PNG)
 
 系統會將您重新導向至 AD FS 登入頁面。  繼續進行並登入。
 
@@ -129,7 +129,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
 一旦成功，您應該會看到您現在已登入。
 
-![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_14.PNG)
+![醒目顯示您用來登入之使用者名稱的螢幕擷取畫面。](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_14.PNG)
 
 ## <a name="next-steps"></a>後續步驟
 [AD FS 開發](../../ad-fs/AD-FS-Development.md)

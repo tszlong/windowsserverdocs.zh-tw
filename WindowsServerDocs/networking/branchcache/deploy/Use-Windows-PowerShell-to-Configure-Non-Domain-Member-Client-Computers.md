@@ -2,16 +2,17 @@
 title: 使用 Windows PowerShell 設定非網域成員用戶端電腦
 description: 瞭解如何針對分散式快取模式或託管快取模式手動設定 BranchCache 用戶端電腦。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 1b511e1a-686d-441f-a1c7-d4d029e1a061
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fac1b4ffe9b51d28b7bce917352335921d3b700e
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: 5b745dcda699753c15d8c96af500633142f56add
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904483"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946744"
 ---
 # <a name="use-windows-powershell-to-configure-non-domain-member-client-computers"></a>使用 Windows PowerShell 設定非網域成員用戶端電腦
 

@@ -2,16 +2,17 @@
 title: 遠端直接記憶體存取 (RDMA) 和交換器內嵌小組 (SET)
 description: 本主題提供的資訊說明如何在 Windows Server 2016 中設定 Hyper-v 的遠端直接記憶體存取 (RDMA) 介面，以及切換內嵌團隊 (設定) 的相關資訊。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9b8d1470b3e146625d794697231291c1f8156402
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.date: 12/08/2020
+ms.openlocfilehash: f671496cab42cc24c35539d5adbfaff7fb90bea7
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866187"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946904"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>遠端直接記憶體存取 \( RDMA \) 和交換器內嵌小組 \( 集合\)
 

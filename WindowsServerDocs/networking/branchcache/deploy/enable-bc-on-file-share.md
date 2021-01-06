@@ -2,16 +2,17 @@
 title: 啟用檔案共用的 BranchCache (選用)
 description: 瞭解如何在檔案共用上啟用 BranchCache。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 9c465a9e-c504-44ec-9ebc-4e06ba54db30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8b55f38d332cb462b61503f8494f6662dd290a5c
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: d66192168cffcdab54d61c659fd53084d5b12a5a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904773"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946714"
 ---
 # <a name="enable-branchcache-on-a-file-share-optional"></a>啟用檔案共用的 BranchCache (選用)
 

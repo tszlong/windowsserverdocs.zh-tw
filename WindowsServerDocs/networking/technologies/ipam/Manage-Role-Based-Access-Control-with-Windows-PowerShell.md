@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 4f13f78e-0114-4e41-9a28-82a4feccecfc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 99859a1e9f43baa969475628e743975c78ef8bff
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.date: 08/07/2020
+ms.openlocfilehash: 9eda00bc769c32f707f37d2640a48bc7af03f030
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866467"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948014"
 ---
 # <a name="manage-role-based-access-control-with-windows-powershell"></a>使用 Windows PowerShell 管理角色型存取控制
 
@@ -24,7 +25,7 @@ ms.locfileid: "96866467"
 
 新的 Windows PowerShell IPAM 命令可讓您取得及變更 DNS 和 DHCP 物件的存取範圍。 下表說明每個 IPAM 物件所要使用的正確命令。
 
-|IPAM 物件|命令|描述|
+|IPAM 物件|Command|描述|
 |---------------|-----------|---------------|
 |DNS 伺服器|Get-IpamDnsServer|此 Cmdlet 會傳回 IPAM 中的 DNS 伺服器物件|
 |DNS 區域|Get-IpamDnsZone|此 Cmdlet 會傳回 IPAM 中的 DNS 區域物件|

@@ -2,17 +2,17 @@
 description: 深入瞭解：容錯移轉叢集的新功能
 ms.assetid: 350aa5a3-5938-4921-93dc-289660f26bad
 title: Windows Server 中容錯移轉叢集的新功能
-ms.topic: get-started-article
+ms.topic: how-to
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 5ffe286cecc8500d70df00289a9694847e7d0994
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: a0c0a236f13a21b83a7489b1d0b8b91f76561c14
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040467"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948074"
 ---
 # <a name="whats-new-in-failover-clustering"></a>容錯移轉叢集的新功能
 
@@ -211,5 +211,5 @@ Windows Server 2016 包含網站感知的容錯移轉叢集，可根據實體位
 
 ## <a name="see-also"></a>另請參閱
 
-* [Storage](../storage/storage.yml)
+* [儲存體](../storage/storage.yml)
 * [Windows Server 2016 中儲存體的新功能](../storage/whats-new-in-storage.md)

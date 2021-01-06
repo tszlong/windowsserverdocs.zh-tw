@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 428d87c8707ca80110f926b4e81d4c43794986da
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: b9fdfa0dddabd96623532d1b67dc2a189cde66d9
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049356"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946244"
 ---
 # <a name="token-signing-certificates"></a>權杖簽署憑證
 
@@ -54,7 +54,7 @@ ms.locfileid: "97049356"
 
     如下圖所示，單一權杖簽署憑證中的私密金鑰 \- 可以共用到伺服器陣列中的所有同盟伺服器。 此選項（相較于下列 [唯一權杖 \- 簽署憑證] 選項），如果您打算從公用 CA 取得權杖簽署憑證，則會降低成本 \- 。
 
-![權杖簽署](media/adfs2_fedserver_certstory_3.gif)
+    ![顯示單一權杖簽署憑證之私密金鑰的圖例， \- 可以與伺服器陣列中的所有同盟伺服器共用。](media/adfs2_fedserver_certstory_3.gif)
 
 -   伺服器陣列中的每部同盟伺服器都有唯一的權杖 \- 簽署憑證。
 
@@ -62,7 +62,7 @@ ms.locfileid: "97049356"
 
     如下圖所示，您可以針對伺服器陣列中的每一部同盟伺服器，取得個別的權杖 \- 簽署憑證。 如果您打算從公用 CA 取得權杖簽署憑證，此選項會更昂貴 \- 。
 
-![權杖簽署](media/adfs2_fedserver_certstory_4.gif)
+    ![權杖簽署](media/adfs2_fedserver_certstory_4.gif)
 
 如需使用 Microsoft 憑證服務做為企業 CA 時安裝憑證的相關資訊，請參閱 [iis 7.0：在 iis 7.0 中建立網域伺服器憑證](https://go.microsoft.com/fwlink/?LinkId=108548)。
 

@@ -7,12 +7,13 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: e3ef6076465bc7d165b58f1205ff8d0cf25014b7
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.topic: how-to
+ms.openlocfilehash: 786e636f2dd175840ef0a7667bed853e3fe876ce
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077775"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947154"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>設定 Server Core 安裝的記憶體傾印檔案
 
@@ -32,14 +33,14 @@ wmic computersystem set AutomaticManagedPagefile=False
 
 ## <a name="step-2-configure-the-destination-path-for-a-memory-dump"></a>步驟2：設定記憶體傾印的目的地路徑
 
-您不需要在安裝作業系統的磁碟分割上擁有分頁檔案。 若要將分頁檔放在另一個磁碟分割上，您必須建立名為 **DedicatedDumpFile**的新登錄專案。 您可以使用 **DumpFileSize** 登錄專案定義分頁檔案的大小。 若要建立 DedicatedDumpFile 和 DumpFileSize 登錄專案，請遵循下列步驟：
+您不需要在安裝作業系統的磁碟分割上擁有分頁檔案。 若要將分頁檔放在另一個磁碟分割上，您必須建立名為 **DedicatedDumpFile** 的新登錄專案。 您可以使用 **DumpFileSize** 登錄專案定義分頁檔案的大小。 若要建立 DedicatedDumpFile 和 DumpFileSize 登錄專案，請遵循下列步驟：
 
 1. 在命令提示字元中，執行 **regedit** 命令以開啟登錄編輯程式。
-2. 找出並按一下下列登錄子機碼： HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\CrashControl
+2. 找出並按一下下列登錄子機碼： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl
 3. 按一下 [ **編輯] > 新的 > 字串值**。
 4. 將新值命名為 **DedicatedDumpFile**，然後按 enter。
 5. 在 [ **DedicatedDumpFile**] 上按一下滑鼠右鍵，然後按一下 [ **修改**]。
-6. 在 [**數值資料**類型** \<Drive\> ： \\ \<Dedicateddumpfile.sys\> **] 中，然後按一下 **[確定]**。
+6. 在 [**數值資料** 類型 **\<Drive\> ： \\ \<Dedicateddumpfile.sys\>**] 中，然後按一下 **[確定]**。
 
    >[!NOTE]
    > 取代為 \<Drive\> 具有足夠磁碟空間可供分頁檔使用的磁片磁碟機，並以 \<Dedicateddumpfile.dmp\> 專用檔案的完整路徑取代。
@@ -59,7 +60,7 @@ wmic computersystem set AutomaticManagedPagefile=False
 wmic RECOVEROS get DebugFilePath
 ```
 
-**DebugFilePath**的預設目的地為%systemroot%\memory.dmp。 若要變更目前的目的地路徑，請執行下列命令：
+**DebugFilePath** 的預設目的地為%systemroot%\memory.dmp。 若要變更目前的目的地路徑，請執行下列命令：
 
 ```
 wmic RECOVEROS set DebugFilePath = <FilePath>

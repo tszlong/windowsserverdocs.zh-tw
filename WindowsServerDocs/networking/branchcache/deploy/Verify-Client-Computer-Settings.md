@@ -2,16 +2,17 @@
 title: 確認用戶端電腦設定
 description: 瞭解如何確認已正確設定 BranchCache 的用戶端電腦。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 31ea58b0-d407-4f62-8ec6-6a1b19174042
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1aeaf2bc86b1a71d0d58be7dce72ba36a63fac01
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: 944a36f2215ec9bfba4a7d90ef7708d3c38b8a77
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904453"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946734"
 ---
 # <a name="verify-client-computer-settings"></a>確認用戶端電腦設定
 

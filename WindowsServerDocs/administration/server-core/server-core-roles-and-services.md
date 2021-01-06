@@ -7,22 +7,23 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: ded40a119d0d1ae759ec0b29ce9ee4808653ea50
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.topic: conceptual
+ms.openlocfilehash: a30e282647c6fb58bd9f5aaa0e24c5e840ac5351
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077755"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947144"
 ---
 # <a name="roles-role-services-and-features-included-in-windows-server---server-core"></a>Windows Server 中包含的角色、角色服務和功能-Server Core
 
 > 適用于： Windows Server 2019、Windows Server 2016 和 Windows Server (半年通道) 
 
-我們通常會討論[*不*在 Server Core 中的內容](server-core-removed-roles.md)-現在我們要嘗試不同的方法，並告訴您有哪些內容 *，以及是否**預設安裝*了任何東西。 下列角色、角色服務和功能都是在 Windows Server 的 Server Core 安裝選項 *中* 。 使用此資訊來協助找出伺服器核心選項是否適用于您的環境。 因為這是大型清單，所以請考慮搜尋您感興趣的特定角色或功能。如果該搜尋不會傳回您要尋找的內容，則不會包含在 Server Core 中。
+我們通常會討論 [*不* 在 Server Core 中的內容](server-core-removed-roles.md)-現在我們要嘗試不同的方法，並告訴您有哪些內容 *，以及是否**預設安裝* 了任何東西。 下列角色、角色服務和功能都是在 Windows Server 的 Server Core 安裝選項 *中* 。 使用此資訊來協助找出伺服器核心選項是否適用于您的環境。 因為這是大型清單，所以請考慮搜尋您感興趣的特定角色或功能。如果該搜尋不會傳回您要尋找的內容，則不會包含在 Server Core 中。
 
 例如，如果您搜尋「遠端桌面工作階段主機」，就不會在此頁面上找到它。 這是因為 RD 工作階段主機並未包含在 Server Core 映射中。
 
-請記住，您[一律可以查看](server-core-removed-roles.md)*未*包含的內容。 這只是查看事物的不同方式。
+請記住，您 [一律可以查看](server-core-removed-roles.md)*未* 包含的內容。 這只是查看事物的不同方式。
 
 ## <a name="roles-included-in-server-core"></a>Server Core 中包含的角色
 Server Core 安裝選項包含下列伺服器角色。
@@ -37,12 +38,12 @@ Server Core 安裝選項包含下列伺服器角色。
 | 裝置健康情況證明                       | DeviceHealthAttestationService | N                     |
 | DHCP 伺服器                                     | DHCP                           | N                     |
 | DNS 伺服器                                      | DNS                            | N                     |
-| 檔案和存放服務                       | FileAndStorage-服務        | Y                     |
+| 檔案和存放服務                       | FileAndStorage-Services        | Y                     |
 | 主機守護者服務                           | HostGuardianServiceRole        | N                     |
 | Hyper-V                                         | Hyper-V                        | N                     |
 | 列印和文件服務                     | Print-Services                 | N                     |
 | 遠端存取                                   | RemoteAccess                   | N                     |
-| 遠端桌面服務                         | 遠端桌面服務        | N                     |
+| 遠端桌面服務問題                         | 遠端桌面服務        | N                     |
 | 大量啟用服務                      | Volumeactivation-full-role               | N                     |
 | 網頁伺服器 (IIS)                                  | Web-Server                     | N                     |
 | Windows Server Essentials 體驗            | ServerEssentialsRole           | N                     |
@@ -59,10 +60,10 @@ Server Core 安裝選項包含下列角色服務。
 |                                       | 憑證授權單位網頁註冊。                         | ADC-Web-註冊     | N                     |
 |                                       | 網路裝置註冊服務                              | ADC-裝置註冊  | N                     |
 |                                       | 線上回應                                               | ADCS-Online-Cert        | N                     |
-| Active Directory Rights Management    | Active Directory Rights Management Server                      | ADRMS-伺服器            | N                     |
-|                                       | 識別身分同盟支援                                    | ADRMS-身分識別          | N                     |
-| 檔案和存放服務             | 檔案和 iSCSI 服務                                        | 檔服務           | N                     |
-|                                       | 檔案伺服器                                                    | FS-檔           | N                     |
+| Active Directory Rights Management    | Active Directory Rights Management Server                      | ADRMS-Server            | N                     |
+|                                       | 識別身分同盟支援                                    | ADRMS-Identity          | N                     |
+| 檔案和存放服務             | 檔案和 iSCSI 服務                                        | File-Services           | N                     |
+|                                       | 檔案伺服器                                                    | FS-FileServer           | N                     |
 |                                       | 網路檔案的 BranchCache                                  | FS-BranchCache          | N                     |
 |                                       | 重複資料刪除                                             | FS-資料刪除   | N                     |
 |                                       | DFS 命名空間                                                 | FS-DFS-Namespace        | N                     |
@@ -73,15 +74,15 @@ Server Core 安裝選項包含下列角色服務。
 |                                       | iSCSI 目標儲存提供者 (VDS 和 VSS 硬體提供者)  | iSCSITarget-VSS-VDS     | N                     |
 |                                       | NFS 伺服器                                                 | FS-NFS-服務          | N                     |
 |                                       | 工作資料夾                                                   | FS-SyncShareService     | N                     |
-|                                       | 儲存體服務                                               | 儲存體服務        | Y                     |
+|                                       | 儲存體服務                                               | Storage-Services        | Y                     |
 | 列印和文件服務           | 列印伺服器                                                   | Print-Server            | N                     |
 |                                       | LPD 服務                                                    | Print-LPD-Service       | N                     |
 | 遠端存取                         | DirectAccess 和 VPN (RAS)                                      | DirectAccess-VPN        | N                     |
 |                                       | 路由                                                        | 路由                 | N                     |
 |                                       | Web 應用程式 Proxy                                          | Web 應用程式-Proxy   | N                     |
-| 遠端桌面服務               | 遠端桌面連線代理人                               | RDS-連接-Broker   | N                     |
-|                                       | 遠端桌面授權                                       | RDS-授權           | N                     |
-|                                       | 遠端桌面虛擬主機                             | RDS-虛擬化      | N                     |
+| 遠端桌面服務問題               | 遠端桌面連線代理人                               | RDS-連接-Broker   | N                     |
+|                                       | 遠端桌面授權                                       | RDS-Licensing           | N                     |
+|                                       | 遠端桌面虛擬主機                             | RDS-Virtualization      | N                     |
 | Web 伺服器 (IIS)                      | Web 伺服器                                                     | Web-WebServer           | N                     |
 |                                       | 一般 HTTP 功能                                           | Web-Common-Http         | N                     |
 |                                       | 預設文件                                               | Web-Default-Doc         | N                     |
@@ -118,10 +119,10 @@ Server Core 安裝選項包含下列角色服務。
 |                                       | ASP.NET 3.5                                                    | Web-Asp-Net             | N                     |
 |                                       | ASP.NET 4。6                                                    | Web-Asp-Net45           | N                     |
 |                                       | CGI                                                            | Web-CGI                 | N                     |
-|                                       | ISAPI 擴充功能                                               | Web-ISAPI-Ext           | N                     |
+|                                       | ISAPI 擴充程式                                               | Web-ISAPI-Ext           | N                     |
 |                                       | ISAPI 篩選                                                  | Web-ISAPI-Filter        | N                     |
 |                                       | 伺服器端包含                                           | Web-Includes            | N                     |
-|                                       | WebSocket 通訊協定                                             | Web-Websocket          | N                     |
+|                                       | WebSocket 通訊協定                                             | Web-WebSockets          | N                     |
 |                                       | FTP 伺服器                                                     | Web-Ftp-Server          | N                     |
 |                                       | FTP 服務                                                    | Web Ftp-服務         | N                     |
 |                                       | FTP 擴充性                                              | Web Ftp-Ext             | N                     |
@@ -133,7 +134,7 @@ Server Core 安裝選項包含下列角色服務。
 |                                       | IIS 管理指令碼及工具                               | Web-Scripting-Tools     | N                     |
 |                                       | Management Service                                             | Web-Mgmt-Service        | N                     |
 | Windows Server Update Services        | WID 連線能力                                               | UpdateServices-WidDB    | N                     |
-|                                       | WSUS 服務                                                  | UpdateServices-服務 | N                     |
+|                                       | WSUS 服務                                                  | UpdateServices-Services | N                     |
 |                                       | SQL Server 連線能力                                        | UpdateServices-DB       | N                     |
 
 ## <a name="features-included-in-server-core"></a>Server Core 中包含的功能
@@ -143,13 +144,13 @@ Server Core 安裝選項包含下列功能。
 |--------------------------------------------------------|------------------------------------|-----------------------|
 | .NET Framework 3.5 功能                            | .NET Framework-功能             | N                     |
 | .NET Framework 3.5 (包含 .NET 2.0 和 3.0)        | NET-Framework-Core                 |  (移除)              |
-| HTTP 啟用                                        | NET-HTTP-Activation                | N                     |
+| HTTP 啟動                                        | NET-HTTP-Activation                | N                     |
 | 非 HTTP 啟用                                    | NET-Non-HTTP-Activ                 | N                     |
 | .NET Framework 4.6 功能                            | NET-Framework-45-功能          | Y                     |
 | .NET Framework 4.6                                     | .NET Framework-45-核心              | Y                     |
 | ASP.NET 4。6                                            | NET-Framework-45-ASPNET            | N                     |
 | WCF Services                                           | NET-WCF-Services45                 | Y                     |
-| HTTP 啟用                                        | NET-WCF-HTTP-Activation45          | N                     |
+| HTTP 啟動                                        | NET-WCF-HTTP-Activation45          | N                     |
 | 訊息佇列 (MSMQ) 啟用                      | NET-WCF-MSMQ-Activation45          | N                     |
 | 具名管道啟用                                  | NET-WCF-管道-Activation45          | N                     |
 | TCP 啟用                                         | NET-WCF-TCP-Activation45           | N                     |
@@ -158,7 +159,7 @@ Server Core 安裝選項包含下列功能。
 | Compact Server                                         | BITS-Compact-伺服器                | N                     |
 | BitLocker 磁碟機加密                             | BitLocker                          | N                     |
 | BranchCache                                            | BranchCache                        | N                     |
-| Client for NFS                                         | NFS-用戶端                         | N                     |
+| Client for NFS                                         | NFS-Client                         | N                     |
 | 容器                                             | 容器                         | N                     |
 | 資料中心橋接                                   | 資料中心-橋接               | N                     |
 | 增強的存放區                                       | EnhancedStorage                    | N                     |
@@ -179,9 +180,9 @@ Server Core 安裝選項包含下列功能。
 | 路由服務                                        | MSMQ-Routing                       | N                     |
 | 訊息佇列 DCOM Proxy                             | MSMQ-DCOM                          | N                     |
 | 多重路徑 I/O                                          | Multipath-IO                       | N                     |
-| MultiPoint 連線程式                                   | MultiPoint-連接器               | N                     |
+| MultiPoint 連線程式                                   | MultiPoint-Connector               | N                     |
 | MultiPoint 連接器服務                          | MultiPoint-連接器-服務      | N                     |
-| MultiPoint 管理員和 MultiPoint 儀表板            | MultiPoint-工具                   | N                     |
+| MultiPoint 管理員和 MultiPoint 儀表板            | MultiPoint-Tools                   | N                     |
 | Network Load Balancing                                 | NLB                                | N                     |
 | 對等名稱解析通訊協定                          | PNRP                               | N                     |
 | 高品質 Windows 音訊/視訊體驗                 | qWave                              | N                     |
@@ -202,8 +203,8 @@ Server Core 安裝選項包含下列功能。
 | 適用於 Windows PowerShell 的 Active Directory 模組         | RSAT-AD-PowerShell                 | N                     |
 | AD DS 工具                                            | RSAT-ADDS                          | N                     |
 | Active Directory 管理中心                 | RSAT-AD-AdminCenter                | N                     |
-| AD DS 嵌入式管理單元和命令列工具                  | RSAT-新增-工具                    | N                     |
-| AD LDS 嵌入式管理單元和命令列工具                 | RSAT-ADLDS                         | N                     |
+| AD DS Snap-Ins 和 Command-Line 工具                  | RSAT-新增-工具                    | N                     |
+| AD LDS Snap-Ins 和 Command-Line 工具                 | RSAT-ADLDS                         | N                     |
 | Hyper-V 管理工具                               | RSAT-Hyper-v-工具                 | N                     |
 | Windows PowerShell 的 Hyper-V 模組                  | Hyper-V-PowerShell                 | N                     |
 | Windows Server Update Services 工具                   | UpdateServices-RSAT                | N                     |
@@ -227,7 +228,7 @@ Server Core 安裝選項包含下列功能。
 | Windows PowerShell                                     | PowerShellRoot                     | Y                     |
 | Windows PowerShell 5.1                                 | PowerShell                         | Y                     |
 | Windows PowerShell 2.0 引擎                          | PowerShell-V2                      |  (移除)              |
-| Windows PowerShell Desired State Configuration 服務 | DSC-服務                        | N                     |
+| Windows PowerShell Desired State Configuration 服務 | DSC-Service                        | N                     |
 | Windows PowerShell Web 存取                          | WindowsPowerShellWebAccess         | N                     |
 | Windows 處理序啟用服務                     | WAS                                | N                     |
 | 處理序模型                                          | WAS-Process-Model                  | N                     |
@@ -238,5 +239,5 @@ Server Core 安裝選項包含下列功能。
 | Windows 標準式存放裝置管理             | WindowsStorageManagementService    | N                     |
 | WinRM IIS 延伸模組                                    | WinRM-IIS-Ext                      | N                     |
 | WINS 伺服器                                            | WINS                               | N                     |
-| WoW64 支援                                          | WoW64-支援                      | Y                     |
+| WoW64 支援                                          | WoW64-Support                      | Y                     |
 |                                                        |                                    |                       |

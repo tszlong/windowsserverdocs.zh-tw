@@ -4,14 +4,15 @@ description: 此範例顯示如何使用主機計算網路服務 API，在主機
 ms.author: daschott
 author: daschott
 ms.date: 11/05/2018
-ms.openlocfilehash: e865326b77fbdec19af3e7db347734715458b18a
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.topic: article
+ms.openlocfilehash: 974097b2b63fe4b5fc585e30480013894c61ebf5
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083678"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947534"
 ---
-# <a name="common-scenarios"></a>常見的案例
+# <a name="common-scenarios"></a>常見案例
 
 > 適用于： Windows Server (半年通道) 、Windows Server 2019
 

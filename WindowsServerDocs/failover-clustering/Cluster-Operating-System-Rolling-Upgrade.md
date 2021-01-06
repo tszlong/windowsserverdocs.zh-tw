@@ -1,18 +1,18 @@
 ---
 title: 叢集作業系統輪流升級
 description: 深入瞭解：叢集作業系統輪流升級
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 manager: lizross
 ms.date: 03/27/2018
-ms.openlocfilehash: 7929fc90f42c2033952e527a3edf180dedef24c2
-ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
+ms.openlocfilehash: 1900e85dced6219c1711906e04fb7948f1dd3981
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879927"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946874"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>叢集作業系統輪流升級
 

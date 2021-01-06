@@ -3,15 +3,15 @@ title: 針對 DHCP 伺服器上的問題進行疑難排解
 description: 本 artilce 介紹如何針對 DHCP 伺服器上的問題進行疑難排解，並收集資料。
 manager: dcscontentpm
 ms.date: 5/26/2020
-ms.topic: article
+ms.topic: troubleshooting
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: a6b5e4128c2e07e51ab8a9c07155a8c0212fcad8
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 8ff76377dcfaefa556b9d2df676210ae55fd0f1d
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078585"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947174"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>針對 DHCP 伺服器上的問題進行疑難排解
 
@@ -50,7 +50,7 @@ ms.locfileid: "90078585"
  [dhcp 伺服器篩選通知事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
  [dhcp 伺服器審核事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))
 
-## <a name="data-collection"></a>資料收集
+## <a name="data-collection"></a>資料集合
 
 ### <a name="dhcp-server-log"></a>DHCP 伺服器記錄檔
 

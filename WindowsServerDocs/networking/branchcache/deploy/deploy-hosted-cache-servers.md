@@ -2,16 +2,17 @@
 title: 部署託管快取伺服器 (選擇性)
 description: 瞭解如何安裝及設定 BranchCache 託管快取伺服器，這些伺服器位於您想要部署 BranchCache 託管快取模式的分公司。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 96d03b42-6cd9-4905-b6a2-dc36130dd24f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8c2ee077fa695f9b20e65a0a6e9f88f62294b1b3
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: 9ed41c9455abb2bcd9417d393206f6f6ca6bb71c
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904383"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946724"
 ---
 # <a name="deploy-hosted-cache-servers-optional"></a>部署託管快取伺服器 (選擇性)
 

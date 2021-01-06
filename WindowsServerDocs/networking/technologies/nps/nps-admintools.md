@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 5de80dc0-53be-42b7-8e5b-24d213bf2b25
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f963e849f2ae23869431de30de983c02b87d4f9c
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.date: 12/08/2020
+ms.openlocfilehash: 7c20cbdf58a2994a7681a44c67503f0b6a775479
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865537"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947504"
 ---
 # <a name="network-policy-server-management-with-administration-tools"></a>使用管理工具的網路原則伺服器管理
 

@@ -5,12 +5,13 @@ title: Windows Server 中的 Web 應用程式 Proxy
 ms.topic: article
 ms.author: kgremban
 author: eross-msft
-ms.openlocfilehash: c95f47d057008249ca2ebc852e97b68f90d604e8
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.date: 12/10/2020
+ms.openlocfilehash: 61f4a0aa79cb65f2c4c1bc11cd04d21b1088a243
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046466"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947914"
 ---
 # <a name="web-application-proxy-in-windows-server"></a>Windows Server 中的 Web 應用程式 Proxy
 

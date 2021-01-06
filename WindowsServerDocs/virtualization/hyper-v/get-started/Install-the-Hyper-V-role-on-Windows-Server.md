@@ -1,17 +1,17 @@
 ---
 title: 在 Windows Server 上安裝 Hyper-v 角色
 description: 提供使用伺服器管理員或 Windows PowerShell 安裝 Hyper-v 的指示
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 12/02/2016
-ms.openlocfilehash: e8b95d744954d477e33322cad8d20ff3ff8d7258
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 909338b6c2f3d57962d91dbdea3a533579d0354c
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746003"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948094"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>在 Windows Server 上安裝 Hyper-v 角色
 
@@ -30,25 +30,25 @@ ms.locfileid: "90746003"
 
 ## <a name="install-hyper-v-by-using-server-manager"></a>使用伺服器管理員安裝 Hyper-v
 
-1. 在 [伺服器管理員]**** 的 [管理]**** 功能表上，按一下 [新增角色及功能]****。
+1. 在 [伺服器管理員] 的 [管理] 功能表上，按一下 [新增角色及功能]。
 
-2. 在 [在您開始前]**** 頁面上，確認已準備好目的地伺服器和網路環境，以便安裝您要的角色和功能。 按一下 [下一步]。
+2. 在 [在您開始前] 頁面上，確認已準備好目的地伺服器和網路環境，以便安裝您要的角色和功能。 按一下 [下一步] 。
 
-3. 在 [選取安裝類型]**** 頁面上，選取 [角色型或功能型安裝]****，然後按 [下一步]****。
+3. 在 [選取安裝類型] 頁面上，選取 [角色型或功能型安裝]，然後按 [下一步]。
 
-4. 在 [選取目的地伺服器]**** 頁面上，從伺服器集區選取伺服器，然後按 [下一步]****。
+4. 在 [選取目的地伺服器] 頁面上，從伺服器集區選取伺服器，然後按 [下一步]。
 
-5. 在 [選取伺服器角色]**** 頁面上，選取 [Hyper-V]****。
+5. 在 [選取伺服器角色] 頁面上，選取 [Hyper-V]。
 
-6. 若要新增用來建立和管理虛擬機器的工具，請按一下 [新增功能]****。 在 [功能] 頁面上，按 [下一步]****。
+6. 若要新增用來建立和管理虛擬機器的工具，請按一下 [新增功能]。 在 [功能] 頁面上，按 [下一步]。
 
-7. 在 [建立虛擬交換器]**** 頁面、[虛擬機器移轉]**** 頁面和 [預設存放區]**** 頁面上，選取適當的選項。
+7. 在 [建立虛擬交換器] 頁面、[虛擬機器移轉] 頁面和 [預設存放區] 頁面上，選取適當的選項。
 
-8. 在 [確認安裝選項]**** 頁面上，選取 [需要時自動重新啟動目的伺服器]****，然後按一下 [安裝]****。
+8. 在 [確認安裝選項] 頁面上，選取 [需要時自動重新啟動目的伺服器]，然後按一下 [安裝]。
 
 9. 當安裝完成時，請確認已正確安裝 Hyper-v。 在伺服器管理員中開啟 [ **所有伺服器** ] 頁面，然後選取您安裝 hyper-v 的伺服器。 檢查所選伺服器頁面上的 [ **角色及功能** ] 磚。
 
-## <a name="install-hyper-v-by-using-the-install-windowsfeature-cmdlet"></a>使用 Add-windowsfeature Cmdlet 安裝 Hyper-v
+## <a name="install-hyper-v-by-using-the-install-windowsfeature-cmdlet"></a>使用 Install-WindowsFeature Cmdlet 安裝 Hyper-v
 
 1. 在 Windows 桌面上，按一下 [開始] 按鈕，然後輸入 **Windows PowerShell** 名稱的任何一部分。
 
