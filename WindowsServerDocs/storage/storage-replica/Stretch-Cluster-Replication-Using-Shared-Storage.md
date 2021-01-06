@@ -3,16 +3,16 @@ description: 深入瞭解：使用共用存放裝置的 Stretch Cluster 複寫
 title: 使用共用存放裝置的延展式叢集複寫
 manager: eldenc
 ms.author: nedpyle
-ms.topic: get-started-article
+ms.topic: how-to
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: 096d1258cd74dec51e93b4b26266478206742beb
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 9d7153b5147d576f54fa90efc5724f994618cfc5
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043756"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97941724"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>使用共用存放裝置的延展式叢集複寫
 
@@ -37,7 +37,7 @@ ms.locfileid: "97043756"
 
 **圖 1：延展式叢集中的存放裝置複寫**
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 -   Active Directory 網域服務樹系 (不需要執行 Windows Server 2016)。
 -   2-64 執行 Windows Server 2019 或 Windows Server 2016 Datacenter Edition 的伺服器。 如果您執行的是 Windows Server 2019，您可以改為使用 Standard Edition，如果您確定只複寫大小上限為 2 TB 的單一磁片區。
 -   兩組共用的存放裝置，使用 SAS JBOD (例如搭配「儲存空間」)、光纖通道 SAN、共用 VHDX 或 iSCSI 目標。 存放裝置應包含 HDD 和 SSD 媒體的混合，且必須支援「持續保留」。 您要將每組存放裝置設定為只能供其中兩部伺服器使用 (非對稱)。
@@ -794,7 +794,7 @@ ms.locfileid: "97043756"
     > [!NOTE]
     > 如果使用遠端管理電腦，您必須將叢集名稱指定給這些 Cmdlet，並提供這兩個 RG 名稱。
 
-### <a name="related-topics"></a>相關主題
+### <a name="related-topics"></a>[相關主題]
 - [儲存體複本總覽](storage-replica-overview.md)
 - [伺服器對伺服器儲存體複寫](server-to-server-storage-replication.md)
 - [叢集至叢集儲存體複寫](cluster-to-cluster-storage-replication.md)

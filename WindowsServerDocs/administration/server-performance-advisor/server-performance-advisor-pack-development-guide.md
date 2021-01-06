@@ -5,12 +5,13 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b72ea800f63110904af80a178f96af232507344
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.topic: article
+ms.openlocfilehash: fde64c200e8035336320d590bcb11c69b2616d38
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864347"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943524"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Server Performance Advisor 套件開發指南
 
@@ -235,7 +236,7 @@ Windows registry editor version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\db310065-829b-4671-9647-2261c00e86ef]
 "Description"=
- FriendlyName = Power Source Optimized 
+ FriendlyName = Power Source Optimized
 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\db310065-829b-4671-9647-2261c00e86ef \0012ee47-9041-4b5d-9b77-535fba8b1442\6738e2c4-e8a5-4a42-b16a-e040e769756e
 "ACSettingIndex"=dword:000000b4
@@ -281,7 +282,7 @@ KeytypeId | Smallint 非 Null | 內部類型識別碼
 --- | ---
 1 | String
 2 | expandString
-3 | Binary
+3 | 二進位
 4 | DWord
 5 | DWordBigEndian
 6 | 連結
@@ -519,7 +520,7 @@ Install OS on larger disk.</advice>
 名稱 | 值
 ---- | ----
 系統磁片磁碟機上的可用磁片大小 (GB)  | 100
-安裝的磁片大小總計 (GB)  | 500 
+安裝的磁片大小總計 (GB)  | 500
 
 如果使用者想要查看安裝在伺服器上的所有硬碟及其磁片大小的清單，我們可以呼叫清單值，它有三個數據行和多個資料列，如下所示。
 
@@ -532,7 +533,7 @@ Install OS on larger disk.</advice>
 
 總而言之，有三種類型的 UI 元素：
 
-* [章節](#bkmk-ui-section)
+* [部分](#bkmk-ui-section)
 
 * [單一值群組](#bkmk-ui-svg)
 
@@ -562,7 +563,7 @@ Install OS on larger disk.</advice>
 </advisorPack>
 ```
 
-### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>章節
+### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>部分
 
 區段純粹適用于 UI 版面配置。 它不會參與任何邏輯計算。 每一份報表都包含一組最上層區段，而這些區段沒有父區段。 最上層區段會顯示為報表中的索引標籤。 區段可以有子區段，最多可有10個層級。 最上層區段底下的所有子區段都會顯示在可擴充的區域中。 區段可以包含多個子區段、單一值群組和清單值資料表。 單一值群組和清單值資料表會顯示為數據表。
 
@@ -714,7 +715,7 @@ ID | 名稱 | 類型 | 加速 (Mbps)  | MAC 位址
 在某些情況下，資料表可能有許多資料行，而且只有幾個資料列，因此，交換資料行和資料列會讓資料表看起來更好。 若要交換資料行和資料列，您可以加入下列樣式屬性：
 
 ``` syntax
-<listValue style="Transpose"  
+<listValue style="Transpose"
 ```
 
 ### <a name="defining-charting-elements"></a>定義圖表元素
@@ -734,7 +735,7 @@ SPA 使用單一值群組來支援靜態統計資料，並使用清單值資料�
 如先前所述，靜態統計資料是單一值。 邏輯上，任何單一值都可以定義為靜態統計資料。 但是，若要查看無法轉換成數位類型的單一值，則沒有意義。 若要定義靜態統計資料，您可以直接將屬性 **trendable** 新增至對應的單一值索引鍵，如下所示：
 
 ``` syntax
-<value name="freediskSize" type="int" trendable="true"  
+<value name="freediskSize" type="int" trendable="true"
 ```
 
 ### <a name="dynamic-statistics"></a>動態統計資料
@@ -767,10 +768,10 @@ CpuId | AverageCpuUsage
 
 如下列範例所示，表示支援多個索引 **鍵** 資料行的多個 **值** 資料行。
 
-CounterName | InstanceName | Average | Sum
+CounterName | InstanceName | 平均 | Sum
 --- | :---: | :---: | :---:
 % Processor time | _Total | 10 | 20
-% Processor time | CPU0 | 20 | 30 
+% Processor time | CPU0 | 20 | 30
 
 在此範例中，您有兩個索引 **鍵** 資料行和兩個 **值** 資料行。 SPA 會為平均資料行產生兩個統計資料索引鍵，並為 Sum 資料行產生另兩個索引鍵。 統計資料索引鍵為：
 
@@ -811,7 +812,7 @@ SPA 會產生許多統計資料索引鍵。 其中有些可能不會對您感興
 布建中繼資料標頭中有 **name** 和 **reportScript** 屬性，如下所示：
 
 ``` syntax
-<advisorPack name="Microsoft.ServerPerformanceAdvisor.CoreOS.V1" reportScript="ReportScript"  
+<advisorPack name="Microsoft.ServerPerformanceAdvisor.CoreOS.V1" reportScript="ReportScript"
 ```
 
 主要報表腳本的命名方式是結合 **name** 和 **reportScript** 屬性。 在下列範例中，它將會是 \[ ServerPerformanceAdvisor. CoreOS。 \] \[ReportScript \] 。
@@ -905,7 +906,7 @@ END
 ELSE
 BEGIN
     exec dbo.SetNotification N'freediskSize', N'SuccessAdvice'
-END 
+END
 ```
 
 ### <a name="get-threshold-value"></a>取得臨界值
@@ -968,9 +969,9 @@ if (@freediskSizeInGB < @freediskSize)
 然後您可以設定單一值，如下所示：
 
 ``` syntax
-exec dbo.SetSingleValue N OsName ,  Windows 7 
-exec dbo.SetSingleValue N Osversion ,  6.1.7601 
-exec dbo.SetSingleValue N OsLocation ,  c:\ 
+exec dbo.SetSingleValue N OsName ,  Windows 7
+exec dbo.SetSingleValue N Osversion ,  6.1.7601
+exec dbo.SetSingleValue N OsLocation ,  c:\
 ```
 
 在罕見的情況下，您可能會想要移除先前使用 dbo 設定的結果 \[ \] 。 \[removeSingleValue \] API。
@@ -980,7 +981,7 @@ exec dbo.SetSingleValue N OsLocation ,  c:\
 您可以使用下列腳本來移除先前設定的值。
 
 ``` syntax
-exec dbo.removeSingleValue N Osversion 
+exec dbo.removeSingleValue N Osversion
 ```
 
 ### <a name="get-data-collection-information"></a>取得資料收集資訊
@@ -1046,7 +1047,7 @@ VALUES (
 如果有您想要與系統管理員通訊的其他資訊，您可以撰寫記錄檔。 如果有特定報表的任何記錄檔，報表標頭中會顯示黃色橫幅。 下列範例會示範如何撰寫記錄：
 
 ``` syntax
-exec dbo.WriteSystemLog N'Any information you want to show to the system administrators , N Warning 
+exec dbo.WriteSystemLog N'Any information you want to show to the system administrators , N Warning
 ```
 
 第一個參數是您想要在記錄檔中顯示的訊息。 第二個參數是記錄層級。 第二個參數的有效輸入可能是 **資訊**、 **警告** 或 **錯誤**。

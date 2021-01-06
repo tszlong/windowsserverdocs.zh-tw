@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f746422ee05afc4f000693138c1f2efb3b7f70a9
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.date: 08/07/2020
+ms.openlocfilehash: 9862b322c95a6b34bf0e66330f826c057e7de1df
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866117"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943334"
 ---
 # <a name="core-network-components"></a>核心網路元件
 
@@ -222,7 +223,7 @@ DHCP 伺服器 (名為 DHCP1) 已設定為有一個領域，此領域提供網�
 針對核心網路中的每部伺服器，您必須將電腦重新命名，並為該電腦指派和設定靜態 IPv4 位址及其他 TCP/IP 內容。
 
 #### <a name="planning-naming-conventions-for-computers-and-devices"></a>規劃電腦與裝置的命名慣例
-如需跨網路的一致性，建議伺服器、印表機及其他裝置使用一致的名稱。 您可以使用電腦名稱協助使用者與系統管理員輕鬆識別伺服器、印表機或其他裝置的目的與位置。 例如，如果您有三部 DNS 伺服器，一個在三藩市，一個在洛杉磯，一個在芝加哥，則您可以使用命名慣例伺服器函式 *server function* - *位置* - *編號*：
+如需跨網路的一致性，建議伺服器、印表機及其他裝置使用一致的名稱。 您可以使用電腦名稱協助使用者與系統管理員輕鬆識別伺服器、印表機或其他裝置的目的與位置。 例如，如果您有三部 DNS 伺服器，一個在三藩市，一個在洛杉磯，一個在芝加哥，則您可以使用命名慣例伺服器函式 - *位置* - *編號*：
 
 - DNS-DEN-01。 這個名稱代表位於科羅拉多州 Denver 的 DNS 伺服器。 如果在 Denver 新增其他 DNS 伺服器，則名稱中的數值會增加，例如 DNS-DEN-02 與 DNS-DEN-03。
 

@@ -7,12 +7,13 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: 7e84d4fa90cc6e95435d2f0e48efd3ac44ccaebe
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.topic: how-to
+ms.openlocfilehash: f02db48083cdc8d63c834347a3b80321c0935fa2
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077745"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943714"
 ---
 # <a name="patch-a-server-core-installation"></a>修補 Server Core 安裝
 
@@ -20,7 +21,7 @@ ms.locfileid: "90077745"
 
 您可以透過下列方式修補執行 Server Core 安裝的伺服器：
 
-- **使用 Windows Update 自動或透過 Windows Server Update Services (WSUS) **。 藉由使用 Windows Update （自動或透過命令列工具）或 Windows Server Update Services (WSUS) ，您可以為執行 Server Core 安裝的伺服器提供服務。
+- **使用 Windows Update 自動或透過 Windows Server Update Services (WSUS)**。 藉由使用 Windows Update （自動或透過命令列工具）或 Windows Server Update Services (WSUS) ，您可以為執行 Server Core 安裝的伺服器提供服務。
 
 - **手動**。 即使在不使用 Windows update 或 WSUS 的組織中，您也可以手動套用更新。
 

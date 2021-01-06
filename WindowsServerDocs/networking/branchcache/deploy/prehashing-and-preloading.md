@@ -2,16 +2,17 @@
 title: 在託管快取伺服器上預先雜湊處理並預先載入內容 (選擇性)
 description: 瞭解如何在啟用 BranchCache 的 Web 和檔案伺服器上強制建立內容資訊（也稱為雜湊）。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 5a09d9f1-1049-447f-a9bf-74adf779af27
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 744290fd22295b3a931ba39e53ef4f8f89c1fab6
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: d903338f58cd7a01967902243f79f4eb28e58882
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904373"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97942504"
 ---
 # <a name="prehashing-and-preloading-content-on-hosted-cache-servers-optional"></a>在託管快取伺服器上預先雜湊處理並預先載入內容 (選擇性)
 

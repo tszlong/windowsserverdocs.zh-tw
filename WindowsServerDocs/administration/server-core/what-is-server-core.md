@@ -7,12 +7,13 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: 42a016a95d24f6ec0abc560a54f8589ab4c65ab1
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.topic: conceptual
+ms.openlocfilehash: 6bfcd16ed8e4c834cfb32eea4774eb08da2f12b4
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077545"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943624"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>什麼是 Windows Server 中的 Server Core 安裝選項？
 
@@ -43,7 +44,7 @@ ms.locfileid: "90077545"
 - 沒有適用于設定 Server Core 的 OOBE (現成體驗) 
 - 不支援音訊
 
-下表顯示哪些應用程式可以在 Server Core vs Server 的 *本機* 上使用桌面體驗。 **重要**事項：在大部分情況下，列為 [無法使用] 的應用程式可以從 Windows 用戶端電腦遠端執行，並用來管理 Server Core 安裝。
+下表顯示哪些應用程式可以在 Server Core vs Server 的 *本機* 上使用桌面體驗。 **重要** 事項：在大部分情況下，列為 [無法使用] 的應用程式可以從 Windows 用戶端電腦遠端執行，並用來管理 Server Core 安裝。
 
 > [!NOTE]
 > 這份清單適用于快速參考-它不是完整的清單。
@@ -81,12 +82,12 @@ ms.locfileid: "90077545"
 | PowerShell ISE                     | 無法使用   | 可供使用                      |
 | PowerShell IME                     | 可供使用       | 可供使用                      |
 | Mstsc.exe                          | 無法使用   | 可供使用                      |
-| 遠端桌面服務            | 可供使用       | 可供使用                      |
+| 遠端桌面服務問題            | 可供使用       | 可供使用                      |
 | Hyper-V 管理員                    | 無法使用   | 可供使用                      |
 | 寫字 板\*                          | 無法使用   | 可供使用                      |
 
 
-如需 Server *core 內含功能* 的詳細資訊，請參閱 [Windows server core 中包含的角色、角色服務和功能](server-core-roles-and-services.md)。 如需 Server Core*未*包含之內容的相關資訊，請參閱[不包含在 server Core 中的角色、角色服務和功能](server-core-removed-roles.md)。
+如需 Server *core 內含功能* 的詳細資訊，請參閱 [Windows server core 中包含的角色、角色服務和功能](server-core-roles-and-services.md)。 如需 Server Core *未* 包含之內容的相關資訊，請參閱 [不包含在 server Core 中的角色、角色服務和功能](server-core-removed-roles.md)。
 
 \* 以讀取。RTF 檔案儲存在伺服器核心 SKU 上，使用者可以將檔案 (s) 複製到有 WordPad 的不同 Windows 電腦上。
 
