@@ -1,17 +1,17 @@
 ---
 title: 使用 DNS 原則進行應用程式負載平衡
-description: 本主題是 Windows Server 2016 的 DNS 原則案例指南的一部分
+description: 瞭解如何設定 DNS 原則以執行應用程式負載平衡。
 manager: brianlic
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fa415f6c1b7065b0e5da6e83999ed425d9f6b28e
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 849baf9e95af51d5bd3c3bd4460f181fa8836691
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865354"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904913"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>使用 DNS 原則進行應用程式負載平衡
 
@@ -27,7 +27,7 @@ ms.locfileid: "96865354"
 
 以下是您可以如何使用 DNS 原則進行應用程式負載平衡的範例。
 
-這個範例會使用一個虛構的公司 Contoso 禮物服務，其提供線上 gifing 服務，以及一個名為 **contosogiftservices.com** 的網站。
+這個範例會使用一個虛構的公司 Contoso 禮物服務，其提供線上贈與服務，以及一個名為 **contosogiftservices.com** 的網站。
 
 Contosogiftservices.com 網站裝載在多個資料中心，每個資料中心都有不同的 IP 位址。
 

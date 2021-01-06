@@ -1,25 +1,25 @@
 ---
 title: 規劃啟用 DirectAccess
-description: 本主題屬於將 DirectAccess 新增至現有的遠端存取 (VPN) 部署的 Windows Server 2016 指南
+description: 瞭解適用于 Windows Server (半年通道) 、Windows Server 2016 的 DirectAccess 基礎結構和 DirectAccess 部署。
 manager: brianlic
 ms.topic: article
 ms.assetid: 458a3bcf-50b6-47b2-b53c-1b8204c5189e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 34bb0ae02a2fe2461790d32095c247f56cdd8c43
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b0eb294425d3dde02e12a9b92281de6f80773900
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951193"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904213"
 ---
 # <a name="plan-to-enable-directaccess"></a>規劃啟用 DirectAccess
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-**注意：** Windows Server 2012 將 DirectAccess 與遠端存取服務 (RAS) 合併為單一遠端存取角色。 本節說明部署執行 Windows Server 2016 與基本功能的單一遠端存取服務器所需的規劃步驟。
+**注意：** Windows Server 2012 將 DirectAccess 與遠端存取服務 (RAS) 合併為單一遠端存取角色。 本節說明使用基本功能部署執行 Windows Server 2016 的單一遠端存取服務器時所需的規劃步驟。
 
-規劃階段包括下列步驟：
+規劃階段包含下列步驟：
 
 -   [步驟1：規劃 DirectAccess 基礎結構](step-1-plan-da-inf-davpn.md)
 

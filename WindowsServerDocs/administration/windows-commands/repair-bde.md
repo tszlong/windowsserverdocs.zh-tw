@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4caa619c248a30c48cdfc291f2fde25ba51d85f7
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: b7eb1128a34f366d5a096558118f43473252c8d4
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766281"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904083"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -29,10 +29,13 @@ ms.locfileid: "90766281"
 repair-bde <inputvolume> <outputvolumeorimage> [-rk] [–rp] [-pw] [–kp] [–lf] [-f] [{-?|/?}]
 ```
 
+> [!WARNING]
+> 輸出磁片區的內容將會 **完全刪除，並** 由損毀的 BitLocker 磁片磁碟機中的解密內容覆寫。 如果您想要在選取的目標磁片磁碟機上儲存任何現有的資料，請先將現有的資料移到其他可靠的備份媒體，再執行 `repair-bde` 命令。
+
 ### <a name="parameters"></a>參數
 
 | 參數 | 描述 |
-|--|--|
+| --- | --- |
 | `<inputvolume>` | 識別您想要修復的 BitLocker 加密磁片磁碟機的磁碟機號。 磁碟機號必須包含冒號;例如： **C：**。 如果未指定金鑰封裝的路徑，此命令會在磁片磁碟機中搜尋金鑰套件。 當硬碟損毀時，此命令可能找不到套件，並會提示您提供路徑。 |
 | `<outputvolumeorimage>` | 識別要儲存修復之磁片磁碟機內容的磁片磁碟機。 輸出磁片磁碟機上的所有資訊都會遭到覆寫。 |
 | -rk | 識別應該用來解除鎖定磁片區的修復金鑰位置。 此命令也可以指定為 **-recoverykey**。 |
@@ -65,7 +68,7 @@ repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 repair-bde C: D: -rp 111111-222222-333333-444444-555555-666666-777777-888888
 ```
 
->[!NOTE]
+> [!NOTE]
 > 修復密碼的類型應為八個數字，並以連字號分隔每個區塊。
 
 若要強制卸載磁片磁碟機 C：，請嘗試修復磁片磁碟機 C：，然後從磁片磁碟機 C：將內容寫入磁片磁碟機 D：使用修復金鑰封裝和修復金鑰檔 (RecoveryKey bek) 儲存在磁片磁碟機 F：上，輸入：

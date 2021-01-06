@@ -1,17 +1,17 @@
 ---
 title: 設定 BranchCache 用戶端電腦
-description: 本主題是 Windows Server 2016 的 BranchCache 部署指南的一部分，示範如何在分散式和託管快取模式中部署 BranchCache，以優化分公司的 WAN 頻寬使用量
+description: 瞭解如何將網域成員和非網域成員用戶端電腦設定為 BranchCache 分散式快取或託管快取模式用戶端。
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: e16dbea9-0f0a-41db-b460-14a1a7ad7540
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fcbffbddcd2b83666722202aaed0f3eb7c7ad78b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 969ec77dfc098a589cf4905f18d8e054f871b455
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971935"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904743"
 ---
 # <a name="configure-branchcache-client-computers"></a>設定 BranchCache 用戶端電腦
 

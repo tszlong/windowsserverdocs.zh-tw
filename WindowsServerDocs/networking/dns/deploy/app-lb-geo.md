@@ -1,17 +1,17 @@
 ---
 title: 使用 DNS 原則進行具有地理位置感知的應用程式負載平衡
-description: 本主題是 Windows Server 2016 的 DNS 原則案例指南的一部分
+description: 瞭解如何設定 DNS 原則，以對具有地理位置感知的應用程式進行負載平衡。
 manager: brianlic
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5f250a2ca008ab11177338d71c69d7c5b54086d3
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 05ba48daff7a1d1f313108f803d4165d2fb1b79f
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865367"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904593"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>使用 DNS 原則進行具有地理位置感知的應用程式負載平衡
 

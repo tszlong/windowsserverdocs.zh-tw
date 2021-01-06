@@ -1,17 +1,17 @@
 ---
 title: 使用 Azure 雲端應用程式伺服器以時間為基礎的 DNS 回應
-description: 本主題是 Windows Server 2016 的 DNS 原則案例指南的一部分
+description: 瞭解如何使用 Azure Cloud App Server 根據一天中的時間來使用 DNS 回應。
 manager: brianlic
 ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7ea14664702c2e3ff10e64e4f5c84680fdcc1a86
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: b90af11d4bb6f5c1f52699669a8eee4562a97d48
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865297"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904923"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>使用 Azure 雲端應用程式伺服器以時間為基礎的 DNS 回應
 

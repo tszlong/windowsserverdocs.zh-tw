@@ -1,23 +1,23 @@
 ---
 title: 啟用網域成員檔案伺服器的雜湊發行
-description: 本主題是 Windows Server 2016 的 BranchCache 部署指南的一部分，示範如何在分散式和託管快取模式中部署 BranchCache，以優化分公司的 WAN 頻寬使用量
+description: 瞭解如何針對多個檔案伺服器啟用 BranchCache 雜湊發行。
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: a3f1f7c4-d9b2-43e6-8bfa-fac707bbd4d3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: df03945a80ae86aad91a004ea710ac6eff10c3ad
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: beb6c20cf9f750ed0296b96acb6253b5352385fb
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971855"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904813"
 ---
 # <a name="enable-hash-publication-for-domain-member-file-servers"></a>啟用網域成員檔案伺服器的雜湊發行
 
 >適用於：Windows Server (半年度管道)、Windows Server 2016
 
-當您使用 Active Directory Domain Services (AD DS) 時，您可以使用網域群組原則來啟用多個檔案伺服器的 BranchCache 雜湊發行。 若要這樣做，您必須建立組織單位 (OU) 、將檔案伺服器新增到 OU、建立 BranchCache 雜湊發行集群組原則物件 (GPO) ，然後設定 GPO。
+當您使用 Active Directory Domain Services (AD DS) 時，可以使用網域群組原則來啟用多個檔案伺服器的 BranchCache 雜湊發行。 若要這樣做，您必須 (OU 建立組織單位) 、將檔案伺服器新增至 OU、 (GPO) 建立 BranchCache 雜湊發佈群組原則物件，然後設定 GPO。
 
 請參閱下列主題，以啟用多個檔案伺服器的雜湊發行。
 
