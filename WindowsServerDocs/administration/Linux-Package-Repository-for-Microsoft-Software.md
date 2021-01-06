@@ -6,12 +6,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: victorcheng7
 ms.author: vichen
 ms.date: 08/14/2020
-ms.openlocfilehash: fb03201ce4f76a25b00fb37365597147e473b306
-ms.sourcegitcommit: 3c6c257526b243e876aed59e3f2dec42697f232d
+ms.openlocfilehash: 8c11938042153f6094ddab05c4fff8b723b314fe
+ms.sourcegitcommit: 38664a484b62a5c6342bd5105b814f55ee4b5604
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418161"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97917660"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>適用于 Microsoft 產品的 Linux 軟體存放庫
 
@@ -91,3 +91,10 @@ curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 # Update package index files
 sudo apt-get update
 ```
+
+## <a name="see-also"></a>另請參閱
+
+- [適用於 Linux 的 Windows 子系統常見問題集](https://docs.microsoft.com/windows/wsl/faq)
+- [如何解除安裝 WSL 散發套件？](https://docs.microsoft.com/windows/wsl/faq#how-do-i-uninstall-a-wsl-distribution)
+- [Windows 10 上適用於 Linux 的 Windows 子系統安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)
+- [適用於 Linux 的 Windows 子系統文件](https://docs.microsoft.com/windows/wsl/)
