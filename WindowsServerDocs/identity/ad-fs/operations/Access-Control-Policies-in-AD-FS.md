@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d256266afb99f45ededb3a14687c6164d2de6f8d
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 83f1efb62f3f7910f0866b63186ef97b11966fe5
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044466"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977473"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Windows Server 2016 AD FS 中的存取控制原則
 
@@ -27,12 +27,12 @@ Active Directory 同盟服務現在支援使用存取控制原則範本。  藉�
 
 存取控制原則範本會使用允許模型。  這表示根據預設，沒有人可以存取，而且必須明確授與存取權。  不過，這不只是全部或不允許的。  系統管理員可以將例外狀況新增至允許規則。  例如，系統管理員可能會想要根據特定的網路來授與存取權，方法是選取這個選項，並指定 IP 位址範圍。  但系統管理員可能會新增和例外，例如，系統管理員可以從特定網路新增例外狀況，並指定該 IP 位址範圍。
 
-![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP2.PNG)
+![螢幕擷取畫面，顯示存取控制原則的查看位置。](media/Access-Control-Policies-in-AD-FS/ADFSACP2.PNG)
 
 ## <a name="built-in-access-control-policy-templates-vs-custom-access-control-policy-templates"></a>內建的存取控制原則範本與自訂存取控制原則範本
 AD FS 包含數個內建的存取控制原則範本。  這些都是以一組相同的原則需求（例如 Office 365 的用戶端存取原則）為目標的一些常見案例。  無法修改這些範本。
 
-![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP3.PNG)
+![顯示內建存取控制原則的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP3.PNG)
 
 為了提供更大的彈性來滿足您的商務需求，系統管理員可以建立自己的存取原則範本。  這些可以在建立之後修改，自訂原則範本的變更將會套用至由這些原則範本控制的所有 RPs。  若要新增自訂原則範本，只需按一下 [AD FS 管理] 內的 [新增存取控制原則]。
 
@@ -60,11 +60,11 @@ AD FS 包含數個內建的存取控制原則範本。  這些都是以一組相
 
 參數化原則範本是具有參數的原則範本。 將此範本指派給 RPs.An 系統管理員時，系統管理員必須輸入參數的值，才能在建立參數化原則範本之後對其進行變更。  參數化原則的範例是內建原則，允許特定群組。  只要將此原則套用至 RP，就必須指定這個參數。
 
-![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP5.PNG)
+![顯示參數化原則範本範例的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP5.PNG)
 
 非參數化原則範本是沒有參數的原則範本。 系統管理員可以將此範本指派給 RPs，而不需要任何輸入，而且可以在建立之後變更非參數化原則範本。  其中一個範例是內建原則，允許所有人和要求 MFA。
 
-![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP4.PNG)
+![顯示非參數化原則範本範例的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP4.PNG)
 
 ## <a name="how-to-create-a-non-parameterized-access-control-policy"></a>如何建立非參數化存取控制原則
 若要建立非參數化的存取控制原則，請使用下列程式
@@ -83,11 +83,11 @@ AD FS 包含數個內建的存取控制原則範本。  這些都是以一組相
 
 6.  從快顯視窗中，從下拉式清單中選取 [ **已驗證** ]。  按一下 [確定]  。
 
-    ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP6.PNG)
+    ![顯示如何選取裝置信任層級的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP6.PNG)
 
 7.  按一下 [確定]  。 按一下 [確定]  。
 
-    ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP7.PNG)
+    ![顯示如何接受原則變更的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP7.PNG)
 
 ## <a name="how-to-create-a-parameterized-access-control-policy"></a>如何建立參數化存取控制原則
 若要建立參數化存取控制原則，請使用下列程式
@@ -106,11 +106,11 @@ AD FS 包含數個內建的存取控制原則範本。  這些都是以一組相
 
 6.  從彈出的視窗中，選取 **指派存取控制原則時指定的參數**。  按一下 [確定]  。
 
-    ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP8.PNG)
+    ![顯示指派存取控制原則選項時所指定之參數的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP8.PNG)
 
 7.  按一下 [確定]  。 按一下 [確定]  。
 
-    ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP9.PNG)
+    ![顯示如何接受選取之選項的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP9.PNG)
 
 ## <a name="how-to-create-a-custom-access-control-policy-with-an-exception"></a>如何建立具有例外狀況的自訂存取控制原則
 若要建立具有例外狀況的存取控制原則，請使用下列程式。
@@ -137,7 +137,7 @@ AD FS 包含數個內建的存取控制原則範本。  這些都是以一組相
 
 10. 按一下 [確定]  。 按一下 [確定]  。
 
-    ![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP10.PNG)
+    ![顯示 [螢幕編輯器] 對話方塊的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP10.PNG)
 
 ## <a name="how-to-create-a-custom-access-control-policy-with-multiple-permit-conditions"></a>如何建立具有多個允許條件的自訂存取控制原則
 若要建立具有多個允許條件的存取控制原則，請使用下列程式
@@ -167,16 +167,16 @@ AD FS 包含數個內建的存取控制原則範本。  這些都是以一組相
 ## <a name="how-to-assign-an-access-control-policy-to-a-new-application"></a>如何將存取控制原則指派給新的應用程式
 將存取控制原則指派給新的應用程式相當簡單，而且現在已經整合到嚮導中，以新增 RP。  在 [信賴憑證者信任] 中，您可以選取您想要指派的存取控制原則。  這是建立新的信賴憑證者信任時的必要條件。
 
-![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP13.PNG)
+![顯示 [選擇存取控制原則] 畫面的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP13.PNG)
 
 ## <a name="how-to-assign-an-access-control-policy-to-an-existing-application"></a>如何將存取控制原則指派給現有的應用程式
 將存取控制原則指派給現有的應用程式只需從信賴憑證者信任中選取應用程式，然後在滑鼠右鍵的 [ **編輯存取控制原則**] 上按一下滑鼠右鍵。
 
-![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP14.PNG)
+![顯示重試方信任應用程式的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP14.PNG)
 
 您可以從這裡選取存取控制原則，並將它套用至應用程式。
 
-![存取控制原則](media/Access-Control-Policies-in-AD-FS/ADFSACP15.PNG)
+![顯示如何編輯存取控制原則的螢幕擷取畫面。](media/Access-Control-Policies-in-AD-FS/ADFSACP15.PNG)
 
 ## <a name="see-also"></a>另請參閱
 [AD FS 操作](../ad-fs-operations.md)

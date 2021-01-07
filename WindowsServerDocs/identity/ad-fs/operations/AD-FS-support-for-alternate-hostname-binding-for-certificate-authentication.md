@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 468e6934dc69ef2f6f83f052ad288860d7fed46e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: c6d2ca57dd7ea48f501525c2e358341e9e12c354
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046606"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977433"
 ---
 # <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>AD FS 支援憑證驗證的替代主機名稱繫結
 
@@ -25,9 +25,9 @@ ms.locfileid: "97046606"
 ## <a name="how-to-configure-alternate-host-name-binding-for-certificate-authentication"></a>如何針對憑證驗證設定替代主機名稱系結
 您可以透過兩種方式來新增憑證驗證的替代主機名稱系結。 第一個方法是使用 Windows Server 2016 的 AD FS 來設定新的 AD FS 伺服器陣列，如果憑證包含 (SAN) 的主體別名，則會自動將它設定為使用上述的第二個方法。 也就是說，它會自動設定兩部不同的主機 (sts.contoso.com 和 certauth.sts.contoso.com，並使用相同的埠。 如果憑證未包含 SAN，您將會看到一則警告，指出憑證主體別名不支援 certauth. *。 請參閱下列螢幕擷取畫面。 第一個顯示的是憑證有 SAN 的安裝，第二個則顯示未安裝的憑證。
 
-![替代主機名稱系結](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_1.png)
+![顯示憑證有 SAN 之安裝的螢幕擷取畫面。](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_1.png)
 
-![替代主機名稱系結](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_2.png)
+![顯示沒有 SAN 之憑證的螢幕擷取畫面。](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_2.png)
 
 同樣地，在部署 Windows Server 2016 中的 AD FS 之後，您就可以使用 PowerShell Cmdlet： AdfsAlternateTlsClientBinding。
 

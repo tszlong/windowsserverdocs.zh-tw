@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 02/01/2019
 ms.topic: article
-ms.openlocfilehash: d64e30e3d59cf47ad3a8eb448ad5f856d28f1bea
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 0a4abb4f402a653f8b32a104c2d31f71c6dda589
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040136"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977303"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>設定 AD FS 外部網路鎖定保護
 
@@ -66,7 +66,7 @@ AD FS 中的外部網路鎖定功能獨立于 AD 鎖定原則。 不過，您必
 讓我們看看兩個範例，並根據不同的設定和狀態，查看 **badPwdCount** 如何隨時間改變。 讓我們假設兩個範例 **帳戶鎖定臨界值** = 4， **ExtranetLockoutThreshold** = 2。 **紅色** 箭號代表不正確的密碼嘗試，**綠色** 箭號代表良好的密碼嘗試。 例如 #1，之後的 **ExtranetObservationWindow** &gt; **重設帳戶鎖定計數器**。 例如 #2，之後的 **ExtranetObservationWindow** &lt; **重設帳戶鎖定計數器**。
 
 ### <a name="example-1"></a>範例 1
-![範例1](media/Configure-AD-FS-Extranet-Lockout-Protection/one.png)
+![此圖顯示 badPwdCount 如何根據不同的設定和狀態來變更時間。](media/Configure-AD-FS-Extranet-Lockout-Protection/one.png)
 
 ### <a name="example-2"></a>範例 2
 ![範例1](media/Configure-AD-FS-Extranet-Lockout-Protection/two.png)

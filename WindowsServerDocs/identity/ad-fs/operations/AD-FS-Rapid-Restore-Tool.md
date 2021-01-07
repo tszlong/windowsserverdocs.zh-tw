@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 04/24/2019
 ms.topic: article
-ms.openlocfilehash: 4d8313d5a086f2a64ea840da49faa9ca22e46466
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 431f4cd79127758af49d451442d0a62d321abe1a
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046616"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977453"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS 快速還原工具
 
@@ -77,7 +77,7 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 
 參數集
 
-![AD FS 快速還原工具](media/AD-FS-Rapid-Restore-Tool/parameter1.png)
+![顯示 Cmdlet 可接受之參數集的螢幕擷取畫面。](media/AD-FS-Rapid-Restore-Tool/parameter1.png)
 
 ### <a name="detailed-description"></a>詳細描述
 

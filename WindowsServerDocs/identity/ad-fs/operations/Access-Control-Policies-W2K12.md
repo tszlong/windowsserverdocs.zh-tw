@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 06/05/2018
 ms.topic: article
-ms.openlocfilehash: da683cec35c7cf43f5fbf5b29ed7441fadf0b218
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5a1eecc5290f431702baf3c27ea76827d1a72f73
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048666"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977443"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Windows Server 2012 R2 和 Windows Server 2012 AD FS 中的存取控制原則
 
@@ -185,7 +185,7 @@ Windows 10 網域加入和登入所需的 AD FS 端點
 
 11. 若要儲存新規則，請在 [ **編輯宣告規則** ] 對話方塊中，按一下 **[確定]**。 產生的清單看起來應該如下所示。
 
-    ![發佈](media/Access-Control-Policies-W2K12/clientaccess3.png)
+    ![顯示 [編輯宣告規則] 對話方塊的螢幕擷取畫面。](media/Access-Control-Policies-W2K12/clientaccess3.png)
 
 ###  <a name="scenario-4-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a><a name="scenario4"></a> 案例4：封鎖對 Office 365 的所有外部存取（指定的 Active Directory 群組除外）
  下列範例會根據 IP 位址啟用內部用戶端的存取。 它會封鎖來自公司網路外部用戶端 IP 位址以外之用戶端的存取權，但指定 Active Directory 群組中的人員除外。請使用下列步驟，將正確的發佈授權規則新增至 **Microsoft Office 365 身分識別平臺** 的信賴憑證者信任（使用宣告規則 Wizard）：

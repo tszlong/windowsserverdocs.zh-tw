@@ -7,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 4b3564afacf23096b3e76e528015b0e1f155a324
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 6ce5b9f747e3bbe788a058b3e1cfa36d00530e01
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045496"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977393"
 ---
 # <a name="configure-authentication-policies"></a>使用驗證原則
 
@@ -39,14 +39,14 @@ ms.locfileid: "97045496"
 2.  在 AD FS] 嵌入式管理單元中 \- ，按一下 [ **驗證原則**]。
 
 3.  在 [**主要驗證**] 區段中，按一下 [**全域設定**] 旁的 [**編輯**]。 您也可以用滑鼠右鍵 \- 按一下 [ **驗證原則**]，然後選取 [ **編輯全域主要驗證**]，或是在 [ **動作** ] 窗格下，選取 [ **編輯全域主要驗證**]。
-![驗證原則](media/Configure-Authentication-Policies/authpolicy1.png)
+![醒目顯示 [編輯全域主要驗證] 選項的螢幕擷取畫面。](media/Configure-Authentication-Policies/authpolicy1.png)
 
 4.  在 [ **編輯全域驗證原則** ] 視窗中，您可以在 [ **主要** ] 索引標籤上，將下列設定設定為全域驗證原則的一部分：
 
     -   用於主要驗證的驗證方法。 您可以選取 **外部** 網路和 **內部** 網路底下的可用驗證方法。
 
     -   透過 [ **啟用裝置驗證** ] 核取方塊的裝置驗證。 如需詳細資訊，請參閱 [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
-![驗證原則](media/Configure-Authentication-Policies/authpolicy2.png)
+![顯示如何在全域驗證原則中設定設定的螢幕擷取畫面。](media/Configure-Authentication-Policies/authpolicy2.png)
 
 ## <a name="to-configure-primary-authentication-per-relying-party-trust"></a>設定每個信賴憑證者信任的主要驗證
 
@@ -55,12 +55,12 @@ ms.locfileid: "97045496"
 2.  在 AD FS] 嵌入式管理單元中 \- ，按一下 [每個信賴憑證者信任的 **驗證原則**] \\ ****，然後按一下您要設定驗證原則的信賴憑證者信任。
 
 3.  以滑鼠右鍵 \- 按一下您要設定驗證原則的信賴憑證者信任，然後選取 [ **編輯自訂主要驗證**]，或在 [ **動作** ] 窗格中，選取 [ **編輯自訂主要驗證**]。
-![驗證原則](media/Configure-Authentication-Policies/authpolicy5.png)
+![醒目顯示 [編輯自訂主要驗證] 功能表選項的螢幕擷取畫面。](media/Configure-Authentication-Policies/authpolicy5.png)
 
 4.  在 [ **<信賴憑證者 \_ \_ 信任 \_ 名稱>** ] 視窗的 [編輯驗證原則] 視窗中，您可以在 [ **主要** ] 索引標籤下，將下列設定設定為 **每個信賴** 憑證者信任驗證原則的一部分：
 
     -   使用者每次登入時都必須提供其認證（每次登入時 \- **都必須 \-** 提供其認證）核取方塊。
-![驗證原則](media/Configure-Authentication-Policies/authpolicy6.png)
+![顯示如何在每個信賴憑證者信任驗證原則中設定設定的螢幕擷取畫面。](media/Configure-Authentication-Policies/authpolicy6.png)
 
 ## <a name="to-configure-multi-factor-authentication-globally"></a>全域設定多重要素驗證
 
@@ -69,7 +69,7 @@ ms.locfileid: "97045496"
 2.  在 AD FS] 嵌入式管理單元中 \- ，按一下 [ **驗證原則**]。
 
 3.  在 [**多重 \- 要素驗證**] 區段中，按一下 [**全域設定**] 旁的 [**編輯**]。 您也可以用滑鼠右鍵 \- 按一下 [ **驗證原則**]，然後選取 [ **編輯全域多重 \- 要素驗證**]，或在 [ **動作** ] 窗格中，選取 [ **編輯全域多重 \- 要素驗證**]。
-![驗證原則](media/Configure-Authentication-Policies/authpolicy8.png)
+![醒目顯示 [編輯全域多重要素驗證] 選項的螢幕擷取畫面 \- 。](media/Configure-Authentication-Policies/authpolicy8.png)
 
 4.  在 [ **編輯全域驗證原則** ] 視窗的 [ **多重 \- 要素** ] 索引標籤下，您可以將下列設定設定為全域多重 \- 要素驗證原則的一部分：
 

@@ -7,12 +7,12 @@ ms.author: cosdar
 manager: eldenc
 ms.date: 03/10/2020
 ms.topic: article
-ms.openlocfilehash: 38ef41ac6cdb35efc72087ad73f08b04c1414c1a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 8da7bc43d55a78af66f9e73575f7144fbc1a1709
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948574"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977323"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>延伸儲存空間直接存取中的磁碟區
 > 適用於：Windows Server 2019、Windows Server 2016
@@ -48,7 +48,7 @@ ms.locfileid: "97948574"
 
 在儲存空間直接存取，每個磁碟區包含幾個堆疊物件：叢集共用磁碟區 (CSV) (這是磁碟區)、磁碟分割、磁碟 (這是虛擬磁碟)，以及一或多個儲存層（如果有的話）。 若要調整磁碟區大小，您將需要調整幾個物件大小。
 
-![volumes-in-smapi](media/resize-volumes/volumes-in-smapi.png)
+![可能需要調整大小的堆疊物件](media/resize-volumes/volumes-in-smapi.png)
 
 若要熟悉它們，請嘗試執行 **Get-** 搭配 PowerShell 的對應名詞使用。
 
@@ -63,7 +63,7 @@ Get-VirtualDisk
 例如，以下是如何從虛擬磁碟取得，一直到其磁碟區︰
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume
+Get-VirtualDisk [friendly_name] | Get-Disk | Get-Partition | Get-Volume
 ```
 
 ### <a name="step-1--resize-the-virtual-disk"></a>步驟 1 – 調整虛擬磁碟大小
@@ -73,7 +73,7 @@ Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume
 若要檢查，請執行下列 Cmdlet：
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-StorageTier
+Get-VirtualDisk [friendly_name] | Get-StorageTier
 ```
 
 如果 cmdlet 沒有傳回任何項目，虛擬磁碟不使用儲存層。
@@ -85,12 +85,12 @@ Get-VirtualDisk <FriendlyName> | Get-StorageTier
 以 **-Size** 參數提供新的大小。
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Resize-VirtualDisk -Size <Size>
+Get-VirtualDisk [friendly_name] | Resize-VirtualDisk -Size [size]
 ```
 
 當您調整 **VirtualDisk** 大小，**Disk** 會自動接續，也調整大小。
 
-![Resize-VirtualDisk](media/resize-volumes/Resize-VirtualDisk.gif)
+![顯示自動調整磁片大小的動畫](media/resize-volumes/Resize-VirtualDisk.gif)
 
 #### <a name="with-storage-tiers"></a>使用儲存層
 
@@ -99,13 +99,13 @@ Get-VirtualDisk <FriendlyName> | Resize-VirtualDisk -Size <Size>
 從虛擬磁碟追蹤關聯，取得儲存層的名稱。
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-StorageTier | Select FriendlyName
+Get-VirtualDisk [friendly_name] | Get-StorageTier | Select FriendlyName
 ```
 
 然後，針對每個層，以 **-Size** 參數提供新的大小。
 
 ```PowerShell
-Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
+Get-StorageTier [friendly_name] | Resize-StorageTier -Size [size]
 ```
 
 > [!TIP]
@@ -113,7 +113,7 @@ Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
 
 當您調整 **StorageTier** 大小，**VirtualDisk** 和 **Disk** 會自動接續，也調整大小。
 
-![Resize-StorageTier](media/resize-volumes/Resize-StorageTier.gif)
+![顯示自動 VirtualDisk 和磁片調整大小的動畫](media/resize-volumes/Resize-StorageTier.gif)
 
 ### <a name="step-2--resize-the-partition"></a>步驟 2 – 調整磁碟分割大小
 
@@ -123,7 +123,7 @@ Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
 
 ```PowerShell
 # Choose virtual disk
-$VirtualDisk = Get-VirtualDisk <FriendlyName>
+$VirtualDisk = Get-VirtualDisk [friendly_name]
 
 # Get its partition
 $Partition = $VirtualDisk | Get-Disk | Get-Partition | Where PartitionNumber -Eq 2
@@ -134,9 +134,7 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 
 當您調整 **Partition** 大小，**Volume** 和 **ClusterSharedVolume** 會自動接續，也調整大小。
 
-![Resize-Partition](media/resize-volumes/Resize-Partition.gif)
-
-這樣就完成了！
+![顯示自動音量和 Get-clustersharedvolume 大小調整的動畫](media/resize-volumes/Resize-Partition.gif)
 
 > [!TIP]
 > 您可以執行 **Get-Volume** 檢查磁碟區是否有新的大小。

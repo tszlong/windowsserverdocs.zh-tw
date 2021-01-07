@@ -7,12 +7,12 @@ ms.author: billmath
 manager: mtilman
 ms.date: 05/20/2019
 ms.topic: article
-ms.openlocfilehash: 182d529ce2cd5bdf8ce0dc833cb43a283f874218
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 415275a0d845191144010293f1a57d8caab77672
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040146"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977313"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS 外部網路鎖定和外部網路智慧鎖定
 
@@ -41,7 +41,7 @@ ESL 僅適用于透過外部網路進行 Web 應用程式 Proxy 或協力廠商 
 
  如果次要節點無法連絡主機，則會將錯誤事件寫入 AD FS 管理員記錄檔中。 驗證將繼續進行處理，但 AD FS 只會在本機寫入更新的狀態。 AD FS 會每10分鐘重試一次連線到主伺服器，並在有可用的主機之後切換回主要主機。
 
-### <a name="terminology"></a>詞彙
+### <a name="terminology"></a>術語
 - **FamiliarLocation**：在驗證要求期間，ESL 會檢查所有顯示的 ip。 這些 ip 將會是網路 IP、轉送 IP 和選擇性的 x 轉送 IP 的組合。 如果要求成功，則所有 Ip 都會新增至帳戶活動資料表做為「熟悉的 Ip」。 如果要求中有所有 Ip 出現在「熟悉的 Ip」中，則會將要求視為「熟悉的」位置。
 - **Unknownlocation.xsd**：如果傳入的要求至少有一個 IP 沒有存在於現有的 "FamiliarLocation" 清單中，則會將要求視為「未知」的位置。 這是為了處理 proxy 處理案例，例如 Exchange online 的傳統驗證，其中 Exchange Online 位址可處理成功和失敗的要求。
 - **badPwdCount**：代表不正確的密碼提交次數以及驗證失敗次數的值。 針對每個使用者，會針對熟悉的位置和未知的位置保留個別的計數器。
@@ -62,7 +62,7 @@ ESL 僅適用于透過外部網路進行 Web 應用程式 Proxy 或協力廠商 
 - **成功登** 入：如果登入成功，則會將來自要求的 ip 新增至使用者的熟悉位置 IP 清單。
 - **登入失敗**：如果登入失敗，badPwdCount 會增加。 如果攻擊者傳送更多錯誤的密碼給系統，而不是閾值允許的，則使用者會進入鎖定狀態。  (badPwdCount > ExtranetLockoutThreshold) 
 
-![組態](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
+![顯示失敗登入程式的工作流程圖。](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
 
 當帳戶被鎖定時，"UnknownLockout" 值會等於 true。這表示使用者的 badPwdCount 超過閾值，也就是有人嘗試的密碼比系統所允許的還要多。 在此狀態下，有效的使用者可以使用2種方式登入。
 - 使用者必須等待 ObservationWindow 時間經過，或
@@ -255,7 +255,7 @@ AD FS 會將外部網路鎖定事件寫入安全性審核記錄：
 |1203|此事件是針對每個錯誤密碼嘗試所撰寫。 一旦 badPwdCount 達到 ExtranetLockoutThreshold 中指定的值，系統就會在 ADFS 中于 ExtranetObservationWindow 指定的期間內鎖定帳戶。</br>活動識別碼： %1</br>XML： %2|
 |1201|每次使用者被鎖定時，就會寫入此事件。 </br>活動識別碼： %1</br>XML： %2|
 |557 (ADFS 2019) | 嘗試與節點 %1 上的帳戶存放區 rest 服務通訊時發生錯誤。 如果這是 WID 伺服器陣列，主要節點可能會離線。 如果這是 SQL 伺服器陣列 ADFS，則會自動選取新的節點來裝載使用者存放區主機角色。|
-|562 (ADFS 2019) |與伺服器 %1 上的帳戶存放區端點 communcating 時發生錯誤。</br>例外狀況訊息： %2|
+|562 (ADFS 2019) |與伺服器 %1 上的帳戶存放區端點通訊時發生錯誤。</br>例外狀況訊息： %2|
 |563 (ADFS 2019) |計算外部網路鎖定狀態時發生錯誤。 由於 %1 的值將允許此使用者進行驗證，因此權杖發行將會繼續。 如果這是 WID 伺服器陣列，主要節點可能會離線。 如果這是 SQL 伺服器陣列 ADFS，則會自動選取新的節點來裝載使用者存放區主機角色。</br>帳戶存放區伺服器名稱： %2</br>使用者識別碼： %3</br>例外狀況訊息： %4|
 |512|下列使用者的帳戶已被鎖定。因為系統組態，所以允許登入嘗試。</br>活動識別碼： %1 </br>使用者： %2 </br>用戶端 IP： %3 </br>錯誤的密碼計數： %4  </br>上次錯誤密碼嘗試： %5|
 |515|下列使用者帳戶處於鎖定狀態，且只提供正確的密碼。 此帳戶可能會遭到盜用。</br>其他資料 </br>活動識別碼： %1 </br>使用者： %2 </br>用戶端 IP： %3 |

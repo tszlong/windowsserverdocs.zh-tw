@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 08/11/2017
 ms.topic: article
-ms.openlocfilehash: 5b840243a7f17dc65db5d3c0605c3e5a321352f2
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 7272a25bac04ab864b44f234c69a1554c86d004a
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049716"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977333"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>使用已註冊的裝置設定內部部署條件式存取
 
@@ -49,7 +49,7 @@ ms.locfileid: "97049716"
 若要驗證您的架構層級，請執行下列動作：
 
 1.  您可以使用 ADSIEdit 或 LDP，並連接到架構命名內容。
-2.  使用 ADSIEdit，以滑鼠右鍵按一下 [CN = Schema，CN = Configuration，DC = <domain> ，dc =]， <com> 然後選取 [properties]。  使用您的樹系資訊 Relpace 網域和 com 部分。
+2.  使用 ADSIEdit，以滑鼠右鍵按一下 [CN = Schema，CN = Configuration，DC = <domain> ，dc =]， <com> 然後選取 [properties]。  將網域和 com 部分取代為您的樹系資訊。
 3.  在 [屬性編輯器] 下找出 [objectVersion] 屬性，它會告訴您，您的版本。
 
 ![ADSI 編輯器](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)
@@ -82,13 +82,13 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 ### <a name="create-ad-objects-for-ad-fs-device-authentication"></a>建立 AD FS 裝置驗證的 AD 物件
 如果 AD FS 伺服器陣列尚未進行裝置驗證設定 (您可以在 AD FS 管理主控台的 [服務]-> [裝置註冊] 底下查看是否已設定)，請使用下列步驟建立正確的 AD DS 物件和設定。
 
-![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
+![顯示裝置註冊總覽畫面的螢幕擷取畫面。](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
 
 >注意：下列命令需要 Active Directory 系統管理工具，因此，如果您的同盟伺服器也不是網域控制站，請先使用下列步驟1安裝工具。  否則略過步驟 1。
 
 1.  執行 **\[新增角色及功能\]** 精靈，然後選取 **\[遠端伺服器管理工具\]** -> **\[角色管理工具\]** -> **\[AD DS 及 AD LDS 工具\]** -> 選擇 **\[Windows PowerShell 的 Active Directory 模組\]** 及 **\[AD DS 工具\]**。
 
-![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
+![醒目顯示 Windows PowerShell 的 Active Directory 模組和 AD DS 工具選項的螢幕擷取畫面。](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
 
 2. 在 AD FS 的主伺服器上，請確定您以企業系統管理員的身分登入 AD DS 使用者 (EA ) 許可權，並開啟提升許可權的 powershell 提示字元。  然後，執行下列 PowerShell 命令：
 
@@ -98,7 +98,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 >注意：如果您的 AD FS 服務設定為使用 GMSA 帳戶，請以 "domain\accountname $" 格式輸入帳戶名稱
 
-![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)
+![顯示如何使用列出的 PowerShell 命令的螢幕擷取畫面。](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)
 
 上述 PSH 會建立下列物件：
 
@@ -107,11 +107,11 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 - [設定] --> [服務] --> [裝置註冊設定] 下的裝置註冊服務容器及物件
 - [設定] --> [服務] --> [裝置註冊設定] 下的裝置註冊服務 DKM 容器及物件
 
-![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)
+![顯示所建立物件進度的螢幕擷取畫面。](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)
 
 4. 完成此作業後，您就會看到成功完成訊息。
 
-![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png)
+![顯示成功完成訊息的螢幕擷取畫面。](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png)
 
 ###        <a name="create-service-connection-point-scp-in-ad"></a>在 AD 中建立 (SCP) 的服務連接點
 如果您打算使用此處所述的 Windows 10 網域加入 (搭配 Azure AD 自動註冊)，請執行下列命令以建立 AD DS 中的服務連接點
@@ -121,13 +121,13 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 >注意：如有必要，請從 Azure AD Connect 伺服器複製 AdSyncPrep. .psm1 檔案。  此檔案位於 Program Files\Microsoft Azure Active Directory Connect\AdPrep
 
-![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device6.png)
+![顯示 AdSyncPrep 檔案路徑的螢幕擷取畫面。](media/Configure-Device-Based-Conditional-Access-on-Premises/device6.png)
 
 2. 提供您的 Azure AD 全域管理員認證
 
     `PS C:>$aadAdminCred = Get-Credential`
 
-![裝置註冊](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png)
+![顯示如何提供 Azure AD 全域管理員認證的螢幕擷取畫面。](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png)
 
 3. 執行下列 PowerShell 命令
 

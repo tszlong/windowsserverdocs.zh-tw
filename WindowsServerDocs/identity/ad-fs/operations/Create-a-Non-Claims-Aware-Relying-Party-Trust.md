@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5238f93656c1d918122fc9cbb3a6b73232fce548
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 7a784f63949fd198272ab2df8d11e1f7b990a473
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048866"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977353"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>建立非宣告感知信賴憑證者信任
 
@@ -29,22 +29,22 @@ ms.locfileid: "97048866"
 1. 在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在 [ **動作**] 底下，按一下 [ **新增信賴** 憑證者信任]。
-![信賴憑證者](media/Create-a-Relying-Party-Trust/addtrust1.PNG)
+![醒目顯示 [新增信賴憑證者信任] 動作的螢幕擷取畫面。](media/Create-a-Relying-Party-Trust/addtrust1.PNG)
 
 3.  在 [ **歡迎使用** ] 頁面上，選擇 [ **非宣告感知** ]，然後按一下 [ **啟動**]。
-![信賴憑證者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG)
+![醒目顯示 [非宣告感知] 選項的螢幕擷取畫面。](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG)
 
 4.  在 [指定顯示名稱] 頁面的 [顯示名稱] 中輸入名稱、在 [備忘稿] 下輸入此信賴憑證者信任的描述，然後按 [下一步]。
-![信賴憑證者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
+![顯示如何指定信賴憑證者信任名稱的螢幕擷取畫面。](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
 
 5. 在 [設定識別碼] 頁面上，指定此信賴憑證者的一或多個識別碼，按一下 [新增] 以將它們新增到清單中，然後按一下 [下一步]。
-![信賴憑證者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
+![顯示如何為信賴憑證者信任指定一或多個識別符的螢幕擷取畫面。](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
 
 6.  在 [選擇存取控制原則] 上選擇原則，然後按 [下一步]。  如需存取控制原則的詳細資訊，請參閱 [AD FS 中的存取控制原則](Access-Control-Policies-in-AD-FS.md)。
-![信賴憑證者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
+![顯示如何為信賴憑證者信任選取存取控制原則的螢幕擷取畫面。](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
 
 7. 在 [準備新增信任] 頁面上，檢閱設定，然後按一下 [下一步] 以儲存您的信賴憑證者信任資訊。
-   ![信賴憑證者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG)
+   ![顯示如何儲存您的信賴憑證者信任資訊的螢幕擷取畫面。](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG)
 
 8. 在 [完成] 頁面上，按一下 [關閉]。 此動作會自動顯示 [編輯宣告規則] 對話方塊。
 ![信賴憑證者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)

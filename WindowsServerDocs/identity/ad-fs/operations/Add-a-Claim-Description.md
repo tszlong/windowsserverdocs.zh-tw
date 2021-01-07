@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: bdf57eddd1ad76c5bf9217e9aab97cfef9332b61
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 2890fe14ecd9a4e0b8375475fb740367a36dc01d
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044296"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977413"
 ---
 # <a name="add-a-claim-description"></a>新增宣告描述
 
@@ -30,7 +30,7 @@ ms.locfileid: "97044296"
 1. 在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2. 展開 [ **服務** ]，以滑鼠右鍵按一下 [ **新增宣告描述**]。
-   ![新增宣告描述](media/Add-a-Claim-Description/claimdesc1.png)
+   ![醒目顯示 [新增宣告描述] 的螢幕擷取畫面。](media/Add-a-Claim-Description/claimdesc1.png)
 
 3. 在 [新增宣告描述] 對話方塊的 [ **顯示名稱**] 中，輸入識別此宣告之群組或角色的唯一名稱。
 
@@ -48,7 +48,7 @@ ms.locfileid: "97044296"
 - To publish this claim to make partners aware that this server can issue this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can send**.
 ~~~
 
-8. 按一下 [確定]。
+8. 按一下 [確定]  。
 
 ![新增宣告描述](media/Add-a-Claim-Description/claimdesc2.png)
 
