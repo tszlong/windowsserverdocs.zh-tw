@@ -101,6 +101,8 @@
 #### [針對 DHCP 用戶端上的問題進行疑難排解](../troubleshoot/troubleshoot-problems-on-dhcp-client.md)
 #### [針對 DHCP 伺服器上的問題進行疑難排解](../troubleshoot/troubleshoot-problems-on-dhcp-server.md)
 
+## [可延伸的驗證通訊協定 (EAP)](technologies/extensible-authentication-protocol/network-access.md) 
+
 ## [高效能網路功能 (HPN)](technologies/hpn/hpn-top.md)
 ### [網路卸載和最佳化技術](technologies/hpn/network-offload-and-optimization.md)
 #### [僅限軟體 (SO) 功能和技術](technologies/hpn/hpn-software-only-features.md)
