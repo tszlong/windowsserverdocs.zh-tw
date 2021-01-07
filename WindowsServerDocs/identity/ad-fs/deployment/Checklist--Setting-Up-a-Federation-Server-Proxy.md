@@ -7,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 096a6fe94d408e5b44e329b3db9faa4f8f84bebd
-ms.sourcegitcommit: 3247e193d9fe1b57543fff215460a6d9db52f58b
+ms.openlocfilehash: dd21c304535ce9f80a946cf5faede2667284eeb3
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814967"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950324"
 ---
 # <a name="checklist-setting-up-a-federation-server-proxy"></a>檢查清單：設定同盟伺服器 Proxy
 
@@ -36,5 +36,5 @@ ms.locfileid: "97814967"
 |取得伺服器驗證憑證之後，您必須將它安裝在 \( \) 同盟伺服器 proxy 之預設網站的 Internet Information Services IIS 中。|![將伺服器驗證憑證匯入至 [預設的網站] 連結的圖示，您可以在 [參考] 中使用來設定同盟 proxy 伺服器。將](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[伺服器驗證憑證匯入至預設的網站](Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)|
 |\(選擇性 \) ：若要從憑證授權單位單位 CA 取得伺服器驗證憑證 \( \) ，您可以使用 IIS 取得同盟伺服器 proxy 的範例憑證。<p>因為 IIS 產生的自我 \- 簽署憑證不是來自受信任的來源，請在下列案例中使用它來建立自我 \- 簽署的憑證：<p>-當您必須在 \( \) 伺服器和有限的已知使用者群組之間建立安全通訊端層的 SSL 通道時<br />-當您需要針對第三 \- 方憑證問題進行疑難排解時，請 **注意：** 在使用自我簽署的伺服器驗證憑證的生產環境中部署同盟伺服器 proxy 並不是安全性最佳作法 \- 。|![IIS：建立自我 \- 簽署的伺服器憑證連結的圖示，您可以在參考中用來設定同盟 proxy 伺服器。](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[IIS：建立自我 \- 簽署的伺服器憑證](https://go.microsoft.com/fwlink/?LinkID=108271)|
 |在將成為同盟伺服器 Proxy 的電腦上安裝同盟服務 Proxy 的角色服務。|![安裝「同盟服務 Proxy 角色服務」連結的圖示，您可以在設定同盟 Proxy 伺服器的參考中使用此連結。](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[安裝同盟服務 Proxy 角色服務](Install-the-Federation-Service-Proxy-Role-Service.md)|
-|使用 AD FSFederation Server Proxy 設定向導，將電腦上的 AD FS 軟體設定為同盟伺服器 proxy 角色的作用。|![[設定同盟伺服器 Proxy 角色的電腦] 連結的圖示，您可以在 [設定同盟 Proxy 伺服器的參考] 中使用。](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[設定同盟伺服器 Proxy 角色的電腦](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)|
+|使用 AD FS Federation Server Proxy 設定精靈設定電腦上的 AD FS 軟體，以扮演同盟伺服器 Proxy 角色。|![[設定同盟伺服器 Proxy 角色的電腦] 連結的圖示，您可以在 [設定同盟 Proxy 伺服器的參考] 中使用。](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[設定同盟伺服器 Proxy 角色的電腦](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)|
 |使用事件檢視器確認同盟伺服器 Proxy 服務是否已啟動。|![設定同盟 proxy 伺服器](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[，確認同盟伺服器 Proxy 可運作](Verify-That-a-Federation-Server-Proxy-Is-Operational.md)|

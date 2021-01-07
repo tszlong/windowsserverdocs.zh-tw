@@ -6,12 +6,13 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: c793c30c6637a050d2b2cbb055ec289e3c3e8f20
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.topic: article
+ms.openlocfilehash: e3aaf9a999ba2d87e10eaeaace0d39450b1e13bf
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638035"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950474"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>管理 Active Directory 管理中心中的不同網域
 
@@ -28,7 +29,7 @@ ms.locfileid: "89638035"
 
 ### <a name="windows-server-2012-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2012：使用目前的登入認證集來管理所選 Active Directory 管理中心實例中的外部網域
 
-1.  若要開啟 Active Directory 管理中心，請在 **伺服器管理員**中，按一下 [ **工具**]，然後按一下 [ **Active Directory 管理中心**]。
+1.  若要開啟 Active Directory 管理中心，請在 **伺服器管理員** 中，按一下 [ **工具**]，然後按一下 [ **Active Directory 管理中心**]。
 
     > [!NOTE]
     >  開啟 Active Directory 管理中心的另一種方式是按一下 [ **開始**]，然後輸入 **dsac.exe**。
@@ -43,11 +44,11 @@ ms.locfileid: "89638035"
 
 4.  在 **[連接到]** 中，輸入您要管理的外部功能變數名稱 \( （例如， **contoso.com** \) ），然後按一下 **[確定]**。
 
-5.  當您成功連線到外部網域，可以瀏覽 [新增瀏覽節點]**** 視窗中的欄位，選擇要加入 Active Directory 管理中心瀏覽窗格的容器，然後按一下 [確定]****。
+5.  當您成功連線到外部網域，可以瀏覽 [新增瀏覽節點] 視窗中的欄位，選擇要加入 Active Directory 管理中心瀏覽窗格的容器，然後按一下 [確定]。
 
 ### <a name="windows-server-2008-r2-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2008 R2：使用目前的登入認證集來管理所選 Active Directory 管理中心實例中的外部網域
 
-1. 如果要開啟 [Active Directory 管理中心]，請依序按一下 [開始]****、[系統管理工具]****，然後按一下 [Active Directory 管理中心]****。
+1. 如果要開啟 [Active Directory 管理中心]，請依序按一下 [開始]、[系統管理工具]，然後按一下 [Active Directory 管理中心]。
 
    > [!NOTE]
    >  開啟 Active Directory 管理中心的另一種方式是按一下 [ **開始**]，按一下 [ **執行**]，然後輸入 **dsac.exe**。
@@ -65,7 +66,7 @@ ms.locfileid: "89638035"
 
 4. 在 **[連接到]** 中，輸入您要管理的外部功能變數名稱 \( （例如， **contoso.com** \) ），然後按一下 **[確定]**。
 
-5. 當您成功連線到外部網域，可以瀏覽 [新增瀏覽節點]**** 視窗中的欄位，選擇要加入 Active Directory 管理中心瀏覽窗格的容器，然後按一下 [確定]****。
+5. 當您成功連線到外部網域，可以瀏覽 [新增瀏覽節點] 視窗中的欄位，選擇要加入 Active Directory 管理中心瀏覽窗格的容器，然後按一下 [確定]。
 
    如需自訂 Active Directory 管理中心流覽窗格的詳細資訊，請參閱 [自訂 Active Directory 管理中心流覽窗格](customize-the-active-directory-administrative-center-navigation-pane.md)。
 

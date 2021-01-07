@@ -4,15 +4,15 @@ description: 在本文件中，您將了解如何在 Azure 中部署 AD FS 以�
 author: billmath
 manager: mtillman
 ms.assetid: 692a188c-badc-44aa-ba86-71c0e8074510
-ms.topic: get-started-article
+ms.topic: how-to
 ms.date: 10/28/2018
 ms.author: billmath
-ms.openlocfilehash: a077a76814cc5ed99d4a1c0eb6c23584b22363e1
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 9fe31d3cfbed9b81706571c7bc578239453810c9
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766751"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950494"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>在 Azure 中部署 Active Directory 同盟服務
 AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功能。 與 Azure AD 或 O365 同盟可讓使用者使用內部部署認證進行驗證，並存取雲端中的所有資源。 如此一來，就一定要有高可用性的 AD FS 基礎結構，以確保能夠存取內部部署和雲端中的資源。 在 Azure 中部署 AD FS 有助於達成執行最低限度的工作所需要的高可用性。
@@ -117,10 +117,10 @@ AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功�
 
 | 電腦 | 角色 | 子網路 | 可用性設定組 | 儲存體帳戶 | IP 位址 |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |Static |
-| contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |Static |
-| contosowap1 |WAP |DMZ |contosowapset |contososac1 |Static |
-| contosowap2 |WAP |DMZ |contosowapset |contososac2 |Static |
+| contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |靜態 |
+| contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |靜態 |
+| contosowap1 |WAP |DMZ |contosowapset |contososac1 |靜態 |
+| contosowap2 |WAP |DMZ |contosowapset |contososac2 |靜態 |
 
 您可能已注意到我們還未指定 NSG。 這是因為 Azure 可讓您在子網路層級使用 NSG。 然後，您可以使用與子網路或 NIC 物件相關聯的個別 NSG 來控制機器的網路流量。 如需詳細資訊，請閱讀 [什麼是網路安全性群組 (NSG)](/azure/virtual-network/tutorial-filter-network-traffic)。
 如果您要管理 DNS，建議使用靜態 IP 位址。 您可以使用 Azure DNS，並改為在網域的 DNS 記錄中依機器的 Azure FQDN 查閱新的機器。
@@ -145,7 +145,7 @@ AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功�
 若要部署 ILB，請在 Azure 入口網站選取負載平衡器，然後按一下新增 (+)。
 
 > [!NOTE]
-> 如果在功能表中看不到 [負載平衡器]****，請按一下入口網站左下角的 [瀏覽]****，並向下捲動到看到 [負載平衡器]**** 為止。  接著，按一下黃色星號即可將它新增至功能表。 現在，請選取新的負載平衡器圖示以開啟面板，開始設定負載平衡器。
+> 如果在功能表中看不到 [負載平衡器]，請按一下入口網站左下角的 [瀏覽]，並向下捲動到看到 [負載平衡器] 為止。  接著，按一下黃色星號即可將它新增至功能表。 現在，請選取新的負載平衡器圖示以開啟面板，開始設定負載平衡器。
 >
 >
 
@@ -181,7 +181,7 @@ AD FS 提供簡化、安全的身分識別同盟和 Web 單一登入 (SSO) 功�
 在 ILB 設定面板中，選取 [健康情況探查]。
 
 1. 按一下 [新增]
-2. 提供探查的詳細資料 a. **名稱**︰探查名稱 b. ** 通訊協定**：HTTP c. **連接埠**：80 (HTTP) d. **路徑**：/adfs/probe e. **間隔**：5 (預設值) – 這是 ILB 在後端集區中探查機器的間隔 f. **狀況不良臨界值限制**：2 (預設值) – 這是連續探查失敗臨界值，達到此臨界值之後，ILB 就會將後端集區中的機器宣告為沒有回應，並停止對它傳送流量。
+2. 提供探查的詳細資料 a. **名稱**︰探查名稱 b. **通訊協定**：HTTP c. **連接埠**：80 (HTTP) d. **路徑**：/adfs/probe e. **間隔**：5 (預設值) – 這是 ILB 在後端集區中探查機器的間隔 f. **狀況不良臨界值限制**：2 (預設值) – 這是連續探查失敗臨界值，達到此臨界值之後，ILB 就會將後端集區中的機器宣告為沒有回應，並停止對它傳送流量。
 
 
 在無法執行完整 HTTPS 路徑檢查的 AD FS 環境中，我們會使用明確建立的 /adfs/probe 端點來執行健康情況檢查。  這遠優於基本連接埠 443 檢查；後者無法準確反映新式 AD FS 部署的狀態。  如需詳細資訊，請參閱 https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/。
@@ -273,18 +273,18 @@ Web 應用程式 Proxy 伺服器不必加入網域。 請選取「遠端存取�
 
 整體來說，您需要下列規則來有效率地保護內部子網路 (依如下所示順序)
 
-| 規則 | 描述 | Flow |
+| 規則 | 描述 | 流程 |
 |:--- |:--- |:---:|
-| AllowHTTPSFromDMZ |允許來自 DMZ 的 HTTPS 通訊 |輸入 |
+| AllowHTTPSFromDMZ |允許來自 DMZ 的 HTTPS 通訊 |連入 |
 | DenyInternetOutbound |不得存取網際網路 |輸出 |
 
 ![INT 存取規則 (輸入)](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
 
 **9.2.保護 DMZ 子網路**
 
-| 規則 | 描述 | Flow |
+| 規則 | 描述 | 流程 |
 |:--- |:--- |:---:|
-| AllowHTTPSFromInternet |允許從網際網路到 DMZ 的 HTTPS |輸入 |
+| AllowHTTPSFromInternet |允許從網際網路到 DMZ 的 HTTPS |連入 |
 | DenyInternetOutbound |HTTPS 以外流向網際網路的任何流量都會遭到封鎖 |輸出 |
 
 ![EXT 存取規則 (輸入)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
@@ -346,7 +346,7 @@ Web 應用程式 Proxy 伺服器不必加入網域。 請選取「遠端存取�
 ## <a name="additional-resources"></a>其他資源
 * [可用性設定組](https://aka.ms/Azure/Availability)
 * [Azure Load Balancer](/azure/load-balancer/load-balancer-overview)
-* [內部負載平衡器](/azure/load-balancer/quickstart-load-balancer-standard-internal-powershell)
+* [內部 Load Balancer](/azure/load-balancer/quickstart-load-balancer-standard-internal-powershell)
 * [網際網路對向負載平衡器](/azure/load-balancer/quickstart-load-balancer-standard-public-powershell)
 * [儲存體帳戶](https://aka.ms/Azure/Storage)
 * [Azure 虛擬網路](/azure/virtual-network/virtual-networks-overview)

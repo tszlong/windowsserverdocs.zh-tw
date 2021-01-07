@@ -5,12 +5,13 @@ ms.date: 07/02/2012
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: ca4e8cb86e567786385da0449223b6282347909b
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.topic: article
+ms.openlocfilehash: acd64b9db1c329a66de887851db1d539f2fc4907
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041056"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950424"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：檔案和印表機共用連接埠應該開啟
 
@@ -38,7 +39,7 @@ ms.locfileid: "97041056"
 </tr>
 <tr class="odd">
 <td><p><strong>嚴重性</strong></p></td>
-<td><p>[錯誤]</p></td>
+<td><p>錯誤</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>類別</strong></p></td>

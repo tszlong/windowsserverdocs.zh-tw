@@ -2,16 +2,17 @@
 title: 將非網域成員的防火牆規則設定為允許 BranchCache 流量
 description: 瞭解如何設定協力廠商防火牆產品，以及如何使用防火牆規則手動設定用戶端電腦，以允許 BranchCache 在分散式快取模式中執行。
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: da956be0-c92d-46ea-99eb-85e2bd67bf07
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b52a0c212ba7f0d30097aef6c7bd65e6d900b336
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: e53601cf7c0a2cd4d88d440aea78843222881b6b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904233"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950304"
 ---
 # <a name="configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic"></a>將非網域成員的防火牆規則設定為允許 BranchCache 流量
 
