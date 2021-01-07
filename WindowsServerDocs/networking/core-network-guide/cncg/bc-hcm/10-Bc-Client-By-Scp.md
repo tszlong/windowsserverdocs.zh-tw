@@ -1,18 +1,18 @@
 ---
 title: 依據服務連接點設定自動託管快取探索
-description: 本指南提供在執行 Windows Server 2016 和 Windows 10 的電腦上，以託管快取模式部署 BranchCache 的指示。
+description: 瞭解如何使用群組原則，在已加入網域的電腦上啟用及設定 BranchCache 託管快取模式，而這些電腦執行支援下列支援 BranchCache 的 Windows 作業系統。
 manager: brianlic
 ms.topic: article
 ms.assetid: ea1c34fd-5a33-4228-9437-9bb3d44230eb
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 05866d3984dcc8185aca6a40e9402455fb703095
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 00962ad02e78a577e72b4ffd081696b86bbb11b7
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947894"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965610"
 ---
 #  <a name="configure-client-automatic-hosted-cache-discovery-by-service-connection-point"></a>依據服務連接點設定自動託管快取探索
 

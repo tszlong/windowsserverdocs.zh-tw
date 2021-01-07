@@ -1,18 +1,18 @@
 ---
 title: 建立 Web 與檔案內容的內容伺服器資料套件 (選用)
-description: 本指南提供在執行 Windows Server 2016 和 Windows 10 的電腦上，以託管快取模式部署 BranchCache 的指示。
+description: 瞭解如何在 Web 和檔案伺服器上 prehash 內容，然後建立要在託管快取伺服器上匯入的資料套件。
 manager: brianlic
 ms.topic: article
 ms.assetid: 31e8428f-a482-4734-be1b-213912e34825
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: e7b2ba5890eedb6da06977996a58cd67e529fd92
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 638fc98b0d3271918d5d88df9cedd5d33429ad29
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947864"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965445"
 ---
 # <a name="create-content-server-data-packages-for-web-and-file-content-optional"></a>建立 Web 與檔案內容的內容伺服器資料套件 (選用)
 

@@ -1,18 +1,18 @@
 ---
 title: Configure Features on Demand in Windows Server
-description: 伺服器管理員
+description: 瞭解如何使用 Uninstall-WindowsFeature Cmdlet，在功能隨選設定中移除功能檔案。
 ms.topic: article
 ms.assetid: e663bbea-d025-41fa-b16c-c2bff00a88e8
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f35b9cab30dcccbdc364d0fc76ec56aa4326b71
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8a2737aec1729bc30bba571a222cc659ff04d8af
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628375"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965093"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -36,7 +36,7 @@ ms.locfileid: "89628375"
 
 -   當您使用 [新增角色及功能] Wizard 安裝功能時，在 [ **確認安裝選項** ] 頁面上指定替代來源路徑
 
--   設定 [指定選用之元件安裝和元件修復的相關設定]**** 群組原則設定
+-   設定 [指定選用之元件安裝和元件修復的相關設定] 群組原則設定
 
 本主題包含下列各節。
 
@@ -51,18 +51,18 @@ ms.locfileid: "89628375"
 
 #### <a name="to-create-a-feature-file-store"></a>建立功能檔案存放
 
-1.  在網路的伺服器上建立共用資料夾。 例如， * \\ \network\share\sxs*。
+1.  在網路的伺服器上建立共用資料夾。 例如， *\\ \network\share\sxs*。
 
-2.  確認您已在功能存放指派正確的權限。 來源路徑或檔案共用必須將 [**讀取**] 許可權授與**Everyone**群組 (基於安全性理由，不建議這麼做) 或*DOMAIN* \\ 您想要使用此功能存放區來安裝功能的電腦帳戶 (DOMAIN*SERverNAME*$) 伺服器; 授與使用者帳戶存取權並不足夠。
+2.  確認您已在功能存放指派正確的權限。 來源路徑或檔案共用必須將 [**讀取**] 許可權授與 **Everyone** 群組 (基於安全性理由，不建議這麼做) 或 \\ 您想要使用此功能存放區來安裝功能的電腦帳戶 (DOMAIN *SERverNAME*$) 伺服器; 授與使用者帳戶存取權並不足夠。
 
     您可以在 Windows 桌面上執行下列任一項操作，以存取檔案共用和權限設定。
 
-    -   在共用資料夾上按一下滑鼠右鍵，按一下 [內容]****，然後在 [安全性]**** 索引標籤上變更允許的使用者及其對資料夾的存取權限。
+    -   在共用資料夾上按一下滑鼠右鍵，按一下 [內容]，然後在 [安全性] 索引標籤上變更允許的使用者及其對資料夾的存取權限。
 
-    -   在共用資料夾上按一下滑鼠右鍵，指向 [共用對象]****，然後按一下 [特定人員]****。
+    -   在共用資料夾上按一下滑鼠右鍵，指向 [共用對象]，然後按一下 [特定人員]。
 
     > [!NOTE]
-    > 即使工作群組伺服器的電腦帳戶擁有外部共用的 [讀取]**** 權限，工作群組中的伺服器仍無法存取外部檔案共用。 用於工作群組伺服器的替代來源位置包括安裝媒體、Windows Update，以及儲存在本機工作群組伺服器上的 VHD 或 WIM 檔。
+    > 即使工作群組伺服器的電腦帳戶擁有外部共用的 [讀取] 權限，工作群組中的伺服器仍無法存取外部檔案共用。 用於工作群組伺服器的替代來源位置包括安裝媒體、Windows Update，以及儲存在本機工作群組伺服器上的 VHD 或 WIM 檔。
 
 3.  從 Windows Server 安裝媒體將 **Sources\SxS** 複製到您在步驟 1 中建立的共用資料夾。
 
@@ -74,7 +74,7 @@ ms.locfileid: "89628375"
 -   部署映像服務與管理 (DISM) 命令可讓您建立自訂 WIM 檔，藉由省略不需要或是可以從其他遠端來源取得的功能檔案來節省磁碟空間。 如需有關使用 DISM 準備自訂映像的詳細資訊，請參閱[如何啟用或停用 Windows 功能](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10))。
 
 ## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>使用 Uninstall-WindowsFeature 移除功能檔案
-您可以使用 Uninstall Cmdlet 從伺服器和執行 Windows Server 2012 R2 或 Windows Server 2012 的離線 Vhd 卸載角色、角色服務和功能，以及刪除功能檔案。 您可以視需要在相同的命令中卸載和刪除相同的角色、角色服務和功能。
+您可以使用 Uninstall-WindowsFeature Cmdlet，從伺服器和執行 Windows Server 2012 R2 或 Windows Server 2012 的離線 Vhd 卸載角色、角色服務和功能，以及刪除功能檔案。 您可以視需要在相同的命令中卸載和刪除相同的角色、角色服務和功能。
 
 > [!IMPORTANT]
 > 當您刪除角色、角色服務或功能的功能檔案時，也會一併刪除相依于您要移除之檔案的角色、角色服務和功能。 如果您要刪除角色服務或子功能的功能檔案，而且不保留父系角色或功能的任何其他角色服務或子功能，則整個父系角色或功能的檔案都會被刪除。 若要檢視 `Uninstall-WindowsFeature -remove` 命令會刪除的所有功能檔案，請將 `whatif` 參數新增至命令以執行，然後在不實際刪除功能檔案的情況下檢視結果。
@@ -86,11 +86,11 @@ ms.locfileid: "89628375"
     > [!NOTE]
     > 如果您要從遠端伺服器卸載角色與功能，則不需要以提高的使用者權限來執行 Windows PowerShell。
 
-    -   在 Windows 桌面上，用滑鼠右鍵按一下工作列上的 [Windows PowerShell]****，然後按一下 [以系統管理員身分執行]****。
+    -   在 Windows 桌面上，用滑鼠右鍵按一下工作列上的 [Windows PowerShell]，然後按一下 [以系統管理員身分執行]。
 
     -   在 Windows [ **開始** ] 畫面上，以滑鼠右鍵按一下 [Windows PowerShell] 磚，然後在應用程式行上，按一下 [以 **系統管理員身分執行**]。
 
-    -   在執行 Server Core 安裝選項的伺服器上，在命令提示字元中輸入 **PowerShell** ，然後按 **enter**鍵。
+    -   在執行 Server Core 安裝選項的伺服器上，在命令提示字元中輸入 **PowerShell** ，然後按 **enter** 鍵。
 
 2.  輸入下列程式碼，然後按 **Enter**。
 
@@ -109,7 +109,7 @@ ms.locfileid: "89628375"
     > [!NOTE]
     > `computerName`如果您是從執行 Windows 8.1 或 Windows 8 的電腦執行 Cmdlet，則必須加入參數。
     >
-    > 如果您輸入網路共用的 VHD 檔案名，該共用必須將 [ **讀取** ] 和 [ **寫入** ] 許可權授與您選取要掛接 vhd 的伺服器電腦帳戶。 只有使用者的帳戶存取權是不夠的。 該共用可以將 [讀取]**** 和 [寫入]**** 權限授與 **Everyone** 群組以允許存取 VHD，但基於安全性因素，不建議您這樣做。
+    > 如果您輸入網路共用的 VHD 檔案名，該共用必須將 [ **讀取** ] 和 [ **寫入** ] 許可權授與您選取要掛接 vhd 的伺服器電腦帳戶。 只有使用者的帳戶存取權是不夠的。 該共用可以將 [讀取] 和 [寫入] 權限授與 **Everyone** 群組以允許存取 VHD，但基於安全性因素，不建議您這樣做。
 
     ```
     Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -VHD C:\WS2012VHDs\Contoso.vhd -computerName ContosoDC1

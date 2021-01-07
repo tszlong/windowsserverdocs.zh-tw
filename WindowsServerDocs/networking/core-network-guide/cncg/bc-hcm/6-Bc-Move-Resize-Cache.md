@@ -1,18 +1,18 @@
 ---
 title: 移動並調整託管快取的大小 (選用)
-description: 本指南提供在執行 Windows Server 2016 和 Windows 10 的電腦上，以託管快取模式部署 BranchCache 的指示。
+description: 瞭解如何將託管快取移至您想要的磁片磁碟機和資料夾，以及指定託管快取伺服器可用於託管快取的磁碟空間量。
 manager: brianlic
 ms.topic: article
 ms.assetid: bb0eb349-914d-4596-9140-d3aae7597d55
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 276ab47bc6f4f906aaeafc7779c4e2afdb80b260
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 426a38b0dfb37d6898f8ede9337f912998ec2158
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947884"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965550"
 ---
 # <a name="move-and-resize-the-hosted-cache-optional"></a>移動託管快取並調整其大小（ \( 選擇性）\)
 
@@ -37,7 +37,7 @@ ms.locfileid: "97947884"
     Set-BCCache -Path C:\datacache –MoveTo D:\datacache
     ```
 
-3.  輸入下列命令來調整託管快取的大小，尤其是 \- 本機電腦上的 datacache。 按 ENTER 鍵。
+3.  輸入下列命令來調整託管快取的大小，特別是本機電腦上的資料快取 \- 。 按 ENTER 鍵。
 
     > [!IMPORTANT]
     > 執行下列命令之前，請 \- 使用適用于您部署的值來取代參數值，例如百分比。

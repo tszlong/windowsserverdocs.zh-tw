@@ -1,18 +1,18 @@
 ---
 title: 在託管快取伺服器上匯入資料套件 (選用)
-description: 本指南提供在執行 Windows Server 2016 和 Windows 10 的電腦上，以託管快取模式部署 BranchCache 的指示。
+description: 瞭解如何在託管快取伺服器上匯入資料封裝和預先載入內容。
 manager: brianlic
 ms.topic: article
 ms.assetid: d6159e91-f77c-42ec-9180-14bbb230ad17
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 8812c3008c2563fb8b436740d9fc0116c87c0154
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 1c0626181ebdca7d6e78bb429a8d127089ad4446
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950214"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965113"
 ---
 # <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>在託管快取伺服器上匯入資料封裝（ \( 選擇性）\)
 

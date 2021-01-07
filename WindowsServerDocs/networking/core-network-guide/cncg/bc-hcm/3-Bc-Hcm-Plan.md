@@ -1,18 +1,18 @@
 ---
 title: BranchCache 託管快取模式部署規劃
-description: 本指南提供在執行 Windows Server 2016 和 Windows 10 的電腦上，以託管快取模式部署 BranchCache 的指示。
+description: 瞭解如何規劃以託管快取模式部署 BranchCache。
 manager: brianlic
 ms.topic: article
 ms.assetid: bc44a7db-f7a5-4e95-9d95-ab8d334e885f
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 71b4988c488eca5c9cc371b2f3a7e4e5ecc2a145
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: a0dec974fab2f6e4aa112205c199f2a3b306ff05
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949504"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965580"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-planning"></a>BranchCache 託管快取模式部署規劃
 

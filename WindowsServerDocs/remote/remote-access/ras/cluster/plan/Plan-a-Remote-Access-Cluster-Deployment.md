@@ -1,18 +1,18 @@
 ---
 title: 規劃遠端存取叢集部署
-description: 本主題是在 Windows Server 2016 的叢集中部署遠端存取指南的一部分。
+description: 瞭解部署 Windows Server 2016 或 Windows Server 2012 遠端存取服務器叢集所需的規劃步驟。
 manager: brianlic
 ms.topic: article
 ms.assetid: 88ffd598-2fde-402c-bd12-be790f84dc96
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 38769a52823932bfa9fc8bd8f84c7bc0a05b915d
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: ffdc46681470c7fc762a35cb432337804437c79d
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947764"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965760"
 ---
 # <a name="plan-a-remote-access-cluster-deployment"></a>規劃遠端存取叢集部署
 

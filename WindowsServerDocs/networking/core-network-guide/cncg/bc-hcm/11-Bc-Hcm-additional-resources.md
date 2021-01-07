@@ -1,18 +1,18 @@
 ---
 title: BranchCache 其他資源
-description: 本指南提供在執行 Windows Server 2016 和 Windows 10 的電腦上，以託管快取模式部署 BranchCache 的指示。
+description: 深入瞭解與 BranchCache 相關的技術詳細資訊。
 manager: brianlic
 ms.topic: article
 ms.assetid: c7326f5b-87fb-4e57-9b77-72a5d0ab0444
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: e4492299f6b2925d532013ff9056cf1e12984654
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 117e3830b3a4e8bc7b0382c5e11a5e978b987cf8
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949524"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965600"
 ---
 # <a name="branchcache-additional-resources"></a>BranchCache 其他資源
 

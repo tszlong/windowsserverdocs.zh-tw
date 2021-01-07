@@ -1,18 +1,18 @@
 ---
 title: 步驟3規劃 Load-Balanced 叢集部署
-description: 本主題是在 Windows Server 2016 的叢集中部署遠端存取指南的一部分。
+description: 瞭解如何規劃負載平衡設定和叢集部署。
 manager: brianlic
 ms.topic: article
 ms.assetid: 7540c17b-81de-47de-a04f-3247afa26f70
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 46c607497192844cf9dc7221db0b78086402dc4c
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 84d33c25bec9c6b81c5fe36c34c22cbf82ccac62
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947744"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964953"
 ---
 # <a name="step-3-plan-a-load-balanced-cluster-deployment"></a>步驟3規劃 Load-Balanced 叢集部署
 

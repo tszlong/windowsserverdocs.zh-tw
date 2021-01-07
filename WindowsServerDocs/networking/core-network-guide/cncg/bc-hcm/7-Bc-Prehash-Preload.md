@@ -1,18 +1,18 @@
 ---
 title: 在託管快取伺服器上預先雜湊處理並預先載入內容 (選用)
-description: 本指南提供在執行 Windows Server 2016 和 Windows 10 的電腦上，以託管快取模式部署 BranchCache 的指示。
+description: 瞭解如何在內容伺服器上 prehash 內容、將內容新增至資料套件，然後在託管快取伺服器上預先載入內容。
 manager: brianlic
 ms.topic: article
 ms.assetid: 7e79c66a-8555-4d8e-8691-d6c37377aab4
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: c9f33a53ac7af8a76d8f6d9b018668ebc8b23771
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 912b5066b5dc0b3cac9fb40c01f0904e6c63477e
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950224"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965540"
 ---
 # <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>Prehash 和預先載入託管快取伺服器上的內容（ \( 選擇性）\)
 

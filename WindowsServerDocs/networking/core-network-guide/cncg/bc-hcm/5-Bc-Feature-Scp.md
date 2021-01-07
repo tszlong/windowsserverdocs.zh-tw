@@ -1,18 +1,18 @@
 ---
 title: 安裝 BranchCache 功能並依據服務連接點設定託管快取伺服器
-description: 本指南提供在執行 Windows Server 2016 和 Windows 10 的電腦上，以託管快取模式部署 BranchCache 的指示。
+description: 瞭解如何在託管快取伺服器上安裝 BranchCache 功能、HCS1，以及將伺服器設定為在 AD DS 中註冊 SCP。
 manager: brianlic
 ms.topic: article
 ms.assetid: 9adf420b-5a58-4e59-9906-71bd58f757fd
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 4a059cad3bc3faf03882030528d85764eb13959d
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: bfee053492e9c28869ec39cc75bdd8d0c376c256
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949494"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965560"
 ---
 # <a name="install-the-branchcache-feature-and-configure-the-hosted-cache-server-by-service-connection-point"></a>安裝 BranchCache 功能並依據服務連接點設定託管快取伺服器
 

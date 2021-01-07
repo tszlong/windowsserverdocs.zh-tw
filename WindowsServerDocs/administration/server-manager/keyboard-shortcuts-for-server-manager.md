@@ -1,18 +1,18 @@
 ---
 title: 伺服器管理員的鍵盤快速鍵
-description: 伺服器管理員
+description: 瞭解 Windows Server 2012 和更新版本的 Windows Server 中伺服器管理員的新鍵盤快速鍵和存取金鑰。
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d2848398fa232d45f4229238d641db7b858f3032
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1f21e8f749b91ea93afd964019dd25081fe68444
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89627845"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965710"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>伺服器管理員的鍵盤快速鍵
 
@@ -44,9 +44,9 @@ ms.locfileid: "89627845"
 
 |控制項群組|存取金鑰|
 |---------|-------|
-|網址列中的上一頁按鈕|**Alt+向左鍵**或**退格鍵**|
+|網址列中的上一頁按鈕|**Alt+向左鍵** 或 **退格鍵**|
 |網址列中的 [下一頁] 按鈕|**Alt + 向右鍵**|
-|重新整理|**F5**|
+|Refresh|**F5**|
 |通知區域，開啟工作詳細資料對話方塊|**Alt + N**|
 |[管理] 功能表|**Alt+M**|
 |檢視功能表|**Alt + V**|

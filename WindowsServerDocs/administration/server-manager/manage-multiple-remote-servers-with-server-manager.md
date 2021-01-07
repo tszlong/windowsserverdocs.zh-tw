@@ -1,18 +1,18 @@
 ---
 title: 使用伺服器管理員管理多部遠端伺服器
-description: 伺服器管理員
+description: 瞭解如何使用伺服器管理員主控台中的功能來管理多部遠端伺服器。
 ms.topic: article
 ms.assetid: 3a17e686-e7f2-47e2-b7af-733777c38b5f
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c85e9bd4525cc40ddc7e5c77aacb9fd2ab9cf124
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 493570817b0deea7fe8b7b997472c657519ab95b
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89627838"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965053"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>使用伺服器管理員管理多部遠端伺服器
 
@@ -20,7 +20,7 @@ ms.locfileid: "89627838"
 
 伺服器管理員是 Windows Server 2012 R2 和 Windows Server 2012 的管理主控台，可協助 IT 專業人員從桌面布建及管理本機與遠端 Windows 伺服器，而不需要實際存取伺服器，或啟用遠端桌面通訊協定， (rdP) 連線到每部伺服器。 雖然 Windows Server 2008 R2 和 Windows Server 2008 中有提供伺服器管理員，但伺服器管理員已在 Windows Server 2012 中更新，以支援遠端、多伺服器管理，並協助增加系統管理員可管理的伺服器數目。
 
-在我們的測試中，Windows Server 2012 R2 和 Windows Server 2012 中的伺服器管理員可以用來管理最多100以一般工作負載設定的伺服器。 使用單一 [伺服器管理員] 主控台所能管理的伺服器數目，依據您向受管理伺服器要求的資料量，以及可供執行伺服器管理員之電腦使用的硬體和網路資源，可能會有所不同。 當您要顯示的資料量接近該電腦的資源容量時，可能會發生伺服器管理員回應變慢，以及延遲完成重新整理的情形。 為了增加可以使用伺服器管理員所管理的伺服器數目，建議您使用 **\[設定事件資料\]** 對話方塊中的設定，限制伺服器管理員從受管理伺服器取得的事件資料。 [設定事件資料] 可以從 [事件]**** 磚中的 [工作]**** 功能表開啟。 如果您需要管理組織中的企業級伺服器數目，建議您評估 [Microsoft System Center 套件](https://go.microsoft.com/fwlink/p/?LinkId=239437)中的產品。
+在我們的測試中，Windows Server 2012 R2 和 Windows Server 2012 中的伺服器管理員可以用來管理最多100以一般工作負載設定的伺服器。 使用單一 [伺服器管理員] 主控台所能管理的伺服器數目，依據您向受管理伺服器要求的資料量，以及可供執行伺服器管理員之電腦使用的硬體和網路資源，可能會有所不同。 當您要顯示的資料量接近該電腦的資源容量時，可能會發生伺服器管理員回應變慢，以及延遲完成重新整理的情形。 為了增加可以使用伺服器管理員所管理的伺服器數目，建議您使用 **\[設定事件資料\]** 對話方塊中的設定，限制伺服器管理員從受管理伺服器取得的事件資料。 [設定事件資料] 可以從 [事件] 磚中的 [工作] 功能表開啟。 如果您需要管理組織中的企業級伺服器數目，建議您評估 [Microsoft System Center 套件](https://go.microsoft.com/fwlink/p/?LinkId=239437)中的產品。
 
 本主題及其子主題提供如何在伺服器管理員主控台中使用功能的相關資訊。 本主題包含下列各節。
 
@@ -75,9 +75,9 @@ ms.locfileid: "89627838"
 
 1.  遵循 [部署遠端伺服器管理工具](https://go.microsoft.com/fwlink/?LinkID=238562) 中的指示，安裝適用于 Windows 8 Windows 8.1 或遠端伺服器管理工具的遠端伺服器管理工具。
 
-2.  在 [ **開始** ] 畫面上，按一下 [ **伺服器管理員**]。 安裝遠端伺服器管理工具後，就可以使用 [伺服器管理員]**** 磚。
+2.  在 [ **開始** ] 畫面上，按一下 [ **伺服器管理員**]。 安裝遠端伺服器管理工具後，就可以使用 [伺服器管理員] 磚。
 
-3.  如果在安裝遠端伺服器管理工具之後，[**開始**] 畫面上沒有 [系統**管理工具**] 和 [**伺服器管理員**] 磚，在 [**開始**] 畫面上搜尋伺服器管理員不會顯示結果，請確認 [**顯示系統管理工具**] 設定已開啟。 若要查看此設定，請將滑鼠游標停留在 [ **開始** ] 畫面右上角，然後按一下 [ **設定**]。 如果 [顯示系統管理工具]**** 為關閉狀態，請將設定開啟，以顯示隨遠端伺服器管理工具一起安裝的工具。
+3.  如果在安裝遠端伺服器管理工具之後，[**開始**] 畫面上沒有 [系統 **管理工具**] 和 [**伺服器管理員**] 磚，在 [**開始**] 畫面上搜尋伺服器管理員不會顯示結果，請確認 [**顯示系統管理工具**] 設定已開啟。 若要查看此設定，請將滑鼠游標停留在 [ **開始** ] 畫面右上角，然後按一下 [ **設定**]。 如果 [顯示系統管理工具] 為關閉狀態，請將設定開啟，以顯示隨遠端伺服器管理工具一起安裝的工具。
 
 如需有關執行 Windows 8 管理遠端伺服器遠端伺服器管理工具的詳細資訊，請參閱 TechNet Wiki 上的 [遠端伺服器管理工具](https://go.microsoft.com/fwlink/?LinkID=221055) 。
 
@@ -101,7 +101,7 @@ ms.locfileid: "89627838"
 
 2.  在 [**本機伺服器**] 頁面的 [**屬性**] 區域中，按一下 [**遠端系統管理**] 屬性的超連結值。
 
-3.  執行下列其中一項動作，然後按一下 [確定] ****。
+3.  執行下列其中一項動作，然後按一下 [確定] 。
 
     -   若要防止這部電腦使用伺服器管理員來從遠端系統管理 (或 Windows PowerShell 安裝) ，請清除 [ **啟用從其他電腦遠端系統管理這部伺服器** ] 核取方塊。
 
@@ -149,7 +149,7 @@ ms.locfileid: "89627838"
 |在執行 Windows Server 2012 R2 或 Windows Server 2012 的本機或遠端伺服器上安裝或卸載角色、角色服務和功能。 如需角色、角色服務和功能的定義，請參閱 [角色、角色服務和功能](https://go.microsoft.com/fwlink/p/?LinkId=239558)。|是|否|
 |檢視和變更安裝在本機或遠端伺服器上的伺服器角色與功能。 **注意：** 在伺服器管理員中，角色和功能資料會以系統的基礎語言顯示，也稱為系統預設的 GUI 語言，或在安裝作業系統期間選取的語言。|是|標準使用者可以檢視及管理角色和功能，並執行檢視角色事件這類工作，但無法新增或移除角色服務。|
 |啟動管理工具，例如 Windows PowerShell 或 mmc 嵌入式管理單元。您可以用滑鼠右鍵按一下 [ **伺服器** ] 磚中的伺服器，然後按一下 [ **Windows PowerShell**]，啟動以遠端伺服器為目標的 Windows PowerShell 會話。 您可以從伺服器管理員主控台的 [ **工具** ] 功能表啟動 mmc 嵌入式管理單元，然後在嵌入式管理單元開啟之後將 mmc 指向遠端電腦。|是|是|
-|以滑鼠右鍵按一下 [伺服器]**** 磚中的伺服器，然後按一下 [管理身分]****，就可以用不同的認證管理遠端伺服器。 您可以使用 [管理身分]**** 進行一般伺服器及檔案和存放服務的管理工作。|是|否|
+|以滑鼠右鍵按一下 [伺服器] 磚中的伺服器，然後按一下 [管理身分]，就可以用不同的認證管理遠端伺服器。 您可以使用 [管理身分] 進行一般伺服器及檔案和存放服務的管理工作。|是|否|
 |執行與伺服器操作生命週期相關聯的管理工作，例如啟動或停止服務。並啟動其他工具，讓您設定伺服器的網路設定、使用者和群組，以及遠端桌面連線。|是|標準使用者無法啟動或停止服務。 他們可以變更本機伺服器的名稱、工作組或網域成員資格和遠端桌面設定，但使用者帳戶控制會提示您提供系統管理員認證，才能完成這些工作。 他們無法變更遠端管理設定。|
 |執行與伺服器上安裝之角色的操作週期相關的管理工作，包括掃描角色是否符合最佳做法。|是|標準使用者無法執行最佳做法分析程式掃描。|
 |判定伺服器狀態、識別重大事件，以及分析和疑難排解設定問題或失敗。|是|是|
@@ -169,13 +169,13 @@ ms.locfileid: "89627838"
 
 #### <a name="to-start-server-manager-from-the-windows-desktop"></a>從 Windows 桌面啟動伺服器管理員
 
--   在 Windows 工作列上按一下 [伺服器管理員]****。
+-   在 Windows 工作列上按一下 [伺服器管理員]。
 
 #### <a name="to-prevent-server-manager-from-starting-automatically"></a>防止伺服器管理員自動啟動
 
 1.  在伺服器管理員主控台的 [ **管理** ] 功能表上，按一下 [ **伺服器管理員屬性**]。
 
-2.  在 [伺服器管理員屬性]**** 對話方塊中，核取 [登入時不要自動啟動伺服器管理員]**** 核取方塊。 按一下 [確定]  。
+2.  在 [伺服器管理員屬性] 對話方塊中，核取 [登入時不要自動啟動伺服器管理員] 核取方塊。 按一下 [確定]。
 
 3.  或者，您可以啟用群組原則設定來防止伺服器管理員自動啟動， **請勿在登入時自動啟動伺服器管理員**。 在本機群組原則編輯器主控台中，此原則設定的路徑為 [電腦設定 \ 系統管理員] Templates\System\Server 管理員。
 
@@ -193,14 +193,14 @@ ms.locfileid: "89627838"
 
 2.  選取您已新增至伺服器管理員的一或多部遠端伺服器。 當您選取多個伺服器時按住 **Ctrl**，就可以一次選取多個伺服器。 如需有關如何將伺服器新增到伺服器管理員伺服器集區的詳細資訊，請參閱 [將伺服器新增至伺服器管理員](add-servers-to-server-manager.md)。
 
-3.  在選取的伺服器上按一下滑鼠右鍵，然後按一下 [重新啟動伺服器]****。
+3.  在選取的伺服器上按一下滑鼠右鍵，然後按一下 [重新啟動伺服器]。
 
 ## <a name="export-server-manager-settings-to-other-computers"></a><a name=BKMK_export></a>將伺服器管理員設定匯出至其他電腦
 在伺服器管理員中，受管理伺服器的清單、伺服器管理員主控台設定的變更，以及您所建立的自訂群組，都會儲存在下列兩個檔案中。 您可以在其他執行相同版本伺服器管理員的電腦上重複使用這些設定， (不是執行 Server Core 安裝選項的電腦) 或 Windows 8。 遠端伺服器管理工具必須在 Windows 用戶端電腦上執行，才能將伺服器管理員設定匯出至這些電腦。
 
 -   %*appdata*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
--   %*appdata*% \Local\Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+-   %*appdata*% \Local\Microsoft_Corporation\ServerManager.exe_StrongName_ *GUID*\6.2.0.0\user.config
 
 > [!NOTE]
 > -   伺服器集區中伺服器的 [管理身分] (或備用) 認證不會儲存在漫遊設定檔中。 伺服器管理員使用者必須將這些認證新增到他們要管理的每一部電腦。
@@ -226,9 +226,9 @@ ms.locfileid: "89627838"
 
         -   %*appdata*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
-        -   %*localappdata*% \Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+        -   %*localappdata*% \Microsoft_Corporation\ServerManager.exe_StrongName_ *GUID*\6.2.0.0\user.config
 
-4.  按一下 [確定]**** 儲存變更，並關閉 [屬性]**** 對話方塊。
+4.  按一下 [確定] 儲存變更，並關閉 [屬性] 對話方塊。
 
 #### <a name="to-export-server-manager-settings-to-computers-in-workgroups"></a>將伺服器管理員設定匯出至工作群組中的電腦
 
@@ -236,4 +236,4 @@ ms.locfileid: "89627838"
 
     -   %*appdata*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
-    -   %*localappdata*% \Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+    -   %*localappdata*% \Microsoft_Corporation\ServerManager.exe_StrongName_ *GUID*\6.2.0.0\user.config
