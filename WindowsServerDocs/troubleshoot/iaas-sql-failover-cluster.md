@@ -5,20 +5,20 @@ ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
 ms.topic: troubleshooting
-ms.openlocfilehash: 39469ef6b36af20a2fd8fdab8f3400d5991c2446
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 5cce39ea42af57bbfd400427f763dfca5da75d7b
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948554"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040298"
 ---
-# <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS 與 SQL AlwaysOn - 微調容錯移轉叢集網路閾值
+# <a name="iaas-with-sql-server---tuning-failover-cluster-network-thresholds"></a>具有 SQL Server 調整容錯移轉叢集網路閾值的 IaaS
 
 本文介紹調整容錯移轉叢集網路之臨界值的解決方案。
 
 ## <a name="symptom"></a>徵狀
 
-在具有 SQL Server AlwaysOn 的 IaaS 中執行 Windows 容錯移轉叢集節點時，建議將叢集設定變更為較寬鬆的監視狀態。 現成的叢集設定有限制，而且可能會造成不必要的中斷。 預設設定是專為高度調整的內部部署網路而設計，因此不會考慮因多租使用者環境（例如 Windows Azure (IaaS) ）而造成的延遲。
+使用 SQL Server Always On 可用性群組在 IaaS 中執行 Windows 容錯移轉叢集節點時，建議將叢集設定變更為較寬鬆的監視狀態。 現成的叢集設定有限制，而且可能會造成不必要的中斷。 預設設定是專為高度調整的內部部署網路而設計，因此不會考慮因多租使用者環境（例如 Windows Azure (IaaS) ）而造成的延遲。
 
 Windows Server 容錯移轉叢集不斷地監視 Windows 叢集中節點的網路連線和健全狀況。  如果無法透過網路連線到節點，則會採取復原動作來復原，並讓叢集中另一個節點上的應用程式和服務恢復連線。 叢集節點之間的通訊延遲可能會導致下列錯誤：
 
@@ -117,7 +117,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
     > [!NOTE]
     > 變更叢集閾值會立即生效，您不需要重新開機叢集或任何資源。
 
-    針對相同的子網和 AlwaysOn 可用性群組的跨區域部署，建議使用下列設定。
+    針對相同的子網和可用性群組的跨區域部署，建議使用下列設定。
 
     ```powershell
     C:\Windows\system32> (get-cluster).SameSubnetThreshold = 20
@@ -135,7 +135,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
     :::image type="content" source="media/iaas-sql-failover-cluster/cmd.png" alt-text="cmd" border="false":::
 
-## <a name="references"></a>參考資料
+## <a name="references"></a>參考
 
 如需微調 Windows 叢集網路設定的詳細資訊，請參閱 [調整容錯移轉叢集網路閾值](https://techcommunity.microsoft.com/t5/failover-clustering/tuning-failover-cluster-network-thresholds/ba-p/371834)。
 

@@ -1,18 +1,18 @@
 ---
 title: 步驟8設定 INET1
-description: 本主題是測試實驗室指南的一部分-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
+description: 瞭解如何在 INET1 上設定 2 EDGE1 的 DNS 專案。
 ms.topic: article
 ms.assetid: 693acb5c-dffc-4484-8286-163bb67724c9
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 08/07/2020
-ms.openlocfilehash: 5c79f82ae0adf3fc19349da6ead3064376a81a6a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 0a17e726d200cc344c83f2d4aafed2f5493b294a
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947964"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040368"
 ---
 # <a name="step-8-configure-inet1"></a>步驟 8：設定 INET1
 

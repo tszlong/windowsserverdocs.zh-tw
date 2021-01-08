@@ -1,18 +1,18 @@
 ---
 title: 步驟9設定 EDGE1
-description: 本主題是測試實驗室指南的一部分-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
+description: 瞭解如何在 EDGE1 上設定 DNS 伺服器，並設定子網之間的路由。
 manager: brianlic
 ms.topic: article
 ms.assetid: f6e8d85b-de65-43b3-bf3e-ec84471a1fcc
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: ef161f7e8db4cb63d84efbf78e8733d3f24c22ae
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 634b58c53ffc30c20d1bf4f63b4f8fba5d285db1
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947954"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040278"
 ---
 # <a name="step-9-configure-edge1"></a>步驟9設定 EDGE1
 

@@ -1,18 +1,18 @@
 ---
 title: 網路子系統效能調整
-description: 本主題是 Windows Server 2016 的網路子系統效能微調指南的一部分。
+description: 深入瞭解網路子系統，以及本指南中其他主題的連結。
 ms.topic: article
 ms.assetid: 45217fce-bfb9-47e8-9814-88ffdb3c7b7d
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 08/07/2020
-ms.openlocfilehash: e07f2a36984b7623e57574108b310638dd385567
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 8684630634dcb1d1a5998f69f98ce16dd32b7f38
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946834"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040438"
 ---
 # <a name="network-subsystem-performance-tuning"></a>網路子系統效能調整
 

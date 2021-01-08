@@ -1,18 +1,18 @@
 ---
 title: 檢視角色與角色權限
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 瞭解如何在 IPAM 用戶端主控台中查看存取控制使用者角色。
 manager: brianlic
 ms.topic: article
 ms.assetid: da8dce90-b54c-4ded-a48a-0cda5ccf1d8a
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 32db718c9789edb429890b0419f219b44d1cd36f
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: e36ad6fd78d53b34dd922f663384a2d04eb2cf25
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948694"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040448"
 ---
 # <a name="view-roles-and-role-permissions"></a>檢視角色與角色權限
 

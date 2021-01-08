@@ -1,18 +1,18 @@
 ---
 title: 使用 OTP 驗證和 RSA SecurID 設定測試實驗室的步驟
-description: 本主題是測試實驗室指南的一部分-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
+description: 瞭解如何設定遠端存取基礎結構、設定遠端存取服務器和用戶端，以及從 Homenet 和網際網路子網測試 DirectAccess 連線能力。
 manager: brianlic
 ms.topic: article
 ms.assetid: 0a40183c-afd1-43ca-b306-05745640a37d
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 5ed481a474203e9436796ffa87a30c41ac9fa1cd
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: a7b4293626ab8ab625e2c6be71d346d34bc44100
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949784"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040318"
 ---
 # <a name="steps-for-configuring-the-test-lab-with-otp-authentication-and-rsa-securid"></a>使用 OTP 驗證和 RSA SecurID 設定測試實驗室的步驟
 

@@ -1,18 +1,18 @@
 ---
 title: 步驟6測試 Homenet 子網的 DirectAccess 連線能力
-description: 本主題是測試實驗室指南的一部分-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
+description: 瞭解如何開始測試 Homenet 子網的連線能力。
 manager: brianlic
 ms.topic: article
 ms.assetid: b9b77cfd-8dd4-476b-a118-f3d6bf59e7b1
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 5dbfc9e65ca40eadc0812317c95f5a9b34b63619
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 1d0cd5c85ca97ffd7d5275d2402db17a560255fa
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949804"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040338"
 ---
 # <a name="step-6-test-directaccess-connectivity-from-the-homenet-subnet"></a>步驟6測試 Homenet 子網的 DirectAccess 連線能力
 

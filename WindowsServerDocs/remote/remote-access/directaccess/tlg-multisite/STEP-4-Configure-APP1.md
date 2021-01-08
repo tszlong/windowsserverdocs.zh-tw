@@ -1,18 +1,18 @@
 ---
 title: 步驟4設定 APP1
-description: 本主題是測試實驗室指南的一部分-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
+description: 瞭解如何設定預設閘道和 DNS 伺服器。
 manager: brianlic
 ms.topic: article
 ms.assetid: 7000e80f-31b1-43c5-b51e-1469d26909e5
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: a7af71ccb620f86be31ece09b6fe810ac3ff0f34
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 43b77e32bae337ee1751ed9e6c12e2fa30f0c52c
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950004"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040458"
 ---
 # <a name="step-4-configure-app1"></a>步驟4設定 APP1
 

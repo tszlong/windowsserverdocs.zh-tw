@@ -1,18 +1,18 @@
 ---
 title: 步驟5確認 EDGE1 上的 OTP 健康情況
-description: 本主題是測試實驗室指南的一部分-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
+description: 瞭解如何使用 EDGE1 上的 DirectAccess 伺服器健康情況監視，確認 OTP 已設定且正常運作。
 manager: brianlic
 ms.topic: article
 ms.assetid: 013df067-e2a0-4cd5-a08b-29238663ebf8
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: c677be9e958a830d12d06ef0f45729b5614fc171
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 6463bf67a9510f70bf435dedbadd9b28be63909b
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948954"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040348"
 ---
 # <a name="step-5-verify-otp-health-on-edge1"></a>步驟5確認 EDGE1 上的 OTP 健康情況
 

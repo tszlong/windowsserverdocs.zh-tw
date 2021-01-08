@@ -1,18 +1,18 @@
 ---
 title: 步驟 7-從網際網路測試 DirectAccess 連線能力
-description: 本主題是測試實驗室指南的一部分-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
+description: 瞭解如何開始測試網際網路的連線能力。
 manager: brianlic
 ms.topic: article
 ms.assetid: ed2a1616-30c6-482a-9a02-4a5023621f58
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: ab3239b6ef7ef4d4404a3a8e8d89296b87115090
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: f921a536d229edc6295df2f18d3ab2bda62133aa
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949794"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040328"
 ---
 # <a name="step-7-test-directaccess-connectivity-from-the-internet"></a>步驟 7-從網際網路測試 DirectAccess 連線能力
 

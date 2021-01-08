@@ -1,18 +1,18 @@
 ---
 title: 檢視 DNS 區域
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 瞭解如何在 IPAM 用戶端主控台中查看 DNS 區域。
 manager: brianlic
 ms.topic: article
 ms.assetid: 2cfe4e40-ec6d-4541-baa9-d772409fe27c
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 7b9a5d7c4894f9f9019f0b481ece392ac12e3cd4
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3d336c9a0a97d8423f604066ef0866dad313c4a5
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948704"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040418"
 ---
 # <a name="view-dns-zones"></a>檢視 DNS 區域
 

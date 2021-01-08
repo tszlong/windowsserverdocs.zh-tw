@@ -1,18 +1,18 @@
 ---
 title: 網路相關的效能計數器
-description: 本主題是 Windows Server 2016 的網路子系統效能微調指南的一部分。
+description: 瞭解與管理網路效能相關的計數器。
 ms.topic: article
 ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 08/07/2020
-ms.openlocfilehash: df57714980a6dce5187cd01d1da74e703d6cefca
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: f155ea1b7a6a74b2ecc7037064a1ae2b7a39a9fd
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949024"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040398"
 ---
 # <a name="network-related-performance-counters"></a>網路相關的效能計數器
 

@@ -1,18 +1,18 @@
 ---
 title: 步驟4安裝及設定 RSA 和 EDGE1
-description: 本主題是測試實驗室指南的一部分-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
+description: 瞭解如何安裝和設定 RSA 和 EDGE1。
 manager: brianlic
 ms.topic: article
 ms.assetid: d46ede6f-1a21-414d-b8c3-6b5c87344b9d
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 591d6051d6c2a754416f48b615fa17c286b822c8
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 51cfdf8e40ce6ba43a4067e16c82a777637e6382
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948964"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040358"
 ---
 # <a name="step-4-install-and-configure-rsa-and-edge1"></a>步驟4安裝及設定 RSA 和 EDGE1
 
@@ -132,7 +132,7 @@ RSA 是 RADIUS 和 OTP 伺服器，而且會在設定 RADIUS 和 OTP 之前安�
 
 9. 在 [ **驗證授權檔案** ] 頁面上，按 **[下一步]**。
 
-10. 在 [ **使用者識別碼** ] 欄位中，輸入 [ **系統管理員**]，然後在 [ **密碼** ] 和 [ **確認密碼** ] 欄位中輸入強式密碼。 按一下 [下一步] 。
+10. 在 [ **使用者識別碼** ] 欄位中，輸入 [ **系統管理員**]，然後在 [ **密碼** ] 和 [ **確認密碼** ] 欄位中輸入強式密碼。 按 [下一步]  。
 
 11. 在記錄選取畫面上，接受預設值，然後按 **[下一步]**。
 
@@ -319,7 +319,7 @@ RSA 是 RADIUS 和 OTP 伺服器，而且會在設定 RADIUS 和 OTP 之前安�
 
 4.  在 [ **DirectAccess 設定** ] 視窗的 [ **步驟 2-遠端存取服務器**] 下，按一下 [ **編輯**]。
 
-5.  按三次 [ **下一步]** ，然後在 [ **驗證** ] 區段中選取 [ **雙因素驗證** ] 和 [ **使用 OTP**]，並確定已勾選 [ **使用電腦憑證** ]。 確認根 CA 設定為 **CN = corp-APP1-ca**。 按一下 [下一步] 。
+5.  按三次 [ **下一步]** ，然後在 [ **驗證** ] 區段中選取 [ **雙因素驗證** ] 和 [ **使用 OTP**]，並確定已勾選 [ **使用電腦憑證** ]。 確認根 CA 設定為 **CN = corp-APP1-ca**。 按 [下一步]  。
 
 6.  在 [ **OTP RADIUS 伺服器** ] 區段中，按兩下 [空白 **伺服器名稱** ] 欄位。
 
@@ -328,7 +328,7 @@ RSA 是 RADIUS 和 OTP 伺服器，而且會在設定 RADIUS 和 OTP 之前安�
     > [!NOTE]
     > 如果 RADIUS 伺服器位於與遠端存取服務器不同的網域中，則 [ **伺服器名稱** ] 欄位必須指定 RADIUS 伺服器的 FQDN。
 
-8.  在 [ **OTP CA 伺服器** ] 區段中，選取 [APP1.corp.contoso.com]，然後按一下 [ **新增**]。 按一下 [下一步] 。
+8.  在 [ **OTP CA 伺服器** ] 區段中，選取 [APP1.corp.contoso.com]，然後按一下 [ **新增**]。 按 [下一步]  。
 
 9. 在 [ **OTP 憑證範本** ] 頁面上，按一下 **[流覽]** 以選取用來註冊 OTP 驗證所發行之憑證的憑證範本，然後在 [ **憑證範本** ] 對話方塊中選取 [ **DAOTPLogon**]。 按一下 [確定]。 按一下 **[流覽]** ，選取用來註冊遠端存取服務器用來簽署 OTP 憑證註冊要求之憑證的憑證範本，然後在 [ **憑證範本** ] 對話方塊中選取 [ **DAOTPRA**]。 按一下 [確定]  。 按 [下一步]  。
 

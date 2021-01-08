@@ -1,18 +1,18 @@
 ---
 title: 選擇網路介面卡
-description: 本主題是 Windows Server 2016 的網路子系統效能微調指南的一部分。
+description: 瞭解如何瞭解可能會影響購買選項之網路介面卡的一些功能。
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 08/07/2020
-ms.openlocfilehash: b136adc4e7cfae29ebb0517f83ac763d98bd622c
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 0a1730ccf8aef478d3d82ea9d08b1dd8129f3942
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949034"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040408"
 ---
 # <a name="choosing-a-network-adapter"></a>選擇網路介面卡
 

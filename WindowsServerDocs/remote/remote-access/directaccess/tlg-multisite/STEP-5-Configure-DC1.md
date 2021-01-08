@@ -1,18 +1,18 @@
 ---
 title: 步驟5設定 DC1
-description: 本主題是測試實驗室指南的一部分-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
+description: 瞭解如何在網域控制站上設定預設閘道、在 DC1 上建立 Windows 7 DirectAccess 用戶端的安全性群組，以及加入新的 AD DS 網站。
 manager: brianlic
 ms.topic: article
 ms.assetid: 70357156-fcb0-4346-a61e-4ea963e3ffb0
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: b2381f72a8ca2c65c1a80f01788d33a81c83e8ad
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9939cb397fa7c5386e4058a834a205afaa99cd9f
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948214"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040478"
 ---
 # <a name="step-5-configure-dc1"></a>步驟5設定 DC1
 

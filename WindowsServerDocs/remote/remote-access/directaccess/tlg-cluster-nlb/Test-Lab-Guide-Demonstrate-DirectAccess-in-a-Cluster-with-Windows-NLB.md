@@ -1,18 +1,18 @@
 ---
 title: 測試實驗室指南-在具有 Windows NLB 的叢集中示範 DirectAccess
-description: 本主題是測試實驗室指南的一部分-示範 Windows Server 2016 的 Windows NLB 叢集中的 DirectAccess
+description: 瞭解如何使用混合的 IPv4 和 IPv6 測試實驗室指南，擴充示範 DirectAccess 單一伺服器設定，以示範 DirectAccess 網路負載平衡與叢集設定。
 manager: brianlic
 ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 39d23a08cdf24cbf8c229e45c99e81330c353e79
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: b6876141c55a78e8c6271558b1eb3246b3ebe4d7
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946524"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040548"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>測試實驗室指南：示範在具備 Windows NLB 功能的叢集中使用 DirectAccess
 
