@@ -6,14 +6,14 @@ ms.assetid: b7d8158c-aee1-4c60-8a46-40ce5595b8e8
 author: HeidiLohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/22/2020
+ms.date: 12/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 70b9bfee5837af27576962698a408a45715bbd35
-ms.sourcegitcommit: de9e13e0e74721d6edbecf4acc12465fff3d5df0
+ms.openlocfilehash: c3598c1371d7b633c8ec91f41defa795f380c08c
+ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92497051"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577420"
 ---
 # <a name="remote-desktop-clients"></a>遠端桌面用戶端
 
@@ -29,13 +29,13 @@ ms.locfileid: "92497051"
 
 可用的用戶端應用程式如下：
 
-| 裝置          | 取得應用程式                                                                                                  | 設定指示                                                                |
-|-----------------|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| Windows 桌面 | [Windows 桌面用戶端](windowsdesktop.md#install-the-client)                                               | [開始使用 Windows 桌面用戶端](windowsdesktop.md) |
-| Windows 市集   | [Microsoft Store 中的 Windows 10 用戶端](https://go.microsoft.com/fwlink/?LinkID=616709)                   | [開始使用 Microsoft Store 用戶端](windows.md)          |
-| Android         | [Google Play 中的 Android 用戶端](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)     | [開始使用 Android 用戶端](remote-desktop-android.md) |
-| iOS             | [iTunes Store 中的 iOS 用戶端](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)     | [開始使用 iOS 用戶端](remote-desktop-ios.md)         |
-| macOS           | [iTunes Store 中的 macOS 用戶端](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) | [開始使用 macOS 用戶端](remote-desktop-mac.md)       |
+| 用戶端 | 取得應用程式 | 文件 | 最新版本 |
+|-----------------|-------------|------|---|
+| Windows 桌面 | [Windows 桌面用戶端](windowsdesktop.md#install-the-client) | [開始](windowsdesktop.md)、[新增功能](windowsdesktop-whatsnew.md) | 1.2.1524  |
+| Microsoft Store   | [Microsoft Store 中的 Windows 10 用戶端](https://go.microsoft.com/fwlink/?LinkID=616709) | [開始](windows.md)、[新增功能](windows-whatsnew.md)  | 1.2.1535  |
+| Android         | [Google Play 中的 Android 用戶端](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)     | [開始](remote-desktop-android.md)、[新增功能](android-whatsnew.md) | 10.0.8 |
+| iOS             | [App Store 中的 iOS 用戶端](https://apps.apple.com/app/microsoft-remote-desktop/id714464092)     | [開始](remote-desktop-ios.md)、[新增功能](ios-whatsnew.md)         | 10.2.3 |
+| macOS | [App Store 中的 macOS 用戶端](https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) | [開始](remote-desktop-mac.md)、[新增功能](mac-whatsnew.md)       | 10.5.0 |
 
 ## <a name="configuring-the-remote-pc"></a>設定遠端電腦
 

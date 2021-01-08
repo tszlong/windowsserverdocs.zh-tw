@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/01/2020
+ms.date: 12/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d10b23da6dc5fcd414bdab05afc20e15273763
-ms.sourcegitcommit: 090be8d858a830e46e1a9097afafd9c4275477b7
+ms.openlocfilehash: 0ce679c49abac80e4d3fa1edef9768ae8abf34b3
+ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96578431"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577400"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -25,7 +25,15 @@ ms.locfileid: "96578431"
 |使用者群組 |最新版本  |最低支援版本 |
 |-----------|----------------|--------------------------|
 |公用     |1.2.1524        |1.2.945                   |
-|Insider    |1.2.1524        |1.2.945                   |
+|Insider    |1.2.1526        |1.2.945                   |
+
+## <a name="updates-for-version-121526-insider"></a>1\.2.1526 版的更新 (Windows 測試人員)
+
+*發行日期：12/15/2020*
+
+下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- 已新增對 Windows 10 端點的螢幕擷取畫面保護功能的支援。 若要深入了解，請參閱 [工作階段主機安全性最佳做法](/azure/virtual-desktop/security-guide#session-host-security-best-practices)。
 
 ## <a name="updates-for-version-121524"></a>1\.2.1524 版的更新
 

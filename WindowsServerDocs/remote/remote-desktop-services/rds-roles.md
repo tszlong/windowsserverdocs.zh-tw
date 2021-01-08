@@ -1,17 +1,17 @@
 ---
 title: 遠端桌面服務角色
-description: 描述桌面主機服務的元件。
+description: 深入了解 Windows Server 中遠端桌面服務環境內的角色。
 ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 378e93cb501bc380c33e2cdee4ce85b52d70430b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f99ad1529eb0882fc979240bab6f82f8779f0d49
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954895"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811415"
 ---
 # <a name="remote-desktop-services-roles"></a>遠端桌面服務角色
 

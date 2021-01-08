@@ -1,17 +1,17 @@
 ---
 title: 管理 RDS 中的個人桌面工作階段集合
-description: 了解如何將 RDSH 和 RemoteApp 程式新增至您的 RDS 部署。
+description: 了解如何管理遠端桌面服務中的個人桌面工作階段集合。
 ms.author: elizapo
 ms.date: 11/08/2016
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: bd6c91b7f022e60e488c90776e0981523da7bccb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7a7d0501aadabba8e650840906275bb4705b6d10
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961652"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833603"
 ---
 # <a name="manage-your-personal-desktop-session-collections"></a>管理您的個人桌面工作階段集合
 

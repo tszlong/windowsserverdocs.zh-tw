@@ -1,18 +1,18 @@
 ---
 title: 建立遠端桌面服務集合
-description: 了解如何將 RDSH 和 RemoteApp 程式新增至您的 RDS 部署。
+description: 了解如何建立遠端桌面服務工作階段集合。
 ms.author: elizapo
 ms.date: 10/22/2019
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7827d83fdd071cb57b51ee8c04776680e5e29e64
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d8b262cc183d9f32c436a5ac628933a8b0b2babb
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936947"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834783"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>建立遠端桌面服務集合，以執行桌面和應用程式
 
@@ -37,7 +37,7 @@ ms.locfileid: "87936947"
 1.  在 [伺服器管理員] 中，按一下 [遠端桌面服務] > [集合] > [工作] > [建立工作階段集合]  。
 2.  輸入集合的名稱，例如 **ContosoAps**。
 3.  選取您建立的 RD 工作階段主機伺服器 (例如 Contoso-Shr1)。
-4.  接受預設的**使用者群組**。
+4.  接受預設的 **使用者群組**。
 5.  輸入您為這個集合所建立使用者設定檔磁碟的檔案共用位置 (例如 **\Contoso-Cb1\UserDisksr**)。
 6.  按一下 [建立]  。 建立集合之後，請按一下 [關閉]  。
 

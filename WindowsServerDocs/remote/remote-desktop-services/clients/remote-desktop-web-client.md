@@ -6,12 +6,12 @@ ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d408c70d75de0e2a14260f951209348e2aea63e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7307a4daa3f620f4b7dfc5d0103f0e75715fc1d8
+ms.sourcegitcommit: e57536e28902ae52d3040141bbd2aa00e91bbdd3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961872"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644678"
 ---
 # <a name="get-started-with-the-web-client"></a>開始使用 Web 用戶端
 
@@ -43,6 +43,15 @@ ms.locfileid: "87961872"
 
 完成時，您可以選取螢幕頂端工具列中的 [登出]  按鈕或關閉瀏覽器視窗，以結束您的工作階段。
 
+## <a name="web-client-keyboard-shortcuts"></a>Web 用戶端鍵盤快速鍵
+
+下表描述在遠端工作階段中插入標準 Windows 快速鍵的替代按鍵組合。
+
+|快速鍵 |描述 |
+|-------------|------------|
+|(Windows) Ctrl+Alt+End</br>(MacOS) fn+control+option+delete|在遠端工作階段中插入 Ctrl + Alt + Del。|
+|Alt+F3       |在遠端工作階段中插入 Windows 按鍵。|    
+
 ## <a name="printing-from-the-remote-desktop-web-client"></a>從遠端桌面網頁用戶端進行列印
 
 請遵循下列步驟，從網頁用戶端進行列印：
@@ -59,7 +68,13 @@ ms.locfileid: "87961872"
 
 ## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>在遠端工作階段中使用輸入法編輯器 (IME)
 
-若要使用輸入法編輯器在遠端工作階段中輸入複雜字元，選取導覽列中的齒輪圖示以開啟 [設定]  側面板，然後將 [啟用輸入法編輯器]  開始設為 [開啟]  。 您的遠端工作階段必須已安裝並啟用輸入法編輯器 (IME)。
+請遵循下列步驟，使用輸入法編輯器，在遠端工作階段中輸入複雜的字元：
+
+1. 選取導覽列中的齒輪圖示，以開啟 [設定] 側面板。
+2. 將 [啟用輸入法編輯器] 切換至 [開啟]。
+3. 在下拉式功能表中選取您偏好的 IME 鍵盤配置。
+
+您的遠端工作階段必須已安裝並啟用輸入法編輯器 (IME)。
 
 ## <a name="get-help-with-the-web-client"></a>取得網頁用戶端的協助
 

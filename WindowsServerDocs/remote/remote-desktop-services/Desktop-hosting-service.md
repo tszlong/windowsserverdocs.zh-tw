@@ -1,17 +1,17 @@
 ---
 title: 桌面主機服務
-description: 描述桌面主機服務的元件。
+description: 深入了解在 Windows Server 中桌面代管服務的元件。
 ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: e1973bca8218f1ece287b03fee24486e95fe5492
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4453c63b364cf664b9f1a0bd0325bcb88b6d3b2b
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971635"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879427"
 ---
 # <a name="desktop-hosting-service"></a>桌面主機服務
 
@@ -55,7 +55,7 @@ Active Directory 網域服務 (AD DS) 提供網域和樹系資訊，讓租用戶
 如需如何設定高度可用之 SQL 資料庫基礎結構的詳細資訊，請參閱下列文章：
 
 * [什麼是 Azure SQL Database 服務？](/azure/sql-database/sql-database-technical-overview)
-* [建立及設定可用性群組 (SQL Server)](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017)。
+* [建立及設定可用性群組 (SQL Server)](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017&preserve-view=true)。
 * [將 RD 連線代理人伺服器新增至部署並設定高可用性](rds-connection-broker-cluster.md)。
 
 ## <a name="file-server"></a>檔案伺服器
