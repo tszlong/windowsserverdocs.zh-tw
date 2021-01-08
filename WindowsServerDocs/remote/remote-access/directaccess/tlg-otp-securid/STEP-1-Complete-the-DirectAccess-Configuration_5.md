@@ -1,18 +1,18 @@
 ---
 title: 步驟1使用 OTP 驗證完成 DirectAccess 設定
-description: 本主題是測試實驗室指南的一部分-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
+description: 瞭解如何使用混合的 IPv4 和 IPv6 測試實驗室指南，完成示範 DirectAccess 單一伺服器設定。
 manager: brianlic
 ms.topic: article
 ms.assetid: a815bc0d-4b4f-432e-85f0-23b2cc67d827
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 0a64086dacfc4f1b887c03644b9acd6965e64759
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: b11393e056bcd81113bc8459cdbfd1f7facc132f
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949284"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040078"
 ---
 # <a name="step-1-complete-the-directaccess-configuration-with-otp-authentication"></a>步驟1使用 OTP 驗證完成 DirectAccess 設定
 

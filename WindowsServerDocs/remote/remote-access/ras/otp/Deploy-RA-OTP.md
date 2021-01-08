@@ -1,18 +1,18 @@
 ---
 title: 使用 OTP 驗證部署遠端存取
-description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署「遠端存取」指南的一部分。
+description: 瞭解如何設定啟用 DirectAccess 的遠端存取服務器，以使用雙因素單次密碼驗證來驗證 DirectAccess 用戶端使用者。
 manager: brianlic
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 6a30d4726257c30020a305634fe16d7a6c0d3ef5
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 14b546cf7a0fecbff94c6778e3731d02f57bddf6
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949774"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038878"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>使用 OTP 驗證部署遠端存取
 

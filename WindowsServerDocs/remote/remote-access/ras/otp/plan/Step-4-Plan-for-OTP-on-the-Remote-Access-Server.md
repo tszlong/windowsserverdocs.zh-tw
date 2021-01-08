@@ -1,18 +1,18 @@
 ---
 title: 在遠端存取服務器上規劃 OTP 的步驟4
-description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署「遠端存取」指南的一部分。
+description: 瞭解如何在遠端存取服務器上規劃用戶端 OTP 設定。
 manager: brianlic
 ms.topic: article
 ms.assetid: 4b97b2fd-767a-45c1-a64e-5b3edd0c8a47
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 682c6f7bd829ccdf208271196e5b0b27d660515a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 2302ae8c1f288fa5da36dec2933fc9d398c45168
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948204"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040128"
 ---
 # <a name="step-4-plan-for-otp-on-the-remote-access-server"></a>在遠端存取服務器上規劃 OTP 的步驟4
 
@@ -20,7 +20,7 @@ ms.locfileid: "97948204"
 
 在規劃單次密碼 (OTP) RADIUS 伺服器和憑證設定之後，規劃遠端存取 OTP 部署的最後一個步驟是在遠端存取服務器上規劃用戶端 OTP 設定。
 
-|Task|描述|
+|工作|描述|
 |----|--------|
 |[4.1 規劃 OTP 用戶端豁免](#bkmk_4_1_Exemptions)|針對您不需要使用 OTP 進行驗證的使用者，規劃豁免。|
 |[適用于 Windows 7 用戶端的4.2 方案](#bkmk_4_2_Win7)|規劃將 DirectAccess 連線助理 (DCA) 2.0 部署至 Windows 7 用戶端電腦。|
@@ -38,7 +38,7 @@ ms.locfileid: "97948204"
 ## <a name="43-plan-for-smart-cards"></a><a name="BKMK_smartcard"></a>4.3 規劃智慧卡
 啟用 OTP 驗證時，可使用啟用智慧卡以取得額外授權的選項。 建立安全性群組，以允許使用者的智慧卡無法正常運作時的暫時存取。
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>請參閱
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱
 
 -   [使用 OTP 驗證設定 DirectAccess](../deploy-ra-otp.md)
 

@@ -1,18 +1,18 @@
 ---
 title: 步驟1規劃遠端存取基礎結構
-description: 本主題是《在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端》指南的一部分。
+description: 瞭解規劃基礎結構的步驟，您可以使用這些步驟來設定單一遠端存取服務器，以便遠端系統管理 DirectAccess 用戶端。
 manager: brianlic
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: add64a49bdc0b4ae0b9cfa0eaece085576013b81
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: d66073b93bbb1f3f73c95443c04900c3e37dd628
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947674"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039918"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>步驟1規劃遠端存取基礎結構
 
@@ -23,7 +23,7 @@ ms.locfileid: "97947674"
 
 本主題說明規劃基礎結構的步驟，讓您可以用來設定用於遠端系統管理 DirectAccess 用戶端的單一遠端存取服務器。 下表列出這些步驟，但不需要以特定順序完成這些規劃工作。
 
-|Task|描述|
+|工作|描述|
 |----|--------|
 |[規劃網路拓朴和伺服器設定](#plan-network-topology-and-settings)|決定要將遠端存取服務器放置在邊緣 (的位置，或在網路位址轉譯 (NAT) 裝置或防火牆) ，以及規劃 IP 位址和路由。|
 |[規劃防火牆需求](#plan-firewall-requirements)|規劃透過邊緣防火牆允許遠端存取。|
@@ -72,7 +72,7 @@ ms.locfileid: "97947674"
 ### <a name="plan-isatap-requirements"></a>規劃 ISATAP 需求
 需要 ISATAP 以進行 DirectAccessclients 的遠端系統管理，如此 DirectAccess 管理伺服器才能連線到位於網際網路的 DirectAccess 用戶端。 不需要 ISATAP，就能支援 DirectAccess 用戶端電腦對公司網路上的 IPv4 資源所起始的連接。 針對這個目的，會使用 NAT64/DNS64。 如果您的部署需要 ISATAP，請使用下表來識別您的需求。
 
-|ISATAP 部署案例|規格需求|
+|ISATAP 部署案例|需求|
 |---------------|--------|
 |現有的原生 IPv6 內部網路 (不需要 ISATAP) |使用現有的原生 IPv6 基礎結構，您可以在遠端存取部署期間指定組織的前置詞，而遠端存取服務器不會將自己設定為 ISATAP 路由器。 執行下列動作：<br/><br/>1. 若要確保可從內部網路連線到 DirectAccess 用戶端，您必須修改 IPv6 路由，以便將預設路由流量轉送到遠端存取服務器。 如果您的內部網路 IPv6 位址空間使用單一48位 IPv6 位址首碼以外的位址，您必須在部署期間指定相關的組織 IPv6 首碼。<br/>2. 如果您目前已連線到 IPv6 網際網路，則必須設定預設路由流量，使其轉送至遠端存取服務器，然後在遠端存取服務器上設定適當的連線和路由，以便將預設路由流量轉送到連線到 IPv6 網際網路的裝置。|
 |現有的 ISATAP 部署|如果您有現有的 ISATAP 基礎結構，在部署期間，系統會提示您輸入組織的48位首碼，而遠端存取服務器不會將自己設定為 ISATAP 路由器。 為了確保可從內部網路連線到 DirectAccess 用戶端，您必須修改 IPv6 路由基礎結構，以便將預設路由流量轉送到遠端存取服務器。 您必須在現有的 ISATAP 路由器上進行這種變更，內部網路用戶端必須已經轉送預設流量。|

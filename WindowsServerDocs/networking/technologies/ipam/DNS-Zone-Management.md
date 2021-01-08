@@ -1,18 +1,18 @@
 ---
 title: DNS 區域管理
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 瞭解如何使用 IPAM 用戶端主控台管理 DNS 區域。
 manager: brianlic
 ms.topic: article
 ms.assetid: de3dc14b-164a-49f1-8a57-b9e788046c23
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: cc982a6731d8a094eccca7f42aba655c6ed8fe4b
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: db13c03a6d5701a43038f6b1b03f77a338ddc6c3
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97945524"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039548"
 ---
 # <a name="dns-zone-management"></a>DNS 區域管理
 

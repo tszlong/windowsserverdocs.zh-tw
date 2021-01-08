@@ -1,18 +1,18 @@
 ---
 title: 步驟3安裝和設定 EDGE2
-description: 本主題是測試實驗室指南的一部分-示範 Windows Server 2016 的 Windows NLB 叢集中的 DirectAccess
+description: 瞭解如何安裝和設定 EDGE2，這是遠端存取叢集的第二個成員。
 manager: brianlic
 ms.topic: article
 ms.assetid: f04eb11e-ed5f-42a1-a77b-57a248ba2d10
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 431e88c552b0df94808ce5ce0069f569c3a87d8f
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 191c1d20d18b35bdac36f6421f1f6eda5f99a72a
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950374"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039298"
 ---
 # <a name="step-3-install-and-configure-edge2"></a>步驟3安裝和設定 EDGE2
 

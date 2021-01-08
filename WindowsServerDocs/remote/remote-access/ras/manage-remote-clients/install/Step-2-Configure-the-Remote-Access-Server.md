@@ -1,18 +1,18 @@
 ---
 title: 步驟2設定遠端存取服務器
-description: 本主題是《在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端》指南的一部分。
+description: 瞭解如何設定遠端系統管理 DirectAccess 用戶端所需的用戶端和伺服器設定。
 manager: brianlic
 ms.topic: article
 ms.assetid: c0257b98-5633-4264-9df6-b6ffae80592c
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 5fb19aeed8cd390693b0d62516191e920e4d879b
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7d7b2a29ef22f8768861eb456e0ded2c0e9a9432
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947704"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040037"
 ---
 # <a name="step-2-configure-the-remote-access-server"></a>步驟2設定遠端存取服務器
 
@@ -20,7 +20,7 @@ ms.locfileid: "97947704"
 
 本主題說明如何設定遠端系統管理 DirectAccess 用戶端所需的用戶端和伺服器設定。 開始部署步驟之前，請確定您已完成 [步驟2規劃遠端存取部署](../plan/Step-2-Plan-the-Remote-Access-Deployment.md)中所述的規劃步驟。
 
-|Task|描述|
+|工作|描述|
 |----|--------|
 |安裝遠端存取角色|安裝「遠端存取」角色。|
 |設定部署類型|將部署類型設定為 DirectAccess 與 VPN、僅 DirectAccess 或僅 VPN。|
@@ -137,7 +137,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
 
     -   IP-HTTPS 憑證。 這是以您在嚮導的上一個步驟中設定之部署的公用名稱為基礎。 如果 wizard 沒有偵測到正確的 IP-HTTPS 憑證，請按一下 **[流覽]** 以手動方式選取正確的憑證。
 
-4.  按一下 [下一步] 。
+4.  按 [下一步]  。
 
 5.  在 [ **首碼** 設定] 頁面上 (只有在內部網路中偵測到 ipv6 時才會顯示此頁面) 中，嚮導會自動偵測內部網路上所使用的 ipv6 設定。 如果您的部署需要額外的首碼，請設定內部網路的 IPv6 首碼、要指派給 DirectAccess 用戶端電腦的 IPv6 首碼，以及要指派給 VPN 用戶端電腦的 IPv6 首碼。
 
@@ -170,7 +170,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
 
 3.  在 [ **DNS** ] 頁面的表格中，輸入將套用為「名稱解析原則」表格 (NRPT) 豁免的其他名稱尾碼。 選取本機名稱解析選項，然後按 [下一步]。
 
-4.  在 [ **DNS 尾碼搜尋清單** ] 頁面上，遠端存取服務器會自動偵測部署中的網域尾碼。 使用 [ **新增** ] 和 [ **移除** ] 按鈕，即可建立您想要使用的網域尾碼清單。 若要新增網域尾碼，請在 [新尾碼] 中輸入尾碼，然後按一下 [新增]。 按一下 [下一步] 。
+4.  在 [ **DNS 尾碼搜尋清單** ] 頁面上，遠端存取服務器會自動偵測部署中的網域尾碼。 使用 [ **新增** ] 和 [ **移除** ] 按鈕，即可建立您想要使用的網域尾碼清單。 若要新增網域尾碼，請在 [新尾碼] 中輸入尾碼，然後按一下 [新增]。 按 [下一步]  。
 
 5.  在 [ **管理** ] 頁面上，新增系統不會自動偵測到的管理伺服器，然後按 **[下一步]**。 遠端存取會自動新增網域控制站和 Configuration Manager 伺服器。
 
@@ -198,7 +198,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
 
     此清單包含網路位置伺服器 URL、DirectAccess 用戶端所使用的 DNS 尾碼，以及管理伺服器資訊。
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>請參閱
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱
 
 -   [步驟 3：檢查部署](Step-3-Verify-the-Deployment_2.md)
 

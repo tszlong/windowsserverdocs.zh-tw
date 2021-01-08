@@ -1,18 +1,18 @@
 ---
 title: 組態需求
-description: 本主題是測試實驗室指南的一部分-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
+description: 瞭解在測試實驗室中必須設定遠端存取的元件。
 manager: brianlic
 ms.topic: article
 ms.assetid: aaabdf3b-d926-48d9-9d01-358668da88ba
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 516e906edc9dc901911fcb94d79821a7dd24fc7c
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 026d47a7c33dd4903870516ca1621eba9d85ea39
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950354"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040208"
 ---
 # <a name="configuration-requirements"></a>組態需求
 

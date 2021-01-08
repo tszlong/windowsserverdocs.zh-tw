@@ -1,18 +1,18 @@
 ---
 title: 監視「遠端存取」伺服器上現有的負載
-description: 本主題是 Windows Server 2016 中遠端存取監視和帳戶處理指南的一部分。
+description: 瞭解如何使用 [監視] 儀表板來查看伺服器的負載統計資料，或者您可以使用效能監視器計數器來追蹤統計資料。
 manager: brianlic
 ms.topic: article
 ms.assetid: 62fa2895-62ae-42cf-817c-53e06ac2a26c
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 29964baa521b61fed229140898785acb37ddf124
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 999a4e2a0f660368e0d7f5cfce4e1f7217029311
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947324"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039838"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>監視「遠端存取」伺服器上現有的負載
 

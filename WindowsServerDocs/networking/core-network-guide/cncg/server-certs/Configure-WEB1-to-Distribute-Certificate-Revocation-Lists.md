@@ -1,18 +1,18 @@
 ---
 title: '將 WEB1 設定為將憑證撤銷清單散發 (Crl) '
-description: 本主題是適用于 802.1 X 有線和無線部署的指南部署伺服器憑證的一部分
+description: 瞭解如何設定 web 伺服器 WEB1 來散發 Crl。
 manager: brianlic
 ms.topic: article
 ms.assetid: fa4a8c41-8c2a-425c-8511-736fe5d196ac
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 756dcdc046387fc11774fe751bd8901498a19b0d
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9a2dbec4320827c85ca6b08b8c94c43b992ee2df
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950204"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038758"
 ---
 # <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>將 WEB1 設定為將憑證撤銷清單散發 (Crl) 
 

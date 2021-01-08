@@ -1,18 +1,18 @@
 ---
 title: 步驟1設定遠端存取基礎結構
-description: 本主題是《在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端》指南的一部分。
+description: 瞭解如何使用混合的 IPv4 和 IPv6 環境中的單一遠端存取服務器，設定先進遠端存取部署所需的基礎結構。
 manager: brianlic
 ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: df58a68da0eedebe0b21fd1b0a4651f342c12434
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7e857093f7f2e4e9e986f20b2c59e92de6a2c56c
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947714"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040028"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>步驟1設定遠端存取基礎結構
 
@@ -22,7 +22,7 @@ ms.locfileid: "97947714"
 
 本主題說明如何使用混合的 IPv4 和 IPv6 環境中的單一遠端存取服務器，設定 advanced Remote Access 部署所需的基礎結構。 開始部署步驟之前，請確定您已完成 [步驟1：規劃遠端存取基礎結構](../plan/Step-1-Plan-the-Remote-Access-Infrastructure.md)中所述的規劃步驟。
 
-|Task|描述|
+|工作|描述|
 |----|--------|
 |設定伺服器網路設定|在遠端存取伺服器上設定伺服器網路設定。|
 |設定公司網路中的路由|設定公司網路中的路由，確保適當地路由流量。|
@@ -448,6 +448,6 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
 
 4.  確定內部網路上的 DirectAccess 用戶端可以解析網路位置伺服器的名稱，而且網際網路上的 DirectAccess 用戶端無法解析此名稱。
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>請參閱
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱
 
 -   [步驟 2：設定遠端存取伺服器](Step-2-Configure-the-Remote-Access-Server.md)

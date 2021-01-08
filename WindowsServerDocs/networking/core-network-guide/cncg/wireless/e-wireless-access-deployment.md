@@ -1,18 +1,18 @@
 ---
 title: 無線存取部署
-description: 本主題是 Windows Server 2016 網路指南「部署 Password-Based 802.1 X 驗證無線存取」的一部分。
+description: 瞭解如何在五個步驟中部署無線存取。
 manager: brianlic
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 7904476686c8e929876cf2ad574c8e09f4f351f1
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: bcd601d97ff8cef77d14691dd510df2679718dda
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949154"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038268"
 ---
 # <a name="wireless-access-deployment"></a>無線存取部署
 
@@ -472,7 +472,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 3. 按一下 [ **設定 802.1 x**]。 [設定 802.1 X wizard] 隨即開啟。
 
-4.  在 [ **選取 802.1 x 連線類型** ] 頁面的 [ **802.1 x 連線類型**] 中，選取 [ **安全的無線** 連線]，然後在 [ **名稱**] 中輸入原則的名稱，或保留預設名稱 **安全的無線** 連線。 按一下 [下一步] 。
+4.  在 [ **選取 802.1 x 連線類型** ] 頁面的 [ **802.1 x 連線類型**] 中，選取 [ **安全的無線** 連線]，然後在 [ **名稱**] 中輸入原則的名稱，或保留預設名稱 **安全的無線** 連線。 按 [下一步]  。
 
 5.  在 [ **指定 802.1 x 交換器** ] 頁面的 [ **radius 用戶端**] 中，會顯示您在 NPS 嵌入式管理單元中新增為 RADIUS 用戶端的所有 802.1 x 交換器和無線存取點 \- 。 執行下列任一項：
 
@@ -485,7 +485,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
         >[!WARNING]
         >從 configuration **802.1 x** wizard 內移除 RADIUS 用戶端，會從 NPS 設定中刪除該用戶端。 您在 [**設定 802.1 x** ] 嚮導中對 RADIUS 用戶端所做的所有新增、修改和刪除，都會反映在 nps [ \- **nps** radius 用戶端和伺服器] 下的 [ **radius 用戶端**] 節點中的 nps 嵌入式管理單元中 \/ ****。 例如，如果您使用 wizard 來移除 802.1 X 交換器，則也會從 NPS 嵌入式管理單元中移除參數 \- 。
 
-6. 按一下 [下一步] 。 在 [**設定驗證方法**] 頁面的 [ **\( 根據存取方法 \) 和網路設定的類型**] 中，選取 [ **Microsoft：受保護的 EAP \( PEAP \)**]，然後按一下 [**設定**]。
+6. 按 [下一步]  。 在 [**設定驗證方法**] 頁面的 [ **\( 根據存取方法 \) 和網路設定的類型**] 中，選取 [ **Microsoft：受保護的 EAP \( PEAP \)**]，然後按一下 [**設定**]。
 
     >[!TIP]
     >如果您收到錯誤訊息，指出找不到要與驗證方法搭配使用的憑證，此外，您已將 Active Directory 憑證服務設定為自動將憑證發行至網路上的 RAS 和 資訊存取伺服器，請先確定您已遵循在 Active Directory Domain Services 中註冊 NPS 的步驟，然後使用下列步驟來更新群組原則：按一下 [ **開始**]、[ **Windows 系統**]、[ **執行**]，然後按一下 [ **開啟** **]，然後** 按 enter。 當命令傳回的結果指出已成功更新使用者和電腦群組原則時，請再次選取 [ **Microsoft： PROTECTED EAP \( PEAP \)** ]，然後按一下 [**設定**]。
@@ -503,11 +503,11 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
     - 若要修改 EAP 類型的原則設定，請在 [ **Eap 類型**] 中按一下 [ **編輯**]，然後在 [ **eap eap-mschapv2** 內容] 中，視需要修改設定，然後按一下 **[確定]**。
 
-8.  按一下 [確定]。 [編輯受保護的 EAP 內容] 對話方塊隨即關閉，並將您返回 **設定 802.1 x** wizard。 按一下 [下一步] 。
+8.  按一下 [確定]。 [編輯受保護的 EAP 內容] 對話方塊隨即關閉，並將您返回 **設定 802.1 x** wizard。 按 [下一步]  。
 
-9. 在 [ **指定使用者群組**] 中，按一下 [ **新增**]，然後在 Active Directory 消費者和電腦] 嵌入式管理單元中輸入您為無線用戶端設定的安全性群組名稱 \- 。 例如，如果您將無線安全性群組命名為無線群組，請輸入 **無線群組**。 按一下 [下一步] 。
+9. 在 [ **指定使用者群組**] 中，按一下 [ **新增**]，然後在 Active Directory 消費者和電腦] 嵌入式管理單元中輸入您為無線用戶端設定的安全性群組名稱 \- 。 例如，如果您將無線安全性群組命名為無線群組，請輸入 **無線群組**。 按 [下一步]  。
 
-10. 按一下 [ **設定** ]，視需要為虛擬 LAN VLAN 設定 RADIUS 標準屬性和廠商 \- 特有的屬性，以及由 \( \) 無線 AP 硬體廠商提供的檔所指定。 按一下 [下一步] 。
+10. 按一下 [ **設定** ]，視需要為虛擬 LAN VLAN 設定 RADIUS 標準屬性和廠商 \- 特有的屬性，以及由 \( \) 無線 AP 硬體廠商提供的檔所指定。 按 [下一步]  。
 
 11. 檢查設定摘要詳細資料，然後按一下 **[完成]**。
 

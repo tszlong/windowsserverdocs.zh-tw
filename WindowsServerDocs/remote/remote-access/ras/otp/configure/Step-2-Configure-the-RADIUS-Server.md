@@ -1,18 +1,18 @@
 ---
 title: 步驟2設定 RADIUS 伺服器
-description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署「遠端存取」指南的一部分。
+description: 瞭解如何設定 RADIUS 伺服器。
 manager: brianlic
 ms.topic: article
 ms.assetid: 0326818f-9144-496c-b946-f82be4eefbd3
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: fc5fa26a6165fae0c41560b67940b70c22f09b8a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 4dd1ba5d27e3fac32ca5938156d1dc504dd98cfc
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949744"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038780"
 ---
 # <a name="step-2-configure-the-radius-server"></a>步驟2設定 RADIUS 伺服器
 
@@ -20,7 +20,7 @@ ms.locfileid: "97949744"
 
 設定遠端存取服務器以支援具有 OTP 支援的 DirectAccess 之前，您必須設定 RADIUS 伺服器。
 
-|Task|描述|
+|工作|描述|
 |----|--------|
 |[2.1. 設定 RADIUS 軟體發佈權杖](#BKMK_1.1)|在 RADIUS 伺服器上設定軟體發佈權杖。|
 |[2.2. 設定 RADIUS 安全性資訊](#BKMK_1.2)|在 RADIUS 伺服器上，設定要使用的埠和共用密碼。|

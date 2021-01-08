@@ -1,18 +1,18 @@
 ---
 title: 步驟3規劃 OTP 憑證部署
-description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署「遠端存取」指南的一部分。
+description: 瞭解如何規劃憑證授權單位單位需求，包括將發出一次性密碼憑證的 CA、OTP 憑證範本，以及遠端存取服務器用來簽署所有 DirectAccess 用戶端 OTP 憑證要求的登錄授權單位憑證。
 manager: brianlic
 ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 8c6898b6447e5d8c3a72653435028a7413fbb9c9
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: d563356d3c3635255a7fab3fcecef77becab53fb
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950444"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040148"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>步驟3規劃 OTP 憑證部署
 
@@ -30,7 +30,7 @@ ms.locfileid: "97950444"
 
 5.  CA 會驗證認證和要求。
 
-|Task|描述|
+|工作|描述|
 |----|--------|
 |[3.1 規劃 OTP CA](#bkmk_3_1_CA)|規劃憑證授權單位單位 (CA) 用來將憑證發行給 DirectAccess 用戶端以進行 OTP 驗證。|
 |[3.2 規劃 OTP 憑證範本](#bkmk_3_2_OTP_Cert)|規劃 OTP 憑證範本。|
@@ -68,7 +68,7 @@ ms.locfileid: "97950444"
 ## <a name="33-plan-the-registration-authority-certificate"></a><a name="bkmk_33RACert"></a>3.3 規劃註冊授權單位憑證
 當 DirectAccess 用戶端要求 OTP 憑證時，遠端存取服務器會接收來自用戶端的要求。 遠端存取服務器會使用登錄授權單位憑證來簽署用戶端的所有 OTP 憑證要求。 只有在遠端存取服務器上的註冊授權單位憑證簽署要求時，CA 才會發出憑證。 憑證必須由內部 CA 發出，憑證無法自我簽署。 它不需要由發行 OTP 憑證的 CA 發出，但是發行 OTP 憑證的 CA 必須信任簽發註冊授權單位簽署憑證的 CA。
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>請參閱
+## <a name="see-also"></a><a name="BKMK_Links"></a>另請參閱
 
 -   [步驟4：規劃遠端存取服務器的 OTP](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)
 

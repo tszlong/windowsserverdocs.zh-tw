@@ -1,18 +1,18 @@
 ---
 title: 使用遠端存取監視和計量
-description: 本主題是 Windows Server 2016 中遠端存取監視和帳戶處理指南的一部分。
+description: 瞭解如何使用 DirectAccess 管理主控台和對應的 Windows PowerShell Cmdlet 來利用遠端存取的監視功能。
 manager: brianlic
 ms.topic: article
 ms.assetid: 92519b49-0df4-43c1-9717-f13570644212
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 314b6fd64b0fc4035bf402faeae447bc95a2cb68
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: eb78cfe5ce07add3e9d235b5a62f1cf12dc42f4b
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97942104"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039738"
 ---
 # <a name="use-remote-access-monitoring-and-accounting"></a>使用遠端存取監視和計量
 

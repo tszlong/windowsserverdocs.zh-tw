@@ -1,18 +1,18 @@
 ---
 title: 疑難排解啟用 OTP
-description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署「遠端存取」指南的一部分。
+description: 瞭解如何針對使用 Enable-DAOtpAuthentication PowerShell Cmdlet 或遠端存取管理主控台啟用 DirectAccess OTP 驗證的相關問題進行疑難排解。
 manager: brianlic
 ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: cf2ec60923415e3fafc253a14c8da0d624e72bf1
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: a7189238da0c318b89876955913c2cf687c7a5f5
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947224"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039668"
 ---
 # <a name="troubleshooting-enabling-otp"></a>疑難排解啟用 OTP
 

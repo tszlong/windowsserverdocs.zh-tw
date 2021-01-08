@@ -1,18 +1,18 @@
 ---
 title: 測試實驗室案例概觀
-description: 本主題是測試實驗室指南的一部分-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
+description: 瞭解部署 DirectAccess 的內容，以及組成測試實驗室的四個子網。
 manager: brianlic
 ms.topic: article
 ms.assetid: 9afeced4-1a9b-4cb3-9fc4-d7e44c675755
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 833221ee118c758ffc2ade7419ee75cf82bf9f35
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 12d6868334bafba881531fd2d5cdaa99d10555f8
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950344"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040098"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>測試實驗室案例概觀
 

@@ -1,18 +1,18 @@
 ---
 title: 刪除 DNS 資源記錄
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 瞭解如何使用 IPAM 用戶端主控台刪除一或多個 DNS 資源記錄。
 manager: brianlic
 ms.topic: article
 ms.assetid: 366e6fd5-d563-4de3-9551-5614cbb8f2cb
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 70039e266e2696f69c5eee8077bab81ccee72d35
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: a305457d50985c2cefa56dbfe0d243bc9cd8b504
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97945454"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039568"
 ---
 # <a name="delete-dns-resource-records"></a>刪除 DNS 資源記錄
 

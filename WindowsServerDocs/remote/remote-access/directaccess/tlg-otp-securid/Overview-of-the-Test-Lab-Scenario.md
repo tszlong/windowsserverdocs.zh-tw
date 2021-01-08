@@ -1,18 +1,18 @@
 ---
 title: 測試實驗室案例 OTP 驗證和 RSA SecurID 的總覽
-description: 本主題是測試實驗室指南的一部分-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
+description: 瞭解如何使用混合的 IPv4 和 IPv6 測試實驗室指南來擴充示範 DirectAccess 單一伺服器設定，以示範遠端存取一次性密碼 (OTP) 設定。
 manager: brianlic
 ms.topic: article
 ms.assetid: ce584811-b209-48fe-ab2b-4c399bd0bd79
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 282dc78a0849234177cdbaa15ab82ea9eb00fc27
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: fc6f8696401f2284da19a989153ab2b87c453757
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946994"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040088"
 ---
 # <a name="overview-of-the-test-lab-scenario-otp-authentication-and-rsa-securid"></a>測試實驗室案例 OTP 驗證和 RSA SecurID 的總覽
 

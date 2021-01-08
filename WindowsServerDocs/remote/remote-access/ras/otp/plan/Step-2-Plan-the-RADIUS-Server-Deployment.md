@@ -1,18 +1,18 @@
 ---
 title: 步驟2規劃 RADIUS 伺服器部署
-description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署「遠端存取」指南的一部分。
+description: 瞭解如何規劃一次性密碼 (OTP) authentication server。
 manager: brianlic
 ms.topic: article
 ms.assetid: 2d6ad863-02a5-49b0-9aff-d189e78b2b80
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: c76327d4249d7266ad2c993836b2c98815094235
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 5658c4c3a323bf9e0df5af8cf57dad85d98fe8dd
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950254"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040158"
 ---
 # <a name="step-2-plan-the-radius-server-deployment"></a>步驟2規劃 RADIUS 伺服器部署
 
@@ -20,7 +20,7 @@ ms.locfileid: "97950254"
 
 部署單一遠端存取服務器之後，請規劃單次密碼 (OTP) authentication server。
 
-|Task|描述|
+|工作|描述|
 |----|--------|
 |2.1 規劃 RADIUS 伺服器|對於 OTP 驗證服務器，Windows Server 2016 和 Windows Server 2012 中的遠端存取支援支援密碼驗證通訊協定 (PAP) 的任何支援 RADIUS 的 OTP 伺服器。|
 

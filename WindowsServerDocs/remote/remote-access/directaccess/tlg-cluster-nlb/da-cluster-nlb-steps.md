@@ -1,18 +1,18 @@
 ---
 title: DirectAccess Cluster-NLB 測試實驗室案例設定步驟
-description: 本主題是測試實驗室指南的一部分-示範 Windows Server 2016 的 Windows NLB 叢集中的 DirectAccess
+description: 瞭解如何設定遠端存取基礎結構、設定遠端存取服務器和用戶端，以及從網際網路和 Homenet 子網測試 DirectAccess 連線能力。
 manager: brianlic
 ms.topic: article
 ms.assetid: e508d3ee-ffa6-463f-a3dd-9e35e745c005
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: d8502b50d54292adbd74209e5dff2d676d105701
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7b9a5497803464f8bb3fde02785f09c0b99511a9
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950364"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040218"
 ---
 # <a name="steps-for-configuring-the-directaccess-cluster-nlb-test-lab"></a>DirectAccess Cluster-NLB 測試實驗室案例設定步驟
 

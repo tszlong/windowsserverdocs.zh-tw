@@ -1,18 +1,18 @@
 ---
 title: 識別並解決「遠端存取」伺服器操作問題
-description: 本主題是 Windows Server 2016 中遠端存取監視和帳戶處理指南的一部分。
+description: 瞭解如何識別遠端存取服務器作業問題、其根本原因，以及解決問題所需的解決方法。
 manager: brianlic
 ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: cae96d3034cb650b84b40a1a35364400b182a619
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 23a79e792b7601b4eeadf05e5844d9ca722f3c6d
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947364"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039888"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>識別並解決「遠端存取」伺服器操作問題
 

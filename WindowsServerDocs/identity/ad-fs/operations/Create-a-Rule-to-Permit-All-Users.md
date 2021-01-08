@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: af24036b55ed695765c1c3424f180db718732cee
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: c532ce43d2974300cc55ffa1c04e1c81695c2b32
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048116"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039078"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>建立規則允許所有使用者
 
@@ -29,13 +29,13 @@ ms.locfileid: "97048116"
 1.  在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在主控台樹的 [ **AD FS**] 下，按一下 [信賴憑證者 **信任**]。
-![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall1.PNG)
+![顯示要在哪裡選取 [信賴憑證者信任] 的螢幕擷取畫面。](media/Create-a-Rule-to-Permit-All-Users/permitall1.PNG)
 
 3.  以滑鼠右鍵按一下您想要允許存取的信賴憑證者 **信任** ，然後選取 [ **編輯存取控制原則**]。
-![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
+![顯示要在哪裡選取 [編輯存取控制原則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
 
 4. 在存取控制原則上，選取 [ **允許所有人** ] **，然後按一下** **[套用] 和 [確定]**。
-![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall3.PNG)
+![醒目顯示 [允許每個人] 存取控制原則的螢幕擷取畫面。](media/Create-a-Rule-to-Permit-All-Users/permitall3.PNG)
 
 ## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2012-r2"></a>建立規則以允許 Windows Server 2012 R2 中的所有使用者
 
@@ -44,10 +44,10 @@ ms.locfileid: "97048116"
 2.  在主控台樹的 [ **AD FS \\ 信任關係] \\ 信賴** 憑證者信任底下，按一下清單中您要在其中建立此規則的特定信任。
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告規則**]。
-![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall4.PNG)
+![顯示要在哪裡選取 [編輯宣告規則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Permit-All-Users/permitall4.PNG)
 
 4.  在 [ **編輯宣告規則** ] 對話方塊中，按一下 [ **發行授權規則** ] 索引標籤或 [ **委派授權規則** ] 索引標籤（ \( 根據您所需的授權規則類型 \) ），然後按一下 [ **新增規則** ] 以啟動 [ **新增授權宣告規則]**。
-![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+![顯示 [發佈授權規則] 索引標籤的螢幕擷取畫面。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **允許所有使用者** ]，然後按 **[下一步]**。
 ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall6.PNG)
 6.  在 [ **設定規則** ] 頁面上，按一下 **[完成]**。

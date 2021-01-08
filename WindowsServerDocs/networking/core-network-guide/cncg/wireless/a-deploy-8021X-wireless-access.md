@@ -1,18 +1,18 @@
 ---
 title: 部署密碼型 802.1X 驗證無線存取
-description: 本主題是 Windows Server 2016 網路指南「部署 Password-Based 802.1 X 驗證無線存取」的一部分。
+description: 瞭解如何使用受保護的可延伸驗證通訊協定（Microsoft 挑戰交握驗證通訊協定第2版） 802.1 X 驗證的 IEEE 802.11 無線存取，來部署電氣和電子工程師協會。
 manager: brianlic
 ms.topic: article
 ms.assetid: ff06ba23-9c0f-49ec-8f7b-611cf8d73a1b
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 2b6a04f10814a077ab1b8aefa612c9fbe6e153a6
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 6a861bf9df9d80efc5fd82b8c74ea54b71c8aef5
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948414"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038398"
 ---
 # <a name="deploy-password-based-8021x-authenticated-wireless-access"></a>部署密碼型 \- 802.1 x 驗證無線存取
 
@@ -75,7 +75,7 @@ ms.locfileid: "97948414"
 
 建議您檢閱此部署案例中所用每個技術的設計和部署指南。 這些指南可協助您判斷此部署案例是否提供貴組織的網路需要的服務與設定。
 
-### <a name="requirements"></a>規格需求
+### <a name="requirements"></a>需求
 以下是使用本指南中記載的案例部署無線存取基礎結構的需求：
 
 - 在部署此案例之前，您必須先購買 802.1 X \- 功能的無線存取點，以在您網站上的所需位置提供無線涵蓋範圍。 本指南的規劃章節可協助您判斷您的 Ap 必須支援的功能。
@@ -194,7 +194,7 @@ WPA \- Enterprise 透過下列方式，提供優於 WEP 的增強安全性：
 > [!IMPORTANT]
 > 有線等 \( 的隱私權 WEP \) 是用來加密網路流量的原始無線安全性標準。 您不應該在網路上部署 WEP，因為這種 \- 過期的安全性形式有已知的弱點。
 
-### <a name="active-directory-doman-services-ad-ds"></a>Active Directory 網域 Services \( AD DS\)
+### <a name="active-directory-domain-services-ad-ds"></a>Active Directory Domain Services \( AD DS\)
 AD DS 提供分散式資料庫，可儲存和管理 \- 從啟用目錄之應用程式的網路資源和應用程式特定資料的相關資訊 \- 。 系統管理員可以使用 AD DS 將網路項目 (像是使用者、電腦以及其他裝置) 組織成階層式的內含項目結構。 階層式內含專案結構包括 Active Directory 樹系、樹系中的網域，以及 \( \) 每個網域中的組織單位 ou。 正在執行 AD DS 的伺服器稱為 *網域控制站*。
 
 AD DS 包含 IEEE 802.1 X 和 PEAP MS CHAP v2 所需的使用者帳戶、電腦帳戶和帳戶內容 \- ， \- 以驗證使用者認證，並評估無線連線的授權。
@@ -253,7 +253,7 @@ Active Directory 憑證服務 \( AD CS \) 是一種伺服器角色，會將憑�
 
     如果您部署自己的私人 CA，CA 憑證會自動安裝在目前使用者的「信任的根憑證授權單位」憑證存放區中，而在網域成員用戶端電腦上重新整理群組原則時，則會自動安裝在本機電腦上。 如果您決定要從公用 CA 部署伺服器憑證，請確定公用 CA 憑證已在 [受信任的根憑證授權單位] 憑證存放區中。
 
-2.  NPS 會驗證使用者。 用戶端成功驗證 NPS 之後，用戶端會將使用者的密碼型 \- 認證傳送給 nps，以針對 Active Directory 網域 Services AD DS 中的使用者帳戶資料庫驗證使用者的認證 \( \) 。
+2.  NPS 會驗證使用者。 用戶端成功驗證 NPS 之後，用戶端會將使用者的密碼型 \- 認證傳送給 nps，以針對 Active Directory Domain Services AD DS 中的使用者帳戶資料庫驗證使用者的認證 \( \) 。
 
 如果認證有效且驗證成功，NPS 就會開始處理連接要求的授權階段。 如果認證無效且驗證失敗，NPS 會傳送拒絕存取訊息，並拒絕連線要求。
 

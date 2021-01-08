@@ -1,18 +1,18 @@
 ---
 title: 步驟3驗證部署
-description: 本主題是《在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端》指南的一部分。
+description: 瞭解如何確認您已正確設定部署以進行 DirectAccess 用戶端的遠端系統管理。
 manager: brianlic
 ms.topic: article
 ms.assetid: 6a78a078-d2e7-4cbd-b8d5-20cfb6d1524b
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 9a3555364690228ec8723ee8c3123edaa4606c06
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7b59a37eb6d24c6de61acdff9fa544f1ec6f0fce
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947694"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040008"
 ---
 # <a name="step-3-verify-the-deployment"></a>步驟3驗證部署
 

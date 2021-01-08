@@ -1,18 +1,18 @@
 ---
 title: 管理租用戶虛擬網路
-description: 本主題是有關如何在 Windows Server 2016 中管理租使用者工作負載和虛擬網路的軟體定義網路指南的一部分。
+description: 瞭解如何在您部署軟體定義網路之後，管理租使用者 Hyper-v 網路虛擬化虛擬網路。
 manager: grcusanz
 ms.topic: article
 ms.assetid: 5905532b-626d-4b35-99a3-72a063e25809
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 01a78c820098ed58bcbf4690982b8f3a68f63bb5
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3fc38bf559da74fdbc4ed95da9d384bffcd48194
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949664"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038248"
 ---
 # <a name="manage-tenant-virtual-networks"></a>管理租用戶虛擬網路
 

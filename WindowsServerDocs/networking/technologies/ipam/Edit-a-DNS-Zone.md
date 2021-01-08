@@ -1,18 +1,18 @@
 ---
 title: 編輯 DNS 區域
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 瞭解如何在 IPAM 用戶端主控台中編輯 DNS 區域。
 manager: brianlic
 ms.topic: article
 ms.assetid: a35164e1-11ad-47c8-9843-580d30c70d07
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 3c411dc560f8fed2d5138bcb8acc68a9b5f03567
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: e0cf2667c8992ee94a663f78cf3f3fc7c7a82b24
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948724"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040178"
 ---
 # <a name="edit-a-dns-zone"></a>編輯 DNS 區域
 

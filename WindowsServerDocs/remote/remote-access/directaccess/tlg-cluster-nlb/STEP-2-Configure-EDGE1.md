@@ -1,18 +1,18 @@
 ---
 title: 步驟2設定 EDGE1
-description: 本主題是測試實驗室指南的一部分-示範 Windows Server 2016 的 Windows NLB 叢集中的 DirectAccess
+description: 瞭解如何在 EDGE1 伺服器上設定 DirectAccess。
 manager: brianlic
 ms.topic: article
 ms.assetid: 84457351-1ca7-4e7c-8e2c-53d55b1fcdc0
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: fb0bd2c2f6b043eec28b7b3499c05ead578653fa
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 52f94c6625286e9243419a668381995a18b28fae
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948224"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039328"
 ---
 # <a name="step-2-configure-edge1"></a>步驟2設定 EDGE1
 

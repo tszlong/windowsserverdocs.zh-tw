@@ -1,6 +1,6 @@
 ---
 title: 效能調整網路介面卡
-description: 本主題是 Windows Server 2016 的網路子系統效能微調指南的一部分。
+description: 瞭解如何針對執行 Windows Server 2016 和更新版本的電腦微調效能網路介面卡。
 audience: Admin - CI ID 111485 - CSSTroubleshoot
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: 4b3c32a6382e7538ccfb1fab22b4d2be9495b3b0
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 04f6540cb86aa6af8b2c315132ff84765937e675
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866047"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039009"
 ---
 # <a name="performance-tuning-network-adapters"></a>效能調整網路介面卡
 
@@ -226,7 +226,7 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 您可以將接收視窗自動優化設定為五個層級的任一個。 預設層級為 [ **正常**]。 下表描述這些層級。
 
-|層級 |十六進位值 |註解 |
+|層級 |十六進位值 |評價 |
 | --- | --- | --- |
 |標準 (預設) |0x8 (比例因數 8)  |將 TCP 接收視窗設定為 [成長]，以容納幾乎所有的案例。 |
 |已停用 |沒有任何可用的擴展因數 |設定 TCP 接收視窗的預設值。 |

@@ -1,18 +1,18 @@
 ---
 title: 設定伺服器憑證範本
-description: 本主題是適用于 802.1 X 有線和無線部署的指南部署伺服器憑證的一部分
+description: 瞭解如何設定 Active Directory 憑證服務使用的憑證範本，做為向您網路上的伺服器註冊之伺服器憑證的基礎。
 manager: brianlic
 ms.topic: article
 ms.assetid: 8ff610e2-43ca-407f-a828-06d9366e02f0
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 4eaeef21e90a3a0a56c6c136363e102948c31b97
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 94db549130bfa8779739af49c477eca9c401b08f
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950194"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038898"
 ---
 # <a name="configure-the-server-certificate-template"></a>設定伺服器憑證範本
 

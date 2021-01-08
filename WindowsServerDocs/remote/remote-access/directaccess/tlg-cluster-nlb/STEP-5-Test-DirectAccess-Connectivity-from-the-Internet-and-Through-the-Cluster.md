@@ -1,18 +1,18 @@
 ---
 title: 步驟 5-從網際網路和透過叢集測試 DirectAccess 連線能力
-description: 本主題是測試實驗室指南的一部分-示範 Windows Server 2016 的 Windows NLB 叢集中的 DirectAccess
+description: 瞭解如何從網際網路和透過叢集測試 DirectAccess 連線能力。
 manager: brianlic
 ms.topic: article
 ms.assetid: 8399bdfa-809a-45e4-9963-f9b6a631007f
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 20e4895834d56bfc0cb29700dee38fee9c0b9336
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: e301c9786b0d76e45c8417a7a3c9340937f5f529
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946554"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039208"
 ---
 # <a name="step-5-test-directaccess-connectivity-from-the-internet-and-through-the-cluster"></a>步驟 5-從網際網路和透過叢集測試 DirectAccess 連線能力
 

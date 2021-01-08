@@ -1,18 +1,18 @@
 ---
 title: 遠端管理 DirectAccess 用戶端
-description: 本主題是《在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端》指南的一部分。
+description: 瞭解如何使用 DirectAccess 管理主控台和對應的 Windows PowerShell Cmdlet （作為遠端存取服務器角色的一部分提供）來利用遠端存取的監視功能。
 manager: brianlic
 ms.topic: article
 ms.assetid: 36255d80-a13e-4af7-a5c0-ab4c8f302622
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 86824aaba3e249aa5cc4f0743d28ce0371481c21
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 45e1497de0041957df5e06e1a6c93cc58abbba70
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947734"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040048"
 ---
 # <a name="manage-directaccess-clients-remotely"></a>遠端管理 DirectAccess 用戶端
 

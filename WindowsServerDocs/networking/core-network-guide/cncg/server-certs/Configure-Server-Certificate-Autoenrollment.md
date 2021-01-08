@@ -1,18 +1,18 @@
 ---
 title: 設定伺服器憑證自動註冊
-description: 本主題是適用于 802.1 X 有線和無線部署的指南部署伺服器憑證的一部分
+description: 瞭解如何設定伺服器憑證自動註冊和使用者憑證自動註冊。
 manager: brianlic
 ms.topic: article
 ms.assetid: c81e85cb-ecb8-442a-ad27-442c2f9e40df
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 6f37d19cd1805b5c8cf0be267e3d3317f17fcd11
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: ba491e280c4c575b3ab39efed2cb412ebc6954d5
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947854"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038798"
 ---
 # <a name="configure-certificate-auto-enrollment"></a>設定憑證自動註冊
 

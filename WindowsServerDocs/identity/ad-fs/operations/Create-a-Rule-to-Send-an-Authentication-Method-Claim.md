@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: dc55613e8060eda42f5f4d47a59fc20246e1684f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 63baded3b401a6bd79ed56aa1cff231056c4c190
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040126"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039158"
 ---
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>建立規則傳送驗證方法相容宣告
 
@@ -32,16 +32,16 @@ ms.locfileid: "97040126"
 1.  在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在主控台樹的 [ **AD FS**] 下，按一下 [信賴憑證者 **信任**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![當您使用 [傳送群組成員資格作為宣告規則] 範本來建立規則時，顯示在主控台樹中選取 [信賴憑證者信任] 的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告發行原則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![當您使用 [傳送群組成員資格作為宣告規則] 範本來建立規則時，顯示在哪裡選取 [編輯宣告發行原則] 功能表選項的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  在 [ **編輯宣告發行原則** ] 對話方塊的 [ **發佈轉換規則** ] 下，按一下 [ **新增規則** ] 以啟動規則嚮導。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![顯示當您使用 [傳送群組成員資格作為宣告規則] 範本建立規則時，如何新增規則的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **傳送群組成員資格作為** 宣告]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)
+![顯示要在哪裡選取 [傳送群組成員資格] 作為宣告範本的螢幕擷取畫面。](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)
 
 6.  在 [ **設定規則** ] 頁面上，輸入宣告規則名稱。
 
@@ -58,23 +58,23 @@ ms.locfileid: "97040126"
 | \( \) 使用 x.509 憑證的傳輸層安全性 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |                  不 \- 使用 TLS 的 x.509 型驗證                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
+![螢幕擷取畫面，顯示當您使用 Windows Server 2016 中的 [傳送群組成員資格作為宣告規則] 範本來建立規則時，要在哪裡選取 [完成]。](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
 ## <a name="to-create-by-using-the-send-group-membership-as-claims-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>若要在 Windows Server 2016 的宣告提供者信任上使用傳送群組成員資格作為宣告規則範本來建立
 
 1.  在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在主控台樹的 [ **AD FS**] 下，按一下 [ **宣告提供者信任**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![螢幕擷取畫面，顯示當您使用 Windows Server 2016 中的 [傳送群組成員資格作為宣告規則] 範本來建立規則時，要在哪裡選取宣告提供者信任。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告規則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![螢幕擷取畫面，顯示當您使用 Windows Server 2016 中的 [傳送群組成員資格作為宣告規則] 範本來建立規則時，要在哪裡選取 [編輯宣告規則]。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  在 [ **編輯宣告規則** ] 對話方塊中，按一下 [ **接受轉換規則** ] 下的 [ **新增規則** ]，以啟動規則嚮導。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![顯示當您使用 Windows Server 2016 中的 [傳送群組成員資格作為宣告規則] 範本來建立規則時，要在哪裡選取 [新增規則] 按鈕的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **傳送群組成員資格作為** 宣告]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)
+![螢幕擷取畫面，顯示當您在 Windows Server 2016 中建立規則時，要在哪裡選取 [傳送群組成員資格作為宣告範本]。](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)
 
 6.  在 [ **設定規則** ] 頁面上，輸入宣告規則名稱。
 
@@ -91,7 +91,7 @@ ms.locfileid: "97040126"
 | \( \) 使用 x.509 憑證的傳輸層安全性 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |                  不 \- 使用 TLS 的 x.509 型驗證                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
+![螢幕擷取畫面，顯示當您使用 Windows Server 2016 中的 [傳送群組成員資格作為宣告規則] 範本來建立規則時，要在哪裡選取 [完成]。](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
 
 ## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>若要使用在 Windows Server 2016 中的信賴憑證者信任上轉換連入宣告規則範本來建立此規則
@@ -99,16 +99,16 @@ ms.locfileid: "97040126"
 1.  在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在主控台樹的 [ **AD FS**] 下，按一下 [信賴憑證者 **信任**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![螢幕擷取畫面，顯示當您使用 [轉換傳入宣告] 規則範本建立規則時，在主控台樹中選取 [信賴憑證者信任] 的位置。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告發行原則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![顯示當您使用 [轉換傳入宣告] 規則範本建立規則時，顯示在哪裡選取 [編輯宣告發行原則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  在 [ **編輯宣告發行原則** ] 對話方塊的 [ **發佈轉換規則** ] 下，按一下 [ **新增規則** ] 以啟動規則嚮導。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![螢幕擷取畫面，顯示當您使用 [轉換傳入宣告] 規則範本建立規則時，要在哪裡選取 [新增規則]。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **轉換傳入** 宣告]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
+![顯示當您建立規則時，要在哪裡選取 [轉換傳入宣告] 範本的螢幕擷取畫面。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  在 [ **設定規則** ] 頁面上，輸入宣告規則名稱。
 
@@ -129,7 +129,7 @@ ms.locfileid: "97040126"
 | 使用 x.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |   不 \- 使用 TLS 的 x.509 型驗證    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
+![螢幕擷取畫面，顯示當您使用 [轉換傳入宣告] 規則範本建立規則時，要在哪裡選取 [完成]。](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
 > [!NOTE]
 > 除了資料表中的值之外，還可以使用其他的 URI 值。 如上表所示的 URI 值會反映信賴憑證者預設接受的 Uri。
@@ -139,16 +139,16 @@ ms.locfileid: "97040126"
 1.  在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在主控台樹的 [ **AD FS**] 下，按一下 [ **宣告提供者信任**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![螢幕擷取畫面，顯示當您使用 Windows Server 2016 中的 [轉換傳入宣告] 規則範本建立規則時，在主控台樹中選取宣告提供者信任的位置。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告規則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![螢幕擷取畫面，顯示當您使用 Windows Server 2016 中的 [轉換傳入宣告] 規則範本建立規則時，要在哪裡選取 [編輯宣告規則]。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  在 [ **編輯宣告規則** ] 對話方塊中，按一下 [ **接受轉換規則** ] 下的 [ **新增規則** ]，以啟動規則嚮導。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![顯示當您在 Windows Server 2016 中使用 [轉換傳入宣告] 規則範本建立規則時，要在哪裡選取 [新增規則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **轉換傳入** 宣告]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
+![顯示當您在 Windows Server 2016 中建立規則時，要在哪裡選取 [轉換傳入宣告] 範本的螢幕擷取畫面。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  在 [ **設定規則** ] 頁面上，輸入宣告規則名稱。
 
@@ -169,7 +169,7 @@ ms.locfileid: "97040126"
 | 使用 x.509 憑證的 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |   不 \- 使用 TLS 的 x.509 型驗證    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
+![螢幕擷取畫面，顯示當您使用 Windows Server 2016 中的 [轉換傳入宣告] 規則範本建立規則時，要在哪裡選取 [完成]。](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
 
 
@@ -200,7 +200,7 @@ ms.locfileid: "97040126"
 2.  在主控台樹的 **AD FS \\ 信任關係**] 下，按一下 [ **宣告提供者信任** ] 或 [信賴憑證者 **信任**]，然後在清單中按一下您要在其中建立此規則的特定信任。
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告規則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![顯示當您使用 [傳送群組成員資格作為宣告規則] 範本建立規則時，要在哪裡選取 [編輯宣告規則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  在 [ **編輯宣告規則** ] 對話方塊中，選取下列其中一個索引標籤，根據您要編輯的信任以及您要在其中建立此規則的規則集，然後按一下 [ **新增規則** ]，以啟動與該規則集相關聯的規則 wizard：
 
@@ -211,10 +211,10 @@ ms.locfileid: "97040126"
     -   **發佈授權規則**
 
     -   **委派授權規則** 
- ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ ![顯示當您使用 [傳送群組成員資格作為宣告規則] 範本建立規則時，要在哪裡選取 [新增規則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **傳送群組成員資格作為** 宣告]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
+![螢幕擷取畫面，顯示當您建立規則時，要在哪裡選取 [傳送群組成員資格作為宣告範本]。](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
 
 6.  在 [ **設定規則** ] 頁面上，輸入宣告規則名稱。
 
@@ -231,7 +231,7 @@ ms.locfileid: "97040126"
 | \( \) 使用 x.509 憑證的傳輸層安全性 TLS 相互驗證 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |                  不 \- 使用 TLS 的 x.509 型驗證                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![建立規則](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth1.PNG)
+![顯示當您使用 [傳送群組成員資格作為宣告規則] 範本來建立規則時，要在哪裡選取 [完成] 的螢幕擷取畫面。](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth1.PNG)
 
 > [!NOTE]
 > 除了資料表中的值之外，還可以使用其他的 URI 值。 上表所示的 URI 值會反映信賴憑證者預設接受的 Uri。
@@ -245,7 +245,7 @@ ms.locfileid: "97040126"
 2.  在主控台樹的 **AD FS \\ 信任關係**] 下，按一下 [ **宣告提供者信任** ] 或 [信賴憑證者 **信任**]，然後在清單中按一下您要在其中建立此規則的特定信任。
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告規則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![螢幕擷取畫面，顯示當您在 Windows Server 2012 R2 中使用 [轉換傳入宣告] 規則範本建立規則時，要在哪裡選取 [編輯宣告規則]。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  在 [ **編輯宣告規則** ] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您想要建立此規則的規則集，然後按一下 [ **新增規則** ] 以啟動與該規則集相關聯的規則 wizard：
 
@@ -256,10 +256,10 @@ ms.locfileid: "97040126"
     -   **發佈授權規則**
 
     -   **委派授權規則** 
- ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ ![顯示當您在 Windows Server 2012 R2 中使用 [轉換傳入宣告] 規則範本建立規則時，要在哪裡選取 [新增規則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **轉換傳入** 宣告]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)
+![顯示當您在 Windows Server 2012 R2 中建立規則時，要在哪裡選取 [轉換傳入宣告] 範本的螢幕擷取畫面。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)
 
 6.  在 [ **設定規則** ] 頁面上，輸入宣告規則名稱。
 

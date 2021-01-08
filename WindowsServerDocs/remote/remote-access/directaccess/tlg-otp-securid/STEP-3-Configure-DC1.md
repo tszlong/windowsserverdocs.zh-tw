@@ -1,18 +1,18 @@
 ---
 title: 步驟3設定 DC1
-description: 本主題是測試實驗室指南的一部分-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
+description: 瞭解如何確認 User1 具有在 DC1 上定義的使用者主體名稱。
 manager: brianlic
 ms.topic: article
 ms.assetid: 836a2a08-3d22-48d2-873e-80d7e57ebbd6
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 642449e9c0c6524aa053cfb73c57b69507e5f4eb
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7da9496d27b36fdcf9abedeb76f472c6a78a0866
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950454"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040058"
 ---
 # <a name="step-3-configure-dc1"></a>步驟3設定 DC1
 

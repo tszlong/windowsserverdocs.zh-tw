@@ -1,18 +1,18 @@
 ---
 title: 管理 IPAM
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 瞭解 Windows Server 2016 中 IP 位址管理 (IPAM) 功能的管理和疑難排解資訊。
 manager: brianlic
 ms.topic: article
 ms.assetid: c68905ef-d54f-4fc8-80ac-1006125db64f
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: f761dff3215ac14d6d56272514e78f3a700dffdf
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 5467868ac7affd2ea6a1ae4fc37c76fb9a9b1c96
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97945134"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039508"
 ---
 # <a name="manage-ipam"></a>管理 IPAM
 

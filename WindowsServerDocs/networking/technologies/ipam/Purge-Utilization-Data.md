@@ -1,18 +1,18 @@
 ---
 title: 清除使用資料
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 瞭解如何刪除 IPAM 資料庫中的使用量資料。
 manager: brianlic
 ms.topic: article
 ms.assetid: 45cada9e-69b9-43df-b6f5-6d3942435809
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 125d91951f5deac4bf7a32591d9f98efbfabae66
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: b144c1896a308eabdd5b8c03c34cc9b43766b699
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948004"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039468"
 ---
 # <a name="purge-utilization-data"></a>清除使用資料
 

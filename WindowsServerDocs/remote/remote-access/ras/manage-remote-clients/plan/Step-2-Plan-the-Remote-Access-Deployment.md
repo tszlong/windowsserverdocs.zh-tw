@@ -1,18 +1,18 @@
 ---
 title: 步驟2規劃遠端存取部署
-description: 本主題是《在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端》指南的一部分。
+description: 瞭解如何規劃 Remote Access Setup Wizard 將使用的設定。
 manager: brianlic
 ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 070bc4968638d6fcb0d5e63350fdbed0323df05b
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3e84e2e7df85a0eea08c3b6bd8cff6ca81be863a
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947664"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039908"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>步驟2規劃遠端存取部署
 
@@ -23,7 +23,7 @@ ms.locfileid: "97947664"
 > [!NOTE]
 > 繼續進行這些工作之前，請參閱 [步驟1：規劃遠端存取基礎結構](Step-1-Plan-the-Remote-Access-Infrastructure.md)。
 
-|Task|描述|
+|工作|描述|
 |----|--------|
 |[規劃用戶端部署策略](#plan-a-client-deployment-strategy)|決定哪些受管理的電腦會設定為 DirectAccess 用戶端。|
 |[規劃遠端存取服務器部署策略](#plan-a-remote-access-server-deployment-strategy)|規劃如何部署遠端存取伺服器。|

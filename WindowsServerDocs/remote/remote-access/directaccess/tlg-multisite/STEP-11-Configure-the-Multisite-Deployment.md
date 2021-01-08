@@ -1,18 +1,18 @@
 ---
 title: 步驟11設定多網站部署
-description: 本主題是測試實驗室指南的一部分-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
+description: 瞭解如何對 EDGE1 上的 [目前的遠端存取設定] 設定進行變更、啟用 [多網站] 功能，然後新增 2 EDGE1 作為第二個進入點。
 manager: brianlic
 ms.topic: article
 ms.assetid: 8cbdeb1d-5f7c-4360-bcc1-ab40d3cd8040
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 340029665915dd01766becd4bba9b01a66195969
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7b70ab6e1f8f28fd0fb1a3a546188de1b4b37cbc
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947014"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039168"
 ---
 # <a name="step-11-configure-the-multisite-deployment"></a>步驟11設定多網站部署
 

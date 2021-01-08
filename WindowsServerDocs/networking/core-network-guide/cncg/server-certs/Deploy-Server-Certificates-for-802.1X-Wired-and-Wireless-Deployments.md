@@ -1,18 +1,18 @@
 ---
 title: 部署 802.1 X 有線和無線部署的伺服器憑證
-description: 本主題是適用于 802.1 X 有線和無線部署的指南部署伺服器憑證的一部分
+description: 瞭解如何將伺服器憑證部署到遠端存取和網路原則伺服器 (NPS) 基礎結構伺服器。
 manager: brianlic
 ms.topic: article
 ms.assetid: 0a39ecae-39cc-4f26-bd6f-b71ed02fc4ad
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 844a64558d4822c26effddc4b3772ad0a191718c
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: b33f0a6aacb5b956691787816c362e845491a6cc
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947844"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038568"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>部署 802.1 X 有線和無線部署的伺服器憑證
 

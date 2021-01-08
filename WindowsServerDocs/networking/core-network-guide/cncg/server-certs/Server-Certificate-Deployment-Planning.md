@@ -1,18 +1,18 @@
 ---
 title: 伺服器憑證部署規劃
-description: 本主題是適用于 802.1 X 有線和無線部署的指南部署伺服器憑證的一部分
+description: 瞭解如何為您的伺服器憑證部署進行規劃。
 manager: brianlic
 ms.topic: article
 ms.assetid: 7eb746e0-1046-4123-b532-77d5683ded44
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 4d80056d81af596eab4f82d949624bfef3dbe935
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: c46ede801c590614b9144bead0539f56d31db384
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947824"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038678"
 ---
 # <a name="server-certificate-deployment-planning"></a>伺服器憑證部署規劃
 

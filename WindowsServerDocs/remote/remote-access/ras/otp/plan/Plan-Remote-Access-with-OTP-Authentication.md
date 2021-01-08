@@ -1,18 +1,18 @@
 ---
 title: 使用 OTP 驗證規劃遠端存取
-description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署「遠端存取」指南的一部分。
+description: 瞭解部署單一 Windows Server 2016 或 Windows Server 2012 遠端存取多網站部署所需的設定步驟。
 manager: brianlic
 ms.topic: article
 ms.assetid: 762bc463-eead-46ac-8b90-32355743c27c
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: e4b171c628259abe59a6954ef9936b025f10c28e
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: a3da7c4b67180f7b203e19111b3887432043ac9a
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950274"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040108"
 ---
 # <a name="plan-remote-access-with-otp-authentication"></a>使用 OTP 驗證規劃遠端存取
 

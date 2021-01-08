@@ -1,18 +1,18 @@
 ---
 title: 步驟3設定 OTP 的遠端存取服務器
-description: 本主題是在 Windows Server 2016 中使用 OTP 驗證部署「遠端存取」指南的一部分。
+description: 瞭解如何設定遠端存取服務器以支援 OTP。
 manager: brianlic
 ms.topic: article
 ms.assetid: df1e87f2-6a0f-433b-8e42-816ae75395f9
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: c5b4cde212da9c585c4d9afdb068147f406beb51
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 51fe01ab53fbad09a0993c84eae97fb8e3ef52ae
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946454"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039028"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>步驟3設定 OTP 的遠端存取服務器
 
@@ -20,7 +20,7 @@ ms.locfileid: "97946454"
 
 使用軟體發佈權杖設定 RADIUS 伺服器之後，就會開啟通訊埠、建立共用密碼、已在 RADIUS 伺服器上建立對應至 Active Directory 的使用者帳戶，而且遠端存取服務器已設定為 RADIUS 驗證代理程式，因此必須設定遠端存取服務器來支援 OTP。
 
-|Task|描述|
+|工作|描述|
 |----|--------|
 |[3.1 從 OTP 驗證豁免使用者 (選擇性) ](#BKMK_Exempt)|如果將使用 OTP 驗證從 DirectAccess 豁免特定使用者，請遵循這些初步步驟。|
 |[3.2 設定遠端存取服務器支援 OTP](#BKMK_Config)|在遠端存取服務器上，更新遠端存取設定以支援 OTP 雙因素驗證。|
@@ -60,7 +60,7 @@ ms.locfileid: "97946454"
 
 4.  如果需要 Windows 7 支援，請選取 [ **啟用 windows 7 用戶端電腦透過 DirectAccess 進行連線]** 核取方塊。 注意：如規劃一節所述，Windows 7 用戶端必須安裝 DCA 2.0，才能支援使用 OTP 的 DirectAccess。
 
-5.  按一下 [下一步] 。
+5.  按 [下一步]  。
 
 6.  在 [ **OTP RADIUS 伺服器** ] 區段中，按兩下 [空白 **伺服器名稱** ] 欄位。
 
@@ -69,7 +69,7 @@ ms.locfileid: "97946454"
     > [!NOTE]
     > 如果 RADIUS 伺服器位於與遠端存取服務器不同的網域中，則 [ **伺服器名稱** ] 欄位必須指定 RADIUS 伺服器的 FQDN。
 
-8.  在 [ **OTP CA 伺服器** ] 區段中，選取要用於註冊 OTP 用戶端驗證憑證的 CA 伺服器，然後按一下 [ **新增**]。 按一下 [下一步] 。
+8.  在 [ **OTP CA 伺服器** ] 區段中，選取要用於註冊 OTP 用戶端驗證憑證的 CA 伺服器，然後按一下 [ **新增**]。 按 [下一步]  。
 
 9. 在 [ **OTP 憑證範本** ] 區段中，按一下 **[流覽]** ，選取用來註冊 OTP 驗證所發行憑證的憑證範本。
 

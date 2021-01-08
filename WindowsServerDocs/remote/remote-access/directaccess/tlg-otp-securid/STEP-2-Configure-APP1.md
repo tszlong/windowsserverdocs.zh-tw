@@ -1,18 +1,18 @@
 ---
 title: 步驟2設定 APP1
-description: 本主題是測試實驗室指南的一部分-示範使用 OTP 驗證的 DirectAccess 和適用于 Windows Server 2016 的 RSA SecurID
+description: 瞭解如何建立和部署用來簽署 OTP 憑證要求的憑證範本，以及用於公司 CA 所發行之 OTP 憑證的憑證範本。
 manager: brianlic
 ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: ecfc88c74a4e9ddb0cec02c9156ce88f52916740
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 84d784975cbc5acfb1350ed6840ca3beb433e7cf
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949274"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040068"
 ---
 # <a name="step-2-configure-app1"></a>步驟2設定 APP1
 

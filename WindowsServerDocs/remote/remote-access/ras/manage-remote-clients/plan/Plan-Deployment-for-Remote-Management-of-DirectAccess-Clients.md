@@ -1,18 +1,18 @@
 ---
 title: 規劃部署 DirectAccess 用戶端的遠端管理
-description: 本主題是《在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端》指南的一部分。
+description: 瞭解部署可用於遠端系統管理 DirectAccess 用戶端的單一遠端存取服務器的規劃步驟。
 manager: brianlic
 ms.topic: article
 ms.assetid: ab518c0d-a496-414e-b9c7-f4378d8b13aa
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 4e8db7582432547240fadaa2d6bd1393b9464ced
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: c23e747ccc86f0e3e080df8e352dd2c33a3484ee
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947684"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039988"
 ---
 # <a name="plan-deployment-for-remote-management-of-directaccess-clients"></a>規劃部署 DirectAccess 用戶端的遠端管理
 

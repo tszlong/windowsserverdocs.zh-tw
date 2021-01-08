@@ -1,18 +1,18 @@
 ---
 title: 安裝和設定部署以進行 DirectAccess 用戶端的遠端系統管理
-description: 本主題是《在 Windows Server 2016 中遠端系統管理 DirectAccess 用戶端》指南的一部分。
+description: 瞭解部署可用於遠端系統管理 DirectAccess 用戶端的單一遠端存取服務器所需的設定步驟。
 manager: brianlic
 ms.topic: article
 ms.assetid: 4adce101-1e30-439e-b78b-65b26479f33e
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: c1b4a7ef7c4e09f075b052c5442465f675e2190d
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7702341d8b4b7569fdf4a8d62a13006d79f3773a
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947724"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040018"
 ---
 # <a name="install-and-configure-deployment-for-remote-management-of-directaccess-clients"></a>安裝和設定部署以進行 DirectAccess 用戶端的遠端系統管理
 

@@ -1,18 +1,18 @@
 ---
 title: 測試實驗室指南-示範 DirectAccess 多網站部署
-description: 本主題是測試實驗室指南的一部分-示範適用于 Windows Server 2016 的 DirectAccess 多網站部署
+description: 瞭解如何延伸測試實驗室指南-使用混合的 IPv4 與 IPv6 示範 DirectAccess 單一伺服器安裝，以示範如何在多網站案例中進行遠端存取。
 manager: brianlic
 ms.topic: article
 ms.assetid: 3c98106c-67cc-406a-810e-f2e09f7e2c5e
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: ab74d3f7dd6f3f4069986b80ea749cbd901c1f2c
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 01357e5271932f3b8ad3140f34b3247c426f40e9
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947934"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040198"
 ---
 # <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>測試實驗室指南：示範 DirectAccess 多站台部署
 

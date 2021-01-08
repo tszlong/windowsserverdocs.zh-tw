@@ -1,18 +1,18 @@
 ---
 title: 使用伺服器管理員管理角色型存取控制
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 瞭解如何使用伺服器管理員（具有圖形化使用者介面）來管理以角色為基礎的存取控制。
 manager: brianlic
 ms.topic: article
 ms.assetid: 77b6ac92-eaff-46d7-95db-ee6fc96742ed
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 904726b7761abb2d3d57f2faedd268c3d7827c1d
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 12c21c9374115eab1de92a1eaf1ba583d4cbbcf0
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947514"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039498"
 ---
 # <a name="manage-role-based-access-control-with-server-manager"></a>使用伺服器管理員管理角色型存取控制
 

@@ -1,18 +1,18 @@
 ---
 title: 驗證伺服器憑證的伺服器註冊
-description: 本主題是適用于 802.1 X 有線和無線部署的指南部署伺服器憑證的一部分
+description: 瞭解如何驗證您的網路原則伺服器伺服器是否已向憑證授權單位單位註冊伺服器憑證。
 manager: brianlic
 ms.topic: article
 ms.assetid: bd80a018-5a30-47c3-89fc-aacb9f5ad298
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 174100f1886492f70fb98abbfcab61e687418133
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 188e75ed58c3adc0249305d669acbb06d0b6c15d
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947804"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038338"
 ---
 # <a name="verify-server-enrollment-of-a-server-certificate"></a>驗證伺服器憑證的伺服器註冊
 

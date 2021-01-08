@@ -1,18 +1,18 @@
 ---
 title: 檢視特定 IP 位址的 DNS 資源記錄
-description: 本主題是 Windows Server 2016 中的 IP 位址管理 (IPAM) 管理指南的一部分。
+description: 瞭解如何查看與您所選 IP 位址相關聯的 DNS 資源記錄。
 manager: brianlic
 ms.topic: article
 ms.assetid: f590fb86-4195-4f90-98cb-e90459d4c1e3
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 2f1dd1f87ecaa390d5e5c43a7dc2ad9267fe8161
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9ad301081ae286c72e26a567970ac4f8a1a99aa2
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948314"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040118"
 ---
 # <a name="view-dns-resource-records-for-a-specific-ip-address"></a>檢視特定 IP 位址的 DNS 資源記錄
 
