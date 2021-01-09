@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 08/29/2020
-ms.openlocfilehash: 4e1384d372714932d45f9274d8c6e98eb42a5a04
-ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
+ms.date: 01/08/2021
+ms.openlocfilehash: 1e05555a21aa656f5b1c90a56cbb244687b81ea3
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97834813"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053541"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 Ubuntu 虛擬機器
 
->適用于： Windows Server 2019、Hyper-v Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows 10、Windows 8。1
+>適用于： Azure Stack HCI、版本 20H2;Windows Server 2019、Hyper-v Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows 10、Windows 8。1
 
 下列功能發佈對應會指出每個版本中的功能。 每個散發的已知問題和因應措施會列在資料表之後。
 
@@ -30,7 +30,7 @@ ms.locfileid: "97834813"
 |**功能**|**Windows Server 作業系統版本**|**20.04 LTS**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
 |-|-|-|-|-|-|
 |**可用性**||內建|內建|內建|內建|
-|**[核心版](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 精確時間|2019、2016|&#10004;|&#10004;|&#10004;||
 |**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
 |大型訊框|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -46,13 +46,13 @@ ms.locfileid: "97834813"
 |即時虛擬機器備份|2019、2016、2012 R2|&#10004; 附注3、4、5|&#10004; 附注3、4、5|&#10004; 附注3、4、5|&#10004; 附注3、4、5|
 |TRIM 支援|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
+|**[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |PAE 核心支援|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |設定 MMIO 間距|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |動態記憶體-Hot-Add|2019、2016、2012 R2|&#10004; 附注6、7、8|&#10004; 附注6、7、8|&#10004; 附注6、7、8|&#10004; 附注6、7、8|
 |動態記憶體-佔用|2019、2016、2012 R2|&#10004; 附注6、7、8|&#10004; 附注6、7、8|&#10004; 附注6、7、8|&#10004; 附注6、7、8|
 |執行時間記憶體大小調整|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[影片](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
+|**[視訊](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
 |Hyper-v 特定影片裝置|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
 |索引鍵/值組|2019、2016、2012 R2|&#10004; 附注5、9|&#10004; 附注5、9|&#10004; 附注5、9|&#10004; 附注5、9|
@@ -65,7 +65,7 @@ ms.locfileid: "97834813"
 |使用 UEFI 開機|2019、2016、2012 R2|&#10004; 附注10，11|&#10004; 附注10，11|&#10004; 附注10，11|&#10004; 附注10，11|
 |安全開機|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
 
-## <a name="notes"></a>附註
+## <a name="notes"></a>注意
 
 1. 如果 **網路系統管理員** 已針對虛擬機器上指定的 hyper-v 特定網路介面卡進行設定，則靜態 IP 插入可能無法運作。 若要確保靜態 IP 插入的正常運作，請確定網路系統管理員已完全關閉，或已透過其 **>ifcfg-eth0 ethX** 檔關閉特定網路介面卡的功能。
 

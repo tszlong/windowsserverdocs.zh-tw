@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 01/09/2017
-ms.openlocfilehash: 09b6f532bac2b57fd8334556501c6197fa3036cc
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.date: 01/08/2021
+ms.openlocfilehash: 396366e72dcfda60131267299ac7427ad83b05df
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747153"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053651"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>在 Hyper-v 上執行 FreeBSD 的最佳作法
 
->適用于： Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Azure Stack HCI、版本 20H2;Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 本主題包含在 Hyper-v 虛擬機器上執行 FreeBSD 做為客體作業系統的建議清單。
 
@@ -33,7 +33,7 @@ ms.locfileid: "90747153"
 
    2. 展開 [ **網路介面卡** ]，然後選取 [ **Advanced Features**]。
 
-   3. 選取 [ **啟用 MAC 位址**詐騙]。
+   3. 選取 [ **啟用 MAC 位址** 詐騙]。
 
 ## <a name="create-labels-for-disk-devices"></a>建立磁片裝置的標籤
 

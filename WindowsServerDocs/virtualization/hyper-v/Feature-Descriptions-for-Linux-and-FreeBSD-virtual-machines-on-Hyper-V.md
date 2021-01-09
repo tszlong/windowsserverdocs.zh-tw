@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 10/03/2016
-ms.openlocfilehash: eb4c17917e098bebad51b36e6f0c91d9d5b5f3c9
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.date: 01/08/2021
+ms.openlocfilehash: 0a62c5a7aa706464b514dd61d1e41d0b23a6be89
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747123"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053631"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上的 Linux 和 FreeBSD 虛擬機器的功能描述
 
->適用于： Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用于： Azure Stack HCI、版本 20H2;Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 本文說明在虛擬機器上使用 Linux 和 FreeBSD 時的元件（例如核心、網路、儲存體和記憶體）所提供的功能。
 
@@ -61,11 +61,11 @@ ms.locfileid: "90747123"
 |-|-|
 |PAE 核心支援|實體位址延伸 (PAE) 技術可讓32位核心存取大於4GB 的實體位址空間。 舊版的 Linux 發行版本（例如 RHEL 5.x）是用來送出已啟用 PAE 的個別核心。 較新的發行版本（例如 RHEL 6.x）已預先建立 PAE 支援。|
 |設定 MMIO 間距|透過這項功能，設備製造商可以設定記憶體對應 i/o (MMIO) 間距的位置。 MMIO 間隙通常用來將設備的可用實體記憶體除以足夠的作業系統 (JeOS) 以及提供設備的實際軟體基礎結構。|
-|動態記憶體-熱新增|當虛擬機器正在運作時，主機可以動態增加或減少可用的記憶體數量。 在布建之前，系統管理員會在 [虛擬機器設定] 面板中啟用動態記憶體，並指定虛擬機器的啟動記憶體、最小記憶體和最大記憶體。 當虛擬機器在作業中時動態記憶體無法停用，而且只能變更最小和最大設定。  (最佳作法是將這些記憶體大小指定為128MB 的倍數 ) <p>當虛擬機器第一次啟動時，可用記憶體等於 **啟動記憶體**。 由於應用程式工作負載的記憶體需求增加，Hyper-v 可能會透過熱新增機制動態配置更多記憶體給虛擬機器（如果該版本的核心支援的話）。 配置的最大記憶體數量是以 **最大記憶體** 參數的值為上限。<p>[Hyper-v 管理員] 的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器內的記憶體統計資料會顯示配置的最高記憶體量。<p>如需詳細資訊，請參閱 [hyper-v 動態記憶體總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))。<p>|
-|動態記憶體-佔用|當虛擬機器正在運作時，主機可以動態增加或減少可用的記憶體數量。 在布建之前，系統管理員會在 [虛擬機器設定] 面板中啟用動態記憶體，並指定虛擬機器的啟動記憶體、最小記憶體和最大記憶體。 當虛擬機器在作業中時動態記憶體無法停用，而且只能變更最小和最大設定。  (最佳作法是將這些記憶體大小指定為128MB 的倍數 ) <p>當虛擬機器第一次啟動時，可用記憶體等於 **啟動記憶體**。 由於應用程式工作負載的記憶體需求增加，Hyper-v 可能會透過上述)  (的熱新增機制，動態配置更多記憶體給虛擬機器。 當記憶體需求減少時，Hyper-v 可能會透過氣球機制自動解除布建虛擬機器的記憶體。 Hyper-v 不會將記憶體解除布建在 **最小記憶體** 參數下。<p>[Hyper-v 管理員] 的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器內的記憶體統計資料會顯示配置的最高記憶體量。<p>如需詳細資訊，請參閱 [hyper-v 動態記憶體總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))。<p>|
+|動態記憶體-Hot-Add|當虛擬機器正在運作時，主機可以動態增加或減少可用的記憶體數量。 在布建之前，系統管理員會在 [虛擬機器設定] 面板中啟用動態記憶體，並指定虛擬機器的啟動記憶體、最小記憶體和最大記憶體。 當虛擬機器在作業中時動態記憶體無法停用，而且只能變更最小和最大設定。  (最佳作法是將這些記憶體大小指定為128MB 的倍數 ) <p>當虛擬機器第一次啟動時，可用記憶體等於 **啟動記憶體**。 由於應用程式工作負載的記憶體需求增加，Hyper-v 可能會透過 Hot-Add 機制，動態配置更多記憶體給虛擬機器（如果該版本的核心支援的話）。 配置的最大記憶體數量是以 **最大記憶體** 參數的值為上限。<p>[Hyper-v 管理員] 的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器內的記憶體統計資料會顯示配置的最高記憶體量。<p>如需詳細資訊，請參閱 [hyper-v 動態記憶體總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))。<p>|
+|動態記憶體-佔用|當虛擬機器正在運作時，主機可以動態增加或減少可用的記憶體數量。 在布建之前，系統管理員會在 [虛擬機器設定] 面板中啟用動態記憶體，並指定虛擬機器的啟動記憶體、最小記憶體和最大記憶體。 當虛擬機器在作業中時動態記憶體無法停用，而且只能變更最小和最大設定。  (最佳作法是將這些記憶體大小指定為128MB 的倍數 ) <p>當虛擬機器第一次啟動時，可用記憶體等於 **啟動記憶體**。 由於應用程式工作負載的記憶體需求增加，Hyper-v 可能會透過) 上述的 Hot-Add (機制，動態配置更多記憶體給虛擬機器。 當記憶體需求減少時，Hyper-v 可能會透過氣球機制自動解除布建虛擬機器的記憶體。 Hyper-v 不會將記憶體解除布建在 **最小記憶體** 參數下。<p>[Hyper-v 管理員] 的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器內的記憶體統計資料會顯示配置的最高記憶體量。<p>如需詳細資訊，請參閱 [hyper-v 動態記憶體總覽](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))。<p>|
 |執行時間記憶體大小調整|系統管理員可以設定虛擬機器在作業時可用的記憶體數量，將記憶體增加 ( 「熱新增」 ) 或減少 ( 「熱移除」 ) 。 記憶體會透過 balloon 驅動程式傳回到 Hyper-v (請參閱 "動態記憶體-佔用" ) 。 氣球驅動程式會在佔用之後維持最小的可用記憶體數量（稱為「樓層」），因此指派的記憶體無法減少低於目前的需求加上此樓層數量。 [Hyper-v 管理員] 的 [記憶體] 索引標籤會顯示指派給虛擬機器的記憶體數量，但虛擬機器內的記憶體統計資料會顯示配置的最高記憶體量。  (最佳作法是將記憶體值指定為128MB 的倍數 ) |
 
-## <a name="video"></a>影片
+## <a name="video"></a>視訊
 
 |**功能**|**說明**|
 |-|-|

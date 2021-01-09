@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 04/07/2020
-ms.openlocfilehash: f79c2c09f5fdce570ad6e61037756dab0d4056a1
-ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
+ms.date: 01/08/2021
+ms.openlocfilehash: cfda833dd6c644eec85b3f4914c89449bb906880
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97834863"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053581"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 FreeBSD 虛擬機器
 
->適用于： Windows Server 2019、Hyper-v Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows 10、Windows 8。1
+>適用于： Azure Stack HCI、版本 20H2;Windows Server 2019、Hyper-v Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows 10、Windows 8。1
 
 下列功能發佈對應會指出每個版本中的功能。 每個散發的已知問題和因應措施會列在資料表之後。
 
@@ -30,7 +30,7 @@ ms.locfileid: "97834863"
 |**功能**|**Windows Server 作業系統版本**|**12-12。1**|**11.1-11。3**|**11.0**|**10.3**|**10.2**|**10.0-10。1**|**9.1-9.3、8。4**|
 |-|-|-|-|-|-|-|-|-|
 |**可用性**||內建|內建|內建|內建|內建|內建|[連接埠](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
-|**[核心版](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 精確時間|2019、2016|&#10004;|&#10004;||||||
 |**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
 |大型訊框|2019、2016、2012 R2|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|&#10004; 附注3|
@@ -47,13 +47,13 @@ ms.locfileid: "97834863"
 |即時虛擬機器備份|2019、2016、2012 R2|&#10004;|&#10004;||||||
 |TRIM 支援|2019、2016、2012 R2|&#10004;|&#10004;||||||
 |SCSI WWN|2019、2016、2012 R2||||||||
-|**[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
+|**[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |PAE 核心支援|2019、2016、2012 R2||||||||
 |設定 MMIO 間距|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |動態記憶體-Hot-Add|2019、2016、2012 R2||||||||
 |動態記憶體-佔用|2019、2016、2012 R2||||||||
 |執行時間記憶體大小調整|2019、2016||||||||
-|**[影片](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|**[視訊](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Hyper-v 特定影片裝置|2019、2016、2012 R2||||||||
 |**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
 |索引鍵/值組|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004; 附注5|&#10004;|

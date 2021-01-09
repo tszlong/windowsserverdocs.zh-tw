@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 04/07/2020
-ms.openlocfilehash: 7bbf64a4c5e1689196024d443c13710d4176d535
-ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
+ms.date: 01/08/2021
+ms.openlocfilehash: 9e75e48e51b7ae77bd084dc092a27184c303a3ae
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97833833"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053561"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Hyper-v 上支援的 SUSE 虛擬機器
 
->適用于： Windows Server 2019、Hyper-v Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows 10、Windows 8。1
+>適用于： Azure Stack HCI、版本 20H2;Windows Server 2019、Hyper-v Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows 10、Windows 8。1
 
 以下是一種功能發佈對應，表示每個版本中的功能。 每個散發的已知問題和因應措施會列在資料表之後。
 
@@ -34,7 +34,7 @@ SLES12 + 僅限64位。
 |**功能**|**Windows Server 作業系統版本**|**SLES 15 SP1-SP2**|**SLES 15**|**SLES 12 SP3-SP5**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
 |-|-|-|-|-|-|-|-|-|
 |**可用性**||內建|內建|內建|內建|內建|內建|內建|
-|**[核心版](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 精確時間|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;||||
 |**[網路功能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**|||||||||
 |大型訊框|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -50,13 +50,13 @@ SLES12 + 僅限64位。
 |即時虛擬機器備份|2019、2016、2012 R2|&#10004; 附注2，3，8|&#10004;附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|&#10004; 附注2，3，8|
 |TRIM 支援|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
-|**[記憶](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
+|**[記憶體](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |PAE 核心支援|2019、2016、2012 R2|N/A|N/A|N/A|N/A|N/A|&#10004;|&#10004;|
 |設定 MMIO 間距|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |動態記憶體-Hot-Add|2019、2016、2012 R2|&#10004; 附注6|&#10004;附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注4，5，6|&#10004; 附注4，5，6|
 |動態記憶體-佔用|2019、2016、2012 R2|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注4，5，6|&#10004; 附注4，5，6|
 |執行時間記憶體大小調整|2019、2016|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6|&#10004; 附注6||||
-|**[影片](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|**[視訊](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Hyper-v 特定的影片裝置|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
 |索引鍵/值組|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004; 附注7|&#10004; 附注7|
