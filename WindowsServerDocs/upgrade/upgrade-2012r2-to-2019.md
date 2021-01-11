@@ -1,16 +1,16 @@
 ---
 title: 將 Windows Server 2012 R2 升級至 Windows Server 2019 | Microsoft Docs
 description: 了解如何執行就地升級，從 Windows Server 2012 R2 升級至 Windows Server 2019。
-ms.topic: upgrade
+ms.topic: how-to
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: c23c04682fe796a5d76f487b5ed6d91e81ac3ad1
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b512380c04a2c97b82d8cf0abf54f2dba6493faf
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995773"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949624"
 ---
 # <a name="upgrade-windows-server-2012-r2-to-windows-server-2019"></a>將 Windows Server 2012 R2 升級至 Windows Server 2019
 
@@ -30,7 +30,7 @@ ms.locfileid: "87995773"
 
 4. 開啟登錄編輯程式，移至 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion hive，然後將 Windows Server **BuildLabEx** (版本) 和 **EditionID** (版次) 複製並貼到前述的相同位置。
 
-收集所有 Windows Server 相關資訊之後，強烈建議您備份作業系統、應用程式和虛擬機器。 您也必須**關閉**、**快速移轉**或**即時移轉**目前在伺服器上執行的任何虛擬機器。 在就地升級期間，不可以有任何執行中的虛擬機器。
+收集所有 Windows Server 相關資訊之後，強烈建議您備份作業系統、應用程式和虛擬機器。 您也必須 **關閉**、**快速移轉** 或 **即時移轉** 目前在伺服器上執行的任何虛擬機器。 在就地升級期間，不可以有任何執行中的虛擬機器。
 
 ## <a name="to-perform-the-upgrade"></a>執行升級
 

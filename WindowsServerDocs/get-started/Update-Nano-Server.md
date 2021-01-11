@@ -3,16 +3,16 @@ title: 更新 Nano Server
 description: 深入了解：更新 Nano Server
 manager: DonGill
 ms.date: 09/06/2017
-ms.topic: get-started-article
+ms.topic: how-to
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 124f8d4ddd406b108588c82652ea3f3577ebf9c9
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: ad230f6c160b117444c7a82dff17b341c59f7a51
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045166"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947134"
 ---
 # <a name="updating-nano-server"></a>更新 Nano Server
 

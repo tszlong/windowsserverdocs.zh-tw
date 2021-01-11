@@ -1,16 +1,16 @@
 ---
 title: Windows Server 升級概觀 | Microsoft Docs
 description: 一般的 Windows Server 升級資訊，以及執行實際升級之前所應考量的事項。
-ms.topic: upgrade
+ms.topic: how-to
 author: RobHindman
 ms.author: robhind
 ms.date: 09/10/2019
-ms.openlocfilehash: 1aa923287c26aa75916a418b6550e2dec6bbb6cd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d460465d7bbeb403d2c094fc7be00eef0073d307
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939248"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949604"
 ---
 # <a name="overview-of-windows-server-upgrades"></a>Windows Server 升級概觀
 
@@ -19,7 +19,7 @@ ms.locfileid: "87939248"
 - **升級。** 也稱為「就地升級」。 您可以從舊版作業系統移至較新的版本，同時保留在相同的實體硬體上。 **這就是我們將在本節中說明的方法。**
 
     > [!Important]
-    > 公用或私人雲端公司也可能支援就地升級；不過，您必須向雲端提供者確認詳細資料。 此外，您無法在任何設定為**從 VHD 開機**的 Windows 伺服器上執行就地升級。 不支援從 Windows Storage Server 版本就地升級至 Windows Server 2019。 您可以改為執行**移轉**或**安裝**。
+    > 公用或私人雲端公司也可能支援就地升級；不過，您必須向雲端提供者確認詳細資料。 此外，您無法在任何設定為 **從 VHD 開機** 的 Windows 伺服器上執行就地升級。 不支援從 Windows Storage Server 版本就地升級至 Windows Server 2019。 您可以改為執行 **移轉** 或 **安裝**。
 
 - **安裝。** 也稱為「全新安裝」。 您可以從舊版作業系統移至較新的版本，並刪除較舊的作業系統。
 

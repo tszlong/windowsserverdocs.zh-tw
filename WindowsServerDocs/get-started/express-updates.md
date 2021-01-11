@@ -5,17 +5,16 @@ ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
-ms.openlocfilehash: f6b5e90b2134e21bccb7ed3006037963a77b6338
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: e35f2d8c80ab31f85dc16d3b8f9b37af3ed105ed
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941670"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950314"
 ---
 # <a name="express-updates-for-windows-server-2016-re-enabled-for-november-2018-update"></a>2018 年 11 月更新已重新啟用適用於 Windows Server 2016 的快速更新
 
-> 作者：Joel Frauenheim
->
 > 適用於：Windows Server 2016
 
 從 2018 年 11 月 13 日星期二更新開始，Windows 將會再次發佈適用於 Windows Server 2016 的快速更新。 適用於 Windows Server 2016 快速更新在 2017 年中發現導致更新無法正確安裝的重大問題之後已停止。 雖然此問題已在 2017 年 11 月獲得修正，但更新小組採取發佈快速套件的保守做法，以確保大多數客戶會在其伺服器環境中安裝 2017 年 11 月 14 日更新 ([KB 4048953](https://support.microsoft.com/help/4048953/windows-10-update-kb4048953))，而不會受到此問題的影響。

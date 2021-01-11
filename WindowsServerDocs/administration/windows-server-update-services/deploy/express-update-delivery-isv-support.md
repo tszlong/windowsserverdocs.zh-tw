@@ -1,17 +1,17 @@
 ---
 title: 快速更新傳遞 ISV 支援
 description: Windows Server Update Service (WSUS) 主題 - 獨立軟體廠商 (ISV) 如何使用 WSUS 來設定快速更新傳遞
-ms.topic: get-started article
+ms.topic: how-to
 author: brentfor
 ms.author: brentf
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a94ac8d85d8a86bb834f56a445bebf888fde71e0
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1c677fbd56b21d69e7c9641583b5949aa2870480
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624515"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947614"
 ---
 # <a name="express-update-delivery-isv-support"></a>快速更新傳遞 ISV 支援
 
@@ -31,7 +31,7 @@ Windows 10 更新下載大小可能會很大，因為每個套件都包含所有
 
     取用者裝置支援快速下載：他們可使用 Windows Update (WU) 用戶端來掃描、下載及安裝更新。 在下載階段，WU 用戶端會要求「快速」套件，並下載適當的位元組範圍。
 
--  **使用[商務用 Windows Update](/windows/deployment/update/waas-manage-updates-wufb)** 進行管理的企業裝置不需要變更任何設定，也能受益於快速更新傳遞支援。
+-  **使用 [商務用 Windows Update](/windows/deployment/update/waas-manage-updates-wufb)** 進行管理的企業裝置不需要變更任何設定，也能受益於快速更新傳遞支援。
 
 ## <a name="how-isvs-can-take-advantage-of-express"></a>ISV 可如何使用快速功能
 
@@ -55,7 +55,7 @@ ISV 可以使用 WSUS 和 WU 用戶端來支援快速更新傳遞。 Microsoft �
 
 ### <a name="step-1-configure-wsus"></a><a name=BKMK_1></a>步驟 1：設定 WSUS
 
-WSUS 會作為 Windows Update 的介面，並管理所有對需要下載的「快速」套件進行說明的中繼資料。 如果您需要部署，請參閱 [**Windows Server Update Services 3.0 SP2**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939931(v=ws.10)) 的概觀。 部署 WSUS 後，主要考量將是是否要將更新內容儲存在 WSUS 伺服器的本機上。 在設定 WSUS 時，建議您不要將更新儲存於本機。 若您這麼做，系統會假設您已讓軟體將這些套件的部署導入環境中。 如需如何設定 WSUS 本機儲存的詳細資訊，請參閱[**決定要將更新儲存在何處**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720494(v=ws.10))。
+WSUS 會作為 Windows Update 的介面，並管理所有對需要下載的「快速」套件進行說明的中繼資料。 如果您需要部署，請參閱 [**Windows Server Update Services 3.0 SP2**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939931(v=ws.10)) 的概觀。 部署 WSUS 後，主要考量將是是否要將更新內容儲存在 WSUS 伺服器的本機上。 在設定 WSUS 時，建議您不要將更新儲存於本機。 若您這麼做，系統會假設您已讓軟體將這些套件的部署導入環境中。 如需如何設定 WSUS 本機儲存的詳細資訊，請參閱 [**決定要將更新儲存在何處**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720494(v=ws.10))。
 
 ### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>步驟2：指定並填入 ISV 檔案快取
 
@@ -93,9 +93,9 @@ ISV 檔案快取必須填入與要安裝在受管理用戶端上的更新相關�
 
 2. 從 Microsoft Update 下載檔案，並使用下列兩種方法之一將檔案儲存在 ISV 檔案快取中：
 
-   - 使用**與 MU 服務相同的資料夾路徑**來儲存檔案
+   - 使用 **與 MU 服務相同的資料夾路徑** 來儲存檔案
 
-   - 使用 **ISV 定義的資料夾路徑**來儲存檔案
+   - 使用 **ISV 定義的資料夾路徑** 來儲存檔案
 
      讓 HTTP 伺服器 (或 localhost) 將 **HTTP GET** 要求 (參考 MU 資料夾路徑和檔案名稱) 重新導向至 ISV 檔案位置。
 
@@ -142,7 +142,7 @@ ISV 用戶端代理程式會使用下列建議的工作流程，為已核准的�
 
   3. **Windows 安裝程式隨後會要求 WU 用戶端下載已判定為必要的範圍**。
 
-  4. **WU 用戶端會下載這些範圍，並將其傳遞至 Windows 安裝程式**以套用該範圍，然後判斷是否需要額外的範圍。 此步驟會重複直到 Windows 安裝程式告知 WU 用戶端所有必要範圍皆已下載完畢為止。
+  4. **WU 用戶端會下載這些範圍，並將其傳遞至 Windows 安裝程式** 以套用該範圍，然後判斷是否需要額外的範圍。 此步驟會重複直到 Windows 安裝程式告知 WU 用戶端所有必要範圍皆已下載完畢為止。
 
   至此，下載即告完成，且更新已可供安裝。
 

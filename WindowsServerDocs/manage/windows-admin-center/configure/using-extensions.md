@@ -5,12 +5,13 @@ ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.openlocfilehash: c2feaaff614d00afeaf5d132c446eebe5fdf0989
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: ef5a4df53efeb6e24a86d74906fc5847d1924163
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966775"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947554"
 ---
 # <a name="install-and-manage-extensions"></a>安裝和管理擴充功能
 
@@ -36,7 +37,7 @@ Windows Admin Center 支援多個摘要，而且您可以一次從多個摘要�
 3. 按一下 [新增] 按鈕，即可新增另一個摘要。 針對 NuGet 摘要，輸入 NuGet V2 摘要 URL。 NuGet 摘要提供者或系統管理員應該能夠提供 URL 資訊。 針對檔案共用，請輸入儲存擴充套件檔案 (.nupkg) 的檔案共用完整路徑。
 4. 按一下 **[新增]** 。 如果閘道必須在提高權限的模式中執行才能進行此變更，您會看到 UAC 提高權限的提示。 只有當您以桌面模式執行 Windows Admin Center 時，才會出現此提示。
 
-**可用擴充功能**清單會顯示所有已註冊摘要中的擴充功能。 您可以使用**套件摘要**資料行，檢查每個擴充功能來自哪一個摘要。
+**可用擴充功能** 清單會顯示所有已註冊摘要中的擴充功能。 您可以使用 **套件摘要** 資料行，檢查每個擴充功能來自哪一個摘要。
 
 ## <a name="uninstalling-an-extension"></a>解除安裝擴充功能
 

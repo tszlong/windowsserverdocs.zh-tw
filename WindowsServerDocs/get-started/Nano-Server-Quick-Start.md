@@ -3,16 +3,16 @@ title: Nano 伺服器快速入門
 description: 快速在實體或虛擬機器上部署基本 Nano Server 的步驟
 manager: DonGill
 ms.date: 09/05/2017
-ms.topic: get-started-article
+ms.topic: how-to
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 49166470cc5ef52cd46a9f92875099602a13acee
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 76fd7513af6d673141e2fdc09923605647eac711
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959566"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949994"
 ---
 # <a name="nano-server-quick-start"></a>Nano 伺服器快速入門
 
@@ -37,7 +37,7 @@ ms.locfileid: "87959566"
    >[!NOTE]
    >您可能需要調整 Windows PowerShell 執行原則。 `Set-ExecutionPolicy RemoteSigned` 應該適用。
 
-3. 執行下列命令為 Standard Edition 建立設定電腦名稱並包含 Hyper-V **客體驅動程式**的 VHD，該命令會提示您輸入新 VHD 的系統管理員密碼：
+3. 執行下列命令為 Standard Edition 建立設定電腦名稱並包含 Hyper-V **客體驅動程式** 的 VHD，該命令會提示您輸入新 VHD 的系統管理員密碼：
 
    `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerVM\NanoServerVM.vhd -ComputerName <computer name>`，其中
 

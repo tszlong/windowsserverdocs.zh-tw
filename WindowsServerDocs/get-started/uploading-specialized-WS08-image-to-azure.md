@@ -6,14 +6,14 @@ ms.sitesec: library
 author: eross-msft
 ms.author: thierryp
 ms.date: 07/11/2018
-ms.topic: get-started-article
+ms.topic: how-to
 ms.localizationpriority: high
-ms.openlocfilehash: 759827d870b4573fc519f85ff890c48be9a28b5e
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: a34aad872bf52bbca965571e20d4dd3ebb975228
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078605"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948054"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>將 Windows Server 2008/2008 R2 專用映像上傳至 Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "90078605"
    1. 在系統管理員模式的命令提示字元處，輸入 **wf.msc** 以進入 Windows 防火牆與進階安全性設定。
    2. 依 [連接埠]  排序發現的項目，然後選取 [連接埠 3389]  。
      ![WIndows 防火牆設定輸入規則螢幕擷取畫面。](media/3b_inboundrules.png)
-   3. 為設定檔啟用遠端桌面 (TCP IN)：**網域**、**私人**及**公用** (如上所示)。
+   3. 為設定檔啟用遠端桌面 (TCP IN)：**網域**、**私人** 及 **公用** (如上所示)。
 
 - 儲存所有設定，並關閉映像。
 - 如果您使用的是 Hyper-V，請確定子系 AVHD 已合併至父系 VHD 以保存變更。

@@ -4,12 +4,13 @@ description: 將當作 VDI 映像的 Windows 10 1803 桌面的額外負荷降至
 ms.author: robsmi
 ms.topic: article
 author: jaimeo
-ms.openlocfilehash: b3b6c585756dabb97366aa4c727019298ea8c42c
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.date: 12/08/2020
+ms.openlocfilehash: 5db6ef50667a7280b20b49fce408ac903c1323b7
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864177"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947304"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>針對虛擬桌面基礎結構 (VDI) 角色最佳化 Windows 10 1803 版
 

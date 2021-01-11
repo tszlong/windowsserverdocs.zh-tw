@@ -1,17 +1,18 @@
 ---
 title: 遠端伺服器管理工具
 description: 遠端伺服器管理工具的最上層主題
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 ms.author: lizross
 author: eross-msft
 manager: mtillman
-ms.openlocfilehash: a9851e00cde56c37d86b923a6780427d6dfab900
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.date: 09/09/2020
+ms.openlocfilehash: 1b74b746e0b6ddde9590b00f22b42b45d75ada79
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624197"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950244"
 ---
 # <a name="remote-server-administration-tools"></a>遠端伺服器管理工具
 
@@ -20,7 +21,7 @@ ms.locfileid: "89624197"
 本主題支援適用於 Windows 10 的遠端伺服器管理工具。
 
 > [!IMPORTANT]
-> 從 Windows 10 2018 年 10 月更新開始，RSAT 會以一組**功能隨選安裝**的形式納入 Windows 10。 如需安裝指示，請參閱**使用各個 RSAT 版本的時機**。
+> 從 Windows 10 2018 年 10 月更新開始，RSAT 會以一組 **功能隨選安裝** 的形式納入 Windows 10。 如需安裝指示，請參閱 **使用各個 RSAT 版本的時機**。
 
 RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角色和功能。
 
@@ -52,9 +53,9 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 
 ### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>使用功能隨選安裝 (FoD) 在 Windows 10 2018 年 10 月更新或更高版本上安裝特定的 RSAT 工具。
 
-從 Windows 10 2018 年 10 月更新開始，RSAT 會以一組**功能隨選安裝**的形式納入 Windows 10。 現在，您無需下載 RSAT 套件，只需移至 [設定]  中的 [管理選用功能]  ，然後按一下 [新增功能]  ，就能查看可用的 RSAT 工具清單。 選取並安裝所需的特定 RSAT 工具。 若要查看安裝進度，請按一下 [返回]  按鈕，以在 [管理選用功能]  頁面上查看狀態。
+從 Windows 10 2018 年 10 月更新開始，RSAT 會以一組 **功能隨選安裝** 的形式納入 Windows 10。 現在，您無需下載 RSAT 套件，只需移至 [設定]  中的 [管理選用功能]  ，然後按一下 [新增功能]  ，就能查看可用的 RSAT 工具清單。 選取並安裝所需的特定 RSAT 工具。 若要查看安裝進度，請按一下 [返回]  按鈕，以在 [管理選用功能]  頁面上查看狀態。
 
-[請透過**功能隨選安裝**](/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)，參閱可用的 RSAT 工具。 除了透過圖形化**設定**應用程式安裝，您也可以使用 [**DISM /Add-Capability**](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods)，透過命令列或自動化來安裝特定的 RSAT 工具。
+[請透過 **功能隨選安裝**](/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)，參閱可用的 RSAT 工具。 除了透過圖形化 **設定** 應用程式安裝，您也可以使用 [**DISM /Add-Capability**](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods)，透過命令列或自動化來安裝特定的 RSAT 工具。
 
 功能隨選安裝的其中一項優點是，已安裝的功能會保存在各個 Windows 10 版本升級中。
 
@@ -66,7 +67,7 @@ RSAT 可讓 IT 系統管理員從 Windows 10 電腦管理 Windows Server 的角�
 
 ### <a name="when-to-use-which-rsat-version"></a>各個 RSAT 版本的使用時機
 
-如果您在 2018 年 10 月更新 (1809) 之前已具備 Windows 10 版本，就無法使用**功能隨選安裝**。 您需要下載並安裝 RSAT 套件。
+如果您在 2018 年 10 月更新 (1809) 之前已具備 Windows 10 版本，就無法使用 **功能隨選安裝**。 您需要下載並安裝 RSAT 套件。
 
 - **如上所述，直接從 Windows 10 安裝 RSAT FOD**：在 Windows 10 2018 年 10 月更新 (1809) 或更高版本上安裝時，可用於管理 Windows Server 2019 或舊版。
 

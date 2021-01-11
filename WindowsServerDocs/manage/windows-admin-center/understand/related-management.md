@@ -5,12 +5,13 @@ ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3a8de38cc643184468fccb4fcdd24f9ba75dd7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: e519fdfbf3246520e217b808c6de114c00a7ddc3
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997514"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948974"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center 與相關的 Microsoft 管理解決方案
 
@@ -37,12 +38,12 @@ ms.locfileid: "87997514"
 | Windows Admin Center                 | System Center                      |
 |--------------------------------------|------------------------------------|
 | **重新構思的「內建」平台和工具** | **資料中心管理和監視** |
-| 隨附於 Windows Server 授權 – **無需額外費用**，如同 MMC 和其他傳統內建工具 | **完整**的解決方案套件可為您的環境和各個平台帶來附加價值 |
-| **隨處**對 Windows Server 執行個體進行以瀏覽器為基礎的**輕量型**遠端管理；這是 RDP 的替代方式 | **大規模**管理和監視**異質**系統，包括 Hyper-V、VMware 和 Linux |
-|**深層**的單一伺服器與單一叢集向下切入，以進行疑難排解、設定與維護|基礎結構佈建；自動化和自助式；基礎結構和工作負載監視**廣度**|
-|**個別**的 2–4 節點 **HCI** 叢集的最佳化管理，整合 Hyper-V、儲存空間直接存取與 SDN|透過 SCVMM 從**裸機**部署和管理**資料中心規模**的 Hyper-V、Windows Server 叢集|
-|僅**監視 HCI**；叢集健康情況服務儲存歷程記錄。 第一方和第三方**系統管理工具擴充功能**的可延伸平台|SCOM 中的**可延伸** & **可擴充監視**平台，具有警示、通知、第三方工作負載監視、採用 SQL 的歷程記錄|
-|最簡單的**混合式**橋接；內建並使用各種 Azure 服務以進行資料保護、複寫、更新等作業|**內建**資料保護、複寫、更新 (DPM/VMM/SCCM)。 使用 Log Analytics 與服務對應的混合式整合|
+| 隨附於 Windows Server 授權 – **無需額外費用**，如同 MMC 和其他傳統內建工具 | **完整** 的解決方案套件可為您的環境和各個平台帶來附加價值 |
+| **隨處** 對 Windows Server 執行個體進行以瀏覽器為基礎的 **輕量型** 遠端管理；這是 RDP 的替代方式 | **大規模** 管理和監視 **異質** 系統，包括 Hyper-V、VMware 和 Linux |
+|**深層** 的單一伺服器與單一叢集向下切入，以進行疑難排解、設定與維護|基礎結構佈建；自動化和自助式；基礎結構和工作負載監視 **廣度**|
+|**個別** 的 2–4 節點 **HCI** 叢集的最佳化管理，整合 Hyper-V、儲存空間直接存取與 SDN|透過 SCVMM 從 **裸機** 部署和管理 **資料中心規模** 的 Hyper-V、Windows Server 叢集|
+|僅 **監視 HCI**；叢集健康情況服務儲存歷程記錄。 第一方和第三方 **系統管理工具擴充功能** 的可延伸平台|SCOM 中的 **可延伸** & **可擴充監視** 平台，具有警示、通知、第三方工作負載監視、採用 SQL 的歷程記錄|
+|最簡單的 **混合式** 橋接；內建並使用各種 Azure 服務以進行資料保護、複寫、更新等作業|**內建** 資料保護、複寫、更新 (DPM/VMM/SCCM)。 使用 Log Analytics 與服務對應的混合式整合|
 |**突顯 Windows Server 的平台功能**：儲存體移轉服務、儲存體複本、系統深入解析等等|**其他平台**：Orchestrator/SMA 中的自動化。與 SCSM 和其他服務管理工具整合|
 
-#### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>兩者可個別提供既定的價值；搭配使用可藉由互補功能**相輔相成**。
+#### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>兩者可個別提供既定的價值；搭配使用可藉由互補功能 **相輔相成**。

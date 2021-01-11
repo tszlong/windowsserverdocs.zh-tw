@@ -2,18 +2,18 @@
 title: Windows Server 軟體定義資料中心
 description: Windows Server SDDC 概觀
 ms.prod: windows-server
-ms.topic: get-started article
+ms.topic: how-to
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f3013acdb9a0351b447f10a57e5f1073facb9272
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: d9bef79cab438cfd45091bf45af86abf7604e8fd
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045186"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947344"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server 軟體定義資料中心
 

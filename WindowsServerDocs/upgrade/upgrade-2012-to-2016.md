@@ -1,16 +1,16 @@
 ---
 title: 將 Windows Server 2012 升級至 Windows Server 2016 | Microsoft Docs
 description: 了解如何執行就地升級，從 Windows Server 2012 升級至 Windows Server 2016。
-ms.topic: upgrade
+ms.topic: how-to
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: ea67496a0e094c68133dfd9315d070bb87c99dbc
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 895af82c3afb25a064aab8e2878b405c8a6a38c5
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997236"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949634"
 ---
 # <a name="upgrade-windows-server-2012-to-windows-server-2016"></a>將 Windows Server 2012 升級至 Windows Server 2016
 
@@ -32,7 +32,7 @@ ms.locfileid: "87997236"
 
 4. 開啟登錄編輯程式，移至 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion hive，然後將 Windows Server **BuildLabEx** (版本) 和 **EditionID** (版次) 複製並貼到前述的相同位置。
 
-收集所有 Windows Server 相關資訊之後，強烈建議您備份作業系統、應用程式和虛擬機器。 您也必須**關閉**、**快速移轉**或**即時移轉**目前在伺服器上執行的任何虛擬機器。 在就地升級期間，不可以有任何執行中的虛擬機器。
+收集所有 Windows Server 相關資訊之後，強烈建議您備份作業系統、應用程式和虛擬機器。 您也必須 **關閉**、**快速移轉** 或 **即時移轉** 目前在伺服器上執行的任何虛擬機器。 在就地升級期間，不可以有任何執行中的虛擬機器。
 
 ## <a name="to-perform-the-upgrade"></a>執行升級
 

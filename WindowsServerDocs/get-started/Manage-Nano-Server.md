@@ -3,17 +3,17 @@ title: 管理 Nano 伺服器
 description: 更新、服務封裝、網路追蹤、效能監控
 manager: DonGill
 ms.date: 09/06/2017
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 305f01d4d7d329a11d29a0aad06b165f052c729a
-ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
+ms.openlocfilehash: b9be20246cd0ac057b1143f75061a1c8cc2f9b59
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879887"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948064"
 ---
 # <a name="manage-nano-server"></a>管理 Nano 伺服器
 
