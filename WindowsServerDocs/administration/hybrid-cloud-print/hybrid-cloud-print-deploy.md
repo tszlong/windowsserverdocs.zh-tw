@@ -7,12 +7,12 @@ author: msjimwu
 ms.author: jimwu
 manager: mtillman
 ms.date: 3/15/2018
-ms.openlocfilehash: 769e9db9be5121b47c72b076bba3a78be841c5de
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 80bc794a5719792941f91d6d50fe35b92006dea6
+ms.sourcegitcommit: 29b8942ea46196c12a67f6b6ad7f8dd46bf94fb2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625159"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065664"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合式雲端列印
 
@@ -67,7 +67,7 @@ ms.locfileid: "89625159"
 若要啟用與 HCP 服務的已驗證通訊，我們需要建立3個應用程式：2個 Web 應用程式來代表兩個 HCP 服務，以及1個原生應用程式來與這些服務通訊。
 
 1. 登入 Azure 入口網站以註冊 web 應用程式。
-    - 在 [Azure Active Directory] 下，移至**應用程式註冊**  >  **新增註冊**]。
+    - 在 [Azure Active Directory] 下，移至 **應用程式註冊**  >  **新增註冊**]。
 
     ![AAD 應用程式註冊1](../media/hybrid-cloud-print/AAD-AppRegistration.png)
 
@@ -103,7 +103,7 @@ ms.locfileid: "89625159"
     ![AAD 公開 API 5](../media/hybrid-cloud-print/AAD-AppRegistration-ECP-ExposeAPI-ScopeName.png)
 
 3. 新增 API 權限
-    - 返回應用程式註冊的分頁。 按一下原生應用程式，然後選取 [API 許可權]。 按一下 [新增權限]****。
+    - 返回應用程式註冊的分頁。 按一下原生應用程式，然後選取 [API 許可權]。 按一下 [新增權限]  。
 
     ![AAD API 許可權1](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission.png)
 
@@ -111,7 +111,7 @@ ms.locfileid: "89625159"
 
     ![AAD API 許可權2](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-Mopria.png)
 
-    - 選取 [ **委派的許可權**]。 勾選 API 範圍旁的方塊。 按一下 [ **新增許可權**]。
+    - 選取 [委派的權限]。 勾選 API 範圍旁的方塊。 按一下 [ **新增許可權**]。
 
     ![AAD API 許可權3](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-Mopria-Add.png)
 
@@ -119,7 +119,7 @@ ms.locfileid: "89625159"
 
     ![AAD API 許可權4](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-ECP-Add.png)
 
-    - 一旦回到 [API 許可權] 分頁，請等候10秒鐘，然後再按一下 [ **總計管理員同意 ...**]。
+    - 回到 API 許可權分頁之後，請等候10秒鐘，然後再按一下 **[授與管理員同意 ...**]。
 
     ![AAD API 許可權5](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-GrantConsent.png)
 
@@ -132,7 +132,7 @@ ms.locfileid: "89625159"
     ![AAD API 許可權7](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-Verify.png)
 
 4. 設定 Web 應用程式的應用程式 Proxy
-    - 移至**Azure Active Directory**  >  **企業應用**程式  >  的**所有應用程式**。 搜尋 Mopria 探索服務，然後按一下它。
+    - 移至 **Azure Active Directory**  >  **企業應用** 程式  >  的 **所有應用程式**。 搜尋 Mopria 探索服務，然後按一下它。
 
     ![AAD 應用程式 Proxy 1](../media/hybrid-cloud-print/AAD-EnterpriseApp-AllApps.png)
 
@@ -144,17 +144,17 @@ ms.locfileid: "89625159"
 
     ![AAD 應用程式 Proxy 3](../media/hybrid-cloud-print/AAD-EnterpriseApp-ECP-AppProxy.png)
 
-    - 移至**Azure Active Directory**  >  **應用程式註冊**。 按一下 [Mopria 探索服務]。 請注意，在 [ **總覽**] 下，應用程式識別碼 URI 已從預設值變更為 [ **應用程式 proxy**] 下的 [外部 URL]。 在列印伺服器安裝期間、用戶端 MDM 原則，以及發佈印表機時，將會使用此 URI。
+    - 前往 [Azure Active Directory] > [應用程式註冊]。 按一下 [Mopria 探索服務]。 請注意，在 [ **總覽**] 下，應用程式識別碼 URI 已從預設值變更為 [ **應用程式 proxy**] 下的 [外部 URL]。 在列印伺服器安裝期間、用戶端 MDM 原則，以及發佈印表機時，將會使用此 URI。
 
     ![AAD 應用程式 Proxy 4](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-Overview.png)
 
 5. 將使用者指派給應用程式
-    - 移至**Azure Active Directory**  >  **企業應用**程式  >  的**所有應用程式**。 搜尋 Mopria 探索服務，然後按一下它
+    - 移至 **Azure Active Directory**  >  **企業應用** 程式  >  的 **所有應用程式**。 搜尋 Mopria 探索服務，然後按一下它
     - 請按一下 [**使用者和群組**] 並指派使用者，或按一下 [內容] **，並將**[**需要使用者指派**] 變更為 [**否**]
     - 針對企業雲端列印服務重複執行。
 
 6. 在原生應用程式中設定重新導向 URI
-    - 移至**Azure Active Directory**  >  **應用程式註冊**。 按一下原生應用程式。 移至 **總覽** ，並將 **應用程式 (用戶端) 識別碼**。
+    - 前往 [Azure Active Directory] > [應用程式註冊]。 按一下原生應用程式。 移至 **總覽** ，並將 **應用程式 (用戶端) 識別碼**。
 
     ![AAD 重新導向 URI 1](../media/hybrid-cloud-print/AAD-AppRegistration-Native-Overview.png)
 
@@ -212,13 +212,13 @@ ms.locfileid: "89625159"
 
     - 檢查記錄檔以查看是否有任何錯誤： `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
-4. 在提高許可權的命令提示字元中執行 **RegitEdit** 。 移至 Computer \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService。
+4. 在提高許可權的命令提示字元中執行 **RegitEdit** 。 移至 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService。
     - 請確定 AzureAudience 已設定為企業雲端列印應用程式的應用程式識別碼 URI。
     - 請確定 AzureTenant 設定為 Azure AD 功能變數名稱。
 
     ![列印伺服器 ECP 登錄機碼](../media/hybrid-cloud-print/PrintServer-RegEdit-ECP.png)
 
-5. 移至 Computer \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\MopriaDiscoveryService。
+5. 移至 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\MopriaDiscoveryService。
     - 請確定 AzureAudience 是 Mopria Discovery Service 應用程式的應用程式識別碼 URI。
     - 請確定 AzureTenant 是 Azure AD 功能變數名稱。
     - 請確定 URL 是 Mopria Discovery Service 應用程式的應用程式識別碼 URI。
@@ -229,7 +229,7 @@ ms.locfileid: "89625159"
 
 7. 設定 IIS 端點以支援 SSL。
     - SSL 憑證可以是自我簽署的憑證，也可以是從信任的憑證授權單位單位發行的憑證 (CA) 。
-    - 如果使用自我簽署憑證， **請確定憑證已匯入至用戶端電腦 (s) **。
+    - 如果使用自我簽署憑證， **請確定憑證已匯入至用戶端電腦 (s)**。
     - 如果您向協力廠商提供者註冊您的網域，則必須使用 SSL 憑證設定 IIS 端點。 如需詳細資訊，請參閱本 [指南](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/) 。
 
 8. 安裝 SQLite 套件。
@@ -306,12 +306,12 @@ ms.locfileid: "89625159"
 1. 請參閱檔 [Kerberos 限制委派，以使用應用程式 Proxy 單一登入您的應用](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)程式。
 
 2. 設定內部部署 Active Directory。
-    - 在 Active Directory 機上，開啟伺服器管理員並移至 [ **工具**]  >  **Active Directory 消費者和電腦**。
+    - 在 Active Directory 機上，開啟伺服器管理員並移至 [**工具**]  >  **Active Directory 消費者和電腦**。
     - 流覽至 [ **電腦** ] 節點，然後選取連接器伺服器。
-    - 以滑鼠右鍵按一下並選取 [ **屬性**  ->  **委派**] 索引標籤   。
-    - 選取 [ **信任這台電腦，但只委派指定的服務**]。
-    - 選取 [ **使用任何驗證通訊協定**]。
-    - 在 **此帳戶可以呈現委派認證的 [服務**] 下。
+    - 以滑鼠右鍵按一下並選取 [**屬性**  ->  **委派**] 索引標籤。
+    - 選取 [信任這台電腦，但只委派指定的服務]。
+    - 選取 [使用任何驗證通訊協定]。
+    - 在 **此帳戶可以呈現委派認證的 [服務**] 下。
         - 將服務主體名稱新增 (SPN) 的列印伺服器電腦。
         - 選取 [服務類型的主機]。
     ![Active Directory 委派](../media/hybrid-cloud-print/AD-Delegation.png)
@@ -324,14 +324,14 @@ ms.locfileid: "89625159"
     ![列印伺服器 IIS 驗證](../media/hybrid-cloud-print/PrintServer-IIS-Authentication.png)
 
 4. 設定單一登入。
-    - 在 Azure 入口網站上，移至**Azure Active Directory**  >  **企業應用**程式的  >  **所有應用程式**。
+    - 在 Azure 入口網站上，移至 **Azure Active Directory**  >  **企業應用** 程式的  >  **所有應用程式**。
     - 選取 [MopriaDiscoveryService 應用程式]。
     - 移至 [ **應用程式 proxy**]。 將預先驗證方法變更為 **Azure Active Directory**。
-    - 移至 [單一登入]****。 選取 [整合式 Windows 驗證] 作為單一登入方法。
+    - 移至 [單一登入]。 選取 [整合式 Windows 驗證] 作為單一登入方法。
     - 將 [ **內部應用程式 SPN** ] 設定為列印伺服器電腦的 spn。
     - 將 **委派的登** 入身分識別設定為使用者主體名稱。
     - 針對 EntperiseCloudPrint 應用程式重複執行。
-    ![AAD 單一登入 IWA](../media/hybrid-cloud-print/AAD-SingleSignOn-IWA.png)
+    ![AAD Single Sign-On IWA](../media/hybrid-cloud-print/AAD-SingleSignOn-IWA.png)
 
 ### <a name="step-6---configure-the-required-mdm-policies"></a>步驟 6-設定必要的 MDM 原則
 
@@ -428,7 +428,7 @@ ms.locfileid: "89625159"
 在已加入 Azure AD 的裝置上，已設定 MDM 原則：
 - 開啟網頁瀏覽器並移至 https://mopriadiscoveryservice- *租使用者-* msappproxy.net/mcs/services。
 - 您應該會看到描述此端點功能集的 JSON 文字。
-- 移至**設定**  >  **裝置**  >  **印表機 & 掃描器**。
+- 移至 **設定**  >  **裝置**  >  **印表機 & 掃描器**。
     - 按一下 [ **新增印表機或掃描器**]。
     - 您應該會看到搜尋雲端印表機 (或在我的組織中搜尋較新的 Windows 10 機) 連結上的印表機。
     - 按一下連結。
@@ -447,7 +447,7 @@ ms.locfileid: "89625159"
 |錯誤 |建議的步驟 |
 |------|------|
 |CloudPrintDeploy PowerShell 腳本失敗 | <ul><li>確定 Windows Server 具有最新的更新。</li><li>如果使用 Windows Server Update Services (WSUS) ，請參閱 [如何在使用 wsus/SCCM 時，讓功能隨選和語言套件可供](/windows/deployment/update/fod-and-lang-packs)使用。</li></ul> |
-|SQLite 安裝失敗，訊息：偵測到封裝 ' System.object ' 的相依性迴圈 | Install-Package system.object-providername nuget-SkipDependencies<br>Install-Package EF6-providername nuget-SkipDependencies<br>Install-Package system.string-providername nuget-SkipDependencies<br><br>成功下載封裝之後，請確定它們的版本都相同。 如果沒有，請將-requiredversion 參數新增至上述命令，並將它們設定為相同的版本。 |
+|SQLite 安裝失敗，訊息：偵測到封裝 ' System.object ' 的相依性迴圈 | Install-Package system.string-providername nuget-SkipDependencies<br>Install-Package EF6-providername nuget-SkipDependencies<br>Install-Package system.string-providername nuget-SkipDependencies<br><br>成功下載封裝之後，請確定它們的版本都相同。 如果沒有，請將-requiredversion 參數新增至上述命令，並將它們設定為相同的版本。 |
 |發行印表機失敗 | <ul><li>針對 [傳遞預先驗證]，請確定發行印表機的使用者具有發行資料庫的適當許可權。</li><li>針對 Azure AD 預先驗證，請確定已在 IIS 中啟用 Windows 驗證。 請參閱步驟5.3。 此外，請先嘗試傳遞預先驗證。 如果通過預先驗證可運作，則問題可能與應用程式 proxy 相關。 請參閱針對 [應用程式 Proxy 問題和錯誤訊息進行疑難排解](/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 請注意，切換到 [通過] 會重設單一登入設定;重新流覽步驟5以重新設定 Azure AD 預先驗證。</li></ul> |
 |列印工作保持傳送至印表機狀態 | <ul><li>確定已在連接器伺服器上啟用 TLS 1.2。 請參閱步驟2.1 中的連結文章。</li><li>確定連接器伺服器上的 HTTP2 已停用。 請參閱步驟2.1 中的連結文章。</li></ul> |
 

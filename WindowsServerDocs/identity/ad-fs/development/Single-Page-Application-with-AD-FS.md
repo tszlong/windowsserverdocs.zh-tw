@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 06/13/2018
 ms.topic: article
-ms.openlocfilehash: 9e26d558755b0ae37ac07fb21ff42360693e4303
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 3c476de50a10d48757f19c41c80f10411222d885
+ms.sourcegitcommit: 29b8942ea46196c12a67f6b6ad7f8dd46bf94fb2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865707"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065654"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL.JS 搭配 AD FS 2016 或更新版本來建立單一頁面 web 應用程式
 
@@ -19,16 +19,16 @@ ms.locfileid: "96865707"
 
 在此案例中，當使用者登入時，JavaScript 前端會使用 [Active Directory Authentication Library for JavaScript (ADAL.JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js) 和隱含授權授與，從 Azure AD 取得的識別碼權杖 (id_token)。 權杖會留在快取中，而用戶端呼叫 Web API 後端時會將權杖附加至要求做為持有人權杖，並使用 OWIN 中介軟體來保護。
 
->[!IMPORTANT]
->您可以在這裡建立的範例僅供教育之用。 這些指示是為了公開模型的必要元素，最簡單且最基本的實作為可能。 此範例可能不包含錯誤處理和其他相關功能的所有層面。
+> [!IMPORTANT]
+> 您可以在這裡建立的範例僅供教育之用。 這些指示是為了公開模型的必要元素，最簡單且最基本的實作為可能。 此範例可能不包含錯誤處理和其他相關功能的所有層面。
 
->[!NOTE]
->本逐步解說 **僅** 適用于 AD FS Server 2016 和更新版本
+> [!NOTE]
+> 本逐步解說 **僅** 適用于 AD FS Server 2016 和更新版本
 
 ## <a name="overview"></a>概觀
 在此範例中，我們將建立驗證流程，其中單一頁面應用程式用戶端會向 AD FS 驗證，以安全地存取後端上的 WebAPI 資源。 以下是整體驗證流程
 
-![AD FS 授權](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
+![AD FS 授權](media/Single-Page-Application-with-AD-FS/authenticationflow.png)
 
 使用單一頁面應用程式時，使用者會流覽至起始位置，從這裡開始的頁面和 JavaScript 檔案的集合，以及 HTML 視圖都已載入。 您必須設定 Active Directory 驗證程式庫 (ADAL) 來瞭解應用程式的重要資訊，例如 AD FS 實例、用戶端識別碼，讓它可以將驗證導向您的 AD FS。
 
@@ -40,9 +40,9 @@ ms.locfileid: "96865707"
 ## <a name="setting-up-the-environment"></a>設定環境
 在這個逐步解說中，我們將使用的基本設定：
 
-1.    DC：將裝載 AD FS 之網域的網域控制站
-2.    AD FS 伺服器：網域的 AD FS 伺服器
-3.    開發電腦：已安裝 Visual Studio 的電腦，將會開發我們的範例
+1. DC：將裝載 AD FS 之網域的網域控制站
+2. AD FS 伺服器：網域的 AD FS 伺服器
+3. 開發電腦：已安裝 Visual Studio 的電腦，將會開發我們的範例
 
 您可以視需要使用兩部電腦。 一個用於 DC/AD FS，另一個用於開發範例。
 
@@ -109,11 +109,11 @@ git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepage
     );
 ```
 
-|組態|描述|
-|--------|--------|
-|instance|您的 STS URL，例如 https://fs.contoso.com/|
-|tenant|將其保留為 ' adfs '|
-|clientID|這是您為單一頁面應用程式設定公用用戶端時所指定的用戶端識別碼。|
+| 組態 | 描述 |
+| ------------- | ----------- |
+| instance | 您的 STS URL，例如 https://fs.contoso.com/ |
+| tenant | 將其保留為 ' adfs ' |
+| clientID | 這是您為單一頁面應用程式設定公用用戶端時所指定的用戶端識別碼。 |
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>將 WebAPI 設定為使用 AD FS
 在範例中開啟 **Startup.Auth.cs** 檔案，並在開頭新增下列內容：
@@ -146,14 +146,14 @@ and add:
     );
 ```
 
-|參數|描述|
-|--------|--------|
-|ValidAudience|這會設定將在權杖中檢查的「物件」值|
-|ValidIssuer|這會設定將在權杖中檢查的「簽發者」值|
-|MetadataEndpoint|這會指向 STS 的中繼資料資訊|
+| 參數 | 說明 |
+| --------- | ----------- |
+| ValidAudience | 這會設定將在權杖中檢查的「物件」值 |
+| ValidIssuer | 這會設定將在權杖中檢查的「簽發者」值 |
+| MetadataEndpoint | 這會指向 STS 的中繼資料資訊 |
 
 ## <a name="add-application-configuration-for-ad-fs"></a>新增 AD FS 的應用程式設定
-變更 appsettings，如下所示：
+變更 appSettings XML，如下所示：
 
 ```xml
 <appSettings>
@@ -168,19 +168,19 @@ and add:
 
 瀏覽器 (使用 Chrome 瀏覽器) 將載入 SPA，而且您將會看到下列畫面：
 
-![註冊用戶端](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
+![註冊用戶端](media/Single-Page-Application-with-AD-FS/singleapp3.png)
 
 按一下 [登入]。  ToDo 清單會觸發驗證流程，而 ADAL JS 會將驗證導向 AD FS
 
-![登入](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![登入](media/Single-Page-Application-with-AD-FS/singleapp4a.png)
 
 在 Fiddler 中，您可以在 # 片段中看到傳回的權杖是 URL 的一部分。
 
-![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.PNG)
+![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.png)
 
 您現在可以呼叫後端 API，為登入的使用者新增 ToDo 清單專案：
 
-![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
+![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.png)
 
 ## <a name="next-steps"></a>後續步驟
 [AD FS 開發](../../ad-fs/AD-FS-Development.md)
