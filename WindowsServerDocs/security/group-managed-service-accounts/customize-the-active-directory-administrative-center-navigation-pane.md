@@ -1,18 +1,18 @@
 ---
 title: 自訂 Active Directory 管理中心流覽窗格
-description: Windows Server 安全性
+description: 瞭解如何自訂 Active Directory 管理中心流覽窗格。
 ms.assetid: c9933d16-e153-435a-b5b7-3e594db42d5c
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
 ms.topic: article
-ms.openlocfilehash: 1ae8f97a981296f14ede5f00b46196ba4b5e2465
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: cfc01594a6e1b4ac01d0741069dc02c37df0ef18
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950484"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113044"
 ---
 # <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>自訂 Active Directory 管理中心流覽窗格
 

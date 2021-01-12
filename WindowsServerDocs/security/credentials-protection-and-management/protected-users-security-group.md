@@ -1,18 +1,18 @@
 ---
 title: Protected Users 安全性群組
-description: Windows Server 安全性
+description: 瞭解 Active Directory 安全性群組受保護的使用者功能，以及其運作方式。
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: ba53c87119e798c3d3346b8fc245ffcc4e092a4d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0e663cf40481fd0c89863cd7cd206e963e2d72e0
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639807"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113484"
 ---
 # <a name="protected-users-security-group"></a>Protected Users 安全性群組
 
@@ -61,8 +61,8 @@ ms.locfileid: "89639807"
 |已知的 SID/RID|S-1-5-21-<domain>-525|
 |類型|網域全域|
 |預設容器|CN=Users, DC=<domain>, DC=|
-|預設成員|無|
-|下列群組的預設成員|無|
+|預設成員|None|
+|下列群組的預設成員|None|
 |是否受到 ADMINSDHOLDER 保護？|否|
 |是否可從預設容器放心地移出？|是|
 |是否可將此群組的管理放心地委派給非服務系統管理員？|否|
@@ -104,7 +104,7 @@ ms.locfileid: "89639807"
 
 - 超過初始的四小時存留期才更新 Kerberos TGT。
 
-系統會為 Protected Users 群組中的每個帳戶建立 TGT 到期時間的不可設定的設定。 一般而言，網域控制站會根據網域原則、[使用者票證最長存留期]**** 及 [使用者票證更新的最長存留期]****，設定 TGT 存留期和更新。 以 Protected Users 群組來說，會為這些網域原則設定 600 分鐘。
+系統會為 Protected Users 群組中的每個帳戶建立 TGT 到期時間的不可設定的設定。 一般而言，網域控制站會根據網域原則、[使用者票證最長存留期] 及 [使用者票證更新的最長存留期]，設定 TGT 存留期和更新。 以 Protected Users 群組來說，會為這些網域原則設定 600 分鐘。
 
 如需詳細資訊，請參閱[如何設定受保護的帳戶](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)。
 

@@ -1,18 +1,18 @@
 ---
 title: What's New for Managed Service Accounts
-description: Windows Server 安全性
+description: 瞭解 Windows Server 2012 和 Windows 8 中群組受管理的服務帳戶，以瞭解受管理的服務帳戶的功能變更。
 ms.topic: article
 ms.assetid: 2f2a8b6b-c152-4c40-b712-bfabff0e408b
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: f3b003ebe9ce766f39e10a21e0fa4002db562773
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d7ea925975254533ff7b9c6591ddde4a884a79ae
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639599"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112964"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>受管理的服務帳戶&#39;的新功能
 
@@ -49,7 +49,7 @@ ms.locfileid: "89639599"
 
 -   [群組受管理的服務帳戶總覽](group-managed-service-accounts-overview.md)
 
--   [Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)
+-   [Active Directory 網域服務概觀](active-directory-domain-services-overview.md)
 
 -   [受管理的服務帳戶了解、實作、最佳做法以及疑難排解](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/managed-service-accounts-understanding-implementing-best/ba-p/397009)
 

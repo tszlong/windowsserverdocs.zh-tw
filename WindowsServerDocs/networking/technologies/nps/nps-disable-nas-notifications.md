@@ -1,18 +1,18 @@
 ---
 title: 停用 NPS 中的 NAS 通知轉送
-description: 本主題提供在 Windows Server 2016 中設定網路原則伺服器並行驗證的指示。
+description: 瞭解如何停用從網路存取伺服器到 NPS 中設定的遠端 RADIUS 伺服器群組成員的啟動和停止訊息的轉送。
 manager: brianlic
 ms.topic: article
 ms.assetid: a09bfb03-95fc-4534-bf3c-97078ef6b07e
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 795db196c5fd1b6241fe0b32c3d277e674e1e9aa
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: f99e8e19df70113997600e25528647b608146d27
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948994"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112854"
 ---
 # <a name="disable-nas-notification-forwarding-in-nps"></a>停用 NPS 中的 NAS 通知轉送
 

@@ -1,18 +1,18 @@
 ---
 title: 軟體限制原則技術概觀
-description: Windows Server 安全性
+description: 瞭解軟體限制原則、使用功能的時機和方式，以及過去版本中已執行的變更。
 ms.topic: article
 ms.assetid: dc7013b0-0efd-40fd-bd6d-75128adbd0b8
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 49d0f32d1634a37f5ddda71f8147017e9863b1e6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: f8167814376e630ce45097c1fc6abfdd562dce57
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640246"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113274"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>軟體限制原則技術概觀
 
@@ -29,7 +29,7 @@ ms.locfileid: "89640246"
 
 -   [管理軟體限制原則](administer-software-restriction-policies.md)
 
-    -   [判斷軟體限制原則的允許-拒絕清單和應用程式清查](determine-allow-deny-list-and-application-inventory-for-software-restriction-policies.md)
+    -   [判斷軟體限制原則的 Allow-Deny 清單和應用程式清查](determine-allow-deny-list-and-application-inventory-for-software-restriction-policies.md)
 
     -   [使用軟體限制原則規則](work-with-software-restriction-policies-rules.md)
 
@@ -82,7 +82,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能沒有任何變更。
 
 |應用程式控制函式|SRP|AppLocker|
 |----------------|----|-------|
-|範圍|SRP 原則可以套用到從 Windows XP 和 Windows Server 2003 開始的所有 Windows 作業系統。|AppLocker 原則只適用于 Windows Server 2008 R2、Windows Server 2012、Windows 7 及 Windows 8。|
+|影響範圍|SRP 原則可以套用到從 Windows XP 和 Windows Server 2003 開始的所有 Windows 作業系統。|AppLocker 原則只適用于 Windows Server 2008 R2、Windows Server 2012、Windows 7 及 Windows 8。|
 |原則建立|SRP 原則是透過群組原則維護，而只有 GPO 的系統管理員可以更新 SRP 原則。 本機電腦上的系統管理員可以修改本機 GPO 中定義的 SRP 原則。|AppLocker 原則是透過群組原則維護，而只有 GPO 的系統管理員可以更新原則。 本機電腦上的系統管理員可以修改本機 GPO 中定義的 AppLocker 原則。<p>AppLocker 允許自訂錯誤訊息，將使用者導向至網頁尋求協助。|
 |原則維護|您必須使用 [本機安全性原則] 嵌入式管理單元來更新 SRP 原則 (如果原則是在本機建立) 或群組原則管理主控台 (GPMC) 。|您可以使用 [本機安全性原則] 嵌入式管理單元來更新 AppLocker 原則 (如果原則是在本機建立) 、GPMC 或 Windows PowerShell AppLocker Cmdlet。|
 |原則應用程式|SRP 原則會透過群組原則散發。|AppLocker 原則會透過群組原則散發。|
@@ -109,7 +109,7 @@ Windows Server 2012 和 Windows 8 的 SRP 功能沒有任何變更。
 
 -   軟體限制原則 API。  (Api) 的應用程式開發介面，可用來建立及設定構成軟體限制原則的規則。 此外，也有軟體限制原則 Api 可用於查詢、處理和強制執行軟體限制原則。
 
--   軟體限制原則管理工具。 這是由系統管理員用來建立和編輯軟體限制原則的**本機群組原則物件編輯器**嵌入式管理單元的**軟體限制原則**擴充功能所組成。
+-   軟體限制原則管理工具。 這是由系統管理員用來建立和編輯軟體限制原則的 **本機群組原則物件編輯器** 嵌入式管理單元的 **軟體限制原則** 擴充功能所組成。
 
 -   一組作業系統 Api 和應用程式，可呼叫軟體限制原則 Api，在執行時間時提供軟體限制原則的強制執行。
 
@@ -174,6 +174,6 @@ Windows Server 2012 和 Windows 8 的 SRP 功能沒有任何變更。
 |**規劃**|[軟體限制原則技術參考](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10))|
 |**作業**|[管理軟體限制原則](administer-software-restriction-policies.md)|
 |**疑難排解**|[軟體限制原則疑難排解 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
-|**安全性**|[軟體限制原則的威脅和因應措施 (2008) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[軟體限制原則的威脅和對策 (2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
+|**Security**|[軟體限制原則的威脅和因應措施 (2008) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[軟體限制原則的威脅和對策 (2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
 |**工具及設定**|[軟體限制原則工具和設定 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
 |**社群資源**|[使用軟體限制原則鎖定應用程式](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

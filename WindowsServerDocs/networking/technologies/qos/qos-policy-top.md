@@ -1,18 +1,18 @@
 ---
 title: 服務品質 (QoS) 原則
-description: 本主題提供服務品質 (QoS) 原則的總覽，可讓您使用群組原則來排定 Windows Server 2016 中特定應用程式和服務的網路流量頻寬。
+description: 瞭解如何藉由建立 QoS 設定檔（其設定會隨群組原則散發），使用 QoS 原則做為整個 Active Directory 基礎結構的網路頻寬管理中心點。
 ms.topic: article
 ms.assetid: 16918506-102c-482e-89d3-004ad8d6aabe
 manager: brianlic
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: dd43c38e44a02b3d50bff952b8a174b049c585d8
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 616fe115246b1b6bb6aa4eae6c98265ff6250765
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946654"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113384"
 ---
 # <a name="quality-of-service-qos-policy"></a>服務品質 \( QoS \) 原則
 

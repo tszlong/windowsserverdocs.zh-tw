@@ -1,18 +1,18 @@
 ---
 title: 認證保護和管理
-description: Windows Server 安全性
+description: 瞭解 Windows Server 2012 R2 中引進的功能和方法，以及認證保護和網域驗證控制項的 Windows 8.1，以降低認證遭竊。
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 37fbec56a855a4d875680a8c1e2c9e0055ed9f12
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 12d4c0372ad6c5a0f67dde5c8e7eac7cc651cd49
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89641192"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113494"
 ---
 # <a name="credentials-protection-and-management"></a>認證保護和管理
 
@@ -54,7 +54,7 @@ Protected Users 群組的成員進一步受到下列驗證方法的限制：
 
 新的 Active Directory 物件類別（驗證原則）可讓您將驗證設定套用至具有 Windows Server 2012 R2 網域功能等級之網域中的帳戶類別。 Kerberos AS 或 TGS 交換期間會強制執行驗證原則。 Active Directory 帳戶類別包括：
 
--   User
+-   使用者
 
 -   電腦
 

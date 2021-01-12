@@ -1,18 +1,18 @@
 ---
 title: 決定軟體限制原則的允許拒絕清單和應用程式清查
-description: Windows Server 安全性
+description: 瞭解如何建立應用程式的 [允許] 和 [拒絕] 清單，從 Windows Server 2008 和 Windows Vista 開始， (SRP) 的軟體限制原則加以管理。
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 9da7cc8490f5b660ed5ce327b4572dc968e10c48
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 64b7c085c8bf64aa4d7d9d9de346ac71274f650c
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89637864"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113424"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>決定軟體限制原則的允許拒絕清單和應用程式清查
 
@@ -46,7 +46,7 @@ ms.locfileid: "89637864"
 
 2.  建立下列登錄值，以便啟用 advanced 記錄功能，並將路徑設定為應寫入記錄檔的位置。
 
-    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers"**
 
     字串值： *LogFileName 至 LogFileName 的路徑*
 

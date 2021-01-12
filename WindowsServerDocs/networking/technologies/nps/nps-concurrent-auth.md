@@ -1,18 +1,18 @@
 ---
 title: 增加 NPS 所處理的並行驗證
-description: 本主題提供在 Windows Server 2016 中設定網路原則伺服器並行驗證的指示。
+description: 瞭解如何藉由增加 NPS 與網域控制站之間允許的並行驗證數目來改善 NPS 效能。
 manager: brianlic
 ms.topic: article
 ms.assetid: 2d9cdada-0625-41c8-8248-a32259b03e47
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 5036ee3299aec9e57c60b960aa9e25fb53d2f18e
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: fd48dc876cd2b8a24199ffc4fc95b8fa5a6d0d72
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948664"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113374"
 ---
 # <a name="increase-concurrent-authentications-processed-by-nps"></a>增加 NPS 所處理的並行驗證
 

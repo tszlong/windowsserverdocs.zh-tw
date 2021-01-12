@@ -1,18 +1,18 @@
 ---
 title: 為軟體限制原則進行疑難排解
-description: Windows Server 安全性
+description: 從 Windows Server 2008 和 Windows Vista (SRP) 疑難排解軟體限制原則時，瞭解常見問題和解決方案。
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 003a71ed8c6b7e8d9b788c4eb8aa5efcc4bd6286
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b9c96f43ebbcc41a210357b2006d2b153a69545a
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640218"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113474"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>為軟體限制原則進行疑難排解
 
@@ -85,6 +85,6 @@ ms.locfileid: "89640218"
 
 1.  調查系統事件記錄檔，並根據「軟體限制原則」的來源進行篩選。 這些專案會明確陳述針對每個應用程式所執行的規則。
 
-2.  啟用 advanced 記錄。 如需詳細資訊，請參閱 [決定軟體限制原則的允許-拒絕清單和應用程式清查](software-restriction-policies.md) 。
+2.  啟用 advanced 記錄。 如需詳細資訊，請參閱 [決定軟體限制原則的 Allow-Deny 清單和應用程式清查](software-restriction-policies.md) 。
 
 

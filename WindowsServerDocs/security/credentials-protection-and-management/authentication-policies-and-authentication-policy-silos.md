@@ -1,18 +1,18 @@
 ---
 title: 驗證原則和驗證原則定址接收器
-description: Windows Server 安全性
+description: 瞭解驗證原則定址接收器，以及可將帳戶限制于這些定址接收器的原則。
 ms.topic: article
 ms.assetid: 7eb0e640-033d-49b5-ab44-3959395ad567
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 931ebeda8b865c16dc6f67ae765b6bc6f7aaed1f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 30afdda4b0d3eabeb8f57ed3b0ad1c9d79ebc9ee
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621929"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113514"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>驗證原則和驗證原則定址接收器
 
@@ -59,7 +59,7 @@ Windows Server 2012 R2 中引進的功能，可讓您建立驗證原則定址接
 
 Active Directory 帳戶類型會將呼叫端的角色判斷為下列其中一項：
 
--   **User**
+-   **使用者**
 
     使用者應該一律是 Protected Users 安全性群組的成員，它預設會拒絕使用 NTLM 進行驗證的嘗試。
 
@@ -89,11 +89,11 @@ Active Directory 帳戶類型會將呼叫端的角色判斷為下列其中一項
 |原則|強制執行驗證原則|指定是否要強制執行驗證原則。<p>未強制執行時，原則預設處於稽核模式，而且會產生表示可能成功和失敗的事件，但不會在系統套用保護。|
 |原則|指派的驗證原則返回連結|這個屬性是 msDS-AssignedAuthNPolicy 的返回連結。|
 |原則|指派的驗證原則|指定套用到這個主體的 AuthNPolicy。|
-|User|使用者驗證原則|針對指派給這個定址接收器物件的使用者，指定要套用的 AuthNPolicy。|
-|User|使用者驗證原則返回連結|這個屬性是 msDS-UserAuthNPolicy 的返回連結。|
-|User|ms-DS-User-Allowed-To-Authenticate-To|這個屬性用來決定允許向使用者帳戶下執行之服務驗證的一組主體。|
-|User|ms-DS-User-Allowed-To-Authenticate-From|這個屬性用來決定使用者帳戶具有登入權限的一組裝置。|
-|User|使用者 TGT 存留期|指定發行給使用者的 Kerberos TGT 的最長使用期限 (以秒表示)。 結果 TGT 是不可更新。|
+|使用者|使用者驗證原則|針對指派給這個定址接收器物件的使用者，指定要套用的 AuthNPolicy。|
+|使用者|使用者驗證原則返回連結|這個屬性是 msDS-UserAuthNPolicy 的返回連結。|
+|使用者|ms-DS-User-Allowed-To-Authenticate-To|這個屬性用來決定允許向使用者帳戶下執行之服務驗證的一組主體。|
+|使用者|ms-DS-User-Allowed-To-Authenticate-From|這個屬性用來決定使用者帳戶具有登入權限的一組裝置。|
+|使用者|使用者 TGT 存留期|指定發行給使用者的 Kerberos TGT 的最長使用期限 (以秒表示)。 結果 TGT 是不可更新。|
 |電腦|電腦驗證原則|針對指派給這個定址接收器物件的電腦，指定要套用的 AuthNPolicy。|
 |電腦|電腦驗證原則返回連結|這個屬性是 msDS-ComputerAuthNPolicy 的返回連結。|
 |電腦|ms-DS-Computer-Allowed-To-Authenticate-To|這個屬性用來決定允許向電腦帳戶下執行之服務驗證的一組主體。|

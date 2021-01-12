@@ -1,18 +1,18 @@
 ---
 title: 使用軟體限制原則來協助保護電腦免於電子郵件病毒
-description: Windows Server 安全性
+description: 瞭解如何使用軟體限制原則 (SRP) 來設定應用程式控制原則，以協助保護您的電腦免于從 Windows Server 2008 和 Windows Vista 開始的電子郵件病毒。
 ms.topic: article
 ms.assetid: 02f23979-f832-4e46-bdea-21fd77db35b2
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 502d9a097928c6a9b828ebc3b9d5b3544d456388
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: bf7da1388ecbe65269ee6d847c86e643b3bc39bd
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640230"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113454"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>使用軟體限制原則來協助保護電腦免於電子郵件病毒
 
@@ -29,7 +29,7 @@ ms.locfileid: "89640230"
 
 1.  請參閱軟體限制原則的最佳作法，以瞭解 SRP 的運作方式。
 
-    -   [最佳做法](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
+    -   [最佳作法](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
 
     -   [軟體限制原則的運作方式](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))
 

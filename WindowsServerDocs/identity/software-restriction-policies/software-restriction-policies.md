@@ -1,18 +1,18 @@
 ---
 title: Software Restriction Policies
-description: Windows Server 安全性
+description: 深入瞭解 Windows Server 2012 中的 (SRP) 的軟體限制原則和 Windows 8，並尋找有關從 Windows Server 2003 開始之 SRP 的技術資訊連結。
 ms.topic: article
 ms.assetid: 5c0befad-07c3-4262-b418-372d01850305
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: f4019902622b667267562a8490b6540a6c27d1e4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3d98c52719efeec447d9bdedc4fb824c6dbeca4d
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640239"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112944"
 ---
 # <a name="software-restriction-policies"></a>Software Restriction Policies
 
@@ -71,14 +71,14 @@ ms.locfileid: "89640239"
 
 如果您設計適用於這些原則的網域部署的呼叫，則除了上述清單之外，還需要下列功能：
 
--   Active Directory Domain Services
+-   Active Directory 網域服務
 
 -   群組原則
 
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>伺服器管理員資訊
 軟體限制原則是本機群組原則編輯器的延伸，無法透過伺服器管理員的新增角色及功能進行安裝。
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>另請參閱
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>請參閱
 下表提供了解與使用 SRP 相關資源的連結。
 
 |內容類型|參考|
@@ -88,6 +88,6 @@ ms.locfileid: "89640239"
 |**部署**|沒有可用資源。|
 |**作業**| ( Windows Server 2012 ) [管理軟體限制原則](administer-software-restriction-policies.md)<p>[軟體限制原則產品](/previous-versions/windows/it-pro/windows-server-2003/cc779607(v=ws.10)) 說明 (Windows Server 2003) |
 |**疑難排解**|疑難排解 Windows Server 2012 ( 的[軟體限制原則](troubleshoot-software-restriction-policies.md)) <p>疑難排解 Windows Server 2003 (的[軟體限制原則](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))) |
-|**安全性**|[軟體限制原則的安全威脅與因應對策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10)) (Windows  Server 2008)<p>[軟體限制原則的威脅和因應措施](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10)) (Windows Server 2008 R2) |
+|**Security**|[軟體限制原則的安全威脅與因應對策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10)) (Windows  Server 2008)<p>[軟體限制原則的威脅和因應措施](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10)) (Windows Server 2008 R2) |
 |**工具及設定**|Windows Server 2003) [的軟體限制原則工具和設定](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10)) (|
 |**社群資源**|[使用軟體限制原則鎖定應用程式](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

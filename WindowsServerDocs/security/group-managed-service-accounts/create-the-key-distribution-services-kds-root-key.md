@@ -1,18 +1,18 @@
 ---
 title: 建立金鑰發佈服務 KDS 根金鑰
-description: Windows Server 安全性
+description: '瞭解如何使用 Windows PowerShell 在 Windows Server 2012 或更新版本中產生群組受管理的服務帳戶密碼，以在網域控制站上 ( # A0) 根金鑰建立 Microsoft 金鑰發佈服務。'
 ms.topic: article
 ms.assetid: 42e5db8f-1516-4d42-be0a-fa932f5588e9
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 6f1852e245bb2f8a26fb15ebe67bfaab8c260192
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 84b925cb44aa8f1da43ac71beff3341da3ff3880
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638076"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112924"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>建立金鑰發佈服務 KDS 根金鑰
 
@@ -30,7 +30,7 @@ ms.locfileid: "89638076"
 > [!NOTE]
 > 若要執行用來管理群組「受管理的服務帳戶」的 Windows PowerShell 命令，必須有 64 位元架構。
 
-#### <a name="to-create-the-kds-root-key-using-the-add-kdsrootkey-cmdlet"></a>使用 Add-kdsrootkey Cmdlet 建立 KDS 根金鑰根金鑰
+#### <a name="to-create-the-kds-root-key-using-the-add-kdsrootkey-cmdlet"></a>使用 Add-KdsRootKey Cmdlet 來建立 KDS 根金鑰根金鑰
 
 1.  在 Windows Server 2012 或更新版本的網域控制站上，從工作列執行 Windows PowerShell。
 
@@ -39,7 +39,7 @@ ms.locfileid: "89638076"
     **新增-Add-kdsrootkey-EffectiveImmediately**
 
     > [!TIP]
-    > Effective 時間參數可用來指定使用金鑰前先將金鑰傳播到所有 DC 的時間。 使用 Add-kdsrootkey-EffectiveImmediately 會將根機碼新增至目標 DC，以供 KDS 根金鑰服務立即使用。 不過，在複寫成功之前，其他網域控制站將無法使用根金鑰。
+    > Effective 時間參數可用來指定使用金鑰前先將金鑰傳播到所有 DC 的時間。 使用 Add-KdsRootKey EffectiveImmediately 會將根機碼加入至 KDS 根金鑰服務將立即使用的目標 DC。 不過，在複寫成功之前，其他網域控制站將無法使用根金鑰。
 
 對於只有一個 DC 的測試環境，您可以使用下列程序來建立 KDS 根金鑰，並設定一個過去的時間做為開始時間，以避開金鑰產生時的等候間隔。 請確認 4004 事件已記錄在 kds 事件記錄檔中。
 
@@ -51,13 +51,13 @@ ms.locfileid: "89638076"
 
     **$a = Get-Date**
 
-    **$b = $a. Time.addhours (-10) **
+    **$b = $a. Time.addhours (-10)**
 
     **Add-Add-kdsrootkey-EffectiveTime $b**
 
     或使用單一命令
 
-    **Add-kdsrootkey-EffectiveTime ( # B1 get-date) . time.addhours (-10) # B5 **
+    **Add-kdsrootkey-EffectiveTime ( # B1 get-date) . time.addhours (-10) # B5**
 
 ## <a name="see-also"></a>另請參閱
 [使用群組受管理的服務帳戶消費者入門](getting-started-with-group-managed-service-accounts.md)

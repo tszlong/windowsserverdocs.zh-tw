@@ -1,18 +1,18 @@
 ---
 title: Group Managed Service Accounts Overview
-description: Windows Server 安全性
+description: 瞭解群組受管理的服務帳戶;特別實用的應用程式、Microsoft 的實施變更，以及硬體和軟體需求。
 ms.topic: article
 ms.assetid: cef0693c-f861-48a7-a1c0-8d1bc06143ce
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: ce51e1f1dab3940154ecee6b2743c39e2ff654b5
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ad6fc6ff95fda08369d88bd76606b523a56cd0b2
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638041"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113434"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -49,7 +49,7 @@ Gmsa 不適用於 Windows Server 2012 之前的 Windows 作業系統。
 ## <a name="server-manager-information"></a>伺服器管理員資訊
 使用伺服器管理員或 Install 的 gMSA Cmdlet 來執行 MSA 和並不需要設定步驟 \- 。
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>另請參閱
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>請參閱
 下表提供與受管理的服務帳戶以及群組受管理的服務帳戶相關的其他資源連結。
 
 |內容類型|參考|
@@ -62,4 +62,4 @@ Gmsa 不適用於 Windows Server 2012 之前的 Windows 作業系統。
 |**評估**|[使用群組受管理的服務帳戶消費者入門](getting-started-with-group-managed-service-accounts.md)|
 |**工具及設定**|[Active Directory 網域服務中的受管理的服務帳戶](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
 |**社群資源**|[受管理的服務帳戶了解、實作、最佳做法以及疑難排解](/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting)|
-|**相關技術**|[Active Directory Domain Services 概觀](active-directory-domain-services-overview.md)|
+|**相關技術**|[Active Directory 網域服務概觀](active-directory-domain-services-overview.md)|

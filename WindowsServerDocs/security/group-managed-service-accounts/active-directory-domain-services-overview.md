@@ -1,18 +1,18 @@
 ---
 title: Active Directory Domain Services 總覽
-description: Windows Server 安全性
+description: 瞭解 Active Directory Domain Services 如何提供儲存目錄資料的方法，並讓網路使用者和系統管理員可以使用此資料。
 ms.topic: article
 ms.assetid: 6cfe9479-5d17-41d5-939a-891e5233fdca
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: b339d513b5bf04bf54a6ba69e4539d6148d7641c
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 7bf44fc77dfa89c3663b74c5fd1a7468e9ffa82c
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624188"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112974"
 ---
 # <a name="overview-of-active-directory-domain-services"></a>Active Directory Domain Services 總覽
 

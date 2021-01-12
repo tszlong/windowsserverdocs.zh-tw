@@ -1,18 +1,18 @@
 ---
 title: 設定額外的 LSA 保護
-description: Windows Server 安全性
+description: 瞭解如何為本地安全機構設定額外的保護 (LSA) 進程，以防止可能危及認證的程式碼插入。
 ms.topic: article
 ms.assetid: 038e7c2b-c032-491f-8727-6f3f01116ef9
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 54bc100c935df2ff0cc7086b258fb395458f259f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c88ff82fc1a6e7c1440823539a14d6edc00270a3
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638088"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113504"
 ---
 # <a name="configuring-additional-lsa-protection"></a>設定額外的 LSA 保護
 
@@ -69,7 +69,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 2.  將登錄機碼的值設定為 **AuditLevel=dword:00000008**。
 
-3.  將電腦重新開機。
+3.  重新啟動電腦。
 
 分析事件 3065 和事件 3066 的結果。
 
@@ -92,23 +92,23 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 2.  建立新的群組原則物件 (GPO)，該物件在網域層級連結或連結到包含您電腦帳戶的組織單位。 您也可以選取已經部署的 GPO。
 
-3.  在 GPO 上按一下滑鼠右鍵，然後按一下 [編輯]**** 開啟 [群組原則管理編輯器]。
+3.  在 GPO 上按一下滑鼠右鍵，然後按一下 [編輯] 開啟 [群組原則管理編輯器]。
 
-4.  依序展開 [電腦設定]****、[喜好設定]**** 及 [Windows 設定]****。
+4.  依序展開 [電腦設定]、[喜好設定] 及 [Windows 設定]。
 
-5.  在 [登錄]**** 上按一下滑鼠右鍵，指向 [新增]****，然後按一下 [登錄項目]****。 隨即顯示 [新登錄內容]**** 對話方塊。
+5.  在 [登錄] 上按一下滑鼠右鍵，指向 [新增]，然後按一下 [登錄項目]。 隨即顯示 [新登錄內容] 對話方塊。
 
 6.  按一下 [ **Hive** ] 清單中的 [ **HKEY_LOCAL_MACHINE]。**
 
-7.  在 [機碼路徑]**** 清單中，瀏覽到 **SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**。
+7.  在 [機碼路徑] 清單中，瀏覽到 **SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**。
 
-8.  在 [值名稱]**** 方塊中輸入 **AuditLevel**。
+8.  在 [值名稱] 方塊中輸入 **AuditLevel**。
 
-9. 在 [數值類型]**** 方塊中，按一下以選取 [REG_DWORD]****。
+9. 在 [數值類型] 方塊中，按一下以選取 [REG_DWORD]。
 
-10. 在 [數值資料]**** 方塊中輸入 **00000008**。
+10. 在 [數值資料] 方塊中輸入 **00000008**。
 
-11. 按一下 [確定]  。
+11. 按一下 [確定]。
 
 > [!NOTE]
 > GPO 變更必須複寫到網域中的所有網域控制站，GPO 才會生效。
@@ -144,7 +144,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 2.  將登錄機碼的值設定為 "RunAsPPL"=dword:00000001。
 
-3.  將電腦重新開機。
+3.  重新啟動電腦。
 
 ##### <a name="to-enable-lsa-protection-using-group-policy"></a>使用群組原則啟用 LSA 保護
 
@@ -152,23 +152,23 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
 
 2.  建立新的 GPO，該物件在網域層級連結或連結到包含您電腦帳戶的組織單位。 您也可以選取已經部署的 GPO。
 
-3.  在 GPO 上按一下滑鼠右鍵，然後按一下 [編輯]**** 開啟 [群組原則管理編輯器]。
+3.  在 GPO 上按一下滑鼠右鍵，然後按一下 [編輯] 開啟 [群組原則管理編輯器]。
 
-4.  依序展開 [電腦設定]****、[喜好設定]**** 及 [Windows 設定]****。
+4.  依序展開 [電腦設定]、[喜好設定] 及 [Windows 設定]。
 
-5.  在 [登錄]**** 上按一下滑鼠右鍵，指向 [新增]****，然後按一下 [登錄項目]****。 隨即顯示 [新登錄內容]**** 對話方塊。
+5.  在 [登錄] 上按一下滑鼠右鍵，指向 [新增]，然後按一下 [登錄項目]。 隨即顯示 [新登錄內容] 對話方塊。
 
-6.  在 [登錄區]**** 清單中，按一下 [**HKEY_LOCAL_MACHINE**]。
+6.  在 [登錄區] 清單中，按一下 [**HKEY_LOCAL_MACHINE**]。
 
 7.  在 [機 **碼路徑** ] 清單中，流覽至 **SYSTEM\CurrentControlSet\Control\Lsa**。
 
 8.  在 [ **值名稱** ] 方塊中，輸入 **RunAsPPL**。
 
-9. 在 [數值類型]**** 方塊中，按一下 [REG_DWORD]****。
+9. 在 [數值類型] 方塊中，按一下 [REG_DWORD]。
 
 10. 在 [ **數值資料** ] 方塊中，輸入 **00000001**。
 
-11. 按一下 [確定]  。
+11. 按一下 [確定]。
 
 ##### <a name="to-disable-lsa-protection"></a>停用 LSA 保護
 
@@ -186,7 +186,7 @@ LSA 外掛程式或驅動程式必須符合以下條件，才能順利載入為�
     > 安全開機關閉時，會重設所有與安全開機和 UEFI 相關的設定。 您應該只在所有其他停用 LSA 保護的方法都失敗後，才關閉安全開機。
 
 ### <a name="verifying-lsa-protection"></a>驗證 LSA 保護
-若要確認 Windows 啟動時 LSA 是否在受保護模式下啟動，請在 [Windows 記錄]**** 的 [系統]**** 記錄檔中搜尋下列 WinInit 事件：
+若要確認 Windows 啟動時 LSA 是否在受保護模式下啟動，請在 [Windows 記錄] 的 [系統] 記錄檔中搜尋下列 WinInit 事件：
 
 -   12: LSASS.exe 已以受保護的處理程序方式啟動，層級為: 4
 

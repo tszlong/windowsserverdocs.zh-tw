@@ -1,17 +1,17 @@
 ---
 title: 管理傳輸層安全性 (TLS)
-description: Windows Server 安全性
+description: 瞭解如何管理傳輸層安全性。
 ms.topic: article
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: a6af172f515345a18bbd16f37b8007302ffbab70
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: c6dc0bcefda94b8d2b5490fa2378f60d26877bc5
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864028"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113294"
 ---
 # <a name="manage-transport-layer-security-tls"></a>管理傳輸層安全性 (TLS)
 

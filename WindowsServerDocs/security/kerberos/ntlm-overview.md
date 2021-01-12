@@ -1,18 +1,18 @@
 ---
 title: NTLM Overview
-description: Windows Server 安全性
+description: 深入瞭解 NTLM、功能的任何變更，以及尋找 windows Server 2012 和舊版的 Windows 驗證與 NTLM 技術資源連結。
 ms.topic: article
 ms.assetid: 773909fd-c0bc-498a-95fc-bb452ec04d90
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: d12e61fac3ba6c44dbcac35ea3097e95db54752a
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: c639176afb1886cef2509d1747a94a79dfc3a017
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766781"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112874"
 ---
 # <a name="ntlm-overview"></a>NTLM Overview
 
@@ -41,7 +41,7 @@ Windows Server 2012 的 NTLM 沒有移除或淘汰的功能。
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>伺服器管理員資訊
 無法從伺服器管理員設定 NTLM。 您可以使用安全性原則設定或群組原則來管理電腦系統之間的 NTLM 驗證使用。 在網域中，Kerberos 是預設的驗證通訊協定。
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>另請參閱
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>請參閱
 下表列出 NTLM 及其他 Windows 驗證技術的相關資源。
 
 |內容類型|參考|

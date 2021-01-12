@@ -1,18 +1,18 @@
 ---
 title: 虛擬網路加密
-description: 虛擬網路加密允許加密虛擬機器之間的虛擬網路流量，這些虛擬機器會在標示為「啟用加密」的子網內彼此通訊。
+description: 瞭解虛擬網路加密的需求。
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 7da0f509-7b02-4a0f-90fb-d97c83a2bc4e
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: ef2d3f1adf69d3dedad4e77e6afca9b61eec4616
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: f0283a55bd8db5bb92672f91186ae9dfd17229ce
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97945874"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113144"
 ---
 # <a name="virtual-network-encryption"></a>虛擬網路加密
 

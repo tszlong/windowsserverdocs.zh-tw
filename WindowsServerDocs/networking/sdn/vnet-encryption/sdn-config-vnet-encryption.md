@@ -1,18 +1,18 @@
 ---
 title: 設定虛擬網路的加密
-description: 虛擬網路加密允許加密虛擬機器之間的虛擬網路流量，這些虛擬機器會在標示為「啟用加密」的子網內彼此通訊。
+description: 瞭解如何建立加密憑證、建立憑證認證，以及設定虛擬網路以進行加密。
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 17ad35c4cb0bdcb89b095334a282e113028937b1
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: a28132747d11c352987638c9db368561897c421f
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948824"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113404"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>設定虛擬子網的加密
 
