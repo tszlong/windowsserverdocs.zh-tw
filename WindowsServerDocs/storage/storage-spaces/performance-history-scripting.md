@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3894e6ce2e5f89c98d064ceedb3822cf9ab7061a
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 76820414e98487e3cf046f53d914f090ba037e48
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048926"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103760"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>使用 PowerShell 編寫腳本和儲存空間直接存取效能歷程記錄
 
@@ -42,7 +42,7 @@ ms.locfileid: "97048926"
 
 在以下的螢幕擷取畫面中，我們發現 *Server-02* 有上周的尖峰尖峰：
 
-![PowerShell 的螢幕擷取畫面](media/performance-history/Show-CpuMinMaxAvg.png)
+![顯示 Server-02 有上周未解釋尖峰尖峰的螢幕擷取畫面。](media/performance-history/Show-CpuMinMaxAvg.png)
 
 ### <a name="how-it-works"></a>運作方式
 
@@ -101,7 +101,7 @@ $Output | Sort-Object ClusterNode | Format-Table
 
 在以下螢幕擷取畫面中，我們會看到沒有極端值：
 
-![PowerShell 的螢幕擷取畫面](media/performance-history/Show-LatencyOutlierHDD.png)
+![顯示沒有極端值的螢幕擷取畫面。](media/performance-history/Show-LatencyOutlierHDD.png)
 
 ### <a name="how-it-works"></a>運作方式
 
@@ -208,7 +208,7 @@ Else {
 
 在以下螢幕擷取畫面中，我們會依儲存體活動看到前10部虛擬機器：
 
-![PowerShell 的螢幕擷取畫面](media/performance-history/Show-TopIopsVMs.png)
+![依儲存體活動顯示前10部虛擬機器的螢幕擷取畫面。](media/performance-history/Show-TopIopsVMs.png)
 
 ### <a name="how-it-works"></a>運作方式
 
@@ -260,7 +260,7 @@ $Output | Sort-Object RawIopsTotal -Descending | Select-Object -First 10 | Forma
 
 在以下螢幕擷取畫面中，我們會看到前一天有一個 *FABRIKAM NX-4 Pro #2* 尖峰：
 
-![PowerShell 的螢幕擷取畫面](media/performance-history/Show-NetworkSaturation.png)
+![顯示前一天 Fabrikam NX-4 Pro #2 尖峰的螢幕擷取畫面。](media/performance-history/Show-NetworkSaturation.png)
 
 ### <a name="how-it-works"></a>運作方式
 
@@ -332,7 +332,7 @@ $Output | Sort-Object PsComputerName, InterfaceDescription | Format-Table PsComp
 
 在以下螢幕擷取畫面中，我們會看到 *備份* 磁片區每日新增大約 15 GB：
 
-![PowerShell 的螢幕擷取畫面](media/performance-history/Show-StorageTrend.png)
+![顯示備份磁片區每天大約增加 15 GB 的螢幕擷取畫面。](media/performance-history/Show-StorageTrend.png)
 
 如此一來，它就會在另一個42天內達到其容量。
 
@@ -490,5 +490,5 @@ $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | 
 ## <a name="additional-references"></a>其他參考資料
 
 - [開始使用 Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)
-- [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
+- [儲存空間直接存取概觀](storage-spaces-direct-overview.md) \(部分機器翻譯\)
 - [效能歷程記錄](performance-history.md)

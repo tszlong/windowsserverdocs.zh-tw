@@ -6,12 +6,12 @@ ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
-ms.openlocfilehash: 55ac25e37f7c7621426db031ba1ad148d3a02a98
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 2816b2ac03fda883e67a0dd58f7797a0e4847678
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97042396"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103870"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>在自訂埠上為憑證金鑰型更新設定憑證註冊 Web 服務
 
@@ -60,7 +60,7 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 4.  設定用戶端設定。
 
-### <a name="configuration"></a>組態
+### <a name="configuration"></a>設定
 
 本節提供設定初始註冊的步驟。
 
@@ -132,7 +132,7 @@ Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso
 ##### <a name="step-2-check-the-internet-information-services-iis-manager-console"></a>步驟2檢查 Internet Information Services (IIS) 管理員主控台
 
 安裝成功之後，您預期會在 Internet Information Services (IIS) Manager 主控台中看到下列顯示。
-![IIS 管理員](media/certificate-enrollment-certificate-key-based-renewal-4.png)
+![顯示 Internet Information Services Manager 主控台的螢幕擷取畫面。](media/certificate-enrollment-certificate-key-based-renewal-4.png)
 
 在 [ **預設的網站**] 底下，選取 [ **ADPolicyProvider_CEP_UsernamePassword**]，然後開啟 [ **應用程式設定**]。 請記下 **識別碼** 和 **URI**。
 
@@ -250,16 +250,16 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
    b. 針對 [ **驗證類型**]，選取 [使用者 **名稱/密碼**]。
 
    c. 將優先權設定為 **10**，然後驗證原則伺服器。
-      ![註冊原則](media/certificate-enrollment-certificate-key-based-renewal-10.png)
+      ![顯示要設定優先順序之位置的螢幕擷取畫面。](media/certificate-enrollment-certificate-key-based-renewal-10.png)
 
    > [!Note]
    > 請確定埠號碼已新增至 URI，而且可在防火牆上使用。
 
 5. 透過 certlm.msc 註冊電腦的第一個憑證。
-   ![註冊原則](media/certificate-enrollment-certificate-key-based-renewal-11.png)
+   ![顯示要在哪裡選取憑證註冊原則的螢幕擷取畫面。](media/certificate-enrollment-certificate-key-based-renewal-11.png)
 
    選取 KBR 範本並註冊憑證。
-   ![註冊原則](media/certificate-enrollment-certificate-key-based-renewal-12.png)
+   ![顯示要在哪裡選取 K B R 範本的螢幕擷取畫面。](media/certificate-enrollment-certificate-key-based-renewal-12.png)
 
 6. 再次開啟 **gpedit.msc** 。 編輯 [ **憑證服務用戶端-憑證註冊原則**]，然後新增以金鑰為基礎的更新註冊原則：
 
@@ -286,7 +286,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 certreq -machine -q -enroll -cert <thumbprint> renew
 ```
 
-![命令](media/certificate-enrollment-certificate-key-based-renewal-14.png)
+![顯示如何執行所提供命令的螢幕擷取畫面。](media/certificate-enrollment-certificate-key-based-renewal-14.png)
 
 ### <a name="method-2"></a>方法 2
 

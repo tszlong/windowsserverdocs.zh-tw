@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1be762cefabdc40050e7656ec29033778b92bbf6
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 8e458a59348cc02d2f7e19aaef1c8bca78ae505b
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050486"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103750"
 ---
 # <a name="the-role-of-the-claims-engine"></a>宣告引擎的角色
 在最高層級中，Active Directory 同盟服務 AD FS 中的宣告引擎 \( \) 是以規則為 \- 基礎的引擎，專門用來服務和處理同盟服務的宣告要求。 宣告引擎是同盟服務內負責跨所有已設定的同盟信任關係執行每個規則集，並將輸出結果傳遞至宣告管線的唯一實體。
@@ -21,7 +21,7 @@ ms.locfileid: "97050486"
 
 如下圖所示， \( 宣告引擎會執行接受傳入宣告接受規則 \) 、授權宣告要求者 \( 授權規則， \) 以及在 \( \) 組織中的所有同盟信任關係之間發出輸出宣告發布規則的動作。
 
-![AD FS 角色](media/adfs2_enginepipeline.gif)
+![顯示宣告引擎所執行之處理常式的圖例。](media/adfs2_enginepipeline.gif)
 
 ## <a name="claim-rules-execution-process"></a>宣告規則執行處理程序
 當您在組織中使用宣告規則設定宣告提供者信任或信賴憑證者信任時， \( \) 會叫用宣告引擎以在宣告規則中套用必要的邏輯，以判斷是否要發出任何宣告以及要發出的宣告，藉以將該信任的宣告規則集作為連入宣告的閘道管理員。
@@ -44,7 +44,7 @@ ms.locfileid: "97050486"
 
 例如，在下圖中，宣告引擎會從傳入宣告讀取 A 和 B 的宣告，並將其複製到輸入宣告集。 它們位於輸入宣告集之後，宣告引擎會擷取並將 A 和 B 的宣告處理做為宣告規則集中的第一個規則的邏輯的輸入。
 
-![AD FS 角色](media/adfs2_context1.gif)
+![說明，宣告引擎會從傳入宣告讀取 A 和 B 的宣告，並將其複製到輸入宣告集。](media/adfs2_context1.gif)
 
 宣告規則集中的所有規則都共用相同的輸入的宣告集。 該集中的每個規則可以新增至共用的輸入宣告集，因此會影響集內所有後續的規則。
 
@@ -69,7 +69,7 @@ ms.locfileid: "97050486"
 
 如果規則集內的規則的條件部分不符合輸入宣告集中的任何宣告，則會忽略規則中的發行陳述式部分，並因此不會新增任何宣告至輸出宣告集或輸入宣告集。 下圖和相對應的步驟會顯示宣告引擎會執行轉換規則時發生的事情：
 
-![AD FS 角色](media/adfs2_context2.gif)
+![顯示當宣告引擎執行轉換規則時會發生什麼情況的圖例。](media/adfs2_context2.gif)
 
 1.  連入宣告會新增至宣告引擎所設定的輸入宣告。
 
@@ -103,7 +103,7 @@ ms.locfileid: "97050486"
 
 授權規則的目標是要根據使用者是否獲允許取得指定信賴憑證者的權杖來發行允許或拒絕宣告。 如下圖所示，管線會使用授權執行的輸出來判斷是否已執行發行規則集（根據是否存在允許和 \/ 拒絕宣告），但不會使用授權執行輸出本身做為宣告規則集的輸入。
 
-![AD FS 角色](media/adfs2_authorization.gif)
+![顯示授權執行輸出的圖例，是由管線用來判斷是否已執行發行規則集。](media/adfs2_authorization.gif)
 
 如需宣告授權的詳細資訊，請參閱 [When to Use an Authorization Claim Rule](When-to-Use-an-Authorization-Claim-Rule.md)。
 

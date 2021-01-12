@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 10/25/2017
 ms.topic: article
-ms.openlocfilehash: 1281ce03b291748b093ea491f54e6e7924e03cde
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 4254fe1e9e95fbd72fbea049bf6575f76e4b578c
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050396"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103830"
 ---
 # <a name="auditing-enhancements-to-ad-fs-in-windows-server-2016"></a>Windows Server 2016 AD FS 的稽核增強功能
 
@@ -21,19 +21,19 @@ ms.locfileid: "97050396"
 隨著 Windows Server 2016 中的 AD FS 版本的推出，經過更簡化且較不詳細的審核功能。
 
 ## <a name="auditing-levels-in-ad-fs-for-windows-server-2016"></a>Windows Server 2016 AD FS 的審核等級
-根據預設，Windows Server 2016 中的 AD FS 已啟用基本的審核。  在基本的審核中，系統管理員會看到單一要求的5個或更少事件。  這會造成系統管理員必須查看的事件數目明顯降低，以便查看單一要求。   您可以使用 PowerShell cmdlt 來引發或減少審核層級： Set-AdfsProperties-AuditLevel。  下表說明可用的審核層級。
+根據預設，Windows Server 2016 中的 AD FS 已啟用基本的審核。  在基本的審核中，系統管理員會看到單一要求的5個或更少事件。  這會造成系統管理員必須查看的事件數目明顯降低，以便查看單一要求。   您可以使用 PowerShell Cmdlet 來引發或減少審核層級： Set-AdfsProperties-AuditLevel。  下表說明可用的審核層級。
 
 | 稽核層級 | PowerShell 語法 | 描述 |
 |--|--|--|
-| 無 | Set-AdfsProperties-AuditLevel None | 停用審核，而且不會記錄任何事件。 |
+| None | Set-AdfsProperties-AuditLevel None | 停用審核，而且不會記錄任何事件。 |
 | 基本 (預設)  | Set-AdfsProperties-AuditLevel Basic | 單一要求不會記錄超過5個事件 |
 | 「詳細資訊」 | Set-AdfsProperties-AuditLevel 詳細資訊 | 將會記錄所有事件。  這會為每個要求記錄大量的資訊。 |
 
-若要查看目前的審核層級，您可以使用 PowerShell cmdlt： Set-adfsproperties。
+若要查看目前的審核層級，您可以使用 PowerShell Cmdlet： Set-adfsproperties。
 
-![audit 增強功能](media/Auditing-Enhancements-to-AD-FS-in-Windows-Server-2016/ADFS_Audit_1.PNG)
+![顯示如何使用 Get-AdfsProperties Cmdlet 的螢幕擷取畫面。](media/Auditing-Enhancements-to-AD-FS-in-Windows-Server-2016/ADFS_Audit_1.PNG)
 
-您可以使用 PowerShell cmdlt 來引發或減少審核層級： Set-AdfsProperties-AuditLevel。
+您可以使用 PowerShell Cmdlet 來引發或減少審核層級： Set-AdfsProperties-AuditLevel。
 
 ![audit 增強功能](media/Auditing-Enhancements-to-AD-FS-in-Windows-Server-2016/ADFS_Audit_2.png)
 

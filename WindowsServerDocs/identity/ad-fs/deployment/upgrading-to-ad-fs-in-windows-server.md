@@ -1,18 +1,18 @@
 ---
-description: 深入瞭解：使用 WID 資料庫升級至 Windows Server 2016 中的 AD FS
+description: 深入瞭解：使用 WID 資料庫升級至 Windows Server 2016 和2019中的 AD FS
 ms.assetid: 7671e0c9-faf0-40de-808a-62f54645f891
-title: 升級為 Windows Server 2016 的 AD FS
+title: 升級至 Windows Server 2016 和2019中的 AD FS
 author: billmath
 manager: femila
 ms.date: 04/09/2018
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 6be8d01bc7e729ee15a1488f5721e7db5f3d364d
-ms.sourcegitcommit: 3247e193d9fe1b57543fff215460a6d9db52f58b
+ms.openlocfilehash: abd5addb17456c61e207a8ce2ce19792eb9081cd
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814937"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103680"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>升級至使用 WID 資料庫的 Windows Server 2016 AD FS
 

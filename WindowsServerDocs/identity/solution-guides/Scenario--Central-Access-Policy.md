@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 74fab5d6d790c4cf8ff4548f723a58dee50a941e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 8413f257b91035f8ec01602f1b440bc8cbd75a9a
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044606"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103770"
 ---
 # <a name="scenario-central-access-policy"></a>案例：集中存取原則
 
@@ -52,11 +52,11 @@ ms.locfileid: "97044606"
 
 下列兩張圖顯示集中存取和稽核原則的工作流程。
 
-![解決方案指南](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide.JPG)
+![此圖顯示集中存取和稽核原則的概念。](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide.JPG)
 
 **圖 1** 集中存取和稽核原則的概念
 
-![解決方案指南](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide_2.JPG)
+![顯示集中存取原則工作流程的圖表。](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide_2.JPG)
 
 **圖 2** 集中存取原則工作流程
 

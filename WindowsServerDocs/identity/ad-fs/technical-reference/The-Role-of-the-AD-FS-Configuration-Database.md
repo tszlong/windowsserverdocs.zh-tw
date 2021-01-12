@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 19b11885e28c23f789031e4b0c619cd660bd22e3
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 4cc0079a5494a6390cc347d01174cfd5b2db7326
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045276"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103730"
 ---
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>AD FS 設定資料庫的角色
 
@@ -60,7 +60,7 @@ WID 使用關聯式資料存放區，而且沒有自己的管理使用者介面 
 
 當您新增同盟伺服器到陣列時，將成為次要同盟伺服器的新電腦會連線到主要同盟伺服器，以複寫 AD FS 設定資料庫的複本。 從現在開始，新的同盟伺服器會繼續定期從主要同盟伺服器同步更新，如下圖所示。
 
-![AD FS 角色](media/adfs2_WID.png)
+![顯示新的同盟伺服器會持續定期從主要同盟伺服器提取更新的圖例。](media/adfs2_WID.png)
 
 每部次要同盟伺服器每隔五分鐘都會輪詢主要同盟伺服器以同步變更。 您可以調整這個預設的五 \- 分鐘值，或使用 Windows PowerShell Cmdlet 隨時強制立即進行同步處理。 如需有關如何進行此作業的詳細資訊，請參閱 [AD FS 系統管理 Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=179634)。
 

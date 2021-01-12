@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7dbb6ca59de0d7a9c3e696084409323e743b27f1
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 77df2bd340d1587836c6197282263f8d5629c00f
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040036"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103840"
 ---
 # <a name="create-a-rule-to-transform-an-incoming-claim"></a>建立規則轉換傳入宣告
 
@@ -28,16 +28,16 @@ ms.locfileid: "97040036"
 1.  在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在主控台樹的 [ **AD FS**] 下，按一下 [信賴憑證者 **信任**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![螢幕擷取畫面，顯示當您建立規則以在 Windows Server 2016 中的信賴憑證者信任上轉換傳入宣告時，要在哪裡選取信賴憑證者信任。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告發行原則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![當您建立規則以在 Windows Server 2016 中的信賴憑證者信任上轉換連入宣告時，顯示在哪裡選取 [編輯宣告發行原則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  在 [ **編輯宣告發行原則** ] 對話方塊的 [ **發佈轉換規則** ] 下，按一下 [ **新增規則** ] 以啟動規則嚮導。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![顯示當您建立規則以在 Windows Server 2016 中的信賴憑證者信任上轉換傳入宣告時，要在哪裡選取 [新增規則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **轉換傳入** 宣告]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
+![螢幕擷取畫面，顯示當您建立規則以在 Windows Server 2016 中的信賴憑證者信任上轉換連入宣告時，要在哪裡選取 [轉換傳入宣告]。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  在 [ **設定規則** ] 頁面的 [宣告 **規則名稱**] 底下，輸入此規則的顯示名稱。 在 [ **傳入宣告類型**] 中，選取清單中的宣告類型。 在 [ **輸出宣告類型**] 中，選取清單中的宣告類型，然後選取下列其中一個選項，這取決於您的組織需求：
 
@@ -45,8 +45,8 @@ ms.locfileid: "97040036"
 
     -   **以不同的傳出宣告值取代傳入宣告值**
 
-    -   **\- 以新的電子 \- 郵件尾碼 create rule 取代傳入的電子郵件尾碼宣告** 
- ![](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform4.PNG)
+    -   以 **\- 新的電子 \- 郵件尾碼螢幕擷取畫面取代內送的電子郵件尾碼宣告**， 
+ ![ 此螢幕擷取畫面顯示當您在 Windows Server 2016 的信賴憑證者信任上建立規則以轉換傳入宣告時，要在哪裡輸入宣告規則名稱。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform4.PNG)
 
 7.  按一下 [完成] 按鈕。
 
@@ -62,16 +62,16 @@ ms.locfileid: "97040036"
 1.  在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在主控台樹的 [ **AD FS**] 下，按一下 [ **宣告提供者信任**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![當您建立規則以在 Windows Server 2016 中的宣告提供者信任上轉換傳入宣告時，顯示在哪裡選取宣告提供者信任的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告規則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![當您建立規則以在 Windows Server 2016 中的宣告提供者信任上轉換傳入宣告時，顯示在哪裡選取 [編輯宣告規則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  在 [ **編輯宣告規則** ] 對話方塊中，按一下 [ **接受轉換規則** ] 下的 [ **新增規則** ]，以啟動規則嚮導。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![螢幕擷取畫面，顯示當您建立規則以在 Windows Server 2016 中的宣告提供者信任上轉換傳入宣告時，要在哪裡選取 [新增規則]。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **轉換傳入** 宣告]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
+![螢幕擷取畫面，顯示當您建立規則以在 Windows Server 2016 中的宣告提供者信任上轉換傳入宣告時，要在哪裡選取 [轉換傳入宣告範本]。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  在 [ **設定規則** ] 頁面的 [宣告 **規則名稱**] 底下，輸入此規則的顯示名稱。 在 [ **傳入宣告類型**] 中，選取清單中的宣告類型。 在 [ **輸出宣告類型**] 中，選取清單中的宣告類型，然後選取下列其中一個選項，這取決於您的組織需求：
 
@@ -79,8 +79,8 @@ ms.locfileid: "97040036"
 
     -   **以不同的傳出宣告值取代傳入宣告值**
 
-    -   **\- 以新的電子 \- 郵件尾碼 create rule 取代傳入的電子郵件尾碼宣告** 
- ![](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform4.PNG)
+    -   以 **\- 新的電子 \- 郵件尾碼螢幕擷取畫面取代內送的電子郵件尾碼宣告**， 
+ ![ 此螢幕擷取畫面會顯示當您建立規則來轉換 Windows Server 2016 中宣告提供者信任的傳入宣告時，在哪裡輸入宣告規則名稱。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform4.PNG)
 
 7.  按一下 [完成] 按鈕。
 
@@ -98,7 +98,7 @@ ms.locfileid: "97040036"
 2.  在主控台樹的 **AD FS \\ 信任關係**] 下，按一下 [ **宣告提供者信任** ] 或 [信賴憑證者 **信任**]，然後在清單中按一下您要在其中建立此規則的特定信任。
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告規則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![顯示當您在 Windows Server 2012 R2 中建立規則時，要在哪裡選取 [編輯宣告規則] 的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  在 [ **編輯宣告規則** ] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您想要建立此規則的規則集，然後按一下 [ **新增規則** ] 以啟動與該規則集相關聯的規則 wizard：
 
@@ -109,10 +109,10 @@ ms.locfileid: "97040036"
     -   **發佈授權規則**
 
     -   **委派授權規則** 
- ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ ![螢幕擷取畫面，顯示當您建立規則來轉換 Windows Server 2012 R2 中的內送宣告時，在哪裡選取 [編輯宣告規則]。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **轉換傳入** 宣告]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)
+![螢幕擷取畫面，顯示當您在 Windows Server 2012 R2 中建立規則以轉換傳入的宣告時，要在哪裡選取 [轉換傳入宣告] 範本。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)
 
 6.  在 [ **設定規則** ] 頁面的 [宣告 **規則名稱**] 底下，輸入此規則的顯示名稱。 在 [ **傳入宣告類型**] 中，選取清單中的宣告類型。 在 [ **輸出宣告類型**] 中，選取清單中的宣告類型，然後選取下列其中一個選項，這取決於您的組織需求：
 

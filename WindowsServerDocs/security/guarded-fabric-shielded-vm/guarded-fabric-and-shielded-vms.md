@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: f80daef1d7d6bfae0cc78e3ed41474995186fbb5
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: ce03cb4c851abb4b0eb6fbce8a7fe9667f74403d
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97047526"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103820"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>受防護網狀架構與受防護的 VM 概觀
 
@@ -82,7 +82,7 @@ HGS 與建立受防護的 VM 的方法搭配使用，協助提供以下保證。
 
 下圖說明防護資料檔案和相關的組態項目。
 
-![防護資料檔案](../media/Guarded-Fabric-Shielded-VM/shielded-vms-shielding-data-file.png)
+![顯示防護資料檔案和相關設定元素的圖例。](../media/Guarded-Fabric-Shielded-VM/shielded-vms-shielding-data-file.png)
 
 ## <a name="what-are-the-types-of-virtual-machines-that-a-guarded-fabric-can-run"></a>受防護網狀架構可執行的虛擬機器類型為何？
 

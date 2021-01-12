@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a5b377989315462789b9b33faf5267211c93bf8c
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: e602ae1f188de72ae974e45d8a5f341185216eb5
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97039726"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103740"
 ---
 # <a name="remove-the-microsoft-copyright"></a>移除 Microsoft 著作權
 
@@ -20,7 +20,7 @@ ms.locfileid: "97039726"
 
 根據預設，AD FS 頁面會包含 Microsoft 著作權。 若要從您的自訂頁面移除此著作權，可以使用下列程序。
 
-![移除著作權](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png)
+![顯示在底部有著作權之登入頁面的螢幕擷取畫面。](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png)
 
 ## <a name="to-remove-the-microsoft-copyright"></a>移除 Microsoft 著作權
 

@@ -7,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
-ms.openlocfilehash: 55ae8f4630c21ceb5cde91982970ff52c10047da
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5f05abf8c14fc3829fe9a0e99ef12de2cde97f81
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97039736"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103720"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>多重要素驗證和外部驗證提供者自訂
 
@@ -26,7 +26,7 @@ Export-AdfsWebTheme -Name default -DirectoryPath C:\theme
 
 以下是「登 \- 入」使用者介面的範例（以紅色反白顯示，由外部驗證提供者）。 使用者介面會使用 AD FS .css 檔案中的 UI 類別。
 
-![AD FS 和 MFA](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom8.png)
+![顯示登入使用者介面範例的螢幕擷取畫面。](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom8.png)
 
 在您撰寫新的自訂驗證方法之前，建議您先研究 AD FS 主題和樣式定義，以瞭解內容撰寫需求。
 

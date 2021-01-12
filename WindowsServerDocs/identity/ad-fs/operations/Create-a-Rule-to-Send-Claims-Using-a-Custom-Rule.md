@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: fe34270ad7535995d85d85eb091b67b79ab78c83
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5f1bb307565ce29defd918f8da606ee058113baf
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048156"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103860"
 ---
 # <a name="create-a-rule-to-send-claims-using-a-custom-rule"></a>建立規則使用自訂規則傳送宣告
 
@@ -30,19 +30,19 @@ ms.locfileid: "97048156"
 1.  在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在主控台樹的 [ **AD FS**] 下，按一下 [信賴憑證者 **信任**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![當您在 Windows Server 2016 的信賴憑證者信任上建立規則以通過或篩選傳入宣告時，顯示在主控台樹中選取 [信賴憑證者信任] 的螢幕擷取畫面。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告發行原則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![螢幕擷取畫面，顯示當您建立規則以在 Windows Server 2016 中通過或篩選信賴憑證者信任的傳入宣告時，[編輯宣告發行原則] 功能表選項的選取位置。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  在 [ **編輯宣告發行原則** ] 對話方塊的 [ **發佈轉換規則** ] 下，按一下 [ **新增規則** ] 以啟動規則嚮導。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![螢幕擷取畫面，顯示當您在 Windows Server 2016 的信賴憑證者信任上建立規則以傳遞或篩選傳入宣告時，要在哪裡選取 [新增規則]。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **使用自訂規則傳送宣告** ]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)
+![螢幕擷取畫面，顯示當您建立規則以在 Windows Server 2016 的信賴憑證者信任中通過或篩選傳入宣告時，使用自訂規則來選取傳送宣告的位置。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)
 
 6.  在 [ **設定規則** ] 頁面的 [宣告 **規則名稱**] 底下，輸入此規則的顯示名稱。 在 [ **自訂規則**] 下，輸入或貼上您想要用於此規則的宣告規則語言語法。
-![建立規則](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)
+![顯示宣告規則名稱之類型的螢幕擷取畫面。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)
 
 7.  按一下 [完成] 。
 
@@ -53,19 +53,19 @@ ms.locfileid: "97048156"
 1.  在 [伺服器管理員] 中按一下 [工具]，然後選取 [AD FS 管理]。
 
 2.  在主控台樹的 [ **AD FS**] 下，按一下 [ **宣告提供者信任**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![螢幕擷取畫面，顯示當您建立規則以在 Windows Server 2016 中通過或篩選宣告提供者信任的傳入宣告時，要在哪裡選取宣告提供者信任](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告規則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![螢幕擷取畫面，顯示當您建立規則以在 Windows Server 2016 中的宣告提供者信任上傳遞或篩選傳入宣告時，要在哪裡選取 [編輯宣告規則]。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  在 [ **編輯宣告規則** ] 對話方塊中，按一下 [ **接受轉換規則** ] 下的 [ **新增規則** ]，以啟動規則嚮導。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![螢幕擷取畫面，顯示當您建立規則以在 Windows Server 2016 中的宣告提供者信任上傳遞或篩選傳入宣告時，要在哪裡選取 [新增規則]。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **使用自訂規則傳送宣告** ]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)
+![螢幕擷取畫面，其中顯示當您建立規則以在 Windows Server 2016 中的宣告提供者信任上傳遞或篩選傳入宣告時，使用自訂規則範本來選取傳送宣告。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)
 
 6.  在 [ **設定規則** ] 頁面的 [宣告 **規則名稱**] 底下，輸入此規則的顯示名稱。 在 [ **自訂規則**] 下，輸入或貼上您想要用於此規則的宣告規則語言語法。
-![建立規則](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)
+![螢幕擷取畫面，顯示當您在 Windows Server 2016 的宣告提供者信任上建立規則以傳遞或篩選傳入宣告時，要在哪裡輸入宣告規則名稱。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)
 
 7.  按一下 [完成] 。
 
@@ -96,7 +96,7 @@ ms.locfileid: "97048156"
 2.  在主控台樹的 **AD FS \\ 信任關係**] 下，按一下 [ **宣告提供者信任** ] 或 [信賴憑證者 **信任**]，然後在清單中按一下您要在其中建立此規則的特定信任。
 
 3.  以滑鼠右鍵 \- 按一下選取的信任，然後按一下 [ **編輯宣告規則**]。
-![建立規則](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![螢幕擷取畫面，顯示當您在 Windows Server 2012 R2 中使用自訂宣告建立規則以傳送宣告時，要在哪裡選取 [編輯宣告規則]。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  在 [ **編輯宣告規則** ] 對話方塊中，選取下列其中一個索引標籤，這取決於您正在編輯的信任，以及您想要建立此規則的規則集，然後按一下 [ **新增規則** ] 以啟動與該規則集相關聯的規則 wizard：
 
@@ -110,10 +110,10 @@ ms.locfileid: "97048156"
  ![建立規則](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  在 [ **選取規則範本** ] 頁面的 [宣告 **規則範本**] 下，從清單中選取 [ **使用自訂規則傳送宣告** ]，然後按 **[下一步]**。
-![建立規則](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom1.PNG)
+![螢幕擷取畫面，顯示當您在 Windows Server 2012 R2 中使用自訂宣告來建立規則以傳送宣告時，使用自訂規則範本來選取傳送宣告的位置。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom1.PNG)
 
 6.  在 [ **設定規則** ] 頁面的 [宣告 **規則名稱**] 底下，輸入此規則的顯示名稱。 在 [ **自訂規則**] 下，輸入或貼上您想要用於此規則的宣告規則語言語法。
-![建立規則](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom2.PNG)
+![螢幕擷取畫面，顯示當您在 Windows Server 2012 R2 中使用自訂宣告建立規則時，要在哪裡輸入宣告規則名稱。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom2.PNG)
 
 7.  按一下 [完成] 。
 
