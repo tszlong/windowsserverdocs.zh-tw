@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/02/2020
+ms.date: 01/06/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ae5c0af5f434b73b9b4590c2a5c53c9551b76b6c
-ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
+ms.openlocfilehash: 8f9d822aebcc12e7d8f93a78258ed993d64e5a9d
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96330400"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977463"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 用戶端中的新功能
 
@@ -21,11 +21,21 @@ ms.locfileid: "96330400"
 > [!NOTE]
 > 我們已變更 Web 用戶端的版本控制系統。 從 1.0.18.0 版開始，所有 Web 用戶端發行版本將包含數字 (採用 "W.X.Y.Z" 的格式)。 遠端桌面 Web 用戶端的版本號碼結尾一律是 0 (例如，W.X.Y.0)。 每個 Windows 虛擬桌面 Web 用戶端版本都會變更最後一位數，直到發行下一版遠端桌面 Web 用戶端為止 (例如 1.0.18.1)。
 
+## <a name="updates-for-10240"></a>1\.0.24.0 版的更新
+*發行日期：1/6/2021*
+
+>[!IMPORTANT]
+> 版本 1.0.24.0 包含重要的安全性修正。 我們已移除包含此錯誤的舊版 Web 用戶端。 我們鼓勵所有客戶儘快更新至版本 1.0.24.0。 
+
+- 已新增將本機麥克風輸入重新導向至遠端工作階段的支援。
+- 已修正 **AltGr** 和數個其他鍵盤錯誤的問題。
+- 協助工具改善。
+
 ## <a name="updates-for-10220"></a>1\.0.22.0 版的更新
 *發行日期：2020/9/2*
 
 > [!IMPORTANT]
-> 在版本 1.0.22.0 中，我們引進了會影響部分 Chromebook 作業系統的迴歸。 受影響作業系統上的使用者將無法使用 Web 用戶端連線到遠端工作階段。 我們目前正在調查此問題，並將在我們修正此迴歸時，立即發行新版本的 Web 用戶端。 在此同時，您可以藉由還原至版本1.0.21.0 來避免這個問題。 
+> 在版本 1.0.22.0 中，我們引進了會影響部分 Chromebook 作業系統的迴歸。 受影響作業系統上的使用者將無法使用 Web 用戶端連線到遠端工作階段。 我們目前正在調查此問題，並將在我們修正此迴歸時，立即發行新版本的 Web 用戶端。 在此同時，您可以藉由還原至版本1.0.21.0 來避免這個問題。
 
 - 使用者現在可以移動最小化功能表。
 - 已改進對 4K 和 Ultra-wide 監視器的支援，並修正了複製大量資料時會導致工作階段當機的問題。

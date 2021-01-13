@@ -4,14 +4,14 @@ description: 如何使用 Windows Server，使用離線檔案將資料夾重新�
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.date: 06/06/2019
+ms.date: 01/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 368feec41fbecee57eb82bbe54a6fe31a9d0e3b5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: eeaa9dc868f93550d5226ce66084f840a5de4901
+ms.sourcegitcommit: 29b8942ea46196c12a67f6b6ad7f8dd46bf94fb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954705"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065624"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>使用離線檔案部署資料夾重新導向
 
@@ -63,10 +63,10 @@ ms.locfileid: "87954705"
 
 ## <a name="step-2-create-a-file-share-for-redirected-folders"></a>步驟 2：為重新導向資料夾建立檔案共用
 
-如果您還沒有重新導向資料夾的檔案共用，請使用下列程序在執行 Windows Server 2012 的伺服器上建立檔案共用。
+如果您還沒有重新導向資料夾的檔案共用，請使用下列程序在執行 Windows Server 2012/2016/2019 的伺服器上建立檔案共用。
 
 > [!NOTE]
-> 如果您在執行另一個版本的 Windows Server 的伺服器上建立檔案共用，某些功能可能不同或無法使用。
+> 如果您在執行不同版本的 Windows Server 的伺服器上建立檔案共用，某些功能可能不同或無法使用。
 
 以下說明如何在 Windows Server 2019、Windows Server 2016 和 Windows Server 2012 上建立檔案共用：
 
@@ -75,9 +75,9 @@ ms.locfileid: "87954705"
 3. 在 [選取設定檔] 頁面上，選取 [SMB 共用 - 快速]。 如果您已安裝檔案伺服器資源管理員，並使用資料夾管理屬性，則改為選取 [SMB 共用 - 進階]。
 4. 在 [共用位置]  頁面上，選取您要在上面建立共用的伺服器和磁碟區。
 5. 在 [共用名稱] 頁面中的 [共用名稱] 方塊中，輸入共用的名稱 (例如 **Users$** )。
-    >[!TIP]
-    >建立共用時，在共用名稱後面放一個 ```$``` 可隱藏共用。 這會隱藏共用，不讓他人隨意瀏覽。
-6. 在 [其他設定] 頁面上，清除 [啟用持續可用性] 核取方塊 (如果存在)，同時選擇性地選取 [啟用存取型列舉] 和 [加密資料存取] 核取方塊。
+    > [!TIP]
+    > 建立共用時，在共用名稱後面放一個 `$` 可隱藏共用。 這會隱藏共用，不讓他人隨意瀏覽。
+6. 在 [其他設定] 頁面上，清除 [啟用持續可用性] 核取方塊 (如果存在)，選擇性地選取 [啟用存取型列舉] 和 [加密資料存取] 核取方塊。
 7. 在 [權限] 頁面上，選取 [自訂權限...]。 [進階安全性設定] 對話方塊隨即出現。
 8. 選取 [停用繼承]，然後選取 [將繼承的權限轉換成此物件中的明確權限]。
 9. 如表 1 與圖 1 所述設定權限，移除未列出群組和帳戶的權限，並將特殊權限新增至您在步驟 1 中建立的資料夾重新導向使用者和電腦群組。
@@ -92,12 +92,12 @@ ms.locfileid: "87954705"
 ### <a name="required-permissions-for-the-file-share-hosting-redirected-folders"></a>裝載重新導向資料夾之檔案共用所需的權限
 
 | 使用者帳戶  | 存取權  | 適用對象  |
-| --------- | --------- | --------- |
-| System     | 完全控制        |    這個資料夾、子資料夾及檔案     |
-| Administrators     | 完全控制       | 只有這個資料夾        |
-| 建立者/擁有者     |   完全控制      |   子資料夾及檔案      |
-| 需要將資料放在共用上的使用者安全性群組 (資料夾重新導向使用者)     |   列出資料夾/讀取資料 (進階權限) <p>建立資料夾/附加資料 (進階權限) <p>讀取屬性 (進階權限) <p>讀取擴充屬性 (進階權限) <p>讀取權限 (進階權限)      |  只有這個資料夾       |
-| 其他群組與帳戶     |  無 (移除)       |         |
+| ------------- | ------- | ----------- |
+| System | 完全控制 | 這個資料夾、子資料夾及檔案 |
+| Administrators | 完全控制 | 只有這個資料夾 |
+| 建立者/擁有者 | 完全控制 | 子資料夾及檔案 |
+| 需要將資料放在共用上的使用者安全性群組 (資料夾重新導向使用者) | <p> 列出資料夾/讀取資料 (進階權限) <p> 建立資料夾/附加資料 (進階權限) <p> 讀取屬性 (進階權限) <p> 讀取擴充屬性 (進階權限) <p> 讀取權限 (進階權限) <p> 遍歷資料夾/執行檔案 (進階權限) | 只有這個資料夾 |
+| 其他群組與帳戶 | 無 (移除) |  |
 
 ## <a name="step-3-create-a-gpo-for-folder-redirection"></a>步驟 3：建立資料夾重新導向的 GPO
 
@@ -106,14 +106,14 @@ ms.locfileid: "87954705"
 如何建立資料夾重新導向的 GPO：
 
 1. 在已安裝群組原則管理的電腦上開啟伺服器管理員。
-2. 在 [工具] 功能表上，選取 [群組原則管理]。
+2. 在 [工具]  功能表上，選取 [群組原則管理]  。
 3. 以滑鼠右鍵按一下要設定資料夾重新導向的網域或 OU，然後選取 [在這個網域中建立 GPO 並連結]。
-4. 在 [新增 GPO] 對話方塊中，輸入 GPO 的名稱 (例如**漫資料夾重新導向設定**)，然後選取 [確定]。
-5. 以滑鼠右鍵按一下新建立的 GPO，然後清除 [啟用連結]  核取方塊。 這可以防止在您完成設定之前就套用 GPO。
+4. 在 [新增 GPO] 對話方塊中，輸入 GPO 的名稱 (例如 **漫資料夾重新導向設定**)，然後選取 [確定]。
+5. 以滑鼠右鍵按一下新建立的 GPO，然後清除 [啟用連結] 核取方塊。 這可以防止在您完成設定之前就套用 GPO。
 6. 選取 GPO。 在 [範圍] 索引標籤的 [安全性篩選] 區段中，選取 [已驗證的使用者]，然後選取 [移除]，避免將 GPO 套用至所有人。
-7. 在 [安全性篩選] 區段中，選取 [新增]。
-8. 在 [選取使用者、電腦或群組] 對話方塊中，輸入您在步驟 1 建立的安全性群組名稱 (例如**資料夾重新導向使用者**)，然後選取 [確定]。
-9. 選取 [委派] 索引標籤並選取 [新增]，輸入**已驗證的使用者**，再選取 [確定]，然後再次選取 [確定] 以接受預設的 [讀取] 權限。
+7. 在 [安全性篩選]  區段中，選取 [新增]  。
+8. 在 [選取使用者、電腦或群組] 對話方塊中，輸入您在步驟 1 建立的安全性群組名稱 (例如 **資料夾重新導向使用者**)，然後選取 [確定]。
+9. 選取 [委派]  索引標籤並選取 [新增]  ，輸入 **已驗證的使用者**，再選取 [確定]  ，然後再次選取 [確定]  以接受預設的 [讀取] 權限。
 
     由於 [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016) 中所做的安全性變更，這是必要步驟。
 
@@ -125,8 +125,8 @@ ms.locfileid: "87954705"
 建立資料夾重新導向設定的 GPO 之後，請編輯群組原則設定以啟用和設定資料夾重新導向，如下列程序所述。
 
 > [!NOTE]
-> Windows 用戶端電腦上的重新導向資料夾預設會啟用離線檔案，除非使用者變更，否則會在執行 Windows Server 的電腦上停用。 若要使用群組原則來控制是否啟用離線檔案，請使用**允許或禁止使用離線檔案功能**原則設定。
-> 如需其他離線檔案群組原則設定的詳細資訊，請參閱[啟用進階離線檔案功能](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>)和[設定離線檔案群組原則](</previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>)。
+> Windows 用戶端電腦上的重新導向資料夾預設會啟用離線檔案，除非使用者變更，否則會在執行 Windows Server 的電腦上停用。 若要使用群組原則來控制是否啟用離線檔案，請使用 **允許或禁止使用離線檔案功能** 原則設定。
+> 如需其他離線檔案群組原則設定的詳細資訊，請參閱[啟用進階離線檔案功能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v=ws.11))和[設定離線檔案群組原則](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759721(v=ws.10))。
 
 如何在群組原則中設定資料夾重新導向：
 
@@ -163,7 +163,7 @@ ms.locfileid: "87954705"
 1. 使用您已經啟用資料夾重新導向的使用者帳戶，登入主要電腦 (如果您已啟用主要電腦支援)。
 2. 如果使用者先前已登入電腦，請開啟提升權限的命令提示字元，然後輸入下列命令，以確保最新的群組原則設定套用到用戶端電腦：
 
-    ```PowerShell
+    ```
     gpupdate /force
     ```
 3. 開啟 [檔案總管]。
@@ -187,7 +187,7 @@ ms.locfileid: "87954705"
 
 下表摘要說明本主題中一些最重要的變更。
 
-| 日期 | 說明 | 原因|
+| 日期 | 說明 | 原因 |
 | --- | --- | --- |
 | 2017 年 1 月 18 日 | 將步驟新增至[步驟 3：建立資料夾重新導向的 GPO](#step-3-create-a-gpo-for-folder-redirection)，以將讀取權限委派給已驗證的使用者；由於群組原則的安全性更新，因此這是必須進行的步驟。 | 客戶意見反應 |
 
@@ -196,6 +196,6 @@ ms.locfileid: "87954705"
 * [資料夾重新導向、離線檔案及漫遊使用者設定檔](folder-redirection-rup-overview.md)
 * [部署資料夾重新導向及漫遊使用者設定檔的主要電腦](deploy-primary-computers.md)
 * [啟用進階離線檔案功能](enable-always-offline.md)
-* [Microsoft 對於複寫使用者設定檔資料的支援聲明](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
-* [使用 DISM 側載應用程式](</previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
-* [封裝、部署及查詢 Windows 執行階段型應用程式疑難排解](/windows/win32/appxpkg/troubleshooting)
+* [Microsoft 對於複寫使用者設定檔資料的支援聲明](https://docs.microsoft.com/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
+* [使用 DISM 側載應用程式](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10))
+* [封裝、部署及查詢 Windows 執行階段型應用程式疑難排解](https://docs.microsoft.com/windows/win32/appxpkg/troubleshooting)

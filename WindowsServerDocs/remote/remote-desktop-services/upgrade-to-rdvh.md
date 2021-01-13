@@ -1,18 +1,18 @@
 ---
 title: 將遠端桌面虛擬主機升級至 Windows Server 2016
-description: 本文說明如何將現有的遠端桌面服務部署升級至 Windows Server 2016。
+description: 了解如何將現有的遠端桌面虛擬主機升級至 Windows Server 2016。
 ms.author: spatnaik
 ms.date: 08/01/2016
 ms.topic: article
 ms.assetid: 5aed8ba7-f541-4416-b01c-4d3b1712e2b1
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 4260748ada0371e637edef23a579e7253721f4f4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3f42d078158cf6f78151418836795925e2bdb926
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948821"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965790"
 ---
 # <a name="upgrading-your-remote-desktop-virtualization-host-to-windows-server-2016"></a>將遠端桌面虛擬主機升級至 Windows Server 2016
 
@@ -36,7 +36,7 @@ ms.locfileid: "87948821"
     1. 開啟 [容錯移轉叢集管理員]。
     1. 按一下 [角色]  。
     1. 選取一或多個 VM。 按一下滑鼠右鍵以開啟操作功能表。
-    1. 按一下 [移動]  並選擇 [即時移轉]  或 [快速移轉]  ，將 VM 移至一或多個未納入初始升級中的 RD 虛擬主機伺服器。 根據硬體相容性或線上需求等因素，使用**即時**或**快速**移轉。
+    1. 按一下 [移動]  並選擇 [即時移轉]  或 [快速移轉]  ，將 VM 移至一或多個未納入初始升級中的 RD 虛擬主機伺服器。 根據硬體相容性或線上需求等因素，使用 **即時** 或 **快速** 移轉。
 3. 從原始叢集中收回準備好要升級的 RDVH 伺服器。
 4. 升級隔離的 RDVH 伺服器。
 5. 在預定的 RDVH 伺服器已成功升級後，請建立必須位於不同 SAN 磁碟區上的新叢集和 CSV。
@@ -62,7 +62,7 @@ ms.locfileid: "87948821"
        > 如前所述，執行此步驟之前，您必須已建立新的目的地子資料夾。 [選取資料夾] 對話方塊將不允許您在此步驟中建立子資料夾。
 
        按一下 [下一步]  ，然後按 [完成]  。
-11. VM 重新放置後，請將其新增為叢集的**高可用性**物件：
+11. VM 重新放置後，請將其新增為叢集的 **高可用性** 物件：
      1. 在已升級的 RD 虛擬主機伺服器上開啟 [容錯移轉叢集管理員]。
      1. 以滑鼠右鍵按一下 [角色]  節點，然後按一下 [設定角色]  。 在「高可用性精靈」的 [開始]  頁面上按 [下一步]  。
      1. 從可用的角色清單中選擇 [虛擬機器]  ，然後按 [下一步]  。 此時會顯示未設定的 VM 清單。

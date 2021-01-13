@@ -1,17 +1,17 @@
 ---
 title: 版本資訊 - Windows Server 2016 的重要問題
-description: 摘要說明需要因應措施以避免損毀、停止回應、安裝失敗、資料遺失的重要問題。
+description: 了解需要因應措施以避免在 Windows Server 2016 中發生損毀、停止回應、安裝失敗或資料遺失的重大問題。
 ms.date: 11/13/2018
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: b7e86b0841023548b1df1937bdf0820d59e12292
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 6800776f569ebe78a15a35d3e6d66d93c5854ce8
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990507"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965143"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>版本資訊：Windows Server 2016 中的重要問題
 
@@ -76,7 +76,7 @@ ms.locfileid: "87990507"
 
 ## <a name="storport-performance"></a>Storport 效能
 
-相較於 Windows Server 2012 R2，執行 Windows Server 2016 的全新安裝時，部分系統可能會出現儲存空間效能降低的情形。  在 Windows Server 2016 的開發期間我們做了一些變更，以改善平台的安全性及可靠性。 其中有些變更 (像是預設啟用 Windows Defender)，會導致較長的 I/O 路徑，因此降低特定工作負載和模式中的 I/O 效能。 Microsoft 不建議停用 Windows Defender，因為它是您系統很重要的一層保護。 
+相較於 Windows Server 2012 R2，執行 Windows Server 2016 的全新安裝時，部分系統可能會出現儲存空間效能降低的情形。    在 Windows Server 2016 的開發期間我們做了一些變更，以改善平台的安全性及可靠性。 其中有些變更 (像是預設啟用 Windows Defender)，會導致較長的 I/O 路徑，因此降低特定工作負載和模式中的 I/O 效能。 Microsoft 不建議停用 Windows Defender，因為它是您系統很重要的一層保護。 
 
 ## <a name="copyright"></a>著作權
 

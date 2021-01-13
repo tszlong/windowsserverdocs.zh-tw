@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: cd08794084c8f2ac5c9822331b89ad03005e82a4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 39193d0863845ff34d86a39bfd734cd6aba05fc4
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946351"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904903"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>建議的 VDI 桌面設定
 
@@ -29,7 +29,7 @@ Microsoft Desktop Virtualization 會透過即時設定公司的應用程式和�
 > [!NOTE]
 > 本主題中未特別提及的所有設定都可以保留其預設值 (或根據您的需求和原則設定)，而不會明顯影響 VDI 功能。
 
-當您建立映像以作為 VDI 部署的基礎時，請務必使用**最新分支**。 如需有關最新分支的詳細資訊，請參閱 [Windows 10 版本資訊](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)。
+當您建立映像以作為 VDI 部署的基礎時，請務必使用 **最新分支**。 如需有關最新分支的詳細資訊，請參閱 [Windows 10 版本資訊](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)。
 
 ## <a name="creating-the-windows-10-image"></a>建立 Windows 10 映像
 第一個步驟是在實體電腦或虛擬機器上安裝 Windows 10 1607 (版本 10.0.1393) 的參照映像。 安裝至虛擬機器很簡單，而可讓您儲存虛擬硬碟 (VHD) 檔案的版本，以防您想要回復到舊版。
@@ -565,5 +565,5 @@ Microsoft Desktop Virtualization 會透過即時設定公司的應用程式和�
 4. 按一下或點選 [開啟或關閉系統圖示]  ，然後針對映像，視需要開啟或關閉每個系統圖示。
 
 ### <a name="delete-downloaded-updates"></a>刪除已下載的更新
-1. 使用 [檔案總管] 瀏覽至 **C:\Windows\Software Distribution\Download**。
+1. 使用 [檔案總管] 瀏覽至 **C:\Windows\SoftwareDistribution\Download**。
 2. 刪除該目錄中的所有檔案和資料夾。
