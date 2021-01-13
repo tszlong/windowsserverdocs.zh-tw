@@ -1,18 +1,18 @@
 ---
 title: 資料包傳輸層安全性通訊協定
-description: Windows Server 安全性
+description: 深入瞭解資料包傳輸層安全性通訊協定，這是安全通道安全性支援提供者的一部分。
 ms.topic: article
 ms.assetid: 57b8873a-ad9c-4f2c-93e0-a2af352c6965
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/16/2018
-ms.openlocfilehash: 1cf6c9b504a246f9b0abe344bc596434c0319c3a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8a918354a429b1a2061fb6e295b2533af1127713
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640386"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177607"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>資料包傳輸層安全性通訊協定
 

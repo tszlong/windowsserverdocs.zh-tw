@@ -8,12 +8,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f975299593db29da20c35a621ea870e436d8be
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: d60b186ff118d3e162e2eb117493ef09becdd363
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048936"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177567"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>規劃儲存空間直接存取中的磁碟區
 
@@ -28,11 +28,11 @@ ms.locfileid: "97048936"
    >[!NOTE]
    > 在儲存空間直接存取的整份文件中，我們會使用「磁碟區」一詞來連帶稱呼磁碟區和磁碟區底下的虛擬磁碟，包括叢集共用磁碟區 (CSV) 和 ReFS 等其他內建 Windows 功能所提供的功能。 即使您不了解這些實作層級的差異，也可以順利規劃及部署儲存空間直接存取。
 
-![what-are-volumes](media/plan-volumes/what-are-volumes.png)
+![描述哪些磁片區的圖表。](media/plan-volumes/what-are-volumes.png)
 
 叢集中的所有伺服器可以同時存取所有磁碟區。 一旦建立之後，這些磁碟區就會顯示在所有伺服器上的 **C:\ClusterStorage\\** 。
 
-![csv-folder-screenshot](media/plan-volumes/csv-folder-screenshot.png)
+![顯示叢集存放磁片區之檔案總管視窗的螢幕擷取畫面。](media/plan-volumes/csv-folder-screenshot.png)
 
 ## <a name="choosing-how-many-volumes-to-create"></a>選擇要建立的磁碟區數目
 
@@ -66,17 +66,17 @@ ms.locfileid: "97048936"
 
 雙向鏡像會為所有資料保留兩份複本，每部伺服器的磁片磁碟機上都有一個複本。 其儲存效率為50% （若要寫入 1 TB 的資料，存放集區中至少需要 2 TB 的實體儲存體容量）。 雙向鏡像可以一次安全地容忍一個硬體故障 (一部伺服器或磁片磁碟機) 。
 
-![雙向鏡像](media/plan-volumes/two-way-mirror.png)
+![描繪雙向鏡像資料儲存體概念的圖表。](media/plan-volumes/two-way-mirror.png)
 
 只有在 Windows Server 2019 上才能使用的嵌套復原 () 在具有雙向鏡像的伺服器之間提供資料恢復功能，然後在具有雙向鏡像或鏡像加速同位的伺服器內新增復原功能。 即使一部伺服器正在重新開機或無法使用，也會提供資料恢復功能。 其儲存效率是具有嵌套雙向鏡像的25%，以及嵌套鏡像加速同位的35-40% 左右。 嵌套復原可以安全地容忍兩個硬體故障 (兩個磁片磁碟機，或是伺服器和其餘伺服器) 的磁片磁碟機。 由於這項新增的資料恢復功能，如果您執行的是 Windows Server 2019，建議您在兩部伺服器叢集的生產部署上使用嵌套復原。 如需詳細資訊，請參閱 [嵌套復原](nested-resiliency.md)。
 
-![嵌套的鏡像加速同位](media/nested-resiliency/nested-mirror-accelerated-parity.png)
+![描述嵌套鏡像加速同位概念的圖表。](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
 ### <a name="with-three-servers"></a>具有三部伺服器
 
 有三種伺服器，您應該使用三向鏡像，以取得更好的容錯和效能。 三向鏡像保留所有資料的三份複本，每個伺服器的磁碟機上各有一份複本。 其儲存效率是 33.3%，因此若要撰寫 1 TB 的資料，儲存集區需要至少 3 TB 的實體儲存容量。 三向鏡像可以安全地容忍 [至少兩個硬體問題 (磁片磁碟機或伺服器) 一次](storage-spaces-fault-tolerance.md#examples)。 如果有2個節點無法使用，儲存集區將會遺失仲裁，因為無法使用2/3 的磁片，且虛擬磁片將會無法存取。 不過，節點可能會關閉，而另一個節點上的一或多個磁片可能會失敗，且虛擬磁片將維持在線上。 例如，如果您在一個磁碟機或伺服器突然故障時重新啟動另一部伺服器，所有資料都將保有安全性，且持續可供存取。
 
-![three-way-mirror](media/plan-volumes/three-way-mirror.png)
+![描繪三向鏡像資料儲存體概念的圖表。](media/plan-volumes/three-way-mirror.png)
 
 ### <a name="with-four-or-more-servers"></a>具有四個以上伺服器
 
@@ -84,7 +84,7 @@ ms.locfileid: "97048936"
 
 雙同位提供與三向鏡像相同的容錯功能，但具有更佳的儲存效率。 有四部伺服器，其儲存效率為50.0% —若要儲存 2 TB 的資料，您需要在存放集區中有 4 TB 的實體儲存體容量。 使用七部伺服器時增加到 66.7% 儲存效率，並持續增至 80.0% 儲存效率。 缺點是同位編碼大量耗用運算資源，這可能會限制其效能。
 
-![dual-parity](media/plan-volumes/dual-parity.png)
+![描繪雙重同位資料儲存體概念的圖表。](media/plan-volumes/dual-parity.png)
 
 要使用的復原類型，端視您的工作負載需求。 以下資料表摘要說明哪些工作負載適合每種復原類型，以及每種復原類型的效能和儲存效率。
 
@@ -142,7 +142,7 @@ ms.locfileid: "97048936"
 
 磁碟區使用量需要放在儲存集區中。
 
-![size-versus-footprint](media/plan-volumes/size-versus-footprint.png)
+![此圖顯示您的磁片區大小必須放在存放集區中。](media/plan-volumes/size-versus-footprint.png)
 
 ### <a name="reserve-capacity"></a>保留容量
 
@@ -150,7 +150,7 @@ ms.locfileid: "97048936"
 
 我們建議每個伺服器保留相當於一個容量磁碟機的容量，最多 4 個磁碟機。 在您的審慎考慮後，您可以保留更多，但這個最低建議保證任何磁碟機故障之後的立即、就地、平行修復成功。
 
-![reserve](media/plan-volumes/reserve.png)
+![描述保留容量概念的圖表。](media/plan-volumes/reserve.png)
 
 例如，如果您有 2 部伺服器並使用數個 1 TB 容量磁碟機，將集區的 2 x 1 = 2 TB 設定為保留。 如果您有 3 部伺服器和數個 1 TB 容量磁碟機，設定 3 x 1 = 3 TB 為保留。 如果您有 4 部以上伺服器和數個 1 TB 容量磁碟機，設定 4 x 1 = 4 TB 為保留。
 
@@ -187,7 +187,7 @@ ms.locfileid: "97048936"
 
 四個磁碟區上可完全容納在我們集區中的可用實體儲存空間容量。 完美！
 
-![範例](media/plan-volumes/example.png)
+![此圖顯示四個磁片區的範例，其剛好符合集區中可用的實體儲存體容量。](media/plan-volumes/example.png)
 
    >[!TIP]
    > 您不需要立即建立所有磁碟區。 您隨時可以延伸磁碟區，或稍後建立新的磁碟區。
@@ -200,6 +200,6 @@ ms.locfileid: "97048936"
 
 ### <a name="additional-references"></a>其他參考資料
 
-- [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
+- [儲存空間直接存取概觀](storage-spaces-direct-overview.md) \(部分機器翻譯\)
 - [選擇儲存空間直接存取的磁碟機](choosing-drives.md)
 - [容錯與儲存空間效率](storage-spaces-fault-tolerance.md)

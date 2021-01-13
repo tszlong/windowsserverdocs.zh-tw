@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 07/25/2018
-ms.openlocfilehash: 7da500d797e3aead8d731bf6a313d5cbea193cb7
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: be5f01036641604e38668b916e52c998dea3b978
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946914"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177447"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>將 WSUS 資料庫從 WID 遷移至 SQL
 
@@ -42,9 +42,9 @@ ms.locfileid: "97946914"
 
 #### <a name="using-sql-management-studio"></a>使用 SQL Management Studio
 
-1. 以滑鼠右鍵按一下 [ **SUSDB** 工作]， - &gt;  - &gt; 再按一下 [卸 **離**]： ![ image1](images/image1.png)
+1. 以滑鼠右鍵按一下 [ **SUSDB** 工作]， - &gt;  - &gt; 再按一下 [卸 **離**]： ![ 顯示 [SUSDB > 工作 > 卸離選項 SQL Server Management Studio 的螢幕擷取畫面。](images/image1.png)
 2. 核取 [卸載 **現有的連接** ]，然後按一下 **[確定]** (選擇性，如果使用中的連接存在) 。
-    ![image2](images/image2.png)
+    ![[卸離資料庫] 對話方塊的螢幕擷取畫面，其中已選取 [卸載現有的連接] 選項，並醒目提示 [確定] 選項。](images/image2.png)
 
 #### <a name="using-command-prompt"></a>使用 [命令提示字元]
 
@@ -73,9 +73,10 @@ ms.locfileid: "97946914"
 ### <a name="attach-susdb-to-the-sql-instance"></a>將 SUSDB 附加至 SQL 實例
 
 1. 在 **SQL Server Management Studio** 的 [ **實例** ] 節點底下，以滑鼠右鍵按一下 [ **資料庫**]，然後按一下 [ **附加**]。
-    ![image3](images/image3.png)
+    ![SQL Server Management Studio 的螢幕擷取畫面，顯示已選取 [> 附加] 選項的資料庫。](images/image3.png)
 2. 在 [ **附加資料庫** ] 方塊的 [ **要附加的資料庫**] 下，按一下 [ **加入** ] 按鈕，並找出 **SUSDB .mdf** 檔案 (從 WID 資料夾複製) ，然後按一下 **[確定]**。
-    ![image4.jpg ](images/image4.png) ![ image5](images/image5.png)
+    ![[附加資料庫] 對話方塊的螢幕擷取畫面，其中已反白顯示 [新增] 選項。](images/image4.png)
+    ![[尋找資料庫檔案] 對話方塊的螢幕擷取畫面，其中已醒目提示 S U S D B M D F 檔案。](images/image5.png)
 
 > [!TIP]
 > 您也可以使用 Transact-sql 來完成這項工作。  如需附加資料庫的指示，請參閱 [SQL 檔](/sql/relational-databases/databases/attach-a-database) 。
@@ -111,20 +112,20 @@ ms.locfileid: "97946914"
 ##### <a name="adding-nt-authoritynetwork-service-and-granting-it-rights"></a>新增 NT AUTHORITY\NETWORK 服務並授與 it 權利
 
 1. 以滑鼠右鍵按一下 [登入 **]，然後按一下** **[新增登** 入]。
-    ![image6](images/image6.png)
+    ![SQL Server Management Studio 螢幕擷取畫面顯示已選取 [登入 > 新登入選項。](images/image6.png)
 2. 在 [**一般**] 頁面上，填妥 (**NT AUTHORITY\NETWORK SERVICE**) 的 **登入名稱**，並將 **預設資料庫** 設定為 [SUSDB]。
-    ![image7](images/image7.png)
+    ![[登入] 對話方塊的 [一般] 頁面的螢幕擷取畫面，其中已填入 [登入名稱] 和 [預設資料庫] 欄位。](images/image7.png)
 3. 在 [ **伺服器角色** ] 頁面上，確定已選取 [ **公用** ] 和 [ **sysadmin** ]。
-    ![image8](images/image8.png)
+    ![[登入] 對話方塊的 [伺服器角色] 頁面的螢幕擷取畫面，其中顯示選取的公用和系統管理員選項。](images/image8.png)
 4. 在 [ **使用者對應** ] 頁面上：
     - 在 **[已對應到此登入的使用者**] 下：選取 **SUSDB**
     - 在 [ **資料庫角色成員資格： SUSDB**] 底下，確定已核取下列各項：
         - **public**
-        - **webService** ![image9](images/image9.png)
+        - **webService** ![[登入] 對話方塊之 [使用者對應] 頁面的螢幕擷取畫面，其中顯示已選取的公用和 webService 選項。](images/image9.png)
 5. 按一下 [檔案] &gt; [新增] &gt; [專案]
 
 您現在應該會看到 [登入] 底下的 **NT AUTHORITY\NETWORK SERVICE** 。
-![image10](images/image10.png)
+![物件總管的螢幕擷取畫面，顯示 [登入] 底下的 N T 授權單位網路服務。](images/image10.png)
 
 #### <a name="database-permissions"></a>資料庫權限
 
@@ -142,10 +143,10 @@ ms.locfileid: "97946914"
     > [!TIP]
     > 在下列範例中，FQDN 是 **Contosto.com** ，而 WSUS 電腦名稱稱是 **WsusMachine**：
     >
-    > ![image11](images/image11.png)
+    > ![[登入] 對話方塊的螢幕擷取畫面，其中顯示 FQDN 為 Contosto.com * *，而 W s U s 電腦名稱稱為 W s u s 電腦。](images/image11.png)
 
 4. 在 [**使用者對應**] 頁面上，選取 [已 **對應到此登** 入的使用者] 底下的 **SUSDB** 資料庫
-5. 檢查 **資料庫角色成員資格** 下的 **webservice** ： SUSDB： ![ image12](images/image12.png)
+5. 檢查 **[** **資料庫角色成員資格： SUSDB**：登入  ![ ] 對話方塊的 [使用者對應] 頁面的螢幕擷取畫面，其中顯示已選取的 SUSDB 和 webservice 選項。](images/image12.png)
 6. 按一下  **[確定]** 以儲存設定。
     > [!NOTE]
     > 您可能需要重新開機 SQL 服務，變更才會生效。
@@ -158,8 +159,8 @@ ms.locfileid: "97946914"
 1. 依序按一下 [開始]、[執行]，輸入 **regedit&** ，然後按一下 [確定]。
 2. 找出下列金鑰： **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\UpdateServices\Server\Setup\SqlServerName**
 3. 在 [ **值** ] 文字方塊中，輸入 **[ServerName] \\ [InstanceName]**，然後按一下 [ **確定**]。 如果實例名稱是預設實例，請輸入 **[ServerName]**。
-4. 找出下列金鑰： **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![ image13](images/image13.png)
-5. 將金鑰重新命名為 **UpdateServices-資料庫** ![ image41](images/image14.png)
+4. 找出下列索引鍵： **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![ [登錄編輯程式] 對話方塊的螢幕擷取畫面，其中已反白顯示 UpdateServices-WidDatabase 索引鍵。](images/image13.png)
+5. 將金鑰重新命名為 **UpdateServices-資料庫** 的 ![ [登錄編輯程式] 對話方塊的螢幕擷取畫面，其中顯示 UpdateServices 資料庫的索引鍵名稱更新。](images/image14.png)
 
     > [!NOTE]
     > 如果您沒有更新此金鑰， **WsusUtil** 會嘗試服務 WID，而不是您已遷移的 SQL 實例。

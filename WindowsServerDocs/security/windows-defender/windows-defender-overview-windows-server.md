@@ -1,18 +1,18 @@
 ---
 title: Windows Server Windows Defender 總覽
-description: Windows Server 安全性
+description: 瞭解 Windows Defender 防毒軟體以及惡意程式碼防護如何立即且主動地保護 Windows Server 2016 免于已知的惡意程式碼。
 ms.topic: article
 ms.assetid: 751efb33-a08e-4e90-9208-6f2bc319e029
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ed6a8f9fc9618156963bd2b3c51e4819d8adb36
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8ac75cfa4faf2321931b89e5ffb7d0b1325e55c1
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638641"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177517"
 ---
 # <a name="windows-defender-antivirus-for-windows-server"></a>適用于 Windows Server 的 Windows Defender 防毒軟體
 

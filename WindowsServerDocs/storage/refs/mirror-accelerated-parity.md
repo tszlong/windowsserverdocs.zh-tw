@@ -7,12 +7,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: b39e3d518b3721bffce7b111655406cd982ccc0b
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 27768eecdbe97e77be576bdb2848d610e1269d2a
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043596"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177527"
 ---
 # <a name="mirror-accelerated-parity"></a>鏡像加速的同位
 
@@ -20,7 +20,7 @@ ms.locfileid: "97043596"
 
 儲存空間可以使用兩個基本技術提供資料容錯：鏡像和同位。 在[儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)中，ReFS 引入鏡像加速同位，可讓您建立同時使用鏡像和同位復原的磁碟區。 鏡像加速的同位提供便宜、節省空間的儲存空間，同時不犧牲效能。
 
-![鏡像加速的同位磁碟區](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume.png)
+![描繪鏡像加速同位磁片區的圖表。](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume.png)
 
 ## <a name="background"></a>背景
 
@@ -36,13 +36,13 @@ ReFS 會即時在鏡像和同位之間主動循環資料。 這可讓連入寫�
 
 為了在鏡像和同位之間循環資料，ReFS 在邏輯上將磁碟區分為 64 MiB 的區域 (這是循環的單位)。 下列影像描述區分為區域的鏡像加速同位磁碟區。
 
-![鏡像加速同位磁碟區與儲存體容器](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume-with-Storage-Containers.png)
+![描繪鏡像加速同位磁片區與儲存體容器的圖表。](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume-with-Storage-Containers.png)
 
 當鏡像層已達指定的容量層級，ReFS 會開始從鏡像到同位循環完整區域。 ReFS 不會立即將資料從鏡像移動到同位，而是盡可能等待並將資料保留在鏡像，讓 ReFS 可以繼續提供資料的最佳效能 (請參閱下方的＜IO 效能＞)。
 
 當資料從鏡像移至同位時，系統會讀取資料、計算同位編碼，接著將資料寫入同位。 下方動畫使用三向鏡像區域來說明這個程序，在循環期間會轉換為清除編碼區域：
 
-![鏡像加速同位循環](media/mirror-accelerated-parity/Container-Rotation.gif)
+![顯示鏡像加速同位旋轉的動畫。](media/mirror-accelerated-parity/Container-Rotation.gif)
 
 ## <a name="io-on-mirror-accelerated-parity"></a>鏡像加速同位上的 IO
 ### <a name="io-behavior"></a>IO 行為
@@ -52,17 +52,17 @@ ReFS 會即時在鏡像和同位之間主動循環資料。 這可讓連入寫�
 
     - **1a-1b.** 如果連入寫入修改鏡像上的現有資料，ReFS 會就地修改資料。
     - **億美元.** 如果連入寫入是新的寫入，且 ReFS 可以在鏡像中成功找到服務這個寫入的足夠空間，則 ReFS 將會寫入鏡像。
-    ![寫入鏡像](media/mirror-accelerated-parity/Write-to-Mirror.png)
+    ![顯示 ReFS 服務如何寫入鏡像的螢幕擷取畫面。](media/mirror-accelerated-parity/Write-to-Mirror.png)
 
 2. **寫入鏡像，從同位重新配置：**
 
     如果傳入寫入修改的資料位於同位，且 ReFS 可以在鏡像中成功找到足夠的可用空間來服務內送寫入，ReFS 會先使先前的資料失效，然後寫入至鏡像。 這個失效動作是快速又便宜的中繼資料操作，可協助有意義地改善對同位的寫入效能。
-    ![重新配置寫入](media/mirror-accelerated-parity/Reallocated-Write.png)
+    ![顯示 ReFS 服務如何寫入鏡像，並從同位重新配置的螢幕擷取畫面。](media/mirror-accelerated-parity/Reallocated-Write.png)
 
 3. **寫入同位：**
 
     如果 ReFS 無法在鏡像中成功找到足夠空間，則 ReFS 會將新資料寫入同位，或直接在同位中修改現有資料。 下方的＜效能最佳化＞章節提供協助將寫入同位最小化的指導方針。
-    ![寫入同位](media/mirror-accelerated-parity/Write-to-Parity.png)
+    ![顯示 ReFS 服務如何寫入同位檢查的螢幕擷取畫面。](media/mirror-accelerated-parity/Write-to-Parity.png)
 
 **讀取：** ReFS 會直接從包含相關資料的層讀取。 如果同位是以 HDD 建構，則「儲存空間直接存取」中的快取會快取此資料來加快未來的讀取。
 
@@ -157,4 +157,4 @@ New-Volume – FriendlyName “TestVolume” -FileSystem CSVFS_ReFS -StoragePool
 -   [ReFS 概觀](refs-overview.md)
 -   [ReFS 區塊複製](block-cloning.md)
 -   [ReFS 完整性資料流](integrity-streams.md)
--   [儲存空間直接存取總覽](../storage-spaces/storage-spaces-direct-overview.md)
+-   [儲存空間直接存取概觀](../storage-spaces/storage-spaces-direct-overview.md) \(部分機器翻譯\)

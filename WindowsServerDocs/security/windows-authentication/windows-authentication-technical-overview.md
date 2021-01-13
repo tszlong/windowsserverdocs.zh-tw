@@ -1,18 +1,18 @@
 ---
 title: Windows 驗證技術概觀
-description: Windows Server 安全性
+description: 尋找 Windows 驗證技術總覽文章的連結。
 ms.topic: article
 ms.assetid: 286d3e41-434f-4703-9320-706d06ebda51
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: c64df4b76c67f1dd0dbe696812d79d83b5997813
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: e7dd9f927667b72e256572a5856c0a363e0ef09b
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638683"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177107"
 ---
 # <a name="windows-authentication-technical-overview"></a>Windows 驗證技術概觀
 
@@ -22,7 +22,7 @@ ms.locfileid: "89638683"
 
 本主題集合說明 Windows 驗證架構及其元件。
 
-若要以數位方式儲存或列印此文章庫的頁面，請按一下 [匯出]**** (在頁面的右上角)，然後依照指示操作。
+若要以數位方式儲存或列印此文章庫的頁面，請按一下 [匯出] (在頁面的右上角)，然後依照指示操作。
 
 -   [Windows 作業系統之間的 Windows 驗證差異](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169017(v=ws.10))
 

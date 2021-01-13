@@ -1,18 +1,18 @@
 ---
 title: Windows 驗證中的認證程序
-description: Windows Server 安全性
+description: 瞭解 Windows 驗證如何處理認證。
 ms.topic: article
 ms.assetid: 48c60816-fb8b-447c-9c8e-800c2e05b14f
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 3d2948c632697e6278b716784f68c7a0085eab07
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 397294b9dba9535b098dde715e8eef75ae50cad5
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640089"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177597"
 ---
 # <a name="credentials-processes-in-windows-authentication"></a>Windows 驗證中的認證程序
 
@@ -24,7 +24,7 @@ Windows 認證管理是指作業系統從服務或使用者接收認證的程式
 
 根據預設，系統會針對本機電腦上的安全性帳戶管理員 (SAM) 資料庫，或針對已加入網域之電腦上的 Active Directory，使用 Winlogon 服務來驗證 Windows 認證。 認證是透過登入使用者介面上的使用者輸入，或透過應用程式開發介面以程式設計方式進行收集， (API) 提供給驗證目標。
 
-本機安全性資訊會儲存在登錄的 **HKEY_LOCAL_MACHINE \security**中。 儲存的資訊包括原則設定、預設安全性值，以及帳戶資訊，例如快取的登入認證。 SAM 資料庫的複本也會儲存在這裡，雖然它會受到寫入保護。
+本機安全性資訊會儲存在 **HKEY_LOCAL_MACHINE\SECURITY** 的登錄中。 儲存的資訊包括原則設定、預設安全性值，以及帳戶資訊，例如快取的登入認證。 SAM 資料庫的複本也會儲存在這裡，雖然它會受到寫入保護。
 
 下圖顯示所需的元件，以及認證透過系統進行驗證以驗證使用者或處理成功登入的路徑。
 
@@ -205,7 +205,7 @@ LSASS 可以使用多種形式儲存認證，包括：
 
 -   登入本機會話或遠端桌面通訊協定電腦上 (RDP) 會話
 
--   使用 [RunAs]**** 選項執行工作
+-   使用 [RunAs] 選項執行工作
 
 -   在電腦上執行使用中的 Windows 服務
 
@@ -250,12 +250,12 @@ LSASS 可以使用多種形式儲存認證，包括：
 
 重新開機時，使用者會透過自動登入機制自動登入，然後再鎖定電腦以保護使用者的會話。 鎖定是透過 Winlogon 起始，而認證管理是由 LSA 進行。 藉由在主控台上自動登入和鎖定使用者的會話，使用者的鎖定畫面應用程式會重新開機並可供使用。
 
-如需 ARSO 的詳細資訊，請參閱 [Winlogon 自動重新開機登入 &#40;ARSO&#41;](winlogon-automatic-restart-sign-on-arso.md)。
+如需 ARSO 的詳細資訊，請參閱 [Winlogon 自動重新開機 Sign-On &#40;ARSO&#41;](winlogon-automatic-restart-sign-on-arso.md)。
 
 ### <a name="stored-user-names-and-passwords-in-windows-vista-and-windows-xp"></a>Windows Vista 和 Windows XP 中的預存使用者名稱和密碼
 在 Windows Server 2008、Windows Server 2003、Windows Vista 和 Windows XP 中，主控台中 **儲存的使用者名稱和密碼** 可簡化多組登入認證的管理和使用，包括與智慧卡和 Windows Live 認證搭配使用的 x.509 憑證 (現在稱為 Microsoft 帳戶) 。 認證（使用者設定檔的一部分）會儲存到需要的部分。 這個動作可以藉由確保某個密碼遭到入侵，而不會危及所有安全性，以每個資源為基礎來提高安全性。
 
-當使用者登入並嘗試存取其他受密碼保護的資源（例如伺服器上的共用），而且使用者的預設登入認證不足以取得存取權時，就會查詢 **儲存的使用者名稱和密碼** 。 如果以正確登入資訊儲存的替代認證已儲存在已 **儲存的使用者名稱和密碼**中，則會使用這些認證來取得存取權。 否則，系統會提示使用者提供新的認證，然後在登入會話中或後續會話期間，將其儲存以供重複使用。
+當使用者登入並嘗試存取其他受密碼保護的資源（例如伺服器上的共用），而且使用者的預設登入認證不足以取得存取權時，就會查詢 **儲存的使用者名稱和密碼** 。 如果以正確登入資訊儲存的替代認證已儲存在已 **儲存的使用者名稱和密碼** 中，則會使用這些認證來取得存取權。 否則，系統會提示使用者提供新的認證，然後在登入會話中或後續會話期間，將其儲存以供重複使用。
 
 適用以下限制：
 
@@ -314,7 +314,7 @@ LSASS 可以使用多種形式儲存認證，包括：
 
 **遠端和無線驗證**
 
-遠端和無線網路驗證是另一種使用憑證進行驗證的技術。 網際網路驗證服務 (IAS) 和虛擬私人網路伺服器使用可延伸的驗證通訊協定-傳輸層級安全性 (EAP-TLS) 、受保護的可延伸驗證通訊協定 (PEAP) ，或網際網路通訊協定安全性 (IPsec) ，以針對許多網路存取類型（包括虛擬私人網路 (VPN) 和無線連線）執行憑證驗證。
+遠端和無線網路驗證是另一種使用憑證進行驗證的技術。 網際網路驗證服務 (IAS) 和虛擬私人網路伺服器使用可延伸的驗證 Protocol-Transport 層級安全性 (EAP-TLS) 、受保護的可延伸驗證通訊協定 (PEAP) ，或網際網路通訊協定安全性 (IPsec) ，以針對許多網路存取類型執行憑證型驗證，包括虛擬私人網路 (VPN) 和無線連接。
 
 如需網路中以憑證為基礎的驗證相關資訊，請參閱 [網路存取驗證和憑證](/previous-versions/windows/it-pro/windows-server-2003/cc759575(v=ws.10))。
 

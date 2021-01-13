@@ -1,18 +1,18 @@
 ---
 title: 從 Active Directory 網域取消登錄 NPS
-description: 您可以使用本主題，在 NPS 預設網域或其他網域中的 Windows Server 2016 中，註冊執行網路原則伺服器的伺服器。
+description: 瞭解如何從 Active Directory 網域取消登錄 NPS，讓您可以將 NPS 移至另一個網域、取代 NPS 或淘汰 NPS。
 manager: brianlic
 ms.topic: article
 ms.assetid: 68a94616-3c29-45bd-bd33-e4c578f119e1
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: aff5090a5f9fcd2791835f21e2caf1c0dccaa510
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 032a7b36b207c75955f879b4740a43d32e543228
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949334"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177407"
 ---
 # <a name="unregister-an-nps-from-an-active-directory-domain"></a>從 Active Directory 網域取消登錄 NPS
 

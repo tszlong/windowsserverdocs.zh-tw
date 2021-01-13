@@ -1,18 +1,18 @@
 ---
 title: Windows 驗證概觀
-description: Windows Server 安全性
+description: 深入瞭解 Windows 驗證與登入技術的檔資源，其中包括產品評估、入門指南、程式、設計和部署指南、技術參考，以及命令參考。
 ms.topic: article
 ms.assetid: 485a0774-0785-457f-a964-0e9403c12bb1
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 4a2b5e6b48a56a1a2148df262d2785640ac6054d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: df5529245882daafed361b283cb77c331bb3486d
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638698"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177557"
 ---
 # <a name="windows-authentication-overview"></a>Windows 驗證概觀
 

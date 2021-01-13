@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 38ab78f24e6900019a134b480ce477b45ca5ff0e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: aad7c0feb36699bedf7c955cd0172669e56910dd
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97039386"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177497"
 ---
 # <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>推動儲存空間直接存取的對稱考慮
 
@@ -32,7 +32,7 @@ ms.locfileid: "97039386"
 
 例如，如果一部 *伺服器有 nvme，它們應該都* 有 nvme。
 
-### <a name="number"></a>數字
+### <a name="number"></a>Number
 
 所有伺服器的每個類型都應該有相同數目的磁片磁碟機。
 
@@ -90,7 +90,7 @@ ms.locfileid: "97039386"
 
 以下是一些支援和不支援的設定：
 
-### <a name="supported-supported-different-models-between-servers"></a>![支援](media/drive-symmetry-considerations/supported.png) 支援：伺服器之間的不同模型
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationssupportedpng-supported-different-models-between-servers"></a>:::image type="icon" source="media/drive-symmetry-considerations/supported.png"::: 支援：伺服器之間的不同模型
 
 前兩部伺服器使用 NVMe 模型 "X"，但第三部伺服器使用 NVMe 模型 "Z"，這非常類似。
 
@@ -101,7 +101,7 @@ ms.locfileid: "97039386"
 
 這有受到支援。
 
-### <a name="supported-supported-different-models-within-server"></a>![支援](media/drive-symmetry-considerations/supported.png) 支援：伺服器內的不同模型
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationssupportedpng-supported-different-models-within-server"></a>:::image type="icon" source="media/drive-symmetry-considerations/supported.png"::: 支援：伺服器內的不同模型
 
 每部伺服器都會使用不同的 HDD 模型 "Y" 和 "Z" 混合，這兩者非常類似。 每部伺服器都有總共10個 HDD。
 
@@ -113,7 +113,7 @@ ms.locfileid: "97039386"
 
 這有受到支援。
 
-### <a name="supported-supported-different-sizes-across-servers"></a>![支援](media/drive-symmetry-considerations/supported.png) 支援：跨伺服器的大小不同
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationssupportedpng-supported-different-sizes-across-servers"></a>:::image type="icon" source="media/drive-symmetry-considerations/supported.png"::: 支援：跨伺服器的大小不同
 
 前兩部伺服器使用 4 TB HDD，但第三部伺服器使用非常類似的 6 TB HDD。
 
@@ -124,7 +124,7 @@ ms.locfileid: "97039386"
 
 這是支援的，但這會導致閒置的容量。
 
-### <a name="supported-supported-different-sizes-within-server"></a>![支援](media/drive-symmetry-considerations/supported.png) 支援：伺服器內的不同大小
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationssupportedpng-supported-different-sizes-within-server"></a>:::image type="icon" source="media/drive-symmetry-considerations/supported.png"::: 支援：伺服器內的不同大小
 
 每部伺服器都會使用不同的混合 1.2 TB 和非常類似的 1.6 TB SSD。 每部伺服器都有4個 SSD 總計。
 
@@ -136,7 +136,7 @@ ms.locfileid: "97039386"
 
 這有受到支援。
 
-### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援：跨伺服器的磁片磁碟機類型不同
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationsunsupportedpng-not-supported-different-types-of-drives-across-servers"></a>:::image type="icon" source="media/drive-symmetry-considerations/unsupported.png"::: 不支援：跨伺服器的磁片磁碟機類型不同
 
 伺服器1有 NVMe，但其他則否。
 
@@ -148,7 +148,7 @@ ms.locfileid: "97039386"
 
 不支援此做法。 每一部伺服器中的磁片磁碟機類型應該相同。
 
-### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援：跨伺服器的每個類型都有不同的數目
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationsunsupportedpng-not-supported-different-number-of-each-type-across-servers"></a>:::image type="icon" source="media/drive-symmetry-considerations/unsupported.png"::: 不支援：跨伺服器的每個類型都有不同的數目
 
 伺服器3的磁片磁碟機多於其他磁片磁碟機。
 
@@ -159,7 +159,7 @@ ms.locfileid: "97039386"
 
 不支援此做法。 每一部伺服器的每個類型磁片磁碟機數目應該相同。
 
-### <a name="unsupported-not-supported-only-hdd-drives"></a>![不支援](media/drive-symmetry-considerations/unsupported.png) 不支援：僅 HDD 磁片磁碟機
+### <a name="image-typeicon-sourcemediadrive-symmetry-considerationsunsupportedpng-not-supported-only-hdd-drives"></a>:::image type="icon" source="media/drive-symmetry-considerations/unsupported.png"::: 不支援：僅 HDD 磁片磁碟機
 
 所有伺服器都只會連接 HDD 磁片磁碟機。
 
@@ -169,11 +169,11 @@ ms.locfileid: "97039386"
 
 不支援此做法。 您必須至少新增兩個快取磁片磁碟機 (NvME 或 SSD) 連接到每部伺服器。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 為了回顧，叢集中的每一部伺服器都應該有相同類型的磁片磁碟機，而且每種類型都有相同的數目。 您可以視需要使用上述考慮，視需要混搭磁片磁碟機模型和磁片磁碟機大小。
 
-| 條件約束 | 狀況 |
+| 條件約束 | 州 |
 |--|--|
 | 每一部伺服器中的磁片磁碟機類型相同 | **必要** |
 | 每一部伺服器中的每個類型都有相同的數目 | **必要** |
@@ -183,4 +183,4 @@ ms.locfileid: "97039386"
 ## <a name="additional-references"></a>其他參考資料
 
 - [儲存空間直接存取硬體需求](storage-spaces-direct-hardware-requirements.md)
-- [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
+- [儲存空間直接存取概觀](storage-spaces-direct-overview.md) \(部分機器翻譯\)

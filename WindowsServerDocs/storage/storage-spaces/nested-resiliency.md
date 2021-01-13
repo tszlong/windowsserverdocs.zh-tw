@@ -6,12 +6,12 @@ manager: dansimpspaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: e433539eced1a9f7a52bbaf9bc45e8a6586586ff
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: f1cb6b458ed01a52478d47e0c8e9d2e8dfdb386e
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97039396"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177627"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>儲存空間直接存取的嵌套復原
 
@@ -19,7 +19,7 @@ ms.locfileid: "97039396"
 
 嵌套復原是 Windows Server 2019 中 [儲存空間直接存取](storage-spaces-direct-overview.md) 的新功能，可讓兩部伺服器的叢集同時承受多個硬體故障，而不會遺失存放裝置可用性，讓使用者、應用程式和虛擬機器繼續執行而不會中斷。 本主題將說明其運作方式，並提供逐步指示，讓您開始使用，並回答最常遇到的問題。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 ### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![綠色核取記號圖示。](media/nested-resiliency/supported.png) 如果有下列情況，請考慮嵌套復原：
 
@@ -79,7 +79,7 @@ Windows Server 2019 中的儲存空間直接存取提供在軟體中執行的兩
 
 請注意，傳統雙向鏡像的容量效率 (大約 50% ) ，而嵌套的鏡像加速同位 (高達 40% ) 並不太不同。 視您的需求而定，較低的容量效率可能很值得大幅提高儲存體可用性。 您可以選擇每個磁片區的復原，因此您可以在相同的叢集中混用嵌套的復原磁片區和傳統的雙向鏡像磁片區。
 
-![權衡](media/nested-resiliency/tradeoff.png)
+![此圖顯示雙向鏡像與嵌套的鏡像加速同位之間的取捨。](media/nested-resiliency/tradeoff.png)
 
 ## <a name="usage-in-powershell"></a>PowerShell 中的使用方式
 
@@ -146,7 +146,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 | 情況                       | 快取行為                           | 是否可容忍快取磁片磁碟機遺失？ |
 |---------------------------------|------------------------------------------|--------------------------------|
-| 這兩部伺服器都已啟動                 | 快取讀取和寫入，完整效能 | 是                            |
+| 這兩部伺服器都已啟動                 | 快取讀取和寫入，完整效能 | Yes                            |
 | 伺服器關閉，前30分鐘   | 快取讀取和寫入，完整效能 | 沒有暫時) 的 (               |
 | 前30分鐘後          | 僅快取讀取，受影響的效能   | 是 (將快取寫入容量磁片磁碟機之後)                            |
 
@@ -170,11 +170,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>嵌套復原是否會變更磁片磁碟機取代的運作方式？
 
-否。
+不會。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>嵌套復原是否會變更伺服器節點取代的運作方式？
 
-否。 若要取代伺服器節點及其磁片磁碟機，請遵循下列順序：
+不會。 若要取代伺服器節點及其磁片磁碟機，請遵循下列順序：
 
 1. 淘汰傳出伺服器中的磁片磁碟機
 2. 將新的伺服器及其磁片磁碟機新增至叢集
@@ -185,7 +185,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ## <a name="additional-references"></a>其他參考資料
 
-- [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
+- [儲存空間直接存取概觀](storage-spaces-direct-overview.md) \(部分機器翻譯\)
 - [瞭解儲存空間直接存取中的容錯能力](storage-spaces-fault-tolerance.md)
 - [規劃儲存空間直接存取中的磁片區](plan-volumes.md)
 - [建立儲存空間直接存取中的磁碟區](create-volumes.md)

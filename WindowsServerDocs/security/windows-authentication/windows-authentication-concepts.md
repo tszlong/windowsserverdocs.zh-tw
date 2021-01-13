@@ -1,18 +1,18 @@
 ---
 title: Windows 驗證概念
-description: Windows Server 安全性
+description: 瞭解 Windows 驗證所依據的概念。
 ms.topic: article
 ms.assetid: 29d1db15-cae0-4e3d-9d8e-241ac206bb8b
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 5772a2dd56c60d1c5ce037181940f0593cede12f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: beea01425472353be0a44267e99ec0bd6c0e1ec1
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638701"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177227"
 ---
 # <a name="windows-authentication-concepts"></a>Windows 驗證概念
 

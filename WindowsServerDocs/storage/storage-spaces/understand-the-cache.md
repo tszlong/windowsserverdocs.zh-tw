@@ -8,12 +8,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a6ab48a2079513e69538eb2673be4cf7d656b94f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 633b36da552160e7a72793ace93e554e02d7d468
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97047756"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177537"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>了解儲存空間直接存取中的快取
 
@@ -31,7 +31,7 @@ ms.locfileid: "97047756"
 
 儲存空間直接存取目前適用于四種類型的存放裝置：
 
-| 磁片磁碟機類型 | 描述 |
+| 磁片磁碟機類型 | Description |
 |----------------------|--------------------------|
 |![PMem](media/understand-the-cache/pmem-100px.png)|**PMem** 指的是持續性記憶體，這是一種新的低延遲、高效能儲存體。|
 |![NVMe](media/understand-the-cache/NVMe-100px.png)|**NVMe** (Non-Volatile Memory Express) 指的是直接位於 PCIe 匯流排的固態硬碟。 常見的板型規格為 2.5" U.2、PCIe Add-In-Card (AIC) 及 M.2。 NVMe 提供較高的 IOPS 和 IO 輸送量，其延遲低於我們目前支援的任何其他類型磁片磁碟機，但 PMem 除外。|
@@ -44,13 +44,13 @@ ms.locfileid: "97047756"
 
 全快閃部署以盡可能發揮儲存體效能為目標，不包含轉動式硬碟 (HDD)。
 
-![All-Flash-Deployment-Possibilities](media/understand-the-cache/All-Flash-Deployment-Possibilities.png)
+![此圖顯示全快閃部署的可能性。](media/understand-the-cache/All-Flash-Deployment-Possibilities.png)
 
 ### <a name="hybrid-deployment-possibilities"></a>混合式部署可能性
 
 混合部署的目標則是要平衡效能與容量或將容量最大化，部署中包含轉動式硬碟 (HDD)。
 
-![混合式部署可能性](media/understand-the-cache/Hybrid-Deployment-Possibilities.png)
+![此圖顯示混合式部署的可能性。](media/understand-the-cache/Hybrid-Deployment-Possibilities.png)
 
 ## <a name="cache-drives-are-selected-automatically"></a>快取磁碟機為自動選取
 
@@ -58,7 +58,7 @@ ms.locfileid: "97047756"
 
 哪種類型「最快」則交由下列階層決定。
 
-![Drive-Type-Hierarchy](media/understand-the-cache/Drive-Type-Hierarchy.png)
+![此圖顯示磁片磁碟機為最慢且 NVMe 最快的不同磁片磁碟機的速度。](media/understand-the-cache/Drive-Type-Hierarchy.png)
 
 例如，若有 NVMe 和 SSD，則 NVMe 會快取 SSD。
 
@@ -76,7 +76,7 @@ ms.locfileid: "97047756"
 
 快取的行為會自動取決於所快取的磁碟機類型。 進行固態硬碟的快取時 (例如 NVMe 對 SSD 的快取)，將只會快取寫入。 快取硬碟時 (例如 SSD 快取 HDD)，則會快取讀取和寫入。
 
-![Cache-Read-Write-Behavior](media/understand-the-cache/Cache-Read-Write-Behavior.png)
+![此圖顯示所有快閃部署與混合式部署的快取、讀取和寫入行為。](media/understand-the-cache/Cache-Read-Write-Behavior.png)
 
 ### <a name="write-only-caching-for-all-flash-deployments"></a>全快閃部署的僅寫入快取
 
@@ -96,7 +96,7 @@ ms.locfileid: "97047756"
 
 當三種類型的磁碟機都齊全時，NVMe 磁碟機可以快取 SSD 和 HDD。 此行為如前文所述：SSD 只快取寫入，HDD 則讀取和寫入都快取。 快取 HDD 的負荷會平均分散到快取磁碟。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本表摘要說明哪些磁碟機用於快取、哪些用於容量，以及各種部署可能出現的快取行為。
 
@@ -117,7 +117,7 @@ ms.locfileid: "97047756"
 
 假設儲存空間直接存取中的復原至少要在伺服器上 (表示資料複本一律寫入不同的伺服器，每部伺服器最多一份)，資料在不在快取中，從同一復原得到的協助皆為相同。
 
-![Cache-Server-Side-Architecture](media/understand-the-cache/Cache-Server-Side-Architecture.png)
+![顯示快取伺服器端架構的圖表。](media/understand-the-cache/Cache-Server-Side-Architecture.png)
 
 例如，使用三向鏡像時，任何資料都會有三份複本寫入不同的伺服器，其在快取中置於該處。 無論它們待會是否會取消暫存，這三份複本都會一直存在。
 
@@ -125,7 +125,7 @@ ms.locfileid: "97047756"
 
 快取和容量磁碟機之間的繫結可為任何比例，從 1:1 到 1:12 甚至更多。 只要新增或移除磁碟機就會動態調整，例如相應增加時或失敗後。 這表示您可以隨時獨立新增快取磁碟機或容量磁碟機。
 
-![Dynamic-Binding](media/understand-the-cache/Dynamic-Binding.gif)
+![顯示磁片磁碟機系結如何動態的動畫。](media/understand-the-cache/Dynamic-Binding.gif)
 
 為對稱起見，建議容量磁碟機數為快取磁碟機數的倍數。 例如，若有 4 部快取磁碟機，則 8 部容量磁碟機 (比例為 1:2) 展現的效能會比 7 或 9 部更好。
 
@@ -137,7 +137,7 @@ ms.locfileid: "97047756"
 
 這就是為什麼每部伺服器至少要有兩部快取磁碟機才能保持效能的原因。
 
-![Handling-Failure](media/understand-the-cache/Handling-Failure.gif)
+![顯示每個伺服器至少需要兩個快取磁片磁碟機來維持效能的動畫。](media/understand-the-cache/Handling-Failure.gif)
 
 您便可替換快取磁碟機，就像替換任何其他磁碟機一樣。
 
@@ -196,7 +196,7 @@ Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 
 手動設定有可能啟用下列部署：
 
-![Exotic-Deployment-Possibilities](media/understand-the-cache/Exotic-Deployment-Possibilities.png)
+![此圖顯示手動部署的可能性。](media/understand-the-cache/Exotic-Deployment-Possibilities.png)
 
 ### <a name="set-cache-behavior"></a>設定快取行為
 

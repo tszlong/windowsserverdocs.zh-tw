@@ -1,18 +1,18 @@
 ---
 title: 安全通道安全性支援提供者技術參考資料
-description: Windows Server 安全性
+description: 深入瞭解安全通道安全性支援提供者所執行的傳輸層安全性通訊協定、安全通訊端層通訊協定和資料包傳輸層安全性通訊協定。
 ms.topic: article
 ms.assetid: 5bf9c4a5-cdc1-49eb-bf9a-8bf987410b63
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 08/08/2018
-ms.openlocfilehash: 42ed20e3099b06398e56a6ca34a10dd1e2b2449b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 390157aa7bdc01f0290b3b5013425546bd371a72
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640395"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177297"
 ---
 # <a name="schannel-security-support-provider-technical-reference"></a>安全通道安全性支援提供者技術參考資料
 

@@ -1,18 +1,18 @@
 ---
 title: 'TLS/SSL 總覽 (Schannel SSP) '
-description: Windows Server 安全性
+description: 使用 (SSP) 的安全通道安全性服務提供者，瞭解 Windows 中的 TLS 和 SSL 執行。
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/16/2018
-ms.openlocfilehash: 21ad7977039eda311dd6f093fc53c09c08cf0317
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: fc4e4e89be200a2276532b0c4859e4900897a4b5
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89637839"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177587"
 ---
 # <a name="tlsssl-overview-schannel-ssp"></a>TLS/SSL 總覽 (Schannel SSP) 
 
@@ -20,7 +20,7 @@ ms.locfileid: "89637839"
 
 本主題適用于 IT 專業人員，藉由描述實際的應用程式、Microsoft 的執行變更和軟體需求，以及 Windows Server 2012 和 Windows 8 的額外資源，在 Windows 中使用安全通道安全性服務提供者來介紹 TLS 和 SSL 的執行方式 (SSP) 。
 
-## <a name="description"></a><a name="BKMK_OVER"></a>描述
+## <a name="description"></a><a name="BKMK_OVER"></a>Description
 安全通道是安全性支援提供者 (SSP)，可以實作安全通訊端層 (SSL) 和傳輸層安全性 (TLS) 網際網路標準驗證通訊協定。
 
 安全性支援提供者介面 (SSPI) 是 Windows 系統所使用的 API，可以執行包含驗證在內的安全性相關功能。 SSPI 可作為數個 Ssp （包括 Schannel SSP）的通用介面。
@@ -38,7 +38,7 @@ TLS 1.0、1.1 和1.2 版、SSL 版本2.0 和3.0，以及資料包傳輸層安全
 -   SQL 存取
 -   電子郵件
 
-## <a name="requirements"></a><a name="BKMK_SOFT"></a>需求
+## <a name="requirements"></a><a name="BKMK_SOFT"></a>規格需求
 TLS 和 SSL 通訊協定使用用戶端/伺服器模型，而且是以憑證驗證為基礎，這需要公開金鑰基礎結構。
 
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>伺服器管理員資訊

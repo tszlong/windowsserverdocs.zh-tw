@@ -1,18 +1,18 @@
 ---
 title: 安全性支援提供者介面架構
-description: Windows Server 安全性
+description: 瞭解 Windows 驗證在 (SSPI) 架構的安全性支援提供者介面中使用的通訊協定。
 ms.topic: article
 ms.assetid: de09e099-5711-48f8-adbd-e7b8093a0336
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: da7c390427a3f0f2348d91e14d0affef905db390
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 9fec62a409db079a3ef6861111b61ba89e190062
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766951"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177319"
 ---
 # <a name="security-support-provider-interface-architecture"></a>安全性支援提供者介面架構
 
@@ -180,7 +180,7 @@ TLS 通訊協定、SSL 通訊協定、私用通訊技術 (PCT) 通訊協定，�
 -   [\[TLSP \] ：傳輸層安全性 (TLS) 設定檔](/openspecs/windows_protocols/ms-tlsp/58aba05b-62b0-4cd1-b88b-dc8a24920346)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>協商安全性支援提供者
-簡單且受保護的 GSS-API 協商機制 (SPNEGO) 形成 Negotiate SSP 的基礎，whichcan 是用來協商特定的驗證通訊協定。 當應用程式呼叫 SSPI 以登入網路時，它可以指定 SSP 來處理要求。 如果應用程式指定 Negotiate SSP，則會根據客戶設定的安全性原則，來分析要求並挑選適當的提供者來處理要求。
+簡單且受保護的 GSS-API 協商機制 (SPNEGO) 形成 Negotiate SSP 的基礎，可用來協商特定的驗證通訊協定。 當應用程式呼叫 SSPI 以登入網路時，它可以指定 SSP 來處理要求。 如果應用程式指定 Negotiate SSP，則會根據客戶設定的安全性原則，來分析要求並挑選適當的提供者來處理要求。
 
 SPNEGO 是在 RFC 2478 中指定的。
 

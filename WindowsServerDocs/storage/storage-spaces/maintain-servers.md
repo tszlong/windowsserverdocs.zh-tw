@@ -8,12 +8,12 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2a8a926fefe68b0afe79c0d120164d97f1eb90
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 78166006da9936da144c871009e2cf44fb146ea5
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97042066"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177337"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>將儲存空間直接存取伺服器離線以進行維護
 
@@ -68,20 +68,20 @@ Suspend-ClusterNode -Drain
 
 若要在容錯移轉叢集管理員中執行此動作，請移至 **\[節點\]**，在節點上按滑鼠右鍵，然後選取 **\[暫停\]** > **\[清空角色\]**。
 
-![Pause-Drain](media/maintain-servers/pause-drain.png)
+![容錯移轉叢集管理員的螢幕擷取畫面，其中顯示已選取 [暫停清空] 選項。](media/maintain-servers/pause-drain.png)
 
 所有虛擬機器都將開始即時移轉至叢集中的其他伺服器。 這可能需要數分鐘的時間。
 
    > [!NOTE]
    > 當您正確暫停並清空叢集結點時，Windows 會執行自動安全檢查以確保該程序可繼續執行。 如果磁碟區狀況不良，它將會停止，並提醒您繼續執行並不安全。
 
-![Safety-Check](media/maintain-servers/safety-check.png)
+![顯示錯誤訊息的螢幕擷取畫面，指出叢集空間處於降級的狀況，而且無法完成動作。](media/maintain-servers/safety-check.png)
 
 ## <a name="shutting-down-the-server"></a>正在關閉伺服器
 
 伺服器完成清空之後，將會在容錯移轉叢集管理員和 PowerShell 中顯示為 **\[已暫停\]**。
 
-![已暫停](media/maintain-servers/paused.png)
+![容錯移轉叢集管理員的螢幕擷取畫面，顯示其中一個節點已暫停。](media/maintain-servers/paused.png)
 
 您現在可以放心地像平常一樣重新啟動或將它關閉 (例如，使用 Restart-Computer 或 Stop-Computer PowerShell Cmdlet)。
 
@@ -115,7 +115,7 @@ Resume-ClusterNode –Failback Immediate
 
 若要在容錯移轉叢集管理員中執行此動作，請移至 **\[節點\]**，在節點上按滑鼠右鍵，然後選取 **\[繼續\]** > **\[容錯回復角色\]**。
 
-![Resume-Failback](media/maintain-servers/resume-failback.png)
+![容錯移轉叢集管理員的螢幕擷取畫面，其中顯示已選取 [繼續失敗角色] 選項。](media/maintain-servers/resume-failback.png)
 
 ## <a name="waiting-for-storage-to-resync"></a>等候存放裝置重新同步
 
@@ -184,5 +184,5 @@ MyVolume3    Mirror                OK                Healthy      True          
 
 ## <a name="additional-references"></a>其他參考資料
 
-- [儲存空間直接存取總覽](storage-spaces-direct-overview.md)
+- [儲存空間直接存取概觀](storage-spaces-direct-overview.md) \(部分機器翻譯\)
 - [叢集感知更新 (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))

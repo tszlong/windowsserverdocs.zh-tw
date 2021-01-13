@@ -5,12 +5,12 @@ ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
 ms.topic: troubleshooting
-ms.openlocfilehash: 5cce39ea42af57bbfd400427f763dfca5da75d7b
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: e24521ac89c0eb1eb4b2063ec7d70384a3755a33
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98040298"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177507"
 ---
 # <a name="iaas-with-sql-server---tuning-failover-cluster-network-thresholds"></a>具有 SQL Server 調整容錯移轉叢集網路閾值的 IaaS
 
@@ -90,7 +90,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 每個支援 OS 的預設值、最小值、最大值和建議值
 
-| 描述 | OS | 最小值 | 最大值 | 預設 | 建議 |
+| Description | OS | 最小值 | 最大值 | 預設值 | 建議 |
 |--|--|--|--|--|--|
 | CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
 | CrossSubnet 閾值 | 2012 | 3 | 120 | 5 | 20 |
@@ -133,9 +133,9 @@ C:\Windows\system32> get-cluster | fl *subnet*
     C:\Windows\system32> get-cluster | fl *subnet*
     ```
 
-    :::image type="content" source="media/iaas-sql-failover-cluster/cmd.png" alt-text="cmd" border="false":::
+    :::image type="content" source="media/iaas-sql-failover-cluster/cmd.png" alt-text="PowerShell 視窗的螢幕擷取畫面，其中顯示命令的結果。" border="false":::
 
-## <a name="references"></a>參考
+## <a name="references"></a>參考資料
 
 如需微調 Windows 叢集網路設定的詳細資訊，請參閱 [調整容錯移轉叢集網路閾值](https://techcommunity.microsoft.com/t5/failover-clustering/tuning-failover-cluster-network-thresholds/ba-p/371834)。
 
