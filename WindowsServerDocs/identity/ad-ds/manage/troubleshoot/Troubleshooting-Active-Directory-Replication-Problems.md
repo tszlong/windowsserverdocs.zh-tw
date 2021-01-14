@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7b095dc75d18af2a03f7d6a95d4865bc6e975097
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 00d88c05bf5a662c1375d0cc632e195752627631
+ms.sourcegitcommit: e0070b24e0423187eb2b36ba92072fed23880aa8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046326"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186416"
 ---
 # <a name="troubleshooting-active-directory-replication-problems"></a>進行 Active Directory 複寫問題疑難排解
 
@@ -26,7 +26,7 @@ Active Directory 複寫問題可能有數個不同的來源。 例如，網域�
 
 輸入或輸出複寫失敗會導致代表複寫拓撲、複寫排程、網域控制站、使用者、電腦、密碼、安全性群組、群組成員資格和群組原則的 Active Directory 物件在網域控制站之間不一致。 目錄不一致和複寫失敗，會導致作業失敗或不一致的結果（視操作所連接的網域控制站而定），而且可能會導致群組原則和存取控制許可權的應用程式無法運作。 Active Directory Domain Services (AD DS) 取決於網路連線能力、名稱解析、驗證和授權、目錄資料庫、複寫拓撲，以及複寫引擎。 當複寫問題的根本原因無法立即察覺時，判斷許多可能原因的原因，需要系統地排除可能的原因。
 
-如需以 UI 為基礎的工具來協助監視複寫和診斷錯誤，請參閱 [Active Directory 複寫狀態工具](https://www.microsoft.com/download/details.aspx?id=30005)
+若要使用以 UI 為基礎的工具來協助監視複寫及診斷錯誤，請下載並執行 [Microsoft 支援服務和](https://aka.ms/sara-adreplication)復原小幫手工具， **或者** ，如果您只想要分析複寫狀態，請使用 [Active Directory 複寫狀態工具](https://www.microsoft.com/download/details.aspx?id=30005) 。
 
 如需說明如何使用 Repadmin 工具進行疑難排解的完整檔，Active Directory 複寫可供使用;請參閱 [使用 Repadmin 進行 Active Directory 複寫的監視和疑難排解](https://go.microsoft.com/fwlink/?LinkId=122830)。
 
@@ -115,7 +115,7 @@ Active Directory 複寫問題可能有數個不同的來源。 例如，網域�
 
 您可以使用下列程式來取得樹系中所有網域控制站的複寫狀態。
 
-需求
+規格需求
 
 若要完成此程序，至少需要 **Enterprise Admins** 的成員資格或同等資格。
 

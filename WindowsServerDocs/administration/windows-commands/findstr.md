@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fe0f2a5dfd51f3b7689db7b3ad6a38938428a01
-ms.sourcegitcommit: 4165d4a9198228d4ec809ccd7d791f8de2aeb159
+ms.openlocfilehash: 4102971c4490eb42ccd5d17e7cc60f09c95b6878
+ms.sourcegitcommit: e0070b24e0423187eb2b36ba92072fed23880aa8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091262"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186396"
 ---
 # <a name="findstr"></a>findstr
 
@@ -26,7 +26,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | Description |
 | --------- | ----------- |
 | /b | 如果文字模式位於行的開頭，則會比對。 |
 | /e | 符合文字模式（如果它位於行尾）。 |
@@ -94,7 +94,7 @@ findstr hello there x.y
 若要搜尋檔案 *x. y* 中的 *hello* ，請輸入：
 
 ```
-findstr /c:hello there x.y
+findstr /c:"hello there" x.y
 ```
 
 若要使用檔案 *proposal.txt* 中的初始大寫字母（) W）來尋找所有出現的 word *Windows* (，請輸入：
