@@ -5,8 +5,7 @@
 ### [叢集和集區仲裁](../storage/storage-spaces/understand-quorum.md)
 ### [容錯網域感知](fault-domains.md)
 ### [簡化的 SMB 多重通道和多 NIC 叢集網路](smb-multichannel.md)
-### [VM 負載平衡](vm-load-balancing-overview.md)
-### [VM 負載平衡深入探討](vm-load-balancing-deep-dive.md)
+### [VM 負載平衡](/azure-stack/hci/manage/vm-load-balancing)
 ### [叢集集合](../storage/storage-spaces/cluster-sets.md)
 ### [叢集同質](cluster-affinity.md)
 ## 規劃
