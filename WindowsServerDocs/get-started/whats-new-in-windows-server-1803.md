@@ -1,17 +1,17 @@
 ---
 title: Windows Server 版本 1803 中的新功能
-description: 關於運算、身分識別、管理、自動化、網路功能、安全性、存放裝置的新功能。
+description: 深入了解 Windows Server 1803 版中運算、身分識別、管理、自動化、網路功能、安全性及儲存體的新功能。
 ms.topic: article
 author: greg-lindsay
 ms.author: greglin
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: e372ba924eeefc552dc7f65310a77749d8707971
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 0949efa6b06dc9137482d8d0bf353a3274c45e2f
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078595"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113134"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server 版本 1803 中的新功能
 
