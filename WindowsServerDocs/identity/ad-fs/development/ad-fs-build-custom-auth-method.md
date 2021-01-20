@@ -6,12 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 05/23/2019
 ms.topic: article
-ms.openlocfilehash: 2622271abcd283471513cb7ae909499ba9d858a4
-ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
+ms.openlocfilehash: de69c0f7bf53eefd1da39b2ac629dfe3ccd47668
+ms.sourcegitcommit: 7674bbe49517bbfe0e2c00160e08240b60329fd9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97697037"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98603431"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>為 Windows Server 中的 AD FS 建立自訂驗證方法
 
@@ -34,7 +34,7 @@ ms.locfileid: "97697037"
 
 2. 選取 [類別庫]，並確定您的目標是 .NET 4.5。
 
-    ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "建立提供者")
+    ![[新增專案] 對話方塊的螢幕擷取畫面，其中顯示已選取的 [類別庫] 選項。](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "建立提供者")
 
 3. 從已安裝 AD FS 的 Windows Server 2012 R2 伺服器上的% windir% ADFS 複製 **Microsoft.IdentityServer.Web.dll** ，並將其貼入開發電腦上的專案資料夾。
 
@@ -44,13 +44,13 @@ ms.locfileid: "97697037"
 
 6. 按一下 **[確定]** 以確認新的參考：
 
-    ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "建立提供者")
+    ![[參考管理員] 對話方塊的螢幕擷取畫面，其中顯示選取的 Microsoft.IdentityServer.Web.dll。](media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "建立提供者")
 
     您現在應該設定來解析提供者所需的所有類型。
 
 7. 將新類別新增至您的專案 (以滑鼠右鍵按一下您的專案，然後 **加入 .。。類別 ...**) ，並為其命名，如下所示 **MyAdapter**：
 
-    ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "建立提供者")
+    ![[加入新專案] 對話方塊的螢幕擷取畫面，其中已選取 [類別] 選項。](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "建立提供者")
 
 8. 在 [新增檔案 MyAdapter.cs] 中，以下列程式碼取代現有的程式碼：
 
@@ -450,7 +450,7 @@ ms.locfileid: "97697037"
 
 16. 然後，選取 [ **專案- \> 新增元件]。資源** 檔並命名檔案 **資源**，然後按一下 [ **新增]：**
 
-    ![建立提供者](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "建立提供者")
+    ![[加入新專案] 對話方塊的螢幕擷取畫面，其中顯示已選取的資源檔。](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "建立提供者")
 
 17. 然後，在 **Resources .resx** 檔中，選擇 [ **加入資源]。加入現有** 的檔案。 流覽至包含您在上面儲存的 html 片段)  (文字檔。
 
@@ -605,11 +605,11 @@ ms.locfileid: "97697037"
 
     如果您已設定多個介面卡，您會看到 [MFA 選項] 頁面上有您的易記名稱。
 
-    ![使用配接器來驗證](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "使用配接器來驗證")
+    ![具有範例挑戰問題的 [M F A forms] 頁面螢幕擷取畫面。](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "使用配接器來驗證")
 
-    ![使用配接器來驗證](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "使用配接器來驗證")
+    ![[M F 選擇] 頁面的螢幕擷取畫面。](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "使用配接器來驗證")
 
-您現在已可正常執行介面，且您已瞭解模型的運作方式。 您可以 trym 為額外的範例，以在 BeginAuthentication 中設定中斷點以及 TryEndAuthentication。 請注意，當使用者第一次進入 MFA 表單時，會如何執行 BeginAuthentication，而 TryEndAuthentication 則會在每次提交表單時觸發。
+您現在已可正常執行介面，且您已瞭解模型的運作方式。 您可以嘗試做一個額外的範例，在 BeginAuthentication 中設定中斷點以及 TryEndAuthentication。 請注意，當使用者第一次進入 MFA 表單時，會如何執行 BeginAuthentication，而 TryEndAuthentication 則會在每次提交表單時觸發。
 
 ## <a name="update-the-adapter-for-successful-authentication"></a>更新介面卡以成功驗證
 
@@ -753,11 +753,11 @@ public IAdapterPresentation TryEndAuthentication(IAuthenticationContext authCont
 
     1. 如果您已設定多個介面卡，您會看到 [MFA 選項] 頁面的易記名稱。
 
-在 [MFA 驗證] 頁面輸入 "adfabric" 時，您應該會看到成功登入。
+在 [MFA 驗證] 頁面輸入 _adfabric_ 時，您應該會看到成功登入。
 
-![使用配接器來登入](media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "使用配接器來登入")
+![M F 表單頁面的螢幕擷取畫面，其中包含範例挑戰文字。](media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "使用配接器來登入")
 
-![使用配接器來登入](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "使用配接器來登入")
+![M F 成功登入頁面的螢幕擷取畫面。](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "使用配接器來登入")
 
 ## <a name="see-also"></a>另請參閱
 

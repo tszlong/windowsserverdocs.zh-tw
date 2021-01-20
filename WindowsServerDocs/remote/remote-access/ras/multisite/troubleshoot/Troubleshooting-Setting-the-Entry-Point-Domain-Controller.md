@@ -1,18 +1,18 @@
 ---
 title: 疑難排解設定進入點網域控制站
-description: 本主題是在 Windows Server 2016 的多網站部署中部署多部遠端存取服務器的指南。
+description: 瞭解如何對 Set-DAEntryPointDC 命令相關的問題進行疑難排解。
 manager: brianlic
 ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 4772097844992317e1549252b11cb614286518b1
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9398bb52804f91229f0038ce4eee4ba5c6717434
+ms.sourcegitcommit: 7674bbe49517bbfe0e2c00160e08240b60329fd9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950514"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98603403"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>疑難排解設定進入點網域控制站
 
@@ -38,7 +38,7 @@ Or
 
 `Set-DaEntryPointDC` Cmdlet 只能在屬於已設定之多站台部署的伺服器上使用。
 
-**解決方案**
+**方案**
 
 執行命令，並確定將 *ComputerName* 參數指定成已設定為屬於多站台部署之伺服器的名稱。
 
@@ -51,7 +51,7 @@ Or
 
 `Set-DaEntryPointDC` Cmdlet 只能在屬於已設定之多站台部署的伺服器上使用。
 
-**解決方案**
+**方案**
 
 執行命令，並確定將 *ComputerName* 參數指定成已設定為屬於多站台部署之伺服器的名稱。
 
@@ -68,7 +68,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
 *EntryPointName* 或 *ExistingDC* 參數尚未指定，或 `Set-DaEntryPointDC` Cmdlet 同時指定這兩個參數。
 
-**解決方案**
+**方案**
 
 執行命令，並確認指定 *EntryPointName* 參數或 *ExistingDC* 參數。
 
@@ -79,7 +79,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
 以 *ComputerName* 參數指定的電腦無法透過 RPC 連線，或網域不包含任何可用的可寫入網域控制站。
 
-**解決方案**
+**方案**
 
 確認可透過 RPC 存取遠端電腦，而且網域有可用的可寫入網域控制站。 如果網域有可用的可寫入網域控制站，您也可以使用 *NewDC* 參數明確指定其名稱。
 
@@ -93,7 +93,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     無法連線到網域控制站。 這只會在系統管理員在 *NewDC* 或 *ExistingDC* 參數中指定網域控制站時發生。
 
-    **解決方案**
+    **方案**
 
     確認網域控制站的名稱拼寫正確。 如果您是使用簡短名稱指定名稱，請使用 FQDN，然後再試一次。
 
@@ -105,7 +105,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     可能有網路方面的問題，表示無法連線到 *NewDC* 參數中指定的網域控制站或設定中的任何其他現有網域控制站。
 
-    **解決方案**
+    **方案**
 
     確認網域控制站的名稱拼寫正確，確認網域控制站確實存在、正在執行、可寫入，而且網域控制站和網域之間存在信任的關係。
 
@@ -117,7 +117,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     為了保持多站台部署中的設定一致，確認每一個 GPO 都是由單一網域控制站所管理非常重要。 當管理進入點伺服器 GPO 的網域控制站無法使用時，就無法讀取或修改遠端存取設定。
 
-    **解決方案**
+    **方案**
 
     請依照2.4 中所述的「變更管理伺服器 Gpo 的網域控制站」程式進行操作 [。設定 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。
 
@@ -129,7 +129,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     為了保持多站台部署中的設定一致，確認每一個 GPO 都是由單一網域控制站所管理非常重要。 用戶端 GPO 是在網域主控站上管理。 如果網域主控站無法使用，便無法讀取或修改遠端存取組態設定。
 
-    **解決方案**
+    **方案**
 
     依照2.4 中所述的「傳送 PDC 模擬器角色」程式進行操作 [。設定 Gpo](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。
 
@@ -140,7 +140,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
 以 *NewDC* 參數指定的網域控制站是唯讀的網域控制站。
 
-**解決方案**
+**方案**
 
 使用 `Set-DAEntryPointDC` 時，*NewDC* 參數是用來更新與特定進入點相關的網域控制站，或用來更新與某個網域控制站相關的所有進入點。 因此，新的網域控制站必須是可寫入的網域控制站。 請在 *NewDC* 參數中指定可寫入的網域控制站，然後再試一次。
 
@@ -154,7 +154,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     遠端存取伺服器和網域控制站位於不同的網域，所以無法擷取 GPO。
 
-    **解決方案**
+    **方案**
 
     如果您嘗試更新特定的進入點，請確認新的網域控制站與進入點伺服器位於相同的網域。 如果您嘗試更新特定的網域控制站，請確認新的網域控制站與您要取代的網域控制站位於相同的網域。
 
@@ -166,7 +166,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     嘗試更新進入點網域控制站時，Cmdlet 會嘗試從新的網域控制站讀取伺服器 GPO，但是在新的網域控制站上找不到 GPO，因為尚未複寫。
 
-    **解決方案**
+    **方案**
 
     新的網域控制站上沒有伺服器 GPO。 請確認 GPO 已經成功複寫到新的網域控制站，然後再試一次。
 
@@ -178,7 +178,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     嘗試更新進入點網域控制站時，Cmdlet 會嘗試從新的網域控制站讀取伺服器 GPO，但是無法在新的網域控制站上讀取 GPO，因為您沒有適當的權限。
 
-    **解決方案**
+    **方案**
 
     網域控制站上有 GPO，但無法讀取。 請確認您具有必要的權限，然後再試一次。
 
@@ -189,7 +189,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
 找不到您指定的進入點名稱。
 
-**解決方案**
+**方案**
 
 確認進入點名稱拼寫正確，而且 GPO 複寫到必要的網域控制站，然後再試一次。 若要檢視為每個進入點指派的網域控制站，請使用 `Get-DAEntryPointDC`。
 
@@ -203,7 +203,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     嘗試更新進入點網域控制站時，Cmdlet 會嘗試從所有相關的遠端存取伺服器讀取和寫入進入點網域控制站。 Cmdlet 無法從一或多部遠端存取伺服器讀取資料。
 
-    **解決方案**
+    **方案**
 
     確認所有相關的遠端存取伺服器都在執行中，而且您具有這些伺服器的本機系統管理員權限，然後再試一次。
 
@@ -215,7 +215,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     嘗試更新進入點網域控制站時，Cmdlet 會嘗試從所有相關的遠端存取伺服器讀取和寫入進入點網域控制站。 Cmdlet 無法將資料寫入一或多部遠端存取伺服器。
 
-    **解決方案**
+    **方案**
 
     確認所有相關的遠端存取伺服器都在執行中，而且您具有這些伺服器的本機系統管理員權限，然後再試一次。
 
@@ -227,7 +227,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
     使用 Cmdlet `Set-DAEntryPointDC` 時，指定的 *ComputerName* 參數不是最後一個新增到多站台部署之進入點的遠端存取伺服器。
 
-    **解決方案**
+    **方案**
 
     使用遠端存取管理主控台的 [儀表板] 中的 [設定狀態] 可以看到所有未更新的伺服器。 這不會造成任何功能上的問題；但是您可以在任何未更新的伺服器上執行 `gpupdate /force`，立即更新設定狀態。
 
@@ -238,7 +238,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
 取得要修改的 DirectAccess 伺服器清單時，Cmdlet 無法從其電腦 SID 解析其中一部伺服器的完整網域名稱 (FQDN)。
 
-**解決方案**
+**方案**
 
 錯誤訊息中指定的進入點與網域控制站相關。 請確認進入點可以使用網域控制站。 如果從網域移除指定的 SID 所屬的電腦，請忽略這個訊息，然後從多站台部署移除伺服器。
 
@@ -249,7 +249,7 @@ Cmdlet `Set-DaEntryPointDC` 遺失所有必要的參數。
 
 以 `Set-DaEntryPointDC` 參數呼叫  Cmdlet 時，DirectAccess 會檢查所有進入點，並更新與指定的網域控制站相關聯的進入點。 不過，沒有任何進入點使用指定的 *ExistingDC*。
 
-**解決方案**
+**方案**
 
 若要查看進入點及其相關聯網域控制站的清單，請使用 `Get-DAEntryPointDC` Cmdlet。 如果應該進行變更，請確認 Cmdlet 參數拼寫正確，而且 GPO 複寫到必要的網域控制站，然後再試一次。
 

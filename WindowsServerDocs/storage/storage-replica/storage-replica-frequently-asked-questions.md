@@ -7,12 +7,12 @@ ms.topic: how-to
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 6cb59e94549aed049a4555ad2d9d7fd0448da4f8
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 51bd95800ed7658a5123d00d6d04c6fb7b95d111
+ms.sourcegitcommit: 7674bbe49517bbfe0e2c00160e08240b60329fd9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948614"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98603393"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>儲存體複本的常見問題集
 
@@ -22,7 +22,7 @@ ms.locfileid: "97948614"
 
 ## <a name="is-storage-replica-supported-on-azure"></a><a name="FAQ1"></a>Azure 支援儲存體複本嗎？
 
-是。 您可以在 Azure 中使用下列案例：
+可以。 您可以在 Azure 中使用下列案例：
 
 1. Azure 內的伺服器對伺服器複寫 (在一或兩個資料中心容錯網域中的 IaaS Vm 之間同步或非同步，或在兩個不同區域之間進行非同步複寫) 
 2. Azure 與內部部署之間的伺服器對伺服器非同步複寫 (使用 VPN 或 Azure ExpressRoute) 
@@ -172,31 +172,6 @@ vssadmin revert shadow /shadow={shadown copy ID GUID listed previously}
 您也可以使用排程的工作，定期排程此工具來執行。 如需使用 VSS 的詳細資訊，請檢閱 [Vssadmin](../../administration/windows-commands/vssadmin.md)。 備份記錄檔磁碟區時沒有任何需要或值。 嘗試這麼做時，VSS 將會加以忽略。
 
 使用 Windows Server Backup、Microsoft Azure 備份、Microsoft DPM 或其他快照，只要 VSS、虛擬機器或以檔案為基礎的技術是在磁碟區層內運作，就受到「儲存體複本」所支援。 「儲存體複本」不支援以區塊為基礎的備份及還原。
-
-## <a name="can-i-configure-replication-to-restrict-bandwidth-usage"></a><a name="FAQ14"></a> 我可以設定複寫來限制頻寬使用量嗎？
-
-是，可透過 SMB 頻寬限制器來設定。 這是適用於所有「儲存體複本」流量的全域設定，因此會影響所有來自此伺服器的複寫。 一般而言，只有使用「儲存體複本」初始同步設定時才需要此項，而其中的所有磁碟區資料都必須傳輸。 如果在初始同步之後需要執行此動作，您的網路頻寬對 IO 工作負載而言就會過低；請減少 IO 或增加頻寬。
-
-這應該只能用於非同步複寫 (注意︰初始同步一律是非同步，即使您已指定同步也一樣)。
-您也可以使用網路 QoS 原則，來為 「儲存體複本」流量塑型。 使用高度相符的植入「儲存體複本」複寫，也會大幅降低整體初始同步的頻寬使用量。
-
-若要設定頻寬限制，請使用：
-
-```
-Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond x
-```
-
-若要查看頻寬限制，請使用：
-
-```
-Get-SmbBandwidthLimit -Category StorageReplication
-```
-
-若要移除頻寬限制，請使用：
-
-```
-Remove-SmbBandwidthLimit -Category StorageReplication
-```
 
 ## <a name="what-network-ports-does-storage-replica-require"></a><a name="FAQ15"></a>儲存體複本需要哪些網路連接埠？
 
