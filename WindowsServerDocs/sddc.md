@@ -8,12 +8,12 @@ author: eross-msft
 manager: mtillman
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d9bef79cab438cfd45091bf45af86abf7604e8fd
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 774d93647d2be6ed5944683802abb910a8e223d5
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947344"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103810"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server 軟體定義資料中心
 
@@ -39,9 +39,9 @@ Microsoft 的 SDDC 實作包含本文中提出的 Windows Server 技術。 這�
 
 Microsoft 合作夥伴提供了一系列的解決方案，可透過 Azure Stack HCI 計畫與 Windows Server 2019 搭配使用，或透過 Windows Server 軟體定義 (WSSD) 計畫與 Window Server 2016 搭配使用，以提供高效能、超融合式儲存體和網路基礎結構。 超融合式解決方案將業界標準伺服器及元件上的計算、儲存和網路功能整合在一起，以改善資料中心智慧與控制。
 
-![學習圖示](media/sddc/learn.png)**[深入了解 Azure Stack HCI 解決方案](https://azure.microsoft.com/overview/azure-stack/hci)**
+![學習圖示，深入了解 Azure Stack HCI 解決方案。](media/sddc/learn.png)**[深入了解 Azure Stack HCI 解決方案](https://azure.microsoft.com/overview/azure-stack/hci)**
 
-![學習圖示](media/sddc/learn.png)**[深入了解 WSSD 解決方案](https://www.microsoft.com/cloud-platform/software-defined-datacenter)**
+![學習圖示，深入了解 WSSD 解決方案。](media/sddc/learn.png)**[深入了解 WSSD 解決方案](https://www.microsoft.com/cloud-platform/software-defined-datacenter)**
 
 ## <a name="windows-server-virtualized-technologies"></a>Windows Server 虛擬化技術 ##
 
@@ -55,9 +55,9 @@ Microsoft 合作夥伴提供了一系列的解決方案，可透過 Azure Stack 
 
 Windows Server 虛擬化技術包含 Hyper-V、Hyper-V 虛擬交換器以及受防護網狀架構與受防護的虛擬機器 (VM) 的更新，可改善安全性、延展性及可靠性。 容錯移轉叢集、網路功能和儲存體的更新讓您更容易在搭配 Hyper-V 時部署和管理這些技術。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![Windows Server，超融合式基礎結構圖表](media/sddc/hyper-converged.png)
+![Windows Server，超融合式基礎結構圖表空格字元影像。](media/sddc/spacer1.png)![Windows Server，超融合式基礎結構圖表](media/sddc/hyper-converged.png)
 
-![學習圖示](media/sddc/learn.png)**[深入了解 Windows Server 超融合](./get-started/whats-new-in-windows-server-2016.md#compute)**
+![學習圖示、深入了解 Windows Server](media/sddc/learn.png)**[深入了解 Windows Server (超融合式)](./get-started/whats-new-in-windows-server-2016.md#compute)**
 
 ### <a name="hyper-v-hypervisor"></a>Hyper-V Hypervisor
 
@@ -65,70 +65,70 @@ Hyper-V 是適用於 Windows、以 Hypervisor 為基礎的虛擬化技術。 Hyp
 
 ![Hyper-V Hypervisor 圖表](media/sddc/spacer1.png)![Hyper](media/sddc/hypervisor.png)
 
-![學習圖示](media/sddc/learn.png)**[深入了解 Hyper-V Hypervisor](https://www.microsoft.com/cloud-platform/server-virtualization)**
+![學習圖示，深入了解 Hyper-V Hypervisor。](media/sddc/learn.png)**[深入了解 Hyper-V Hypervisor](https://www.microsoft.com/cloud-platform/server-virtualization)**
 
 ### <a name="guest-clustering-with-shared-vhdx"></a>含共用 VHDX 的客體叢集
 
-![用於間距用途的線條影像](media/sddc/virtualize-line.png)
+![用於分隔含共用 VHDX 的客體叢集區段的線條。](media/sddc/virtualize-line.png)
 
 既靈活又安全，且未繫結於底層儲存體拓撲，共用 VHDX 不再需要向客體 OS 展示實體底層儲存體。 新的共用 VHDX 支援線上調整大小功能。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![來賓叢集和共用的 VHDX 圖表](media/sddc/cluster.png)
+![客體叢集和共用的 VHDX 圖表空格字元影像。](media/sddc/spacer1.png)![來賓叢集和共用的 VHDX 圖表](media/sddc/cluster.png)
 
 - 共用 VHDX 可以存放在區塊儲存體或 SMB 檔案型儲存體上的叢集共用磁碟區 (CSV)。
 - 受保護：共用 VHDX 支援 Hyper-V 複本和主機層級備份。
 
-![學習圖示](media/sddc/learn.png)**[深入了解客體叢集與共用 VHDX](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281956(v=ws.11))**
+![學習圖示，深入了解含共用 VHDX 的客體叢集。](media/sddc/learn.png)**[深入了解含共用 VHDX 的客體叢集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281956(v=ws.11))**
 
 ### <a name="hyper-v-replica"></a>Hyper-V 複本
 
-![用於間距用途的線條影像](media/sddc/virtualize-line.png)
+![用於分隔 Hyper-V 複本區段的線條。](media/sddc/virtualize-line.png)
 
 使用憑證以軟體為基礎的跨網路整合式 VM 複寫。 未繫結至任一網站上的伺服器、網路或儲存硬體。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![Hyper-V 複本圖表](media/sddc/replica.png)
+![Hyper-V 複本圖表空格字元影像。](media/sddc/spacer1.png)![Hyper-V 複本圖表](media/sddc/replica.png)
 
 不需要其他虛擬機器複寫技術，並降低成本。
 - 自動處理即時移轉。
 - 簡單的設定及管理：可透過 Hyper-V 管理員、PowerShell 或 Azure Site Recovery 進行。
 
-![學習圖示](media/sddc/learn.png)**[深入了解 Hyper-V 複本](./virtualization/hyper-v/manage/set-up-hyper-v-replica.md)**
+![學習圖示，深入了解 Hyper-V 複本。](media/sddc/learn.png)**[深入了解 Hyper-V 複本](./virtualization/hyper-v/manage/set-up-hyper-v-replica.md)**
 
 ![連接所有內容橫幅](media/sddc/networking.png)
 
 ### <a name="network-controller"></a>網路控制站
 
-![用於間距用途的線條影像](media/sddc/networking-line.png)
+![用於分隔網路控制卡區段的線條。](media/sddc/networking-line.png)
 
 集中式、可程式化的自動化點，可以管理、設定、監視和疑難排解資料中心的虛擬及實體網路基礎結構。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![網路控制卡圖表](media/sddc/netcontroller.png)
+![網路控制卡圖表空格字元影像。](media/sddc/spacer1.png)![網路控制卡圖表](media/sddc/netcontroller.png)
 
 系統管理員會使用與網路控制器直接互動的管理工具。 網路控制卡會將網路基礎結構 (包括虛擬及實體基礎結構) 的相關資訊提供給管理工具。
 
-![學習圖示](media/sddc/learn.png)**[深入了解網路控制卡](./networking/sdn/technologies/network-controller/network-controller.md)**
+![學習圖示，深入了解網路控制卡。](media/sddc/learn.png)**[深入了解網路控制卡](./networking/sdn/technologies/network-controller/network-controller.md)**
 
 ### <a name="datacenter-firewall"></a>資料中心防火牆
 
-![用於間距用途的線條影像](media/sddc/networking-line.png)
+![用於分隔資料中心防火牆區段的線條。](media/sddc/networking-line.png)
 
 部署並提供作為服務時，租用戶系統管理員可安裝和設定防火牆原則來協助保護虛擬網路，不受網際網路及內部網路流量的干擾。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![資料中心防火牆圖表](media/sddc/firewall.png)
+![資料中心防火牆圖表空格字元影像。](media/sddc/spacer1.png)![資料中心防火牆圖表](media/sddc/firewall.png)
 
 服務提供者管理員或租用戶管理員可透過網路控制卡來管理資料中心防火牆原則。
 
-![學習圖示](media/sddc/learn.png)**[深入了解資料中心防火牆](./networking/sdn/technologies/network-function-virtualization/datacenter-firewall-overview.md)**
+![學習圖示，深入了解資料中心防火牆。](media/sddc/learn.png)**[深入了解資料中心防火牆](./networking/sdn/technologies/network-function-virtualization/datacenter-firewall-overview.md)**
 
 ### <a name="switch-embedded-teaming"></a>交換器內嵌小組
 
-![用於間距用途的線條影像](media/sddc/networking-line.png)
+![用於分隔交換器內嵌小組區段的線條。](media/sddc/networking-line.png)
 
 SET 是替代的 NIC 小組解決方案，您可將其用於包含 Hyper-V 及[軟體定義的網路功能 (SDN)](./networking/sdn/software-defined-networking.md) 堆疊的環境中。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![交換器內嵌小組圖表](media/sddc/teaming.png)
+![交換器內嵌小組圖表空格字元影像。](media/sddc/spacer1.png)![交換器內嵌小組圖表](media/sddc/teaming.png)
 
-![學習圖示](media/sddc/learn.png)**[深入了解交換器內嵌小組](./networking/sdn/technologies/set-for-sdn.md)**
+![學習圖示，深入了解交換器內嵌小組。](media/sddc/learn.png)**[深入了解交換器內嵌小組](./networking/sdn/technologies/set-for-sdn.md)**
 
 ### <a name="software-load-balancing"></a>軟體負載平衡
 
@@ -136,9 +136,9 @@ SET 是替代的 NIC 小組解決方案，您可將其用於包含 Hyper-V 及[�
 
 SLB 可讓多部伺服器裝載相同的工作負載，並提供高度可用性及延展性。 在您用於其他 VM 工作負載的相同 Hyper-V 伺服器上使用 SLB VM，以向外延展負載平衡功能。 SLB 支援快速建立和刪除雲端服務提供者作業的負載平衡端點。 SLB 針對每個叢集可支援數十 GB，且提供簡易佈建模型，並可輕鬆向外和向內延展。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![軟體負載平衡圖表](media/sddc/balancer.png)
+![軟體負載平衡圖表空格字元影像。](media/sddc/spacer1.png)![軟體負載平衡圖表](media/sddc/balancer.png)
 
-![學習圖示](media/sddc/learn.png)**[深入了解軟體負載平衡](./networking/sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)**
+![學習圖示，深入了解軟體負載平衡。](media/sddc/learn.png)**[深入了解軟體負載平衡](./networking/sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)**
 
 ![儲存體圖表](media/sddc/storage.png)
 
@@ -148,22 +148,22 @@ SLB 可讓多部伺服器裝載相同的工作負載，並提供高度可用性�
 
 儲存空間直接存取將業界標準伺服器與本機連結磁碟機搭配使用，只需傳統 SAN 或 NAS 陣列的一小部分成本，就能提供高可用性、高延展性的軟體定義儲存體。 其架構大幅簡化了採購與部署作業。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![儲存空間直接存取圖表](media/sddc/ssd.png)
+![儲存空間直接存取圖表空格字元影像。](media/sddc/spacer1.png)![儲存空間直接存取圖表](media/sddc/ssd.png)
 
 儲存空間直接存取導入了新的軟體儲存匯流排，並利用目前在 Windows Server 中熟知的許多功能，例如容錯移轉叢集、叢集共用磁碟區 (CSV)、伺服器訊息區 (SMB) 3，以及儲存空間。
 
-![學習圖示](media/sddc/learn.png)**[深入了解儲存空間直接存取](storage/storage-spaces/storage-spaces-direct-overview.md)**
+![學習圖示，深入了解儲存空間直接存取。](media/sddc/learn.png)**[深入了解儲存空間直接存取](storage/storage-spaces/storage-spaces-direct-overview.md)**
 ### <a name="storage-quality-of-service"></a>存放裝置服務品質 ###
 
 ![間距用途的線條](media/sddc/storage-line.png)
 
 使用 Hyper-V 與向外延展檔案伺服器角色來集中監視和管理虛擬機器的儲存體效能，並改善多個虛擬機器之間的儲存體資源公平性。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![存放裝置服務品質圖表](media/sddc/qos.png)
+![儲存體服務品質圖表空格字元影像。](media/sddc/spacer1.png)![存放裝置服務品質圖表](media/sddc/qos.png)
 
 儲存體 QoS 內建於向外延展檔案伺服器與 Hyper-V 使用 SMB3 通訊協定所提供的 Microsoft 軟體定義儲存體解決方案中。 新的原則管理員提供中央儲存體效能監視。
 
-![學習圖示](media/sddc/learn.png)**[深入了儲存體 QoS](./storage/storage-qos/storage-qos-overview.md)**
+![學習圖示，深入了解儲存體 QoS。](media/sddc/learn.png)**[深入了解儲存體 QoS](./storage/storage-qos/storage-qos-overview.md)**
 
 ### <a name="storage-replica"></a>儲存體複本
 
@@ -171,7 +171,7 @@ SLB 可讓多部伺服器裝載相同的工作負載，並提供高度可用性�
 
 災害復原和準備功能可更有效率地利用多個資料中心，透過同步保護位於不同機架、樓層、建物、校區及城市及國家/地區之資料的功能，將零資料遺失化為可能。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)
+![儲存體複本圖表空格字元影像。](media/sddc/spacer1.png)
 ![儲存體複本圖表](media/sddc/storage-replica.png)
 
 同步複寫
@@ -184,7 +184,7 @@ SLB 可讓多部伺服器裝載相同的工作負載，並提供高度可用性�
 
 t & t1：資料排清到磁碟區，記錄一律直接寫入
 
-![學習圖示](media/sddc/learn.png)**[深入了解儲存體複本](./storage/storage-replica/storage-replica-overview.md)**
+![學習圖示，深入了解儲存體複本。](media/sddc/learn.png)**[深入了解儲存體複本](./storage/storage-replica/storage-replica-overview.md)**
 
 ![安全性圖表](media/sddc/security.png)
 
@@ -196,53 +196,53 @@ t & t1：資料排清到磁碟區，記錄一律直接寫入
 
 ![受防護網狀架構圖表](media/sddc/spacer1.png)![受防護網狀架構圖表](media/sddc/guarded-fabric.png)
 
-![學習圖示](media/sddc/learn.png)**[深入了解受防護網狀架構](./security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)**
+![學習圖示，深入了解受防護網狀架構。](media/sddc/learn.png)**[深入了解受防護網狀架構](./security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)**
 
 ### <a name="shielded-vms"></a>受防護的 VM
 
-![用於間距用途的線條安全性影像](media/sddc/security-line.png)
+![用於分隔受防護 VM 區段的線條。](media/sddc/security-line.png)
 
 受防護 VM 的資料及狀態受到保護，可防止惡意程式碼和資料中心管理員加以探查、竊取和竄改。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![受防護的圖表](media/sddc/shielded.png)
+![受防護的圖表空格字元影像。](media/sddc/spacer1.png)![受防護的圖表](media/sddc/shielded.png)
 
 - 受防護的 VM 只會在指定為 VM 擁有者的網狀架構中執行。
 - 受防護的 VM 是透過 BitLocker 或其他方式加密，因此只有指定的擁有者才能加以執行。
 - 執行中 VM 可以轉換成受防護的狀態。
 
-![學習圖示](media/sddc/learn.png)**[深入了解受防護的 VM](./security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)**
+![學習圖示，深入了解受防護的 VM。](media/sddc/learn.png)**[深入了解受防護的 VM](./security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)**
 
 ### <a name="host-guardian-service"></a>主機守護者服務
 
-![用於間距用途的線條安全性影像](media/sddc/security-line.png)
+![用於分隔主機守護者服務區段的線條。](media/sddc/security-line.png)
 
 主機守護者服務會保存合法網狀架構及加密虛擬機器的金鑰。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![守護者圖表](media/sddc/guardian.png)
+![守護者圖表空格字元影像。](media/sddc/spacer1.png)![守護者圖表](media/sddc/guardian.png)
 
-![學習圖示](media/sddc/learn.png)**[深入了解主機守護者服務](./security/guarded-fabric-shielded-vm/guarded-fabric-manage-hgs.md)**
+![學習圖示，深入了解主機守護者服務。](media/sddc/learn.png)**[深入了解主機守護者服務](./security/guarded-fabric-shielded-vm/guarded-fabric-manage-hgs.md)**
 
 ### <a name="device-health-attestation"></a>裝置健康情況證明
 
-![用於間距用途的線條安全性影像](media/sddc/security-line.png)
+![用於分隔裝置健康情況證明區段的線條。](media/sddc/security-line.png)
 
 此證明可讓企業將其組織的安全性基準提升至經過硬體監視和證明的安全性，而不影響作業成本，或只有些微影響。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![證明圖表](media/sddc/attestation.png)
+![證明圖表空格字元影像。](media/sddc/spacer1.png)![證明圖表](media/sddc/attestation.png)
 
 上述硬體信任模式可透過 TPM v2.0 硬體根信任，在符合金鑰發行程式碼完整性原則的情況下，提供最高等級的保證。
 
-![學習圖示](media/sddc/learn.png)**[深入了解裝置健康情況證明](./security/device-health-attestation.md)**
+![學習圖示，深入了解裝置健康情況證明。](media/sddc/learn.png)**[深入了解裝置健康情況證明](./security/device-health-attestation.md)**
 
 ![管理圖表](media/sddc/management.png)
 
 ### <a name="powershell-desired-state-configuration"></a>PowerShell Desired State Configuration
 
-![用於間距用途的線條管理影像](media/sddc/management-line.png)
+![用於分隔 PowerShell Desired State Configuration 區段的線條。](media/sddc/management-line.png)
 
 Windows PowerShell Desired State Configuration 是 Windows 根據開放式標準內建的組態管理平台。 DSC 的彈性足以因應部署生命週期 (開發、測試、生產階段前，生產環境) 各階段穩定且一致的運作，向外延展時亦然。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![Desired State Configuration 圖表](media/sddc/dsc.png)
+![Desired State Configuration 圖表空格字元影像。](media/sddc/spacer1.png)![Desired State Configuration 圖表](media/sddc/dsc.png)
 
 DSC 支援「連續部署」，讓您可以重複部署組態，而不會中斷任何作業。
 
@@ -250,7 +250,7 @@ DSC 支援「連續部署」，讓您可以重複部署組態，而不會中斷�
 -  DSC 可用於內部部署、公用雲端或私人雲端環境。
 -  您可以將 DSC 與任何 Microsoft 或非 Microsoft 解決方案整合，只要您能在目標系統上執行 PowerShell 指令碼即可。
 
-![學習圖示](media/sddc/learn.png)**[深入了解 PowerShell DSC](/powershell/dsc/overview)**
+![學習圖示，深入了解 PowerShell DSC。](media/sddc/learn.png)**[深入了解 PowerShell DSC](/powershell/dsc/overview)**
 
 ### <a name="system-center-vmm"></a>System Center VMM
 
@@ -258,18 +258,18 @@ DSC 支援「連續部署」，讓您可以重複部署組態，而不會中斷�
 
 Virtual Machine Manager 是 System Center 套件的一部分，用來設定、管理和轉換傳統資料中心，以在所有內部部署、服務提供者和 Azure 雲端間提供一致的管理體驗。
 
-![僅供間距用途的影像](media/sddc/spacer1.png)![Virtual Machine Manager 圖表](media/sddc/vmm.png)
+![Virtual Machine Manager 圖表空格字元影像。](media/sddc/spacer1.png)![Virtual Machine Manager 圖表](media/sddc/vmm.png)
 
 - 資料中心：將資料中心元件作為 VMM 中的單一網狀架構來設定和管理。
 - 虛擬化主機：VMM 可新增、佈建和管理 Hyper-V 及 VMWare 虛擬化主機與叢集。
 - 網路功能：VMM 提供網路虛擬化功能，包括支援建立和管理虛擬網路及網路閘道。
 - 存放裝置：VMM 可探索、分類、佈建、配置和指派本機及遠端儲存體。
 
-![學習圖示](media/sddc/learn.png)**[深入了解 System Center VMM](/system-center/vmm/)**
+![學習圖示，深入了解 System Center VMM。](media/sddc/learn.png)**[深入了解 System Center VMM](/system-center/vmm/)**
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-![用於間距用途的線條管理影像](media/sddc/management-line.png)
+![用於分隔 Windows Admin Center 區段的線條。](media/sddc/management-line.png)
 
 Windows Admin Center 是本機部署的瀏覽器型管理工具組，可在沒有任何 Azure 或雲端相依性的情況下用來進行 Windows Servers 內部部署管理。 Windows Admin Center 賦予 IT 系統管理員對其伺服器基礎結構所有層面的完整控制權，這在管理未連線至網際網路的私人網路時，效用尤佳。
 

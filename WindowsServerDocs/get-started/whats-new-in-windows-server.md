@@ -1,17 +1,17 @@
 ---
 title: Windows Server 的新功能
-description: 關於運算、身分識別、管理、自動化、網路功能、安全性及存放裝置的新功能。
+description: 關於 Windows Server 中運算、身分識別、管理、自動化、網路功能、安全性及儲存體的新功能。
 ms.date: 10/22/2020
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ba281106fbc6149b226326e79a41618efbc0fc2
-ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
+ms.openlocfilehash: 17c538bde793b8b9e548dd181b586a1799acb984
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577390"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113094"
 ---
 # <a name="whats-new-in-windows-server"></a>Windows Server 的新功能
 

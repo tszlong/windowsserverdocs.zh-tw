@@ -6,12 +6,12 @@ author: dahavey
 ms.author: dahavey
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: c407db49c289414cd92b3ff0316d4097754fac5b
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 66b24e4f1b99ba13e48520743069fc4aff4abf28
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046826"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103660"
 ---
 # <a name="how-the-windows-time-service-works"></a>Windows 時間服務的運作方式
 
@@ -69,7 +69,7 @@ Windows Time 服務包含下列元件：
 
 **Windows Time 服務架構**
 
-![Windows Time](../media/Windows-Time-Service/How-the-Windows-Time-Service-Works/trnt_sec_arcc.gif)
+![下圖顯示 Windows Time 服務的架構。](../media/Windows-Time-Service/How-the-Windows-Time-Service-Works/trnt_sec_arcc.gif)
 
 服務控制管理員負責啟動和停止 Windows Time 服務。 Windows Time Service Manager 負責起始作業系統所隨附 NTP 時間提供者的動作。 Windows Time Service Manager 會控制 Windows Time 服務的所有功能，以及所有時間樣本的聯合。 除了提供目前系統狀態的相關資訊 (例如目前時間來源或上次更新系統時鐘的時間) 以外，Windows Time Service Manager 也會負責在事件記錄中建立事件。
 

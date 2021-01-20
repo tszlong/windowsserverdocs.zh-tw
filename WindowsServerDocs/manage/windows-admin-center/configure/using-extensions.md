@@ -5,13 +5,13 @@ ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.date: 08/07/2020
-ms.openlocfilehash: ef5a4df53efeb6e24a86d74906fc5847d1924163
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.date: 01/14/2021
+ms.openlocfilehash: 20e2c1098aaf77559c32cca8f457a3ec5e3080f8
+ms.sourcegitcommit: 17571fb06af2634dbf0163a2c08014cd6e9f9762
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947554"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98206057"
 ---
 # <a name="install-and-manage-extensions"></a>安裝和管理擴充功能
 
@@ -62,7 +62,7 @@ Windows Admin Center 支援多個摘要，而且您可以一次從多個摘要�
 2. 按一下您要安裝的套件名稱，以檢視套件詳細資料頁面。
 3. 在 [套件詳細資料] 頁面的頂端瀏覽列中按一下 [下載] 連結，並下載擴充功能的 .nupkg 檔案。
 4. 針對您想要下載的所有套件，重複步驟 2 和 3。
-5. 將套件檔案複製到檔案共用 (可從安裝 Windows Admin Center 的電腦進行存取)，或複製到電腦的本機磁碟。
+5. 將套件檔案複製到檔案共用 (可從安裝 Windows Admin Center 的電腦進行存取)，或複製到 Windows Admin Center 安裝所在電腦的本機磁碟。
 6. [請遵循指示，從不同的摘要中安裝擴充功能](#installing-extensions-from-a-different-feed)。
 
 ### <a name="downloading-packages-with-a-powershell-script"></a>使用 PowerShell 指令碼下載套件

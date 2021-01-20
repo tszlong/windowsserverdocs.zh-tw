@@ -1,6 +1,6 @@
 ---
 title: Windows Server 2016 的新功能
-description: 關於運算、身分識別、管理、自動化、網路功能、安全性、存放裝置的新功能。
+description: 關於 Windows Server 2016 中運算、身分識別、管理、自動化、網路功能、安全性及儲存體的新功能。
 ms.date: 05/21/2019
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dfed9e70e4f0406c59c31201c8d2d1a9b3caafe
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 0e4b52f7f4bdbbf82a9f87a02a0305c7e351163c
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766861"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113114"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 的新功能
 
@@ -105,7 +105,7 @@ Windows Server 2016 和 Windows 10 包含新的 PackageManagement 功能 (先前
 ### <a name="tcp-performance-improvements"></a>TCP 效能改進功能
 預設初始壅塞視窗 (ICW) 已經從 4 增加為 10，並已實作 TCP 快速開啟 (TFO)。 TFO 可減少建立 TCP 連線所需的時間量，而增加的 ICW 允許在初始暴增時轉移較大的物件。 這個組合可以大幅減少用戶端與雲端之間轉移網際網路物件所需的時間。
 
-為了在復原封包遺失時改善 TCP 行為，我們已經實作 TCP 結尾遺失探查 (TLP) 和最新通知 (RACK)。 TLP 有助於將重新傳輸逾時 (RTO) 轉換為快速復原，RACK 則降低快速復原重新傳輸遺失封包所需的時間。 
+為了在復原封包遺失時改善 TCP 行為，我們已經實作 TCP 結尾遺失探查 (TLP) 和最新通知 (RACK)。  TLP 有助於將重新傳輸逾時 (RTO) 轉換為快速復原，RACK 則降低快速復原重新傳輸遺失封包所需的時間。 
 
 ## <a name="security-and-assurance"></a>[安全性和保證](../security/Security-and-Assurance.yml)
 包含 IT專業人員可用來部署於您的資料中心和雲端環境中的安全性解決方案與功能。 如需 Windows Server 2016 中安全性的基本相關資訊，請參閱[安全性和保證](../security/Security-and-Assurance.yml)。

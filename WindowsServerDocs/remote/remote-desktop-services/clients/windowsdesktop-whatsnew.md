@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/15/2020
+ms.date: 01/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ce679c49abac80e4d3fa1edef9768ae8abf34b3
-ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
+ms.openlocfilehash: 1d5dc9e76680b6c222f67b8f94c12bedd57af263
+ms.sourcegitcommit: 56297d3b8aa8f4796cb74b736d599d433aeee339
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577400"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134804"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面用戶端的新功能
 
@@ -24,18 +24,20 @@ ms.locfileid: "97577400"
 
 |使用者群組 |最新版本  |最低支援版本 |
 |-----------|----------------|--------------------------|
-|公用     |1.2.1524        |1.2.945                   |
-|Insider    |1.2.1526        |1.2.945                   |
+|公用     |1.2.1525        |1.2.945                   |
+|Insider    |1.2.1670        |1.2.945                   |
 
-## <a name="updates-for-version-121526-insider"></a>1\.2.1526 版的更新 (Windows 測試人員)
+## <a name="updates-for-version-121670-insider"></a>1\.2.1670 版的更新 (Windows 測試人員)
 
-*發行日期：12/15/2020*
+*發行日期：1/12/2021*
 
 下載：[Windows 64 位元](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位元](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
 
 - 已新增對 Windows 10 端點的螢幕擷取畫面保護功能的支援。 若要深入了解，請參閱 [工作階段主機安全性最佳做法](/azure/virtual-desktop/security-guide#session-host-security-best-practices)。
+- 已針對需要驗證摘要訂用帳戶的 Proxy 新增支援。
+- 用戶端現在會顯示通知，其中包含要在更新未成功下載時重試的選項。
 
-## <a name="updates-for-version-121524"></a>1\.2.1524 版的更新
+## <a name="updates-for-version-121525"></a>1\.2.1525 版的更新
 
 *發行日期：2020/12/01*
 
