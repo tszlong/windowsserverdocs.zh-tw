@@ -5,17 +5,17 @@ ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.date: 06/07/2019
-ms.openlocfilehash: 1775149495871353ef250eff3cb8f6f8cc5c22d6
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.date: 01/15/2021
+ms.openlocfilehash: d057a15b54ebabb6ed5e89dab7159aa1fa26c58d
+ms.sourcegitcommit: 58a13a29869b39b6a6ba0db4d7b9fe1ff8371ea7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766201"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625811"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑難排解
 
-> 適用於：Windows Admin Center、Windows Admin Center 預覽版
+> 適用于： Windows Admin Center、Windows Admin Center Preview、Azure Stack HCI、version v20H2
 
 > [!Important]
 > 此指南將協助您診斷並解決讓您無法使用 Windows Admin Center 的問題。 如果您的特定工具發生問題，請檢查您是否遇到了[已知問題。](./known-issues.md)
@@ -28,7 +28,7 @@ ms.locfileid: "90766201"
 [Environment]::SetEnvironmentVariable("PSModulePath","%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules;" + ([Environment]::GetEnvironmentVariable("PSModulePath","User")),"User")
 ```
 
-## <a name="i-get-a-this-sitepage-cant-be-reached-error-in-my-web-browser"></a>我在網頁瀏覽器中收到**無法連線到此網站/頁面**錯誤
+## <a name="i-get-a-this-sitepage-cant-be-reached-error-in-my-web-browser"></a>我在網頁瀏覽器中收到 **無法連線到此網站/頁面** 錯誤
 
 ### <a name="if-youve-installed-windows-admin-center-as-an-app-on-windows-10"></a>如果您已將 Windows Admin Center 安裝為 **Windows 10 上的應用程式**
 
@@ -85,6 +85,12 @@ ms.locfileid: "90766201"
 * 輸入 ```services.msc``` ，然後按 enter 鍵
 * 在開啟的視窗中，尋找 Windows 遠端管理 (WinRM) ，確定它正在執行中，並設定為自動啟動
 
+### <a name="if-youre-getting-winrm-error-messages-while-managing-servers-in-windows-admin-center"></a>如果您在 Windows Admin Center 中管理伺服器時收到 WinRM 錯誤訊息
+
+WinRM 預設不允許認證委派。 若要允許委派，電腦必須暫時啟用 (CredSSP) 的認證安全性支援提供者。
+
+如果您要接收 WinRM 錯誤訊息，請嘗試使用[疑難排解 CredSSP](https://docs.microsoft.com/azure-stack/hci/manage/troubleshoot-credssp)的[手動疑難排解](https://docs.microsoft.com/azure-stack/hci/manage/troubleshoot-credssp#manual-troubleshooting)一節中的驗證步驟來解決問題。
+
 ### <a name="did-you-upgrade-your-server-from-2016-to-2019"></a>您是否已將伺服器從2016升級為2019？
 
 * 這可能已清除您信任的主機設定。 [遵循這些指示來更新您的受信任主機設定。](#configure-trustedhosts)
@@ -117,7 +123,7 @@ EnableHttp2Tls=dword:00000000
 ## <a name="using-windows-admin-center-in-a-workgroup"></a>在工作群組中使用 Windows Admin Center
 
 ### <a name="what-account-are-you-using"></a>您正在使用哪個帳戶？
-請確定您使用的認證是目標伺服器本機 Administrator 群組的成員。 在某些情況下，WinRM 也必須有 Remote Management Users 群組的成員資格。 如果您使用的本機使用者帳戶不是**內建的 Administrator 帳戶**，您必須以目標電腦的系統管理員身分在 PowerShell 或命令提示字元中執行下列命令，以啟用目標電腦上的原則：
+請確定您使用的認證是目標伺服器本機 Administrator 群組的成員。 在某些情況下，WinRM 也必須有 Remote Management Users 群組的成員資格。 如果您使用的本機使用者帳戶不是 **內建的 Administrator 帳戶**，您必須以目標電腦的系統管理員身分在 PowerShell 或命令提示字元中執行下列命令，以啟用目標電腦上的原則：
 
 ```cmd
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
@@ -195,7 +201,7 @@ netsh http delete urlacl url=https://+:443/
 Edge 有與安全性區域相關的 [已知問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge) ，這些問題會影響 Windows Admin Center 中的 Azure 登入。 如果您在使用邊緣時遇到問題，請嘗試將 https://login.microsoftonline.com https://login.live.com 閘道的 URL 新增為信任的網站，並新增至用戶端瀏覽器上允許的邊緣快顯封鎖程式設定的網站。
 
 若要這樣做：
-1. 在 Windows [開始] 功能表中搜尋**網際網路選項**
+1. 在 Windows [開始] 功能表中搜尋 **網際網路選項**
 2. 移至 [ **安全性** ] 索引標籤
 3. 在 [信任的網站] 選項底下，按一下 [網站] 按鈕，然後在開啟的對話方塊中新增 URL。 您將需要新增您的閘道 URL，以及 https://login.microsoftonline.com 和 https://login.live.com 。
 4. 移至 [ **隱私權** ] 索引標籤
@@ -225,7 +231,7 @@ Edge 有與安全性區域相關的 [已知問題](https://github.com/AzureAD/az
 請包含任何您在事件記錄檔中找到的錯誤或警告，以及下列資訊：
 
 * **安裝** Windows Admin Center 所在的平台 (Windows 10 或 Windows Server)：
-    * 如果安裝在伺服器上，執行**瀏覽器**的 Windows[版本](#check-the-windows-version)的電腦可存取 Windows Admin Center：
+    * 如果安裝在伺服器上，執行 **瀏覽器** 的 Windows [版本](#check-the-windows-version)的電腦可存取 Windows Admin Center：
     * 您是否使用安裝程式所建立的自我簽署憑證？
     * 如果您使用您自己的憑證，主體名稱是否符合電腦？
     * 如果您使用您自己的憑證，此憑證是否指定替代主體名稱？
@@ -233,7 +239,7 @@ Edge 有與安全性區域相關的 [已知問題](https://github.com/AzureAD/az
     * 如果不是，您指定了哪個連接埠？
 * **安裝** Windows Admin Center 的電腦是否已加入網域？
 * **安裝** Windows Admin Center 所在的 Windows [版本](#check-the-windows-version)：
-* 您要**嘗試管理**的電腦是否已加入網域？
-* 您要**嘗試管理**之電腦的 Windows [版本](#check-the-windows-version)：
+* 您要 **嘗試管理** 的電腦是否已加入網域？
+* 您要 **嘗試管理** 之電腦的 Windows [版本](#check-the-windows-version)：
 * 您使用何種瀏覽器？
     * 如果您使用 Google Chrome，版本為何？ ([說明] > [關於 Google Chrome])

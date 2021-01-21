@@ -1,22 +1,22 @@
 ---
-title: Pktmon 命令語法和格式
-description: 使用此頁面來瞭解 Windows Vibranium 組建的 pktmon 語法、命令、格式化和輸出。
+title: Pktmon 命令格式
+description: 使用此頁面來瞭解 pktmon 命令格式和輸出。
 ms.topic: how-to
 author: khdownie
 ms.author: v-kedow
-ms.date: 11/12/2020
-ms.openlocfilehash: 3e4c73af3b00f42301b34e59493f25b6d2ccb95c
-ms.sourcegitcommit: 8808f871c8cf131f819ef5540286218bd425da96
+ms.date: 1/20/2021
+ms.openlocfilehash: f0ad3d743e41a63a53d8bba2c484f7ed32e4a5d5
+ms.sourcegitcommit: 58a13a29869b39b6a6ba0db4d7b9fe1ff8371ea7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94632457"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625801"
 ---
-# <a name="pktmon-command-syntax-and-formatting"></a>Pktmon 命令語法和格式
+# <a name="pktmon-command-formatting"></a>Pktmon 命令格式
 
 >適用于： Windows Server (半年通道) 、Windows Server 2019、Windows 10、Azure Stack HCI、Azure Stack Hub、Azure
 
-封包監視器 (Pktmon) 是適用于 Windows 的現成、跨元件網路診斷工具。 它可用於封包捕獲、封包捨棄偵測、封包篩選和計數。 此工具在虛擬化案例（例如容器網路和 SDN）中特別有用，因為它可在網路堆疊中提供可見度。 封包監視器可透過 Vibranium OS 上的 pktmon.exe 命令 (組建 19041) 取得。 您可以使用本主題來瞭解如何瞭解 pktmon 語法、命令格式設定和輸出。
+封包監視器 (Pktmon) 是適用于 Windows 的現成、跨元件網路診斷工具。 它可用於封包捕獲、封包捨棄偵測、封包篩選和計數。 此工具在虛擬化案例（例如容器網路和 SDN）中特別有用，因為它可在網路堆疊中提供可見度。 封包監視器可透過 Vibranium OS 上的 pktmon.exe 命令 (組建 19041) 取得。 您可以使用本主題來瞭解如何瞭解 pktmon 語法、命令格式和輸出。 如需命令的完整清單，請參閱 [pktmon 語法](/windows-server/administration/windows-commands/pktmon)。 
 
 ## <a name="quick-start"></a>快速入門
 
@@ -77,76 +77,7 @@ C:\Test> pktmon filter add -i 10.0.0.10 -t tcp syn
 
 - 如果已將 [-e] 旗標新增到任何篩選，則封包監視器可將篩選套用至封裝的內部封包，以及外部封包。 支援的封裝方法有 VXLAN、GRE、NVGRE 和 IP IP。 自訂 VXLAN 埠是選擇性的，預設值為4789。
 
-### <a name="pktmon-filters-syntax"></a>Pktmon 篩選語法
-
-```PowerShell
-C:\Test> pktmon filter help
-pktmon filter { list | add | remove } [OPTIONS | help]
-
-Commands
-    list      Display active packet filters.
-    add       Add a filter to control which packets are reported.
-    remove    Removes all filters.
-
-help
-    Show help text for a command.
-
-C:\Test> pktmon filter add help
-pktmon filter add <name> [-m mac [mac2]] [-v vlan] [-d { IPv4 | IPv6 | number }]
-                         [-t { TCP [flags...] | UDP | ICMP | ICMPv6 | number }]
-                         [-i ip [ip2]] [-p port [port2]] [-e [port]]
-    Add a filter to control which packets are reported. For a packet to be
-    reported, it must match all conditions specified in at least one filter.
-    Up to 8 filters can be active at once.
-
-    NOTE1: When two MACs (-m), IPs (-i), or ports (-p) are specified, the filter
-           matches packets that contain both. It will not distinguish between source
-           or destination for this purpose.
-
-name
-    Optional name or description of the filter.
-
-Ethernet frame
-    -m, --mac[-address]
-        Match source or destination MAC address. See NOTE1 above.
-
-    -v, --vlan
-        Match by VLAN Id (VID) in the 802.1Q header.
-
-    -d, --data-link[-protocol], --ethertype
-        Match by data link (layer 2) protocol. Can be IPv4, IPv6, ARP, or
-        a protocol number.
-
-IP header
-    -t, --transport[-protocol], --ip-protocol
-        Match by transport (layer 4) protocol. Can be TCP, UDP, ICMP, ICMPv6, or
-        a protocol number.
-        To further filter TCP packets, an optional list of TCP flags to match can
-        be provided. Supported flags are FIN, SYN, RST, PSH, ACK, URG, ECE, and CWR.
-
-    -i, --ip[-address]
-        Match source or destination IP address. See NOTE1 above.
-        To match by subnet, use CIDR notation with the prefix length.
-
-TCP/UDP header
-    -p, --port
-        Match source or destination port number. See NOTE1 above.
-
-Encapsulation
-    -e, --encap
-        This filter also applies to encapsulated inner packets, in addition to the outer
-        packet. Supported encapsulation methods are VXLAN, GRE, NVGRE, and IP-in-IP.
-        Custom VXLAN port is optional, and defaults to 4789.
-
-Example 1: Ping filter
-        pktmon filter add MyPing -i 10.10.10.10 -t ICMP
-
-Example 2: TCP SYN filter for SMB traffic
-    pktmon filter add MySmbSyn -i 10.10.10.10 -t TCP SYN -p 445
-
-Example 3: Subnet filter
-    pktmon filter add MySubnet -i 10.10.10.0/24
-```
+如需詳細資訊，請參閱 [pktmon 篩選語法](/windows-server/administration/windows-commands/pktmon-filter)。
 
 ## <a name="packet-capture-and-logging"></a>封包捕獲和記錄
 
@@ -179,73 +110,7 @@ C:\Test> pktmon start --etw -c 4,5 -d
 
 - 透過 **[-s]** 參數指定記錄檔的大小。 在封包監視器開始以較新的封包覆寫較舊的封包之前，這會是迴圈記錄模式中的檔案大小上限。 在 [封包監視] 建立新檔案以記錄下一個封包之前，這也會是多檔案記錄模式中每個檔案的大小上限。 您也可以使用這個參數來設定記憶體記錄模式的緩衝區大小。
 
-### <a name="pktmon-start-syntax"></a>Pktmon 開始語法
-
-```PowerShell
-C:\Test> pktmon start help
-pktmon start [-c { all | nics | [ids...] }] [-d] [--etw [-p size] [-k keywords]]
-             [-f] [-s] [--log-mode {circular | multi-file | real-time | memory}]
-    Start packet monitoring.
-
--c, --components
-    Select components to monitor. Can be all components, NICs only, or a
-    list of component ids. Defaults to all.
-
--d, --drop-only
-    Only report dropped packets. By default, successful packet propagation
-    is reported as well.
-
-ETW Logging
-    --etw
-        Start a logging session for packet capture.
-
-    -p, --packet-size
-        Number of bytes to log from each packet. To always log the entire
-        packet, set this to 0. Default is 128 bytes.
-
-    -k, --keywords
-        Hexadecimal bitmask (i.e. sum of the below flags) that controls
-        which events are logged. Default is 0x012.
-
-        Flags:
-        0x001 - Internal Packet Monitor errors.
-        0x002 - Information about components, counters and filters.
-                This information is added to the end of the log file.
-        0x004 - Source and destination information for the first
-                packet in NET_BUFFER_LIST group.
-        0x008 - Select packet metadata from NDIS_NET_BUFFER_LIST_INFO
-                enumeration.
-        0x010 - Raw packet, truncated to the size specified in
-                [--packet-size] parameter.
-
-    -f, --file-name
-        .etl log file. Default is PktMon.etl.
-
-    -s, --file-size
-        Maximum log file size in megabytes. Default is 512 MB.
-
-    -l, --log-mode
-        Select logging mode. Default is circular.
-
-        circular
-            New events overwrite the oldest ones when
-            when the maximum file size is reached.
-
-        multi-file
-            A new log file is created when the maximum file size is reached.
-            Log files are sequentially numbered. PktMon1.etl, PktMon2.etl, etc.
-
-        real-time
-            Display events and packets on screen at real time. No log file is created.
-            Press Ctrl+C to stop monitoring.
-
-        memory
-            Events are written to a circular memory buffer.
-            Buffer size is specified in [--file-size] parameter.
-            Buffer contents is written to a log file during stop operation.
-
-Example: pktmon start --etw -l real-time
-```
+如需詳細資訊，請參閱 [pktmon start 語法](/windows-server/administration/windows-commands/pktmon-start)。
 
 ## <a name="packet-analysis-and-formatting"></a>封包分析和格式化
 
@@ -258,55 +123,7 @@ Example: pktmon start --etw -l real-time
 >[!NOTE]
 >* 使用上面的超連結，瞭解如何在 **Wireshark** 和 **網路監視器** 中剖析及分析封包監視器記錄。
 
-### <a name="pktmon-format-syntax"></a>Pktmon 格式語法
-
-```PowerShell
-C:\Test> pktmon format help
-pktmon format log.etl [-o log.txt] [-b] [-v [level]] [-x] [-e] [-l [port]
-    Convert log file to text format.
-
--o, --out
-    Name of the formatted text file.
-
--s, --stats-only
-    Display log file statistical information.
-
-Network packet formatting options
-
-    -b, --brief
-        Abbreviated packet format.
-
-    -v, --verbose
-        Verbosity level [1..3].
-
-    -x, --hex
-        Hexadecimal format.
-
-    -e, --no-ethernet
-        Don't print ethernet header.
-
-    -l, --vxlan
-        Custom VXLAN port.
-
-
-Example: pktmon format C:\tmp\PktMon.etl
-
-C:\Test> pktmon pcapng help
-pktmon pcapng log.etl [-o log.pcapng]
-    Convert log file to pcapng format.
-    Dropped packets are not included by default.
-
--o, --out
-    Name of the formatted pcapng file.
-
--d, --drop-only
-    Convert dropped packets only.
-
--c, --component-id
-    Filter packets by a specific component ID.
-
-Example: pktmon pcapng C:\tmp\PktMon.etl -d -c nics
-```
+如需詳細資訊，請參閱 [pktmon 格式語法](/windows-server/administration/windows-commands/pktmon-format)。
 
 ### <a name="analyze-packet-monitor-output"></a>分析封包監視器輸出
 
@@ -367,26 +184,7 @@ Example: pktmon pcapng C:\tmp\PktMon.etl -d -c nics
 
 如這些範例所示，計數器可以透過圖表提供許多資訊，只要快速查看就能進行分析。
 
-### <a name="pktmon-counters-syntax"></a>Pktmon 計數器語法
-
-```PowerShell
-C:\Test> pktmon counters help
-pktmon [comp] counters [-t { all | drop | flow }] [-z] [--json]
-    Display current per-component counters.
-
--t, --counter-type
-    Select which types of counters to show.
-    Supported values are all counters (default), drops only, or flows only.
-
--z, --show-zeros
-    Show counters that are zero in both directions.
-
--i, --show-hidden
-    Show components that are hidden by default.
-
---json
-    Output the counters in JSON format.
-```
+如需詳細資訊，請參閱 [pktmon 計數器語法](/windows-server/administration/windows-commands/pktmon-counters)。
 
 ## <a name="networking-stack-layout"></a>網路堆疊版面配置
 
@@ -407,16 +205,4 @@ pktmon [comp] counters [-t { all | drop | flow }] [-z] [--json]
 >[!NOTE]
 >識別碼不是持續性的，而且可能會在重新開機時變更，並隨著封包監視器的驅動程式重新開機
 
-### <a name="pktmon-list-syntax"></a>Pktmon 清單語法
-
-```powershell
-C:\Test> pktmon list help
-pktmon [comp] list
-    List all active components.
-
--i, --show-hidden
-    Show components that are hidden by default.
-
---json
-    Output the list in JSON format.
-```
+如需詳細資訊，請參閱 [pktmon 清單語法](/windows-server/administration/windows-commands/pktmon-list)。
