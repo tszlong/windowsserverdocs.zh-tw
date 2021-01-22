@@ -4,14 +4,14 @@ ms.author: jgerend
 manager: daveba
 ms.topic: article
 author: jasongerend
-ms.date: 06/07/2019
+ms.date: 01/21/2021
 description: 本主題說明 DFS 命名空間，這是 Windows Server 中的角色服務，可讓您將位於不同伺服器上的共用資料夾，分組成一個或多個邏輯結構命名空間。
-ms.openlocfilehash: 5f2ab44b902d5ed1d27be9eb14bda8f003387f52
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: ffc909f4feb23d26cf496eddca51899a97f4cafe
+ms.sourcegitcommit: fc2a7c69a74edcd79372054c4a9a24237510babd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865997"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98672940"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 命名空間概觀
 
@@ -106,11 +106,11 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 ## <a name="interoperability-with-azure-virtual-machines"></a>與 Azure 虛擬機器的互通性
 
-已經測試過在 Microsoft Azure 的虛擬機器上使用 DFS 命名空間，但是有一些限制和您必須遵循的需求。
-
-- 您無法在 Azure 虛擬機器中叢集獨立命名空間。
+在 Microsoft Azure 中的虛擬機器上使用 DFS 命名空間已經過測試。
 
 - 您可以在 Azure 虛擬機器中裝載以網域為基礎的命名空間，包括具有 Azure Active Directory 的環境。
+- 您可以使用使用 [共用磁片](/azure/virtual-machines/disks-shared) 或 [Ultra 磁片](/azure/virtual-machines/disks-enable-ultra-ssd)的容錯移轉叢集，在 Azure 虛擬機器中叢集獨立命名空間。
+
 
 若要深入了解如何開始使用 Azure 虛擬機器，請參閱 [Azure 虛擬機器文件](/azure/virtual-machines/)。
 

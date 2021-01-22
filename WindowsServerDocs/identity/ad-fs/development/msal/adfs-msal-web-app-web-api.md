@@ -6,12 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.openlocfilehash: ab4ec06fdf0af2c3d88a1404255fe697a4d45d8a
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: e4f02400155dcb5899417b12e4c376fa3ee69fd0
+ms.sourcegitcommit: fc2a7c69a74edcd79372054c4a9a24237510babd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866367"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98672950"
 ---
 # <a name="scenario-web-app-server-app-calling-web-api"></a>案例： Web 應用程式 (Server 應用程式) 呼叫 Web API
 >適用于： AD FS 2019 和更新版本
@@ -47,27 +47,27 @@ ms.locfileid: "96866367"
   1. 在 AD FS 管理] 中，以滑鼠右鍵按一下 [ **應用程式群組** ]，然後選取 [ **新增應用程式群組**]。
   2. 在 [應用程式群組] 嚮導中，針對 [ **名稱** ] 輸入 **WebAppToWebApi** ，然後在 [ **用戶端-伺服器應用程式** ] 下，選取 **存取 Web API 範本的伺服器應用程式** 。 按一下 [下一步] 。
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp2.png)
+      ![[新增應用程式群組] Wizard 的 [歡迎使用] 頁面的螢幕擷取畫面，其中顯示已醒目提示存取 web A P I 範本的伺服器應用程式。](media/adfs-msal-web-app-web-api/webapp2.png)
 
   3. 複製 **用戶端識別碼** 值。 稍後將用來作為應用程式 **Web.config** 檔中 **ida： ClientId** 的值。 針對 [重新導向 URI] 輸入下列 **內容：**  -  https://localhost:44326 。 按一下 [新增]。 按一下 [下一步] 。
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp3.png)
+      ![[新增應用程式群組] Wizard 的 [伺服器應用程式] 頁面的螢幕擷取畫面，其中顯示正確的用戶端識別碼和重新導向 U R I。](media/adfs-msal-web-app-web-api/webapp3.png)
 
   4. 在 [設定應用程式認證] 畫面上，勾選 [ **產生共用密碼** ] 並複製秘密。 稍後將用來作為應用程式 **Web.config** 檔中 **ida： ClientSecret** 的值。 按一下 [下一步] 。
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp4.png)
+      ![[新增應用程式群組] 頁面的 [設定應用程式認證應用程式] 頁面的螢幕擷取畫面，其中顯示已選取 [產生共用密碼] 選項以及已填入產生的共用秘密。](media/adfs-msal-web-app-web-api/webapp4.png)
 
-  5. 在 [設定 Web API] 畫面上，輸入 [ **識別碼：** ] https://webapi 。 按一下 [新增]  。 按一下 [下一步] 。 稍後在應用程式 **Web.config** 檔中，將會使用此值來進行 **ida： GraphResourceId** 。
+  5. 在 [設定 Web API] 畫面上，輸入 [ **識別碼：** ] https://webapi 。 按一下 **[新增]** 。 按一下 [下一步] 。 稍後在應用程式 **Web.config** 檔中，將會使用此值來進行 **ida： GraphResourceId** 。
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp5.png)
+      ![[新增應用程式群組] 頁面的 [設定 Web API] 頁面的螢幕擷取畫面，其中顯示正確的識別碼。](media/adfs-msal-web-app-web-api/webapp5.png)
 
   6. 在 [套用存取控制原則] 畫面上，選取 [**允許** 所有人]，然後按 **[下一步**
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp6.png)
+      ![[新增應用程式群組] Wizard 的 [選擇存取控制原則] 頁面的螢幕擷取畫面，其中顯示已醒目提示 [允許每個人] 選項。](media/adfs-msal-web-app-web-api/webapp6.png)
 
   7. 在 [設定應用程式許可權] 畫面上，確定已選取 **openid** 和 **user_impersonation** ，然後按 **[下一步]**。
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp7.png)
+      ![[新增應用程式群組] Wizard 的 [設定應用程式許可權] 頁面的螢幕擷取畫面，其中顯示已選取的開啟 I D 和使用者模擬選項。](media/adfs-msal-web-app-web-api/webapp7.png)
 
   8. 在 [摘要] 畫面上，按 **[下一步]**。
 
@@ -90,7 +90,7 @@ ms.locfileid: "96866367"
        - ida：授權單位輸入 HTTPs：//[您的 AD FS 主機名稱]/adfs。 例如，https://adfs.contoso.com/adfs
        - ida：資源-在上述 AD FS 區段中，輸入應用程式註冊 #5 中的 **識別碼** 值。
 
-          ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp8.png)
+          ![Web 設定檔的螢幕擷取畫面，其中顯示修改過的值。](media/adfs-msal-web-app-web-api/webapp8.png)
 
 
 ### <a name="test-the-sample"></a>測試範例
@@ -100,23 +100,23 @@ ms.locfileid: "96866367"
 
   2. 在 Visual Studio 的頂端，確定已選取 Internet Explorer，然後按一下綠色箭號。
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp9.png)
+      ![已呼叫 IIS Express (Internet Explorer) 選項的 Visual Studio UI 螢幕擷取畫面。](media/adfs-msal-web-app-web-api/webapp9.png)
 
   3. 在首頁上，按一下 [登入]。
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp10.png)
+      ![已呼叫 [登入] 選項之首頁的螢幕擷取畫面。](media/adfs-msal-web-app-web-api/webapp10.png)
 
   4. 系統會將您重新導向至 AD FS 登入頁面。 繼續進行並登入。
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp11.png)
+      ![登入頁面的螢幕擷取畫面。](media/adfs-msal-web-app-web-api/webapp11.png)
 
   5. 登入後，按一下 [存取權杖]。
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp12.png)
+      ![稱為「存取權杖」選項的首頁螢幕擷取畫面。](media/adfs-msal-web-app-web-api/webapp12.png)
 
   6. 按一下存取權杖將會藉由呼叫 Web API 來取得存取權杖資訊
 
-      ![新增應用程式群組](media/adfs-msal-web-app-web-api/webapp13.png)
+      ![存取權杖頁面的螢幕擷取畫面，其中顯示存取權杖資訊。](media/adfs-msal-web-app-web-api/webapp13.png)
 
  ## <a name="next-steps"></a>後續步驟
 [AD FS OpenID Connect/OAuth 流程和應用程式案例](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
