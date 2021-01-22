@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 382e3618e66f56e05ebd0a7d6b6034e6d7543d64
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 78cc02dc6c777aa8bcb394d19d2f7c5b2c129c01
+ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89629679"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666537"
 ---
 # <a name="choice"></a>選項
 
@@ -26,19 +26,19 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | Description |
 | --------- | ----------- |
 | /c `<choice1><choice2><…>` | 指定要建立之選項的清單。 有效的選項包括 a-z、a-z、0-9 及擴充的 ASCII 字元 (128-254) 。 預設清單為 [YN]，其顯示為 `[Y,N]?` 。 |
 | /n | 隱藏選項清單，雖然仍會啟用選擇，而且如果有 **/m** 指定的郵件內文 (，) 仍會顯示。 |
 | /cs | 指定選擇區分大小寫。 依預設，選擇不區分大小寫。 |
-| 一起 `<timeout>` | 指定使用 **/d**指定的預設選項之前要暫停的秒數。 可接受的值是從 **0** 到 **9999**。 如果 **/t** 設定為 **0**，則在傳回預設選項之前， **選擇** 不會暫停。 |
-| /d `<choice>` | 指定在等候 **/t**指定的秒數之後，所要使用的預設選項。 預設選項必須在 **/c**指定的選項清單中。 |
+| 一起 `<timeout>` | 指定使用 **/d** 指定的預設選項之前要暫停的秒數。 可接受的值是從 **0** 到 **9999**。 如果 **/t** 設定為 **0**，則在傳回預設選項之前， **選擇** 不會暫停。 |
+| /d `<choice>` | 指定在等候 **/t** 指定的秒數之後，所要使用的預設選項。 預設選項必須在 **/c** 指定的選項清單中。 |
 | 一樣 `<text>` | 指定要在挑選清單之前顯示的訊息。 如果未指定 **/m** ，則只會顯示選擇提示。 |
 | /? | 在命令提示字元顯示說明。 |
 
 ## <a name="remarks"></a>備註
 
-- **ERRORLEVEL**環境變數會設定為使用者從選項清單中選取的索引鍵索引。 清單中的第一個選擇會傳回的值 `1` 、的第二個值 `2` ，依此類推。 如果使用者按下不是有效選擇的按鍵，則 **選擇** 會聽到警告嗶聲。
+- **ERRORLEVEL** 環境變數會設定為使用者從選項清單中選取的索引鍵索引。 清單中的第一個選擇會傳回的值 `1` 、的第二個值 `2` ，依此類推。 如果使用者按下不是有效選擇的按鍵，則 **選擇** 會聽到警告嗶聲。
 
 - 如果 **choice** 偵測到錯誤狀況，則會傳回的 **ERRORLEVEL** 值 `255` 。 如果使用者按下 CTRL + BREAK 或 CTRL + C， **choice** 會傳回的 **ERRORLEVEL** 值 `0` 。
 
@@ -47,7 +47,7 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 ## <a name="examples"></a>範例
 
-若要顯示 **Y**、 **N**和 **C**選項，請在批次檔中輸入下列程式程式碼：
+若要顯示 **Y**、 **N** 和 **C** 選項，請在批次檔中輸入下列程式程式碼：
 
 ```
 choice /c ync
@@ -62,7 +62,7 @@ choice /c ync
 若要隱藏選擇 [ **Y**]、[ **N**] 和 [ **C**]，但顯示 [**是]、[****否**] 或 [**繼續**]，請在批次檔中輸入下列程式程式碼：
 
 ```
-choice /c ync /n /m Yes, No, or Continue?
+choice /c ync /n /m "Yes, No, or Continue?"
 ```
 
 > [!NOTE]
@@ -71,7 +71,7 @@ choice /c ync /n /m Yes, No, or Continue?
 若要顯示先前範例中所使用的文字和選項，請在批次檔中輸入下列程式程式碼：
 
 ```
-choice /c ync /m Yes, No, or Continue
+choice /c ync /m "Yes, No, or Continue"
 ```
 
 若要設定五秒的時間限制，並將 **N** 指定為預設值，請在批次檔中輸入下列程式程式碼：

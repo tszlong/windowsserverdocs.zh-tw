@@ -7,24 +7,24 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: 23d2742d7afeba630c11545cefa3696da05fbcc6
-ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
+ms.openlocfilehash: eb3da171f835cf8715fc2f6b3e08020921f31d3d
+ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97390256"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666557"
 ---
 # <a name="robocopy"></a>robocopy
 
 將檔案資料從某個位置複製到另一個位置。
 
-## <a name="syntax"></a>語法
+## <a name="syntax"></a>Syntax
 
 ```
 robocopy <source> <destination> [<file>[ ...]] [<options>]
 ```
 
-例如，若要將名為 *yearly-report* 的檔案從 *c:\reports* 複製到檔案共用 *\\ marketing\videos* ，同時啟用多執行緒處理以提供更高的效能 (使用 **/mt** 參數) 並且能夠在使用 **/z** 參數) 中斷 (的情況下重新開機傳輸，請輸入：
+例如，若要將名為 *yearly-report* 的檔案從 *c:\reports* 複製到檔案共用 *\\ \\ marketing\videos* ，同時啟用多執行緒處理以提供更高的效能 (使用 **/mt** 參數) 並且能夠在使用 **/z** 參數) 中斷 (的情況下重新開機傳輸，請輸入：
 
 ```dos
 robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
@@ -32,7 +32,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 ### <a name="parameters"></a>參數
 
-| 參數 | 描述 |
+| 參數 | Description |
 |--|--|
 | `<source>` | 指定來源目錄的路徑。 |
 | `<destination>` | 指定目的地目錄的路徑。 |
@@ -85,7 +85,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 #### <a name="file-selection-options"></a>檔案選取選項
 
-| 選項 | 描述 |
+| 選項 | Description |
 |--|--|
 | /a | 只複製已設定 Archive 屬性的 **檔案** 。 |
 | /m | 只會複製已設定 **archive** 屬性的檔案，並重設封存 **屬性。** |
@@ -114,7 +114,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 #### <a name="retry-options"></a>重試選項
 
-| 選項 | 描述 |
+| 選項 | Description |
 |--|--|
 | /r:`<n>` | 指定失敗複製的重試次數。 *N* 的預設值為 1000000 (1000000 重試) 。 |
 | /w:`<n>` | 指定重試之間的等待時間 (以秒為單位)。 *N* 的預設值是 30 (等候時間30秒) 。 |
@@ -123,7 +123,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 #### <a name="logging-options"></a>記錄選項
 
-| 選項 | 描述 |
+| 選項 | Description |
 |--|--|
 | /l | 指定只列出檔案 (，且不會) 複製、刪除或時間戳記。 |
 | /x | 報告所有額外的檔案，而不只是選取的檔案。 |
@@ -148,7 +148,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 #### <a name="job-options"></a>作業選項
 
-| 選項 | 描述 |
+| 選項 | Description |
 |--|--|
 | 工作`<jobname>` | 指定參數要衍生自命名的工作檔案。 |
 | /save`<jobname>` | 指定要將參數儲存至命名的工作檔案。 |

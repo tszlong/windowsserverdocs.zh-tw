@@ -7,12 +7,12 @@ ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 4ffab45b40e659c505248aa8ac8518b896796246
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: d66a07d5357667b83380f320f77e0cbce56cdde1
+ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97944764"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666577"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步驟1規劃 Advanced DirectAccess 基礎結構
 
@@ -20,7 +20,7 @@ ms.locfileid: "97944764"
 
 為單一伺服器上的進階 DirectAccess 部署做規劃的第一步，就是規劃部署所需的基礎結構。 本主題描述基礎結構規劃步驟。 這些規劃工作不需要依特定的順序完成。
 
-|Task|描述|
+|Task|Description|
 |----|--------|
 |[1.1 規劃網路拓撲和設定](#11-plan-network-topology-and-settings)|決定 DirectAccess 伺服器的放置位置 (在邊緣，或在「網路位址轉譯」(NAT) 裝置或防火牆後面)，並規劃 IP 位址指定、路由及強制通道。|
 |[1.2 規劃防火牆需求](#12-plan-firewall-requirements)|為允許 DirectAccess 流量通過邊緣防火牆做規劃。|
@@ -59,7 +59,7 @@ ms.locfileid: "97944764"
 
 3. 根據下表設定所需的介面卡和位址。 針對使用單一網路介面卡並設定在 NAT 裝置後面的部署，請只使用 **內部網路介面卡** 欄來設定您的 IP 位址。
 
-    | 描述 | 外部網路介面卡 | 內部網路介面卡 | 路由需求 |
+    | Description | 外部網路介面卡 | 內部網路介面卡 | 路由需求 |
     |--|--|--|--|
     | IPv4 網際網路和 IPv4 內部網路 | 請設定兩個靜態連續公用 IPv4 位址搭配適當的子網路遮罩 (只有 Teredo 才需要)。<br/><br/>另外，也請設定網際網路防火牆或本機網際網路服務提供者 (ISP) 路由器的預設閘道 IPv4 位址。 **注意：** DirectAccess 伺服器需要兩個連續的公用 IPv4 位址，才能作為 Teredo 伺服器，而 Windows 用戶端可以使用 DirectAccess 伺服器來偵測其背後的 NAT 裝置類型。 | 設定下列各項：<br/><br/>-具有適當子網路遮罩的 IPv4 內部網路位址。<br/>-內部網路命名空間的連線特定 DNS 尾碼。 此外，也應該在內部介面上設定 DNS 伺服器。 **注意：** 請勿在任何內部網路介面上設定預設閘道。 | 若要設定 DirectAccess 伺服器連線到內部 IPv4 網路上的所有子網路，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv4 位址空間。<br/>-使用 **route add-p** 或 **netsh interface ipv4 add route** 命令來新增 ipv4 位址空間，做為 DirectAccess 伺服器之 ipv4 路由表中的靜態路由。 |
     | IPv6 網際網路與 IPv6 內部網路 | 設定下列各項：<br/><br/>-使用 ISP 所提供的位址設定。<br/>-使用 **Route Print** 命令來確保預設的 ipv6 路由存在，並且指向 ipv6 路由表中的 ISP 路由器。<br/>-判斷 ISP 和內部網路路由器是否使用 RFC 4191 中所述的預設路由器喜好設定，以及使用比您近端內部網路路由器更高的預設喜好設定。<br/>    如果這兩項都是肯定的，預設路由就不需要其他設定。 ISP 路由器的喜好設定等級較高時，可確保 DirectAccess 伺服器的作用中預設 IPv6 路由指向 IPv6 網際網路。<br/><br/>由於 DirectAccess 伺服器是 IPv6 路由器，因此如果您有原生的 IPv6 基礎結構，網際網路介面也可以連線到內部網路上的網域控制站。 在此情況下，請將封包篩選器新增到周邊網路中的網域控制站，以防止連線到 DirectAccess 伺服器之網際網路對向介面的 IPv6 位址。 | 設定下列各項：<br/><br/>-如果您未使用預設的喜好設定等級，您可以使用下列命令 **netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled** 設定內部網路介面。<br/>    這個命令可確保指向內部網路路由器的其他預設路由將不會新增到 IPv6 路由表。 您可以使用下列命令來取得您內部網路介面的介面索引：**netsh interface ipv6 show interface**。 | 當您有 IPv6 內部網路時，若要設定 DirectAccess 伺服器來連線到所有 IPv6 位置，請執行下列動作：<br/><br/>-列出內部網路上所有位置的 IPv6 位址空間。<br/>-使用 **netsh interface ipv6 add route** 命令將 ipv6 位址空間新增為 DirectAccess 伺服器之 ipv6 路由表中的靜態路由。 |
@@ -323,6 +323,17 @@ DNS 會被用來解析來自不位於內部 (或公司) 網路上的 DirectAcces
 
 -   如果公司網路是 IPv6 型，預設位址就是公司網路中 DNS 伺服器的 IPv6 位址。
 
+> [!NOTE]
+> 從 Windows 10 5 月2020更新開始，用戶端就不會再于名稱解析原則表中設定的 DNS 伺服器上登錄其 IP 位址 (NRPT) 。
+> 如果需要 DNS 註冊（例如， **管理**），可以在用戶端上使用這個登錄機碼來明確啟用它：
+>
+> 路徑：`HKLM\System\CurrentControlSet\Services\Dnscache\Parameters`<br/>
+> 輸入： `DWORD`<br/>
+> 值名稱：`DisableNRPTForAdapterRegistration`<br/>
+> 值：<br/>
+> `1` -DNS 註冊已停用 (預設，因為 Windows 10 可能是2020更新) <br/>
+> `0` -已啟用 DNS 註冊
+
 **基礎結構伺服器**
 
 -   **網路位置伺服器**
@@ -460,9 +471,9 @@ DirectAccess 用戶端會起始與提供服務 (例如 Windows Update 和防毒�
 
 -   網域控制站-網域控制站的自動探索會針對相同樹系中的所有網域（與 DirectAccess 伺服器和用戶端電腦）執行。
 
--   Microsoft Endpoint Configuration Manager 伺服器-會針對相同樹系中的所有網域（與 DirectAccess 伺服器和用戶端電腦）執行自動探索 Configuration Manager 伺服器。
+-   Microsoft Endpoint Configuration Manager 伺服器-會針對相同樹系中的所有網域（與 DirectAccess 伺服器和用戶端電腦）執行自動探索設定管理員伺服器。
 
-第一次設定 DirectAccess 時，會自動偵測網域控制站和 Configuration Manager 伺服器。 偵測到的網域控制站不會顯示在主控台中，但您可以使用 Windows PowerShell Cmdlet **DAMgmtServer-Type All 來取得** 設定。 如果網域控制站或 Configuration Manager 伺服器遭到修改，則按一下 [遠端存取管理] 主控台中的 [重新整理 **管理伺服器** ]，會重新整理管理伺服器清單。
+第一次設定 DirectAccess 時，會自動偵測網域控制站和設定管理員伺服器。 偵測到的網域控制站不會顯示在主控台中，但您可以使用 Windows PowerShell Cmdlet **DAMgmtServer-Type All 來取得** 設定。 如果網域控制站或設定管理員伺服器遭到修改，則按一下 [遠端存取管理] 主控台中的 [重新整理 **管理伺服器** ]，會重新整理管理伺服器清單。
 
 **管理伺服器需求**
 
@@ -678,7 +689,6 @@ DirectAccess 可讓您選擇使用憑證來進行 IPsec 電腦驗證，或使用
 
 3.  您將會看到找不到 GPO 的錯誤訊息。 按一下 [移除組態設定]。 完成之後，伺服器將會還原到未設定的狀態。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 -   [步驟2：規劃 DirectAccess 部署](da-adv-plan-s2-deployments.md)
-

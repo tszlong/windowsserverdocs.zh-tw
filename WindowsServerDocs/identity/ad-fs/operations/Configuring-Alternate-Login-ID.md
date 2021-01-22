@@ -7,17 +7,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: 93bca831222700f12cccd2ae6aef60ca189197b9
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 60e93280e00fb980871c1289047ee2ff54d4d449
+ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048846"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666587"
 ---
 # <a name="configuring-alternate-login-id"></a>設定替代登入識別碼
 
 
 ## <a name="what-is-alternate-login-id"></a>什麼是替代登入識別碼？
+
 在大部分的情況下，使用者會使用其 UPN (使用者主體名稱) 來登入其帳戶。 不過，在某些環境中，因為公司原則或內部部署的企業營運應用程式相依性，所以使用者可能會使用其他形式的登入。
 
 > [!NOTE]
@@ -35,6 +36,7 @@ Active Directory 同盟服務 (AD FS) 使用 AD FS 來啟用同盟應用程式�
    在上述案例中，具有 AD FS 的替代識別碼可讓使用者登入 Azure AD，而不需要修改您的內部部署 Upn。
 
 ## <a name="configure-alternate-logon-id"></a>設定替代登入識別碼
+
 使用 Azure AD Connect 建議您使用 Azure AD Connect 來為您的環境設定替代的登入識別碼。
 
 - 如需 Azure AD Connect 的新設定，請參閱連接到 Azure AD，以取得如何設定替代識別碼和 AD FS 伺服器陣列的詳細指示。
@@ -46,6 +48,7 @@ Active Directory 同盟服務 (AD FS) 使用 AD FS 來啟用同盟應用程式�
 > Microsoft 建議使用 Azure AD Connect 來設定替代登入識別碼。
 
 ### <a name="manually-configure-alternate-id"></a>手動設定替代識別碼
+
 為了設定替代登入識別碼，您必須執行下列工作：設定您的 AD FS 宣告提供者信任以啟用替代登入識別碼
 
 1.  如果您有伺服器2012R2，請確定您已在所有 AD FS 伺服器上安裝 KB2919355。 您可以透過 Windows Update 服務取得，或直接下載。
@@ -80,6 +83,7 @@ Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $
 > 下列僅針對 AD FS 而非協力廠商身分識別提供者進行測試。
 
 ### <a name="exchange-and-skype-for-business"></a>Exchange 和商務用 Skype
+
 如果您搭配 Exchange 和商務用 Skype 使用替代登入識別碼，使用者體驗會根據您是否使用 HMA 而有所不同。
 
 > [!NOTE]
@@ -88,6 +92,7 @@ Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $
 如需詳細資訊，請參閱 [混合式新式驗證總覽](https://support.office.com/article/Hybrid-Modern-Authentication-overview-and-prerequisites-for-using-it-with-on-premises-Skype-for-Business-and-Exchange-servers-ef753b32-7251-4c9e-b442-1a5aec14e58d)
 
 ### <a name="pre-requisites-for-exchange-and-skype-for-business"></a>Exchange 和商務用 Skype 的先決條件
+
 以下是使用替代識別碼來達成 SSO 的先決條件。
 
 - Exchange Online 應已開啟新式驗證。
@@ -110,15 +115,18 @@ Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $
 使用下列額外的設定，可大幅改善使用者體驗，而且您可以在組織中取得替代識別碼使用者驗證的近乎零提示。
 
 ##### <a name="step-1-update-to-required-office-version"></a>步驟 1： 更新為所需的 Office 版本
+
 Office 版本 1712 (build no 8827.2148) 以上版本已更新驗證邏輯以處理替代識別碼案例。 為了充分利用新的邏輯，用戶端電腦必須更新為 Office 版本 1712 (組建無 8827.2148) 以上。
 
 ##### <a name="step-2-update-to-required-windows-version"></a>步驟 2： 更新為所需的 Windows 版本
+
 Windows 1709 版和更新版本已更新驗證邏輯，以處理替代識別碼案例。 為了充分利用新的邏輯，用戶端電腦必須更新為 Windows 1709 版和更新版本。
 
 ##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>步驟 3： 使用群組原則設定受影響之使用者的登錄
+
 Office 應用程式依賴目錄管理員所推送的資訊來識別替代識別碼環境。 您必須設定下列登錄機碼，以協助 office 應用程式以替代識別碼驗證使用者，而不顯示任何額外的提示
 
-|要新增的 Regkey|Regkey 資料名稱、類型和值|Windows 7/8|Windows 10|描述|
+|要新增的 Regkey|Regkey 資料名稱、類型和值|Windows 7/8|Windows 10|Description|
 |-----|-----|-----|-----|-----|
 |HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必要|必要|此 regkey 的值是組織租使用者中已驗證的自訂功能變數名稱。 例如，如果 Contoso.com 是租使用者 Contoso.onmicrosoft.com 中其中一個已驗證的自訂功能變數名稱，則 Contoso corp 可以在此登錄中提供 Contoso.com 值。|
 HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Outlook 2016 ProPlus 的必要參數|Outlook 2016 ProPlus 的必要參數|此 regkey 的值可能是 1/0，表示 Outlook 應用程式是否應該參與改良的替代識別碼驗證邏輯。|
@@ -142,7 +150,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 |用戶端|支援聲明|備註|
 | ----- | -----|-----|
 |Microsoft Teams|支援|<li>Microsoft 小組支援 AD FS (的 SAML-P、WS-ADDRESSING、WS-TRUST 和 OAuth) 以及新式驗證。</li><li> 通道、聊天室和檔案等核心 Microsoft 團隊都可以使用替代登入識別碼。</li><li>第1和協力廠商應用程式必須由客戶個別調查。 這是因為每個應用程式都有自己的可支援性驗證通訊協定。</li>|
-|OneDrive for Business|支援-建議使用用戶端登錄機碼 |設定替代識別碼之後，您會看到內部部署 UPN 已預先填入驗證欄位中。 這需要變更為所使用的替代身分識別。 我們建議使用本文中所述的用戶端登錄機碼： Office 2013 和 Lync 2013 會定期提示您輸入 SharePoint Online、OneDrive 和 Lync Online 的認證。|
+|商務用 OneDrive|支援-建議使用用戶端登錄機碼 |設定替代識別碼之後，您會看到內部部署 UPN 已預先填入驗證欄位中。 這需要變更為所使用的替代身分識別。 我們建議使用本文中所述的用戶端登錄機碼： Office 2013 和 Lync 2013 會定期提示您輸入 SharePoint Online、OneDrive 和 Lync Online 的認證。|
 |商務用 OneDrive 行動用戶端|支援||
 |Office 365 Pro Plus 啟用頁面|支援-建議使用用戶端登錄機碼|設定替代識別碼之後，您會看到內部部署 UPN 已預先填入驗證欄位中。 這需要變更為所使用的替代身分識別。 我們建議使用本文中所述的用戶端登錄機碼： Office 2013 和 Lync 2013 會定期提示您輸入 SharePoint Online、OneDrive 和 Lync Online 的認證。|
 
@@ -164,11 +172,9 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
     - 無法路由傳送的網域 (例如，無法由 Azure AD 驗證的 Contoso. 本機) 。
     - 未部署 AD FS 的受控環境。
 
-
 - 啟用時，[替代登入識別碼] 功能僅適用于 AD FS (SAML-P、WS-ADDRESSING、WS-TRUST 和 OAuth) 所支援的所有使用者名稱/密碼驗證通訊協定上的使用者名稱/密碼驗證。
 
-
-- 當 Windows 整合式驗證 (WIA) 執行時 (例如，當使用者嘗試從內部網路存取已加入網域之電腦上的公司應用程式時，AD FS 系統管理員已將驗證原則設定為使用內部網路) 的 WIA，用於驗證的 UPN 用於。 如果您已針對信賴憑證者設定替代登入識別碼功能的任何宣告規則，您應該確定這些規則在 WIA 案例中仍然有效。
+- 當 Windows 整合式驗證 (WIA) 執行時 (例如，當使用者嘗試從內部網路存取已加入網域之電腦上的公司應用程式，且 AD FS 系統管理員已將驗證原則設定為使用內部網路) 的 WIA 時，會使用 UPN 進行驗證。 如果您已針對信賴憑證者設定替代登入識別碼功能的任何宣告規則，您應該確定這些規則在 WIA 案例中仍然有效。
 
 - 啟用時，[替代登入識別碼] 功能至少需要一個通用類別目錄伺服器，才能從 AD FS 支援的每個使用者帳戶樹系的 AD FS 伺服器連線。 若無法連線到使用者帳戶樹系中的通用類別目錄伺服器，會導致 AD FS 回到使用 UPN。 依預設，所有網域控制站都是通用類別目錄伺服器。
 
@@ -183,6 +189,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 - 包含替代登入識別碼值的新宣告類型為 **HTTP: schemas.microsoft.com。 microsoft .com/ws/2013/11/alternateloginid**
 
 ## <a name="events-and-performance-counters"></a>事件和效能計數器
+
 已新增下列效能計數器，以在啟用替代登入識別碼時測量 AD FS 伺服器的效能：
 
 - 替代登入識別碼驗證：使用替代登入識別碼執行的驗證數目
@@ -203,4 +210,5 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 |   跨多個樹系找到多個使用者物件    |          登入失敗           |           事件識別碼364，例外狀況訊息 MSIS8014：在樹系中找到多個身分識別為 ' ' 的使用者帳戶 {0} ： {1}            |
 
 ## <a name="see-also"></a>另請參閱
+
 [AD FS 操作](../ad-fs-operations.md)
