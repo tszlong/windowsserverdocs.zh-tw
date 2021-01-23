@@ -1,28 +1,26 @@
 ---
 title: 適用於 SDN 的 RAS 閘道
-description: 您可以使用本主題來瞭解 RAS 閘道，這是 Windows Server 2016 中以軟體為基礎的多租使用者邊界閘道協定 (BGP) 功能的路由器。
+description: 您可以使用本主題來瞭解 RAS 閘道，這是以軟體為基礎的多租使用者，邊界閘道協定 Windows Server 2019 和2016中 (BGP) 支援的路由器。
 manager: grcusanz
 ms.topic: article
 ms.assetid: a32357a5-ab1a-4a4c-848a-7a4ed65b1921
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: d8bd138599001bdf31aa52c817b64d2475e9b783
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: d5709f00e865a19f14568ea0eebb670276b22f1f
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946024"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717004"
 ---
 # <a name="ras-gateway-for-sdn"></a>適用於 SDN 的 RAS 閘道
 
->適用于： Windows Server (半年通道) 、適用于 SDN 的 Windows Server 2016 # # RAS 閘道
-
+>適用於：Windows Server 2019、Windows Server 2016
 
 RAS 閘道是一種以軟體為基礎的多租使用者，邊界閘道協定 (BGP) 可使用 Hyper-v 網路虛擬化裝載多個租使用者虛擬網路的雲端服務提供者 (Csp) 和企業。 RAS 閘道會在實體網路與 VM 網路資源之間路由傳送網路流量，而不論其位置為何。 您可以在相同的實體位置或許多不同的位置，路由傳送網路流量。
 
 多組織使用者共用是雲端基礎結構支援多個租使用者虛擬機器工作負載的能力，但會彼此隔離，但所有工作負載都是在相同的基礎結構上執行。 個別租用戶的多個工作負載可以互連並從遠端管理，但是這些系統不會與其他租用戶的工作負載互連，其他租用戶也無法從遠端管理它們。
-
 
 > [!NOTE]
 > 除了本主題之外，還提供下列 RAS 閘道主題。

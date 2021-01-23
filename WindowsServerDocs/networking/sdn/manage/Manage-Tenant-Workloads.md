@@ -7,16 +7,16 @@ ms.assetid: 16359b15-a0e4-4f42-9d70-6ef0d851d219
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 2a571b6ed9a850f6e81d6cdddeb2f62c5eac1271
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: a5a1cac6dc86e9b032601820cd80c36130a4b174
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98038208"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716674"
 ---
 # <a name="manage-tenant-workloads"></a>管理租用戶工作負載
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 本主題包含檔的連結，可讓您藉由將租使用者虛擬機器新增 (Vm) 、使用網路虛擬裝置、設定軟體負載平衡等，來管理租使用者工作負載。
 

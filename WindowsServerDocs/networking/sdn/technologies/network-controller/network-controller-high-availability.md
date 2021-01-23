@@ -1,22 +1,22 @@
 ---
 title: 網路控制卡高可用性
-description: 您可以使用本主題來瞭解 Windows Server 2016 中軟體定義網路 (SDN) 的網路控制站高可用性。
+description: 您可以使用本主題來瞭解 Windows Server 2019 和2016中軟體定義網路 (SDN) 的網路控制站高可用性。
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 334b090d-bec4-4e67-8307-13831dbdd1d8
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 12/08/2020
-ms.openlocfilehash: fe0967334e993c44d0edc38417998f51c8376262
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 5990591e087561ff8e327cca8db489fda501b86c
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949104"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716394"
 ---
 # <a name="network-controller-high-availability"></a>網路控制卡高可用性
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 您可以使用本主題來瞭解軟體定義網路 SDN 的網路控制站高可用性和擴充性設定 \( \) 。
 

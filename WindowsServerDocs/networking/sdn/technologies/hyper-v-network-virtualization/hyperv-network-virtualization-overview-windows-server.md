@@ -1,24 +1,24 @@
 ---
-title: Windows Server 2016 中的 hyper-v 網路虛擬化總覽
-description: 本主題概要說明 Windows Server 2016 中的 Hyper-v 網路虛擬化
+title: Windows Server 中的 hyper-v 網路虛擬化總覽
+description: 本主題概要說明 Windows Server 2019 和2016中的 Hyper-v 網路虛擬化
 manager: grcusanz
 ms.topic: article
 ms.assetid: 0115b7ad-d229-4c69-9d7e-a3f5fbaa3b2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 7e4483218c35a99f898701fbdd7fdbe86b021206
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: a11c73eda48819e44e30df6121193ddb6ae7ddd2
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949094"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716214"
 ---
-# <a name="hyper-v-network-virtualization-overview-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 網路虛擬化總覽
+# <a name="hyper-v-network-virtualization-overview-in-windows-server"></a>Windows Server 中的 hyper-v 網路虛擬化總覽
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
-在 Windows Server 2016 和 Virtual Machine Manager 中，Microsoft 提供端對端網路虛擬化解決方案。  有五個主要元件組成 Microsoft 的網路虛擬化解決方案：
+在 Windows Server 和 Virtual Machine Manager 中，Microsoft 提供端對端網路虛擬化解決方案。  有五個主要元件組成 Microsoft 的網路虛擬化解決方案：
 
 -   **適用于 Windows Server 的 Windows Azure 套件** 會提供租使用者的入口網站來建立虛擬網路，並提供管理入口網站來管理虛擬網路。
 
@@ -130,7 +130,7 @@ Hyper-V 網路虛擬化可分隔客戶虛擬機器的虛擬網路與實際網路
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>軟體需求
 使用 Microsoft 網路控制站的 hyper-v 網路虛擬化需要 Windows Server 2016 和 Hyper-v 角色。
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>請參閱
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>另請參閱
 若要深入瞭解 Windows Server 2016 中的 Hyper-v 網路虛擬化，請參閱下列連結：
 
 

@@ -1,24 +1,24 @@
 ---
 title: 資料中心防火牆概觀
-description: 您可以使用本主題來瞭解資料中心防火牆，也就是網路層、5元組 (通訊協定、來源與目的地埠號碼、來源與目的地 IP 位址) 、具狀態、Windows Server 2016 中的多租使用者防火牆。
+description: 您可以使用本主題來瞭解資料中心防火牆，也就是網路層、5元組 (通訊協定、來源與目的地埠號碼、來源與目的地 IP 位址) 、具狀態、Windows Server 2019 中的多租使用者防火牆和2016。
 manager: grcusanz
 ms.topic: article
 ms.assetid: 67576533-206b-428a-956c-ed8c53218d9b
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: ccfa33f0956446d9a4fac3a31add8517c088d9db
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 32a436ebce2313d7d8aa28a6d2fd4c04061b306f
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949374"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716874"
 ---
 # <a name="datacenter-firewall-overview"></a>資料中心防火牆概觀
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
-Datacenter 防火牆是 Windows Server 2016 隨附的新服務。 它是網路層、5元組 (通訊協定、來源與目的地埠號碼、來源與目的地 IP 位址) 、具狀態的多租使用者防火牆。 當服務提供者部署並提供服務提供者時，租使用者系統管理員可以安裝和設定防火牆原則，以協助保護其虛擬網路免于來自網際網路和內部網路網路的不必要流量。
+在 Windows Server 2016 中的新功能，資料中心防火牆是一種網路層、5元組 (通訊協定、來源與目的地埠號碼、來源與目的地 IP 位址) 、具狀態的多租使用者防火牆。 當服務提供者部署並提供服務提供者時，租使用者系統管理員可以安裝和設定防火牆原則，以協助保護其虛擬網路免于來自網際網路和內部網路網路的不必要流量。
 
 ![網路堆疊中的資料中心防火牆](../../../media/Datacenter-Firewall-Overview/MultitenantFirewallOverview2.png)
 

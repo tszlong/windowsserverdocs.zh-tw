@@ -1,24 +1,24 @@
 ---
 title: RAS 閘道的新功能
-description: 您可以使用本主題來瞭解 RAS 閘道的新功能，這是 Windows Server 2016 中以軟體為基礎的多租使用者邊界閘道協定 (BGP) 的可用路由器。
+description: 您可以使用本主題來瞭解 RAS 閘道的新功能，這是以軟體為基礎的多租使用者，邊界閘道協定 Windows Server 2019 和2016中的 (BGP) 支援的路由器。
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 709cb192-313a-47b5-954e-eb5f6fee51a7
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: c40969f18684dbe3fffff205c9f46582c7a2b3ae
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3b6ccfa396e0e083bf68ba39e22d093303bd55c1
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97943204"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716984"
 ---
 # <a name="whats-new-in-ras-gateway"></a>RAS 閘道的新功能
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
-您可以使用本主題來瞭解 RAS 閘道的新功能，這是 Windows Server 2016 中以軟體為基礎的多租使用者邊界閘道協定 (BGP) 的可用路由器。 RAS 閘道多租使用者 BGP 路由器是專為雲端服務提供者 (Csp) 和使用 Hyper-v 網路虛擬化裝載多個租使用者虛擬網路的企業所設計。
+您可以使用本主題來瞭解 RAS 閘道的新功能，這是以軟體為基礎、多租使用者邊界閘道協定 (BGP) 可在 Windows Server 2016 中引進的可用路由器。 RAS 閘道多租使用者 BGP 路由器是專為雲端服務提供者 (Csp) 和使用 Hyper-v 網路虛擬化裝載多個租使用者虛擬網路的企業所設計。
 
 > [!NOTE]
 > 在 Windows Server 2012 R2 中，RAS 閘道名為 RRAS 閘道;在 System Center Virtual Machine Manager 中，RAS 閘道名為 Windows Server Gateway。

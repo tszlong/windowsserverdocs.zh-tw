@@ -1,31 +1,31 @@
 ---
 title: 管理軟體定義網路的憑證
-description: 您可以使用本主題來瞭解如何在 Windows Server 2016 Datacenter 中部署軟體定義網路 (SDN) ，以管理網路控制站 Northbound 和 Southbound 通訊的憑證。
+description: 您可以使用本主題來瞭解如何在 Windows Server 2019 和 2016 Datacenter 中部署軟體定義網路 (SDN) 時，管理網路控制站 Northbound 和 Southbound 通訊的憑證。
 manager: grcusanz
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 2bd72ec096d7c1301601848602a1d55e44ca5086
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: bcba64a74a2414cb239257161de50bf99acbad62
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866507"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716344"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>管理軟體定義網路的憑證
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
-您可以使用本主題來瞭解如何在 \( Windows Server 2016 Datacenter 中部署軟體定義的網路 SDN \) ，以及使用 System Center Virtual Machine Manager \( SCVMM \) 作為 SDN 管理用戶端時，管理網路控制站 Northbound 和 Southbound 通訊的憑證。
+您可以使用本主題來瞭解如何在 \( \) Windows Server 2019 或 2016 Datacenter 中部署軟體定義的網路 SDN，以及使用 System Center Virtual Machine Manager \( SCVMM \) 作為 SDN 管理用戶端時，管理網路控制站 Northbound 和 Southbound 通訊的憑證。
 
 >[!NOTE]
 >如需網路控制站的總覽資訊，請參閱 [網路控制](../technologies/network-controller/Network-Controller.md)站。
 
 如果您不是使用 Kerberos 保護網路控制站通訊，則可以使用 x.509 憑證來進行驗證、授權和加密。
 
-Windows Server 2016 Datacenter 中的 SDN 支援自我 \- 簽署和憑證授權單位單位 \( CA \) 簽署的 x.509 憑證。 本主題提供逐步指示，說明如何建立這些憑證，並將其套用至安全的網路控制卡 Northbound 通道和網路裝置，例如軟體 Load Balancer \( SLB \) 。
+Windows Server 2019 和 2016 Datacenter 中的 SDN 支援自我 \- 簽署和憑證授權單位單位 \( CA \) 簽署的 x.509 憑證。 本主題提供逐步指示，說明如何建立這些憑證，並將其套用至安全的網路控制卡 Northbound 通道和網路裝置，例如軟體 Load Balancer \( SLB \) 。
 .
 當您使用以憑證 \- 為基礎的驗證時，您必須在使用下列方法的網路控制卡節點上註冊一個憑證。
 
@@ -137,7 +137,7 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 2. 在主控台樹中，按一下 [**憑證 \( 本機 \) 電腦**]。 選取 [ **個人** ] 憑證存放區。
 3. 在 [ **動作** ] 功能表上，指向 [所有工作]<strong>，然後按一下 [要求新憑證</strong> ] 以啟動 [憑證註冊嚮導]。 按一下 [下一步] 。
 4. 選取 **您的系統管理員** 憑證註冊原則所設定的，然後按 **[下一步]**。
-5. **Active Directory Enrollment Policy** \( 根據您在上一節中設定的 CA 範本，選取 Active Directory 的註冊原則 \) 。
+5.  \( 根據您在上一節中設定的 CA 範本，選取 Active Directory 的註冊原則 \) 。
 6. 展開 [ **詳細資料** ] 區段，並設定下列專案。
    1. 請確定 **金鑰使用** 方式同時包含 <strong>數位簽章 * * 和 * * 金鑰加密</strong>。
    2. 確定 **應用程式原則** 同時包含 **伺服器驗證** \( 1.3.6.1.5.5.7.3.1 \) 和 **用戶端驗證** \( 1.3.6.1.5.5.7.3.2 \) 。

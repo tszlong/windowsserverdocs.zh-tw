@@ -1,22 +1,22 @@
 ---
 title: 使用腳本部署軟體定義的網路基礎結構
-description: 本主題說明如何使用 Windows Server 2016 中的腳本，將 Microsoft 軟體定義的網路部署 (SDN) 基礎結構。
+description: 本主題說明如何使用 Windows Server 2019 和2016中的腳本，將 Microsoft 軟體定義的網路部署 (SDN) 基礎結構。
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: ed8327dd53fa75ccb864207d430c8c863940f090
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 706077c7ebd260f0a497568935fb94718408a655
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950104"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716464"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用指令碼部署軟體定義網路的基礎結構
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 在本主題中，您會使用腳本，將 Microsoft 軟體定義的網路 (SDN) 基礎結構部署。 基礎結構包含高可用性 (HA) 網路控制站、HA 軟體 Load Balancer (SLB) /MUX、虛擬網路，以及 (Acl) 相關聯的存取控制清單。 此外，另一個腳本會為您部署租使用者工作負載，以驗證 SDN 基礎結構。
 
@@ -29,7 +29,7 @@ ms.locfileid: "97950104"
 > [!IMPORTANT]
 > 開始部署之前，您必須規劃並設定您的主機和實體網路基礎結構。 如需詳細資訊，請參閱[規劃軟體定義網路基礎結構](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)。
 
-所有 Hyper-v 主機都必須安裝 Windows Server 2016。
+所有 Hyper-v 主機都必須安裝 Windows Server 2019 或2016。
 
 ## <a name="deployment-steps"></a>部署步驟
 首先，請設定 Hyper-v 主機的 (實體伺服器) Hyper-v 虛擬交換器和 IP 位址指派。 您可以使用任何與 Hyper-v、共用或本機相容的儲存體類型。
@@ -141,7 +141,7 @@ ms.locfileid: "97950104"
    |--|--|
    | AgentConf | 保存每個 Windows Server 2016 Hyper-v 主機上 SDN 主機代理程式所使用之 OVSDB 架構的全新複本，以程式設計網路原則。 |
    | 憑證 | NC 憑證檔案的暫存共用位置。 |
-   | 影像 | 是空的，請將您的 Windows Server 2016 vhdx 映射放在這裡 |
+   | 映像 | 是空的，請將您的 Windows Server 2016 vhdx 映射放在這裡 |
    | 工具 | 疑難排解和偵錯工具的公用程式。  已複製到主機和虛擬機器。  建議您在這裡放置網路監視器或 Wireshark，以便在需要時使用。 |
    | 指令碼 | 部署腳本。<p> - **SDNExpress.ps1**<br>部署及設定網狀架構，包括網路控制站虛擬機器、SLB Mux 虛擬機器、閘道集區 (s) 和 HNV 閘道虛擬機器 (s) 對應至集區 () 。<br /> - **FabricConfig.psd1**<br>SDNExpress 腳本的設定檔範本。 您將會針對您的環境進行自訂。<br /> - **SDNExpressTenant.ps1**<br>在具有負載平衡 VIP 的虛擬網路上部署範例租使用者工作負載。<br>也會在連線至先前所建立租使用者工作負載的服務提供者邊緣閘道上，布建一或多個網路連線 (IPSec S2S VPN、GRE、L3) 。 IPSec 和 GRE 閘道可透過對應的 VIP IP 位址進行連線，並可透過對應的位址集區進行 L3 轉送閘道。<br>您也可以使用此腳本刪除具有復原選項的對應設定。<br /> - **TenantConfig.psd1**<br>租使用者工作負載和 S2S 閘道設定的範本設定檔案。<br /> - **SDNExpressUndo.ps1**<br>清除網狀架構環境，並將其重設為啟動狀態。<br /> - **SDNExpressEnterpriseExample.ps1**<br>布建一或多個具有一個遠端存取閘道的企業網站環境，並 (選擇性地為每個網站) 一個對應的企業虛擬機器。 IPSec 或 GRE 企業閘道會連接到服務提供者閘道的對應 VIP IP 位址，以建立 S2S 通道。 L3 轉送閘道會透過對應的對等 IP 位址來連接。 <br> 您也可以使用此腳本刪除具有復原選項的對應設定。<br /> - **EnterpriseConfig.psd1**<br>適用于企業站對站閘道和用戶端 VM 設定的範本設定檔案。 |
    | TenantApps | 用來部署範例租使用者工作負載的檔案。 |

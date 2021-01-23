@@ -7,16 +7,16 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 74e449b51cb5513e353067e64d41aeedf6652672
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 088ea4a49c2785a691a52a9e816e26a709c19d07
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948374"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716594"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>部署網路控制站的需求
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 準備您的資料中心以進行網路控制站部署，這需要一或多部電腦或 vm，以及一部電腦或 VM。 部署網路控制站之前，您必須先設定安全性群組、記錄檔位置 (（如有需要）) 和動態 DNS 註冊。
 
@@ -24,8 +24,8 @@ ms.locfileid: "97948374"
 
 網路控制站部署需要一或多部作為網路控制站的電腦或 Vm，以及一部電腦或 VM 作為網路控制站的管理用戶端。
 
-- 規劃為網路控制器節點的所有 Vm 和電腦都必須執行 Windows Server 2016 Datacenter edition。
-- 任何電腦或虛擬機器 (VM) 安裝網路控制站時，都必須執行 Windows Server 2016 的 Datacenter edition。
+- 規劃為網路控制器節點的所有 Vm 和電腦都必須執行 Windows Server 2019 或 2016 Datacenter edition。
+- 任何您安裝網路控制站 (VM) 的電腦或虛擬機器，都必須執行 Windows Server 2019 或 2016 Datacenter edition。
 - 網路控制站的管理用戶端電腦或 VM 必須執行 Windows 10。
 
 ## <a name="configuration-requirements"></a>組態需求

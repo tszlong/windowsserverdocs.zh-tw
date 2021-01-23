@@ -7,16 +7,16 @@ ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 6acfb6cbd3a8eaa528dd7457d5de008209b99ad3
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: c99da7531df37500e7c1e0d05dfc5f755a1253c0
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948394"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716144"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>請連絡資料中心和雲端網路團隊
 
-> 適用於：Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 Microsoft 的 **軟體定義網路 \( SDN \)** 和 **容器網路** 解決方案是由資料中心和雲端網路團隊所建立。 請使用此頁面與小組聯繫，以提出問題、提供意見反應、回報 bug 或提出功能要求。
 

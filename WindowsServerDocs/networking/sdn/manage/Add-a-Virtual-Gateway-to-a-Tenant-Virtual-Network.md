@@ -1,28 +1,28 @@
 ---
 title: 將虛擬閘道新增到租用戶虛擬網路
-description: 瞭解如何使用 Windows PowerShell Cmdlet 和腳本，為您租使用者的虛擬網路提供站對站連線能力。
+description: 瞭解如何使用 Windows PowerShell Cmdlet 和腳本，為租使用者的虛擬網路提供站對站連線能力。
 manager: grcusanz
 ms.topic: article
 ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 8b6c109948f472154ceff7d97aef63d0a77f4624
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 73e0868fdf03ac940ab4540671d05614a4fc5221
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947146"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716854"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>將虛擬閘道新增到租用戶虛擬網路
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
-瞭解如何使用 Windows PowerShell Cmdlet 和腳本，為您租使用者的虛擬網路提供站對站連線能力。 在本主題中，您會使用網路控制站，將租使用者虛擬閘道新增至屬於閘道集區成員的 RAS 閘道實例。 視每個租使用者使用的頻寬而定，RAS 閘道最多可支援100個租使用者。 網路控制站會在您為租使用者部署新的虛擬閘道時，自動決定要使用的最佳 RAS 閘道。
+瞭解如何使用 Windows PowerShell Cmdlet 和腳本，為租使用者的虛擬網路提供站對站連線能力。 在本主題中，您會使用網路控制站，將租使用者虛擬閘道新增至屬於閘道集區成員的 RAS 閘道實例。 視每個租使用者使用的頻寬而定，RAS 閘道最多可支援100租使用者。 當您為租使用者部署新的虛擬閘道時，網路控制站會自動決定要使用的最佳 RAS 閘道。
 
-每個虛擬閘道都會對應至特定的租使用者，且包含一或多個網路連線 (站對站 VPN 通道) 並選擇性地邊界閘道協定 (BGP) 連接。 當您提供站對站連線能力時，您的客戶可以將其租使用者的虛擬網路連線到外部網路，例如租使用者商業網路、服務提供者網路或網際網路。
+每個虛擬閘道都會對應至特定的租使用者，並由一個或多個網路連線 (的站對站 VPN 通道) 和（選擇性）邊界閘道協定 (BGP) 連線來建立。 當您提供站對站連線能力時，您的客戶可以將其租使用者虛擬網路連線到外部網路，例如租使用者商業網路、服務提供者網路或網際網路。
 
-**當您部署租使用者虛擬閘道時，您會有下列設定選項：**
+**當您部署租使用者虛擬閘道時，您有下列設定選項：**
 
 
 |                                                        網路連線選項                                                         |                                              BGP 設定選項                                               |
@@ -35,7 +35,7 @@ ms.locfileid: "87947146"
 
 
 >[!IMPORTANT]
->執行所提供的任何範例 Windows PowerShell 命令和腳本之前，您必須變更所有變數值，讓這些值適用于您的部署。
+>執行任何範例 Windows PowerShell 所提供的命令和腳本之前，您必須變更所有變數值，讓值適用于您的部署。
 
 1.  確認閘道集區物件存在於網路控制卡中。
 
@@ -50,7 +50,7 @@ ms.locfileid: "87947146"
 
     ```
 
-2.  確認用於路由傳送來自租使用者虛擬網路之封包的子網存在於網路控制卡中。 您也會抓取用於在租使用者閘道和虛擬網路之間路由的虛擬子網。
+2.  確認用來從租使用者的虛擬網路路由傳送封包的子網存在於網路控制卡中。 您也會取出用於租使用者閘道和虛擬網路之間路由的虛擬子網。
 
     ```PowerShell
     $uri = "https://ncrest.contoso.com"
@@ -69,7 +69,7 @@ ms.locfileid: "87947146"
 
     ```
 
-3.  為租使用者虛擬閘道建立新的物件，然後更新閘道集區參考。  您也可以指定用來在閘道與虛擬網路之間路由的虛擬子網。  指定虛擬子網之後，您必須更新虛擬閘道物件內容的其餘部分，然後為該租使用者新增新的虛擬閘道。
+3.  為租使用者虛擬閘道建立新的物件，然後更新閘道集區參考。  您也可以指定用於閘道和虛擬網路之間路由的虛擬子網。  指定虛擬子網之後，您會更新其餘的虛擬閘道物件內容，然後為租使用者新增虛擬閘道。
 
     ```PowerShell
     # Create a new object for Tenant Virtual Gateway
@@ -93,12 +93,12 @@ ms.locfileid: "87947146"
 
     ```
 
-4. 使用 IPsec、GRE 或第3層 (L3) 轉送建立站對站 VPN 連線。
+4. 使用 IPsec、GRE 或第3層 (L3) 轉送來建立站對站 VPN 連線。
 
    >[!TIP]
-   >（選擇性）您可以合併所有先前的步驟，並設定具有這三個連線選項的租使用者虛擬閘道。  如需詳細資訊，請參閱[設定具有這三種連線類型 (IPsec、GRE、L3) 和 BGP 的閘道](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp)。
+   >（選擇性）您可以結合所有先前的步驟，並設定包含三個連線選項的租使用者虛擬閘道。  如需詳細資訊，請參閱 [使用所有三種連線類型設定閘道 (IPsec、GRE、L3) 和 BGP](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp)。
 
-   **IPsec VPN 站對站網路連線**
+   **IPsec VPN 站對站網路連接**
 
    ```PowerShell
    # Create a new object for Tenant Network Connection
@@ -184,7 +184,7 @@ ms.locfileid: "87947146"
    ```
 
    **L3 轉送網路連線**<p>
-   若要讓 L3 轉送網路連線正常運作，您必須設定對應的邏輯網路。
+   若要讓 L3 轉送網路連接正常運作，您必須設定對應的邏輯網路。
 
    1. 設定 L3 轉送網路連線的邏輯網路。  <br>
 
@@ -210,7 +210,7 @@ ms.locfileid: "87947146"
 
       ```
 
-   2. 建立網路連線 JSON 物件，並將它新增至網路控制卡。
+   2. 建立網路連接 JSON 物件，並將它新增至網路控制站。
 
       ```PowerShell
       # Create a new object for the Tenant Network Connection
@@ -248,9 +248,9 @@ ms.locfileid: "87947146"
 
       ```
 
-5. 將閘道設定為 BGP 路由器，並將它新增至網路控制卡。
+5. 將閘道設定為 BGP 路由器，並將其新增至網路控制卡。
 
-   1. 新增租使用者的 BGP 路由器。
+   1. 為租使用者新增 BGP 路由器。
 
       ```PowerShell
       # Create a new object for the Tenant BGP Router
@@ -266,7 +266,7 @@ ms.locfileid: "87947146"
 
       ```
 
-   2. 新增此租使用者的 BGP 對等，其對應于上面新增的站對站 VPN 網路連線。
+   2. 為此租使用者新增 BGP 對等互連，該租使用者對應于上述新增的站對站 VPN 網路連接。
 
       ```PowerShell
       # Create a new object for Tenant BGP Peer
@@ -282,8 +282,8 @@ ms.locfileid: "87947146"
 
       ```
 
-## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a> (選擇性步驟) 設定具有三種連線類型的閘道 (IPsec、GRE、L3) 和 BGP
-（選擇性）您可以合併所有先前的步驟，並設定具有三個連線選項的租使用者虛擬閘道：
+## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a> (選擇性步驟) 以 (IPsec、GRE、L3) 和 BGP 的三種連線類型來設定閘道
+（選擇性）您可以結合所有先前的步驟，並設定包含三個連線選項的租使用者虛擬閘道：
 
 ```PowerShell
 # Create a new Virtual Gateway Properties type object
@@ -461,13 +461,13 @@ New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_Vi
 $nwConnection = Get-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW"
 ```
 
-**導覽變數結構以到達必要屬性，並將它設定為更新值**
+**流覽變數結構以連接到必要的屬性，並將它設定為 [更新] 值**
 
 ```PowerShell
 $nwConnection.properties.IpSecConfiguration.SharedSecret = "C0mplexP@ssW0rd"
 ```
 
-**新增修改過的設定以取代網路控制卡上的舊版設定**
+**新增修改過的設定以取代網路控制站上的較舊設定**
 
 ```PowerShell
 New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId $nwConnection.ResourceId -Properties $nwConnection.Properties -Force
@@ -477,7 +477,7 @@ New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -Virtua
 ## <a name="remove-a-gateway-from-a-virtual-network"></a>從虛擬網路移除閘道
 您可以使用下列 Windows PowerShell 命令來移除個別閘道功能或整個閘道。
 
-**移除網路連線**
+**移除網路連接**
 ```PowerShell
 Remove-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW" -Force
 ```

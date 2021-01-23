@@ -1,24 +1,24 @@
 ---
 title: 疑難排解 SDN
-description: 本主題提供有關在 Windows Server 2016 中疑難排解軟體定義網路的內容連結。
+description: 本主題提供有關在 Windows Server 2019 和2016中針對軟體定義的網路進行疑難排解的內容連結。
 manager: grcusanz
 ms.topic: article
 ms.assetid: 427048db-bab6-49b1-9611-099bb547ec0e
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: caf9e7e68f5cbfe91932fddbc34508792aecb18a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9c5ee9e7bfaf90f330fb8ed6d3f703714049ff04
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947114"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716884"
 ---
 # <a name="troubleshoot-sdn"></a>疑難排解 SDN
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
-本節中的主題提供有關針對 Windows Server 2016 中包含的軟體定義網路 (SDN) 技術進行疑難排解的資訊。
+本節中的主題提供有關針對 Windows Server 2019 和2016中包含的軟體定義網路 (SDN) 技術進行疑難排解的資訊。
 
 > [!NOTE]
 > 如需其他軟體定義的網路檔，您可以使用下列程式庫區段。

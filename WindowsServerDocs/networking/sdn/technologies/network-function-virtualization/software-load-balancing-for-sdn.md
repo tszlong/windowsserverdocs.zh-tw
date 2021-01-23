@@ -1,26 +1,26 @@
 ---
 title: SDN 的軟體負載平衡 (SLB)
-description: 您可以使用本主題來瞭解 Windows Server 2016 中軟體定義網路的軟體負載平衡。
+description: 您可以使用本主題來瞭解 Windows Server 2019 和2016中軟體定義網路的軟體負載平衡。
 manager: grcusanz
 ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 12/08/2020
-ms.openlocfilehash: 0a621d3a856af1a575ece73d7091ef9022e90d42
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: ffa860afaba6399cf17dabadbe0dc90c70f75526
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948364"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716994"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>SDN 的軟體負載平衡 \( SLB \)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
-您可以使用本主題來瞭解 Windows Server 2016 中軟體定義網路的軟體負載平衡。
+您可以使用本主題來瞭解 Windows Server 2019 和2016中軟體定義網路的軟體負載平衡。
 
-雲端服務提供者 (Csp) 以及在 Windows Server 2016 中部署軟體定義網路 (SDN) 的企業可以使用軟體負載平衡 (SLB) ，將租使用者和租使用者客戶網路流量平均分散到虛擬網路資源之間。 Windows Server SLB 讓多部伺服器能夠裝載相同的工作負載，並提供高度可用性和延展性。
+雲端服務提供者 (Csp) 以及在 Windows Server 中部署軟體定義網路 (SDN) 的企業可以使用軟體負載平衡 (SLB) ，將租使用者和租使用者客戶網路流量平均分散到虛擬網路資源之間。 Windows Server SLB 讓多部伺服器能夠裝載相同的工作負載，並提供高度可用性和延展性。
 
 Windows Server SLB 包含下列功能。
 

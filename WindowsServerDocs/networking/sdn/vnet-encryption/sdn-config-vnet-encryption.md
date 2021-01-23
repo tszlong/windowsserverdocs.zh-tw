@@ -7,16 +7,16 @@ ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: a28132747d11c352987638c9db368561897c421f
-ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
+ms.openlocfilehash: 15f47d48ca0e3873433fcaa3e6dd7160bc0f9126
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98113404"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716604"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>設定虛擬子網的加密
 
->適用于： Windows Server
+>適用於：Windows Server 2019、Windows Server 2016
 
 虛擬網路加密可加密 Vm 之間的虛擬網路流量，這些 Vm 會在標示為「啟用加密」的子網內彼此通訊。 這項功能也利用虛擬子網路上的資料包傳輸層安全性 (DTLS) 來加密封包。 DTLS 提供保護以防止任何可存取實體網路的人進行竊聽、竄改和偽造。
 

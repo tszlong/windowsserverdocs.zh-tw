@@ -1,22 +1,22 @@
 ---
 title: 網路函式虛擬化
-description: 您可以使用本主題來瞭解網路功能虛擬化，此功能可讓您部署虛擬網路設備，例如資料中心防火牆、多租使用者 RAS 閘道，以及 Windows Server 2016 (SLB) 的軟體負載平衡。
+description: 您可以使用本主題來瞭解網路功能虛擬化，此功能可讓您在 Windows Server 2019 和2016中部署虛擬網路設備，例如資料中心防火牆、多租使用者 RAS 閘道，以及 (SLB) 的軟體負載平衡。
 manager: grcusanz
 ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: b5b2b4bb93a9d90e9c74f8310430ef3e7d826f1d
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9f35ff0cea3800eb3f5b86bcb9466f5ec2c5d665
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949084"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716694"
 ---
 # <a name="network-function-virtualization"></a>網路函式虛擬化
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 您可以使用本主題來瞭解網路功能虛擬化，此功能可讓您部署虛擬網路設備，例如資料中心防火牆、多租使用者 RAS 閘道和軟體負載平衡 SLB 多工器 \( \) \( MUX \) 。
 

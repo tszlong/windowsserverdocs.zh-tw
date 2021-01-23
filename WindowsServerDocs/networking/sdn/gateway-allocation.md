@@ -6,16 +6,16 @@ ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: c4350636c0977b23c94a73fb8bf7a6179736eb5a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 0bb62eda416d60f130573ee01e75d47f09d4a3c2
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949124"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716454"
 ---
 # <a name="gateway-bandwidth-allocation"></a>閘道頻寬配置
 
->適用于： Windows Server
+>適用於：Windows Server 2019
 
 在 Windows Server 2016 中，IPsec、GRE 和 L3 的個別通道頻寬是總閘道容量的比率。 因此，客戶會根據預期閘道 VM 的標準 TCP 頻寬來提供閘道容量。
 

@@ -6,17 +6,16 @@ ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: bf385cfedf973409c5789c94891240ae643c36d6
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 51cc64337029792fe8df724ad0d91515c3ab0eb8
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949114"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716444"
 ---
 # <a name="windows-server-2019-gateway-performance"></a>Windows Server 2019 閘道效能
 
->適用于： Windows Server
-
+>適用於：Windows Server 2019
 
 在 Windows Server 2016 中，其中一個客戶的考慮是無法將 SDN 閘道滿足新式網路的輸送量需求。 IPsec 和 GRE 通道的網路輸送量對於 IPsec 連線能力大約是 300 Mbps，而 GRE 連線能力大約是 2.5 Gbps 的單一連線輸送量有所限制。
 

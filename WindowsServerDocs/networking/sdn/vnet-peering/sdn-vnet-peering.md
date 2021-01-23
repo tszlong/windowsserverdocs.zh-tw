@@ -6,16 +6,16 @@ ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 5bd66299271257026504dcff4b5021c0be4ef73a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 325dd4468281e1b6b5ab1fb577908d9a29ba2a28
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97945744"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716574"
 ---
 # <a name="virtual-network-peering"></a>虛擬網路對等互連
 
->適用于： Windows Server
+>適用於：Windows Server 2019、Windows Server 2016
 
 虛擬網路對等互連可讓您順暢地連接兩個虛擬網路。 對等互連之後，基於連線目的，虛擬網路會顯示為一。
 
@@ -72,7 +72,7 @@ ms.locfileid: "97945744"
 
 每個虛擬網路（不論是否與另一個虛擬網路對等互連）仍然可以有自己的閘道來連線到內部部署網路。 當您對等互連虛擬網路時，您也可以將對等互連虛擬網路中的閘道設定為內部部署網路的傳輸點。 在此情況下，使用遠端閘道的虛擬網路不能有自己的閘道。 虛擬網路只能有一個閘道，可為對等互連虛擬網路)  (的本機或遠端閘道。
 
-## <a name="monitor"></a>監視
+## <a name="monitor"></a>監視器
 
 當您對等互連兩個虛擬網路時，您必須針對對等互連中的每個虛擬網路設定對等互連。
 

@@ -1,22 +1,22 @@
 ---
 title: Hyper-V 網路虛擬化
-description: 本主題提供有關 Windows Server 2016 中 Hyper-v 網路虛擬化內容的連結。
+description: 本主題提供有關 Windows Server 2019 和2016中的 Hyper-v 網路虛擬化內容的連結。
 manager: grcusanz
 ms.topic: article
 ms.assetid: 150976f0-ccd5-487a-a458-92261444a846
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 03931f7e149776abcb6a21a0bb2f033dc43b31b7
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9dc2ff86cfa7146f9c015c30b69523f28819b02e
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949934"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716114"
 ---
 # <a name="hyper-v-network-virtualization"></a>Hyper-V 網路虛擬化
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 Windows Server 2012 中引進的 Hyper-v 網路虛擬化 (HNV) 在共用實體網路基礎結構上啟用客戶網路虛擬化。 透過實體網路網狀架構所需的最少量變更，HNV 可讓服務提供者靈活地在三個雲端（服務提供者雲端、私用雲端或 Microsoft Azure 公用雲端）之間部署和遷移租使用者工作負載。
 

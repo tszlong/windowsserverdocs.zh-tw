@@ -1,28 +1,27 @@
 ---
 title: 虛擬網路中的輸出計量
-description: 雲端網路營收的基本層面是網路頻寬輸出。 例如，Microsoft Azure 商務模型中的輸出資料傳輸。 輸出資料的收費依據是在給定的計費週期內，透過網際網路從 Azure 資料中心移出的資料總量。
+description: 雲端網路營收的基本層面是網路頻寬輸出，例如 Microsoft Azure 商務模型中的輸出資料傳輸。 輸出資料的收費依據是在給定的計費週期內，透過網際網路從 Azure 資料中心移出的資料總量。
 manager: grcusanz
 ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: 821adcc4ae3ac99a92de8b0b57e3248be1786ce3
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9af91caea19536a457cc26db10370a0c4d592e4c
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947274"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98715994"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>虛擬網路中的輸出計量
 
->適用於：Windows Server 2019
-
+>適用於：Windows Server 2019、Windows Server 2016
 
 雲端網路營收的基本層面是能夠依網路頻寬使用量來計費。 輸出資料的收費依據是在給定的計費週期內，透過網際網路從資料中心移出資料的總金額。
 
-Windows Server 2019 中 SDN 網路流量的輸出計量能夠提供輸出資料傳輸的使用計量。 離開每個虛擬網路，但保留在資料中心內的網路流量可以個別追蹤，讓它可以從計費計算中排除。 針對未包含在其中一個未開立帳單位址範圍內的目的地 IP 位址所系結的封包，會追蹤為計費的輸出資料傳輸。
+Windows Server 2019 中 SDN 網路流量的輸出計量能夠提供輸出資料傳輸的使用計量。 離開每個虛擬網路，但仍留在資料中心內的網路流量，可以個別追蹤，讓它可以從計費計算中排除。 針對未包含在其中一個未開立帳單位址範圍內的目的地 IP 位址所系結的封包，會追蹤為計費的輸出資料傳輸。
 
-## <a name="virtual-network-unbilled-address-ranges-allowlist-of-ip-ranges"></a>虛擬網路未開立帳單位址範圍 (IP 範圍的允許清單) 
+## <a name="virtual-network-unbilled-address-ranges-allow-list-of-ip-ranges"></a>虛擬網路未開立帳單位址範圍 (允許 IP 範圍的清單) 
 
 您可以在現有虛擬網路的 **UnbilledAddressRanges** 屬性下找到未開立帳單位址範圍。 依預設，不會新增任何位址範圍。
 

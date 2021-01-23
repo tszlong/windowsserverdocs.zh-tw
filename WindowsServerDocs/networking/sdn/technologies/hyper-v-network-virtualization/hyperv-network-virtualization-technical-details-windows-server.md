@@ -7,16 +7,16 @@ ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 7b9fdb3e4bb6404e129a97222be9aa3e8adbf614
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3e7a4c5d52ae9fff29e558bcd8d0bdbc3c9d7d0a
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949424"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716964"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 網路虛擬化技術詳細資料
 
->適用于： Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 伺服器虛擬化可以讓多個伺服器執行個體同時在單一實體主機上執行；且伺服器執行個體還可以彼此獨立。 每部虛擬機器的基本操作方式就像是實體電腦上唯一執行的伺服器一樣。
 
@@ -244,7 +244,7 @@ VSwitch 和 VFP 轉送擴充功能的物件階層如下所示：
 
     -   全域轉送規則
 
-    -   連接埠
+    -   Port
 
         -   用來釘選的輸出轉送層
 
@@ -256,7 +256,7 @@ VSwitch 和 VFP 轉送擴充功能的物件階層如下所示：
 
             -   Flow 資料表
 
-            -   群組
+            -   Group
 
             -   規則
 
@@ -282,10 +282,10 @@ HNV 原則由主機代理程式進行程式設計。 每個虛擬機器網路介
 
 圖 9：HNV 架構
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>[摘要]
 雲端式資料中心可以提供許多優點，例如，改善的延展性和較佳的資源使用率。 若要了解這些潛在優點，需要具備基本上可以在動態環境中處理多組織用戶共享延展性問題的技術。 HNV 的設計就是要解決這些問題，同時透過分離實體網路拓撲的虛擬網路拓撲來提升資料中心的運作效率。 根據現有的標準，HNV 會在現今的資料中心內執行，並與您現有的 VXLAN 基礎結構一起運作。 具有 HNV 的客戶現在可以將其資料中心合併至私用雲端，或將其資料中心順暢地延伸至具有混合式雲端的主機伺服器提供者環境。
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>請參閱
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>另請參閱
 若要深入瞭解 HNVv2，請參閱下列連結：
 
 

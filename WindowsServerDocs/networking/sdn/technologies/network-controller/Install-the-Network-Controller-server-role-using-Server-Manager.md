@@ -1,22 +1,22 @@
 ---
 title: 使用伺服器管理員安裝網路控制卡伺服器角色
-description: 本主題提供有關如何使用 Windows Server 2016 中的伺服器管理員來安裝網路控制站伺服器角色的指示。
+description: 本主題提供有關如何在 Windows Server 2019 和2016中使用伺服器管理員安裝網路控制站伺服器角色的指示。
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 11/02/2020
-ms.openlocfilehash: 5a0b8ac221c30b2f474ea94bbce44849b5fe132a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 024cfb82aa4d539e5d5cbec0fd956b83e0224766
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949404"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716934"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>使用伺服器管理員安裝網路控制卡伺服器角色
 
-> 適用於：Windows Server (半年度管道)、Windows Server 2016
+> 適用於：Windows Server 2019、Windows Server 2016
 
 本主題提供有關如何使用伺服器管理員安裝網路控制站伺服器角色的指示。
 

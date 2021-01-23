@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b9fdfa0dddabd96623532d1b67dc2a189cde66d9
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: aed5fac9cf53ec41d79828ef94eb194b6dfb1d84
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946244"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716944"
 ---
 # <a name="token-signing-certificates"></a>權杖簽署憑證
 
@@ -44,10 +44,6 @@ ms.locfileid: "97946244"
 ## <a name="deployment-considerations-for-token-signing-certificates"></a>權杖簽署憑證的部署考慮 \-
 當您在新的 AD FS 安裝中部署第一部同盟伺服器時，您必須取得權杖 \- 簽署憑證，並將它安裝在該同盟伺服器上的本機電腦個人憑證存儲中。 您可以 \- 從企業 ca 或公用 ca 要求一個權杖簽署憑證，或建立自我簽署憑證來取得權杖簽署憑證 \- 。
 
-當您部署 AD FS 伺服器陣列時， \- 會根據您建立伺服器陣列的方式，以不同的方式安裝權杖簽署憑證。
-
-當您為部署取得權杖簽署憑證時，可以考慮兩個伺服器陣列選項 \- ：
-
 -   一個權杖簽署憑證的私密金鑰 \- 會在伺服器陣列中的所有同盟伺服器之間共用。
 
     在同盟伺服器陣列環境中，我們建議所有同盟伺服器共用 \( 或重複使用 \) 相同的權杖 \- 簽署憑證。 您可以 \- 從同盟伺服器上的 CA 安裝單一權杖簽署憑證，然後匯出私密金鑰，只要已發行的憑證標示為可匯出。
@@ -56,13 +52,6 @@ ms.locfileid: "97946244"
 
     ![顯示單一權杖簽署憑證之私密金鑰的圖例， \- 可以與伺服器陣列中的所有同盟伺服器共用。](media/adfs2_fedserver_certstory_3.gif)
 
--   伺服器陣列中的每部同盟伺服器都有唯一的權杖 \- 簽署憑證。
-
-    當您在整個伺服器陣列中使用多個唯一的憑證時，該伺服器陣列中的每部伺服器都會使用自己的唯一私密金鑰來簽署權杖。
-
-    如下圖所示，您可以針對伺服器陣列中的每一部同盟伺服器，取得個別的權杖 \- 簽署憑證。 如果您打算從公用 CA 取得權杖簽署憑證，此選項會更昂貴 \- 。
-
-    ![權杖簽署](media/adfs2_fedserver_certstory_4.gif)
 
 如需使用 Microsoft 憑證服務做為企業 CA 時安裝憑證的相關資訊，請參閱 [iis 7.0：在 iis 7.0 中建立網域伺服器憑證](https://go.microsoft.com/fwlink/?LinkId=108548)。
 

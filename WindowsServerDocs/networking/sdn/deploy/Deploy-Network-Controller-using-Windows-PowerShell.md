@@ -1,24 +1,24 @@
 ---
 title: 使用 Windows PowerShell 部署網路控制卡
-description: 本主題提供的指示說明如何使用 Windows PowerShell 在一或多部電腦上部署網路控制站，或在執行 Windows Server 2016 (Vm) 的虛擬機器上部署網路控制站。
+description: 本主題提供的指示說明如何使用 Windows PowerShell 在一或多部電腦上部署網路控制站，或在執行 Windows Server 2019 或 2016 (Vm) 的虛擬機器上部署網路控制站。
 ms.topic: how-to
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
 ms.author: anpaul
 author: AnirbanPaul
 manager: grcusanz
 ms.date: 08/23/2018
-ms.openlocfilehash: 78adaa6182ed24596471cb0ed5f1a736417af4d9
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3e7e020dfa5567608c53d41c4478a54ba89fb720
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948384"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716224"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>使用 Windows PowerShell 部署網路控制卡
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
-本主題提供的指示說明如何使用 Windows PowerShell，在一或多部虛擬機器上部署網路控制站 (Vm) 執行 Windows Server 2016。
+本主題提供有關使用 Windows PowerShell 在一或多部虛擬機器上部署網路控制站的指示， (Vm) 執行 Windows Server 2019 或2016。
 
 >[!IMPORTANT]
 >請勿在實體主機上部署網路控制站伺服器角色。 若要部署網路控制站，您必須在 \( \) 安裝于 hyper-v 主機上的 hyper-v 虛擬機器 VM 上安裝網路控制站伺服器角色。 在三部不同的 Hyper-v 主機上的 Vm 上安裝網路控制站之後 \- ，您必須 \- \( \) 使用 Windows PowerShell 命令 **NetworkControllerServer**，將主機新增至網路控制站，以啟用軟體定義網路 SDN 的 hyper-v 主機。 如此一來，您就可以讓 SDN 軟體 Load Balancer 運作。 如需詳細資訊，請參閱 [NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
@@ -82,7 +82,7 @@ New-NetworkControllerNodeObject -Name <string> -Server <String> -FaultDomain <st
 
 |參數|描述|
 |-------------|---------------|
-|名稱|**Name** 參數指定您想要新增至叢集之伺服器的易記名稱|
+|Name|**Name** 參數指定您想要新增至叢集之伺服器的易記名稱|
 |伺服器|**Server** 參數指定您要新增至叢集之伺服器的主機名稱、完整功能變數名稱 (FQDN) 或 IP 位址。 若為已加入網域的電腦，則需要 FQDN。|
 |FaultDomain|**FaultDomain** 參數會指定您要新增至叢集之伺服器的失敗網域。 此參數會定義在您要新增至叢集的伺服器時，可能會遇到失敗的伺服器。 這項失敗的原因可能是共用實體相依性，例如電源和網路來源。 容錯網域通常代表與這些共用相依性相關的階層，而更多伺服器可能會在容錯網域樹狀結構中的較高點一起故障。 在執行時間期間，網路控制站會考慮叢集中的容錯網域，並嘗試將網路控制站服務分散在不同的容錯網域中。 在任何一個容錯網域發生錯誤時，此程序有助確保該服務和其狀態的可用性沒有遭到破壞。 容錯網域會以階層格式來指定。 例如： "Fd：/DC1/Rack1/Host1"，其中 DC1 是資料中心名稱，Rack1 是機架名稱，而 Host1 是放置節點的主機名稱。|
 |RestInterface|**RestInterface** 參數會指定節點上的介面名稱，具象狀態傳輸 (REST) 通訊終止。 此網路控制站介面會從網路的管理層接收 Northbound API 要求。|
@@ -192,7 +192,7 @@ Install-NetworkController -Node <NetworkControllerNode[]> -ClientAuthentication 
 
 下表提供您可用來完成這些工作之 Windows PowerShell 命令的語法。
 
-|Task|Command|語法|
+|Task|Command|Syntax|
 |--------|-------|----------|
 |修改網路控制站叢集設定|Set-NetworkControllerCluster|`Set-NetworkControllerCluster [-ManagementSecurityGroup <string>][-Credential <PSCredential>] [-computerName <string>][-CertificateThumbprint <String> ] [-UseSSL]`
 |修改網路控制站應用程式設定|Set-NetworkController|`Set-NetworkController [-ClientAuthentication <ClientAuthentication>] [-Credential <PSCredential>] [-ClientCertificateThumbprint <string[]>] [-ClientSecurityGroup <string>] [-ServerCertificate <X509Certificate2>] [-RestIPAddress <String>] [-ComputerName <String>][-CertificateThumbprint <String> ] [-UseSSL]`

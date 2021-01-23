@@ -1,22 +1,22 @@
 ---
 title: RAS 閘道部署架構
-description: 您可以使用本主題來瞭解雲端服務提供者 (CSP) 部署 Windows Server 2016 中的 RAS 閘道，包括 RAS 閘道集區、路由反映程式，以及為個別租使用者部署多個閘道。
+description: 您可以使用本主題來瞭解雲端服務提供者 (CSP) 在 Windows Server 2019 和2016中部署 RAS 閘道，包括 RAS 閘道集區、路由反映程式，以及為個別租使用者部署多個閘道。
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: abc36a7e26ab25f7f121538dcadf9761b111a6e2
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: be8f41b71c1ee1c817e37919cacf33c11128abc4
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949364"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716974"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>RAS 閘道部署架構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 您可以使用本主題來瞭解「雲端服務提供者」 (CSP) 部署 RAS 閘道，包括 RAS 閘道集區、路由反映程式，以及為個別租使用者部署多個閘道。
 

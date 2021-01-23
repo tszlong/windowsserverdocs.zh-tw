@@ -1,22 +1,22 @@
 ---
 title: 部署軟體定義網路的基礎結構
-description: 本主題提供的主題連結，說明如何使用 Windows Server 2016 中的腳本，將 Microsoft 軟體定義的網路部署 (SDN) 基礎結構。
+description: 本主題提供的主題連結，說明如何使用 Windows Server 2019 和2016中的腳本，將 Microsoft 軟體定義的網路部署 (SDN) 基礎結構。
 ms.topic: how-to
 ms.assetid: 6c665c88-df28-4150-81d4-a47e9fa5255c
 ms.date: 08/23/2018
 ms.author: anpaul
 author: AnirbanPaul
 manager: grcusanz
-ms.openlocfilehash: 43bb1af29735dd1bf8ba911690abb78a09f1cf0d
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: a9ce251488d80b4e5180d1641bc2157227d08d71
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950114"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716014"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure"></a>部署軟體定義網路基礎結構
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 部署 Microsoft 的軟體定義網路 (SDN) 基礎結構。
 

@@ -1,22 +1,22 @@
 ---
 title: RAS 閘道高可用性
-description: 您可以使用本主題來瞭解 Windows Server 2016 中軟體定義網路 (SDN) 的「RAS 多租使用者閘道的高可用性設定」。
+description: 您可以使用本主題來瞭解 Windows Server 2019 和2016中軟體定義網路 (SDN) 的「RAS 多租使用者閘道的高可用性設定」。
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 34d826c9-65bc-401f-889d-cf84e12f0144
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 81eab7d646626d705ae8c57b022309c4864bf6d7
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: e591404d4225ff62fc70440a08445255dfe24d6e
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948834"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717014"
 ---
 # <a name="ras-gateway-high-availability"></a>RAS 閘道高可用性
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 您可以使用本主題來瞭解 RAS 多租使用者閘道的高可用性設定，以瞭解軟體定義網路 (SDN) 的高可用性設定。
 

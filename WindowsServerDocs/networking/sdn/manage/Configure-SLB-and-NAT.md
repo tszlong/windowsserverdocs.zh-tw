@@ -7,16 +7,16 @@ ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: a5130ab588f46bd8be8174a853b4e1f9cc1a568f
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: 646329bfdf487f96989addb841a3bdaed02438ac
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98038228"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716814"
 ---
 # <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>設定軟體負載平衡器以進行負載平衡和網路位址轉譯 (NAT)
 
->適用於：Windows Server (半年度管道)、Windows Server 2016
+>適用於：Windows Server 2019、Windows Server 2016
 
 您可以使用本主題來瞭解如何使用軟體定義網路 \( SDN \)  軟體負載平衡器 SLB，在 \( \) \( \) 應用程式的多個實例之間提供輸出的網路位址轉譯 NAT、輸入 nat 或負載平衡。
 
