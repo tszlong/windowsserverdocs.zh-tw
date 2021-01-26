@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 43c5cbda88f02792a4c0a8f91f84909a3c303c2b
-ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
+ms.openlocfilehash: 25c0c6f6f13d036ca5bc83df86cd63940d82f46c
+ms.sourcegitcommit: 6717decb5839aa340c81811d6fde020aabaddb3b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97811445"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98781843"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>管理 AD FS 的 SSL/TLS 通訊協定和加密套件
 下列檔提供如何停用和啟用特定 TLS/SSL 通訊協定和加密套件的相關資訊，這些是由 AD FS
@@ -42,7 +42,7 @@ AD FS 使用 Schannel.dll 來執行其安全的通訊互動。  目前 AD FS 支
 
 下列登錄機碼位於相同的位置： HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols。  使用 regedit 或 PowerShell 來啟用或停用這些通訊協定和加密套件。
 
-![登錄位置](media/Managing-SSL-Protocols-in-AD-FS/registry.png)
+![登錄編輯程式的螢幕擷取畫面，其中顯示位於 [通訊協定] 資料夾中的登錄機碼。](media/Managing-SSL-Protocols-in-AD-FS/registry.png)
 
 ## <a name="enable-and-disable-ssl-20"></a>啟用及停用 SSL 2。0
 使用下列登錄機碼和其值來啟用和停用 SSL 2.0。
@@ -178,7 +178,7 @@ Write-Host 'SSL 2.0 has been disabled.'
     Write-Host 'TLS 1.1 has been disabled.'
 ```
 
-## <a name="enable-and-disable-tls-12"></a>啟用及停用 TLS 1。2
+## <a name="enable-and-disable-tls-12"></a>啟用與停用 TLS 1.2
 
 使用下列登錄機碼和其值來啟用和停用 TLS 1.2。
 
@@ -217,7 +217,7 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\
 
-![登錄位置](media/Managing-SSL-Protocols-in-AD-FS/cipher.png)
+![[登錄編輯程式] 的螢幕擷取畫面，其中顯示位於 [加密] 資料夾中的登錄機碼。](media/Managing-SSL-Protocols-in-AD-FS/cipher.png)
 
 
 
@@ -250,7 +250,7 @@ Write-Host 'SSL 2.0 has been disabled.'
 
 您可以停用特定的加密，方法是將它們從 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Cryptography\Configuration\Local\SSL\00010002 中移除
 
-![登錄位置](media/Managing-SSL-Protocols-in-AD-FS/suites.png)
+![[登錄編輯程式] 的螢幕擷取畫面，其中顯示00010002資料夾的 [編輯多字串] 對話方塊。](media/Managing-SSL-Protocols-in-AD-FS/suites.png)
 
 若要啟用加密套件，請將其字串值新增至函數的多重字串值索引鍵。  例如，如果我們想要啟用 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521，則會將它新增至字串。
 

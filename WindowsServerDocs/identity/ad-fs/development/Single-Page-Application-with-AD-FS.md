@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 06/13/2018
 ms.topic: article
-ms.openlocfilehash: 2f730fad7996c17dbe7c7130f078492917537efb
-ms.sourcegitcommit: e0070b24e0423187eb2b36ba92072fed23880aa8
+ms.openlocfilehash: 7e3299d9d33690066206a5698958f95663414ae4
+ms.sourcegitcommit: 6717decb5839aa340c81811d6fde020aabaddb3b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186406"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98781816"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>使用 OAuth 和 ADAL.JS 搭配 AD FS 2016 或更新版本來建立單一頁面 web 應用程式
 
@@ -78,17 +78,17 @@ git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepage
 
 1. 開啟 AD FS 管理主控台，然後按一下 [ **新增應用程式群組**]。 在 [**新增應用程式群組]** 中，輸入應用程式的名稱、描述，然後從 [**用戶端-伺服器應用程式**] 區段中選取要 **存取 Web 應用程式範本的網頁瀏覽器**，如下所示
 
-    ![建立新的應用程式群組](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
+    ![[新增應用程式群組] Wizard [歡迎使用] 頁面的螢幕擷取畫面，其中顯示已醒目提示存取 web 應用程式範本的網頁瀏覽器。](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
 
 2. 在下一個頁面的 **原生應用程式** 上，提供應用程式用戶端識別碼和重新導向 URI，如下所示
 
-    ![建立新的應用程式群組](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
+    ![[新增應用程式群組] Wizard 的 [原生應用程式] 頁面的螢幕擷取畫面，其中顯示重新導向 U R I。](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
 
 3. 在下一個頁面上，套用 **存取控制原則**，讓 *所有人都* 能擁有
 
 4. 摘要頁面看起來應該如下所示
 
-    ![建立新的應用程式群組](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
+    ![[新增應用程式群組] Wizard 的 [摘要] 頁面螢幕擷取畫面。](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
 
 5. 按一下 **[下一步** ]，完成應用程式群組的新增，然後關閉嚮導。
 
@@ -147,7 +147,7 @@ and add:
     );
 ```
 
-| 參數 | Description |
+| 參數 | 描述 |
 | --------- | ----------- |
 | ValidAudience | 這會設定將在權杖中檢查的「物件」值 |
 | ValidIssuer | 這會設定將在權杖中檢查的「簽發者」值 |
@@ -177,11 +177,11 @@ and add:
 
 在 Fiddler 中，您可以在 # 片段中看到傳回的權杖是 URL 的一部分。
 
-![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.png)
+![Fiddler 的螢幕擷取畫面，顯示您可以在 # 片段中看到作為 URL 一部分傳回的權杖。](media/Single-Page-Application-with-AD-FS/singleapp5a.png)
 
 您現在可以呼叫後端 API，為登入的使用者新增 ToDo 清單專案：
 
-![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.png)
+![ADAL JS 範例應用程式的螢幕擷取畫面。](media/Single-Page-Application-with-AD-FS/singleapp6.png)
 
 ## <a name="next-steps"></a>後續步驟
 [AD FS 開發](../../ad-fs/AD-FS-Development.md)
