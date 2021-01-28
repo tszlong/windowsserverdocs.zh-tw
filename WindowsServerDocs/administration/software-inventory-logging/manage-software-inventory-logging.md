@@ -7,22 +7,22 @@ author: brentfor
 ms.author: brentf
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: dba46b75da685f5b2cb74e8e08c53db9aa643aba
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 9be0d8c33ca8347cd03f4db1cb99c1d371add1c3
+ms.sourcegitcommit: 2ede79efbadd109099bb6fdb744796adde123922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628260"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98923663"
 ---
 # <a name="manage-software-inventory-logging"></a>管理軟體清查記錄
 
 >適用于： Windows Server (半年通道) 、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
-本檔說明如何管理軟體清查記錄，這項功能可協助資料中心系統管理員在一段時間內輕鬆地記錄 Microsoft 軟體資產管理資料來進行部署。 本文件說明如何管理軟體清查記錄。 在搭配 Windows Server 2012 R2 使用軟體清查記錄之前，請確定每個需要清查的系統上都已安裝 Windows Update [kb 3000850](https://support.microsoft.com/kb/3000850) 和 [KB 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要 Wndows 更新。 這項功能會在要清查的每部伺服器上本機執行。 它不會從遠端伺服器收集資料。
+本檔說明如何管理軟體清查記錄，這項功能可協助資料中心系統管理員在一段時間內輕鬆地記錄 Microsoft 軟體資產管理資料來進行部署。 本文件說明如何管理軟體清查記錄。 在搭配 Windows Server 2012 R2 使用軟體清查記錄之前，請確定每個需要清查的系統上都已安裝 Windows Update [kb 3000850](https://support.microsoft.com/kb/3000850) 和 [KB 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要 Windows 更新。 這項功能會在要清查的每部伺服器上本機執行。 它不會從遠端伺服器收集資料。
 
 軟體清查記錄功能也可新增 Windows Server 2012 R2 之前的兩個 Windows Server 版本。 您可以安裝以下更新，在 Windows Server 2012 和 Windows Server 2008 R2 SP1 中新增軟體清查記錄功能：
 
-- **Windows Server 2012 (Standard 或 Datacenter Edition) **
+- **Windows Server 2012 (Standard 或 Datacenter Edition)**
 
 > [!NOTE]
 > 套用下方的更新程式封裝前，請確定您已安裝了 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855)。
@@ -119,7 +119,7 @@ ms.locfileid: "89628260"
 
 2.  您可以使用 **執行 start-sillogging – CertificateThumbprint** 來指定有效 SSL 憑證的指紋雜湊，用來驗證您的匯總伺服器的資料傳輸 (您的匯總伺服器必須設定為接受雜湊) 。
 
-3.  在要轉寄資料之來源本機伺服器的**本機電腦/個人存放區** (或 **/LocalMachine/MY**) 安裝有效的 SSL 憑證。
+3.  在要轉寄資料之來源本機伺服器的 **本機電腦/個人存放區** (或 **/LocalMachine/MY**) 安裝有效的 SSL 憑證。
 
 建議您先完成這些步驟，然後再使用 **Start-SilLogging**。  若要在使用 **Start-SilLogging** 之後再執行這些步驟，只須停止再重新啟動 SIL 即可。  您也可以使用 Publish-SilData Cmdlet，確認彙總伺服器具有此伺服器的所有資料。
 
@@ -204,7 +204,7 @@ SystemManufacturer        : Microsoft Corporation
 
 2. 開啟 [Windows 檔案總管]。
 
-3. 前往**\Windows\System32\Logfiles\SIL \\ **
+3. 前往 **\Windows\System32\Logfiles\SIL \\**
 
 4. 刪除資料夾中的所有檔案。
 
@@ -212,7 +212,7 @@ SystemManufacturer        : Microsoft Corporation
 如果透過網路轉送失敗，軟體清查記錄會暫時儲存每小時收集的資料。 記錄檔會儲存在 \Windows\System32\LogFiles\SIL\ 目錄中。 您可以搭配已排定的定期伺服器備份來進行此軟體清查記錄資料的備份。
 
 > [!IMPORTANT]
-> 如果作業系統因故必須進行修復安裝或升級，則儲存在本機的任何記錄檔將會遺失。如果這份資料對於營運非常重要，建議您在安裝新的作業系統之前先行備份。 修復或升級之後，只需還原至相同的位置。
+> 如果作業系統因故必須進行修復安裝或升級，則儲存在本機的任何記錄檔將會遺失。  如果這份資料對於營運非常重要，建議您在安裝新的作業系統之前先行備份。 修復或升級之後，只需還原至相同的位置。
 
 > [!NOTE]
 > 如果基於任何原因，管理 SIL 在本機記錄的資料保留期間變得很重要，可透過在此變更登錄值來進行設定： \ HKEY_LOCAL_MACHINE \\ SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging。 預設值為30天的「30」。
@@ -229,11 +229,11 @@ SIL 記錄的資料，但如果轉寄至目標 URI 失敗，則儲存在本機 (
 
 ## <a name="working-with-date-and-time-settings-in-windows-server-2012-r2-software-inventory-logging"></a><a name="BKMK_Step8"></a>使用 Windows Server 2012 R2 軟體清查記錄中的日期和時間設定
 
--   使用 [Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay 來設定執行 SIL 記錄的時間時，您必須指定日期和時間。設定行事曆日期，且在未到達日期之前不會發生記錄 (以本機系統時間為準)。
+-   使用 [Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay 來設定執行 SIL 記錄的時間時，您必須指定日期和時間。 設定行事曆日期，且在未到達日期之前不會發生記錄 (以本機系統時間為準)。
 
 -   使用 [get-silsoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))或 [get-silwindowsupdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630))時，"InstallDate" 一律會顯示12：00：上午10:00，這是無意義的值。
 
--   使用 [get-silualaccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))時，"SampleDate" 一律會顯示11：59：00，也就是無意義的值。在這些 Cmdlet 查詢中，日期是相關資料。
+-   使用 [get-silualaccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))時，"SampleDate" 一律會顯示11：59：00，也就是無意義的值。  在這些 Cmdlet 查詢中，日期是相關資料。
 
 ## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>在掛接虛擬硬碟中啟用及設定軟體清查記錄
 離線虛擬機器也支援軟體清查記錄的設定及啟用。 這項實務的實際用途，是要涵蓋跨資料中心進行廣泛部署的「黃金映射」設定，以及設定從內部部署到雲端部署的一般使用者映射。
@@ -273,20 +273,20 @@ SIL 記錄的資料，但如果轉寄至目標 URI 失敗，則儲存在本機 (
 > [!NOTE]
 > 在 [KB 3000850](https://support.microsoft.com/kb/3000850) 更新的安裝中已移除這項功能。
 
-在 Windows Server 2012 R2 Hyper-v 主機上使用軟體清查記錄時，如果來賓 (s) 中已啟動 SIL 記錄，就可以從本機執行的 Windows Server 2012 R2 來賓取得 SIL 資料。 不過，只有在使用 Get-sildata 和發佈 Get-sildata Powershell Cmdlet 時才可以這樣做，而且只能在主機和來賓的 WIndows Server 2012 R2 中使用。這項功能的目的是讓提供客體 VM 給租用戶或其他大型公司實體的資料中心系統管理員，可以在 Hypervisor 主機擷取軟體清查資料，然後後續將所有資料轉送至彙總工具 (或目標 URI)。
+在 Windows Server 2012 R2 Hyper-v 主機上使用軟體清查記錄時，如果來賓 (s) 中已啟動 SIL 記錄，就可以從本機執行的 Windows Server 2012 R2 來賓取得 SIL 資料。 不過，只有在使用 Get-SilData 和 Publish-SilData Powershell Cmdlet 時才能這麼做，而且只有在主機和來賓的 Windows Server 2012 R2 中才可能。  這項功能的目的是讓提供客體 VM 給租用戶或其他大型公司實體的資料中心系統管理員，可以在 Hypervisor 主機擷取軟體清查資料，然後後續將所有資料轉送至彙總工具 (或目標 URI)。
 
-以下兩個範例說明 PowerShell 主控台的輸出 (在 Windows Server 2012 R2 Hyper-v 主機上執行的縮寫) ，其執行的 Windows Server 2012 R2 來賓 VM 已啟動 SIL 記錄。您會注意到單使用 Get-SilData 的第一個範例，會如預期般輸出主機的所有資料。另還包含在內的是客體的所有 SIL 資料，但會以摺疊格式表示。若要展開並檢視客體的這項資料，您只需剪下並貼上以下第二個範例中所使用的程式碼片段即可。客體的 SIL 資料物件的物件內一定會有相關聯的 VM GUID。
+以下兩個範例說明 PowerShell 主控台的輸出 (在 Windows Server 2012 R2 Hyper-v 主機上執行的縮寫) ，其執行的 Windows Server 2012 R2 來賓 VM 已啟動 SIL 記錄。  您會注意到單使用 Get-SilData 的第一個範例，會如預期般輸出主機的所有資料。  另還包含在內的是客體的所有 SIL 資料，但會以摺疊格式表示。  若要展開並檢視客體的這項資料，您只需剪下並貼上以下第二個範例中所使用的程式碼片段即可。  客體的 SIL 資料物件的物件內一定會有相關聯的 VM GUID。
 
 > [!NOTE]
-> 由於 SIL 資料會輸出在主控台上，使用 Get-SilData Cmdlet 時，在資料流中，不一定永遠都能以預測的順序輸出物件。在下列兩個範例中，文字已經過色彩標示 (藍色表示實體主機資料，綠色表示虛擬客體資料)，這單純只做為這份文件的說明工具使用。
+> 由於 SIL 資料會輸出在主控台上，使用 Get-SilData Cmdlet 時，在資料流中，不一定永遠都能以預測的順序輸出物件。  在下列兩個範例中，文字已經過色彩標示 (藍色表示實體主機資料，綠色表示虛擬客體資料)，這單純只做為這份文件的說明工具使用。
 
 **輸出範例 1**
 
-![範例輸出報表的影像](../media/software-inventory-logging/SILHyper-VExample1.png)
+![第一個範例輸出報告的螢幕擷取畫面。](../media/software-inventory-logging/SILHyper-VExample1.png)
 
-**輸出範例 2** (w/Expand get-sildata 函式) 
+**輸出範例 2** (w/Expand-SilData 函數) 
 
-![範例輸出報表的影像](../media/software-inventory-logging/SILHyper-VExample2.png)
+![第二個範例輸出報表的螢幕擷取畫面，其中包含 Expand-SilData 函數。](../media/software-inventory-logging/SILHyper-VExample2.png)
 
 ## <a name="see-also"></a>另請參閱
 [使用軟體清查記錄開始](get-started-with-software-inventory-logging.md) 

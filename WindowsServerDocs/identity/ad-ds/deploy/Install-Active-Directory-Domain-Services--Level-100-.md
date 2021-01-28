@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e66a03ec89a2cd77fbeafd59972a24a020ed66f7
-ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
+ms.openlocfilehash: 1d7217d6e559315cd1f5e4b1aac500cf28b2bd11
+ms.sourcegitcommit: 2ede79efbadd109099bb6fdb744796adde123922
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879837"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98923674"
 ---
 # <a name="install-active-directory-domain-services-level-100"></a>安裝 Active Directory 網域服務 (層級 100)
 
@@ -360,12 +360,12 @@ AD DS 可以使用伺服器管理員中的 [新增角色]，然後使用 [Active
 
 9. 在 [結果] 頁面上，確認安裝已經成功，然後按一下 [將此伺服器升級為網域控制站]，啟動 [Active Directory 網域服務設定精靈]。
 
-    ![安裝 AD DS](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_SMPromotes.gif)
+    ![[新增角色及功能] 頁面上 [將這部伺服器升級為網域控制站] 選項的 [安裝進度] 頁面的螢幕擷取畫面。](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_SMPromotes.gif)
 
     > [!IMPORTANT]
     > 如果您在這個時候關閉 [新增角色精靈] 而沒有啟動 [Active Directory 網域服務設定精靈]，只要按一下 [伺服器管理員] 中的 [工作] 就可以重新啟動它。
 
-    ![安裝 AD DS](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_Tasks.gif)
+    ![顯示部署後設定警告圖示伺服器管理員的螢幕擷取畫面。](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_Tasks.gif)
 
 10. 在 [部署設定] 頁面上，選擇下列其中一個選項：
 
