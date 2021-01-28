@@ -5,14 +5,14 @@ manager: eldenc
 ms.author: nedpyle
 ms.topic: how-to
 author: nedpyle
-ms.date: 04/26/2019
+ms.date: 01/27/2021
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: 9d7153b5147d576f54fa90efc5724f994618cfc5
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: ad15d4159190a41b62bf2df1d4eb2db827c2a8a4
+ms.sourcegitcommit: ebe97af985429ec5cdb86eba75820bc180552811
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97941724"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98925915"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>使用共用存放裝置的延展式叢集複寫
 
@@ -22,6 +22,9 @@ ms.locfileid: "97941724"
 
 > [!IMPORTANT]
 > 在這個評估中，不同網站中的伺服器必須能夠透過網路來與其他伺服器進行通訊，但不會有任何實體連線來連至其他網站的共用存放裝置。 這個案例不會使用儲存空間直接存取。
+
+> [!NOTE]
+> 您也可能想要考慮使用 Azure Stack HCI 的解決方案來實行延展叢集。 如需詳細資訊，請參閱 [Azure Stack HCI 中的延伸叢集總覽](https://docs.microsoft.com/azure-stack/hci/concepts/stretched-clusters)。
 
 ## <a name="terms"></a>詞彙
 本逐步解說使用下列環境做為範例︰
@@ -804,3 +807,4 @@ ms.locfileid: "97941724"
 ## <a name="see-also"></a>另請參閱
 - [Windows Server 2016](../../index.yml)
 - [Windows Server 2016 中的儲存空間直接存取](../storage-spaces/storage-spaces-direct-overview.md)
+- [Azure Stack HCI 中的延伸叢集](https://docs.microsoft.com/azure-stack/hci/concepts/stretched-clusters)
