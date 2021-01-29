@@ -5,12 +5,12 @@ ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
 ms.topic: troubleshooting
-ms.openlocfilehash: f75e6bcca3a4447920d3b3f571fc606ad68752e6
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 902ce4f5e30811d54d986c63fb8ca30cd0803aa5
+ms.sourcegitcommit: d1815253b47e776fb96a3e91556fd231bef8ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947184"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99042474"
 ---
 # <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>針對事件識別碼 1135 的叢集問題進行疑難排解
 
@@ -69,8 +69,8 @@ Cluster node ' **NODE A** ' was removed from the active failover cluster members
 
 您正在查看所有事件，且叢集中的所有節點都表示節點 A 已遺失通訊。
 
-![案例 a ](media/troubleshooting-cluster-event-id-1135/18647.png)
- ![ 案例 a](media/troubleshooting-cluster-event-id-1135/18648.png)
+![顯示節點 A、節點 B 和節點 C 成功通訊的圖表。 ](media/troubleshooting-cluster-event-id-1135/18647.png)
+ ![顯示節點 A 與節點 B 和節點 C 的通訊中斷的圖表。](media/troubleshooting-cluster-event-id-1135/18648.png)
 
 當您看到節點 A 上的系統記錄時，它會有叢集中所有其餘節點的事件。
 
@@ -84,11 +84,11 @@ Cluster node ' **NODE A** ' was removed from the active failover cluster members
 
 您正在查看節點上的事件，並讓我們假設您的叢集分散在兩個網站上。 節點 A、節點 B 和節點 C，位於網站1和節點 D & 節點 E （位於網站2）。
 
-![案例 B](media/troubleshooting-cluster-event-id-1135/18649.png)
+![此圖顯示網站1透過 WAN 連結成功與網站2進行通訊。](media/troubleshooting-cluster-event-id-1135/18649.png)
 
 在節點 A、B 和 C 上，您會看到記錄的事件是連接到節點 D & E。同樣地，當您看到節點 D & E 的事件時，這些事件會建議我們遺失與 A、B 和 C 的通訊。
 
-![案例 B](media/troubleshooting-cluster-event-id-1135/18650.png)
+![此圖顯示網站1已遺失與網站2的 WAN 連結連線。](media/troubleshooting-cluster-event-id-1135/18650.png)
 
 #### <a name="solution"></a>解決方案
 

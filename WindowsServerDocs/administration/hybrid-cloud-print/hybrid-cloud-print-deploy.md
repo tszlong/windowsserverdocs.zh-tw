@@ -7,12 +7,12 @@ author: msjimwu
 ms.author: jimwu
 manager: mtillman
 ms.date: 3/15/2018
-ms.openlocfilehash: 80bc794a5719792941f91d6d50fe35b92006dea6
-ms.sourcegitcommit: 29b8942ea46196c12a67f6b6ad7f8dd46bf94fb2
+ms.openlocfilehash: 143848ed2ea4c9c1b01e3df795faacfcca9c2968
+ms.sourcegitcommit: d1815253b47e776fb96a3e91556fd231bef8ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065664"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99042584"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合式雲端列印
 
@@ -200,15 +200,15 @@ ms.locfileid: "98065664"
 
     - 請參閱下面的螢幕擷取畫面，以找出 Azure Active Directory 的功能變數名稱。
 
-    ![列印伺服器如何取得 AAD 功能變數名稱](../media/hybrid-cloud-print/PrintServer-GetAADDomainName.png)
+      ![列印伺服器如何取得 AAD 功能變數名稱](../media/hybrid-cloud-print/PrintServer-GetAADDomainName.png)
 
     - 請參閱下列螢幕擷取畫面，以找出 Azure Active Directory 識別碼。
 
-    ![列印伺服器雲端列印部署](../media/hybrid-cloud-print/PrintServer-GetAADId.png)
+      ![Azure 的螢幕擷取畫面，其中顯示已呼叫的 Azure Active Directory、屬性和目錄 D 選項。](../media/hybrid-cloud-print/PrintServer-GetAADId.png)
 
     - CloudPrintDeploy 腳本的輸出如下所示：
 
-    ![列印伺服器雲端列印部署](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
+      ![PowerShell 視窗的螢幕擷取畫面，其中顯示 CloudPrintDeploy 腳本的樣子。](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
     - 檢查記錄檔以查看是否有任何錯誤： `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
@@ -223,7 +223,7 @@ ms.locfileid: "98065664"
     - 請確定 AzureTenant 是 Azure AD 功能變數名稱。
     - 請確定 URL 是 Mopria Discovery Service 應用程式的應用程式識別碼 URI。
 
-    ![列印伺服器 Mopria 登錄機碼](../media/hybrid-cloud-print/PrintServer-RegEdit-Mopria.png)
+    ![螢幕擷取畫面，顯示 [登錄編輯程式] 中顯示的 [Mopria 探索服務] 資料夾，其中包含 Azure 物件、Azure 租使用者和 URL 值。](../media/hybrid-cloud-print/PrintServer-RegEdit-Mopria.png)
 
 6. 在提升 Powershell 命令提示字元中執行 **iisreset** 。 這可確保在上一個步驟中所做的任何登錄變更都生效。
 
@@ -244,7 +244,7 @@ ms.locfileid: "98065664"
 
    > 注意：建議您藉由保留-requiredversion 選項來下載並安裝最新版本。
 
-    ![列印伺服器 Mopria 登錄機碼](../media/hybrid-cloud-print/PrintServer-InstallSQLite.png)
+    ![PowerShell 視窗的螢幕擷取畫面，其中顯示 Register-PackageSource 和 Install-Package Cmdlet 的結果。](../media/hybrid-cloud-print/PrintServer-InstallSQLite.png)
 
 9. 將 SQLite dll 複製到 MopriaCloudService Webapp bin 資料夾 (C:\inetpub\wwwroot\MopriaCloudService\bin) 。
     - 建立包含下列 PowerShell 腳本的 ps1 檔案。
@@ -299,7 +299,7 @@ ms.locfileid: "98065664"
     - 在檔案總管中，開啟 [MopriaDeviceDb] 檔案屬性，以新增可在 [安全性] 索引標籤中發佈至 Mopria 資料庫的使用者或群組。使用者或群組必須存在於內部部署 Active Directory 中，並與 Azure AD 同步處理。
     - 如果解決方案部署到無法路由傳送的網域 (例如 *mydomain* *. 本機*) ，則 Azure AD 網域 (例如 onmicrosoft.com，或從協力廠商購買的網域，) 必須以 UPN 尾碼的形式新增至內部部署 Active Directory。 如此一來，將會發佈印表機的相同使用者 (例如 admin@*domainname*. onmicrosoft.com) 可以新增到資料庫檔案的安全性設定中。 請參閱 [準備無法路由傳送的網域以進行目錄同步](/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)作業。
 
-    ![列印伺服器 Mopria 登錄機碼](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
+    ![Mopria 裝置 D b 點 D b [內容] 對話方塊的螢幕 [安全性] 索引標籤快照，其中反白顯示 H C P 系統管理值。](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
 
 ### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>步驟 5 \[ \] ：選擇性-使用 Azure AD 設定預先驗證
 

@@ -5,12 +5,12 @@ ms.date: 06/10/2020
 author: Deland-Han
 ms.author: delhan
 ms.topic: troubleshooting
-ms.openlocfilehash: 55acc6e01e597261d0da3e7dfb572e77a277216b
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9def2be46000671c5ca725683437afaae8a8a366
+ms.sourcegitcommit: d1815253b47e776fb96a3e91556fd231bef8ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947644"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99042534"
 ---
 # <a name="understanding-the-lack-of-distributed-file-locking-in-dfsr"></a>了解 DFSR 中 (缺乏) 分散式檔案鎖定 
 
@@ -31,11 +31,11 @@ ms.locfileid: "97947644"
 
 現在，這遠比大家覺得 *更不* 常見。 一般來說，在本機環境中會修改真正的共用檔案;在分公司或同一個資料列中。 它們通常會由相同小組的人員來處理，因此人們通常會察覺修改資料的同事。 因為它們通常位於相同的網站上，所以在共用檔上工作的所有使用者都將使用相同的伺服器。 Windows SMB 在此處理這種情況。 當使用者已鎖定檔案進行修改，而他的同事嘗試編輯該檔案時，其他使用者將會收到如下的錯誤：
 
-![使用中的檔案](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/1.jpg)
+![[使用中的檔案] 對話方塊的螢幕擷取畫面，其中顯示錯誤訊息，指出此動作無法完成，因為檔案已在另一個程式中開啟。](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/1.jpg)
 
 如果開啟檔案的應用程式真的很聰明（像是 Word 2007），它可能會提供您：
 
-![使用中的檔案](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/2.jpg)
+![[使用中的檔案] 對話方塊的螢幕擷取畫面，其中顯示其他使用者鎖定檔案時可以採取的三個動作。](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/2.jpg)
 
 DFSR 具有鎖定檔案的機制，但它只在伺服器本身的內容中。 如果它的本機複本具有獨佔鎖定，DFSR 就不會將檔案複製到其中或從中取出。 但這並不會防止其他伺服器上的任何人修改檔案。
 
@@ -49,13 +49,13 @@ DFSR 具有鎖定檔案的機制，但它只在伺服器本身的內容中。 �
 
 > 擁有中央的「流量 cop」可讓一部伺服器知道所有其他伺服器，以及使用者已鎖定的檔案。 可惜的是，這也表示分散式鎖定系統中通常會有單一失敗點。
 
-![拓撲](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/3.png)
+![顯示如何使用訊息代理程式機制的圖表。](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/3.png)
 
   - 完全路由網路的需求
 
 > 因為中央訊息代理程式必須能夠與所有參與檔案複寫的伺服器通訊，所以這會移除處理複雜網路拓撲的能力。 通常不可能進行環狀拓撲和多中樞和輪輻拓撲。 在非完全路由的網路中，某些伺服器可能無法直接聯繫彼此或訊息代理程式，而且只能與本身可以與另一部伺服器通訊的夥伴溝通。 這在多主控環境中是正常的，但無法使用代理機制。
 
-![拓撲](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/4.png)
+![顯示完全路由網路需求的圖表。](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/4.png)
 
   - 受限於一對伺服器
 
@@ -73,13 +73,13 @@ DFSR 具有鎖定檔案的機制，但它只在伺服器本身的內容中。 �
 
 當您進一步考慮此問題時，會開始進行一些基本的問題。 比方說，如果我們有四部具有可由使用者在四個網站中修改之資料的伺服器，且其中一個的 WAN 連線離線，該怎麼辦？ 使用者仍然可以存取其個別的伺服器，但我們是否應該讓他們？ 我們不希望它們進行衝突的變更，但我們一定希望它們保持運作，並讓公司成為金錢。 如果我們在該時間點隨意封鎖變更，即使沒有發生任何衝突，使用者也不會有任何作用\! 沒有任何方法可告訴其他伺服器正在使用該檔案，而您又回到第一部伺服器。
 
-![拓撲](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/5.png)
+![此圖顯示部分網路中斷的結果。](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/5.png)
 
 然後是 SMB 本身和報告鎖定的錯誤處理。 我們無法真的改變 SMB 報告共用違規的方式，因為我們會打破大量的應用程式，而且用戶端也不會瞭解新的擴充錯誤訊息。 像 Word 2007 的應用程式會執行一些 undercover 的 trickery，以找出正在鎖定檔案的物件，但大部分的應用程式並不知道誰有使用檔案 (或甚至是 SMB 存在。 其實 ) 。 所以當使用者收到「這個檔案正在使用中」的訊息時，它並不是特別可操作的，對技術人員來說， 技術支援中心是否可存取所有檔案伺服器，以查看哪些使用者正在存取檔案？ 混亂。
 
 因為我們想要多宿主的高可用性，所以不需要 broker 系統;我們可能需要在所有伺服器上執行某些專案，讓它們可以透過非完全路由網路進行通訊。 這需要非常複雜的同步處理技術。 它會在網路上增加一些額外負荷 (雖然可能不會) ，而且必須快速快速，以確定我們不會讓使用者在工作中執行;它本身需要 outrun 檔案複寫，事實上，它可能需要以某種方式與複寫系結。 此外，它也必須考慮與網路相關的伺服器中斷，且不會發生伺服器損毀的情況。
 
-![拓撲](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/6.png)
+![此圖顯示五部伺服器之間的鎖定和複寫。](./media/understanding-the-lack-of-distributed-file-locking-in-dfsr/6.png)
 
 然後我們再回到特殊的用戶端軟體，以瞭解鎖定，並可提供使用者一些有用的資訊 ( 「Susie 會計入，並告訴她釋出該檔」，抱歉，檔案鎖定拓撲已中斷，且您的系統管理員防止您開啟此檔案，直到其固定為止」等等) 。 在 Windows 中執行的數百萬個應用程式很容易就能順利地播放。 有許多作業系統不受支援或無法取得軟體– Windows 2000 已不提供主流支援，而 XP 很快就會推出。 Linux 和 Mac 用戶端在認為很重要的情況下不會有此軟體，因此客戶必須希望其廠商建立類似的內容。
 

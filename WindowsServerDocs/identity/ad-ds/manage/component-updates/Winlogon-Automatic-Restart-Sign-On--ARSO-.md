@@ -8,12 +8,12 @@ manager: daveba
 ms.reviewer: cahick
 ms.date: 08/20/2019
 ms.topic: article
-ms.openlocfilehash: bbeff22ce85e1c108852a0e978ad56b1e70d10c5
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 36cb5e03e8e9693b4227e2cde650f9a2f6ccbab6
+ms.sourcegitcommit: d1815253b47e776fb96a3e91556fd231bef8ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070540"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99042504"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動重新開機登入 (ARSO) 
 
@@ -48,7 +48,7 @@ ARSO 會以不同的方式來處理非受控與受控裝置。 若是未受管�
 
 **Intune 原則：**
 
-- 平台：Windows 10 及以上版本
+- 平台：Windows 10 及更新版本
 - 配置檔案類型：系統管理範本
 - 路徑： \Windows \Windows 登入選項
 
@@ -79,7 +79,7 @@ ARSO 會以不同的方式來處理非受控與受控裝置。 若是未受管�
 
 **輸入：** Dword
 
-![winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-signinpolicy.png)
+![[重新開機後自動登入和鎖定上次互動使用者] 對話方塊的螢幕擷取畫面。](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-signinpolicy.png)
 
 ## <a name="policy-2"></a>原則 #2
 
@@ -89,7 +89,7 @@ ARSO 會以不同的方式來處理非受控與受控裝置。 若是未受管�
 
 **Intune 原則：**
 
-- 平台：Windows 10 及以上版本
+- 平台：Windows 10 及更新版本
 - 配置檔案類型：系統管理範本
 - 路徑： \Windows \Windows 登入選項
 
@@ -120,7 +120,7 @@ ARSO 會以不同的方式來處理非受控與受控裝置。 若是未受管�
 
 **輸入：** Dword
 
-![winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/arso-policy-setting.png)
+![[設定重新開機或冷開機後，自動登入和鎖定上次互動式使用者] 模式的螢幕擷取畫面。](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/arso-policy-setting.png)
 
 ## <a name="troubleshooting"></a>疑難排解
 
