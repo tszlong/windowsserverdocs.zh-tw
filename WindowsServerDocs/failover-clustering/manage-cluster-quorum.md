@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cf4b9a5196c6cf92d4f075d25e03ab719b341422
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 7aec60e1d66e956875dd43889fdeb69485292eae
+ms.sourcegitcommit: 1e94c10ff51f43325fa9184b09bbdfeb8c8fed36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865726"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081734"
 ---
 # <a name="configure-and-manage-quorum"></a>設定和管理仲裁
 
@@ -58,7 +58,7 @@ Windows Server 中的仲裁模型很有彈性。 如果您需要修改叢集的�
 | ---------    |---------        |---------                        |
 | 磁碟見證     |  <ul><li> 儲存叢集資料庫複本的固定 LUN</li><li> 最適合用於具有共用 (非複寫) 存放裝置的叢集</li>       |  <ul><li>LUN 的大小必須至少為 512 MB</li><li> 必須是叢集專用且未指派給叢集角色</li><li> 必須包含在叢集存放裝置中並通過存放裝置驗證測試</li><li> 不能是作為叢集共用磁碟區 (CSV) 的磁碟</li><li> 具有單一磁碟區的基本磁碟</li><li> 不需要有磁碟機代號</li><li> 可以使用 NTFS 或 ReFS 格式化</li><li> 可選擇性設定硬體 RAID 以提供容錯功能</li><li> 應從備份及病毒掃描中排除</li><li> 儲存空間直接存取不支援磁片見證</li>|
 | 檔案共用見證     | <ul><li>在執行 Windows Server 的檔案伺服器上設定的 SMB 檔案共用</li><li> 不會儲存叢集資料庫的複本</li><li> 維護僅存在於 witness.log 檔案中的叢集資訊</li><li> 最適合用於具備複寫的存放裝置的多站台叢集 </li>       |  <ul><li>必須至少有 5 MB 的可用空間</li><li> 必須專用於單一叢集，且不用來儲存使用者或應用程式資料</li><li> 必須啟用叢集名稱之電腦物件的寫入權限</li></ul><br>以下是代管檔案共用見證之檔案伺服器的其他考量：<ul><li>單一檔案伺服器可以設定多個叢集的檔案共用見證。</li><li> 檔案伺服器必須位於與叢集工作負載分開的站台上。 如果站台至站台之間網路通訊中斷時，這可讓任何叢集站台有相同的機會繼續運作。 如果檔案伺服器位於相同站台，該網站會成為主要的站台，而且是可連線檔案共用的唯一站台。</li><li> 如果虛擬機器不是位於使用檔案共用見證的同一叢集上，檔案伺服器就可以在虛擬機器上執行。</li><li> 為了獲得高可用性，可以在獨立的容錯移轉叢集上設定檔案伺服器。 </li>      |
-| 雲端見證     |  <ul><li>儲存在 Azure blob 儲存體中的見證檔案</li><li> 當叢集中的所有伺服器都有可靠的網際網路連線時，建議使用此選項。</li>      |  請參閱 [部署雲端見證](./deploy-cloud-witness.md)。       |
+| 雲端見證     |  <ul><li>儲存在 Azure Blob 儲存體中的見證檔案</li><li> 當叢集中的所有伺服器都有可靠的網際網路連線時，建議使用此選項。</li>      |  請參閱 [部署雲端見證](./deploy-cloud-witness.md)。       |
 
 ### <a name="node-vote-assignment"></a>節點投票指派
 
@@ -318,7 +318,7 @@ Net Start ClusSvc /PQ
 - 一開始只會在 *SiteA* 的節點中設定仲裁投票。 這是為了確保 *SiteB* 的節點狀態不會影響叢集仲裁。
 - 復原步驟會視 *SiteA* 是否可以承受暫時失敗或長期失敗而改變。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 * [容錯移轉叢集](./failover-clustering-overview.md)
 * [容錯移轉叢集 Windows PowerShell Cmdlet](/powershell/module/failoverclusters/)

@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/20/2020
-ms.openlocfilehash: b5b2511e49c379be20c7be5abf08581a17f0a463
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 29858d1f8dcbb3a6ba99dec0c520fd147115a0ec
+ms.sourcegitcommit: 1e94c10ff51f43325fa9184b09bbdfeb8c8fed36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89634792"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081666"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -53,7 +53,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
     | @FDATE | 檔案的上次修改日期戳記。 |
     | @FTIME | 上次修改檔案的時間戳記。 |
 
-- **Forfiles**命令可讓您在上執行命令，或將引數傳遞至多個檔案。 例如，您可以對副檔名為 .txt 的樹狀目錄中的所有檔案執行 **類型** 命令。 或者，您可以在磁片磁碟機 C 上執行每個批次檔 ( * .bat) ，其檔案名 Myinput.txt 為第一個引數。
+- **Forfiles** 命令可讓您在上執行命令，或將引數傳遞至多個檔案。 例如，您可以對副檔名為 .txt 的樹狀目錄中的所有檔案執行 **類型** 命令。 或者，您可以在磁片磁碟機 C 上執行每個批次檔 ( * .bat) ，其檔案名 Myinput.txt 為第一個引數。
 
 - 此命令可以：
 
@@ -63,7 +63,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
     - 使用變數區分目錄中的檔案 @ISDIR 。
 
-    - 使用字元的十六進位代碼，在命令列中包含特殊字元（使用 0x*HH* 格式） (例如，0x09 用於索引標籤) 。
+    - 使用字元的十六進位代碼，在命令列中包含特殊字元（使用 0x *HH* 格式） (例如，0x09 用於索引標籤) 。
 
 - 此命令的運作方式是 `recurse subdirectories` 在設計用來處理單一檔案的工具上執行旗標。
 
@@ -78,7 +78,7 @@ forfiles /P c:\ /S /M *.bat /C "cmd /c echo @file is a batch file"
 若要列出磁片磁碟機 C 上的所有目錄，請輸入：
 
 ```
-forfiles /P c:\ /S /M *.* /C "cmd /c if @isdir==TRUE echo @file is a directory"
+forfiles /P c:\ /S /M * /C "cmd /c if @isdir==TRUE echo @file is a directory"
 ```
 
 若要列出目前目錄中至少有一年的所有檔案，請輸入：
@@ -99,6 +99,6 @@ forfiles /S /M *.* /D -01/01/2007 /C "cmd /c echo @file is outdated."
 forfiles /S /M *.* /C "cmd /c echo The extension of @file is 0x09@ext"
 ```
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

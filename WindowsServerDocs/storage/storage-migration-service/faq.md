@@ -4,14 +4,14 @@ description: 儲存體遷移服務的常見問題，例如，從一部伺服器�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 06/02/2020
+ms.date: 01/29/2021
 ms.topic: article
-ms.openlocfilehash: c59be01c856cac27f4372291b52bd43419c9ac46
-ms.sourcegitcommit: 65eef102021ed2b5abd73dca8a0ffd6eb174d705
+ms.openlocfilehash: 48dd8848f401556dc005727484006a95bf1f51b9
+ms.sourcegitcommit: f89c1bc137ff92eeca2499131854287f28851f63
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035774"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99084956"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>儲存體遷移服務的常見問題 (常見問題) 
 
@@ -64,7 +64,7 @@ ms.locfileid: "93035774"
 - 加密資料
 - 身分識別遠端
 - 基礎結構
-- 名稱
+- Name
 - 路徑
 - 具範圍
 - 領域名稱
@@ -166,6 +166,10 @@ Windows Server 2019 中隨附的儲存體遷移服務版本不支援從 NTFS 遷
 
 在傳輸 CSV 檔案中找到的大部分錯誤都是 Windows 系統錯誤碼。 您可以查看 [Win32 錯誤碼檔](/windows/win32/debug/system-error-codes)，瞭解每個錯誤的意義。
 
+## <a name="are-existing-certificates-updated-on-the-destination-server-during-cutover"></a>在轉換期間，目的地伺服器上是否已更新現有憑證？
+
+目的地伺服器可能包含在轉換之前發出的憑證-在其本機憑證存放區中，以伺服器的名稱作為主體、主體替代名稱或其他欄位的一部分。 當進行切換時，如果重新命名伺服器，就不會更新這些憑證。 您必須使用目前的部署方法（例如群組原則或網頁註冊），將憑證重新發出至新重新命名的伺服器。    
+
 ## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a> 有哪些選項可以提供意見反應、提出 bug 或取得支援？
 
 若要提供關於儲存體遷移服務的意見反應：
@@ -185,6 +189,6 @@ Windows Server 2019 中隨附的儲存體遷移服務版本不支援從 NTFS 遷
  - 在[Windows Server 2019 論壇](/answers/topics/windows-server-2019.html)張貼文章
  - 透過[Microsoft 支援服務](https://support.microsoft.com)開啟支援案例
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [儲存體遷移服務總覽](overview.md)

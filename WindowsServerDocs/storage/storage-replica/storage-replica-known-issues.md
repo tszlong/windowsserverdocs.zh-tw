@@ -7,12 +7,12 @@ ms.topic: how-to
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 0eaf5b415ecd71087cc375d113b86fe4bd76b000
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 15f5ab032d41dd0968ac834419801d4ccc3c12e3
+ms.sourcegitcommit: 1e94c10ff51f43325fa9184b09bbdfeb8c8fed36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948604"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081744"
 ---
 # <a name="known-issues-with-storage-replica"></a>儲存體複本的已知問題
 
@@ -262,7 +262,7 @@ Get-ClusterAvailableDisk -All | Add-ClusterDisk
 Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond 32MB
 ```
 
-因為儲存體複本與 SMB 之間的互通性問題而發生此問題。 此問題是在 Windows Server 2016 的2017年7月累積更新和 Windows Server 1709 版中第一次修正。
+因為儲存體複本與 SMB 之間的互通性問題而發生此問題。
 
 ## <a name="event-1241-warning-repeated-during-initial-sync"></a>在初始同步期間重複出現的事件 1241 警告
 
@@ -502,7 +502,7 @@ Mount-SRDestination: Unable to mount SR group <TEST>, detailed reason: The group
 
 這是因為 Windows Server 1709 版中的已知程式碼缺失所造成。 若要解決此問題，請安裝 [2018 年10月18日更新](https://support.microsoft.com/help/4462932/windows-10-update-kb4462932)。 此問題不在 Windows Server 2019 和 Windows Server 1809 版和更新版本中。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [儲存體複本](storage-replica-overview.md)
 - [使用共用儲存體延展叢集複寫](stretch-cluster-replication-using-shared-storage.md)

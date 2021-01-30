@@ -6,12 +6,12 @@ ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
-ms.openlocfilehash: 2816b2ac03fda883e67a0dd58f7797a0e4847678
-ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
+ms.openlocfilehash: d3a5b2e4ca377bdbeaa7085851fa4b47aebdc93a
+ms.sourcegitcommit: 1e94c10ff51f43325fa9184b09bbdfeb8c8fed36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98103870"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081784"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>在自訂埠上為憑證金鑰型更新設定憑證註冊 Web 服務
 
@@ -24,12 +24,12 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 本文也說明 CEP 和 CES 的運作方式，並提供安裝指導方針。
 
-> [!Note]
+> [!NOTE]
 > 本文所包含的工作流程適用于特定案例。 相同的工作流程在不同的情況下可能無法運作。 不過，原則仍維持不變。
 >
 > 免責聲明：此設定是針對特定需求所建立，而您不想要針對 CEP 和 CES 伺服器使用通訊埠443進行預設的 HTTPS 通訊。 雖然這是可行的設定，但是它的支援能力有限。 如果您遵循本指南，請謹慎地使用來自所提供 web 伺服器設定的最小偏差，客戶服務和支援人員可提供最大的協助。
 
-## <a name="scenario"></a>案例
+## <a name="scenario"></a>狀況
 
 在此範例中，指示是以使用下列設定的環境為基礎：
 
@@ -54,17 +54,17 @@ Windows 群組的 Ankit Tyagi 支援工程師
 2. 先決條件是設定 CEP 和 CES 伺服器，以進行使用者名稱和密碼驗證。
    在此環境中，我們將實例稱為 "CEPCES01"。
 
-3.  針對相同伺服器上的憑證型驗證，使用 PowerShell 來設定另一個 CEP 和 CES 實例。 CES 實例將使用服務帳戶。
+3. 針對相同伺服器上的憑證型驗證，使用 PowerShell 來設定另一個 CEP 和 CES 實例。 CES 實例將使用服務帳戶。
 
     在此環境中，我們將實例稱為 "CEPCES02"。 使用的服務帳戶是 "cepcessvc"。
 
-4.  設定用戶端設定。
+4. 設定用戶端設定。
 
-### <a name="configuration"></a>設定
+### <a name="configuration"></a>組態
 
 本節提供設定初始註冊的步驟。
 
-> [!Note]
+> [!NOTE]
 > 您也可以設定任何使用者服務帳戶、MSA 或 GMSA，讓 CES 可以運作。
 
 先決條件是，您必須使用使用者名稱和密碼驗證，在伺服器上設定 CEP 和 CES。
@@ -83,7 +83,7 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 4. 在 CA 上發佈新的範本。
 
-> [!Note]
+> [!NOTE]
 > 請確定範本上的相容性設定已設定為 **Windows server 2012 R2** ，因為如果相容性設定為 windows server 2016 或更新版本，則不會顯示範本的已知問題。 如需詳細資訊，請參閱 [無法從 Windows server 2016 或更新版本的 ca 或 CEP 伺服器選取 Windows server 2016 與 CA 相容的憑證範本](https://support.microsoft.com/en-in/help/4508802/cannot-select-certificate-templates-in-windows-server-2016)。
 
 
@@ -101,7 +101,7 @@ Windows 群組的 Ankit Tyagi 支援工程師
 
 [憑證註冊 Web 服務指導方針](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)#configure-a-ca-for-the-certificate-enrollment-web-service)
 
-> [!Note]
+> [!NOTE]
 > 如果您同時設定使用者名稱和密碼驗證的 CEP 和 CES 實例，請確定未選取 [啟用 Key-Based 續約] 選項。
 
 **方法 2**
@@ -120,7 +120,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Username -SSLCertThum
 
 此命令會藉由指定用於驗證的使用者名稱和密碼，來安裝憑證註冊原則 Web 服務 (CEP) 。
 
-> [!Note]
+> [!NOTE]
 > 在此命令中， \<**SSLCertThumbPrint**\> 是將用來系結 IIS 之憑證的憑證指紋。
 
 ```PowerShell
@@ -150,7 +150,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Certificate -SSLCertT
 
 此命令會)  (CEP 安裝憑證註冊原則 Web 服務，並指定使用憑證進行驗證。
 
-> [!Note]
+> [!NOTE]
 > 在此命令中， \<SSLCertThumbPrint\> 是將用來系結 IIS 之憑證的憑證指紋。
 
 以金鑰為基礎的更新可讓憑證用戶端使用其現有憑證的金鑰來更新其憑證，以進行驗證。 在以金鑰為基礎的續約模式中，服務只會傳回針對金鑰型更新所設定的憑證範本。
@@ -165,8 +165,8 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 
 **RenewalOnly** Cmdlet 可讓 CES 在僅限更新模式中執行。 **AllowKeyBasedRenewal** Cmdlet 也會指定 CES 接受註冊伺服器的金鑰型更新要求。 這些是不會直接對應至安全性主體之驗證的有效用戶端憑證。
 
-> [!Note]
-> 服務帳戶必須是伺服器上 **IISUsers** 群組的一部分。
+> [!NOTE]
+> 服務帳戶必須是伺服器上 **IIS_IUSRS** 群組的一部分。
 
 ##### <a name="step-2-check-the-iis-manager-console"></a>步驟2檢查 IIS 管理員主控台
 
@@ -175,7 +175,7 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 
 選取 [**預設的網站**] 底下的 **KeyBasedRenewal_ADPolicyProvider_CEP_Certificate** ，然後開啟 [**應用程式設定**]。 記下 **識別碼** 和 **URI**。 您可以為管理新增 **易記名稱** 。
 
-> [!Note]
+> [!NOTE]
 > 如果實例是安裝在新的伺服器上，請再次檢查識別碼，以確定識別碼與 CEPCES01 實例中所產生的識別碼相同。 如果值不同，您可以直接複製並貼上該值。
 
 #### <a name="complete-certificate-enrollment-web-services-configuration"></a>完成憑證註冊 Web 服務設定
@@ -186,7 +186,7 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 
 此帳戶將用來進行以金鑰為基礎的更新，以及憑證範本上的 [發佈至 Active Directory] 選項的驗證。
 
-> [!Note]
+> [!NOTE]
 > 您不需要將用戶端電腦加入網域。 此帳戶在 KBR for dsmapper service 中執行以憑證為基礎的驗證時，會變成一張圖片。
 
 ![New Object](media/certificate-enrollment-certificate-key-based-renewal-6.png)
@@ -200,10 +200,10 @@ Get-ADUser -Identity cepcessvc | Set-ADAccountControl -TrustedToAuthForDelegatio
 Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.contoso.com','RPCSS/CA1.contoso.com')}
 ```
 
-> [!Note]
-> 在此命令中， \<cepcessvc\> 是服務帳戶，而 <CA1.contoso.com >是憑證授權單位單位。
+> [!NOTE]
+> 在此命令中， \<cepcessvc\> 是服務帳戶，而 <CA1.contoso.com> 是憑證授權單位單位。
 
-> [!Important]
+> [!IMPORTANT]
 > 我們不會在此設定的 CA 上啟用 RENEWALONBEHALOF 旗標，因為我們使用限制委派來為我們進行相同的工作。 這可讓我們避免將服務帳戶的許可權新增至 CA 的安全性。
 
 ##### <a name="step-3-configure-a-custom-port-on-the-iis-web-server"></a>步驟3：在 IIS 網頁伺服器上設定自訂埠
@@ -252,7 +252,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
    c. 將優先權設定為 **10**，然後驗證原則伺服器。
       ![顯示要設定優先順序之位置的螢幕擷取畫面。](media/certificate-enrollment-certificate-key-based-renewal-10.png)
 
-   > [!Note]
+   > [!NOTE]
    > 請確定埠號碼已新增至 URI，而且可在防火牆上使用。
 
 5. 透過 certlm.msc 註冊電腦的第一個憑證。
@@ -269,7 +269,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
    ![註冊原則](media/certificate-enrollment-certificate-key-based-renewal-13.png)
 
-> [!Note]
+> [!NOTE]
 > 請確定金鑰型續約註冊原則的優先順序值低於使用者名稱密碼註冊原則優先權的優先順序。 第一個喜好設定會給予最低優先順序。
 
 ## <a name="testing-the-setup"></a>測試設定
@@ -300,7 +300,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 測試完成後，請將時間設定還原為原始值，然後重新開機用戶端電腦。
 
-> [!Note]
+> [!NOTE]
 > 先前的螢幕擷取畫面範例示範自動註冊引擎如預期般運作，因為 CA 日期仍設為18。 因此，它會繼續發出憑證。 在現實生活的情況下，將不會進行這項大量的續約。
 
 ## <a name="references"></a>參考資料
@@ -313,7 +313,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 [安裝-AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice)
 
-另請參閱
+### <a name="see-also"></a>另請參閱
 
 [Windows Server 安全性論壇](https://aka.ms/adcsforum)
 
