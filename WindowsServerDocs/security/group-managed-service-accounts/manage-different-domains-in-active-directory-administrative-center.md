@@ -7,12 +7,12 @@ author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
 ms.topic: article
-ms.openlocfilehash: 35defc771c18753296eb37c96f65086626475a95
-ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
+ms.openlocfilehash: 900a536fb5a5f0f1ab37725a133fa822107ec9cd
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98113464"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245447"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>管理 Active Directory 管理中心中的不同網域
 
@@ -36,11 +36,11 @@ ms.locfileid: "98113464"
 
 2.  若要開啟 [ **新增流覽節點**]，請按一下 [ **管理**]，然後按一下 [ **新增流覽節點** ]，如下圖所示。
 
-     ![顯示 * * 新增流覽節點 * * UI 的螢幕擷取畫面](media/ADDS_ADACAddNavNode.gif)
+     ![Active Directory 管理中心的螢幕擷取畫面，其中顯示 [管理] 下拉式清單，其中包含可供選取的 [新增流覽節點] 選項。](media/ADDS_ADACAddNavNode.gif)
 
 3.  在 [ **新增流覽節點**] 中，按一下 **[連接到其他網域]** ，如下圖所示。
 
-     ![顯示 * * 新增流覽節點 * * UI 的螢幕擷取畫面](media/ADDS_ADACConnectToDomain.gif)
+     ![顯示 [新增流覽節點] 對話方塊的螢幕擷取畫面，其中顯示可供選取的 [連線至其他網域] 選項。](media/ADDS_ADACConnectToDomain.gif)
 
 4.  在 **[連接到]** 中，輸入您要管理的外部功能變數名稱 \( （例如， **contoso.com** \) ），然後按一下 **[確定]**。
 
@@ -55,7 +55,7 @@ ms.locfileid: "98113464"
 
 2. 若要開啟 [ **新增流覽節點**]，請按一下 Active Directory 管理中心視窗頂端附近的 [ **新增流覽節點** ]，如下圖所示。
 
-    ![顯示 * * 新增流覽節點 * * UI 的螢幕擷取畫面](media/click_add_nav_nodes.gif)
+    ![Active Directory 管理中心的螢幕擷取畫面，其中的 [新增流覽節點] 選項可供選擇。](media/click_add_nav_nodes.gif)
 
    > [!NOTE]
    >  開啟 [ **新增流覽節點** ] 的另一種方法是以滑鼠右鍵 \- 按一下 Active Directory 管理中心流覽窗格中空白處的任意位置，然後按一下 [ **新增流覽節點**]。

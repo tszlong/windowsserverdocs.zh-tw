@@ -6,12 +6,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: c6dc0bcefda94b8d2b5490fa2378f60d26877bc5
-ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
+ms.openlocfilehash: d3e06dbaf61b422779822cce208040601f2e56fa
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98113294"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245409"
 ---
 # <a name="manage-transport-layer-security-tls"></a>管理傳輸層安全性 (TLS)
 
@@ -123,7 +123,7 @@ Certutil.exe –deleteEccCurve curveName
 4. 為 *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters\[ curveName]* 底下列出的每個登錄值新增登錄 **專案**，以設定新建立的群組原則喜好設定登錄集合。
 5. 將包含群組原則登錄收集項的群組原則物件部署到應接收新命名曲線的 Windows 10 和 Windows Server 2016 電腦。
 
-    ![GPP 分佈曲線](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)
+    ![群組原則管理編輯器的 [喜好設定] 索引標籤的螢幕擷取畫面。](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)
 
     *圖3使用群組原則喜好設定來分佈曲線*
 
@@ -133,6 +133,6 @@ Certutil.exe –deleteEccCurve curveName
 使用一般 ECC 和這項設定時，組織可以將自己的受信任命名曲線 (，並已核准搭配 TLS) 使用到作業系統，然後將這些命名曲線新增至曲線優先順序群組原則設定，以確保在未來的 TLS 交握中使用它們。
 接收原則設定之後，新的曲線優先順序清單會在下一次重新開機時變成作用中狀態。
 
-![GPP 分佈曲線](../media/Transport-Layer-Security-protocol/gp-managing-tls-curve-priority-order.png)
+![EEC 曲線順序對話方塊的螢幕擷取畫面。](../media/Transport-Layer-Security-protocol/gp-managing-tls-curve-priority-order.png)
 
 *圖4使用群組原則管理 TLS 曲線優先順序*

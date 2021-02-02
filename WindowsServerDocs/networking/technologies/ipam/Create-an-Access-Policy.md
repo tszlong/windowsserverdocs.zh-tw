@@ -7,12 +7,12 @@ ms.assetid: 854bd064-2f86-4678-a940-a04b3e48ae10
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 11494ec838851ffffb6e3eab31cfb462e30e2462
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: 3fd8490321070dc73658bd6c6cad08f09bb9025c
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98039728"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245485"
 ---
 # <a name="create-an-access-policy"></a>建立存取原則
 
@@ -31,11 +31,11 @@ ms.locfileid: "98039728"
 
 2.  在流覽窗格中，按一下 [ **存取控制**]。 在下方流覽窗格中，以滑鼠右鍵按一下 [ **存取原則**]，然後按一下 [ **新增存取原則**]。
 
-    ![新增存取原則](../../media/Create-an-Access-Policy/ipam_CreateAP_01.jpg)
+    ![顯示已醒目提示 [存取原則] optoin 的伺服器管理員螢幕擷取畫面，以及可供選取的 [新增存取原則] 選項。](../../media/Create-an-Access-Policy/ipam_CreateAP_01.jpg)
 
 3.  [ **新增存取原則** ] 對話方塊隨即開啟。 在 [ **使用者設定**] 中，按一下 [ **新增**]。
 
-    ![新增存取原則](../../media/Create-an-Access-Policy/ipam_CreateAP_02.jpg)
+    ![[新增存取原則] 對話方塊的螢幕擷取畫面。](../../media/Create-an-Access-Policy/ipam_CreateAP_02.jpg)
 
 4.  [ **選取使用者或群組** ] 對話方塊隨即開啟。 按一下 [位置]。
 
@@ -45,7 +45,7 @@ ms.locfileid: "98039728"
 
     ![選取位置](../../media/Create-an-Access-Policy/ipam_CreateAP_04.jpg)
 
-6.  在 [ **選取使用者或群組** ] 對話方塊的 [ **輸入物件名稱來選取**] 中，輸入您要建立存取原則的使用者帳戶名稱。 按一下 [確定]。
+6.  在 [ **選取使用者或群組** ] 對話方塊的 [ **輸入物件名稱來選取**] 中，輸入您要建立存取原則的使用者帳戶名稱。 按一下 [確定]  。
 
 7.  在 [ **新增存取原則**] 的 [ **使用者設定**] 中，[ **使用者別名** ] 現在包含套用原則的使用者帳戶。 在 [ **存取設定**] 中，按一下 [ **新增**]。
 

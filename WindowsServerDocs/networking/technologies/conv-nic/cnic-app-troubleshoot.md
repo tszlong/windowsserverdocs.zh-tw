@@ -7,12 +7,12 @@ manager: brianlic
 ms.author: lizross
 author: eross-msft
 ms.date: 12/18/2020
-ms.openlocfilehash: 652c945a4702e851cdfec382ebe31cd2bd7ea148
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 524d73c759230b375d50cb6645e9c336684a18ea
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97945634"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245389"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>針對融合式 NIC 設定進行疑難排解
 
@@ -47,7 +47,7 @@ Get-NetAdapterRdma | fl *
 1. 請確定 Mlnx 微型埠和 Mlnx 匯流排驅動程式都是最新的。 若為 Mellanox，請至少使用 drop 42。
 2. 透過裝置管理員檢查驅動程式版本，確認 Mlnx 微型埠和匯流排驅動程式相符。 匯流排驅動程式可在系統裝置中找到。 名稱的開頭應該是 Mellanox Connect-X 3 PRO VPI，如下列網路介面卡屬性的螢幕擷取畫面所示。
 
-![網路介面卡內容](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-02.jpg)
+   ![螢幕擷取畫面，顯示 [Mellanox ConnectX-3 Pro EthernetAdapter 屬性] 對話方塊的 [資訊] 索引標籤和 [Mellanox ConnectX-3 Pro VPI 網路介面卡內容] 對話方塊的 [驅動程式] 索引標籤。](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-02.jpg)
 
 4. 請確定已在實體 NIC 和主機 vNIC 上啟用網路 Direct (RDMA) 。
 5. 藉由檢查其 RDMA 功能，確定已透過正確的實體介面卡建立 vSwitch。
@@ -65,7 +65,7 @@ Get-SmbClientNetworkInterface
 
 主機 vNIC 應該也會顯示為可從 SMB 的觀點來看的 RDMA。
 
-![網路介面卡內容](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-03.jpg)
+![PowerShell 視窗的螢幕擷取畫面，其中顯示 Get-SmbClientNetworkInterface Cmdlet 的結果。](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-03.jpg)
 
 ### <a name="get-smbclientnetworkinterface-unexpected-results"></a>Get-SmbClientNetworkInterface 非預期的結果
 

@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ded1b6741829fb74d3be9b33828c89b8091faf1a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: cc2c81e1b534c25ea0aa6a6abd6c2089620b920e
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624384"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245379"
 ---
 # <a name="viewing-and-managing-updates"></a>檢視和管理更新
 
@@ -47,7 +47,7 @@ ms.locfileid: "89624384"
 
 1.  在 WSUS 管理主控台中，展開 [ **更新**]，然後按一下 [ **所有更新**]。
 
-2.  在 [ **核准**] 旁的中間窗格中，選取想要的核准狀態，然後選取 [ **狀態** ] 旁的 [選取所需的安裝狀態]。 按一下 [重新整理]****。
+2.  在 [ **核准**] 旁的中間窗格中，選取想要的核准狀態，然後選取 [ **狀態** ] 旁的 [選取所需的安裝狀態]。 按一下 [重新整理]。
 
 #### <a name="to-create-a-new-update-view-on-wsus"></a>在 WSUS 上建立新的更新視圖
 
@@ -177,21 +177,21 @@ Microsoft Update 上可用的更新會依產品 (或產品系列) 和分類來�
  沒有任何操作考量。
 
 ### <a name="superseding-icon"></a>取代圖示
- ![icon](../../media/wsus/wsus-superseding.png) 此更新取代了其他更新。
+ :::image type="icon" source="../../media/wsus/wsus-superseding.png"::: 此更新取代了其他更新。
 
  **操作考量：**
 
  沒有任何操作考量。
 
 ### <a name="superseded--superseding-icon"></a>取代的 & 取代圖示
- ![icon](../../media/wsus/wsus-superseded.png) 此更新已由另一個更新取代，並取代其他更新。
+ :::image type="icon" source="../../media/wsus/wsus-superseded.png"::: 此更新已由另一個更新取代，並取代其他更新。
 
  **操作考量：**
 
  盡可能以取代的更新取代這些更新。
 
 ### <a name="superseded-icon"></a>已取代圖示
- ![icon](../../media/wsus/wsus-superseded-leaf.png) 此更新已由另一個更新取代。
+ :::image type="icon" source="../../media/wsus/wsus-superseded-leaf.png"::: 此更新已由另一個更新取代。
 
  **操作考量：**
 

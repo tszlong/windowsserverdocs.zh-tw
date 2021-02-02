@@ -7,12 +7,12 @@ ms.assetid: 5379373f-a3d9-4f51-b6fc-bf0f6df1d244
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 5ced255a8cc15be6c0d8d6b6ec04f5031816eed5
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: 99cad9f3ad2e746c1f3a530c89c67e2bb39b80a6
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98040488"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245457"
 ---
 # <a name="add-a-dns-resource-record"></a>新增 DNS 資源記錄
 
@@ -46,7 +46,7 @@ ms.locfileid: "98040488"
 
 7.  在 [ **新資源記錄** ] 的 [ **名稱**] 中，輸入資源記錄名稱。 在 [ **Ip 位址**] 中輸入 ip 位址，然後選取適合您部署的資源記錄屬性。 按一下 [ **新增資源記錄**]。
 
-    ![新增資源記錄](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_06.jpg)
+    ![[新增資源記錄] 頁面的 [資源記錄] 頁面的螢幕擷取畫面，其中顯示 [新增資源記錄] 區段。](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_06.jpg)
 
 8.  如果您不想要建立其他新的資源記錄，請按一下 **[確定]**。 如果您想要建立其他新的資源記錄，請按一下 [ **新增**]。
 
@@ -56,7 +56,7 @@ ms.locfileid: "98040488"
 
 10. 在 [ **新資源記錄** ] 的 [ **名稱**] 中，輸入資源記錄名稱。 在 [ **Ip 位址**] 中輸入 ip 位址，然後選取適合您部署的資源記錄屬性。 按一下 [ **新增資源記錄**]。
 
-    ![新增資源記錄](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_02.jpg)
+    ![[新增資源記錄] 頁面的 [資源記錄] 頁面的螢幕擷取畫面，其中已醒目提示 [新增資源記錄] 選項。](../../media/Add-a-DNS-Resource-Record/ipam_DNSrr_r2_02.jpg)
 
 11. 如果您想要新增更多資源記錄，請重複建立記錄的程式。 當您完成建立新的資源記錄時， **請按一下 [** 套用]。
 
