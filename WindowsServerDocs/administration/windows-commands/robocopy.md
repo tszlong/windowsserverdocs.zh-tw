@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: eb3da171f835cf8715fc2f6b3e08020921f31d3d
-ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
+ms.openlocfilehash: f9bb0b46f15a02ba521040c2f03309a059e15b4c
+ms.sourcegitcommit: 658ee0e4cb1c25a6793afb5b64046000eaf6b773
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98666557"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99589800"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -49,6 +49,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | /z | 以可重新開機的模式複製檔案。 |
 | /b | 以備份模式複製檔案。 |
 | /zb | 使用可重新開機模式。 如果存取遭拒，此選項會使用備份模式。 |
+| /j | 使用未緩衝 i/o 的複製 (建議用於大型檔案) 。 |
 | /efsraw | 以 EFS RAW 模式複製所有加密的檔案。 |
 | /copy`<copyflags>` | 指定要複製的檔案屬性。 此選項的有效值為：<ul><li>**D** -資料</li><li>**A** -Attributes</li><li>**T** 時間戳記</li><li>**S** -NTFS 存取控制清單 (ACL) </li><li>**O** -擁有者資訊</li><li>**U** -審核資訊</li></ul>此選項的預設值為 [ **DAT** (資料、屬性和時間戳記) 。 |
 | /dcopy:`<copyflags>`| 指定要複製到目錄中的內容。 此選項的有效值為：<ul><li>**D** -資料</li><li>**A** -Attributes</li><li>**T** 時間戳記</li></ul>此選項的預設值為 **DA** (資料和屬性) 。 |
@@ -73,6 +74,9 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | /pf | 檢查每個檔案的執行時間 (不會) 基礎。 |
 | /ipg： n | 指定可在較慢線上釋放頻寬的封包間間距。 |
 | /sl | 請勿遵循符號連結，而是建立連結的複本。 |
+| /nodcopy |  (預設 **/dcopy： DA**) ，則不會複製任何目錄資訊。 |
+| /nooffload | 在不使用 Windows 複製卸載機制的情況下複製檔案。 |
+| /compress | 在檔案傳輸期間要求網路壓縮（如果適用）。 |
 
 > [!IMPORTANT]
 > 使用 [ **/secfix** 複製] 選項時，請使用下列其中一個其他複製選項來指定您要複製的安全性資訊類型：
@@ -173,6 +177,6 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 > [!NOTE]
 > 任何大於 **8** 的值表示複製作業期間至少有一個失敗。
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
 - [命令列語法關鍵](command-line-syntax-key.md)

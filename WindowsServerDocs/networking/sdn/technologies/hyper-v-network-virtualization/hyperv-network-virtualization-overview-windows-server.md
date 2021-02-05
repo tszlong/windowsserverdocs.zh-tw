@@ -7,12 +7,12 @@ ms.assetid: 0115b7ad-d229-4c69-9d7e-a3f5fbaa3b2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: a11c73eda48819e44e30df6121193ddb6ae7ddd2
-ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
+ms.openlocfilehash: e82e03e5be62d884ab71b7b07580f3ac679a7b94
+ms.sourcegitcommit: 658ee0e4cb1c25a6793afb5b64046000eaf6b773
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98716214"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99589790"
 ---
 # <a name="hyper-v-network-virtualization-overview-in-windows-server"></a>Windows Server 中的 hyper-v 網路虛擬化總覽
 
@@ -54,7 +54,7 @@ Hyper-v 網路虛擬化提供「虛擬網路」 (稱為 VM 網路) 虛擬機器�
 對基礎架構擁有者來說，虛擬機器放置的額外彈性可將工作負載移到資料中心的任何位置，不需要變更虛擬機器或重新設定網路。 例如，Hyper-V 網路虛擬化可進行跨子網路即時移轉，這樣虛擬機器就能夠即時移轉到資料中心的任一處，不會中斷服務。 之前提到的即時移轉僅限相同子網路，也就是限制虛擬機器所在的位置。 跨子網路即時移轉可讓系統管理員根據動態資源需求和電源效率來合併工作負載，也可以進行基礎架構維護，不會中斷客戶工作負載執行時間。
 
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>實際應用
-成功將資料中心虛擬化之後，IT 組織與 (提供並存或實體伺服器出租的) 託管提供者就可以開始提供更靈活的虛擬化基礎架構，更容易為客戶提供指定的伺服器執行個體。 這個新的服務類別稱為「基礎架構即服務」(IaaS)。 Windows Server 2016 提供所有必要的平臺功能，讓企業客戶能夠建立私人雲端，並轉換至 IT 即服務操作模型。 Windows Server 2016 2016 也可讓主控者建立公用雲端，並為其客戶提供 IaaS 解決方案。 結合 Virtual Machine Manager 和 Windows Azure 套件來管理 Hyper-v 網路虛擬化原則時，Microsoft 提供了功能強大的雲端解決方案。
+成功將資料中心虛擬化之後，IT 組織與 (提供並存或實體伺服器出租的) 託管提供者就可以開始提供更靈活的虛擬化基礎架構，更容易為客戶提供指定的伺服器執行個體。 這個新的服務類別稱為「基礎架構即服務」(IaaS)。 Windows Server 2016 提供所有必要的平臺功能，讓企業客戶能夠建立私人雲端，並轉換至 IT 即服務操作模型。 Windows Server 2016 也可讓主控者建立公用雲端，並為其客戶提供 IaaS 解決方案。 結合 Virtual Machine Manager 和 Windows Azure 套件來管理 Hyper-v 網路虛擬化原則時，Microsoft 提供了功能強大的雲端解決方案。
 
 Windows Server 2016 Hyper-v 網路虛擬化提供以原則為基礎的軟體控制網路虛擬化，可降低企業擴展專用 IaaS 雲端時面臨的管理額外負荷，並提供雲端主控者更佳的彈性和擴充性，讓您管理虛擬機器以達到更高的資源使用率。
 

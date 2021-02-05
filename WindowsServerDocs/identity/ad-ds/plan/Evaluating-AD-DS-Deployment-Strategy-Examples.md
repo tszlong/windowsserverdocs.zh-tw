@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5612bc24e3f0662103aae1d831578c7417cc578e
-ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
+ms.openlocfilehash: 4455341114c7c4b5f0dd20f4ef8357922426801f
+ms.sourcegitcommit: 658ee0e4cb1c25a6793afb5b64046000eaf6b773
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97711793"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99589830"
 ---
 # <a name="evaluating-ad-ds-deployment-strategy-examples"></a>評估 AD DS 部署策略範例
 
@@ -28,7 +28,7 @@ ms.locfileid: "97711793"
 
 -   將網域和樹系功能等級提高至 Windows Server 2008，以啟用 advanced AD DS 功能。
 
--   在樹系中重建 africa.concorp.contoso.com 網域，以將該網域與 emea. concorp. con 網域合併。
+-   在樹系中重建 africa.concorp.contoso.com 網域，以將該網域與 emea.concorp.contoso.com 網域合併。
 
 將樹系功能等級提高至 Windows Server 2008 可讓 Contoso 充分利用新的 AD DS 功能。 重建樹系內的網域（如下圖所示），可減少管理網域所需的管理量。
 
