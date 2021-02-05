@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: c062531e96e12ca73e001018ac3f640e27fdad99
-ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
+ms.openlocfilehash: e41b2979935a72ce119987414c8b29c2097bb53f
+ms.sourcegitcommit: e58922c8e4cce05bb87e416946ddb2fd6c47d9cc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91517554"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99569733"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知問題
 
@@ -40,7 +40,7 @@ ms.locfileid: "91517554"
   2. 刪除 **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft** 下的 **Server Management Experience** 資料夾。
   3. 重新安裝 Windows Admin Center
 
-- 如果您讓工具保持開啟且閒置很長一段時間，您可能會收到數個**錯誤: Runspace 狀態不適用於此操作**錯誤。 如果發生這種情況，請重新整理瀏覽器。 如果您遇到這種情況，請 [傳送意見](https://aka.ms/WACfeedback)反應給我們。
+- 如果您讓工具保持開啟且閒置很長一段時間，您可能會收到數個 **錯誤: Runspace 狀態不適用於此操作** 錯誤。 如果發生這種情況，請重新整理瀏覽器。 如果您遇到這種情況，請 [傳送意見](https://aka.ms/WACfeedback)反應給我們。
 
 - 在 Windows Admin Center 模組中執行的 OSS 版本號碼之間可能會有微小的差異，以及協力廠商軟體聲明中所列的內容。
 
@@ -48,6 +48,10 @@ ms.locfileid: "91517554"
 
 - 當您更新 Windows Admin Center 時，您必須重新安裝您的擴充功能。
 - 如果您加入無法存取的延伸模組摘要，就不會出現任何警告。 [14412861]
+
+## <a name="partner-extension-issues"></a>合作夥伴延伸模組問題
+
+- Dell 的 EMC OpenManage 整合擴充功能會利用 Windows Admin Center 所提供的 Api，將檔案推送至目標節點。 此 API 僅適用于使用者為閘道管理員且不支援非系統管理員使用的情況。
 
 ## <a name="browser-specific-issues"></a>瀏覽器特定問題
 
@@ -59,7 +63,7 @@ ms.locfileid: "91517554"
 
 - 在70版之前的版 (發行之前，2018) Chrome 有關于 Websocket 通訊協定和 NTLM 驗證的 [錯誤](https://bugs.chromium.org/p/chromium/issues/detail?id=423609) 。 這會影響下列工具：事件、PowerShell、遠端桌面。
 
-- Chrome 可能會快顯多個認證提示，特別是在**工作群組** (非網域) 環境中加入連線體驗時。
+- Chrome 可能會快顯多個認證提示，特別是在 **工作群組** (非網域) 環境中加入連線體驗時。
 
 - 如果您已將 Windows Admin Center 部署為服務，則需要啟用來自閘道 URL 的快顯視窗，任何 Azure 整合功能才能運作。
 
@@ -104,7 +108,7 @@ Windows Admin Center 中的遠端桌面、PowerShell 及事件模組會利用 We
 
   - 若要解決此問題，請在閘道電腦上提高許可權的命令提示字元中使用下列命令： ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
-### <a name="files"></a>檔案儲存體
+### <a name="files"></a>檔案
 
 - 尚未支援上傳或下載大型檔案。  (\~ 100mb 限制) [12524234]
 
@@ -275,9 +279,9 @@ Windows Admin Center 2007 版中的叢集部署嚮導不提供 RDMA 設定的支
 
 ## <a name="failover-cluster-manager-solution"></a>容錯移轉叢集管理員解決方案
 
-- 管理叢集時，(超融合式或傳統式？) 可能會發生**找不到命令介面**錯誤。 如果發生這種情況，請重新載入瀏覽器，或往外瀏覽至其他工具，然後再瀏覽器回來。 [13882442]
+- 管理叢集時，(超融合式或傳統式？) 可能會發生 **找不到命令介面** 錯誤。 如果發生這種情況，請重新載入瀏覽器，或往外瀏覽至其他工具，然後再瀏覽器回來。 [13882442]
 
-- 管理尚未設定完全的下層 (Windows Server 2012 或 2012 R2) 叢集時，可能會發生問題。 此問題的修正方式為，確保叢集的**每個成員節點**皆已安裝並啟用 Windows 功能 **RSAT-Clustering-PowerShell**。 若要使用 PowerShell 達成此目的，請在所有叢集節點上輸入下列命令 `Install-WindowsFeature -Name RSAT-Clustering-PowerShell`。 [12524664]
+- 管理尚未設定完全的下層 (Windows Server 2012 或 2012 R2) 叢集時，可能會發生問題。 此問題的修正方式為，確保叢集的 **每個成員節點** 皆已安裝並啟用 Windows 功能 **RSAT-Clustering-PowerShell**。 若要使用 PowerShell 達成此目的，請在所有叢集節點上輸入下列命令 `Install-WindowsFeature -Name RSAT-Clustering-PowerShell`。 [12524664]
 
 - 叢集可能必須使用整個 FQDN 來新增，才能正確地探索到該叢集。
 
@@ -306,7 +310,7 @@ Azure 檔案同步需要 Azure 中 Windows Admin Center 未在1910版之前提�
 
 若要更新您的 Azure Active Directory 應用程式，您可以進行下列兩項作業之一：
 1. 移至 [**設定**  >  **azure**  >  **取消註冊**]，然後再次向 azure 註冊 Windows Admin Center，確定您選擇建立新的 Azure Active Directory 應用程式。
-2. 移至您的 Azure Active Directory 應用程式，並手動將現有 Azure Active Directory 應用程式所需的許可權新增至 Windows Admin Center 註冊的應用程式。 若要這樣做，請**Settings**移至  >  **Azure**  >  **azure 中的**[設定] azure View。 從 Azure 中的 **應用程式註冊** 分頁，移至 [ **API 許可權**]，然後選取 [ **新增許可權**]。 向下展開以選取 **Azure Active Directory Graph**，選取 [ **委派的許可權**]，展開 [ **目錄**]，然後選取 [ **AccessAsUser**]。 按一下 [ **新增許可權** ]，將更新儲存至應用程式。
+2. 移至您的 Azure Active Directory 應用程式，並手動將現有 Azure Active Directory 應用程式所需的許可權新增至 Windows Admin Center 註冊的應用程式。 若要這樣做，請移至  >    >  **azure 中的**[設定] azure View。 從 Azure 中的 **應用程式註冊** 分頁，移至 [ **API 許可權**]，然後選取 [ **新增許可權**]。 向下展開以選取 **Azure Active Directory Graph**，選取 [ **委派的許可權**]，展開 [ **目錄**]，然後選取 [ **AccessAsUser**]。 按一下 [ **新增許可權** ]，將更新儲存至應用程式。
 
 ### <a name="options-for-setting-up-azure-management-services"></a>設定 Azure 管理服務的選項
 
